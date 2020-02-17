@@ -1,0 +1,64 @@
+{
+    "cadical": {
+        "name": "cadical-sc17-proof",
+        "call": "./cadical",
+        "gz": true,
+        "args": [
+          "FILECNF"
+        ],
+        "argsproof": [
+          "FILECNF",
+          "FILEPROOF"
+        ]
+    },
+    "maple-lcm-dist": {
+        "name": "Maple_LCM_Dist",
+        "call": "./glucose_static",
+        "gz": true,
+        "args": [
+          "FILECNF",
+          "-no-drup"
+        ],
+        "argsproof": [
+          "FILECNF",
+          "-drup-file=FILEPROOF"
+        ]
+    },
+    "maplelrb-lcmoccrestart": {
+        "name": "MapleLRB_LCMoccRestart",
+        "call": "./glucose_static",
+        "gz": true,
+        "args": [
+          "FILECNF",
+          "-no-drup"
+        ],
+        "argsproof": [
+          "FILECNF",
+          "-drup-file=FILEPROOF"
+        ]
+    },
+    "comnisatps-pulsar-drup": {
+        "name": "COMiniSatPS_Pulsar_drup",
+        "call": "./minisat_static",
+        "gz": true,
+        "args": [
+          "FILECNF"
+        ],
+        "argsproof": [
+          "FILECNF",
+          "FILEPROOF"
+        ]
+    },
+    "maple-comsps-lrb-vsids_2": {
+        "name": "MapleCOMSPS_LRB_VSIDS_2_drup",
+        "call": "./MapleCOMSPS_LRB_VSIDS_2",
+        "gz": true,
+        "args": [
+          "FILECNF"
+        ],
+        "argsproof": [
+          "FILECNF",
+          "FILEPROOF"
+        ]
+    }
+}

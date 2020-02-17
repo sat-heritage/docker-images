@@ -1,0 +1,70 @@
+{
+    "riss6": {
+        "name": "Riss6",
+        "call": "./riss6",
+        "gz": true,
+        "args": [
+          "FILECNF"
+        ],
+        "argsproof": [
+          "FILECNF",
+          "-proof=FILEPROOF",
+          "-proofFormat"
+        ]
+    },
+    "maple-comsps": {
+        "name": "MapleCOMSPS_DRUP",
+        "call": "./MapleCOMSPS",
+        "gz": true,
+        "args": [
+          "FILECNF"
+        ],
+        "argsproof": [
+          "FILECNF",
+          "-drup-file=FILEPROOF"
+        ]
+    },
+    "abcdsat": {
+        "name": "abcdSAT_drup",
+        "call": "./abcdsat_drup",
+        "gz": true,
+        "args": [
+          "FILECNF"
+        ],
+        "argsproof": [
+          "FILECNF",
+          "-certified",
+          "-certified-output=FILEPROOF"
+        ]
+    },
+    "lingeling": {
+        "call": "./lingeling",
+        "name": "Lingelingbbcmain",
+        "gz": true,
+        "args": [
+          "FILECNF"
+        ],
+        "argsproof": [
+          "FILECNF",
+          "-t",
+          "FILEPROOF"
+        ]
+    },
+    "glucose-3_ts0": {
+        "call": "./glucose",
+        "name": "glucose_hack_kiel_newScript",
+        "gz": true,
+        "args": [
+          "FILECNF",
+          "-cla-decay=0.9999",
+          "-model"
+        ],
+        "argsproof": [
+          "FILECNF",
+          "-cla-decay=0.9999",
+          "-certified",
+          "-certified-output=FILEPROOF",
+          "-model"
+        ]
+    }
+}

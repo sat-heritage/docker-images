@@ -1,0 +1,6 @@
+{
+    "base_version": "v1",
+    "generic_version": "v1",
+    "builder_base": "debian:9.5-slim",
+    "archive_baseurl": "http://sat2018.forsyte.tuwien.ac.at/solvers/main_and_glucose_hack/"
+}

@@ -1,0 +1,6 @@
+{
+    "base_version": "v1",
+    "generic_version": "v1",
+    "builder_base": "debian:8.6",
+    "archive_baseurl": "https://baldur.iti.kit.edu/sat-competition-2016/solvers/main/"
+}

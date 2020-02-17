@@ -1,0 +1,66 @@
+{
+    "maple-cm": {
+        "name": "Maple_CM",
+        "call": "./glucose_static",
+        "gz": true,
+        "args": [
+          "FILECNF",
+          "-no-drup"
+        ],
+        "argsproof": [
+          "FILECNF",
+          "-drup-file=FILEPROOF"
+        ]
+    },
+    "maple-lcm-bcrestart": {
+        "name": "Maple_LCM+BCrestart",
+        "call": "./glucose_static",
+        "gz": true,
+        "args": [
+          "FILECNF",
+          "-no-drup"
+        ],
+        "argsproof": [
+          "FILECNF",
+          "-drup-file=FILEPROOF"
+        ]
+    },
+    "maple-lcm-distchronobt": {
+        "name": "MapleLCMDistChronoBT",
+        "call": "./glucose_static",
+        "gz": true,
+        "args": [
+          "FILECNF",
+          "-no-drup"
+        ],
+        "argsproof": [
+          "FILECNF",
+          "-drup-file=FILEPROOF"
+        ]
+    },
+    "maple-lcm-scavel": {
+        "name": "Maple_LCM_Scavel",
+        "call": "./Maple_LCM_Scavel",
+        "gz": true,
+        "args": [
+          "FILECNF",
+          "-no-drup"
+        ],
+        "argsproof": [
+          "FILECNF",
+          "-drup-file=FILEPROOF"
+        ]
+    },
+    "cryptominisat": {
+        "name": "cms55-main-all4fixed",
+        "call": "./cryptominisat5_simple",
+        "gz": false,
+        "args": [
+          "FILECNF"
+        ],
+        "argsproof": [
+          "FILECNF",
+          "FILEPROOF"
+        ]
+    }
+}

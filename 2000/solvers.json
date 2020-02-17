@@ -1,0 +1,186 @@
+{
+  "asat": {
+    "name": "Asat",
+    "call": "Asat",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "csat": {
+    "name": "csat",
+    "call": "csat",
+    "gz": false,
+    "args": [
+      "FILECNF", 1
+    ]
+  },
+  "dr": {
+    "name": "dr",
+    "call": "dr",
+    "gz": false,
+    "args": [
+      1, "FILECNF"
+    ]
+  },
+  "eqsatz": {
+    "name": "eqsatz",
+    "call": "eqsatz",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "heerhugo": {
+    "name": "heerhugo",
+    "call": "heerhugo",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "modoc": {
+    "name": "modoc",
+    "call": "modoc",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "modoc-2.0": {
+    "name": "modoc-2.0",
+    "call": "modoc-2.0",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "nsat": {
+    "name": "nsat",
+    "call": "nsat",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "ntab": {
+    "name": "ntab",
+    "call": "ntab",
+    "gz": false,
+    "args": [
+      "-f", "FILECNF"
+    ]
+  },
+  "ntab_back": {
+    "name": "ntab_back",
+    "call": "ntab_back",
+    "gz": false,
+    "args": [
+      "-f", "FILECNF"
+    ]
+  },
+  "ntab_back2": {
+    "name": "ntab_back2",
+    "call": "ntab_back2",
+    "gz": false,
+    "args": [
+      "-f", "FILECNF"
+    ]
+  },
+  "oksolver": {
+    "name": "oksolver",
+    "call": "oksolver",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "posit": {
+    "name": "posit",
+    "call": "posit",
+    "gz": false,
+    "args": [
+      "-f", "FILECNF"
+    ]
+  },
+  "relsat": {
+    "name": "relsat",
+    "call": "relsat",
+    "gz": false,
+    "args": [
+      1, "FILECNF"
+    ]
+  },
+  "relsat-200": {
+    "name": "relsat-200",
+    "call": "relsat-200",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "sat-grasp": {
+    "name": "sat-grasp",
+    "call": "sat-grasp",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "sato": {
+    "name": "sato",
+    "call": "sato",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "sato-3.2.1": {
+    "name": "sato-3.2.1",
+    "call": "sato-3.2.1",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "satz": {
+    "name": "satz",
+    "call": "satz",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "satz-213": {
+    "name": "satz-213",
+    "call": "satz-213",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "satz-215": {
+    "name": "satz-215",
+    "call": "satz-215",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "zchaff": {
+    "name": "zchaff",
+    "call": "zchaff",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "zres": {
+    "name": "zres",
+    "call": "zres",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  }
+}

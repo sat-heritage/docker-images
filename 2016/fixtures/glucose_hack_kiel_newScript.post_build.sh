@@ -1,0 +1,1 @@
+cp glucose_hack_kiel_newScript/glucose-3_TS0/simp/glucose glucose_hack_kiel_newScript/bin/

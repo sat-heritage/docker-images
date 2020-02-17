@@ -1,0 +1,25 @@
+{
+    "base_version": "potato",
+    "generic_version": "binary-v1",
+    "builder_base": "debian/eol:potato",
+    "download_url": "https://zenodo.org/record/3676454/files/SOLVER_NAME?download=1",
+    "asat": {
+        "generic_version": "2000",
+        "download_url": "http://www.labri.fr/perso/lpauleve/asat.src.tgz"
+    },
+    "nsat": {
+        "RDEPENDS": "libstdc++2.9-glibc2.1"
+    },
+    "relsat": {
+        "RDEPENDS": "libstdc++2.9-glibc2.1"
+    },
+    "relsat-200": {
+        "RDEPENDS": "libstdc++2.9-glibc2.1 libgmp2"
+    },
+    "sat-grasp": {
+        "RDEPENDS": "libstdc++2.9-glibc2.1"
+    },
+    "zchaff": {
+        "RDEPENDS": "libstdc++2.9-glibc2.1"
+    }
+}

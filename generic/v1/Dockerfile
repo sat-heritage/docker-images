@@ -1,0 +1,37 @@
+ARG BASE
+ARG BUILDER_BASE
+FROM ${BUILDER_BASE} as builder
+ENV LANG=C.UTF-8 LC_ALL=C.UTF-8
+
+RUN apt-get update --fix-missing &&\
+    apt -y install zip gcc g++ cmake make patch xz-utils zlib1g-dev curl
+
+ARG solver
+ARG archive_baseurl
+
+RUN curl -o $solver.zip -L $archive_baseurl$solver.zip \
+    && unzip $solver.zip -d /src \
+    && rm $solver.zip
+
+COPY setup.json fixtures/$solver* /src/
+
+WORKDIR /src
+
+RUN test -f $solver.pre_build.sh && sh $solver.pre_build.sh || true
+
+RUN cd /src/$solver && sh starexec_build
+
+RUN test -f $solver.post_build.sh && sh $solver.post_build.sh || true
+
+FROM ${BASE}
+ARG solver
+
+ARG solver_id
+ARG IMAGE_NAME
+ENV SOLVER=$solver_id \
+    DOCKER_IMAGE=$IMAGE_NAME
+
+COPY --from=builder /src/$solver/bin/ /solvers/$solver/
+
+ARG dbjson
+COPY $dbjson /solvers/solvers.json

@@ -1,0 +1,61 @@
+{
+    "cadical": {
+        "name": "CaDiCaL",
+        "call": "./cadical",
+        "gz": true,
+        "args": ["--default","FILECNF"],
+        "argsproof": ["--default", "FILECNF", "FILEPROOF"]
+    },
+    "expmaple_cm_gcbumponlylrb": {
+        "name": "expMaple_CM_GCBumpOnlyLRB",
+        "call": "./glucose_static",
+        "gz": true,
+        "args": [
+          "FILECNF",
+          "-no-drup"
+        ],
+        "argsproof": [
+          "FILECNF",
+          "FILEPROOF"
+        ]
+    },
+    "maple-lcmchronobt_del": {
+        "name": "MapleLCMChronoBT_DEL",
+        "call": "./glucose_static",
+        "gz": true,
+        "args": [
+          "FILECNF",
+          "-no-drup"
+        ],
+        "argsproof": [
+          "FILECNF",
+          "-drup-file=FILEPROOF"
+        ]
+    },
+    "maple-lcmdiscchronobt-dl-v3": {
+        "name": "MapleLCMDiscChronoBT-DL-v3",
+        "call": "./MapleLCMDistChrBt-DL-v3",
+        "gz": true,
+        "args": [
+          "FILECNF",
+          "-no-drup"
+        ],
+        "argsproof": [
+          "FILECNF",
+          "-drup-file=FILEPROOF"
+        ]
+    },
+    "maple-lcmdistcbtcorefirst": {
+        "name": "MapleLCMdistCBTcoreFirst",
+        "call": "./MapleCBTCoreFirst",
+        "gz": true,
+        "args": [
+          "FILECNF",
+          "-no-drup"
+        ],
+        "argsproof": [
+          "FILECNF",
+          "-drup-file=FILEPROOF"
+        ]
+    }
+}
