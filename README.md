@@ -52,13 +52,9 @@ Alternative installation:
 pip install --user -e .
 ```
 
-Requirements:
-* make
-* [jq](https://stedolan.github.io/jq/)
-
 Usage:
 ```
-satex build [--up-to-date] *:2018
+satex build *:2018
 satex test *:2018
 satex push *:2018
 ```

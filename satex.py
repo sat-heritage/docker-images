@@ -6,11 +6,13 @@ from appdirs import user_cache_dir
 import argparse
 import fnmatch
 import json
+import glob
 import os
 from pathlib import Path
 import platform
 import subprocess
 import sys
+import tempfile
 import time
 from urllib.request import urlopen
 
@@ -38,19 +40,29 @@ IN_REPOSITORY = in_repository()
 ##
 #
 # List of images
+def make_name(reg, cfg, entry, solver):
+    pattern = cfg[entry].get("image_name", "{SOLVER}:{ENTRY}")
+    return pattern.format(ENTRY=entry, SOLVER=solver)
 
-def images_of_registry(reg):
-    return [f"{solver}:{tag}" \
-                for tag in reg for solver in reg[tag]]
+def images_of_registry(reg, cfg):
+    return [make_name(reg, cfg, entry, solver) \
+                for entry in reg for solver in reg[entry]]
 
-def fetch_list(args, opener):
+def fetch_registry(args, opener):
     with opener("index.json") as fp:
         index = json.load(fp)
     reg = {}
-    for tag in sorted(index):
+    cfg = {}
+    for tag in sorted(index, key=lambda v: str(v)):
         with opener(f"{tag}/solvers.json") as fp:
             reg[tag] = json.load(fp)
-    return images_of_registry(reg)
+        with opener(f"{tag}/setup.json") as fp:
+            cfg[tag] = json.load(fp)
+    return reg, cfg
+
+def fetch_list(args, opener):
+    reg, cfg = fetch_registry(args, opener)
+    return images_of_registry(reg, cfg)
 
 def get_local_list(args):
     return fetch_list(args, open)
@@ -89,8 +101,10 @@ def get_list(args):
         images = get_local_list(args)
     else:
         images = get_dist_list(args)
-    return fnmatch.filter(images, args.pattern) if hasattr(args, "pattern") \
-            else images
+    if hasattr(args, "pattern"):
+        images = fnmatch.filter(images, args.pattern)
+    assert len(images), "No matching images!"
+    return images
 
 def print_list(args):
     for image in get_list(args):
@@ -177,8 +191,9 @@ def docker_runs(args, images, docker_args=(), image_args=()):
         else:
             info(" ".join(cmd))
             ret = subprocess.call(cmd)
+            assert ret == 0 or 10 <= ret <= 20, "Solver failed!"
     if not args.pretend:
-        sys.exit(ret)
+        return ret
 
 def run_images(args):
     # automatically detect volume
@@ -192,11 +207,15 @@ def run_images(args):
     image_args = [p.relative_to(root).as_posix() for p in paths]
 
     images = get_list(args)
-    docker_runs(args, images, docker_args, image_args)
+    ret = docker_runs(args, images, docker_args, image_args)
+    if ret is not None:
+        sys.exit(ret)
 
 def runraw_images(args):
     images = get_list(args)
-    docker_runs(args, images, image_args=["--raw"]+args.args)
+    ret = docker_runs(args, images, image_args=["--raw"]+args.args)
+    if ret is not None:
+        sys.exit(ret)
 
 def run_shell(args):
     images = get_list(args)
@@ -223,33 +242,135 @@ def extract(args):
 #
 # repository management
 
+class Repository(object):
+    def __init__(self, args):
+        self.registry, self.setup = fetch_registry(args, open)
+        self.images = {}
+        for entry in self.registry:
+            for solver in self.registry[entry]:
+                name = make_name(self.registry, self.setup, entry, solver)
+                if hasattr(args, "pattern") and \
+                        not fnmatch.fnmatch(name, args.pattern):
+                    continue
+                self.images[name] = {"entry": entry, "solver": solver}
+
+class ImageManager(object):
+    def __init__(self, name, repo):
+        self.repo = repo
+        self.name = name
+        self.entry = repo.images[name]["entry"]
+        self.solver = repo.images[name]["solver"]
+        self.setup = repo.setup[self.entry].copy()
+        self.setup.update(self.setup.get(self.solver, {}))
+        self.registry = repo.registry[self.entry][self.solver]
+
+    @property
+    def solver_name(self):
+        return self.registry["name"]
+
+FROM_UPTODATE = set()
+
+def docker_build(args, docker_argv, tag, root, build_args={}, Dockerfile=None):
+    with open(Dockerfile or os.path.join(root, "Dockerfile")) as fp:
+        FROMs = [l.split()[1] for l in fp.readlines() \
+                    if l.startswith("FROM") and "{" not in l]
+        for f in FROMs:
+            if f not in FROM_UPTODATE:
+                argv = docker_argv + ["pull", f]
+                info(" ".join(argv))
+                subprocess.check_call(argv)
+                FROM_UPTODATE.add(f)
+
+    argv = docker_argv + ["build", "-t", tag, root]
+    if Dockerfile:
+        argv += ["-f", Dockerfile]
+    for k,v in build_args.items():
+        argv += ["--build-arg", f"{k}={v}"]
+    info(" ".join(argv))
+    subprocess.check_call(argv)
+
 def build_images(args):
-    images = get_list(args)
-    argv = ["make"]
-    if args.up_to_date:
-        argv += ["FROM-update", "base"]
-    argv += [f"{image}.build" for image in images]
-    info(argv)
-    subprocess.check_call(argv)
+    docker_argv = check_docker()
+    repo = Repository(args)
+
+    bases_uptodate = set()
+
+    for name in repo.images:
+        image = ImageManager(name, repo)
+        setup = image.setup
+
+        build_args = {k:v for k,v in setup.items() if \
+                        k not in ["generic_version",
+                                    "builder", "builder_base",
+                                    "image_name"] and isinstance(v, str)}
+        build_args["solver"] = image.solver_name
+        build_args["solver_id"] = image.solver
+        for k in setup:
+            if k in build_args:
+                build_args[k] = build_args[k].format(SOLVER_NAME=image.solver,
+                        SOLVER=image.solver)
+
+        if "builder" in setup: # custom builder
+            docker_build(args, docker_argv, setup["builder_base"],
+                    os.path.join(image.entry, setup["builder"]),
+                    build_args=build_args)
+
+        base = f"base:{setup['base_version']}"
+        if base not in bases_uptodate:
+            docker_build(args, docker_argv, f"{DOCKER_NS}/{base}", base.replace(":", "/"))
+            bases_uptodate.add(base)
+
+        Dockerfile = f"generic/{setup['generic_version']}/Dockerfile"
+        build_args["IMAGE_NAME"] = image.name
+        build_args["BASE"] = f"{DOCKER_NS}/{base}"
+        build_args["BUILDER_BASE"] = setup["builder_base"]
+
+        root = str(image.entry)
+        fd, dbjson = tempfile.mkstemp(".json", "file", root)
+        try:
+            fp = os.fdopen(fd, "w")
+            json.dump({image.solver: image.registry}, fp)
+            fp.close()
+            build_args["dbjson"] = os.path.basename(dbjson)
+
+            docker_build(args, docker_argv, f"{DOCKER_NS}/{image.name}",
+                    root, build_args, Dockerfile=Dockerfile)
+        finally:
+            os.unlink(dbjson)
+
 
 def test_images(args):
     images = get_list(args)
-    argv = ["make"]
-    argv += [f"{image}.test" for image in images]
-    info(argv)
-    subprocess.check_call(argv)
+    docker_args = ["-v", f"{os.path.abspath('tests')}:/data"]
+    for dimacs in glob.glob("tests/*.gz"):
+        info(f"Testing {dimacs}")
+        dimacs = os.path.basename(dimacs)
+        docker_runs(args, images, docker_args, image_args=(dimacs,))
 
-def test_images(args):
-    images = get_list(args)
-    argv = ["make"]
-    argv += [f"{image}.push" for image in images]
-    info(argv)
-    subprocess.check_call(argv)
+def push_images(args):
+    docker_argv = check_docker()
+    for image in get_list(args):
+        argv = docker_argv + ["push", image]
+        info(" ".join(argv))
+        subprocess.check_call(argv)
 
 def mrproper(args):
-    argv = ["make mrproper"]
-    info(argv)
-    subprocess.check_call(argv)
+    docker_argv = check_docker()
+    output = subprocess.check_output(docker_argv + ["images", "-f",
+                                    f"reference={DOCKER_NS}/*",
+                                    "--format", "{{.Repository}}:{{.Tag}}"])
+    todel = set([l.strip() for l in output.decode().split("\n") if l])
+    if args.pattern:
+        images = [f"{DOCKER_NS}/{image}" for image in get_list(args)]
+        todel = todel.intersection(images)
+    if not todel:
+        return
+    argv = docker_argv + ["rmi"] + list(todel)
+    if args.pretend:
+        print(" ".join(argv))
+    else:
+        info(" ".join(argv))
+        sys.exit(subprocess.call(argv))
 
 #
 ##
@@ -259,6 +380,8 @@ def main():
 
     parser.add_argument("--refresh-list", default=False, action="store_true",
             help="Force refresh of the list of images")
+    parser.add_argument("--pretend", "-p", default=False, action="store_true",
+            help="Print Docker commands without executing them")
 
     subparsers = parser.add_subparsers(help="commands")
 
@@ -273,8 +396,6 @@ def main():
     parser_list.set_defaults(func=print_list)
 
     docker_parser = argparse.ArgumentParser(add_help=False)
-    docker_parser.add_argument("--pretend", "-p", default=False, action="store_true",
-            help="Print Docker commands without executing them")
     docker_parser.add_argument("--pull", action="store_true",
             help="Explicitly pull the image")
     docker_parser.add_argument("-v", "--volume", action="append",
@@ -312,22 +433,22 @@ def main():
         p = subparsers.add_parser("build",
                 help=f"Build {DOCKER_NS} Docker images",
                 parents=[spec_parser])
-        p.add_argument("--up-to-date", action="store_true",
-                help="Ensure bases are up to date")
         p.set_defaults(func=build_images)
 
         p = subparsers.add_parser("test",
                 help=f"Test {DOCKER_NS} Docker images",
-                parents=[spec_parser])
+                parents=[spec_parser, docker_parser])
         p.set_defaults(func=test_images)
 
         p = subparsers.add_parser("push",
                 help=f"Push {DOCKER_NS} Docker images",
                 parents=[spec_parser])
-        p.set_defaults(func=test_images)
+        p.set_defaults(func=push_images)
 
         p = subparsers.add_parser("mrproper",
-                help="Remove all {DOCKER_NS} Docker images")
+                help=f"Remove all {DOCKER_NS} Docker images")
+        p.add_argument("pattern", default=None, nargs="?",
+                help="Pattern for filtering images")
         p.set_defaults(func=mrproper)
 
     args = parser.parse_args()
