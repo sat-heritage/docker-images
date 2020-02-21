@@ -429,6 +429,12 @@ def main():
     p.add_argument("output_dir", help="Output directory")
     p.set_defaults(func=extract)
 
+    p = subparsers.add_parser("mrproper",
+            help=f"Remove all {DOCKER_NS} Docker images")
+    p.add_argument("pattern", default=None, nargs="?",
+            help="Pattern for filtering images")
+    p.set_defaults(func=mrproper)
+
     if IN_REPOSITORY:
         p = subparsers.add_parser("build",
                 help=f"Build {DOCKER_NS} Docker images",
@@ -444,12 +450,6 @@ def main():
                 help=f"Push {DOCKER_NS} Docker images",
                 parents=[spec_parser])
         p.set_defaults(func=push_images)
-
-        p = subparsers.add_parser("mrproper",
-                help=f"Remove all {DOCKER_NS} Docker images")
-        p.add_argument("pattern", default=None, nargs="?",
-                help="Pattern for filtering images")
-        p.set_defaults(func=mrproper)
 
     args = parser.parse_args()
     if not hasattr(args, "func"):
