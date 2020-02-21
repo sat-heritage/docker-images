@@ -2,6 +2,8 @@
 
 [![PyPI version](https://badge.fury.io/py/satex.svg)](https://badge.fury.io/py/satex)
 
+[Docker HUB](https://hub.docker.com/u/satex)
+
 ## Usage
 
 Requirements:
@@ -14,7 +16,7 @@ docker run --rm -v $PWD:/data satex/<tool>:<year> <DIMACS> [<PROOF>]
 ## `satex` Python script
 
 ```
-pip install -U satex
+pip install -U satex     # you may have to use pip3
 ```
 
 ### List images
