@@ -1,0 +1,74 @@
+{
+  "sat0": {
+    "name": "sat0",
+    "call": "sat0",
+    "gz": false,
+    "args": [
+      "--satex", "FILECNF"
+    ]
+  },
+  "sat0w": {
+    "name": "sat0w",
+    "call": "sat0w",
+    "gz": false,
+    "args": [
+      "--satex", "FILECNF"
+    ]
+  },
+  "sat8": {
+    "name": "sat8",
+    "call": "sat8",
+    "gz": false,
+    "args": [
+      "--satex", "FILECNF"
+    ]
+  },
+  "sat9": {
+    "name": "sat9",
+    "call": "sat9",
+    "gz": false,
+    "args": [
+      "--satex", "FILECNF"
+    ]
+  },
+  "sat10": {
+    "name": "sat10",
+    "call": "sat10",
+    "gz": false,
+    "args": [
+      "--satex", "FILECNF"
+    ]
+  },
+  "sat11": {
+    "name": "sat11",
+    "call": "sat11",
+    "gz": false,
+    "args": [
+      "--satex", "FILECNF"
+    ]
+  },
+  "sat11k": {
+    "name": "sat11k",
+    "call": "sat11k",
+    "gz": false,
+    "args": [
+      "--satex", "FILECNF"
+    ]
+  },
+  "sat12": {
+    "name": "sat12",
+    "call": "sat12",
+    "gz": false,
+    "args": [
+      "--satex", "FILECNF"
+    ]
+  },
+  "sat13": {
+    "name": "sat13",
+    "call": "sat13",
+    "gz": false,
+    "args": [
+      "--satex", "FILECNF"
+    ]
+  }
+}
