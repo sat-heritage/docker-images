@@ -3,7 +3,7 @@
 from setuptools import setup
 
 setup(name="satex",
-    version = "0.90",
+    version = "0.91",
     author = "Loïc Paulevé",
     author_email = "loic.pauleve@labri.fr",
     url = "https://github.com/sat-heritage/docker-images",
