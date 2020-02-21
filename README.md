@@ -7,7 +7,7 @@
 ## Usage
 
 Requirements:
-* [docker](https://docker.com)
+* [Docker](https://docker.com)
 
 ```
 docker run --rm -v $PWD:/data satex/<tool>:<year> <DIMACS> [<PROOF>]
