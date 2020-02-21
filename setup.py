@@ -3,11 +3,11 @@
 from setuptools import setup
 
 setup(name="satex",
-    version = "0.2",
+    version = "0.3",
     author = "Loïc Paulevé",
     author_email = "loic.pauleve@labri.fr",
-    url = "https://github.com/lorensi/satex",
-    description = "Helper script to run SATEX docker images",
+    url = "https://github.com/sat-heritage/docker-images",
+    description = "Helper script for managing SAT Heritage docker images",
     py_modules = ["satex"],
     install_requires = ["appdirs"],
     entry_points = {

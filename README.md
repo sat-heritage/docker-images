@@ -1,3 +1,7 @@
+# SAT Heritage - Docker images
+
+[![PyPI version](https://badge.fury.io/py/satex.svg)](https://badge.fury.io/py/satex)
+
 ## Usage
 
 Requirements:

@@ -15,7 +15,7 @@ import time
 from urllib.request import urlopen
 
 DOCKER_NS = "satex"
-REGISTRY_BASEURL = "https://raw.githubusercontent.com/sat-heritage/docker-images/master"
+REGISTRY_BASEURL = "https://raw.githubusercontent.com/sat-heritage/docker-images/master/"
 
 cache_validity = 3600*4
 cache_dir = user_cache_dir("satex", "satex")
