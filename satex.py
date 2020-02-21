@@ -305,7 +305,7 @@ def build_images(args):
         build_args["solver_id"] = image.solver
         for k in setup:
             if k in build_args:
-                build_args[k] = build_args[k].format(SOLVER_NAME=image.solver,
+                build_args[k] = build_args[k].format(SOLVER_NAME=image.solver_name,
                         SOLVER=image.solver)
 
         if "builder" in setup: # custom builder
