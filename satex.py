@@ -350,7 +350,7 @@ def test_images(args):
 def push_images(args):
     docker_argv = check_docker()
     for image in get_list(args):
-        argv = docker_argv + ["push", image]
+        argv = docker_argv + ["push", f"{DOCKER_NS}/{image}"]
         info(" ".join(argv))
         subprocess.check_call(argv)
 
