@@ -1,7 +1,5 @@
 #!/usr/bin/env python
 
-from __future__ import print_function
-
 from appdirs import user_cache_dir
 import argparse
 import fnmatch
