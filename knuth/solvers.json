@@ -47,14 +47,6 @@
       "--satex", "FILECNF"
     ]
   },
-  "sat11k": {
-    "name": "sat11k",
-    "call": "sat11k",
-    "gz": false,
-    "args": [
-      "--satex", "FILECNF"
-    ]
-  },
   "sat12": {
     "name": "sat12",
     "call": "sat12",
