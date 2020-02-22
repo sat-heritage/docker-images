@@ -1,0 +1,219 @@
+{
+   "berkmin": {
+      "name": "berkmin",
+      "call": "./berkmin",
+      "gz": false,
+      "args": [
+         "FILECNF"
+      ],
+      "comment":"Warning, this version had an identifed (simple) bug. See http://www.satcompetition.org/2002/berkmin.html"
+   },  
+   "2clseq":{
+      "name": "2clseq",
+      "call": "./2clseq",
+      "gz": false,
+      "args": [
+         "FILECNF"
+      ]
+   },
+   "blindsat":{
+      "name": "blindsat",
+      "call": "./blindsat",
+      "gz": false,
+      "args": [
+         "FILECNF"
+      ]
+   },
+   "dlmsat1":{
+      "name": "dlmsat1",
+      "call": "./dlmsat1",
+      "gz": false,
+      "args": [
+         "FILECNF"
+      ]
+   },
+   "dlmsat2":{
+      "name": "dlmsat2",
+      "call": "./dlmsat2",
+      "gz": false,
+      "args": [
+         "FILECNF"
+      ]
+   },
+   "dlmsat3":{
+      "name": "dlmsat3",
+      "call": "./dlmsat3",
+      "gz": false,
+      "args": [
+         "FILECNF"
+      ]
+   },
+   "ga":{
+      "name": "ga",
+      "call": "./ga",
+      "gz": false,
+      "args": [
+         "FILECNF"
+      ]
+   },
+   "limmat":{
+      "name": "limmat",
+      "call": "./limmat",
+      "gz": false,
+      "args": [
+         "FILECNF"
+      ]
+   },
+   "lsat":{
+      "name": "lsat",
+      "call": "./lsat",
+      "gz": false,
+      "args": [
+         "FILECNF"
+      ]
+   },
+   "marchi":{
+      "name": "marchI",
+      "call": "./marchI",
+      "gz": false,
+      "args": [
+         "FILECNF"
+      ]
+   },
+   "marchi-hc":{
+      "name": "marchI-hc",
+      "call": "./marchI-hc",
+      "gz": false,
+      "args": [
+         "FILECNF"
+      ]
+   },
+   "marchii":{
+      "name": "marchII",
+      "call": "./marchII",
+      "gz": false,
+      "args": [
+         "FILECNF"
+      ]
+   },
+   "marchii-hc":{
+      "name": "marchII-hc",
+      "call": "./marchII-hc",
+      "gz": false,
+      "args": [
+         "FILECNF"
+      ]
+   },
+   "marchiise":{
+      "name": "marchIIse",
+      "call": "./marchIIse",
+      "gz": false,
+      "args": [
+         "FILECNF"
+      ]
+   },
+   "marchiise-hc":{
+      "name": "marchIIse-hc",
+      "call": "./marchIIse-hc",
+      "gz": false,
+      "args": [
+         "FILECNF"
+      ]
+   },
+   "marchise":{
+      "name": "marchIse",
+      "call": "./marchIse",
+      "gz": false,
+      "args": [
+         "FILECNF"
+      ]
+   },
+   "modoc":{
+      "name": "modoc",
+      "call": "./modoc",
+      "gz": false,
+      "args": [
+         "FILECNF"
+      ]
+   },
+   "oksolver":{
+      "name": "oksolver",
+      "call": "./oksolver",
+      "gz": false,
+      "args": [
+         "FILECNF"
+      ]
+   },
+   "partsat":{
+      "name": "partsat",
+      "call": "./partsat",
+      "gz": false,
+      "args": [
+         "FILECNF"
+      ]
+   },
+   "rb2cl":{
+      "name": "rb2cl",
+      "call": "./rb2cl",
+      "gz": false,
+      "args": [
+         "FILECNF"
+      ]
+   },
+   "sato":{
+      "name": "sato",
+      "call": "./sato",
+      "gz": false,
+      "args": [
+         "FILECNF"
+      ]
+   },
+   "saturn":{
+      "name": "saturn",
+      "call": "./saturn",
+      "gz": false,
+      "args": [
+         "FILECNF"
+      ]
+   },
+   "simo":{
+      "name": "simo",
+      "call": "./simo",
+      "gz": false,
+      "args": [
+         "FILECNF"
+      ]
+   },
+   "unitwalk":{
+      "name": "unitwalk",
+      "call": "./unitwalk",
+      "gz": false,
+      "args": [
+         "FILECNF"
+      ]
+   },
+   "usat05":{
+      "name": "usat05",
+      "call": "./usat05",
+      "gz": false,
+      "args": [
+         "FILECNF"
+      ]
+   },
+   "usat10":{
+      "name": "usat10",
+      "call": "./usat10",
+      "gz": false,
+      "args": [
+         "FILECNF"
+      ]
+   },
+   "zchaff":{
+      "name": "zchaff",
+      "call": "./zchaff",
+      "gz": false,
+      "args": [
+         "FILECNF"
+      ]
+   }
+}
