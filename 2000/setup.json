@@ -7,6 +7,10 @@
         "generic_version": "2000",
         "download_url": "https://github.com/sat-heritage/docker-images/releases/download/packages/2000-{SOLVER_NAME}.src.tgz"
     },
+    "dr" : {
+        "generic_version":"2000",
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/packages/2000-bdrdp.src.tgz"
+    },
     "nsat": {
         "RDEPENDS": "libstdc++2.9-glibc2.1"
     },
