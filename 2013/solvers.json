@@ -1,0 +1,15 @@
+{
+    "glucose": {
+        "call": "./glucose",
+        "name": "glucose",
+        "gz": true,
+        "args": [
+          "FILECNF"
+        ],
+        "argsproof": [
+          "FILECNF",
+          "-certified",
+          "-certified-output=FILEPROOF"
+        ]
+    }
+}
