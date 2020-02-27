@@ -137,7 +137,7 @@ being a JSON object with a subset of the following keys.
 | archive_baseurl | Prefix of the URL to download solver sources <br/>(Used by generic `v1`) |
 | download_url | Python format string for the URL <br/>(Used by generic `binary-v1`, `2000`) |
 
-Python format string can use the following variables:
+Python format strings can use the following variables:
 * `SOLVER`: solver identify
 * `SOLVER_NAME`: solver name (specified in `solvers.json`)
 
