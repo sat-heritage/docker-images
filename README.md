@@ -135,7 +135,11 @@ being a JSON object with a subset of the following keys.
 | builder | If specified, gives the path for the Docker recipe for building the solver. It should contain at least a `Dockerfile`<br/>(optional) |
 | image_name | Python format string with ENTRY being the set name and SOLVER the solver identifier<br/>Default: `"{SOLVER}:{ENTRY}"` |
 | archive_baseurl | Prefix of the URL to download solver sources <br/>(Used by generic `v1`) |
-| download_url | Pattern of the URL  <br/>(Used by generic `binary-v1`, `2000`) |
+| download_url | Python format string for the URL <br/>(Used by generic `binary-v1`, `2000`) |
+
+Python format string can use the following variables:
+* `SOLVER`: solver identify
+* `SOLVER_NAME`: solver name (specified in `solvers.json`)
 
 
 Example:
