@@ -19,6 +19,19 @@
         "args": ["--default","FILECNF"],
         "argsproof": ["--default", "FILECNF", "FILEPROOF"]
     },
+    "candy": {
+        "name": "Candy",
+        "call": "./candy",
+        "gz": true,
+        "args": [
+          "FILECNF",
+          "-model"
+        ],
+        "argsproof": [
+          "FILECNF",
+          "-certified-output=FILEPROOF"
+        ]
+    },
     "expmaple_cm_gcbumponlylrb": {
         "name": "expMaple_CM_GCBumpOnlyLRB",
         "call": "./glucose_static",
