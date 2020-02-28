@@ -60,6 +60,21 @@
           "-vbyte"
         ]
     },
+    "mldchronobt_gcbump": {
+        "name": "MLDChronoBT_GCBump",
+        "call": "./glucose_static",
+        "gz": true,
+        "args": [
+          "FILECNF",
+          "-no-drup",
+          "-verb=1"
+        ],
+        "argsproof": [
+          "FILECNF",
+          "-drup-file=FILEPROOF"
+        ]
+    },
+
     "maple-lcmchronobt_del": {
         "name": "MapleLCMChronoBT_DEL",
         "call": "./glucose_static",
