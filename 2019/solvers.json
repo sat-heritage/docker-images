@@ -1,4 +1,17 @@
 {
+    "cominisatps_pulsar_drup": {
+        "name": "COMiniSatPS_Pulsar_drup",
+        "call": "./minisat_static",
+        "gz": true,
+        "args": [
+          "FILECNF"
+        ],
+        "argsproof": [
+          "FILECNF",
+          "-drup",
+          "-drup-file=FILEPROOF"
+        ]
+    },
     "cadical": {
         "name": "CaDiCaL",
         "call": "./cadical",
@@ -17,6 +30,21 @@
         "argsproof": [
           "FILECNF",
           "FILEPROOF"
+        ]
+    },
+    "glucose-4.2.1": {
+        "name": "glucose-4.2.1",
+        "call": "./glucose",
+        "gz": true,
+        "args": [
+          "FILECNF",
+          "-model"
+        ],
+        "argsproof": [
+          "FILECNF",
+          "-certified",
+          "-certified-output=FILEPROOF",
+          "-vbyte"
         ]
     },
     "maple-lcmchronobt_del": {
