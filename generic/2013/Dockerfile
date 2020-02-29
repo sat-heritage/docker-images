@@ -13,7 +13,7 @@ WORKDIR /src
 ARG solver
 ARG download_url
 
-RUN curl -L $download_url | tar -xvf - -C /src && unzip code.zip
+RUN curl -L $download_url | tar -xvf - -C /src code.zip && unzip code.zip
 
 RUN test -f $solver.pre_build.sh && sh $solver.pre_build.sh || true
 
