@@ -131,8 +131,8 @@ being a JSON object with a subset of the following keys.
 | --- | --- |
 | base_version | Version (tag) of the base image for running the solver available in the `base/` directory |
 | dist_version | Name of the generic recipe for builder the solver image available in the `generic/dist-{dist_version}` directory<br>Default: `"v1"` |
-| builder | Path to the Docker recipe for building the solver. If it is not starting with `generic/`, the path is relative to the set directory. The path should contain at least a `Dockerfile`. The builder recipe should install the solver binaries into `/dist`. |
-| builder_base | Image to inherit from for compiling the solver |
+| builder | Path to the Docker recipe for compiling the solver. If it is not starting with `generic/`, the path is relative to the set directory. The path should contain at least a `Dockerfile`. The builder recipe should install the solver binaries into `/dist`. |
+| builder_base | Image to inherit from for compiling the solver (`builder` recipe) |
 | image_name | Python format string with ENTRY being the set name and SOLVER the solver identifier<br/>Default: `"{SOLVER}:{ENTRY}"` |
 | download_url | Python format string for the downloading the solver source/binary |
 
