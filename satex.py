@@ -28,7 +28,7 @@ def error(msg):
     sys.exit(1)
 
 def info(msg):
-    print("+ %s" % msg, file=sys.stderr)
+    print("\033[92m+ %s\033[0m" % msg, file=sys.stderr)
 
 def in_repository():
     return os.path.isfile("index.json")
@@ -268,17 +268,19 @@ class ImageManager(object):
 
 FROM_UPTODATE = set()
 
+def docker_uptodate_image(args, docker_argv, image):
+    if image not in FROM_UPTODATE:
+        argv = docker_argv + ["pull", image]
+        info(" ".join(argv))
+        subprocess.check_call(argv)
+        FROM_UPTODATE.add(image)
+
 def docker_build(args, docker_argv, tag, root, build_args={}, Dockerfile=None):
     with open(Dockerfile or os.path.join(root, "Dockerfile")) as fp:
         FROMs = [l.split()[1] for l in fp.readlines() \
                     if l.startswith("FROM") and "{" not in l]
         for f in FROMs:
-            if f not in FROM_UPTODATE:
-                argv = docker_argv + ["pull", f]
-                info(" ".join(argv))
-                subprocess.check_call(argv)
-                FROM_UPTODATE.add(f)
-
+            docker_uptodate_image(args, docker_argv, f)
     argv = docker_argv + ["build", "-t", tag, root]
     if Dockerfile:
         argv += ["-f", Dockerfile]
@@ -297,6 +299,13 @@ def build_images(args):
         image = ImageManager(name, repo)
         setup = image.setup
 
+        fmtvars = {
+            "SOLVER": image.solver,
+            "SOLVER_NAME": image.solver_name,
+        }
+
+        root = str(image.entry)
+
         build_args = {k:v for k,v in setup.items() if \
                         k not in ["generic_version",
                                     "builder", "builder_base",
@@ -305,34 +314,45 @@ def build_images(args):
         build_args["solver_id"] = image.solver
         for k in setup:
             if k in build_args:
-                build_args[k] = build_args[k].format(SOLVER_NAME=image.solver_name,
-                        SOLVER=image.solver)
+                build_args[k] = build_args[k].format(**fmtvars)
 
-        if "builder" in setup: # custom builder
-            docker_build(args, docker_argv, setup["builder_base"],
-                    os.path.join(image.entry, setup["builder"]),
-                    build_args=build_args)
+        builder_path = setup["builder"]
+        if not builder_path.startswith("generic/"):
+            builder_path = os.path.join(image.entry, builder_path)
+        builder_Dockerfile = os.path.join(builder_path, "Dockerfile")
+        builder_target = f"{DOCKER_NS}/builder-{image.name}"
+
+        if "builder_base" in setup:
+            build_args["BUILDER_BASE"] = setup["builder_base"]
+            docker_uptodate_image(args, docker_argv, setup["builder_base"])
+
+        docker_build(args, docker_argv, builder_target, root,
+                build_args=build_args, Dockerfile=builder_Dockerfile)
 
         base = f"base:{setup['base_version']}"
         if base not in bases_uptodate:
             docker_build(args, docker_argv, f"{DOCKER_NS}/{base}", base.replace(":", "/"))
             bases_uptodate.add(base)
 
-        Dockerfile = f"generic/{setup['generic_version']}/Dockerfile"
-        build_args["IMAGE_NAME"] = image.name
-        build_args["BASE"] = f"{DOCKER_NS}/{base}"
-        build_args["BUILDER_BASE"] = setup["builder_base"]
+        dist_version = setup.get("dist_version", "v1")
+        dist_Dockerfile = f"generic/dist-{dist_version}/Dockerfile"
+        dist_args = {
+            "BASE": f"{DOCKER_NS}/{base}",
+            "BUILDER_BASE": builder_target,
+            "IMAGE_NAME": image.name,
+            "solver": build_args["solver"],
+            "solver_id": build_args["solver_id"],
+        }
 
-        root = str(image.entry)
         fd, dbjson = tempfile.mkstemp(".json", "file", root)
         try:
             fp = os.fdopen(fd, "w")
             json.dump({image.solver: image.registry}, fp)
             fp.close()
-            build_args["dbjson"] = os.path.basename(dbjson)
+            dist_args["dbjson"] = os.path.basename(dbjson)
 
             docker_build(args, docker_argv, f"{DOCKER_NS}/{image.name}",
-                    root, build_args, Dockerfile=Dockerfile)
+                    root, dist_args, Dockerfile=dist_Dockerfile)
         finally:
             os.unlink(dbjson)
 
@@ -357,12 +377,12 @@ def mrproper(args):
     output = subprocess.check_output(docker_argv + ["images", "-f",
                                     f"reference={DOCKER_NS}/*",
                                     "--format", "{{.Repository}}:{{.Tag}}"])
-    todel = set([l.strip() for l in output.decode().split("\n") if l])
+    todel = [l.strip() for l in output.decode().split("\n") if l]
     if args.pattern:
-        images = [f"{DOCKER_NS}/{image}" for image in get_list(args)]
-        todel = todel.intersection(images)
+        todel = fnmatch.filter(todel, f"{DOCKER_NS}/{args.pattern}")
     if not todel:
         return
+    todel.sort()
     argv = docker_argv + ["rmi"] + list(todel)
     if args.pretend:
         print(" ".join(argv))

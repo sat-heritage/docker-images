@@ -1,6 +1,6 @@
 {
     "base_version": "v1",
-    "generic_version": "v1",
+    "builder": "generic/starexec",
     "builder_base": "debian:9.1",
-    "archive_baseurl": "https://baldur.iti.kit.edu/sat-competition-2017/solvers/main/"
+    "download_url": "https://baldur.iti.kit.edu/sat-competition-2017/solvers/main/{SOLVER_NAME}.zip"
 }

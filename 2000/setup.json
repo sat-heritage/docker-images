@@ -1,14 +1,14 @@
 {
     "base_version": "potato",
-    "generic_version": "binary-v1",
     "builder_base": "debian/eol:potato",
+    "builder": "generic/binary-v1",
     "download_url": "https://zenodo.org/record/3676454/files/{SOLVER_NAME}?download=1",
     "asat": {
-        "generic_version": "2000",
+        "builder": "generic/2000",
         "download_url": "https://github.com/sat-heritage/docker-images/releases/download/packages/2000-{SOLVER_NAME}.src.tgz"
     },
     "dr" : {
-        "generic_version":"2000",
+        "builder": "generic/2000",
         "download_url": "https://github.com/sat-heritage/docker-images/releases/download/packages/2000-bdrdp.src.tgz"
     },
     "nsat": {

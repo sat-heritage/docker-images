@@ -1,6 +1,6 @@
 {
     "base_version": "v1",
-    "generic_version": "v1",
+    "builder": "generic/starexec",
     "builder_base": "debian:9.5-slim",
-    "archive_baseurl": "http://sat2018.forsyte.tuwien.ac.at/solvers/main_and_glucose_hack/"
+    "download_url": "http://sat2018.forsyte.tuwien.ac.at/solvers/main_and_glucose_hack/{SOLVER_NAME}.zip"
 }

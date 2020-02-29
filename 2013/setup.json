@@ -1,6 +1,6 @@
 {
   "base_version":"v1",
-  "generic_version":"2013",
+  "builder":"generic/2013",
   "builder_base":"debian:8.6",
   "balancedz": {
     "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/874"

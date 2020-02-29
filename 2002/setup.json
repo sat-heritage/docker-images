@@ -1,6 +1,6 @@
 {
     "base_version": "v1",
-    "generic_version": "binary-v1",
+    "builder": "generic/binary-v1",
     "builder_base": "debian:8.6",
     "download_url": "https://zenodo.org/record/3679069/files/{SOLVER_NAME}?download=1"
 }

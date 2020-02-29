@@ -1,6 +1,6 @@
 {
     "base_version": "v1",
-    "generic_version": "v1",
+    "builder": "generic/starexec",
     "builder_base": "debian:10.1-slim",
-    "archive_baseurl": "http://sat-race-2019.ciirc.cvut.cz/solvers/"
+    "download_url": "http://sat-race-2019.ciirc.cvut.cz/solvers/{SOLVER_NAME}.zip"
 }

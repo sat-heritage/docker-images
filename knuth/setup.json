@@ -1,7 +1,5 @@
 {
     "image_name": "{ENTRY}:{SOLVER}",
     "base_version": "v1",
-    "generic_version": "custom-builder-v1",
-    "builder_base": "satex/knuth-builder",
     "builder": "."
 }

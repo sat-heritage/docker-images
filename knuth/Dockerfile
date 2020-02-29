@@ -18,3 +18,5 @@ ADD https://www-cs-faculty.stanford.edu/~knuth/programs/${solver}.w /src/${solve
 
 RUN ctangle ${solver}.w
 RUN gcc -o bin/${solver}.out ${solver}.c -I/usr/local/sgb/include -L/usr/local/lib -static -lgb
+
+RUN mv /src/${solver}/bin /dist

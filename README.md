@@ -130,12 +130,11 @@ being a JSON object with a subset of the following keys.
 | key | description |
 | --- | --- |
 | base_version | Version (tag) of the base image for running the solver available in the `base/` directory |
-| generic_version | Name of the generic recipe for building the solver available in the `generic/` directory |
+| dist_version | Name of the generic recipe for builder the solver image available in the `generic/dist-{dist_version}` directory<br>Default: `"v1"` |
+| builder | Path to the Docker recipe for building the solver. If it is not starting with `generic/`, the path is relative to the set directory. The path should contain at least a `Dockerfile`. The builder recipe should install the solver binaries into `/dist`. |
 | builder_base | Image to inherit from for compiling the solver |
-| builder | If specified, gives the path for the Docker recipe for building the solver. It should contain at least a `Dockerfile`<br/>(optional) |
 | image_name | Python format string with ENTRY being the set name and SOLVER the solver identifier<br/>Default: `"{SOLVER}:{ENTRY}"` |
-| archive_baseurl | Prefix of the URL to download solver sources <br/>(Used by generic `v1`) |
-| download_url | Python format string for the URL <br/>(Used by generic `binary-v1`, `2000`) |
+| download_url | Python format string for the downloading the solver source/binary |
 
 Python format strings can use the following variables:
 * `SOLVER`: solver identifier
@@ -146,11 +145,11 @@ Example:
 ```json
 {
     "base_version": "potato",
-    "generic_version": "binary-v1",
+    "builder": "generic/binary-v1",
     "builder_base": "debian/eol:potato",
     "download_url": "https://zenodo.org/record/3676454/files/{SOLVER_NAME}?download=1",
     "asat": {
-        "generic_version": "2000",
+        "builder": "generic/2000",
         "download_url": "https://github.com/sat-heritage/docker-images/releases/download/packages/2000-{SOLVER_NAME}.src.tgz"
     }
 }
