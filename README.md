@@ -15,9 +15,16 @@ docker run --rm -v $PWD:/data satex/<tool>:<year> <DIMACS> [<PROOF>]
 
 ## `satex` Python script
 
+Python >= 3 is required.
+
 ```
 pip install -U satex     # you may have to use pip3
 ```
+
+In case `satex` commands fails with `command not found` error, try doing `export
+PATH=$HOME/.local/bin:$PATH` beforehand.
+If it works, add this fixture within your `~/.bashrc` or `~/.profile` file.
+See https://packaging.python.org/tutorials/installing-packages/#installing-to-the-user-site
 
 ### List images
 ```
