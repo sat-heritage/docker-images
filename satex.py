@@ -149,7 +149,7 @@ def check_docker():
     if not check_cmd(["docker", "version"]):
         if not on_linux:
             error("""Error: Docker not found.
-If you are using Docker Toolbox, make sure you are running 'colomoto-docker'
+If you are using Docker Toolbox, make sure you are running 'satex'
 within the 'Docker quickstart Terminal'.""")
         else:
             error("Error: Docker not found.")
