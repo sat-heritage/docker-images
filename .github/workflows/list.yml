@@ -1,0 +1,37 @@
+name: Update list
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - run: tar cvzf list.tgz index.json */setup.json */solvers.json
+    - name: upload
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        set -x
+        INPUT_FILE=list.tgz
+        INPUT_TYPE=application/octet-stream
+        AUTH_HEADER="Authorization: token ${GITHUB_TOKEN}";
+        CONTENT_LENGTH_HEADER="Content-Length: $(stat -c%s "$INPUT_FILE")";
+        CONTENT_TYPE_HEADER="Content-Type: $INPUT_TYPE";
+        RELEASE_ID=24108259
+        FILENAME=${INPUT_FILE}
+        ASSETS_URL=https://api.github.com/repos/${GITHUB_REPOSITORY}/releases/${RELEASE_ID}/assets
+        ASSET_URL=$(curl -sSL -H "${AUTH_HEADER}" ${ASSETS_URL} | jq -r ".[]|select(.name==\"${INPUT_FILE}\")|.url")
+        curl -sSL -XDELETE -H "${AUTH_HEADER}" "${ASSET_URL}"
+        UPLOAD_URL="https://uploads.github.com/repos/${GITHUB_REPOSITORY}/releases/${RELEASE_ID}/assets?name=${FILENAME}";    
+        curl \
+          -sSL \
+          -XPOST \
+          -H "${AUTH_HEADER}" \
+          -H "${CONTENT_LENGTH_HEADER}" \
+          -H "${CONTENT_TYPE_HEADER}" \
+          --upload-file "$INPUT_FILE" \
+          "${UPLOAD_URL}";
+
