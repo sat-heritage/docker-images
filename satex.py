@@ -393,7 +393,16 @@ def mrproper(args):
 #
 ##
 
-def main():
+def main(redirected=False):
+
+    if IN_REPOSITORY and not redirected and \
+            os.path.abspath(__file__) != os.path.abspath("satex.py"):
+        info(f"using {os.path.abspath('satex.py')}")
+        del sys.modules["satex"]
+        sys.path.insert(0, os.getcwd())
+        from satex import main
+        return main(redirected=True)
+
     parser = argparse.ArgumentParser(prog=sys.argv[0])
 
     parser.add_argument("--refresh-list", default=False, action="store_true",
