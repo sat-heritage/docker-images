@@ -16,7 +16,7 @@ import textwrap
 import time
 from urllib.request import urlopen
 
-__version__ = "0.93-dev"
+__version__ = "0.94-dev"
 
 DOCKER_NS = "satex"
 REGISTRY_URL = "https://github.com/sat-heritage/docker-images/releases/download/list/list.tgz"

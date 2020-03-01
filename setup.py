@@ -5,7 +5,7 @@ import re
 from setuptools import setup
 
 META = {}
-META_FILE = os.path.join(NAME, "satex.py")
+META_FILE = "satex.py"
 with open(META_FILE) as f:
     __data = f.read()
 for key in ["version"]:
