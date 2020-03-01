@@ -11,8 +11,11 @@ import platform
 import subprocess
 import sys
 import tempfile
+import textwrap
 import time
 from urllib.request import urlopen
+
+__version__ = "0.93-dev"
 
 DOCKER_NS = "satex"
 REGISTRY_BASEURL = "https://raw.githubusercontent.com/sat-heritage/docker-images/master/"
@@ -390,6 +393,8 @@ def mrproper(args):
         info(" ".join(argv))
         sys.exit(subprocess.call(argv))
 
+def print_version(args):
+    print(__version__)
 #
 ##
 
@@ -403,7 +408,13 @@ def main(redirected=False):
         from satex import main
         return main(redirected=True)
 
-    parser = argparse.ArgumentParser(prog=sys.argv[0])
+    parser = argparse.ArgumentParser(prog=os.path.basename(sys.argv[0]),
+            description="Helper script for managing SAT Heritage Docker images",
+            formatter_class=argparse.RawDescriptionHelpFormatter,
+            epilog=textwrap.dedent(f"""\
+            GitHub:    https://github.com/sat-heritage/docker-images
+            DockerHub: https://hub.docker.com/u/satex
+            Version:   {__version__}"""))
 
     parser.add_argument("--refresh-list", default=False, action="store_true",
             help="Force refresh of the list of images")
@@ -477,6 +488,10 @@ def main(redirected=False):
                 help=f"Push {DOCKER_NS} Docker images",
                 parents=[spec_parser])
         p.set_defaults(func=push_images)
+
+    subparsers.add_parser("version",
+                help="Print script version")\
+        .set_defaults(func=print_version)
 
     args = parser.parse_args()
     if not hasattr(args, "func"):
