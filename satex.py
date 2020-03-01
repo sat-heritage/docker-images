@@ -10,6 +10,7 @@ from pathlib import Path
 import platform
 import subprocess
 import sys
+import tarfile
 import tempfile
 import textwrap
 import time
@@ -18,11 +19,11 @@ from urllib.request import urlopen
 __version__ = "0.93-dev"
 
 DOCKER_NS = "satex"
-REGISTRY_BASEURL = "https://raw.githubusercontent.com/sat-heritage/docker-images/master/"
+REGISTRY_URL = "https://github.com/sat-heritage/docker-images/releases/download/list/list.tgz"
 
 cache_validity = 3600*4
 cache_dir = user_cache_dir("satex", "satex")
-cache_file = os.path.join(cache_dir, "images.json")
+cache_file = os.path.join(cache_dir, "list.tgz")
 
 on_linux = platform.system() == "Linux"
 
@@ -68,34 +69,32 @@ def fetch_list(args, opener):
 def get_local_list(args):
     return fetch_list(args, open)
 
-def cache_get(args):
+def is_cache_valid(args):
     if args.refresh_list:
-        return
+        return False
     if not os.path.exists(cache_file):
-        return
+        return False
     age = time.time() - os.path.getmtime(cache_file)
     if age > cache_validity:
-        return
-    info(f"using cache {cache_file}")
-    with open(cache_file) as fp:
-        return json.load(fp)
+        return False
+    return True
 
-def cache_list(images):
-    if not os.path.exists(cache_dir):
-        os.makedirs(cache_dir)
-    with open(cache_file, "w") as fp:
-        json.dump(images, fp)
+def refresh_cache(args, force=False):
+    if force or not is_cache_valid(args):
+        os.makedirs(cache_dir, exist_ok=True)
+        info(f"fetching {REGISTRY_URL}")
+        with urlopen(REGISTRY_URL) as orig, \
+                open(cache_file, "wb") as dest:
+            dest.write(orig.read())
 
 def get_dist_list(args):
-    images = cache_get(args)
-    if images:
-        return images
-    def uopen(name):
-        info(f"fetching {name}")
-        return urlopen(f"{REGISTRY_BASEURL}{name}")
-    images = fetch_list(args, uopen)
-    cache_list(images)
-    return images
+    refresh_cache(args)
+    try:
+        with tarfile.open(cache_file, "r") as tar:
+            return fetch_list(args, tar.extractfile)
+    except tarfile.ReadError:
+        refresh_cache(args, force=True)
+        get_dist_list(args)
 
 def get_list(args):
     if IN_REPOSITORY:
