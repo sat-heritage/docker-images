@@ -1,0 +1,528 @@
+{
+    "adaptg2wsat": {
+        "name": "adaptg2wsat",
+        "version": "2007-02-08",
+        "authors": "Chu-Min Li, Wanxia Wei and Harry Zhang",
+        "args": [
+            "FILECNF"
+        ],
+        "call": "./adaptg2wsat",
+        "gz": false,
+        "status": "ok"
+    },
+    "adaptg2wsat-plus": {
+        "name": "adaptg2wsat+",
+        "version": "2007-02-08",
+        "authors": "Wanxia Wei, Chu-Min Li and Harry Zhang",
+        "args": [
+            "FILECNF"
+        ],
+        "call": "./adaptg2wsat+",
+        "gz": false,
+        "status": "unknown"
+    },
+    "adaptg2wsat0": {
+        "name": "adaptg2wsat0",
+        "version": "2007-02-08",
+        "authors": "Chu-Min Li, Wanxia Wei and Harry Zhang",
+        "args": [
+            "FILECNF"
+        ],
+        "call": "./adaptg2wsat0",
+        "gz": false,
+        "status": "unknown"
+    },
+    "adaptg2wsatp": {
+        "name": "adaptg2wsatp",
+        "version": "2007-02-08",
+        "authors": "Chu-Min Li, Wanxia Wei and Harry Zhang",
+        "args": [
+            "FILECNF"
+        ],
+        "call": "./adaptg2wsatp",
+        "gz": false,
+        "status": "unknown"
+    },
+    "adaptnovelty": {
+        "name": "adaptnovelty",
+        "version": "2007-02-08",
+        "authors": "Holger Hoos and Dave Tompkins",
+        "args": [
+            "FILECNF",
+            "RANDOMSEED"
+        ],
+        "call": "./adaptnovelty",
+        "gz": false,
+        "status": "unknown"
+    },
+    "barcelogic": {
+        "name": "barcelogic",
+        "version": "2007-02-08",
+        "authors": "Robert Nieuwenhuis, Albert Oliveras and Tomas Lioret",
+        "args": [
+            "FILECNF"
+        ],
+        "call": "./Barcelogic",
+        "gz": false,
+        "status": "unknown"
+    },
+    "barcelogic_fixed": {
+        "name": "Barcelogic Fixed",
+        "version": "2007-04-13",
+        "authors": "Tomas Lauret and Robert Nieuwenhuis",
+        "args": [
+            "FILECNF"
+        ],
+        "call": "./Barcelogic",
+        "gz": false,
+        "status": "unknown"
+    },
+    "cmusat": {
+        "name": "CMUSAT",
+        "version": "2007-02-08",
+        "authors": "Himanshu Jain and Edmund Clarke",
+        "args": [
+            "FILECNF"
+        ],
+        "call": "./cmusat",
+        "gz": false,
+        "status": "unknown"
+    },
+    "cmusat_base": {
+        "name": "CMUSAT BASE",
+        "version": "2007-02-08",
+        "authors": "Himanshu Jain and Edmund Clarke",
+        "args": [
+            "FILECNF"
+        ],
+        "call": "./cmusat_base",
+        "gz": false,
+        "status": "unknown"
+    },
+    "dewsatz-2007-02-08": {
+        "name": "DEWSATZ",
+        "version": "2007-02-08",
+        "authors": "Anbulagan",
+        "args": [
+            "FILECNF"
+        ],
+        "call": "./dewSatz",
+        "gz": false,
+        "status": "unknown"
+    },
+    "dewsatz-2007-04-26_(fixed)": {
+        "name": "DEWSATZ",
+        "version": "2007-04-26 (fixed)",
+        "authors": "Anbulagan",
+        "args": [
+            "FILECNF"
+        ],
+        "call": "./dewSatz_fixed",
+        "gz": false,
+        "status": "unknown"
+    },
+    "dewsatz_1a": {
+        "name": "DEWSATZ 1A",
+        "version": "2007-02-08",
+        "authors": "Anbulagan",
+        "args": [
+            "FILECNF"
+        ],
+        "call": "./dewSatz_1a",
+        "gz": false,
+        "status": "unknown"
+    },
+    "fh": {
+        "name": "FH",
+        "version": "2007-02-08",
+        "authors": "Wanxia Wei, Harry Zhang and Chu-Min Li",
+        "args": [
+            "FILECNF"
+        ],
+        "call": "./FH",
+        "gz": false,
+        "status": "unknown"
+    },
+    "gnovelty-plus": {
+        "name": "gnovelty+",
+        "version": "2007-02-08",
+        "authors": "Duc Nghia Pham and Charles Gretton",
+        "args": [
+            "FILECNF"
+        ],
+        "call": "./gnovelty+",
+        "gz": false,
+        "status": "unknown"
+    },
+    "hybrid1": {
+        "name": "Hybrid1",
+        "version": "2007-02-08",
+        "authors": "Wanxia Wei, Chu-Min Li and Harry Zhang",
+        "args": [
+            "FILECNF"
+        ],
+        "call": "./Hybrid1",
+        "gz": false,
+        "status": "unknown"
+    },
+    "kcnfs-2004": {
+        "name": "KCNFS",
+        "version": "2004",
+        "authors": "Gilles Dequen and Olivier Dubois",
+        "args": [
+            "FILECNF"
+        ],
+        "call": "./kcnfs-2004",
+        "gz": false,
+        "status": "unknown"
+    },
+    "kcnfs-2006": {
+        "name": "KCNFS",
+        "version": "2006",
+        "authors": "Gilles Dequen and Olivier Dubois",
+        "args": [
+            "FILECNF"
+        ],
+        "call": "./kcnfs-2006",
+        "gz": false,
+        "status": "unknown"
+    },
+    "kcnfs-smp": {
+        "name": "KCNFS",
+        "version": "SMP",
+        "authors": "Gilles Dequen and Olivier Dubois",
+        "args": [
+            "FILECNF"
+        ],
+        "call": "./kcnfs-smp",
+        "gz": false,
+        "status": "unknown"
+    },
+    "march_ks": {
+        "name": "March KS",
+        "version": "2007-02-08",
+        "authors": "Marijn Heule and Hans van Maaren",
+        "args": [
+            "FILECNF"
+        ],
+        "call": "./march_ks",
+        "gz": false,
+        "status": "unknown"
+    },
+    "minimarch-2007-02-08": {
+        "name": "minimarch",
+        "version": "2007-02-08",
+        "authors": "Siert Wieringa, Hans van Maaren and Marijn Heule",
+        "args": [
+            "FILECNF"
+        ],
+        "call": "./minimarch",
+        "gz": false,
+        "status": "unknown"
+    },
+    "minimarch-2007-04-26_(fixed)": {
+        "name": "minimarch",
+        "version": "2007-04-26 (fixed)",
+        "authors": "Siert Wieringa, Hans van Maaren and Marijn Heule",
+        "args": [
+            "FILECNF"
+        ],
+        "call": "./minimarch_fixed",
+        "gz": false,
+        "status": "unknown"
+    },
+    "minisat-sat_2007": {
+        "name": "minisat",
+        "version": "SAT 2007",
+        "authors": "Niklas Sorensson and Niklas Een",
+        "args": [
+            "FILECNF"
+        ],
+        "call": "./minisat_noassertions",
+        "gz": false,
+        "status": "unknown"
+    },
+    "minisat-sat_2007_(with_assertions)": {
+        "name": "minisat",
+        "version": "SAT 2007 (with assertions)",
+        "authors": "Niklas Sorensson and Niklas Een",
+        "args": [
+            "FILECNF"
+        ],
+        "call": "./minisat",
+        "gz": false,
+        "status": "unknown"
+    },
+    "miraxt-v1": {
+        "name": "MiraXT",
+        "version": "v1",
+        "authors": "Tobias Schubert, Matthew Lewis, Natalia Kalinnik and Bernd Becker",
+        "args": [
+            "FILECNF"
+        ],
+        "call": "./MiraXTv1_dyn",
+        "gz": false,
+        "status": "unknown"
+    },
+    "miraxt-v2": {
+        "name": "MiraXT",
+        "version": "v2",
+        "authors": "Tobias Schubert, Matthew Lewis, Natalia Kalinnik and Bernd Becker",
+        "args": [
+            "FILECNF"
+        ],
+        "call": "./MiraXTv2_dyn",
+        "gz": false,
+        "status": "unknown"
+    },
+    "miraxt-v3": {
+        "name": "MiraXT",
+        "version": "v3",
+        "authors": "Tobias Schubert, Matthew Lewis, Natalia Kalinnik and Bernd Becker",
+        "args": [
+            "FILECNF"
+        ],
+        "call": "./MiraXTv3_dyn",
+        "gz": false,
+        "status": "unknown"
+    },
+    "mmisat": {
+        "name": "Mmisat",
+        "version": "2007-02-08",
+        "authors": "Ivan Monahov",
+        "args": [
+            "FILECNF"
+        ],
+        "call": "./mmisat",
+        "gz": false,
+        "status": "unknown"
+    },
+    "mxc": {
+        "name": "MXC",
+        "version": "2007-02-08",
+        "authors": "David R. Bregman and David G. Mitchell",
+        "args": [
+            "FILECNF"
+        ],
+        "call": "./mxc",
+        "gz": false,
+        "status": "unknown"
+    },
+    "ornithorynque": {
+        "name": "ornithorynque",
+        "version": "0.1 alpha",
+        "authors": "Olivier ROUSSEL",
+        "args": [
+            "FILECNF"
+        ],
+        "call": "./ornithorynque",
+        "gz": false,
+        "status": "unknown"
+    },
+    "picosat": {
+        "name": "picosat",
+        "version": "535",
+        "authors": "Armin Biere",
+        "args": [
+            "FILECNF"
+        ],
+        "call": "./picosat",
+        "gz": false,
+        "status": "unknown"
+    },
+    "ranov": {
+        "name": "ranov",
+        "version": "2007-02-08",
+        "authors": "Duc Nghia Pham and Anbulagan",
+        "args": [
+            "FILECNF"
+        ],
+        "call": "./ranov",
+        "gz": false,
+        "status": "unknown"
+    },
+    "rsat": {
+        "name": "Rsat",
+        "version": "2007-02-08",
+        "authors": "Knot Pipatsrisawat and Adnan Darwiche",
+        "args": [
+            "FILECNF"
+        ],
+        "call": "./rsat.sh",
+        "gz": false,
+        "status": "unknown"
+    },
+    "saps": {
+        "name": "saps",
+        "version": "2007-02-08",
+        "authors": "Dave A.D. Tompkins, Frank Hutter and Holger Hoos",
+        "args": [
+            "FILECNF",
+            "RANDOMSEED"
+        ],
+        "call": "./saps",
+        "gz": false,
+        "status": "unknown"
+    },
+    "sapsrt": {
+        "name": "sapsrt",
+        "version": "2007-02-08",
+        "authors": "Dave A.D. Tompkins, Frank Hutter and Holger Hoos",
+        "args": [
+            "FILECNF",
+            "RANDOMSEED"
+        ],
+        "call": "./sapsrt",
+        "gz": false,
+        "status": "unknown"
+    },
+    "sat4j": {
+        "name": "SAT4J",
+        "version": "SAT 2007",
+        "authors": "Daniel Le Berre",
+        "args": [
+            "-server",
+            "-Xmx1600m",
+            "-Xms1600m",
+            "-jar",
+            "./sat4j-sat2007.jar",
+            "FILECNF"
+        ],
+        "call": "java",
+        "gz": false,
+        "comment": "JVM PARAM CHANGED",
+        "status": "ok"
+    },
+    "sat7": {
+        "name": "SAT7",
+        "version": "2007-02-08",
+        "authors": "Christian Kern, Mohammad Khaleghi, Stefan Kugele, Christian Schallhart, Michael Tautschnig and Andreas Weis",
+        "args": [
+            "FILECNF"
+        ],
+        "call": "./sat7_bin",
+        "gz": false,
+        "status": "unknown"
+    },
+    "satzilla-crafted": {
+        "name": "SATzilla",
+        "version": "CRAFTED",
+        "authors": "Lin Xu, Frank Hutter, Holger H. Hoos and Kevin Leyton-Brown",
+        "args": [
+            "FILECNF"
+        ],
+        "call": "./SATzilla2007_C",
+        "gz": false,
+        "status": "unknown"
+    },
+    "satzilla-full": {
+        "name": "SATzilla",
+        "version": "FULL",
+        "authors": "Lin Xu, Frank Hutter, Holger H. Hoos and Kevin Leyton-Brown",
+        "args": [
+            "FILECNF"
+        ],
+        "call": "./SATzilla2007_F",
+        "gz": false,
+        "status": "unknown"
+    },
+    "satzilla-random": {
+        "name": "SATzilla",
+        "version": "RANDOM",
+        "authors": "Lin Xu, Frank Hutter, Holger H. Hoos and Kevin Leyton-Brown",
+        "args": [
+            "FILECNF"
+        ],
+        "call": "./SATzilla2007_R",
+        "gz": false,
+        "status": "unknown"
+    },
+    "spear": {
+        "name": "Spear",
+        "version": "2007-02-12",
+        "authors": "Domagoj Babic",
+        "args": [
+            "--model-stdout",
+            "--time",
+            "--dimacs",
+            "FILECNF"
+        ],
+        "call": "./Spear-32",
+        "gz": false,
+        "status": "unknown"
+    },
+    "spear_fh": {
+        "name": "Spear FH",
+        "version": "1.0",
+        "authors": "Domagoj Babic",
+        "args": [
+            "--model-stdout",
+            "--time",
+            "--spset-autotuned-fh_1_0",
+            "--dimacs",
+            "FILECNF"
+        ],
+        "call": "./Spear-32",
+        "gz": false,
+        "status": "unknown"
+    },
+    "spear_fhs": {
+        "name": "Spear FHS",
+        "version": "1.0",
+        "authors": "Domagoj Babic",
+        "args": [
+            "--model-stdout",
+            "--time",
+            "--spset-autotuned-fh_1_1",
+            "--dimacs",
+            "FILECNF"
+        ],
+        "call": "./Spear-32",
+        "gz": false,
+        "status": "unknown"
+    },
+    "tinisat": {
+        "name": "tinisat",
+        "version": "2007-02-08",
+        "authors": "Jinbo Huang",
+        "args": [
+            "FILECNF"
+        ],
+        "call": "./tinisat",
+        "gz": false,
+        "status": "unknown"
+    },
+    "tinisatelite": {
+        "name": "TiniSatELite",
+        "version": "2007-02-08",
+        "authors": "Jinbo Huang",
+        "args": [
+            "FILECNF"
+        ],
+        "call": "./TiniSatELite",
+        "gz": false,
+        "status": "unknown"
+    },
+    "tts": {
+        "name": "TTS",
+        "version": "4.0",
+        "authors": "Ivor Spence",
+        "args": [
+            "FILECNF"
+        ],
+        "call": "./tts-4-0",
+        "gz": false,
+        "status": "unknown"
+    },
+    "unitmarch": {
+        "name": "UnitMarch",
+        "version": "2007-02-08",
+        "authors": "Marijn Heule, Denis de Leeuw Duarte and Hans van Maaren",
+        "args": [
+            "FILECNF"
+        ],
+        "call": "./UnitMarch_32_bits",
+        "gz": false,
+        "status": "unknown"
+    }
+}

@@ -1,0 +1,796 @@
+Event SAT 2007 Competition Phase 1
+Type SAT
+Submitter Chu-Min Li
+Date of submission 2007-02-08 17:38
+Name adaptg2wsat
+Version 2007-02-08
+Authors Chu-Min Li, Wanxia Wei and Harry Zhang
+Complete/Incomplete Incomplete
+Is able to solve CRAFTED
+INDUST
+RANDOM
+Solver command line HOME/adaptg2wsat BENCHNAME
+Conversion script command line 
+Comments chuminli
+Solver files and checksums 
+[Show/Hide files]
+
+Event SAT 2007 Competition Phase 1
+Type SAT
+Submitter Wanxia Wei
+Date of submission 2007-02-08 17:42
+Name adaptg2wsat+
+Version 2007-02-08
+Authors Wanxia Wei, Chu-Min Li and Harry Zhang
+Complete/Incomplete Incomplete
+Is able to solve CRAFTED
+INDUST
+RANDOM
+Solver command line HOME/adaptg2wsat+ BENCHNAME
+Conversion script command line 
+Comments wei
+Solver files and checksums 
+[Show/Hide files]
+
+Event SAT 2007 Competition Phase 1
+Type SAT
+Submitter Chu-Min Li
+Date of submission 2007-02-08 17:39
+Name adaptg2wsat0
+Version 2007-02-08
+Authors Chu-Min Li, Wanxia Wei and Harry Zhang
+Complete/Incomplete Complete
+Is able to solve CRAFTED
+INDUST
+RANDOM
+Solver command line HOME/adaptg2wsat0 BENCHNAME
+Conversion script command line 
+Comments chuminli
+Solver files and checksums 
+[Show/Hide files]
+
+Event SAT 2007 Competition Phase 1
+Type SAT
+Submitter Chu-Min Li
+Date of submission 2007-02-08 17:40
+Name adaptg2wsatp
+Version 2007-02-08
+Authors Chu-Min Li, Wanxia Wei and Harry Zhang
+Complete/Incomplete Complete
+Is able to solve CRAFTED
+INDUST
+RANDOM
+Solver command line HOME/adaptg2wsatp BENCHNAME
+Conversion script command line 
+Comments chuminli
+Solver files and checksums 
+[Show/Hide files]
+
+Event SAT 2007 Competition Phase 1
+Type SAT
+Submitter David Williams
+Date of submission 2007-02-08 17:45
+Name adaptnovelty
+Version 2007-02-08
+Authors Holger Hoos and Dave Tompkins
+Complete/Incomplete Incomplete
+Is able to solve CRAFTED
+INDUST
+RANDOM
+Solver command line HOME/adaptnovelty BENCHNAME RANDOMSEED
+Conversion script command line 
+Comments tompkins
+Solver files and checksums 
+[Show/Hide files]
+
+Event SAT 2007 Competition Phase 1
+Type SAT
+Submitter Robert Nieuwenhuis
+Date of submission 2007-02-08 17:49
+Name barcelogic
+Version 2007-02-08
+Authors Robert Nieuwenhuis, Albert Oliveras and Tomas Lioret
+Complete/Incomplete Complete
+Is able to solve CRAFTED
+INDUST
+RANDOM
+Solver command line HOME/Barcelogic BENCHNAME
+Conversion script command line 
+Comments barcelogic
+Solver files and checksums 
+[Show/Hide files]
+
+Event SAT 2007 Competition Phase 1
+Type SAT
+Submitter Robert Nieuwenhuis
+Date of submission 2007-04-13 14:57
+Name Barcelogic Fixed
+Version 2007-04-13
+Authors Tomas Lauret and Robert Nieuwenhuis
+Complete/Incomplete Complete
+Is able to solve CRAFTED
+INDUST
+RANDOM
+Solver command line HOME/Barcelogic BENCHNAME
+Conversion script command line 
+Comments This solver is a fixed version of the barcelogic solver. It is entered in the demonstration division.
+Solver files and checksums 
+[Show/Hide files]
+
+Event SAT 2007 Competition Phase 1
+Type SAT
+Submitter Himanshu Jain
+Date of submission 2007-02-08 17:50
+Name CMUSAT
+Version 2007-02-08
+Authors Himanshu Jain and Edmund Clarke
+Complete/Incomplete Complete
+Is able to solve CRAFTED
+INDUST
+RANDOM
+Solver command line HOME/cmusat BENCHNAME
+Conversion script command line 
+Comments jain
+Solver files and checksums 
+[Show/Hide files]
+
+Event SAT 2007 Competition Phase 1
+Type SAT
+Submitter Himanshu Jain
+Date of submission 2007-02-08 17:51
+Name CMUSAT BASE
+Version 2007-02-08
+Authors Himanshu Jain and Edmund Clarke
+Complete/Incomplete Complete
+Is able to solve CRAFTED
+INDUST
+RANDOM
+Solver command line HOME/cmusat_base BENCHNAME
+Conversion script command line 
+Comments jain
+Solver files and checksums 
+[Show/Hide files]
+
+Event SAT 2007 Competition Phase 1
+Type SAT
+Submitter Anbulagan Anbulagan
+Date of submission 2007-02-08 17:52
+Name DEWSATZ
+Version 2007-02-08
+Authors Anbulagan
+Complete/Incomplete Complete
+Is able to solve CRAFTED
+INDUST
+RANDOM
+Solver command line HOME/dewSatz BENCHNAME
+Conversion script command line 
+Comments anbulagan
+Solver files and checksums 
+[Show/Hide files]
+
+Event SAT 2007 Competition Phase 1
+Type SAT
+Submitter Anbulagan Anbulagan
+Date of submission 2007-02-08 17:52
+Name DEWSATZ
+Version 2007-04-26 (fixed)
+Authors Anbulagan
+Complete/Incomplete Complete
+Is able to solve CRAFTED
+INDUST
+RANDOM
+Solver command line HOME/dewSatz_fixed BENCHNAME
+Conversion script command line 
+Comments anbulagan
+Solver files and checksums 
+[Show/Hide files]
+
+Event SAT 2007 Competition Phase 1
+Type SAT
+Submitter Anbulagan Anbulagan
+Date of submission 2007-02-08 17:53
+Name DEWSATZ 1A
+Version 2007-02-08
+Authors Anbulagan
+Complete/Incomplete Complete
+Is able to solve CRAFTED
+INDUST
+RANDOM
+Solver command line HOME/dewSatz_1a BENCHNAME
+Conversion script command line 
+Comments anbulagan
+Solver files and checksums 
+[Show/Hide files]
+
+Event SAT 2007 Competition Phase 1
+Type SAT
+Submitter Wanxia Wei
+Date of submission 2007-02-08 17:54
+Name FH
+Version 2007-02-08
+Authors Wanxia Wei, Harry Zhang and Chu-Min Li
+Complete/Incomplete Incomplete
+Is able to solve CRAFTED
+INDUST
+RANDOM
+Solver command line HOME/FH BENCHNAME
+Conversion script command line 
+Comments 
+Solver files and checksums 
+[Show/Hide files]
+
+Event SAT 2007 Competition Phase 1
+Type SAT
+Submitter Duc Nghia Pham
+Date of submission 2007-02-08 17:55
+Name gnovelty+
+Version 2007-02-08
+Authors Duc Nghia Pham and Charles Gretton
+Complete/Incomplete Complete
+Is able to solve CRAFTED
+INDUST
+RANDOM
+Solver command line HOME/gnovelty+ BENCHNAME
+Conversion script command line 
+Comments pham
+Solver files and checksums 
+[Show/Hide files]
+
+Event SAT 2007 Competition Phase 1
+Type SAT
+Submitter Wanxia Wei
+Date of submission 2007-02-08 17:56
+Name Hybrid1
+Version 2007-02-08
+Authors Wanxia Wei, Chu-Min Li and Harry Zhang
+Complete/Incomplete Incomplete
+Is able to solve CRAFTED
+INDUST
+RANDOM
+Solver command line HOME/Hybrid1 BENCHNAME
+Conversion script command line 
+Comments wei
+Solver files and checksums 
+[Show/Hide files]
+
+Event SAT 2007 Competition Phase 1
+Type SAT
+Submitter Gilles Dequen
+Date of submission 2007-02-08 17:58
+Name KCNFS
+Version 2004
+Authors Gilles Dequen and Olivier Dubois
+Complete/Incomplete Complete
+Is able to solve CRAFTED
+INDUST
+RANDOM
+Solver command line HOME/kcnfs-2004 BENCHNAME
+Conversion script command line 
+Comments dequen
+Solver files and checksums 
+[Show/Hide files]
+
+Event SAT 2007 Competition Phase 1
+Type SAT
+Submitter Gilles Dequen
+Date of submission 2007-02-08 18:02
+Name KCNFS
+Version 2006
+Authors Gilles Dequen and Olivier Dubois
+Complete/Incomplete Complete
+Is able to solve CRAFTED
+INDUST
+RANDOM
+Solver command line HOME/kcnfs-2006 BENCHNAME
+Conversion script command line 
+Comments dequen
+Solver files and checksums 
+[Show/Hide files]
+
+Event SAT 2007 Competition Phase 1
+Type SAT
+Submitter Gilles Dequen
+Date of submission 2007-02-08 18:03
+Name KCNFS
+Version SMP
+Authors Gilles Dequen and Olivier Dubois
+Complete/Incomplete Complete
+Is able to solve CRAFTED
+INDUST
+RANDOM
+Solver command line HOME/kcnfs-smp BENCHNAME
+Conversion script command line 
+Comments dequen
+Solver files and checksums 
+[Show/Hide files]
+
+Event SAT 2007 Competition Phase 1
+Type SAT
+Submitter Marijn Heule
+Date of submission 2007-02-08 18:05
+Name March KS
+Version 2007-02-08
+Authors Marijn Heule and Hans van Maaren
+Complete/Incomplete Complete
+Is able to solve CRAFTED
+INDUST
+RANDOM
+Solver command line HOME/march_ks BENCHNAME
+Conversion script command line 
+Comments heule
+Solver files and checksums 
+[Show/Hide files]
+
+Event SAT 2007 Competition Phase 1
+Type SAT
+Submitter Siert Wieringa
+Date of submission 2007-02-08 18:06
+Name minimarch
+Version 2007-02-08
+Authors Siert Wieringa, Hans van Maaren and Marijn Heule
+Complete/Incomplete Complete
+Is able to solve CRAFTED
+INDUST
+RANDOM
+Solver command line HOME/minimarch BENCHNAME
+Conversion script command line 
+Comments heule
+Solver files and checksums 
+[Show/Hide files]
+
+Event SAT 2007 Competition Phase 1
+Type SAT
+Submitter Siert Wieringa
+Date of submission 2007-02-08 18:06
+Name minimarch
+Version 2007-04-26 (fixed)
+Authors Siert Wieringa, Hans van Maaren and Marijn Heule
+Complete/Incomplete Complete
+Is able to solve CRAFTED
+INDUST
+RANDOM
+Solver command line HOME/minimarch_fixed BENCHNAME
+Conversion script command line 
+Comments heule
+Solver files and checksums 
+[Show/Hide files]
+
+Event SAT 2007 Competition Phase 1
+Type SAT
+Submitter Niklas Sorensson
+Date of submission 2007-02-08 18:08
+Name minisat
+Version SAT 2007
+Authors Niklas Sorensson and Niklas Een
+Complete/Incomplete Complete
+Is able to solve CRAFTED
+INDUST
+RANDOM
+Solver command line HOME/minisat_noassertions BENCHNAME
+Conversion script command line 
+Comments een
+Solver files and checksums 
+[Show/Hide files]
+
+Event SAT 2007 Competition Phase 1
+Type SAT
+Submitter Niklas Sorensson
+Date of submission 2007-02-08 18:08
+Name minisat
+Version SAT 2007 (with assertions)
+Authors Niklas Sorensson and Niklas Een
+Complete/Incomplete Complete
+Is able to solve CRAFTED
+INDUST
+RANDOM
+Solver command line HOME/minisat BENCHNAME
+Conversion script command line 
+Comments Assertions were activated by mistake in this solver
+Solver files and checksums 
+[Show/Hide files]
+
+Event SAT 2007 Competition Phase 1
+Type SAT
+Submitter Tobias Schubert
+Date of submission 2007-02-09 17:33
+Name MiraXT
+Version v1
+Authors Tobias Schubert, Matthew Lewis, Natalia Kalinnik and Bernd Becker
+Complete/Incomplete Complete
+Is able to solve CRAFTED
+INDUST
+RANDOM
+Solver command line HOME/MiraXTv1_dyn BENCHNAME
+Conversion script command line 
+Comments 
+Solver files and checksums 
+[Show/Hide files]
+
+Event SAT 2007 Competition Phase 1
+Type SAT
+Submitter Tobias Schubert
+Date of submission 2007-02-09 17:34
+Name MiraXT
+Version v2
+Authors Tobias Schubert, Matthew Lewis, Natalia Kalinnik and Bernd Becker
+Complete/Incomplete Complete
+Is able to solve CRAFTED
+INDUST
+RANDOM
+Solver command line HOME/MiraXTv2_dyn BENCHNAME
+Conversion script command line 
+Comments 
+Solver files and checksums 
+[Show/Hide files]
+
+Event SAT 2007 Competition Phase 1
+Type SAT
+Submitter Tobias Schubert
+Date of submission 2007-02-09 17:36
+Name MiraXT
+Version v3
+Authors Tobias Schubert, Matthew Lewis, Natalia Kalinnik and Bernd Becker
+Complete/Incomplete Complete
+Is able to solve CRAFTED
+INDUST
+RANDOM
+Solver command line HOME/MiraXTv3_dyn BENCHNAME
+Conversion script command line 
+Comments 
+Solver files and checksums 
+[Show/Hide files]
+
+Event SAT 2007 Competition Phase 1
+Type SAT
+Submitter Ivan Monahov
+Date of submission 2007-02-08 18:10
+Name Mmisat
+Version 2007-02-08
+Authors Ivan Monahov
+Complete/Incomplete Complete
+Is able to solve CRAFTED
+INDUST
+RANDOM
+Solver command line HOME/mmisat BENCHNAME
+Conversion script command line 
+Comments monahov
+Solver files and checksums 
+[Show/Hide files]
+
+Event SAT 2007 Competition Phase 1
+Type SAT
+Submitter David R. Bregman
+Date of submission 2007-02-08 18:12
+Name MXC
+Version 2007-02-08
+Authors David R. Bregman and David G. Mitchell
+Complete/Incomplete Complete
+Is able to solve CRAFTED
+INDUST
+RANDOM
+Solver command line HOME/mxc BENCHNAME
+Conversion script command line 
+Comments bregman
+Solver files and checksums 
+[Show/Hide files]
+
+Event SAT 2007 Competition Phase 1
+Type SAT
+Submitter Olivier ROUSSEL
+Date of submission 2007-03-05 11:51
+Name ornithorynque
+Version 0.1 alpha
+Authors Olivier ROUSSEL
+Complete/Incomplete Complete
+Is able to solve CRAFTED
+INDUST
+RANDOM
+Solver command line HOME/ornithorynque BENCHNAME
+Conversion script command line 
+Comments 
+Solver files and checksums 
+[Show/Hide files]
+
+Event SAT 2007 Competition Phase 1
+Type SAT
+Submitter Armin Biere
+Date of submission 2007-02-08 18:12
+Name picosat
+Version 535
+Authors Armin Biere
+Complete/Incomplete Complete
+Is able to solve CRAFTED
+INDUST
+RANDOM
+Solver command line HOME/picosat BENCHNAME
+Conversion script command line 
+Comments biere
+Solver files and checksums 
+[Show/Hide files]
+
+Event SAT 2007 Competition Phase 1
+Type SAT
+Submitter Duc Nghia Pham
+Date of submission 2007-02-08 18:15
+Name ranov
+Version 2007-02-08
+Authors Duc Nghia Pham and Anbulagan
+Complete/Incomplete Complete
+Is able to solve CRAFTED
+INDUST
+RANDOM
+Solver command line HOME/ranov BENCHNAME
+Conversion script command line 
+Comments pham
+Solver files and checksums 
+[Show/Hide files]
+
+Event SAT 2007 Competition Phase 1
+Type SAT
+Submitter Knot Pipatsrisawat
+Date of submission 2007-02-08 18:16
+Name Rsat
+Version 2007-02-08
+Authors Knot Pipatsrisawat and Adnan Darwiche
+Complete/Incomplete Complete
+Is able to solve CRAFTED
+INDUST
+RANDOM
+Solver command line HOME/rsat.sh BENCHNAME
+Conversion script command line 
+Comments rsat
+Solver files and checksums 
+[Show/Hide files]
+
+Event SAT 2007 Competition Phase 1
+Type SAT
+Submitter David Williams
+Date of submission 2007-02-08 18:18
+Name saps
+Version 2007-02-08
+Authors Dave A.D. Tompkins, Frank Hutter and Holger Hoos
+Complete/Incomplete Incomplete
+Is able to solve CRAFTED
+INDUST
+RANDOM
+Solver command line HOME/saps BENCHNAME RANDOMSEED
+Conversion script command line 
+Comments tompkins
+Solver files and checksums 
+[Show/Hide files]
+
+Event SAT 2007 Competition Phase 1
+Type SAT
+Submitter David Williams
+Date of submission 2007-02-08 18:18
+Name sapsrt
+Version 2007-02-08
+Authors Dave A.D. Tompkins, Frank Hutter and Holger Hoos
+Complete/Incomplete Incomplete
+Is able to solve CRAFTED
+INDUST
+RANDOM
+Solver command line HOME/sapsrt BENCHNAME RANDOMSEED
+Conversion script command line 
+Comments tompkins
+Solver files and checksums 
+[Show/Hide files]
+
+Event SAT 2007 Competition Phase 1
+Type SAT
+Submitter Daniel Le Berre
+Date of submission 2007-02-08 18:32
+Name SAT4J
+Version SAT 2007
+Authors Daniel Le Berre
+Complete/Incomplete Complete
+Is able to solve CRAFTED
+INDUST
+RANDOM
+Solver command line java -server -Xmx1650M -Xms1650M -jar HOME/sat4j-sat2007.jar BENCHNAME
+Conversion script command line 
+Comments sat4j
+Solver files and checksums 
+[Show/Hide files]
+
+Event SAT 2007 Competition Phase 1
+Type SAT
+Submitter Daniel Le Berre
+Date of submission 2007-03-07 14:53
+Name SAT4J JVM PARAM CHANGED
+Version SAT 2007
+Authors Daniel Le Berre
+Complete/Incomplete Complete
+Is able to solve INDUST
+Solver command line java6 -server -Xmx1600m -Xms1600m -jar HOME/sat4j-sat2007.jar BENCHNAME
+Conversion script command line 
+Comments 
+Solver files and checksums 
+[Show/Hide files]
+
+Event SAT 2007 Competition Phase 1
+Type SAT
+Submitter Michael Tautschnig
+Date of submission 2007-02-08 18:25
+Name SAT7
+Version 2007-02-08
+Authors Christian Kern, Mohammad Khaleghi, Stefan Kugele, Christian Schallhart, Michael Tautschnig and Andreas Weis
+Complete/Incomplete Complete
+Is able to solve CRAFTED
+INDUST
+RANDOM
+Solver command line HOME/sat7_bin BENCHNAME
+Conversion script command line 
+Comments sat7
+Solver files and checksums 
+[Show/Hide files]
+
+Event SAT 2007 Competition Phase 1
+Type SAT
+Submitter Lin Xu
+Date of submission 2007-02-13 07:57
+Name SATzilla
+Version CRAFTED
+Authors Lin Xu, Frank Hutter, Holger H. Hoos and Kevin Leyton-Brown
+Complete/Incomplete Complete
+Is able to solve CRAFTED
+INDUST
+RANDOM
+Solver command line HOME/SATzilla2007_C BENCHNAME
+Conversion script command line 
+Comments satzillac
+Solver files and checksums 
+[Show/Hide files]
+
+Event SAT 2007 Competition Phase 1
+Type SAT
+Submitter Lin Xu
+Date of submission 2007-02-13 07:56
+Name SATzilla
+Version FULL
+Authors Lin Xu, Frank Hutter, Holger H. Hoos and Kevin Leyton-Brown
+Complete/Incomplete Complete
+Is able to solve CRAFTED
+INDUST
+RANDOM
+Solver command line HOME/SATzilla2007_F BENCHNAME
+Conversion script command line 
+Comments satzillaf
+Solver files and checksums 
+[Show/Hide files]
+
+Event SAT 2007 Competition Phase 1
+Type SAT
+Submitter Lin Xu
+Date of submission 2007-02-13 07:59
+Name SATzilla
+Version RANDOM
+Authors Lin Xu, Frank Hutter, Holger H. Hoos and Kevin Leyton-Brown
+Complete/Incomplete Complete
+Is able to solve CRAFTED
+INDUST
+RANDOM
+Solver command line HOME/SATzilla2007_R BENCHNAME
+Conversion script command line 
+Comments satzillar
+Solver files and checksums 
+[Show/Hide files]
+
+Event SAT 2007 Competition Phase 1
+Type SAT
+Submitter Domagoj Babic
+Date of submission 2007-02-12 09:32
+Name Spear
+Version 2007-02-12
+Authors Domagoj Babic
+Complete/Incomplete Complete
+Is able to solve CRAFTED
+INDUST
+RANDOM
+Solver command line HOME/Spear-32 --model-stdout --time --dimacs BENCHNAME
+Conversion script command line 
+Comments spear
+Solver files and checksums 
+[Show/Hide files]
+
+Event SAT 2007 Competition Phase 1
+Type SAT
+Submitter Domagoj Babic
+Date of submission 2007-02-12 09:33
+Name Spear FH
+Version 1.0
+Authors Domagoj Babic
+Complete/Incomplete Complete
+Is able to solve CRAFTED
+INDUST
+RANDOM
+Solver command line HOME/Spear-32 --model-stdout --time --spset-autotuned-fh_1_0 --dimacs BENCHNAME
+Conversion script command line 
+Comments spear
+Solver files and checksums 
+[Show/Hide files]
+
+Event SAT 2007 Competition Phase 1
+Type SAT
+Submitter Domagoj Babic
+Date of submission 2007-02-12 09:34
+Name Spear FHS
+Version 1.0
+Authors Domagoj Babic
+Complete/Incomplete Complete
+Is able to solve CRAFTED
+INDUST
+RANDOM
+Solver command line HOME/Spear-32 --model-stdout --time --spset-autotuned-fh_1_1 --dimacs BENCHNAME
+Conversion script command line 
+Comments spear
+Solver files and checksums 
+[Show/Hide files]
+
+Event SAT 2007 Competition Phase 1
+Type SAT
+Submitter Jinbo Huang
+Date of submission 2007-02-08 18:26
+Name tinisat
+Version 2007-02-08
+Authors Jinbo Huang
+Complete/Incomplete Complete
+Is able to solve CRAFTED
+INDUST
+RANDOM
+Solver command line HOME/tinisat BENCHNAME
+Conversion script command line 
+Comments huang
+Solver files and checksums 
+[Show/Hide files]
+
+Event SAT 2007 Competition Phase 1
+Type SAT
+Submitter Jinbo Huang
+Date of submission 2007-02-08 18:27
+Name TiniSatELite
+Version 2007-02-08
+Authors Jinbo Huang
+Complete/Incomplete Complete
+Is able to solve CRAFTED
+INDUST
+RANDOM
+Solver command line HOME/TiniSatELite BENCHNAME
+Conversion script command line 
+Comments tinisatelite
+Solver files and checksums 
+[Show/Hide files]
+
+Event SAT 2007 Competition Phase 1
+Type SAT
+Submitter Ivor Spence
+Date of submission 2007-02-08 18:28
+Name TTS
+Version 4.0
+Authors Ivor Spence
+Complete/Incomplete Complete
+Is able to solve CRAFTED
+INDUST
+RANDOM
+Solver command line HOME/tts-4-0 BENCHNAME
+Conversion script command line 
+Comments spence
+Solver files and checksums 
+[Show/Hide files]
+
+Event SAT 2007 Competition Phase 1
+Type SAT
+Submitter Marijn Heule
+Date of submission 2007-02-08 18:30
+Name UnitMarch
+Version 2007-02-08
+Authors Marijn Heule, Denis de Leeuw Duarte and Hans van Maaren
+Complete/Incomplete Incomplete
+Is able to solve CRAFTED
+INDUST
+RANDOM
+Solver command line HOME/UnitMarch_32_bits BENCHNAME
+Conversion script command line 
+Comments heule
+Solver files and checksums 
+[Show/Hide files] 

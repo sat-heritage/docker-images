@@ -1,0 +1,11 @@
+{
+    "base_version":"v1",
+    "builder":"generic/2007",
+    "builder_base":"debian/eol:sarge-slim",
+    "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2007-src/{SOLVER_NAME}.tgz",
+    "sat4j": {
+        "RDEPENDS": "default-jre",
+        "builder": "generic/binary-tar",
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2007-bin/{SOLVER}.tar"
+    }
+}
