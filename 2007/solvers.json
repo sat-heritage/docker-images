@@ -19,7 +19,7 @@
         ],
         "call": "./adaptg2wsat+",
         "gz": false,
-        "status": "unknown"
+        "status": "ok"
     },
     "adaptg2wsat0": {
         "name": "adaptg2wsat0",
@@ -30,7 +30,7 @@
         ],
         "call": "./adaptg2wsat0",
         "gz": false,
-        "status": "unknown"
+        "status": "ok"
     },
     "adaptg2wsatp": {
         "name": "adaptg2wsatp",
@@ -41,7 +41,7 @@
         ],
         "call": "./adaptg2wsatp",
         "gz": false,
-        "status": "unknown"
+        "status": "ok"
     },
     "adaptnovelty": {
         "name": "adaptnovelty",
@@ -53,21 +53,10 @@
         ],
         "call": "./adaptnovelty",
         "gz": false,
-        "status": "unknown"
+        "status": "ok"
     },
     "barcelogic": {
-        "name": "barcelogic",
-        "version": "2007-02-08",
-        "authors": "Robert Nieuwenhuis, Albert Oliveras and Tomas Lioret",
-        "args": [
-            "FILECNF"
-        ],
-        "call": "./Barcelogic",
-        "gz": false,
-        "status": "unknown"
-    },
-    "barcelogic_fixed": {
-        "name": "Barcelogic Fixed",
+        "name": "Barcelogic",
         "version": "2007-04-13",
         "authors": "Tomas Lauret and Robert Nieuwenhuis",
         "args": [
@@ -75,7 +64,8 @@
         ],
         "call": "./Barcelogic",
         "gz": false,
-        "status": "unknown"
+        "comment": "Barcelogic fixed",
+        "status": "ok"
     },
     "cmusat": {
         "name": "CMUSAT",
@@ -86,7 +76,7 @@
         ],
         "call": "./cmusat",
         "gz": false,
-        "status": "unknown"
+        "status": "ok"
     },
     "cmusat_base": {
         "name": "CMUSAT BASE",
