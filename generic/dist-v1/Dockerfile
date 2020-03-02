@@ -5,9 +5,10 @@ FROM ${BUILDER_BASE} as builder
 FROM ${BASE}
 
 ARG RDEPENDS
-RUN if test "${RDEPENDS}"; then apt-get update --fix-missing \
-    && apt-get install -y --no-install-recommends ${RDEPENDS} \
-    && apt-get clean -y && rm -rf /var/lib/apt/lists/*; fi
+RUN if test "${RDEPENDS}"; then apt-get update --fix-missing && \
+    mkdir -p /usr/share/man/man1 && \
+    apt-get install -y --no-install-recommends ${RDEPENDS} && \
+    apt-get clean -y && rm -rf /var/lib/apt/lists/*; fi
 
 ARG solver
 ARG solver_id

@@ -7,7 +7,7 @@
     },
     "cshcappllc": {
         "RDEPENDS": "python",
-        "BUILD_DEPENDS": "libm4ri-dev libpython-dev libglpk-dev libboost-dev",
+        "BUILD_DEPENDS": "libm4ri-dev libpython-dev libglpk-dev libboost-dev libgoogle-perftools-dev",
         "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/819"
     },
     "cshcappllg": {
@@ -69,6 +69,8 @@
         "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/890"
     },
     "sat4j": {
+        "BUILD_DEPENDS": "default-jdk",
+        "RDEPENDS": "default-jre",
         "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/809"
     },
     "sattimerelbackshr": {
