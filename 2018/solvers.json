@@ -1,66 +1,494 @@
 {
-    "maple-cm": {
-        "name": "Maple_CM",
-        "call": "./glucose_static",
+    "cominisatps_pulsar_drup": {
+        "_comment": "ok",
+        "name": "COMiniSatPS_Pulsar_drup",
+        "call": "./minisat_static",
         "gz": true,
         "args": [
-          "FILECNF",
-          "-no-drup"
+            "FILECNF"
         ],
         "argsproof": [
-          "FILECNF",
-          "-drup-file=FILEPROOF"
+            "FILECNF",
+            "-drup-file=FILEPROOF"
         ]
     },
-    "maple-lcm-bcrestart": {
-        "name": "Maple_LCM+BCrestart",
-        "call": "./glucose_static",
+    "cadical": {
+        "_comment": "Problem when building",
+        "name": "CaDiCaL",
+        "call": "./cadical",
         "gz": true,
         "args": [
-          "FILECNF",
-          "-no-drup"
+            "FILECNF"
         ],
         "argsproof": [
-          "FILECNF",
-          "-drup-file=FILEPROOF"
+            "FILECNF",
+            "FILEPROOF"
+        ]
+    },
+    "candy": {
+        "_comment": "ok",
+        "name": "Candy",
+        "call": "./candy",
+        "gz": true,
+        "args": [
+            "FILECNF",
+            "-inprocessing=0",
+            "-model"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "-inprocessing=0",
+            "-certified",
+            "-certified-output=FILEPROOF"
+        ]
+    },
+    "ghackcomsps_drup": {
+        "_comment": "ok",
+        "name": "GHackCOMSPS_drup",
+        "call": "./GHackCOMSPS",
+        "gz": true,
+        "args": [
+            "FILECNF",
+            "-model"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "-vbyte",
+            "-certified",
+            "-certified-output=FILEPROOF"
+        ]
+    },
+    "glucose_hack_kiel_fastbve": {
+        "_comment": "ok",
+        "name": "Glucose_Hack_Kiel_fastBVE",
+        "call": "./glucose",
+        "gz": true,
+        "args": [
+            "FILECNF",
+            "-model"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "-certified",
+            "-certified-output=FILEPROOF"
+        ]
+    },
+    "lingeling": {
+        "_comment" : "Problem with prebuild script",
+        "name": "Lingeling",
+        "call": "./lingeling",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF"
+        ]
+    },
+    "maplecomsps_chb_vsids_drup": {
+        "_comment": "ok",
+        "name": "MapleCOMSPS_CHB_VSIDS_drup",
+        "call": "./MapleCOMSPS_CHB_VSIDS",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "-drup-file=FILEPROOF"
+        ]
+    },
+    "maplecomsps_lrb_vsids_2_drup": {
+        "name": "MapleCOMSPS_LRB_VSIDS_2_drup",
+        "call": "./maplecomsps_lrb_vsids_2_drup",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF"
+        ]
+    },
+    "maplecomsps_lrb_vsids_drup": {
+        "name": "MapleCOMSPS_LRB_VSIDS_drup",
+        "call": "./maplecomsps_lrb_vsids_drup",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF"
         ]
     },
     "maple-lcm-distchronobt": {
+        "_comment": "ok",
         "name": "MapleLCMDistChronoBT",
         "call": "./glucose_static",
         "gz": true,
         "args": [
-          "FILECNF",
-          "-no-drup"
+            "FILECNF",
+            "-no-drup"
         ],
         "argsproof": [
-          "FILECNF",
-          "-drup-file=FILEPROOF"
+            "FILECNF",
+            "-drup-file=FILEPROOF"
+        ]
+    },
+    "maple-cm": {
+        "_comment": "ok",
+        "name": "Maple_CM",
+        "call": "./glucose_static",
+        "gz": true,
+        "args": [
+            "FILECNF",
+            "-no-drup"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "-drup-file=FILEPROOF"
+        ]
+    },
+    "maple_cm_dist": {
+        "name": "Maple_CM_Dist",
+        "call": "./maple_cm_dist",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF"
+        ]
+    },
+    "maple_cm_orduip+": {
+        "name": "Maple_CM_ordUIP+",
+        "call": "./maple_cm_orduip+",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF"
+        ]
+    },
+    "maple_cm_orduip": {
+        "name": "Maple_CM_ordUIP",
+        "call": "./maple_cm_orduip",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF"
+        ]
+    },
+    "maple-lcm-bcrestart": {
+        "_comment": "ok",
+        "name": "Maple_LCM+BCrestart",
+        "call": "./glucose_static",
+        "gz": true,
+        "args": [
+            "FILECNF",
+            "-no-drup"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "-drup-file=FILEPROOF"
+        ]
+    },
+    "maple_lcm+bcrestart_m1": {
+        "name": "Maple_LCM+BCrestart_M1",
+        "call": "./maple_lcm+bcrestart_m1",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF"
+        ]
+    },
+    "maple_lcm_m1": {
+        "name": "Maple_LCM_M1",
+        "call": "./maple_lcm_m1",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF"
         ]
     },
     "maple-lcm-scavel": {
+        "_Comment": "ok",
         "name": "Maple_LCM_Scavel",
         "call": "./Maple_LCM_Scavel",
         "gz": true,
         "args": [
-          "FILECNF",
-          "-no-drup"
+            "FILECNF",
+            "-no-drup"
         ],
         "argsproof": [
-          "FILECNF",
-          "-drup-file=FILEPROOF"
+            "FILECNF",
+            "-drup-file=FILEPROOF"
         ]
     },
-    "cryptominisat": {
-        "name": "cms55-main-all4fixed",
-        "call": "./cryptominisat5_simple",
-        "gz": false,
+    "maple_lcm_scavel_200": {
+        "name": "Maple_LCM_Scavel_200",
+        "call": "./maple_lcm_scavel_200",
+        "gz": true,
         "args": [
-          "FILECNF"
+            "FILECNF"
         ],
         "argsproof": [
-          "FILECNF",
-          "FILEPROOF"
+            "FILECNF",
+            "FILEPROOF"
+        ]
+    },
+    "minisat-v2.2.0-106-ge2dd095": {
+        "name": "Minisat-v2.2.0-106-ge2dd095",
+        "call": "./minisat-v2.2.0-106-ge2dd095",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF"
+        ]
+    },
+    "riss7.1": {
+        "name": "Riss7.1",
+        "call": "./riss7.1",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF"
+        ]
+    },
+    "sparrow2riss-2018": {
+        "name": "Sparrow2Riss-2018",
+        "call": "./sparrow2riss-2018",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF"
+        ]
+    },
+    "yalsat": {
+        "name": "YalSAT",
+        "call": "./yalsat",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF"
+        ]
+    },
+    "abcdsat_r18": {
+        "name": "abcdsat_r18",
+        "call": "./abcdsat_r18",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF"
+        ]
+    },
+    "cms55-main-all4fixed": {
+        "name": "cms55-main-all4fixed",
+        "call": "./cms55-main-all4fixed",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF"
+        ]
+    },
+    "expglucose": {
+        "name": "expGlucose",
+        "call": "./expglucose",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF"
+        ]
+    },
+    "expmc_lrb_vsids_switch": {
+        "name": "expMC_LRB_VSIDS_Switch",
+        "call": "./expmc_lrb_vsids_switch",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF"
+        ]
+    },
+    "expmc_lrb_vsids_switch_2500": {
+        "name": "expMC_LRB_VSIDS_Switch_2500",
+        "call": "./expmc_lrb_vsids_switch_2500",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF"
+        ]
+    },
+    "expmc_vsids_lrb_switch_2500": {
+        "name": "expMC_VSIDS_LRB_Switch_2500",
+        "call": "./expmc_vsids_lrb_switch_2500",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF"
+        ]
+    },
+    "gluhack": {
+        "name": "gluHack",
+        "call": "./gluhack",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF"
+        ]
+    },
+    "glu_mix": {
+        "name": "glu_mix",
+        "call": "./glu_mix",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF"
+        ]
+    },
+    "glucose-3.0d-patched": {
+        "name": "glucose-3.0D-patched",
+        "call": "./glucose-3.0d-patched",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF"
+        ]
+    },
+    "glucose-3.0_padc_3": {
+        "name": "glucose-3.0_PADC_3",
+        "call": "./glucose-3.0_padc_3",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF"
+        ]
+    },
+    "glucose-3.0_padc_10": {
+        "name": "glucose-3.0_PADC_10",
+        "call": "./glucose-3.0_padc_10",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF"
+        ]
+    },
+    "glucose3.0": {
+        "name": "glucose3.0",
+        "call": "./glucose3.0",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF"
+        ]
+    },
+    "glucose4.2.1": {
+        "name": "glucose4.2.1",
+        "call": "./glucose4.2.1",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF"
+        ]
+    },
+    "inidglucose": {
+        "name": "inIDGlucose",
+        "call": "./inidglucose",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF"
+        ]
+    },
+    "smallsat": {
+        "name": "smallsat",
+        "call": "./smallsat",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF"
+        ]
+    },
+    "varisat": {
+        "name": "varisat",
+        "call": "./varisat",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF"
         ]
     }
 }
