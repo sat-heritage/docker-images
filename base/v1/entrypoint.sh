@@ -29,8 +29,10 @@ usage() {
 }
 
 call_solver() {
+    export PATH=.:$PATH
     set -x
-    "/solvers/${SOLVER_PATH}/${SOLVER_CALL}" "${@}"
+    cd "/solvers/${SOLVER_PATH}"
+    "${SOLVER_CALL}" "${@}"
 }
 
 mycall() {
@@ -40,8 +42,16 @@ mycall() {
         *) usage
     esac
     readarray -t args <<<$(get_param $k|jq -r ".[]")
+    if [ -z ${args} ]; then
+        echo "Error, this solver does not support arguments $k";
+    fi
 
-    FILECNF="${1}"
+    FILECNF="`realpath ${1}`"
+    FILEPROOF=""
+    if [ $# -eq 2 ]; then
+        FILEPROOF="`realpath ${2}`"
+    fi
+
     if [[ "${FILECNF##*.}" == "gz" ]]; then
         if [[ "$(get_param gz)" == "false" ]]; then
             echo "# gunzip ${FILECNF}..."
@@ -50,8 +60,6 @@ mycall() {
             FILECNF=/tmp/cnf
         fi
     fi
-
-    FILEPROOF="${2}"
     for (( i=0; i<${#args[@]}; ++i )); do
         a="${args[$i]/FILECNF/$FILECNF}"
         args[$i]="${a/FILEPROOF/$FILEPROOF}"
