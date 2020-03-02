@@ -1,5 +1,6 @@
 {
   "sat0": {
+    "status": "ok",
     "name": "sat0",
     "call": "sat0",
     "gz": false,
@@ -8,6 +9,7 @@
     ]
   },
   "sat0w": {
+    "status": "ok",
     "name": "sat0w",
     "call": "sat0w",
     "gz": false,
@@ -16,6 +18,7 @@
     ]
   },
   "sat8": {
+    "status": "ok",
     "name": "sat8",
     "call": "sat8",
     "gz": false,
@@ -24,6 +27,7 @@
     ]
   },
   "sat9": {
+    "status": "ok",
     "name": "sat9",
     "call": "sat9",
     "gz": false,
@@ -32,6 +36,7 @@
     ]
   },
   "sat10": {
+    "status": "ok",
     "name": "sat10",
     "call": "sat10",
     "gz": false,
@@ -40,6 +45,7 @@
     ]
   },
   "sat11": {
+    "status": "ok",
     "name": "sat11",
     "call": "sat11",
     "gz": false,
@@ -48,6 +54,7 @@
     ]
   },
   "sat12": {
+    "status": "ok",
     "name": "sat12",
     "call": "sat12",
     "gz": false,
@@ -56,6 +63,7 @@
     ]
   },
   "sat13": {
+    "status": "ok",
     "name": "sat13",
     "call": "sat13",
     "gz": false,
