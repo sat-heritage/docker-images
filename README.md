@@ -142,6 +142,7 @@ being a JSON object with a subset of the following keys.
 | builder_base | Image to inherit from for compiling the solver (`builder` recipe) |
 | image_name | Python format string with ENTRY being the set name and SOLVER the solver identifier<br/>Default: `"{SOLVER}:{ENTRY}"` |
 | download_url | Python format string for the downloading the solver source/binary |
+| BUILD_DEPENDS | Additional packages to install for compiling the solver. |
 | RDEPENDS | Additional packages to install for running the executable. |
 
 Python format strings can use the following variables:

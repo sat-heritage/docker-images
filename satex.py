@@ -333,6 +333,8 @@ def build_images(args):
 
     bases_uptodate = set()
 
+    _dist_opts = ["RDEPENDS"]
+
     for name in repo.images:
         image = ImageManager(name, repo)
         setup = image.setup
@@ -347,7 +349,7 @@ def build_images(args):
         build_args = {k:v for k,v in setup.items() if \
                         k not in ["generic_version",
                                     "builder", "builder_base",
-                                    "image_name", "RDEPENDS"] and isinstance(v, str)}
+                                    "image_name"]+_dist_opts and isinstance(v, str)}
         build_args["solver"] = image.solver_name
         build_args["solver_id"] = image.solver
         for k in setup:
@@ -380,8 +382,10 @@ def build_images(args):
             "IMAGE_NAME": image.name,
             "solver": build_args["solver"],
             "solver_id": build_args["solver_id"],
-            "RDEPENDS": setup["RDEPENDS"]
         }
+        for k in _dist_opts:
+            if k in setup:
+                dist_args[k] = setup[k]
 
         fd, dbjson = tempfile.mkstemp(".json", "file", root)
         try:
