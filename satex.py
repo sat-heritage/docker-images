@@ -149,21 +149,20 @@ def print_info(args):
         info = []
         for key in keys:
             value = image.registry[key]
-            if key == "args":
-                key = "Call"
-                value = f"{image.registry['call']} {' '.join(value)}"
-            elif key == "argsproof":
-                key = "Call (proof)"
-                value = f"{image.registry['call']} {' '.join(value)}"
+            if key in ["args", "argsproof"]:
+                name = "Call"
+                if key == "argsproof":
+                    name += " (proof)"
+                value = f"{image.registry['call']} {' '.join(map(str,value))}"
             else:
-                key = key.title()
+                name = key.title()
                 value = str(value)
-            key_width = max(len(key), key_width)
-            info.append((key,value))
+            key_width = max(len(name), key_width)
+            info.append((name,value))
 
         key_width += 2
         line_width = key_width + 70
-        print(f"{DOCKER_NS}/\033[1m{name}\033[0m")
+        print(f"{DOCKER_NS}/\033[1m{image.name}\033[0m")
         print("-"*line_width)
         for (key, value) in info:
             key = f"{key}: "
