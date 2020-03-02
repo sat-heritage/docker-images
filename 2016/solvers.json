@@ -51,6 +51,7 @@
         ]
     },
     "glucose-3_ts0": {
+        "status": "ok",
         "call": "./glucose",
         "name": "glucose_hack_kiel_newScript",
         "gz": true,
