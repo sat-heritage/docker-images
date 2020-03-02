@@ -1,0 +1,4 @@
+prune *
+exclude *
+include satex.py
+include setup.py
