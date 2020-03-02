@@ -51,6 +51,7 @@ mycall() {
     if [ $# -eq 2 ]; then
         FILEPROOF="`realpath ${2}`"
     fi
+    RANDOMSEED=${RANDOMSEED:-1234567}
 
     if [[ "${FILECNF##*.}" == "gz" ]]; then
         if [[ "$(get_param gz)" == "false" ]]; then
@@ -62,6 +63,7 @@ mycall() {
     fi
     for (( i=0; i<${#args[@]}; ++i )); do
         a="${args[$i]/FILECNF/$FILECNF}"
+        a="${args[$i]/RANDOMSEED/$RANDOMSEED}"
         args[$i]="${a/FILEPROOF/$FILEPROOF}"
     done
     call_solver "${args[@]}"
