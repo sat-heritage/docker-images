@@ -6,7 +6,7 @@ FROM ${BASE}
 
 ARG RDEPENDS
 RUN if test "${RDEPENDS}"; then apt-get update --fix-missing \
-    && apt-get install ${RDEPENDS} \
+    && apt-get install -y --no-install-recommends ${RDEPENDS} \
     && apt-get clean -y && rm -rf /var/lib/apt/lists/*; fi
 
 ARG solver
