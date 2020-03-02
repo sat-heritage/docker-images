@@ -63,7 +63,7 @@ mycall() {
     fi
     for (( i=0; i<${#args[@]}; ++i )); do
         a="${args[$i]/FILECNF/$FILECNF}"
-        a="${args[$i]/RANDOMSEED/$RANDOMSEED}"
+        a="${a/RANDOMSEED/$RANDOMSEED}"
         args[$i]="${a/FILEPROOF/$FILEPROOF}"
     done
     call_solver "${args[@]}"
