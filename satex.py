@@ -413,10 +413,10 @@ def build_images(args):
 def test_images(args):
     images = get_list(args)
     docker_args = ["-v", f"{os.path.abspath('tests')}:/data"]
-    for dimacs in glob.glob("tests/*.gz"):
-        info(f"Testing {dimacs}")
-        dimacs = os.path.basename(dimacs)
-        docker_runs(args, images, docker_args, image_args=(dimacs,))
+    dimacs = args.cnf
+    info(f"Testing {dimacs}")
+    dimacs = os.path.basename(dimacs)
+    docker_runs(args, images, docker_args, image_args=(dimacs,))
 
 def push_images(args):
     docker_argv = check_docker()
@@ -555,6 +555,7 @@ def main(redirected=False):
         p = subparsers.add_parser("test",
                 help=f"Test {DOCKER_NS} Docker images",
                 parents=[spec_parser, docker_parser])
+        p.add_argument("--cnf", "-f", default="tests/cmu-bmc-barrel6.cnf.gz")
         p.set_defaults(func=test_images)
 
         p = subparsers.add_parser("push",
