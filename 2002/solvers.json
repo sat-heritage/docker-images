@@ -1,5 +1,6 @@
 {
    "berkmin": {
+      "status": "ok",
       "name": "berkmin",
       "call": "./berkmin",
       "gz": false,
@@ -9,6 +10,7 @@
       "comment":"Warning, this version had an identifed (simple) bug. See http://www.satcompetition.org/2002/berkmin.html"
    },  
    "2clseq":{
+      "status": "ok",
       "name": "2clseq",
       "call": "./2clseq",
       "gz": false,
@@ -17,6 +19,7 @@
       ]
    },
    "blindsat":{
+      "status": "ok",
       "name": "blindsat",
       "call": "./blindsat",
       "gz": false,
@@ -25,6 +28,7 @@
       ]
    },
    "dlmsat1":{
+      "status": "ok",
       "name": "dlmsat1",
       "call": "./dlmsat1",
       "gz": false,
@@ -33,6 +37,7 @@
       ]
    },
    "dlmsat2":{
+      "status": "ok",
       "name": "dlmsat2",
       "call": "./dlmsat2",
       "gz": false,
@@ -41,6 +46,7 @@
       ]
    },
    "dlmsat3":{
+      "status": "ok",
       "name": "dlmsat3",
       "call": "./dlmsat3",
       "gz": false,
@@ -49,6 +55,7 @@
       ]
    },
    "ga":{
+      "status": "ok",
       "name": "ga",
       "call": "./ga",
       "gz": false,
@@ -57,6 +64,7 @@
       ]
    },
    "limmat":{
+      "status": "ok",
       "name": "limmat",
       "call": "./limmat",
       "gz": false,
@@ -65,6 +73,7 @@
       ]
    },
    "lsat":{
+      "status": "ok",
       "name": "lsat",
       "call": "./lsat",
       "gz": false,
@@ -73,6 +82,7 @@
       ]
    },
    "marchi":{
+      "status": "ok",
       "name": "marchI",
       "call": "./marchI",
       "gz": false,
@@ -81,6 +91,7 @@
       ]
    },
    "marchi-hc":{
+      "status": "ok",
       "name": "marchI-hc",
       "call": "./marchI-hc",
       "gz": false,
@@ -89,6 +100,7 @@
       ]
    },
    "marchii":{
+      "status": "ok",
       "name": "marchII",
       "call": "./marchII",
       "gz": false,
@@ -97,6 +109,7 @@
       ]
    },
    "marchii-hc":{
+      "status": "ok",
       "name": "marchII-hc",
       "call": "./marchII-hc",
       "gz": false,
@@ -105,6 +118,7 @@
       ]
    },
    "marchiise":{
+      "status": "ok",
       "name": "marchIIse",
       "call": "./marchIIse",
       "gz": false,
@@ -113,6 +127,7 @@
       ]
    },
    "marchiise-hc":{
+      "status": "ok",
       "name": "marchIIse-hc",
       "call": "./marchIIse-hc",
       "gz": false,
@@ -121,6 +136,7 @@
       ]
    },
    "marchise":{
+      "status": "ok",
       "name": "marchIse",
       "call": "./marchIse",
       "gz": false,
@@ -129,6 +145,7 @@
       ]
    },
    "modoc":{
+      "status": "ok",
       "name": "modoc",
       "call": "./modoc",
       "gz": false,
@@ -137,6 +154,7 @@
       ]
    },
    "oksolver":{
+      "status": "ok",
       "name": "oksolver",
       "call": "./oksolver",
       "gz": false,
@@ -145,6 +163,7 @@
       ]
    },
    "partsat":{
+      "status": "ok",
       "name": "partsat",
       "call": "./partsat",
       "gz": false,
@@ -153,6 +172,7 @@
       ]
    },
    "rb2cl":{
+      "status": "ok",
       "name": "rb2cl",
       "call": "./rb2cl",
       "gz": false,
@@ -161,6 +181,7 @@
       ]
    },
    "sato":{
+      "status": "ok",
       "name": "sato",
       "call": "./sato",
       "gz": false,
@@ -169,14 +190,17 @@
       ]
    },
    "saturn":{
+      "status": "ok",
       "name": "saturn",
       "call": "./saturn",
       "gz": false,
       "args": [
-         "FILECNF"
+         "FILECNF",
+         "RANDOMSEED"
       ]
    },
    "simo":{
+      "status": "ok",
       "name": "simo",
       "call": "./simo",
       "gz": false,
@@ -185,30 +209,37 @@
       ]
    },
    "unitwalk":{
+      "status": "ok",
       "name": "unitwalk",
       "call": "./unitwalk",
       "gz": false,
       "args": [
-         "FILECNF"
+         "FILECNF",
+         "RANDOMSEED"
       ]
    },
    "usat05":{
+      "status": "ok",
       "name": "usat05",
       "call": "./usat05",
       "gz": false,
       "args": [
-         "FILECNF"
+         "FILECNF",
+         "RANDOMSEED"
       ]
    },
    "usat10":{
+      "status": "ok",
       "name": "usat10",
       "call": "./usat10",
       "gz": false,
       "args": [
-         "FILECNF"
+         "FILECNF",
+         "RANDOMSEED"
       ]
    },
    "zchaff":{
+      "status": "ok",
       "name": "zchaff",
       "call": "./zchaff",
       "gz": false,
