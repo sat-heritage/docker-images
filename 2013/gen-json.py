@@ -6,7 +6,7 @@ import json
 
 
 def buildargs(command):
-    replace = [("<instance>","FILECNF"), ("<seed>","RANDOMSEED"),("<tempdir>","TMPDIR")]
+    replace = [("<instance>","FILECNF"), ("<seed>","RANDOMSEED"),("<tempdir>","/tmp")]
     toret = []
     args = command.split()[1:]
     for a in args:

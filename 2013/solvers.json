@@ -1,8 +1,9 @@
 {
     "breakidglucose": {
+        "status": "ok",
         "args": [
             "FILECNF",
-            "TMPDIR"
+            "/tmp"
         ],
         "authors": "Jo Devriendt, Bart Bogaerts",
         "call": "././runBreakIDGlucose.sh",
@@ -11,10 +12,11 @@
         "name": "BreakIDGlucose"
     },
     "cshcappllc": {
+        "status": "build fails",
         "args": [
             ".//algport.py",
             "--tmpdir",
-            "TMPDIR",
+            "/tmp",
             "CSHCapplLC",
             "FILECNF"
         ],
@@ -28,7 +30,7 @@
         "args": [
             ".//algport.py",
             "--tmpdir",
-            "TMPDIR",
+            "/tmp",
             "CSHCapplLG",
             "FILECNF"
         ],
@@ -76,7 +78,7 @@
     "glue_bit": {
         "args": [
             "FILECNF",
-            "TMPDIR"
+            "/tmp"
         ],
         "authors": "Jingchao Chen",
         "call": "././glue_bit.sh",
@@ -108,7 +110,7 @@
     "gluh": {
         "args": [
             "FILECNF",
-            "TMPDIR"
+            "/tmp"
         ],
         "authors": "Chanseok Oh",
         "call": "././gluH.sh",
@@ -161,7 +163,7 @@
         "args": [
             "FILECNF",
             "-tmp",
-            "TMPDIR"
+            "/tmp"
         ],
         "authors": "Sergio N\u00fa\u00f1ez, Daniel Borrajo and Carlos Linares L\u00f3pez",
         "call": ".//solve",
@@ -202,7 +204,7 @@
         "args": [
             "FILECNF",
             "-tmp",
-            "TMPDIR"
+            "/tmp"
         ],
         "authors": "Djamal Habet and Chu Min Li",
         "call": "././relback.sh",
@@ -270,7 +272,7 @@
     },
     "satuzk": {
         "args": [
-            "TMPDIR",
+            "/tmp",
             "satUZK",
             "FILECNF"
         ],
@@ -283,7 +285,7 @@
     "shatterglucose": {
         "args": [
             "FILECNF",
-            "TMPDIR"
+            "/tmp"
         ],
         "authors": "Jo Devriendt, Bart Bogaerts",
         "call": "././runShatterGlucose.sh",

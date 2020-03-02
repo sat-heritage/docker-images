@@ -6,9 +6,12 @@
         "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/838"
     },
     "cshcappllc": {
+        "RDEPENDS": "python",
+        "BUILD_DEPENDS": "libm4ri-dev libpython-dev libglpk-dev libboost-dev",
         "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/819"
     },
     "cshcappllg": {
+        "RDEPENDS": "python",
         "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/813"
     },
     "forl": {

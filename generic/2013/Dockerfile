@@ -4,7 +4,11 @@ FROM ${BUILDER_BASE} as builder
 ENV LANG=C.UTF-8 LC_ALL=C.UTF-8
 
 RUN apt-get update --fix-missing &&\
-    apt -y install zip gcc g++ cmake make patch xz-utils zlib1g-dev curl
+    apt -y install zip gcc g++ cmake make patch python xz-utils zlib1g-dev curl
+
+ARG BUILD_DEPENDS
+RUN if test "${BUILD_DEPENDS}"; then \
+    apt-get install -y --no-install-recommends ${BUILD_DEPENDS}; fi
 
 COPY setup.json fixtures/$solver* /src/
 
