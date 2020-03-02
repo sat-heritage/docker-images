@@ -42,13 +42,6 @@ IN_REPOSITORY = in_repository()
 ##
 #
 # List of images
-def make_name(reg, cfg, entry, solver):
-    pattern = cfg[entry].get("image_name", "{SOLVER}:{ENTRY}")
-    return pattern.format(ENTRY=entry, SOLVER=solver)
-
-def images_of_registry(reg, cfg):
-    return [make_name(reg, cfg, entry, solver) \
-                for entry in reg for solver in reg[entry]]
 
 def fetch_registry(args, opener):
     with opener("index.json") as fp:
@@ -92,17 +85,33 @@ def get_registry(args):
             refresh_cache(args, force=True)
             return get_registry(args)
 
+def make_name(reg, cfg, entry, solver):
+    pattern = cfg[entry].get("image_name", "{SOLVER}:{ENTRY}")
+    return pattern.format(ENTRY=entry, SOLVER=solver)
+
 class Repository(object):
     def __init__(self, args):
         self.registry, self.setup = get_registry(args)
         self.images = {}
+        self.names = []
+
+        select_all = not hasattr(args, "all") or args.all
+        select_unstable = select_all or hasattr(args, "unstable") and args.unstable
+        select_stable = select_all or not select_unstable
+
         for entry in self.registry:
             for solver in self.registry[entry]:
                 name = make_name(self.registry, self.setup, entry, solver)
                 if hasattr(args, "pattern") and \
                         not fnmatch.fnmatch(name, args.pattern):
                     continue
+                status = self.registry[entry][solver].get("status", "unknown")
+                if status == "ok" and not select_stable:
+                    continue
+                if status != "ok" and not select_unstable:
+                    continue
                 self.images[name] = {"entry": entry, "solver": solver}
+                self.names.append(name)
 
 class ImageManager(object):
     def __init__(self, name, repo):
@@ -117,13 +126,13 @@ class ImageManager(object):
     @property
     def solver_name(self):
         return self.registry["name"]
+    @property
+    def status(self):
+        return self.registry.get("status", "unknown")
 
 
 def get_list(args):
-    reg, cfg = get_registry(args)
-    images = images_of_registry(reg, cfg)
-    if hasattr(args, "pattern"):
-        images = fnmatch.filter(images, args.pattern)
+    images = Repository(args).names
     assert len(images), "No matching images!"
     return images
 
@@ -162,7 +171,8 @@ def print_info(args):
 
         key_width += 2
         line_width = key_width + 70
-        print(f"{DOCKER_NS}/\033[1m{image.name}\033[0m")
+        color = 32 if image.status == "ok" else 33
+        print(f"{DOCKER_NS}/\033[1;{color}m{image.name}\033[0m")
         print("-"*line_width)
         for (key, value) in info:
             key = f"{key}: "
@@ -466,9 +476,17 @@ def main(redirected=False):
     ##
     # options shared by several sub-commands
     #
-    spec_parser = argparse.ArgumentParser(add_help=False)
+    status_parser = argparse.ArgumentParser(add_help=False)
+    status_parser.add_argument("--unstable", action="store_true",
+            help="Consider images with non-ok status")
+    status_parser.add_argument("--all", "-a", action="store_true",
+            help="Consider all images, either ok or non-ok")
+
+    spec_parser = argparse.ArgumentParser(add_help=False,
+            parents=[status_parser])
     spec_parser.add_argument("pattern",
             help="Pattern for filtering images")
+
 
     docker_parser = argparse.ArgumentParser(add_help=False)
     docker_parser.add_argument("--pull", action="store_true",
@@ -483,7 +501,8 @@ def main(redirected=False):
     #
 
     p = subparsers.add_parser("list",
-            help=f"List {DOCKER_NS} Docker images")
+            help=f"List {DOCKER_NS} Docker images",
+            parents=[status_parser])
     p.add_argument("pattern", default="*", nargs="?",
             help="Pattern for filtering images (default: *)")
     p.set_defaults(func=print_list)
