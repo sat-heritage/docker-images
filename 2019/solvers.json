@@ -1,6 +1,6 @@
 {
   "ccanrsim": {
-    "_comment": "Problem when calling the solver: Arguments error! + problem with proof",
+    "status": "Problem when calling the solver: Arguments error! + problem with proof",
     "name": "CCAnrSim",
     "call": "./CCAnrSim",
     "gz": true,
@@ -11,7 +11,7 @@
     ]
   },
   "cominisatps_pulsar_drup": {
-    "_comment": "ok",
+    "status": "ok",
     "name": "COMiniSatPS_Pulsar_drup",
     "call": "./minisat_static",
     "gz": true,
@@ -25,7 +25,7 @@
     ]
   },
   "cadical": {
-    "_comment": "ok",
+    "status": "ok",
     "name": "CaDiCaL",
     "call": "./cadical",
     "gz": true,
@@ -40,7 +40,7 @@
     ]
   },
   "candy": {
-    "_comment": "ok",
+    "status": "ok",
     "name": "Candy",
     "call": "./candy",
     "gz": true,
@@ -54,7 +54,7 @@
     ]
   },
   "mldchronobt_gcbump": {
-    "_comment": "ok",
+    "status": "ok",
     "name": "MLDChronoBT_GCBump",
     "call": "./glucose_static",
     "gz": true,
@@ -69,7 +69,7 @@
     ]
   },
   "maple-comsps_chb_vsids_drup": {
-    "_comment": "ok",
+    "status": "ok",
     "name": "MapleCOMSPS_CHB_VSIDS_drup",
     "call": "./MapleCOMSPS_CHB_VSIDS",
     "gz": true,
@@ -83,7 +83,7 @@
     ]
   },
   "maple-comsps_lrb_vsids_2_drup": {
-    "_comment": "ok",
+    "status": "ok",
     "name": "MapleCOMSPS_LRB_VSIDS_2_drup",
     "call": "./MapleCOMSPS_LRB_VSIDS_2",
     "gz": true,
@@ -96,7 +96,7 @@
     ]
   },
   "maple-comsps_lrb_vsids_drup": {
-    "_comment": "ok",
+    "status": "ok",
     "name": "MapleCOMSPS_LRB_VSIDS_drup",
     "call": "./MapleCOMSPS_LRB_VSIDS",
     "gz": true,
@@ -109,7 +109,7 @@
     ]
   },
   "maple-lcmchronobt_del": {
-    "_comment": "ok",
+    "status": "ok",
     "name": "MapleLCMChronoBT_DEL",
     "call": "./glucose_static",
     "gz": true,
@@ -123,7 +123,7 @@
     ]
   },
   "maple-lcmchronobt_scavel_ewma": {
-    "_comment": "ok",
+    "status": "ok",
     "name": "MapleLCMChronoBT_Scavel_EWMA",
     "call": "./MLCMCBT_S_EWMA",
     "gz": true,
@@ -136,7 +136,7 @@
     ]
   },
   "maple-lcmchronobt_ldcr": {
-    "_comment": "ok",
+    "status": "ok",
     "name": "MapleLCMChronoBT_ldcr",
     "call": "./glucose_static",
     "gz": true,
@@ -149,7 +149,7 @@
     ]
   },
   "maple-lcmdistchronobt_scavel_ewma_08all": {
-    "_comment": "ok",
+    "status": "ok",
     "name": "MapleLCMDISTChronoBT_Scavel_EWMA_08ALL",
     "call": "./MLCMCBT_S_EWMV_08ALL",
     "gz": true,
@@ -162,7 +162,7 @@
     ]
   },
   "maple-lcmdiscchronobt-dl-v3": {
-    "_comment": "ok",
+    "status": "ok",
     "name": "MapleLCMDiscChronoBT-DL-v3",
     "call": "./MapleLCMDistChrBt-DL-v3",
     "gz": true,
@@ -175,7 +175,7 @@
     ]
   },
   "maple-lcmdistchronobt-dl-v1": {
-    "_comment": "Problem when moving executable (not the same names...)",
+    "status": "Problem when moving executable (not the same names...)",
     "name": "MapleLCMDistChronoBT-DL-v1",
     "call": "./maplelcmdistchronobt-dl-v1",
     "gz": true,
@@ -188,7 +188,7 @@
     ]
   },
   "maple-lcmdistchronobt-dl-v2.1": {
-    "_comment" : "ok",
+    "status" : "ok",
     "name": "MapleLCMDistChronoBT-DL-v2.1",
     "call": "./MapleLCMDistChrBt-DL-v2.1",
     "gz": true,
@@ -201,7 +201,7 @@
     ]
   },
   "maple-lcmdistchronobt-dl-v2.2": {
-    "_comment" : "ok",
+    "status" : "ok",
     "name": "MapleLCMDistChronoBT-DL-v2.2",
     "call": "./MapleLCMDistChrBt-DL-v2.2",
     "gz": true,
@@ -214,7 +214,7 @@
     ]
   },
   "maple-lcmdistchronobtvariablereindexing": {
-    "_comment": "Problem: anaconda / python not installed",
+    "status": "Problem: anaconda / python not installed",
     "name": "MapleLCMDistChronoBTVariableReindexing",
     "call": "./maplelcmdistchronobtvariablereindexing",
     "gz": true,
@@ -227,7 +227,7 @@
     ]
   },
   "maple-lcmdistcbtcorefirst": {
-    "_comment": "ok",
+    "status": "ok",
     "name": "MapleLCMdistCBTcoreFirst",
     "call": "./MapleCBTCoreFirst",
     "gz": true,
@@ -241,7 +241,7 @@
     ]
   },
   "maple_lcm_onlinedel_19a": {
-    "_comment": "ok",
+    "status": "ok",
     "name": "Maple_LCM_OnlineDel_19a",
     "call": "./glucose_static",
     "gz": true,
@@ -254,7 +254,7 @@
     ]
   },
   "maple_cm_onlinedel_19b": {
-    "_comment": "ok",
+    "status": "ok",
     "name": "Maple_CM_OnlineDel_19b",
     "call": "./glucose_static",
     "gz": true,
@@ -267,7 +267,7 @@
     ]
   },
   "maple_lcm_btl": {
-    "_comment": "ok",
+    "status": "ok",
     "name": "Maple_LCM_BTL",
     "call": "./MapleLCMDist_LBD_BTL",
     "gz": true,
@@ -280,7 +280,7 @@
     ]
   },
   "maple_lcm_scavel_155": {
-    "_comment": "ok",
+    "status": "ok",
     "name": "Maple_LCM_Scavel_155",
     "call": "./Maple_LCM_Scavel",
     "gz": true,
@@ -293,7 +293,7 @@
     ]
   },
   "mergesat": {
-    "_comment": "Problem when compiling...",
+    "status": "Problem when compiling...",
     "name": "MergeSAT",
     "call": "./mergesat",
     "gz": true,
@@ -306,7 +306,7 @@
     ]
   },
   "minisat-v2.2.0-106-ge2dd095": {
-    "_comment": "ok",
+    "status": "ok",
     "name": "Minisat-v2.2.0-106-ge2dd095",
     "call": "./minisat",
     "gz": true,
@@ -319,7 +319,7 @@
     ]
   },
   "padc_maplelcmdistchronobt-default": {
-    "_comment": "ok",
+    "status": "ok",
     "name": "PADC_MapleLCMDistChronoBT",
     "call": "./glucose_static",
     "gz": true,
@@ -336,7 +336,7 @@
     ]
   },
   "padc_maplelcmdistchronobt-nbincreddb_5_ct_0": {
-    "_comment": "ok",
+    "status": "ok",
     "name": "PADC_MapleLCMDistChronoBT",
     "call": "./glucose_static",
     "gz": true,
@@ -353,7 +353,7 @@
     ]
   },
   "padc_maple_lcm_dist": {
-    "_comment": "ok",
+    "status": "ok",
     "name": "PADC_Maple_LCM_Dist",
     "call": "./glucose_static",
     "gz": true,
@@ -370,7 +370,7 @@
     ]
   },
   "psids_maplelcmdistchronobt": {
-    "_comment": "ok",
+    "status": "ok",
     "name": "PSIDS_MapleLCMDistChronoBT",
     "call": "./glucose_static",
     "gz": true,
@@ -383,7 +383,7 @@
     ]
   },
   "relaxed_lcmdistchronobt": {
-    "_comment": "ok",
+    "status": "ok",
     "name": "Relaxed_LCMDistChronoBT",
     "call": "./Relaxed_LCMDistChronoBT",
     "gz": true,
@@ -396,7 +396,7 @@
     ]
   },
   "relaxed_lcmdistchronobt_scavel": {
-    "_comment": "ok",
+    "status": "ok",
     "name": "Relaxed_LCMDistChronoBT_Scavel",
     "call": "./Relaxed_LCMDistChronoBT_Scavel",
     "gz": true,
@@ -409,7 +409,7 @@
     ]
   },
   "relaxed_lcmdistchronobt_p9": {
-    "_comment": "ok",
+    "status": "ok",
     "name": "Relaxed_LCMDistChronoBT_p9",
     "call": "./Relaxed_LCMDistChronoBT",
     "gz": true,
@@ -424,7 +424,7 @@
     ]
   },
   "relaxed_lcm_dist": {
-    "_comment": "ok",
+    "status": "ok",
     "name": "Relaxed_LCM_Dist",
     "call": "./Relaxed_LCM_Dist",
     "gz": true,
@@ -437,7 +437,7 @@
     ]
   },
   "riss7.1": {
-    "_comment": "Problème au lancement",
+    "status": "Problème au lancement",
     "name": "Riss7.1",
     "call": "./riss",
     "gz": true,
@@ -453,7 +453,7 @@
     ]
   },
   "slime": {
-    "_comment" : "ok",
+    "status" : "ok",
     "name": "SLIME",
     "call": "./slime_static",
     "gz": true,
@@ -466,7 +466,7 @@
     ]
   },
   "sparrowtomergesat": {
-    "_comment" : "Problem: Miss some executables",
+    "status" : "Problem: Miss some executables",
     "name": "SparrowToMergeSAT",
     "call": "./sparrowtomergesat",
     "gz": true,
@@ -479,7 +479,7 @@
     ]
   },
   "topk3.2_glucose3.0": {
-    "_comment" : "ok",
+    "status" : "ok",
     "name": "Topk3.2_Glucose3.0",
     "call": "./topkLC-glucose",
     "gz": true,
@@ -494,7 +494,7 @@
     ]
   },
     "topk3_glucose3.0": {
-    "_comment" : "ok",
+    "status" : "ok",
     "name": "Topk3_Glucose3.0",
     "call": "./topkLC-glucose",
     "gz": true,
@@ -509,7 +509,7 @@
     ]
   },
   "topk6.2_glucose3.0": {
-    "_comment" : "ok",
+    "status" : "ok",
     "name": "Topk6.2_Glucose3.0",
     "call": "./topkLC-glucose",
     "gz": true,
@@ -524,7 +524,7 @@
     ]
   },
   "topk6_glucose3.0": {
-    "_comment" : "ok",
+    "status" : "ok",
     "name": "Topk6_Glucose3.0",
     "call": "./topkLC-glucose",
     "gz": true,
@@ -539,7 +539,7 @@
     ]
   },
   "zib_glucose": {
-    "_comment": "Problem: proof always enabled",
+    "status": "Problem: proof always enabled",
     "name": "ZIB_Glucose",
     "call": "./glucose_static",
     "gz": true,
@@ -555,7 +555,7 @@
     ]
   },
   "cmsatv56-walksat-chronobt": {
-    "_comment" : "ok",
+    "status" : "ok",
     "name": "cmsatv56-walksat-chronobt",
     "call": "./cryptominisat5_simple",
     "gz": true,
@@ -608,7 +608,7 @@
     ]
   },
   "expmaple_cm": {
-    "_comment": "ok",
+    "status": "ok",
     "name": "expMaple_CM",
     "call": "./glucose_static",
     "gz": true,
@@ -622,7 +622,7 @@
     ]
   },
   "expmaple_cm_gcbump": {
-    "_comment": "Problem",
+    "status": "Problem",
     "name": "expMaple_CM_GCBump",
     "call": "./expmaple_cm_gcbump",
     "gz": true,
@@ -636,7 +636,7 @@
     ]
   },
   "expmaple_cm_gcbumponlylrb": {
-    "_comment": "ok",
+    "status": "ok",
     "name": "expMaple_CM_GCBumpOnlyLRB",
     "call": "./glucose_static",
     "gz": true,
@@ -650,7 +650,7 @@
     ]
   },
   "glucose-4.2.1": {
-    "_comment": "ok",
+    "status": "ok",
     "name": "glucose-4.2.1",
     "call": "./glucose",
     "gz": true,
@@ -666,7 +666,7 @@
     ]
   },
   "glucose3.0": {
-    "_comment" : "ok",
+    "status" : "ok",
     "name": "glucose3.0",
     "call": "./glucose_static",
     "gz": true,
@@ -681,7 +681,7 @@
     ]
   },
   "glucose_421_del": {
-    "_comment" : "ok",
+    "status" : "ok",
     "name": "glucose_421_del",
     "call": "./glucose_del",
     "gz": true,
@@ -697,7 +697,7 @@
     ]
   },
   "glucose_btl": {
-    "_comment" : "ok",
+    "status" : "ok",
     "name": "glucose_BTL",
     "call": "./glucose_lbdbtl",
     "gz": true,
@@ -713,7 +713,7 @@
     ]
   },
   "optsat": {
-    "_comment" : "ok",
+    "status" : "ok",
     "name": "optsat",
     "call": "./optsat",
     "gz": true,
@@ -727,7 +727,7 @@
     ]
   },
   "smallsat": {
-    "_comment" : "ok",
+    "status" : "ok",
     "name": "smallsat",
     "call": "./smallsat",
     "gz": true,
