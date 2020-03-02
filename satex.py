@@ -16,7 +16,7 @@ import textwrap
 import time
 from urllib.request import urlopen
 
-__version__ = "0.94-dev"
+__version__ = "0.95-dev"
 
 DOCKER_NS = "satex"
 REGISTRY_URL = "https://github.com/sat-heritage/docker-images/releases/download/list/list.tgz"
@@ -62,13 +62,6 @@ def fetch_registry(args, opener):
             cfg[tag] = json.load(fp)
     return reg, cfg
 
-def fetch_list(args, opener):
-    reg, cfg = fetch_registry(args, opener)
-    return images_of_registry(reg, cfg)
-
-def get_local_list(args):
-    return fetch_list(args, open)
-
 def is_cache_valid(args):
     if args.refresh_list:
         return False
@@ -87,20 +80,48 @@ def refresh_cache(args, force=False):
                 open(cache_file, "wb") as dest:
             dest.write(orig.read())
 
-def get_dist_list(args):
-    refresh_cache(args)
-    try:
-        with tarfile.open(cache_file, "r") as tar:
-            return fetch_list(args, tar.extractfile)
-    except tarfile.ReadError:
-        refresh_cache(args, force=True)
-        get_dist_list(args)
+def get_registry(args):
+    if IN_REPOSITORY:
+        return fetch_registry(args, open)
+    else:
+        refresh_cache(args)
+        try:
+            with tarfile.open(cache_file, "r") as tar:
+                return fetch_registry(args, tar.extractfile)
+        except tarfile.ReadError:
+            refresh_cache(args, force=True)
+            return get_registry(args)
+
+class Repository(object):
+    def __init__(self, args):
+        self.registry, self.setup = get_registry(args)
+        self.images = {}
+        for entry in self.registry:
+            for solver in self.registry[entry]:
+                name = make_name(self.registry, self.setup, entry, solver)
+                if hasattr(args, "pattern") and \
+                        not fnmatch.fnmatch(name, args.pattern):
+                    continue
+                self.images[name] = {"entry": entry, "solver": solver}
+
+class ImageManager(object):
+    def __init__(self, name, repo):
+        self.repo = repo
+        self.name = name
+        self.entry = repo.images[name]["entry"]
+        self.solver = repo.images[name]["solver"]
+        self.setup = repo.setup[self.entry].copy()
+        self.setup.update(self.setup.get(self.solver, {}))
+        self.registry = repo.registry[self.entry][self.solver]
+
+    @property
+    def solver_name(self):
+        return self.registry["name"]
+
 
 def get_list(args):
-    if IN_REPOSITORY:
-        images = get_local_list(args)
-    else:
-        images = get_dist_list(args)
+    reg, cfg = get_registry(args)
+    images = images_of_registry(reg, cfg)
     if hasattr(args, "pattern"):
         images = fnmatch.filter(images, args.pattern)
     assert len(images), "No matching images!"
@@ -109,6 +130,48 @@ def get_list(args):
 def print_list(args):
     for image in get_list(args):
         print(image)
+
+
+_info_first = ["name", "version", "authors"]
+_info_ignore = {"call"}
+def print_info(args):
+    repo = Repository(args)
+    for name in repo.images:
+        image = ImageManager(name, repo)
+
+        keys = [k for k in sorted(image.registry.keys()) if k not in _info_ignore]
+        for k in _info_first[::-1]:
+            if k in keys:
+                keys.remove(k)
+                keys.insert(0, k)
+
+        key_width = 0
+        info = []
+        for key in keys:
+            value = image.registry[key]
+            if key == "args":
+                key = "Call"
+                value = f"{image.registry['call']} {' '.join(value)}"
+            elif key == "argsproof":
+                key = "Call (proof)"
+                value = f"{image.registry['call']} {' '.join(value)}"
+            else:
+                key = key.title()
+                value = str(value)
+            key_width = max(len(key), key_width)
+            info.append((key,value))
+
+        key_width += 2
+        line_width = key_width + 70
+        print(f"{DOCKER_NS}/\033[1m{name}\033[0m")
+        print("-"*line_width)
+        for (key, value) in info:
+            key = f"{key}: "
+            for line in textwrap.wrap(value):
+                print("{0:{key_width}}{1}".format(key, line,
+                    key_width=key_width))
+                key = ""
+        print()
 
 #
 ##
@@ -241,32 +304,6 @@ def extract(args):
 ##
 #
 # repository management
-
-class Repository(object):
-    def __init__(self, args):
-        self.registry, self.setup = fetch_registry(args, open)
-        self.images = {}
-        for entry in self.registry:
-            for solver in self.registry[entry]:
-                name = make_name(self.registry, self.setup, entry, solver)
-                if hasattr(args, "pattern") and \
-                        not fnmatch.fnmatch(name, args.pattern):
-                    continue
-                self.images[name] = {"entry": entry, "solver": solver}
-
-class ImageManager(object):
-    def __init__(self, name, repo):
-        self.repo = repo
-        self.name = name
-        self.entry = repo.images[name]["entry"]
-        self.solver = repo.images[name]["solver"]
-        self.setup = repo.setup[self.entry].copy()
-        self.setup.update(self.setup.get(self.solver, {}))
-        self.registry = repo.registry[self.entry][self.solver]
-
-    @property
-    def solver_name(self):
-        return self.registry["name"]
 
 FROM_UPTODATE = set()
 
@@ -422,21 +459,35 @@ def main(redirected=False):
 
     subparsers = parser.add_subparsers(help="commands")
 
+    ##
+    # options shared by several sub-commands
+    #
     spec_parser = argparse.ArgumentParser(add_help=False)
     spec_parser.add_argument("pattern",
             help="Pattern for filtering images")
-
-    parser_list = subparsers.add_parser("list",
-            help=f"List {DOCKER_NS} Docker images")
-    parser_list.add_argument("pattern", default="*", nargs="?",
-            help="Pattern for filtering images (default: *)")
-    parser_list.set_defaults(func=print_list)
 
     docker_parser = argparse.ArgumentParser(add_help=False)
     docker_parser.add_argument("--pull", action="store_true",
             help="Explicitly pull the image")
     docker_parser.add_argument("-v", "--volume", action="append",
             help="(Docker option) Mount a volume")
+    #
+    ##
+
+    ##
+    # sub-commands
+    #
+
+    p = subparsers.add_parser("list",
+            help=f"List {DOCKER_NS} Docker images")
+    p.add_argument("pattern", default="*", nargs="?",
+            help="Pattern for filtering images (default: *)")
+    p.set_defaults(func=print_list)
+
+    p = subparsers.add_parser("info",
+            help=f"Display information about the solver embedded in the given Docker images",
+            parents=[spec_parser])
+    p.set_defaults(func=print_info)
 
     p = subparsers.add_parser("run",
             help=f"Run one or several {DOCKER_NS} Docker images",
@@ -491,6 +542,9 @@ def main(redirected=False):
     subparsers.add_parser("version",
                 help="Print script version")\
         .set_defaults(func=print_version)
+
+    #
+    ##
 
     args = parser.parse_args()
     if not hasattr(args, "func"):

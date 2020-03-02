@@ -1,15 +1,343 @@
 {
-    "glucose": {
-        "call": "./glucose",
-        "name": "glucose",
-        "gz": true,
+    "breakidglucose": {
         "args": [
-          "FILECNF"
+            "FILECNF",
+            "TMPDIR"
         ],
-        "argsproof": [
-          "FILECNF",
-          "-certified",
-          "-certified-output=FILEPROOF"
-        ]
+        "authors": "Jo Devriendt, Bart Bogaerts",
+        "call": "././runBreakIDGlucose.sh",
+        "comments": "Launchcommand was:  ././runBreakIDGlucose.sh  <instance>   <tempdir> \nTrack was Core solvers, Sequential, Application SAT+UNSAT",
+        "gz": true,
+        "name": "BreakIDGlucose"
+    },
+    "cshcappllc": {
+        "args": [
+            ".//algport.py",
+            "--tmpdir",
+            "TMPDIR",
+            "CSHCapplLC",
+            "FILECNF"
+        ],
+        "authors": "Yuri Malitsky, Ashish Sabharwal, Horst Samulowitz, Meinolf Sellmann.",
+        "call": "python",
+        "comments": "Launchcommand was: python .//algport.py --tmpdir <tempdir>  CSHCapplLC  <instance> \nTrack was Core solvers, Sequential, Application SAT+UNSAT",
+        "gz": true,
+        "name": "CSHCapplLC"
+    },
+    "cshcappllg": {
+        "args": [
+            ".//algport.py",
+            "--tmpdir",
+            "TMPDIR",
+            "CSHCapplLG",
+            "FILECNF"
+        ],
+        "authors": "Yuri Malitsky, Ashish Sabharwal, Horst Samulowitz, Meinolf Sellmann.",
+        "call": "python",
+        "comments": "Launchcommand was: python .//algport.py --tmpdir <tempdir>  CSHCapplLG  <instance> \nTrack was Core solvers, Sequential, Application SAT+UNSAT",
+        "gz": true,
+        "name": "CSHCapplLG"
+    },
+    "forl": {
+        "args": [
+            "--verb",
+            "0",
+            "FILECNF"
+        ],
+        "authors": "Mate Soos",
+        "call": "./forl-nodrup",
+        "comments": "Launchcommand was:  ./forl-nodrup --verb 0  <instance> \nTrack was Core solvers, Sequential, Application SAT+UNSAT",
+        "gz": true,
+        "name": "forl"
+    },
+    "glucored": {
+        "args": [
+            "FILECNF",
+            "-rnd-seed=",
+            "RANDOMSEED",
+            "-verb=0"
+        ],
+        "authors": "Siert Wieringa",
+        "call": "././glucored-simp_release",
+        "comments": "Launchcommand was:  ././glucored-simp_release  <instance>  -rnd-seed= <seed>  -verb=0\nTrack was Core solvers, Sequential, Application SAT+UNSAT",
+        "gz": true,
+        "name": "GlucoRed"
+    },
+    "glucose": {
+        "args": [
+            "FILECNF"
+        ],
+        "authors": "Gilles Audemard and Laurent Simon",
+        "call": "././glucose",
+        "comments": "Launchcommand was:  ././glucose  <instance> \nTrack was Core solvers, Sequential, Application SAT+UNSAT",
+        "gz": true,
+        "name": "glucose"
+    },
+    "glue_bit": {
+        "args": [
+            "FILECNF",
+            "TMPDIR"
+        ],
+        "authors": "Jingchao Chen",
+        "call": "././glue_bit.sh",
+        "comments": "Launchcommand was:  ././glue_bit.sh  <instance>   <tempdir> \nTrack was Core solvers, Sequential, Application SAT+UNSAT",
+        "gz": true,
+        "name": "glue_bit"
+    },
+    "gluebit_lgl": {
+        "args": [
+            "FILECNF"
+        ],
+        "authors": "Jingchao Chen",
+        "call": "././gluebit_lgl",
+        "comments": "Launchcommand was:  ././gluebit_lgl  <instance> \nTrack was Core solvers, Sequential, Application SAT+UNSAT",
+        "gz": true,
+        "name": "gluebit_lgl"
+    },
+    "glueminisat": {
+        "args": [
+            "-compe",
+            "FILECNF"
+        ],
+        "authors": "Hidetomo Nabeshima, Koji Iwanuma, Katsumi Inoue",
+        "call": "././glueminisat-simp",
+        "comments": "Launchcommand was:  ././glueminisat-simp -compe <instance> \nTrack was Core solvers, Sequential, Application SAT+UNSAT",
+        "gz": true,
+        "name": "glueminisat"
+    },
+    "gluh": {
+        "args": [
+            "FILECNF",
+            "TMPDIR"
+        ],
+        "authors": "Chanseok Oh",
+        "call": "././gluH.sh",
+        "comments": "Launchcommand was:  ././gluH.sh  <instance>   <tempdir> \nTrack was Core solvers, Sequential, Application SAT+UNSAT",
+        "gz": true,
+        "name": "gluH"
+    },
+    "gluh_simp": {
+        "args": [
+            "FILECNF"
+        ],
+        "authors": "Chanseok Oh",
+        "call": "././gluH_static",
+        "comments": "Launchcommand was:  ././gluH_static  <instance> \nTrack was Core solvers, Sequential, Application SAT+UNSAT",
+        "gz": true,
+        "name": "gluH_simp"
+    },
+    "lingeling": {
+        "args": [
+            "FILECNF"
+        ],
+        "authors": "Armin Biere",
+        "call": "./lingeling",
+        "comments": "Launchcommand was:  ./lingeling  <instance> \nTrack was Core solvers, Sequential, Application SAT+UNSAT",
+        "gz": true,
+        "name": "Lingeling"
+    },
+    "lingeling_1": {
+        "args": [
+            "FILECNF"
+        ],
+        "authors": "Armin Biere",
+        "call": "./lingeling",
+        "comments": "Launchcommand was:  ./lingeling  <instance> \nTrack was Core solvers, Sequential, Application SAT+UNSAT",
+        "gz": true,
+        "name": "Lingeling"
+    },
+    "minipure": {
+        "args": [
+            "FILECNF",
+            "-freq_pure=3"
+        ],
+        "authors": "Hsiao-Lun Wang",
+        "call": "././minipure",
+        "comments": "Launchcommand was:  ././minipure  <instance>  -freq_pure=3\nTrack was Core solvers, Sequential, Application SAT+UNSAT",
+        "gz": true,
+        "name": "minipure"
+    },
+    "mipsat": {
+        "args": [
+            "FILECNF",
+            "-tmp",
+            "TMPDIR"
+        ],
+        "authors": "Sergio N\u00fa\u00f1ez, Daniel Borrajo and Carlos Linares L\u00f3pez",
+        "call": ".//solve",
+        "comments": "Launchcommand was:  .//solve  <instance>  -tmp <tempdir> \nTrack was Core solvers, Sequential, Application SAT+UNSAT",
+        "gz": true,
+        "name": "MIPSat"
+    },
+    "nigma": {
+        "args": [
+            "FILECNF",
+            "--verbose",
+            "--display-assignments-if-sat",
+            "--partial-backtracking",
+            "--preprocessing-timeout",
+            "200"
+        ],
+        "authors": "Chuan Jiang, Ting Zhang",
+        "call": "./nigma",
+        "comments": "Launchcommand was:  ./nigma  <instance>  --verbose --display-assignments-if-sat --partial-backtracking --preprocessing-timeout 200\nTrack was Core solvers, Sequential, Application SAT+UNSAT",
+        "gz": true,
+        "name": "Nigma"
+    },
+    "nigma-nopb": {
+        "args": [
+            "FILECNF",
+            "--verbose",
+            "--display-assignments-if-sat",
+            "--preprocessing-timeout",
+            "200"
+        ],
+        "authors": "Chuan Jiang, Ting Zhang",
+        "call": "./nigma",
+        "comments": "Launchcommand was:  ./nigma  <instance>  --verbose --display-assignments-if-sat --preprocessing-timeout 200\nTrack was Core solvers, Sequential, Application SAT+UNSAT",
+        "gz": true,
+        "name": "Nigma-NoPB"
+    },
+    "relback": {
+        "args": [
+            "FILECNF",
+            "-tmp",
+            "TMPDIR"
+        ],
+        "authors": "Djamal Habet and Chu Min Li",
+        "call": "././relback.sh",
+        "comments": "Launchcommand was:  ././relback.sh  <instance>  -tmp <tempdir> \nTrack was Core solvers, Sequential, Application SAT+UNSAT",
+        "gz": true,
+        "name": "relback"
+    },
+    "riss3g": {
+        "args": [
+            "FILECNF"
+        ],
+        "authors": "Norbert Manthey",
+        "call": "././riss3g.sh",
+        "comments": "Launchcommand was:  ././riss3g.sh  <instance> \nTrack was Core solvers, Sequential, Application SAT+UNSAT",
+        "gz": true,
+        "name": "Riss3g"
+    },
+    "riss3g_1": {
+        "args": [
+            "FILECNF"
+        ],
+        "authors": "Norbert Manthey",
+        "call": ".//riss3g-cert.sh",
+        "comments": "Launchcommand was:  .//riss3g-cert.sh  <instance> \nTrack was Core solvers, Sequential, Application SAT+UNSAT",
+        "gz": true,
+        "name": "Riss3g"
+    },
+    "rseq": {
+        "args": [
+            "FILECNF",
+            "-s",
+            "RANDOMSEED"
+        ],
+        "authors": "Djamal Habet and Chu Min Li and Jiang Hua ",
+        "call": "././RSeq.sh",
+        "comments": "Launchcommand was:  ././RSeq.sh  <instance>  -s <seed>   \nTrack was Core solvers, Sequential, Application SAT+UNSAT",
+        "gz": true,
+        "name": "RSeq"
+    },
+    "sat4j": {
+        "args": [
+            "-Xms5g",
+            "-Xmx5g",
+            "-jar",
+            ".//sat4j2013.jar",
+            "FILECNF"
+        ],
+        "authors": "Daniel Le Berre",
+        "call": "java",
+        "comments": "Launchcommand was: java -Xms5g -Xmx5g -jar .//sat4j2013.jar  <instance> \nTrack was Core solvers, Sequential, Application SAT+UNSAT",
+        "gz": true,
+        "name": "SAT4J"
+    },
+    "sattimerelbackshr": {
+        "args": [
+            "FILECNF",
+            "-s",
+            "RANDOMSEED"
+        ],
+        "authors": "Jiang hua, chumin li, Djamal Habet",
+        "call": "././sattimeRelbackShr",
+        "comments": "Launchcommand was:  ././sattimeRelbackShr  <instance>  -s <seed> \nTrack was Core solvers, Sequential, Application SAT+UNSAT",
+        "gz": true,
+        "name": "sattimeRelbackShr"
+    },
+    "satuzk": {
+        "args": [
+            "TMPDIR",
+            "satUZK",
+            "FILECNF"
+        ],
+        "authors": "Alexander van der Grinten, Andreas Wotzlaw, Ewald Speckemeyer",
+        "call": "././satUZK_wrapper",
+        "comments": "Launchcommand was:  ././satUZK_wrapper  <tempdir>  satUZK  <instance> \nTrack was Core solvers, Sequential, Application SAT+UNSAT",
+        "gz": true,
+        "name": "satUZK"
+    },
+    "shatterglucose": {
+        "args": [
+            "FILECNF",
+            "TMPDIR"
+        ],
+        "authors": "Jo Devriendt, Bart Bogaerts",
+        "call": "././runShatterGlucose.sh",
+        "comments": "Launchcommand was:  ././runShatterGlucose.sh  <instance>   <tempdir> \nTrack was Core solvers, Sequential, Application SAT+UNSAT",
+        "gz": true,
+        "name": "ShatterGlucose"
+    },
+    "solver43a": {
+        "args": [
+            "FILECNF"
+        ],
+        "authors": "Valeriy Balabanov",
+        "call": "././Solver43_static",
+        "comments": "Launchcommand was:  ././Solver43_static  <instance> \nTrack was Core solvers, Sequential, Application SAT+UNSAT",
+        "gz": true,
+        "name": "Solver43a"
+    },
+    "solver43b": {
+        "args": [
+            "FILECNF"
+        ],
+        "authors": "Valeriy Balabanov",
+        "call": "././Solver43_static",
+        "comments": "Launchcommand was:  ././Solver43_static  <instance> \nTrack was Core solvers, Sequential, Application SAT+UNSAT",
+        "gz": true,
+        "name": "Solver43b"
+    },
+    "strangenight": {
+        "args": [
+            "FILECNF"
+        ],
+        "authors": "Mate Soos",
+        "call": "./strangenight",
+        "comments": "Launchcommand was:  ./strangenight  <instance> \nTrack was Core solvers, Sequential, Application SAT+UNSAT",
+        "gz": true,
+        "name": "strangenight"
+    },
+    "zenn": {
+        "args": [
+            "-ms=2",
+            "-gmr",
+            "-recover=0",
+            "-safe_low=2",
+            "-safe_high=60",
+            "-var_luby=2",
+            "-phase_decay",
+            "-glue_decay=0.800",
+            "-sinn_decay=0.990",
+            "FILECNF"
+        ],
+        "authors": "Takeru Yasumoto",
+        "call": "././zenn",
+        "comments": "Launchcommand was:  ././zenn -ms=2 -gmr -recover=0 -safe_low=2 -safe_high=60 -var_luby=2 -phase_decay -glue_decay=0.800 -sinn_decay=0.990  <instance> \nTrack was Core solvers, Sequential, Application SAT+UNSAT",
+        "gz": true,
+        "name": "ZENN"
     }
 }

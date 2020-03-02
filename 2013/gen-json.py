@@ -1,22 +1,39 @@
-#from HTMLParser import HTMLParser
+# FIXME: this is an ongoing effort to generate the skeletons for the 2013 contest
+# This is not finished yet.
 from lxml import html
 import requests
 import json
 
+
+def buildargs(command):
+    replace = [("<instance>","FILECNF"), ("<seed>","RANDOMSEED"),("<tempdir>","TMPDIR")]
+    toret = []
+    args = command.split()[1:]
+    for a in args:
+        for r in replace:
+            a = a.replace(r[0],r[1])
+        toret.append(a)
+    return toret
+
 solvers = set()
 solvernames = set()
 dom = html.parse("http://satcompetition.org/edacc/SATCompetition2013/experiments/").getroot()
-links = [l for l in [el.get("href") for el in dom.cssselect('a')] if l.startswith('/edacc/SATCompetition2013/experiment/')]
+links = [l for l in [(el.get("href"),el.text) for el in dom.cssselect('a')] if l[0].startswith('/edacc/SATCompetition2013/experiment/')]
 jsonoutput = {}
 jsonsetup = {}
 
-for experiment in links:
+for (experiment,track) in links:
+    print(track)
+    if track != "Core solvers, Sequential, Application SAT+UNSAT":
+        print("I am skipping the track", track, "(in this version, see code)")
+        continue #FIXME: for other tracks, we must check if this is a similar solver by
+    # Downloading the tar file, getting the code.zip and checking if this is the same
     experimentlink = "http://satcompetition.org" + experiment
     dom =  html.parse(experimentlink).getroot()
     newsolvers = [l for l in [el.get('href') for el in dom.cssselect('a')] if
             l.startswith(experiment+'solver-configurations')]
     for solver in newsolvers:
-        print(solver)
+        print(solver, "in track", track)
         dom = html.parse("http://satcompetition.org"+solver).getroot()
         solverconfigurations = [l for l in [el.get('href') for el in dom.cssselect('a')] if
                 l.startswith(experiment+'solver-configurations/')]
@@ -25,10 +42,13 @@ for experiment in links:
             launchcommand = [l[16:] for l in [el.text for el in dom.cssselect('strong')] if l.startswith('Launch Command:')][0]
 
             name = None
+            authors = None
             searchname = dom.cssselect('td')
             for i in range(len(searchname)):
                 if searchname[i].text == "Name:":
                     name = searchname[i+1].text
+                if searchname[i].text == "Authors:":
+                    authors = searchname[i+1].text
                     break
 
             solverdetails = [l for l in [el.get('href') for el in dom.cssselect('a')] if l.startswith('/edacc/SATCompetition2013/solver-download/')]
@@ -39,11 +59,23 @@ for experiment in links:
                 print("Solver", name, "found")
             solvers.add((name, s, launchcommand))
             normalizedname = name.lower().replace(" ","_")
+            if normalizedname in jsonoutput:
+                # We have the same solver used in different tracks
+                # This must be fixed by hand
+                i = 1
+                while normalizedname+"_"+str(i) in jsonoutput:
+                    i += 1
+                normalizedname = normalizedname+"_"+str(i)
+            
             jsonoutput[normalizedname] = {"call":launchcommand.split()[0], "name":name, "gz":True, "args":
-                    ["FILECNF"]}
+                    buildargs(launchcommand), "comments":"Launchcommand was: " + launchcommand +"\nTrack was "+track, "authors": authors}
             jsonsetup[normalizedname] = {"download_url":"http://satcompetition.org"+solverdetails[0]}
 
 with open("auto-setup.json","wt") as f:
-  
-  json.dump(jsonsetup, f)
+  json.dump(jsonsetup, f, sort_keys=True, indent=4)
 print("File auto-setup.json created")
+
+with open("auto-solvers.json","wt") as f:
+  json.dump(jsonoutput, f, sort_keys=True, indent=4)
+print("File auto-solvers.json created")
+print("Warning, there is probably multiple entries for the same solver (when used in different tracks). Check the parameters to see if there is any difference. This scripts only builds starter json files.")
