@@ -347,7 +347,7 @@ def build_images(args):
         build_args = {k:v for k,v in setup.items() if \
                         k not in ["generic_version",
                                     "builder", "builder_base",
-                                    "image_name"] and isinstance(v, str)}
+                                    "image_name", "RDEPENDS"] and isinstance(v, str)}
         build_args["solver"] = image.solver_name
         build_args["solver_id"] = image.solver
         for k in setup:
@@ -380,6 +380,7 @@ def build_images(args):
             "IMAGE_NAME": image.name,
             "solver": build_args["solver"],
             "solver_id": build_args["solver_id"],
+            "RDEPENDS": setup["RDEPENDS"]
         }
 
         fd, dbjson = tempfile.mkstemp(".json", "file", root)
