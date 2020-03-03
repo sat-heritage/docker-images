@@ -273,9 +273,9 @@
         ]
     },
     "riss7.1": {
-        "status": "Problem with prebuild",
+        "status": "ok",
         "name": "Riss7.1",
-        "call": "./riss7.1",
+        "call": "./riss",
         "gz": true,
         "args": [
             "FILECNF"
