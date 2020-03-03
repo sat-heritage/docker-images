@@ -24,7 +24,12 @@ COPY setup.json fixtures/$solver_id* /src/
 RUN test -f $solver_id.pre_build.sh && sh $solver_id.pre_build.sh || true
 
 RUN mkdir /dist && cd `find -maxdepth 1 -mindepth 1 -type d` && \
-    if test -f /src/$solver_id.build.sh; then sh /src/$solver_id.build.sh; else \
-    make && find -perm +100 -type f -exec mv -v {} /dist \;; fi
+    if test -f /src/$solver_id.build.sh; then\
+        echo "# Using $solver_id.build.sh"; \
+        sh /src/$solver_id.build.sh; else\
+    if test -f Makefile; then make;\
+    elif test -f build.sh; then sh build.sh;\
+    else echo "did not found any building tool"; exit 1; fi; \
+    find -perm +100 -type f -exec mv -v {} /dist \;; fi
 
 RUN test -f $solver_id.post_build.sh && sh $solver_id.post_build.sh || true

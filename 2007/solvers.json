@@ -471,7 +471,7 @@
         ],
         "call": "./TiniSatELite",
         "gz": false,
-        "status": "FIXME compilation"
+        "status": "ok"
     },
     "tts": {
         "name": "TTS",
