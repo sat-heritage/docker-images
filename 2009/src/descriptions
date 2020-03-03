@@ -1,0 +1,1125 @@
+Event SAT 2009 Competition: main competition (phase 1)
+Type SAT
+Submitter chuMin Li
+Date of submission 2009-03-23 17:39
+Name adaptg2wsat2009
+Version 2009-03-23
+Authors chuMin Li, Wanxia Wei
+Complete/Incomplete Incomplete
+Is able to solve APPLICATION
+CRAFTED
+RANDOM
+Solver command line HOME/adaptg2wsat2009 BENCHNAME RANDOMSEED
+Conversion script command line 
+Comments My system does not support the -static flag. I put it in Makefile and hope the competition environment support it. Please let me know if there is any problem.
+
+The solver is not complete, but can answer unsatisfiable in some cases.
+Solver files and checksums 
+[Show/Hide files]
+
+Event SAT 2009 Competition: main competition (phase 1)
+Type SAT
+Submitter chuMin Li
+Date of submission 2009-03-23 17:48
+Name adaptg2wsat2009++
+Version 2009-03-23
+Authors chuMin Li, Wanxia Wei
+Complete/Incomplete Incomplete
+Is able to solve APPLICATION
+CRAFTED
+RANDOM
+Solver command line HOME/adaptg2wsat2009++ BENCHNAME RANDOMSEED
+Conversion script command line 
+Comments My system does not support the -static flag. I put it in Makefile and hope the competition environment support it (as in the 2007 competition). Please let me know if there is any problem.
+
+The solver is not complete, but can answer unsatisfiable in some cases.
+Solver files and checksums 
+[Show/Hide files]
+
+Event SAT 2009 Competition: main competition (phase 1)
+Type SAT
+Submitter Hyojung Han
+Date of submission 2009-03-23 22:12
+Name CircUs
+Version 2009-03-23
+Authors Hyojung Han
+Complete/Incomplete Complete
+Is able to solve APPLICATION
+CRAFTED
+RANDOM
+Solver command line HOME/CirCUs BENCHNAME -t TIMEOUT
+Conversion script command line 
+Comments Resubmitted with correct Makefile.
+Please just use 'make' to compile our solver.
+Solver files and checksums 
+[Show/Hide files]
+
+Event SAT 2009 Competition: main competition (phase 1)
+Type SAT
+Submitter Benjamin Kaufmann
+Date of submission 2009-03-21 13:43
+Name clasp
+Version 1.2.0-SAT09-32
+Authors Benjamin Kaufmann
+Complete/Incomplete Complete
+Is able to solve APPLICATION
+CRAFTED
+RANDOM
+Solver command line HOME/clasp --file=BENCHNAME --dimacs --number=1 --sat-p=20,25,150 --hParam=0,512
+Conversion script command line 
+Comments Build instructions:
+1. unzip archive
+2. cd clasp
+3. make rs32
+Solver files and checksums 
+[Show/Hide files]
+
+Event SAT 2009 Competition: main competition (phase 1)
+Type SAT
+Submitter Guanfeng Lv
+Date of submission 2009-03-22 14:08
+Name CSat
+Version 2009-03-22
+Authors Guanfeng Lv, Qian Wang, Kaile Su
+Complete/Incomplete Complete
+Is able to solve APPLICATION
+CRAFTED
+RANDOM
+Solver command line DIR/csat BENCHNAME
+Conversion script command line 
+Comments ./csat benchname [-r resultfilename] [-t 1000000]
+
+examples:
+
+./csat file.cnf -r result.txt -t 1800
+./csat file.cnf -r result.txt
+./csat file.cnf -t 1800
+./csat file.cnf
+Solver files and checksums 
+[Show/Hide files]
+
+Event SAT 2009 Competition: main competition (phase 1)
+Type SAT
+Submitter Gilles Audemard
+Date of submission 2009-03-09 15:31
+Name glucose
+Version 1.0
+Authors Gilles Audemard and Laurent Simon
+Complete/Incomplete Complete
+Is able to solve APPLICATION
+CRAFTED
+RANDOM
+Solver command line glucose.sh BENCHNAME
+Conversion script command line 
+Comments 
+Solver files and checksums 
+[Show/Hide files]
+
+Event SAT 2009 Competition: main competition (phase 1)
+Type SAT
+Submitter Duc-Nghia Pham
+Date of submission 2009-03-22 23:15
+Name gnovelty+
+Version 2009-03-22
+Authors Duc-Nghia Pham and Charles Gretton
+Complete/Incomplete Incomplete
+Is able to solve APPLICATION
+CRAFTED
+RANDOM
+Solver command line HOME/gnovelty+ BENCHNAME RANDOMSEED
+Conversion script command line 
+Comments RANDOMSEED is optional
+Solver files and checksums 
+[Show/Hide files]
+
+Event SAT 2009 Competition: main competition (phase 1)
+Type SAT
+Submitter Duc-Nghia Pham
+Date of submission 2009-03-22 22:45
+Name gnovelty+2
+Version 2009-03-22
+Authors Duc-Nghia Pham and Charles Gretton
+Complete/Incomplete Incomplete
+Is able to solve APPLICATION
+CRAFTED
+RANDOM
+Solver command line HOME/gnovelty+2 BENCHNAME RANDOMSEED
+Conversion script command line 
+Comments Please install boost 1.38 and update the path in Makefile before compiling
+Solver files and checksums 
+[Show/Hide files]
+
+Event SAT 2009 Competition: main competition (phase 1)
+Type SAT
+Submitter Duc-Nghia Pham
+Date of submission 2009-03-22 23:09
+Name gnovelty+2-H
+Version 2009-03-22
+Authors Duc-Nghia Pham and Charles Gretton
+Complete/Incomplete Incomplete
+Is able to solve APPLICATION
+CRAFTED
+RANDOM
+Solver command line HOME/gnovelty+2-H BENCHNAME RANDOMSEED
+Conversion script command line 
+Comments please install boost 1.38 and update its path in Makefile before compiling
+
+the RANDOMSEED is optional
+Solver files and checksums 
+[Show/Hide files]
+
+Event SAT 2009 Competition: main competition (phase 1)
+Type SAT
+Submitter Charles Gretton
+Date of submission 2009-03-22 22:46
+Name gNovelty+-T
+Version 2009-03-22
+Authors Duc-Nghia Pham, Charles Gretton
+Complete/Incomplete Incomplete
+Is able to solve APPLICATION
+CRAFTED
+RANDOM
+Solver command line HOME/gnovelty+ BENCHNAME RANDOMSEED MAXNBTHREAD
+Conversion script command line 
+Comments 
+Threaded version of gNovelty+.
+
+Executable is
+
+./gnovelty+
+
+This solver always uses MAXNBTHREAD threads.
+
+
+Solver files and checksums 
+[Show/Hide files]
+
+Event SAT 2009 Competition: main competition (phase 1)
+Type SAT
+Submitter Charles Gretton
+Date of submission 2009-03-22 22:45
+Name gNovelty+-V.2-T
+Version 2009-03-22
+Authors Duc-Nghia Pham, Charles Gretton
+Complete/Incomplete Incomplete
+Is able to solve APPLICATION
+CRAFTED
+RANDOM
+Solver command line HOME/gnovelty+ BENCHNAME RANDOMSEED MAXNBTHREAD
+Conversion script command line 
+Comments Same as gNovelty+-T
+Solver files and checksums 
+[Show/Hide files]
+
+Event SAT 2009 Competition: main competition (phase 1)
+Type SAT
+Submitter Charles Gretton
+Date of submission 2009-03-22 22:47
+Name gNovelty+-V.2-T-H
+Version 2009-03-22
+Authors Duc-Nghia Pham, Charles Gretton
+Complete/Incomplete Incomplete
+Is able to solve APPLICATION
+CRAFTED
+RANDOM
+Solver command line HOME/gnovelty+ BENCHNAME RANDOMSEED MAXNBTHREAD
+Conversion script command line 
+Comments as for gNovelty+-T
+Solver files and checksums 
+[Show/Hide files]
+
+Event SAT 2009 Competition: main competition (phase 1)
+Type SAT
+Submitter Wanxia Wei
+Date of submission 2009-03-22 21:45
+Name Hybrid2
+Version 2009-03-22
+Authors Wanxia Wei, Chu Min Li, and Harry Zhang
+Complete/Incomplete Incomplete
+Is able to solve APPLICATION
+CRAFTED
+RANDOM
+Solver command line HOME/Hybrid2 BENCHNAME RANDOMSEED
+Conversion script command line 
+Comments Dear Organizers:
+
+The make file that I will submit works fine on the severs I use. When running this solver, two options are needed: the first one is the name of the instance file and the second one is a random seed. If there is any problem with the make file and options, please let me know. Thanks!
+
+Wanxia
+Solver files and checksums 
+[Show/Hide files]
+
+Event SAT 2009 Competition: main competition (phase 1)
+Type SAT
+Submitter Adrian Balint
+Date of submission 2009-03-22 22:20
+Name hybridGM
+Version 1
+Authors Adrian Balint
+Complete/Incomplete Incomplete
+Is able to solve APPLICATION
+CRAFTED
+RANDOM
+Solver command line HOME/hybridGM BENCHNAME RANDOMSEED
+Conversion script command line 
+Comments 
+Solver files and checksums 
+[Show/Hide files]
+
+Event SAT 2009 Competition: main competition (phase 1)
+Type SAT
+Submitter Adrian Balint
+Date of submission 2009-03-22 22:21
+Name hybridGM3
+Version 3
+Authors Adrian Balint
+Complete/Incomplete Incomplete
+Is able to solve APPLICATION
+CRAFTED
+RANDOM
+Solver command line HOME/hybridGM3 BENCHNAME RANDOMSEED
+Conversion script command line 
+Comments 
+Solver files and checksums 
+[Show/Hide files]
+
+Event SAT 2009 Competition: main competition (phase 1)
+Type SAT
+Submitter Adrian Balint
+Date of submission 2009-03-22 22:21
+Name hybridGM7
+Version 7
+Authors Adrian Balint
+Complete/Incomplete Incomplete
+Is able to solve APPLICATION
+CRAFTED
+RANDOM
+Solver command line HOME/hybridGM7 BENCHNAME RANDOMSEED
+Conversion script command line 
+Comments 
+Solver files and checksums 
+[Show/Hide files]
+
+Event SAT 2009 Competition: main competition (phase 1)
+Type SAT
+Submitter Christoph Wernhard
+Date of submission 2009-03-22 18:06
+Name HydraSAT
+Version 2009-03-22-Base
+Authors Christoph Baldow, Friedrich Gräter, Steffen Hölldobler, Norbert Manthey, Max Seelemann, Peter Steinke, Christoph Wernhard, Konrad Winkler, Erik Zenker
+Complete/Incomplete Complete
+Is able to solve APPLICATION
+CRAFTED
+RANDOM
+Solver command line DIR/hydrasat BENCHNAME -rs RANDOMSEED -co memory_limit MEMLIMIT
+Conversion script command line 
+Comments see DIR/README
+Solver files and checksums 
+[Show/Hide files]
+
+Event SAT 2009 Competition: main competition (phase 1)
+Type SAT
+Submitter Christoph Wernhard
+Date of submission 2009-03-22 18:02
+Name HydraSAT-Flat
+Version 2009-03-22-Flat
+Authors Christoph Baldow, Friedrich Gräter, Steffen Hölldobler, Norbert Manthey, Max Seelemann, Peter Steinke, Christoph Wernhard, Konrad Winkler, Erik Zenker
+Complete/Incomplete Complete
+Is able to solve APPLICATION
+CRAFTED
+RANDOM
+Solver command line DIR/hydrasat-flat BENCHNAME -rs RANDOMSEED -co memory_limit MEMLIMIT
+Conversion script command line 
+Comments see DIR/README
+Solver files and checksums 
+[Show/Hide files]
+
+Event SAT 2009 Competition: main competition (phase 1)
+Type SAT
+Submitter Christoph Wernhard
+Date of submission 2009-03-22 17:29
+Name HydraSAT-Multi
+Version 2009-03-22-Multi
+Authors Christoph Baldow, Friedrich Gräter, Steffen Hölldobler, Norbert Manthey, Max Seelemann, Peter Steinke, Christoph Wernhard, Konrad Winkler, Erik Zenker
+Complete/Incomplete Complete
+Is able to solve APPLICATION
+CRAFTED
+RANDOM
+Solver command line DIR/hydrasat-multi.sh DIR BENCHNAME MEMLIMIT RANDOMSEED
+Conversion script command line 
+Comments see DIR/README
+Solver files and checksums 
+[Show/Hide files]
+
+Event SAT 2009 Competition: main competition (phase 1)
+Type SAT
+Submitter John Thornton
+Date of submission 2009-03-22 11:10
+Name iPAWS
+Version 2009-03-22
+Authors John Thornton and Duc Nghia Pham
+Complete/Incomplete Incomplete
+Is able to solve APPLICATION
+CRAFTED
+RANDOM
+Solver command line HOME/iPAWS BENCHNAME RANDOMSEED
+Conversion script command line 
+Comments The archive contains a Makefile, iPAWS.c and sat09.pdf. It will extract to an iPAWS directory. Type make to compile. The pdf contains the two page description of iPAWS.
+Solver files and checksums 
+[Show/Hide files]
+
+Event SAT 2009 Competition: main competition (phase 1)
+Type SAT
+Submitter Abdorrahim Bahrami
+Date of submission 2009-03-22 20:40
+Name IUT_BMB_SAT
+Version 1.0
+Authors Abdorrahim Bahrami, Seyed Rasoul Mousavi, Kiarash Bazargan
+Complete/Incomplete Complete
+Is able to solve APPLICATION
+CRAFTED
+RANDOM
+Solver command line IUT_BMB_SAT BENCHNAME TMPDIR
+Conversion script command line 
+Comments IUT_BMB_SAT version 1.0
+
+/use the solver
+To use the solver just copy IUT_BMB_SAT and minisat binary files from Binary folder to a same folder and then run IUT_BMB_SAT
+
+/run the solver
+IUT_BMB_SAT get 2 pathes in command line. The first one is the cnf File path and the second one is the temporary directory path. This 2 pathes are mandatory. No other inputs need for this solver.
+
+For example
+IUT_BMB_SAT /root/hanoi4.cnf /tmp
+The first path = cnf file path =/root/hanoi4.cnf
+The Second path = temporary directory = /tmp
+
+/build the binary files from sources
+for making minisat binary file just make the makefile in /Source/minisat/simp
+for making IUT_BMB_SAT binary file just compile the /Source/IUT_BMB_SAT/New_Factoring.cpp with gcc like
+g++ -o IUT_BMB_SAT ../Source/IUT_BMB_SAT/New_Factoring.cpp
+Solver files and checksums 
+[Show/Hide files]
+
+Event SAT 2009 Competition: main competition (phase 1)
+Type SAT
+Submitter Johan Alfredsson
+Date of submission 2009-03-20 11:16
+Name kw
+Version 2009-03-20
+Authors Johan Alfredsson
+Complete/Incomplete Complete
+Is able to solve APPLICATION
+CRAFTED
+RANDOM
+Solver command line HOME/kw BENCHNAME
+Conversion script command line 
+Comments 
+Solver files and checksums 
+[Show/Hide files]
+
+Event SAT 2009 Competition: main competition (phase 1)
+Type SAT
+Submitter Lakhdar SAIS
+Date of submission 2009-03-20 20:56
+Name LySAT
+Version c/2009-03-20
+Authors Youssef Hamadi, Saïd Jabbour, Lakhdar Saïs
+Complete/Incomplete Complete
+Is able to solve APPLICATION
+CRAFTED
+RANDOM
+Solver command line lysat.sh BENCHNAME c
+Conversion script command line 
+Comments There are two submitted versions which run from the same executable with two options (i or c):
+
+lysat.sh BENCHNAME i
+and
+lysat.sh BENCHNAME c
+Solver files and checksums 
+[Show/Hide files]
+
+Event SAT 2009 Competition: main competition (phase 1)
+Type SAT
+Submitter Lakhdar SAIS
+Date of submission 2009-03-20 20:56
+Name LySAT
+Version i/2009-03-20
+Authors Youssef Hamadi, Saïd Jabbour, Lakhdar Saïs
+Complete/Incomplete Complete
+Is able to solve APPLICATION
+CRAFTED
+RANDOM
+Solver command line lysat.sh BENCHNAME i
+Conversion script command line 
+Comments There are two submitted versions which run from the same executable with two options (i or c):
+
+lysat.sh BENCHNAME i
+and
+lysat.sh BENCHNAME c
+Solver files and checksums 
+[Show/Hide files]
+
+Event SAT 2009 Competition: main competition (phase 1)
+Type SAT
+Submitter Lakhdar SAIS
+Date of submission 2009-03-20 21:08
+Name ManySAT 1.1
+Version aimd 0/2009-03-20
+Authors Youssef Hamadi, Saïd Jabbour, Lakhdar Saïs
+Complete/Incomplete Complete
+Is able to solve APPLICATION
+CRAFTED
+RANDOM
+Solver command line manysat.sh BENCHNAME aimd 0
+Conversion script command line 
+Comments There are three versions submitted which can be distinguished with one parameter, aimd (0,1 or 2):
+
+manysat.sh BENCHNAME aimd 0
+
+manysat.sh BENCHNAME aimd 1
+
+manysat.sh BENCHNAME aimd 2
+Solver files and checksums 
+[Show/Hide files]
+
+Event SAT 2009 Competition: main competition (phase 1)
+Type SAT
+Submitter Lakhdar SAIS
+Date of submission 2009-03-20 21:08
+Name ManySAT 1.1
+Version aimd 1/2009-03-20
+Authors Youssef Hamadi, Saïd Jabbour, Lakhdar Saïs
+Complete/Incomplete Complete
+Is able to solve APPLICATION
+CRAFTED
+RANDOM
+Solver command line manysat.sh BENCHNAME aimd 1
+Conversion script command line 
+Comments There are three versions submitted which can be distinguished with one parameter, aimd (0,1 or 2):
+
+manysat.sh BENCHNAME aimd 0
+
+manysat.sh BENCHNAME aimd 1
+
+manysat.sh BENCHNAME aimd 2
+Solver files and checksums 
+[Show/Hide files]
+
+Event SAT 2009 Competition: main competition (phase 1)
+Type SAT
+Submitter Lakhdar SAIS
+Date of submission 2009-03-20 21:08
+Name ManySAT 1.1
+Version aimd 2/2009-03-20
+Authors Youssef Hamadi, Saïd Jabbour, Lakhdar Saïs
+Complete/Incomplete Complete
+Is able to solve APPLICATION
+CRAFTED
+RANDOM
+Solver command line manysat.sh BENCHNAME aimd 2
+Conversion script command line 
+Comments There are three versions submitted which can be distinguished with one parameter, aimd (0,1 or 2):
+
+manysat.sh BENCHNAME aimd 0
+
+manysat.sh BENCHNAME aimd 1
+
+manysat.sh BENCHNAME aimd 2
+Solver files and checksums 
+[Show/Hide files]
+
+Event SAT 2009 Competition: main competition (phase 1)
+Type SAT
+Submitter Marijn Heule
+Date of submission 2009-03-22 17:59
+Name march_hi
+Version hi
+Authors Marijn Heule
+Complete/Incomplete Complete
+Is able to solve APPLICATION
+CRAFTED
+RANDOM
+Solver command line HOME/march_hi BENCHNAME
+Conversion script command line 
+Comments 
+Solver files and checksums 
+[Show/Hide files]
+
+Event SAT 2009 Competition: main competition (phase 1)
+Type SAT
+Submitter Marijn Heule
+Date of submission 2009-03-22 18:04
+Name march_nn
+Version nn
+Authors Marijn Heule
+Complete/Incomplete Complete
+Is able to solve APPLICATION
+CRAFTED
+RANDOM
+Solver command line HOME/march_nn BENCHNAME
+Conversion script command line 
+Comments 
+Solver files and checksums 
+[Show/Hide files]
+
+Event SAT 2009 Competition: main competition (phase 1)
+Type SAT
+Submitter Niklas Sorensson
+Date of submission 2009-03-25 14:24
+Name MiniSat
+Version 2.1 (Sat-race'08 Edition)
+Authors Niklas Sorensson, Niklas Een
+Complete/Incomplete Complete
+Is able to solve APPLICATION
+CRAFTED
+RANDOM
+Solver command line HOME/minisat BENCHNAME
+Conversion script command line 
+Comments This is exactly the same version that participated in the SAT Race 2008.
+Solver files and checksums 
+[Show/Hide files]
+
+Event SAT 2009 Competition: main competition (phase 1)
+Type SAT
+Submitter Markus Iser
+Date of submission 2009-03-22 12:01
+Name MiniSAT 09z
+Version 2009-03-22
+Authors Markus Iser
+Complete/Incomplete Complete
+Is able to solve APPLICATION
+CRAFTED
+RANDOM
+Solver command line SatELiteGTI BENCHNAME -random-seed=RANDOMSEED
+Conversion script command line 
+Comments 
+Solver files and checksums 
+[Show/Hide files]
+
+Event SAT 2009 Competition: main competition (phase 1)
+Type SAT
+Submitter Kazuya Masuda
+Date of submission 2009-03-18 09:31
+Name minisat_cumr
+Version p-2009-03-18
+Authors Kazuya Masuda, Tomio Kamada
+Complete/Incomplete Complete
+Is able to solve APPLICATION
+CRAFTED
+RANDOM
+Solver command line SatELiteGTI BENCHNAME
+Conversion script command line 
+Comments 
+Solver files and checksums 
+[Show/Hide files]
+
+Event SAT 2009 Competition: main competition (phase 1)
+Type SAT
+Submitter Jingchao Chen
+Date of submission 2009-03-03 13:45
+Name MoRsat
+Version 2009-03-03
+Authors Jingchao Chen
+Complete/Incomplete Complete
+Is able to solve APPLICATION
+CRAFTED
+RANDOM
+Solver command line HOME/MoRsat BENCHNAME
+Conversion script command line 
+Comments ========================================
+MoRsat 2.01 instructions
+========================================
+[March 1,2009]
+MoRSat is licensed for only non-commercial, research or educational purposes only.
+If you have any question, comment or bug, please report to chen-jc@dhu.edu.cn or chenjingchao@yahoo.com>
+
+=========
+Building
+=========
+The solver should be compiled for 32 bits architecture.
+To build this solver, run
+
+> ./make
+
+=====
+Usage
+=====
+
+To run MoRSat, run
+
+> ./MoRsat <cnf-file>
+
+By default, it will output an answer line (SAT/UNSAT) and the actual solution (if SAT).
+
+Run
+
+> ./MoRsat
+
+for the list of options.
+Solver files and checksums 
+[Show/Hide files]
+
+Event SAT 2009 Competition: main competition (phase 1)
+Type SAT
+Submitter David Bregman
+Date of submission 2009-03-14 20:36
+Name MXC
+Version 2009-03-10
+Authors David Bregman
+Complete/Incomplete Complete
+Is able to solve APPLICATION
+CRAFTED
+RANDOM
+Solver command line HOME/mxc-sat09 -i BENCHNAME
+Conversion script command line 
+Comments 
+Solver files and checksums 
+[Show/Hide files]
+
+Event SAT 2009 Competition: main competition (phase 1)
+Type SAT
+Submitter Wanxia Wei
+Date of submission 2009-03-22 21:51
+Name NCVWr
+Version 2009-03-22
+Authors Wanxia Wei, Chu Min Li, and Harry Zhang
+Complete/Incomplete Incomplete
+Is able to solve APPLICATION
+CRAFTED
+RANDOM
+Solver command line HOME/NCVWr BENCHNAME RANDOMSEED
+Conversion script command line 
+Comments Dear Organizers:
+
+The make file that I will submit works fine on the severs I use. When running this solver, two options are needed: the first one is the name of the instance file and the second one is a random seed. If there is any problem with the make file and options, please let me know. Thanks!
+
+Wanxia
+Solver files and checksums 
+[Show/Hide files]
+
+Event SAT 2009 Competition: main competition (phase 1)
+Type SAT
+Submitter Armin Biere
+Date of submission 2009-03-20 10:28
+Name picosat
+Version 913
+Authors Armin Biere
+Complete/Incomplete Complete
+Is able to solve APPLICATION
+CRAFTED
+RANDOM
+Solver command line HOME/picosat BENCHNAME
+Conversion script command line 
+Comments ./configure && make
+Solver files and checksums 
+[Show/Hide files]
+
+Event SAT 2009 Competition: main competition (phase 1)
+Type SAT
+Submitter Armin Biere
+Date of submission 2009-03-22 09:20
+Name precosat
+Version 236
+Authors Armin Biere
+Complete/Incomplete Complete
+Is able to solve APPLICATION
+CRAFTED
+RANDOM
+Solver command line HOME/precosat BENCHNAME
+Conversion script command line 
+Comments ./configure && make
+Solver files and checksums 
+[Show/Hide files]
+
+Event SAT 2009 Competition: main competition (phase 1)
+Type SAT
+Submitter Knot Pipatsrisawat
+Date of submission 2009-03-22 21:49
+Name Rsat
+Version 2009-03-22
+Authors Knot Pipatsrisawat and Adnan Darwiche
+Complete/Incomplete Complete
+Is able to solve APPLICATION
+CRAFTED
+RANDOM
+Solver command line HOME/rsat.sh BENCHNAME TMPDIR
+Conversion script command line 
+Comments Inside main dir.
+to build: ./build.sh
+to run: ./rsat.sh BENCHNAME TMPDIR
+Solver files and checksums 
+[Show/Hide files]
+
+Event SAT 2009 Competition: main competition (phase 1)
+Type SAT
+Submitter Stephan Kottler
+Date of submission 2009-03-22 09:30
+Name SApperloT
+Version base
+Authors Stephan Kottler
+Complete/Incomplete Complete
+Is able to solve APPLICATION
+CRAFTED
+RANDOM
+Solver command line HOME/SApperloT-base -seed=RANDOMSEED BENCHNAME
+Conversion script command line 
+Comments To compile just enter make in the solvers directory.
+Solver files and checksums 
+[Show/Hide files]
+
+Event SAT 2009 Competition: main competition (phase 1)
+Type SAT
+Submitter Stephan Kottler
+Date of submission 2009-03-22 21:11
+Name SApperloT
+Version hrp
+Authors Stephan Kottler
+Complete/Incomplete Complete
+Is able to solve APPLICATION
+CRAFTED
+RANDOM
+Solver command line HOME/SApperloT-hrp -seed=RANDOMSEED BENCHNAME
+Conversion script command line 
+Comments To compile just enter make in the solvers directory.
+Solver files and checksums 
+[Show/Hide files]
+
+Event SAT 2009 Competition: main competition (phase 1)
+Type SAT
+Submitter Wanxia Wei
+Date of submission 2007-02-08 17:42
+Name SAT07 reference solver: adaptg2wsat+
+Version 2007-02-08
+Authors Wanxia Wei, Chu-Min Li and Harry Zhang
+Complete/Incomplete Incomplete
+Is able to solve RANDOM
+Solver command line HOME/adaptg2wsat+ BENCHNAME
+Conversion script command line 
+Comments wei
+Solver files and checksums 
+[Show/Hide files]
+
+Event SAT 2009 Competition: main competition (phase 1)
+Type SAT
+Submitter Duc Nghia Pham
+Date of submission 2007-02-08 17:55
+Name SAT07 reference solver: gnovelty+
+Version 2007-02-08
+Authors Duc Nghia Pham and Charles Gretton
+Complete/Incomplete Incomplete
+Is able to solve RANDOM
+Solver command line HOME/gnovelty+ BENCHNAME
+Conversion script command line 
+Comments pham
+Solver files and checksums 
+[Show/Hide files]
+
+Event SAT 2009 Competition: main competition (phase 1)
+Type SAT
+Submitter Marijn Heule
+Date of submission 2007-02-08 18:05
+Name SAT07 reference solver: March KS
+Version 2007-02-08
+Authors Marijn Heule and Hans van Maaren
+Complete/Incomplete Complete
+Is able to solve CRAFTED
+RANDOM
+Solver command line HOME/march_ks BENCHNAME
+Conversion script command line 
+Comments heule
+Solver files and checksums 
+[Show/Hide files]
+
+Event SAT 2009 Competition: main competition (phase 1)
+Type SAT
+Submitter Niklas Sorensson
+Date of submission 2007-02-08 18:08
+Name SAT07 reference solver: minisat
+Version SAT 2007
+Authors Niklas Sorensson and Niklas Een
+Complete/Incomplete Complete
+Is able to solve CRAFTED
+Solver command line HOME/minisat_noassertions BENCHNAME
+Conversion script command line 
+Comments een
+Solver files and checksums 
+[Show/Hide files]
+
+Event SAT 2009 Competition: main competition (phase 1)
+Type SAT
+Submitter Armin Biere
+Date of submission 2007-02-08 18:12
+Name SAT07 reference solver: picosat
+Version 535
+Authors Armin Biere
+Complete/Incomplete Complete
+Is able to solve APPLICATION
+Solver command line HOME/picosat BENCHNAME
+Conversion script command line 
+Comments biere
+Solver files and checksums 
+[Show/Hide files]
+
+Event SAT 2009 Competition: main competition (phase 1)
+Type SAT
+Submitter Knot Pipatsrisawat
+Date of submission 2007-02-08 18:16
+Name SAT07 reference solver: Rsat
+Version 2007-02-08
+Authors Knot Pipatsrisawat and Adnan Darwiche
+Complete/Incomplete Complete
+Is able to solve APPLICATION
+Solver command line HOME/rsat.sh BENCHNAME
+Conversion script command line 
+Comments rsat
+Solver files and checksums 
+[Show/Hide files]
+
+Event SAT 2009 Competition: main competition (phase 1)
+Type SAT
+Submitter Lin Xu
+Date of submission 2007-02-13 07:57
+Name SAT07 reference solver: SATzilla
+Version CRAFTED
+Authors Lin Xu, Frank Hutter, Holger H. Hoos and Kevin Leyton-Brown
+Complete/Incomplete Complete
+Is able to solve CRAFTED
+Solver command line HOME/SATzilla2007_C BENCHNAME
+Conversion script command line 
+Comments satzillac
+Solver files and checksums 
+[Show/Hide files]
+
+Event SAT 2009 Competition: main competition (phase 1)
+Type SAT
+Submitter Lin Xu
+Date of submission 2007-02-13 07:59
+Name SAT07 reference solver: SATzilla
+Version RANDOM
+Authors Lin Xu, Frank Hutter, Holger H. Hoos and Kevin Leyton-Brown
+Complete/Incomplete Complete
+Is able to solve RANDOM
+Solver command line HOME/SATzilla2007_R BENCHNAME
+Conversion script command line 
+Comments satzillar
+Solver files and checksums 
+[Show/Hide files]
+
+Event SAT 2009 Competition: main competition (phase 1)
+Type SAT
+Submitter Daniel Le Berre
+Date of submission 2009-03-02 19:57
+Name SAT4J CORE
+Version 2.1 RC1
+Authors Daniel Le Berre
+Complete/Incomplete Complete
+Is able to solve APPLICATION
+CRAFTED
+RANDOM
+Solver command line java6 -server -Xms1600m -Xmx1600m -jar HOME/org.sat4j.core.jar BENCHNAME
+Conversion script command line 
+Comments 
+Solver files and checksums 
+[Show/Hide files]
+
+Event SAT 2009 Competition: main competition (phase 1)
+Type SAT
+Submitter Kota Tsuyuzaki
+Date of submission 2009-03-22 20:47
+Name satake
+Version 2009-03-22
+Authors Kota Tsuyuzaki
+Complete/Incomplete Complete
+Is able to solve APPLICATION
+CRAFTED
+RANDOM
+Solver command line HOME/satake BENCHNAME MAXNBTHREAD TIMEOUT
+Conversion script command line 
+Comments Please read README file in the archive to run the solver satake.
+And please contact us if you need.
+MAXNBTHREAD of satake is 16.
+THREADNUM is number of threads to use.It must be between 2 and 16.
+Solver files and checksums 
+[Show/Hide files]
+
+Event SAT 2009 Competition: main competition (phase 1)
+Type SAT
+Submitter Lin Xu
+Date of submission 2009-03-22 21:49
+Name SATzilla2009_C
+Version 2009-03-22
+Authors Lin Xu, Frank Hutter, Holger H. Hoos and Kevin Leyton-Brown
+Complete/Incomplete Complete
+Is able to solve APPLICATION
+CRAFTED
+RANDOM
+Solver command line HOME/SATzilla2009_C BENCHNAME
+Conversion script command line 
+Comments SATzilla2009 for CRAFTED
+Solver files and checksums 
+[Show/Hide files]
+
+Event SAT 2009 Competition: main competition (phase 1)
+Type SAT
+Submitter Lin Xu
+Date of submission 2009-03-22 21:53
+Name SATzilla2009_I
+Version 2009-03-22
+Authors Lin Xu, Frank Hutter, Holger H. Hoos and Kevin Leyton-Brown
+Complete/Incomplete Complete
+Is able to solve APPLICATION
+CRAFTED
+RANDOM
+Solver command line HOME/SATzilla2009_I BENCHNAME
+Conversion script command line 
+Comments SATzilla2009 for INDUSTRIAL
+Solver files and checksums 
+[Show/Hide files]
+
+Event SAT 2009 Competition: main competition (phase 1)
+Type SAT
+Submitter Lin Xu
+Date of submission 2009-03-22 21:39
+Name SATzilla2009_R
+Version 2009-03-22
+Authors Lin Xu, Frank Hutter, Holger H. Hoos and Kevin Leyton-Brown
+Complete/Incomplete Complete
+Is able to solve APPLICATION
+CRAFTED
+RANDOM
+Solver command line HOME/SATzilla2009_R BENCHNAME
+Conversion script command line 
+Comments SATzilla2009 for RANDOM
+Solver files and checksums 
+[Show/Hide files]
+
+Event SAT 2009 Competition: main competition (phase 1)
+Type SAT
+Submitter Anton Belov
+Date of submission 2009-03-22 23:22
+Name slstc
+Version 1.0
+Authors Anton Belov, Zbigniew Stachniak
+Complete/Incomplete Incomplete
+Is able to solve APPLICATION
+CRAFTED
+RANDOM
+Solver command line HOME/slstc -alg adaptnovelty+-tc -runs 1 -cutoff max -r out null -r stats null -r sat2009comp -drestart 100000 -seed RANDOMSEED -inst BENCHNAME
+Conversion script command line 
+Comments This is a UBCSAT-based implementation of adaptive novelty+ with the candidate list trimming and literal commitment
+techniques.
+Solver files and checksums 
+[Show/Hide files]
+
+Event SAT 2009 Competition: main competition (phase 1)
+Type SAT
+Submitter Wanxia Wei
+Date of submission 2009-03-22 21:54
+Name TNM
+Version 2009-03-22
+Authors Wanxia Wei and Chu Min Li
+Complete/Incomplete Incomplete
+Is able to solve APPLICATION
+CRAFTED
+RANDOM
+Solver command line HOME/TNM BENCHNAME RANDOMSEED
+Conversion script command line 
+Comments Dear Organizers:
+
+The make file that I will submit works fine on the severs I use. When running this solver, two options are needed: the first one is the name of the instance file and the second one is a random seed. If there is any problem with the make file and options, please let me know. Thanks!
+
+Wanxia
+Solver files and checksums 
+[Show/Hide files]
+
+Event SAT 2009 Competition: main competition (phase 1)
+Type SAT
+Submitter Ivor Spence
+Date of submission 2009-03-19 22:23
+Name tts
+Version tts-5-0
+Authors Ivor Spence
+Complete/Incomplete Complete
+Is able to solve APPLICATION
+CRAFTED
+RANDOM
+Solver command line HOME/tts-5-0 BENCHNAME
+Conversion script command line 
+Comments The solver is compiled by typing
+$ gunzip tts-5-0.tgz
+$ tar -xvf tts-5-0.tar
+$ make
+Solver files and checksums 
+[Show/Hide files]
+
+Event SAT 2009 Competition: main competition (phase 1)
+Type SAT
+Submitter Ivor Spence
+Date of submission 2009-03-19 22:30
+Name ttsth-5-0
+Version 2009-03-19
+Authors Ivor Spence
+Complete/Incomplete Complete
+Is able to solve APPLICATION
+CRAFTED
+RANDOM
+Solver command line HOME/ttsth-5-0 -num-threads MAXNBTHREAD BENCHNAME
+Conversion script command line 
+Comments This multithreaded version is built from the same files as ttd-5-0. The command is
+
+$ make ttsth-5-0
+Solver files and checksums 
+[Show/Hide files]
+
+Event SAT 2009 Competition: main competition (phase 1)
+Type SAT
+Submitter Eric Hsu
+Date of submission 2009-03-22 23:10
+Name VARSAT-crafted
+Version 2009-03-22
+Authors Eric Hsu
+Complete/Incomplete Complete
+Is able to solve APPLICATION
+CRAFTED
+RANDOM
+Solver command line HOME/varsat-crafted_static -seed=RANDOMSEED BENCHNAME
+Conversion script command line 
+Comments Preference is for solver to be compiled on-site, but there is also already a binary that was compiled on my own machine.
+Solver files and checksums 
+[Show/Hide files]
+
+Event SAT 2009 Competition: main competition (phase 1)
+Type SAT
+Submitter Eric Hsu
+Date of submission 2009-03-22 23:11
+Name VARSAT-industrial
+Version 2009-03-22
+Authors Eric Hsu
+Complete/Incomplete Complete
+Is able to solve APPLICATION
+CRAFTED
+RANDOM
+Solver command line HOME/varsat-industrial_static -seed=RANDOMSEED BENCHNAME
+Conversion script command line 
+Comments Preference is for solver to be compiled on-site, but there is also already a binary that was compiled on my own machine.
+Solver files and checksums 
+[Show/Hide files]
+
+Event SAT 2009 Competition: main competition (phase 1)
+Type SAT
+Submitter Eric Hsu
+Date of submission 2009-03-22 23:14
+Name VARSAT-random
+Version 2009-03-22
+Authors Eric Hsu
+Complete/Incomplete Complete
+Is able to solve APPLICATION
+CRAFTED
+RANDOM
+Solver command line HOME/varsat-random_static -seed=RANDOMSEED BENCHNAME
+Conversion script command line 
+Comments Preference is for solver to be compiled on-site, but there is also already a binary that was compiled on my own machine.
+Thank you for organizing\!
+Solver files and checksums 
+[Show/Hide files] 

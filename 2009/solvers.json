@@ -1,0 +1,656 @@
+{
+    "adaptg2wsat2009": {
+        "name": "adaptg2wsat2009",
+        "version": "2009-03-23",
+        "authors": "chuMin Li, Wanxia Wei",
+        "args": [
+            "FILECNF",
+            "RANDOMSEED"
+        ],
+        "call": "./adaptg2wsat2009",
+        "gz": false,
+        "status": "unknown"
+    },
+    "adaptg2wsat2009-plus-plus": {
+        "name": "adaptg2wsat2009++",
+        "version": "2009-03-23",
+        "authors": "chuMin Li, Wanxia Wei",
+        "args": [
+            "FILECNF",
+            "RANDOMSEED"
+        ],
+        "call": "./adaptg2wsat2009++",
+        "gz": false,
+        "status": "unknown"
+    },
+    "circus": {
+        "name": "CircUs",
+        "version": "2009-03-23",
+        "authors": "Hyojung Han",
+        "args": [
+            "FILECNF",
+            "-t",
+            "TIMEOUT"
+        ],
+        "call": "./CirCUs",
+        "gz": false,
+        "status": "unknown"
+    },
+    "clasp": {
+        "name": "clasp",
+        "version": "1.2.0-SAT09-32",
+        "authors": "Benjamin Kaufmann",
+        "args": [
+            "--file=FILECNF",
+            "--dimacs",
+            "--number=1",
+            "--sat-p=20,25,150",
+            "--hParam=0,512"
+        ],
+        "call": "./clasp",
+        "gz": false,
+        "status": "unknown"
+    },
+    "csat": {
+        "name": "CSat",
+        "version": "2009-03-22",
+        "authors": "Guanfeng Lv, Qian Wang, Kaile Su",
+        "args": [
+            "FILECNF"
+        ],
+        "call": "DIR/csat",
+        "gz": false,
+        "status": "unknown"
+    },
+    "glucose": {
+        "name": "glucose",
+        "version": "1.0",
+        "authors": "Gilles Audemard and Laurent Simon",
+        "args": [
+            "FILECNF"
+        ],
+        "call": "glucose.sh",
+        "gz": false,
+        "status": "unknown"
+    },
+    "gnovelty-plus": {
+        "name": "gnovelty+",
+        "version": "2009-03-22",
+        "authors": "Duc-Nghia Pham and Charles Gretton",
+        "args": [
+            "FILECNF",
+            "RANDOMSEED"
+        ],
+        "call": "./gnovelty+",
+        "gz": false,
+        "status": "unknown"
+    },
+    "gnovelty-plus2": {
+        "name": "gnovelty+2",
+        "version": "2009-03-22",
+        "authors": "Duc-Nghia Pham and Charles Gretton",
+        "args": [
+            "FILECNF",
+            "RANDOMSEED"
+        ],
+        "call": "./gnovelty+2",
+        "gz": false,
+        "status": "unknown"
+    },
+    "gnovelty-plus2-h": {
+        "name": "gnovelty+2-H",
+        "version": "2009-03-22",
+        "authors": "Duc-Nghia Pham and Charles Gretton",
+        "args": [
+            "FILECNF",
+            "RANDOMSEED"
+        ],
+        "call": "./gnovelty+2-H",
+        "gz": false,
+        "status": "unknown"
+    },
+    "gnovelty-plus-t": {
+        "name": "gNovelty+-T",
+        "version": "2009-03-22",
+        "authors": "Duc-Nghia Pham, Charles Gretton",
+        "args": [
+            "FILECNF",
+            "RANDOMSEED",
+            "MAXNBTHREAD"
+        ],
+        "call": "./gnovelty+",
+        "gz": false,
+        "status": "unknown"
+    },
+    "gnovelty-plus-v.2-t": {
+        "name": "gNovelty+-V.2-T",
+        "version": "2009-03-22",
+        "authors": "Duc-Nghia Pham, Charles Gretton",
+        "args": [
+            "FILECNF",
+            "RANDOMSEED",
+            "MAXNBTHREAD"
+        ],
+        "call": "./gnovelty+",
+        "gz": false,
+        "status": "unknown"
+    },
+    "gnovelty-plus-v.2-t-h": {
+        "name": "gNovelty+-V.2-T-H",
+        "version": "2009-03-22",
+        "authors": "Duc-Nghia Pham, Charles Gretton",
+        "args": [
+            "FILECNF",
+            "RANDOMSEED",
+            "MAXNBTHREAD"
+        ],
+        "call": "./gnovelty+",
+        "gz": false,
+        "status": "unknown"
+    },
+    "hybrid2": {
+        "name": "Hybrid2",
+        "version": "2009-03-22",
+        "authors": "Wanxia Wei, Chu Min Li, and Harry Zhang",
+        "args": [
+            "FILECNF",
+            "RANDOMSEED"
+        ],
+        "call": "./Hybrid2",
+        "gz": false,
+        "status": "unknown"
+    },
+    "hybridgm": {
+        "name": "hybridGM",
+        "version": "1",
+        "authors": "Adrian Balint",
+        "args": [
+            "FILECNF",
+            "RANDOMSEED"
+        ],
+        "call": "./hybridGM",
+        "gz": false,
+        "status": "unknown"
+    },
+    "hybridgm3": {
+        "name": "hybridGM3",
+        "version": "3",
+        "authors": "Adrian Balint",
+        "args": [
+            "FILECNF",
+            "RANDOMSEED"
+        ],
+        "call": "./hybridGM3",
+        "gz": false,
+        "status": "unknown"
+    },
+    "hybridgm7": {
+        "name": "hybridGM7",
+        "version": "7",
+        "authors": "Adrian Balint",
+        "args": [
+            "FILECNF",
+            "RANDOMSEED"
+        ],
+        "call": "./hybridGM7",
+        "gz": false,
+        "status": "unknown"
+    },
+    "hydrasat": {
+        "name": "HydraSAT",
+        "version": "2009-03-22-Base",
+        "authors": "Christoph Baldow, Friedrich Gr\u00e4ter, Steffen H\u00f6lldobler, Norbert Manthey, Max Seelemann, Peter Steinke, Christoph Wernhard, Konrad Winkler, Erik Zenker",
+        "args": [
+            "FILECNF",
+            "-rs",
+            "RANDOMSEED",
+            "-co",
+            "memory_limit",
+            "MEMLIMIT"
+        ],
+        "call": "DIR/hydrasat",
+        "gz": false,
+        "status": "unknown"
+    },
+    "hydrasat-flat": {
+        "name": "HydraSAT-Flat",
+        "version": "2009-03-22-Flat",
+        "authors": "Christoph Baldow, Friedrich Gr\u00e4ter, Steffen H\u00f6lldobler, Norbert Manthey, Max Seelemann, Peter Steinke, Christoph Wernhard, Konrad Winkler, Erik Zenker",
+        "args": [
+            "FILECNF",
+            "-rs",
+            "RANDOMSEED",
+            "-co",
+            "memory_limit",
+            "MEMLIMIT"
+        ],
+        "call": "DIR/hydrasat-flat",
+        "gz": false,
+        "status": "unknown"
+    },
+    "hydrasat-multi": {
+        "name": "HydraSAT-Multi",
+        "version": "2009-03-22-Multi",
+        "authors": "Christoph Baldow, Friedrich Gr\u00e4ter, Steffen H\u00f6lldobler, Norbert Manthey, Max Seelemann, Peter Steinke, Christoph Wernhard, Konrad Winkler, Erik Zenker",
+        "args": [
+            "DIR",
+            "FILECNF",
+            "MEMLIMIT",
+            "RANDOMSEED"
+        ],
+        "call": "DIR/hydrasat-multi.sh",
+        "gz": false,
+        "status": "unknown"
+    },
+    "ipaws": {
+        "name": "iPAWS",
+        "version": "2009-03-22",
+        "authors": "John Thornton and Duc Nghia Pham",
+        "args": [
+            "FILECNF",
+            "RANDOMSEED"
+        ],
+        "call": "./iPAWS",
+        "gz": false,
+        "status": "unknown"
+    },
+    "iut_bmb_sat": {
+        "name": "IUT_BMB_SAT",
+        "version": "1.0",
+        "authors": "Abdorrahim Bahrami, Seyed Rasoul Mousavi, Kiarash Bazargan",
+        "args": [
+            "FILECNF",
+            "/tmp"
+        ],
+        "call": "IUT_BMB_SAT",
+        "gz": false,
+        "status": "unknown"
+    },
+    "kw": {
+        "name": "kw",
+        "version": "2009-03-20",
+        "authors": "Johan Alfredsson",
+        "args": [
+            "FILECNF"
+        ],
+        "call": "./kw",
+        "gz": false,
+        "status": "unknown"
+    },
+    "lysat-c/2009-03-20": {
+        "name": "LySAT",
+        "version": "c/2009-03-20",
+        "authors": "Youssef Hamadi, Sa\u00efd Jabbour, Lakhdar Sa\u00efs",
+        "args": [
+            "FILECNF",
+            "c"
+        ],
+        "call": "lysat.sh",
+        "gz": false,
+        "status": "unknown"
+    },
+    "lysat-i/2009-03-20": {
+        "name": "LySAT",
+        "version": "i/2009-03-20",
+        "authors": "Youssef Hamadi, Sa\u00efd Jabbour, Lakhdar Sa\u00efs",
+        "args": [
+            "FILECNF",
+            "i"
+        ],
+        "call": "lysat.sh",
+        "gz": false,
+        "status": "unknown"
+    },
+    "manysat_1.1-aimd_0/2009-03-20": {
+        "name": "ManySAT 1.1",
+        "version": "aimd 0/2009-03-20",
+        "authors": "Youssef Hamadi, Sa\u00efd Jabbour, Lakhdar Sa\u00efs",
+        "args": [
+            "FILECNF",
+            "aimd",
+            "0"
+        ],
+        "call": "manysat.sh",
+        "gz": false,
+        "status": "unknown"
+    },
+    "manysat_1.1-aimd_1/2009-03-20": {
+        "name": "ManySAT 1.1",
+        "version": "aimd 1/2009-03-20",
+        "authors": "Youssef Hamadi, Sa\u00efd Jabbour, Lakhdar Sa\u00efs",
+        "args": [
+            "FILECNF",
+            "aimd",
+            "1"
+        ],
+        "call": "manysat.sh",
+        "gz": false,
+        "status": "unknown"
+    },
+    "manysat_1.1-aimd_2/2009-03-20": {
+        "name": "ManySAT 1.1",
+        "version": "aimd 2/2009-03-20",
+        "authors": "Youssef Hamadi, Sa\u00efd Jabbour, Lakhdar Sa\u00efs",
+        "args": [
+            "FILECNF",
+            "aimd",
+            "2"
+        ],
+        "call": "manysat.sh",
+        "gz": false,
+        "status": "unknown"
+    },
+    "march_hi": {
+        "name": "march_hi",
+        "version": "hi",
+        "authors": "Marijn Heule",
+        "args": [
+            "FILECNF"
+        ],
+        "call": "./march_hi",
+        "gz": false,
+        "status": "unknown"
+    },
+    "march_nn": {
+        "name": "march_nn",
+        "version": "nn",
+        "authors": "Marijn Heule",
+        "args": [
+            "FILECNF"
+        ],
+        "call": "./march_nn",
+        "gz": false,
+        "status": "unknown"
+    },
+    "minisat": {
+        "name": "MiniSat",
+        "version": "2.1 (Sat-race'08 Edition)",
+        "authors": "Niklas Sorensson, Niklas Een",
+        "args": [
+            "FILECNF"
+        ],
+        "call": "./minisat",
+        "gz": false,
+        "status": "unknown"
+    },
+    "minisat_09z": {
+        "name": "MiniSAT 09z",
+        "version": "2009-03-22",
+        "authors": "Markus Iser",
+        "args": [
+            "FILECNF",
+            "-random-seed=RANDOMSEED"
+        ],
+        "call": "SatELiteGTI",
+        "gz": false,
+        "status": "unknown"
+    },
+    "minisat_cumr": {
+        "name": "minisat_cumr",
+        "version": "p-2009-03-18",
+        "authors": "Kazuya Masuda, Tomio Kamada",
+        "args": [
+            "FILECNF"
+        ],
+        "call": "SatELiteGTI",
+        "gz": false,
+        "status": "unknown"
+    },
+    "morsat": {
+        "name": "MoRsat",
+        "version": "2009-03-03",
+        "authors": "Jingchao Chen",
+        "args": [
+            "FILECNF"
+        ],
+        "call": "./MoRsat",
+        "gz": false,
+        "status": "unknown"
+    },
+    "mxc": {
+        "name": "MXC",
+        "version": "2009-03-10",
+        "authors": "David Bregman",
+        "args": [
+            "-i",
+            "FILECNF"
+        ],
+        "call": "./mxc-sat09",
+        "gz": false,
+        "status": "unknown"
+    },
+    "ncvwr": {
+        "name": "NCVWr",
+        "version": "2009-03-22",
+        "authors": "Wanxia Wei, Chu Min Li, and Harry Zhang",
+        "args": [
+            "FILECNF",
+            "RANDOMSEED"
+        ],
+        "call": "./NCVWr",
+        "gz": false,
+        "status": "unknown"
+    },
+    "picosat": {
+        "name": "picosat",
+        "version": "913",
+        "authors": "Armin Biere",
+        "args": [
+            "FILECNF"
+        ],
+        "call": "./picosat",
+        "gz": false,
+        "status": "unknown"
+    },
+    "precosat": {
+        "name": "precosat",
+        "version": "236",
+        "authors": "Armin Biere",
+        "args": [
+            "FILECNF"
+        ],
+        "call": "./precosat",
+        "gz": false,
+        "status": "unknown"
+    },
+    "rsat": {
+        "name": "Rsat",
+        "version": "2009-03-22",
+        "authors": "Knot Pipatsrisawat and Adnan Darwiche",
+        "args": [
+            "FILECNF",
+            "/tmp"
+        ],
+        "call": "./rsat.sh",
+        "gz": false,
+        "status": "unknown"
+    },
+    "sapperlot-base": {
+        "name": "SApperloT",
+        "version": "base",
+        "authors": "Stephan Kottler",
+        "args": [
+            "-seed=RANDOMSEED",
+            "FILECNF"
+        ],
+        "call": "./SApperloT-base",
+        "gz": false,
+        "status": "unknown"
+    },
+    "sapperlot-hrp": {
+        "name": "SApperloT",
+        "version": "hrp",
+        "authors": "Stephan Kottler",
+        "args": [
+            "-seed=RANDOMSEED",
+            "FILECNF"
+        ],
+        "call": "./SApperloT-hrp",
+        "gz": false,
+        "status": "unknown"
+    },
+    "sat4j_core": {
+        "name": "SAT4J CORE",
+        "version": "2.1 RC1",
+        "authors": "Daniel Le Berre",
+        "args": [
+            "-server",
+            "-Xms1600m",
+            "-Xmx1600m",
+            "-jar",
+            "./org.sat4j.core.jar",
+            "FILECNF"
+        ],
+        "call": "java6",
+        "gz": false,
+        "status": "unknown"
+    },
+    "satake": {
+        "name": "satake",
+        "version": "2009-03-22",
+        "authors": "Kota Tsuyuzaki",
+        "args": [
+            "FILECNF",
+            "MAXNBTHREAD",
+            "TIMEOUT"
+        ],
+        "call": "./satake",
+        "gz": false,
+        "status": "unknown"
+    },
+    "satzilla2009_c": {
+        "name": "SATzilla2009_C",
+        "version": "2009-03-22",
+        "authors": "Lin Xu, Frank Hutter, Holger H. Hoos and Kevin Leyton-Brown",
+        "args": [
+            "FILECNF"
+        ],
+        "call": "./SATzilla2009_C",
+        "gz": false,
+        "status": "unknown"
+    },
+    "satzilla2009_i": {
+        "name": "SATzilla2009_I",
+        "version": "2009-03-22",
+        "authors": "Lin Xu, Frank Hutter, Holger H. Hoos and Kevin Leyton-Brown",
+        "args": [
+            "FILECNF"
+        ],
+        "call": "./SATzilla2009_I",
+        "gz": false,
+        "status": "unknown"
+    },
+    "satzilla2009_r": {
+        "name": "SATzilla2009_R",
+        "version": "2009-03-22",
+        "authors": "Lin Xu, Frank Hutter, Holger H. Hoos and Kevin Leyton-Brown",
+        "args": [
+            "FILECNF"
+        ],
+        "call": "./SATzilla2009_R",
+        "gz": false,
+        "status": "unknown"
+    },
+    "slstc": {
+        "name": "slstc",
+        "version": "1.0",
+        "authors": "Anton Belov, Zbigniew Stachniak",
+        "args": [
+            "-alg",
+            "adaptnovelty+-tc",
+            "-runs",
+            "1",
+            "-cutoff",
+            "max",
+            "-r",
+            "out",
+            "null",
+            "-r",
+            "stats",
+            "null",
+            "-r",
+            "sat2009comp",
+            "-drestart",
+            "100000",
+            "-seed",
+            "RANDOMSEED",
+            "-inst",
+            "FILECNF"
+        ],
+        "call": "./slstc",
+        "gz": false,
+        "status": "unknown"
+    },
+    "tnm": {
+        "name": "TNM",
+        "version": "2009-03-22",
+        "authors": "Wanxia Wei and Chu Min Li",
+        "args": [
+            "FILECNF",
+            "RANDOMSEED"
+        ],
+        "call": "./TNM",
+        "gz": false,
+        "status": "unknown"
+    },
+    "tts": {
+        "name": "tts",
+        "version": "tts-5-0",
+        "authors": "Ivor Spence",
+        "args": [
+            "FILECNF"
+        ],
+        "call": "./tts-5-0",
+        "gz": false,
+        "status": "unknown"
+    },
+    "ttsth-5-0": {
+        "name": "ttsth-5-0",
+        "version": "2009-03-19",
+        "authors": "Ivor Spence",
+        "args": [
+            "-num-threads",
+            "MAXNBTHREAD",
+            "FILECNF"
+        ],
+        "call": "./ttsth-5-0",
+        "gz": false,
+        "status": "unknown"
+    },
+    "varsat-crafted": {
+        "name": "VARSAT-crafted",
+        "version": "2009-03-22",
+        "authors": "Eric Hsu",
+        "args": [
+            "-seed=RANDOMSEED",
+            "FILECNF"
+        ],
+        "call": "./varsat-crafted_static",
+        "gz": false,
+        "status": "unknown"
+    },
+    "varsat-industrial": {
+        "name": "VARSAT-industrial",
+        "version": "2009-03-22",
+        "authors": "Eric Hsu",
+        "args": [
+            "-seed=RANDOMSEED",
+            "FILECNF"
+        ],
+        "call": "./varsat-industrial_static",
+        "gz": false,
+        "status": "unknown"
+    },
+    "varsat-random": {
+        "name": "VARSAT-random",
+        "version": "2009-03-22",
+        "authors": "Eric Hsu",
+        "args": [
+            "-seed=RANDOMSEED",
+            "FILECNF"
+        ],
+        "call": "./varsat-random_static",
+        "gz": false,
+        "status": "unknown"
+    }
+}
