@@ -332,6 +332,8 @@ def docker_build(args, docker_argv, tag, root, build_args={}, Dockerfile=None):
         for f in FROMs:
             docker_uptodate_image(args, docker_argv, f)
     argv = docker_argv + ["build", "-t", tag, root]
+    if args.no_cache:
+        argv += ["--no-cache"]
     if Dockerfile:
         argv += ["-f", Dockerfile]
     for k,v in build_args.items():
@@ -552,6 +554,8 @@ def main(redirected=False):
         p = subparsers.add_parser("build",
                 help=f"Build {DOCKER_NS} Docker images",
                 parents=[spec_parser])
+        p.add_argument("--no-cache", action="store_true",
+                help="docker build option")
         p.set_defaults(func=build_images)
 
         p = subparsers.add_parser("test",
