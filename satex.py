@@ -96,8 +96,9 @@ class Repository(object):
         self.names = []
 
         select_all = not hasattr(args, "all") or args.all
+        select_fixme = select_all or hasattr(args, "fixme") and args.fixme
         select_unstable = select_all or hasattr(args, "unstable") and args.unstable
-        select_stable = select_all or not select_unstable
+        select_stable = select_all or (not select_unstable and not select_fixme)
 
         for entry in self.registry:
             for solver in self.registry[entry]:
@@ -106,11 +107,13 @@ class Repository(object):
                         not fnmatch.fnmatch(name, args.pattern):
                     continue
                 status = self.registry[entry][solver].get("status", "unknown")
-                if status == "ok" and not select_stable:
-                    continue
-                if status != "ok" and not select_unstable:
-                    continue
-                if status.startswith("FIXME") and not select_all:
+                if status == "ok":
+                    if not select_stable:
+                        continue
+                elif status.startswith("FIXME"):
+                    if not select_fixme:
+                        continue
+                elif not select_unstable:
                     continue
                 self.images[name] = {"entry": entry, "solver": solver}
                 self.names.append(name)
@@ -482,9 +485,11 @@ def main(redirected=False):
     #
     status_parser = argparse.ArgumentParser(add_help=False)
     status_parser.add_argument("--unstable", action="store_true",
-            help="Consider images with non-ok status")
+            help="Consider images with non-ok and non-FIXME status")
+    status_parser.add_argument("--fixme", action="store_true",
+            help="Consider images with FIXME status")
     status_parser.add_argument("--all", "-a", action="store_true",
-            help="Consider all images, either ok or non-ok")
+            help="Consider all images, with any status")
 
     spec_parser = argparse.ArgumentParser(add_help=False,
             parents=[status_parser])
