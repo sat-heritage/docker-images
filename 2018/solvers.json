@@ -206,28 +206,30 @@
             "-drup-file=FILEPROOF"
         ]
     },
-    "maple_lcm+bcrestart_m1": {
+    "maple_lcm-plus-bcrestart_m1": {
+        "status": "ok",
         "name": "Maple_LCM+BCrestart_M1",
-        "call": "./maple_lcm+bcrestart_m1",
+        "call": "./glucose_static",
         "gz": true,
         "args": [
             "FILECNF"
         ],
         "argsproof": [
             "FILECNF",
-            "FILEPROOF"
+            "-drup-file=FILEPROOF"
         ]
     },
     "maple_lcm_m1": {
+        "status": "ok",
         "name": "Maple_LCM_M1",
-        "call": "./maple_lcm_m1",
+        "call": "./glucose_static",
         "gz": true,
         "args": [
             "FILECNF"
         ],
         "argsproof": [
             "FILECNF",
-            "FILEPROOF"
+            "-drup-file=FILEPROOF"
         ]
     },
     "maple-lcm-scavel": {
@@ -245,30 +247,33 @@
         ]
     },
     "maple_lcm_scavel_200": {
+        "status": "ok",
         "name": "Maple_LCM_Scavel_200",
-        "call": "./maple_lcm_scavel_200",
+        "call": "./Maple_LCM_Scavel_200",
         "gz": true,
         "args": [
             "FILECNF"
         ],
         "argsproof": [
             "FILECNF",
-            "FILEPROOF"
+            "-drup-file=FILEPROOF"
         ]
     },
     "minisat-v2.2.0-106-ge2dd095": {
+        "status": "ok",
         "name": "Minisat-v2.2.0-106-ge2dd095",
-        "call": "./minisat-v2.2.0-106-ge2dd095",
+        "call": "./minisat",
         "gz": true,
         "args": [
             "FILECNF"
         ],
         "argsproof": [
             "FILECNF",
-            "FILEPROOF"
+            "-proof=FILEPROOF"
         ]
     },
     "riss7.1": {
+        "status": "Problem with prebuild",
         "name": "Riss7.1",
         "call": "./riss7.1",
         "gz": true,
@@ -281,6 +286,7 @@
         ]
     },
     "sparrow2riss-2018": {
+        "status": "Problem with prebuild",
         "name": "Sparrow2Riss-2018",
         "call": "./sparrow2riss-2018",
         "gz": true,
@@ -293,6 +299,7 @@
         ]
     },
     "yalsat": {
+        "status": "Problem with prebuild",
         "name": "YalSAT",
         "call": "./yalsat",
         "gz": true,
@@ -305,6 +312,7 @@
         ]
     },
     "abcdsat_r18": {
+        "status": "ok",
         "name": "abcdsat_r18",
         "call": "./abcdsat_r18",
         "gz": true,
@@ -313,10 +321,12 @@
         ],
         "argsproof": [
             "FILECNF",
-            "FILEPROOF"
+            "-certified",
+            "-certified-output=FILEPROOF"
         ]
     },
     "cms55-main-all4fixed": {
+        "status": "TODO",
         "name": "cms55-main-all4fixed",
         "call": "./cms55-main-all4fixed",
         "gz": true,
@@ -329,150 +339,191 @@
         ]
     },
     "expglucose": {
+        "status": "ok",
         "name": "expGlucose",
-        "call": "./expglucose",
+        "call": "./glucose_static",
         "gz": true,
         "args": [
-            "FILECNF"
+            "FILECNF",
+            "-no-certified"
         ],
         "argsproof": [
             "FILECNF",
-            "FILEPROOF"
+            "-vbyte",
+            "-drup-file=FILEPROOF"
         ]
     },
     "expmc_lrb_vsids_switch": {
+        "status": "ok",
         "name": "expMC_LRB_VSIDS_Switch",
-        "call": "./expmc_lrb_vsids_switch",
+        "call": "./minisat_static",
         "gz": true,
         "args": [
             "FILECNF"
         ],
         "argsproof": [
             "FILECNF",
-            "FILEPROOF"
+            "-no-drup",
+            "-drup-file=FILEPROOF"
         ]
     },
     "expmc_lrb_vsids_switch_2500": {
+        "status": "ok",
         "name": "expMC_LRB_VSIDS_Switch_2500",
-        "call": "./expmc_lrb_vsids_switch_2500",
+        "call": "./minisat_static",
         "gz": true,
         "args": [
+            "-no-drup",
             "FILECNF"
         ],
         "argsproof": [
             "FILECNF",
-            "FILEPROOF"
+            "-drup-file=FILEPROOF"
         ]
     },
     "expmc_vsids_lrb_switch_2500": {
+        "status": "ok",
         "name": "expMC_VSIDS_LRB_Switch_2500",
-        "call": "./expmc_vsids_lrb_switch_2500",
+        "call": "./minisat_static",
         "gz": true,
         "args": [
-            "FILECNF"
+            "FILECNF",
+            "-no-drup"
         ],
         "argsproof": [
             "FILECNF",
-            "FILEPROOF"
+            "-drup-file=FILEPROOF"
         ]
     },
     "gluhack": {
+        "status": "ok",
         "name": "gluHack",
-        "call": "./gluhack",
+        "call": "./gluHack",
         "gz": true,
         "args": [
-            "FILECNF"
+            "FILECNF",
+            "-model"
         ],
         "argsproof": [
             "FILECNF",
-            "FILEPROOF"
+            "-certified",
+            "-certified-output=FILEPROOF"
         ]
     },
     "glu_mix": {
+        "status": "ok",
         "name": "glu_mix",
         "call": "./glu_mix",
         "gz": true,
         "args": [
-            "FILECNF"
+            "FILECNF",
+            "-model"
         ],
         "argsproof": [
             "FILECNF",
-            "FILEPROOF"
+            "-certified",
+            "-certified-output=FILEPROOF"
         ]
     },
     "glucose-3.0d-patched": {
+        "status": "ok",
         "name": "glucose-3.0D-patched",
-        "call": "./glucose-3.0d-patched",
+        "call": "./glucose_static",
         "gz": true,
         "args": [
-            "FILECNF"
+            "FILECNF",
+            "-model"
         ],
         "argsproof": [
             "FILECNF",
-            "FILEPROOF"
+            "-vbyte",
+            "-certified",
+            "-certified-output=FILEPROOF"
         ]
     },
     "glucose-3.0_padc_3": {
+        "status": "ok",
         "name": "glucose-3.0_PADC_3",
-        "call": "./glucose-3.0_padc_3",
+        "call": "./glucose-3.0_PADC_static",
         "gz": true,
         "args": [
-            "FILECNF"
+            "FILECNF",
+            "-nbIncRedDB=3",
+            "-model"
         ],
         "argsproof": [
             "FILECNF",
-            "FILEPROOF"
+            "-nbIncRedDB=3",
+            "-certified",
+            "-certified-output=FILEPROOF"
         ]
     },
     "glucose-3.0_padc_10": {
+        "status": "ok",
         "name": "glucose-3.0_PADC_10",
-        "call": "./glucose-3.0_padc_10",
+        "call": "./glucose-3.0_PADC_static",
         "gz": true,
         "args": [
-            "FILECNF"
+            "FILECNF",
+            "-nbIncRedDB=10",
+            "-model"
         ],
         "argsproof": [
             "FILECNF",
-            "FILEPROOF"
+            "-nbIncRedDB=10",
+            "-certified",
+            "-certified-output=FILEPROOF"
         ]
     },
     "glucose3.0": {
+        "status": "ok",
         "name": "glucose3.0",
-        "call": "./glucose3.0",
+        "call": "./glucose_static",
         "gz": true,
         "args": [
-            "FILECNF"
+            "FILECNF",
+            "-model"
         ],
         "argsproof": [
             "FILECNF",
-            "FILEPROOF"
+            "-certified",
+            "-certified-output=FILEPROOF"
         ]
     },
     "glucose4.2.1": {
+        "status": "problem prebuild todo",
         "name": "glucose4.2.1",
-        "call": "./glucose4.2.1",
+        "call": "./glucose_static",
         "gz": true,
         "args": [
-            "FILECNF"
+            "FILECNF",
+            "-model"
         ],
         "argsproof": [
             "FILECNF",
-            "FILEPROOF"
+            "-vbyte",
+            "-certified",
+            "-certified-output=FILEPROOF"
         ]
     },
     "inidglucose": {
+        "status": "ok",
         "name": "inIDGlucose",
-        "call": "./inidglucose",
+        "call": "./glucose_static",
         "gz": true,
         "args": [
-            "FILECNF"
+            "FILECNF",
+            "-model"
         ],
         "argsproof": [
             "FILECNF",
-            "FILEPROOF"
+            "-vbyte",
+            "-certified",
+            "-certified-output=FILEPROOF"
         ]
     },
     "smallsat": {
+        "status": "ok",
         "name": "smallsat",
         "call": "./smallsat",
         "gz": true,
@@ -481,10 +532,12 @@
         ],
         "argsproof": [
             "FILECNF",
-            "FILEPROOF"
+            "-certified",
+            "-certified-output=FILEPROOF"
         ]
     },
     "varisat": {
+        "status": "prebuild todo",
         "name": "varisat",
         "call": "./varisat",
         "gz": true,
@@ -493,7 +546,8 @@
         ],
         "argsproof": [
             "FILECNF",
-            "FILEPROOF"
+            "-certified",
+            "-certified-output=FILEPROOF"
         ]
     }
 }
