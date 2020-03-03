@@ -28,7 +28,7 @@ jobs:
         for INPUT_FILE in list.tgz counter.json; do
         FILENAME=${INPUT_FILE}
         ASSET_URL=$(curl -sSL -H "${AUTH_HEADER}" ${ASSETS_URL} | jq -r ".[]|select(.name==\"${INPUT_FILE}\")|.url")
-        curl -sSL -XDELETE -H "${AUTH_HEADER}" "${ASSET_URL}"
+        [[ "${ASSET_URL}" != "" ]] && curl -sSL -XDELETE -H "${AUTH_HEADER}" "${ASSET_URL}"
         UPLOAD_URL="https://uploads.github.com/repos/${GITHUB_REPOSITORY}/releases/${RELEASE_ID}/assets?name=${FILENAME}"
         curl \
           -sSL \
