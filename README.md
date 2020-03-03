@@ -3,7 +3,7 @@
 ![Solvers count](https://badgen.net/https/github.com/sat-heritage/docker-images/releases/download/list/counter.json)
 [![PyPI version](https://badge.fury.io/py/satex.svg)](https://badge.fury.io/py/satex)
 [![Docker Hub](https://badgen.net/badge/DockerHub/satex/blue?icon=docker)](https://hub.docker.com/u/satex)
-[![Zenodo](https://badgen.net/badge/Zenodo/satex/blue)](https://zenodo.org/communities/satex)
+[![Zenodo](https://badgen.net/badge/Zenodo/satex/5cb85c)](https://zenodo.org/communities/satex)
 
 ## Usage
 
