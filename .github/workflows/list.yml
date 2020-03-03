@@ -12,7 +12,7 @@ jobs:
     - run: |
         tar cvzf list.tgz index.json */setup.json */solvers.json
         COUNT=$(jq  '.[]|select(.status=="ok")|.name'  */solvers.json | wc -l)
-        echo '{"stable": '${COUNT}', "subject": "solvers", "color": "blue", "status": '${COUNT}'}' > counter.json
+        echo '{"stable": '${COUNT}', "subject": "Solvers", "color": "cyan", "status": '${COUNT}', "cache": 3600}' > counter.json
     - name: upload
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
