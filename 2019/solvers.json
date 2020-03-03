@@ -1,11 +1,10 @@
 {
   "ccanrsim": {
-    "status": "Problem when calling the solver: Arguments error! + problem with proof",
+    "status": "ok",
     "name": "CCAnrSim",
     "call": "./CCAnrSim",
     "gz": true,
     "args": [
-      "-model",
       "-inst",
       "FILECNF"
     ]
