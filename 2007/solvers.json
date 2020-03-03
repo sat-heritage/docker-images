@@ -472,7 +472,7 @@
         "status": "unknown"
     },
     "tinisat": {
-        "name": "tinisat",
+        "name": "Tinisat",
         "version": "2007-02-08",
         "authors": "Jinbo Huang",
         "args": [
@@ -480,7 +480,7 @@
         ],
         "call": "./tinisat",
         "gz": false,
-        "status": "unknown"
+        "status": "ok"
     },
     "tinisatelite": {
         "name": "TiniSatELite",
