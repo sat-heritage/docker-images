@@ -40,8 +40,8 @@ solvers_2019 = (
 
 for s in solvers_2017_main:
     print(s)
-normalizedname = s.lower().replace(" ", "_")
-jsonoutput[normalizedname] = {"name": s, "call": "./" + normalizedname, "gz": True, "args": ["FILECNF"],
+    normalizedname = s.lower().replace(" ", "_")
+    jsonoutput[normalizedname] = {"name": s, "call": "./" + normalizedname, "gz": True, "args": ["FILECNF"],
 "argsproof": ["FILECNF", "FILEPROOF"]}
 
 with open("auto-setup.json", "wt") as f:
