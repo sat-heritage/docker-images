@@ -13,7 +13,7 @@
         ]
     },
     "cadical": {
-        "status": "Problem when building",
+        "status": "ok",
         "name": "CaDiCaL",
         "call": "./cadical",
         "gz": true,
@@ -74,15 +74,18 @@
         ]
     },
     "lingeling": {
-        "status": "Problem with prebuild script",
+        "status": "ok",
         "name": "Lingeling",
         "call": "./lingeling",
         "gz": true,
         "args": [
-            "FILECNF"
+            "FILECNF",
+            "-v"
         ],
         "argsproof": [
             "FILECNF",
+            "-v",
+            "-t",
             "FILEPROOF"
         ]
     },
@@ -100,16 +103,16 @@
         ]
     },
     "maplecomsps_lrb_vsids_2_drup": {
-        "status": "Problem with directory name",
+        "status": "ok",
         "name": "MapleCOMSPS_LRB_VSIDS_2_drup",
-        "call": "./maplecomsps_lrb_vsids_2_drup",
+        "call": "./MapleCOMSPS_LRB_VSIDS_2",
         "gz": true,
         "args": [
             "FILECNF"
         ],
         "argsproof": [
             "FILECNF",
-            "FILEPROOF"
+            "-drup-file=FILEPROOF"
         ]
     },
     "maplecomsps_lrb_vsids_drup": {
@@ -299,16 +302,13 @@
         ]
     },
     "yalsat": {
-        "status": "Problem with prebuild",
+        "status": "ok",
         "name": "YalSAT",
         "call": "./yalsat",
         "gz": true,
         "args": [
-            "FILECNF"
-        ],
-        "argsproof": [
             "FILECNF",
-            "FILEPROOF"
+            "-v"
         ]
     },
     "abcdsat_r18": {
@@ -326,16 +326,16 @@
         ]
     },
     "cms55-main-all4fixed": {
-        "status": "TODO",
+        "status": "ok",
         "name": "cms55-main-all4fixed",
-        "call": "./cms55-main-all4fixed",
+        "call": "./cryptominisat5_simple",
         "gz": true,
         "args": [
             "FILECNF"
         ],
         "argsproof": [
             "FILECNF",
-            "FILEPROOF"
+            "--drat=FILEPROOF"
         ]
     },
     "expglucose": {
@@ -491,9 +491,9 @@
         ]
     },
     "glucose4.2.1": {
-        "status": "problem prebuild todo",
+        "status": "ok",
         "name": "glucose4.2.1",
-        "call": "./glucose_static",
+        "call": "./glucose",
         "gz": true,
         "args": [
             "FILECNF",
@@ -537,7 +537,7 @@
         ]
     },
     "varisat": {
-        "status": "prebuild todo",
+        "status": "ok",
         "name": "varisat",
         "call": "./varisat",
         "gz": true,
@@ -545,9 +545,8 @@
             "FILECNF"
         ],
         "argsproof": [
-            "FILECNF",
-            "-certified",
-            "-certified-output=FILEPROOF"
+            "-p FILEPROOF",
+            "FILECNF"
         ]
     }
 }
