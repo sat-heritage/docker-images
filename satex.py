@@ -110,6 +110,8 @@ class Repository(object):
                     continue
                 if status != "ok" and not select_unstable:
                     continue
+                if status.startswith("FIXME") and not select_all:
+                    continue
                 self.images[name] = {"entry": entry, "solver": solver}
                 self.names.append(name)
 

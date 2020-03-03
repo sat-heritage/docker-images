@@ -3,9 +3,47 @@
     "builder":"generic/2007",
     "builder_base":"debian/eol:sarge-slim",
     "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2007-src/{SOLVER_NAME}.tgz",
+    "kcnfs-2004": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2007-src/{SOLVER_NAME}-2004.tgz"
+    },
+    "kcnfs-2006": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2007-src/{SOLVER_NAME}-2006.tgz"
+    },
+    "kcnfs-smp": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2007-src/{SOLVER_NAME}-smp.tgz"
+    },
+    "miraxt-v1": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2007-src/{SOLVER_NAME}v1.tgz"
+    },
+    "miraxt-v2": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2007-src/{SOLVER_NAME}v2.tgz"
+    },
+    "miraxt-v3": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2007-src/{SOLVER_NAME}v3.tgz"
+    },
+    "saps": {
+        "builder": "generic/binary-v1",
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2007-bin/{SOLVER_NAME}"
+    },
+    "sapsrt": {
+        "builder": "generic/binary-v1",
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2007-bin/{SOLVER_NAME}"
+    },
     "sat4j": {
         "RDEPENDS": "default-jre",
         "builder": "generic/binary-tar",
         "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2007-bin/{SOLVER}.tar"
+    },
+    "spear": {
+        "builder": "generic/binary-v1",
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2007-bin/{SOLVER_NAME}-32"
+    },
+    "spear_fh": {
+        "builder": "generic/binary-v1",
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2007-bin/Spear-32"
+    },
+    "spear_fhs": {
+        "builder": "generic/binary-v1",
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2007-bin/Spear-32"
     }
 }

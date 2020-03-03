@@ -1,5 +1,6 @@
 # SAT Heritage - Docker images
 
+![Solvers count](https://img.shields.io/badge/dynamic/json?url=https://github.com/sat-heritage/docker-images/releases/download/list/counter.json&query=stable&label=solvers)
 [![PyPI version](https://badge.fury.io/py/satex.svg)](https://badge.fury.io/py/satex)
 
 [Docker HUB](https://hub.docker.com/u/satex)

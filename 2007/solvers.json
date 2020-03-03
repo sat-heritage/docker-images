@@ -79,7 +79,7 @@
         "status": "ok"
     },
     "cmusat_base": {
-        "name": "CMUSAT BASE",
+        "name": "CMUSAT_BASE",
         "version": "2007-02-08",
         "authors": "Himanshu Jain and Edmund Clarke",
         "args": [
@@ -87,32 +87,22 @@
         ],
         "call": "./cmusat_base",
         "gz": false,
-        "status": "unknown"
+        "status": "ok"
     },
-    "dewsatz-2007-02-08": {
-        "name": "DEWSATZ",
-        "version": "2007-02-08",
+    "dewsatz": {
+        "name": "dewSatz",
+        "version": "2007-04-26 (fixed)",
         "authors": "Anbulagan",
         "args": [
             "FILECNF"
         ],
         "call": "./dewSatz",
         "gz": false,
-        "status": "unknown"
-    },
-    "dewsatz-2007-04-26_(fixed)": {
-        "name": "DEWSATZ",
-        "version": "2007-04-26 (fixed)",
-        "authors": "Anbulagan",
-        "args": [
-            "FILECNF"
-        ],
-        "call": "./dewSatz_fixed",
-        "gz": false,
-        "status": "unknown"
+        "status": "ok",
+        "comment": "fixed version above 2007-02-08"
     },
     "dewsatz_1a": {
-        "name": "DEWSATZ 1A",
+        "name": "dewSatz_1a",
         "version": "2007-02-08",
         "authors": "Anbulagan",
         "args": [
@@ -120,7 +110,7 @@
         ],
         "call": "./dewSatz_1a",
         "gz": false,
-        "status": "unknown"
+        "status": "ok"
     },
     "fh": {
         "name": "FH",
@@ -131,7 +121,7 @@
         ],
         "call": "./FH",
         "gz": false,
-        "status": "unknown"
+        "status": "ok"
     },
     "gnovelty-plus": {
         "name": "gnovelty+",
@@ -142,7 +132,7 @@
         ],
         "call": "./gnovelty+",
         "gz": false,
-        "status": "unknown"
+        "status": "ok"
     },
     "hybrid1": {
         "name": "Hybrid1",
@@ -153,7 +143,7 @@
         ],
         "call": "./Hybrid1",
         "gz": false,
-        "status": "unknown"
+        "status": "ok"
     },
     "kcnfs-2004": {
         "name": "KCNFS",
@@ -164,7 +154,7 @@
         ],
         "call": "./kcnfs-2004",
         "gz": false,
-        "status": "unknown"
+        "status": "FIXME segmentation fault"
     },
     "kcnfs-2006": {
         "name": "KCNFS",
@@ -175,7 +165,7 @@
         ],
         "call": "./kcnfs-2006",
         "gz": false,
-        "status": "unknown"
+        "status": "ok"
     },
     "kcnfs-smp": {
         "name": "KCNFS",
@@ -186,10 +176,10 @@
         ],
         "call": "./kcnfs-smp",
         "gz": false,
-        "status": "unknown"
+        "status": "ok"
     },
     "march_ks": {
-        "name": "March KS",
+        "name": "March_KS",
         "version": "2007-02-08",
         "authors": "Marijn Heule and Hans van Maaren",
         "args": [
@@ -197,29 +187,19 @@
         ],
         "call": "./march_ks",
         "gz": false,
-        "status": "unknown"
+        "status": "ok"
     },
-    "minimarch-2007-02-08": {
-        "name": "minimarch",
-        "version": "2007-02-08",
-        "authors": "Siert Wieringa, Hans van Maaren and Marijn Heule",
-        "args": [
-            "FILECNF"
-        ],
-        "call": "./minimarch",
-        "gz": false,
-        "status": "unknown"
-    },
-    "minimarch-2007-04-26_(fixed)": {
+    "minimarch": {
         "name": "minimarch",
         "version": "2007-04-26 (fixed)",
         "authors": "Siert Wieringa, Hans van Maaren and Marijn Heule",
         "args": [
             "FILECNF"
         ],
-        "call": "./minimarch_fixed",
+        "call": "./minimarch",
         "gz": false,
-        "status": "unknown"
+        "comment": "fixed version over 2007-02-08",
+        "status": "ok"
     },
     "minisat-sat_2007": {
         "name": "minisat",
@@ -230,7 +210,7 @@
         ],
         "call": "./minisat_noassertions",
         "gz": false,
-        "status": "unknown"
+        "status": "FIXME compilation"
     },
     "minisat-sat_2007_(with_assertions)": {
         "name": "minisat",
@@ -241,7 +221,7 @@
         ],
         "call": "./minisat",
         "gz": false,
-        "status": "unknown"
+        "status": "FIXME compilation"
     },
     "miraxt-v1": {
         "name": "MiraXT",
@@ -250,9 +230,9 @@
         "args": [
             "FILECNF"
         ],
-        "call": "./MiraXTv1_dyn",
+        "call": "./MiraXTv1",
         "gz": false,
-        "status": "unknown"
+        "status": "FIXME compilation"
     },
     "miraxt-v2": {
         "name": "MiraXT",
@@ -261,9 +241,9 @@
         "args": [
             "FILECNF"
         ],
-        "call": "./MiraXTv2_dyn",
+        "call": "./MiraXTv2",
         "gz": false,
-        "status": "unknown"
+        "status": "FIXME compilation (static)"
     },
     "miraxt-v3": {
         "name": "MiraXT",
@@ -272,9 +252,9 @@
         "args": [
             "FILECNF"
         ],
-        "call": "./MiraXTv3_dyn",
+        "call": "./MiraXTv3",
         "gz": false,
-        "status": "unknown"
+        "status": "FIXME compilation (static)"
     },
     "mmisat": {
         "name": "Mmisat",
@@ -283,9 +263,9 @@
         "args": [
             "FILECNF"
         ],
-        "call": "./mmisat",
+        "call": "./ivan",
         "gz": false,
-        "status": "unknown"
+        "status": "ok"
     },
     "mxc": {
         "name": "MXC",
@@ -296,7 +276,7 @@
         ],
         "call": "./mxc",
         "gz": false,
-        "status": "unknown"
+        "status": "FIXME compilation"
     },
     "ornithorynque": {
         "name": "ornithorynque",
@@ -307,7 +287,7 @@
         ],
         "call": "./ornithorynque",
         "gz": false,
-        "status": "unknown"
+        "status": "FIXME no source or binary available?"
     },
     "picosat": {
         "name": "picosat",
@@ -318,7 +298,7 @@
         ],
         "call": "./picosat",
         "gz": false,
-        "status": "unknown"
+        "status": "FIXME compilation"
     },
     "ranov": {
         "name": "ranov",
@@ -329,7 +309,7 @@
         ],
         "call": "./ranov",
         "gz": false,
-        "status": "unknown"
+        "status": "ok"
     },
     "rsat": {
         "name": "Rsat",
@@ -340,7 +320,7 @@
         ],
         "call": "./rsat.sh",
         "gz": false,
-        "status": "unknown"
+        "status": "FIXME script and build"
     },
     "saps": {
         "name": "saps",
@@ -352,7 +332,7 @@
         ],
         "call": "./saps",
         "gz": false,
-        "status": "unknown"
+        "status": "ok"
     },
     "sapsrt": {
         "name": "sapsrt",
@@ -364,7 +344,7 @@
         ],
         "call": "./sapsrt",
         "gz": false,
-        "status": "unknown"
+        "status": "ok"
     },
     "sat4j": {
         "name": "SAT4J",
@@ -392,7 +372,7 @@
         ],
         "call": "./sat7_bin",
         "gz": false,
-        "status": "unknown"
+        "status": "ok"
     },
     "satzilla-crafted": {
         "name": "SATzilla",
@@ -403,7 +383,7 @@
         ],
         "call": "./SATzilla2007_C",
         "gz": false,
-        "status": "unknown"
+        "status": "FIXME compilation"
     },
     "satzilla-full": {
         "name": "SATzilla",
@@ -414,7 +394,7 @@
         ],
         "call": "./SATzilla2007_F",
         "gz": false,
-        "status": "unknown"
+        "status": "FIXME compilation"
     },
     "satzilla-random": {
         "name": "SATzilla",
@@ -425,7 +405,7 @@
         ],
         "call": "./SATzilla2007_R",
         "gz": false,
-        "status": "unknown"
+        "status": "FIXME compilation"
     },
     "spear": {
         "name": "Spear",
@@ -439,7 +419,7 @@
         ],
         "call": "./Spear-32",
         "gz": false,
-        "status": "unknown"
+        "status": "ok"
     },
     "spear_fh": {
         "name": "Spear FH",
@@ -454,7 +434,7 @@
         ],
         "call": "./Spear-32",
         "gz": false,
-        "status": "unknown"
+        "status": "ok"
     },
     "spear_fhs": {
         "name": "Spear FHS",
@@ -469,7 +449,7 @@
         ],
         "call": "./Spear-32",
         "gz": false,
-        "status": "unknown"
+        "status": "ok"
     },
     "tinisat": {
         "name": "Tinisat",
@@ -491,7 +471,7 @@
         ],
         "call": "./TiniSatELite",
         "gz": false,
-        "status": "unknown"
+        "status": "FIXME compilation"
     },
     "tts": {
         "name": "TTS",
@@ -502,7 +482,7 @@
         ],
         "call": "./tts-4-0",
         "gz": false,
-        "status": "unknown"
+        "status": "ok"
     },
     "unitmarch": {
         "name": "UnitMarch",
@@ -513,6 +493,6 @@
         ],
         "call": "./UnitMarch_32_bits",
         "gz": false,
-        "status": "unknown"
+        "status": "ok"
     }
 }
