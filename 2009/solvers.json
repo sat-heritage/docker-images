@@ -24,7 +24,7 @@
         "status": "unknown"
     },
     "circus": {
-        "name": "CircUs",
+        "name": "CirCUs",
         "version": "2009-03-23",
         "authors": "Hyojung Han",
         "args": [
@@ -277,7 +277,7 @@
         "gz": false,
         "status": "unknown"
     },
-    "lysat-c/2009-03-20": {
+    "lysat-c": {
         "name": "LySAT",
         "version": "c/2009-03-20",
         "authors": "Youssef Hamadi, Sa\u00efd Jabbour, Lakhdar Sa\u00efs",
@@ -289,7 +289,7 @@
         "gz": false,
         "status": "unknown"
     },
-    "lysat-i/2009-03-20": {
+    "lysat-i": {
         "name": "LySAT",
         "version": "i/2009-03-20",
         "authors": "Youssef Hamadi, Sa\u00efd Jabbour, Lakhdar Sa\u00efs",
@@ -301,7 +301,7 @@
         "gz": false,
         "status": "unknown"
     },
-    "manysat_1.1-aimd_0/2009-03-20": {
+    "manysat_1.1-aimd_0": {
         "name": "ManySAT 1.1",
         "version": "aimd 0/2009-03-20",
         "authors": "Youssef Hamadi, Sa\u00efd Jabbour, Lakhdar Sa\u00efs",
@@ -314,7 +314,7 @@
         "gz": false,
         "status": "unknown"
     },
-    "manysat_1.1-aimd_1/2009-03-20": {
+    "manysat_1.1-aimd_1": {
         "name": "ManySAT 1.1",
         "version": "aimd 1/2009-03-20",
         "authors": "Youssef Hamadi, Sa\u00efd Jabbour, Lakhdar Sa\u00efs",
@@ -327,7 +327,7 @@
         "gz": false,
         "status": "unknown"
     },
-    "manysat_1.1-aimd_2/2009-03-20": {
+    "manysat_1.1-aimd_2": {
         "name": "ManySAT 1.1",
         "version": "aimd 2/2009-03-20",
         "authors": "Youssef Hamadi, Sa\u00efd Jabbour, Lakhdar Sa\u00efs",
@@ -408,7 +408,7 @@
         "status": "unknown"
     },
     "mxc": {
-        "name": "MXC",
+        "name": "mxc-sat09",
         "version": "2009-03-10",
         "authors": "David Bregman",
         "args": [
@@ -489,8 +489,8 @@
         "gz": false,
         "status": "unknown"
     },
-    "sat4j_core": {
-        "name": "SAT4J CORE",
+    "sat4j-core": {
+        "name": "sat4j-core",
         "version": "2.1 RC1",
         "authors": "Daniel Le Berre",
         "args": [
