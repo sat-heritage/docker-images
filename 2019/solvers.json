@@ -174,9 +174,9 @@
     ]
   },
   "maple-lcmdistchronobt-dl-v1": {
-    "status": "Problem when moving executable (not the same names...)",
+    "status": "ok",
     "name": "MapleLCMDistChronoBT-DL-v1",
-    "call": "./maplelcmdistchronobt-dl-v1",
+    "call": "./MapleLCMDistChrBt-DL-v1",
     "gz": true,
     "args": [
       "FILECNF"
@@ -538,7 +538,7 @@
     ]
   },
   "zib_glucose": {
-    "status": "Problem: proof always enabled",
+    "status" : "ok",
     "name": "ZIB_Glucose",
     "call": "./glucose_static",
     "gz": true,
@@ -549,6 +549,7 @@
     ],
     "argsproof": [
       "FILECNF",
+      "-model",
       "-certified",
       "-certified-output=FILEPROOF"
     ]
@@ -571,39 +572,54 @@
     ]
   },
   "cmsatv56-walksat": {
+    "status" : "ok",
     "name": "cmsatv56-walksat",
-    "call": "./cmsatv56-walksat",
+    "call": "./cryptominisat5_simple",
     "gz": true,
     "args": [
-      "FILECNF"
+      "FILECNF",
+      "--sls=walksat",
+      "--bva=1"
     ],
     "argsproof": [
       "FILECNF",
-      "FILEPROOF"
+      "--sls=walksat",
+      "--bva=1",
+      "--drat=FILEPROOF"
     ]
   },
   "cmsatv56-yalsat-chronobt": {
+    "status" : "ok",
     "name": "cmsatv56-yalsat-chronobt",
-    "call": "./cmsatv56-yalsat-chronobt",
+    "call": "./cryptominisat5_simple",
     "gz": true,
     "args": [
-      "FILECNF"
+      "FILECNF",
+      "--sls=yalsat",
+      "--bva=1"
     ],
     "argsproof": [
       "FILECNF",
-      "FILEPROOF"
+      "--sls=yalsat",
+      "--bva=1",
+      "--drat=FILEPROOF"
     ]
   },
   "cmsatv56-yalsat": {
+    "status" : "ok",
     "name": "cmsatv56-yalsat",
-    "call": "./cmsatv56-yalsat",
+    "call": "./cryptominisat5_simple",
     "gz": true,
     "args": [
-      "FILECNF"
+      "FILECNF",
+      "--sls=yalsat",
+      "--bva=0"
     ],
     "argsproof": [
       "FILECNF",
-      "FILEPROOF"
+      "--sls=yalsat",
+      "--bva=0",
+      "--drat=FILEPROOF"
     ]
   },
   "expmaple_cm": {
@@ -621,9 +637,9 @@
     ]
   },
   "expmaple_cm_gcbump": {
-    "status": "Problem",
+    "status": "ok",
     "name": "expMaple_CM_GCBump",
-    "call": "./expmaple_cm_gcbump",
+    "call": "./glucose_static",
     "gz": true,
     "args": [
       "FILECNF",
