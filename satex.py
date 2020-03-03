@@ -176,7 +176,12 @@ def print_info(args):
 
         key_width += 2
         line_width = key_width + 70
-        color = 32 if image.status == "ok" else 33
+        if image.status == "ok":
+            color = 32
+        elif image.status.startswith("FIXME"):
+            color = 31
+        else:
+            color = 33
         print(f"{DOCKER_NS}/\033[1;{color}m{image.name}\033[0m")
         print("-"*line_width)
         for (key, value) in info:
