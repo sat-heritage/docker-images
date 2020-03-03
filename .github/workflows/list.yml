@@ -21,22 +21,22 @@ jobs:
         INPUT_FILE=list.tgz
         INPUT_TYPE=application/octet-stream
         AUTH_HEADER="Authorization: token ${GITHUB_TOKEN}";
-        CONTENT_LENGTH_HEADER="Content-Length: $(stat -c%s "$INPUT_FILE")";
-        CONTENT_TYPE_HEADER="Content-Type: $INPUT_TYPE";
         RELEASE_ID=24108259
         ASSETS_URL=https://api.github.com/repos/${GITHUB_REPOSITORY}/releases/${RELEASE_ID}/assets
         for INPUT_FILE in list.tgz counter.json; do
-        FILENAME=${INPUT_FILE}
-        ASSET_URL=$(curl -sSL -H "${AUTH_HEADER}" ${ASSETS_URL} | jq -r ".[]|select(.name==\"${INPUT_FILE}\")|.url")
-        [[ "${ASSET_URL}" != "" ]] && curl -sSL -XDELETE -H "${AUTH_HEADER}" "${ASSET_URL}"
-        UPLOAD_URL="https://uploads.github.com/repos/${GITHUB_REPOSITORY}/releases/${RELEASE_ID}/assets?name=${FILENAME}"
-        curl \
-          -sSL \
-          -XPOST \
-          -H "${AUTH_HEADER}" \
-          -H "${CONTENT_LENGTH_HEADER}" \
-          -H "${CONTENT_TYPE_HEADER}" \
-          --upload-file "$INPUT_FILE" \
-          "${UPLOAD_URL}";
+            FILENAME=${INPUT_FILE}
+            CONTENT_LENGTH_HEADER="Content-Length: $(stat -c%s "$INPUT_FILE")";
+            CONTENT_TYPE_HEADER="Content-Type: $INPUT_TYPE";
+            ASSET_URL=$(curl -sSL -H "${AUTH_HEADER}" ${ASSETS_URL} | jq -r ".[]|select(.name==\"${INPUT_FILE}\")|.url")
+            [[ "${ASSET_URL}" != "" ]] && curl -sSL -XDELETE -H "${AUTH_HEADER}" "${ASSET_URL}"
+            UPLOAD_URL="https://uploads.github.com/repos/${GITHUB_REPOSITORY}/releases/${RELEASE_ID}/assets?name=${FILENAME}"
+            curl \
+              -sSL \
+              -XPOST \
+              -H "${AUTH_HEADER}" \
+              -H "${CONTENT_LENGTH_HEADER}" \
+              -H "${CONTENT_TYPE_HEADER}" \
+              --upload-file "$INPUT_FILE" \
+              "${UPLOAD_URL}";
         done
 
