@@ -21,7 +21,7 @@
         ],
         "call": "./adaptg2wsat2009++",
         "gz": false,
-        "status": "unknown"
+        "status": "ok"
     },
     "circus": {
         "name": "CirCUs",
@@ -34,7 +34,7 @@
         ],
         "call": "./CirCUs",
         "gz": false,
-        "status": "unknown"
+        "status": "FIXME misses flex:i386"
     },
     "clasp": {
         "name": "clasp",
@@ -49,7 +49,7 @@
         ],
         "call": "./clasp",
         "gz": false,
-        "status": "unknown"
+        "status": "ok"
     },
     "csat": {
         "name": "CSat",
@@ -58,9 +58,9 @@
         "args": [
             "FILECNF"
         ],
-        "call": "DIR/csat",
+        "call": "./csat",
         "gz": false,
-        "status": "unknown"
+        "status": "ok"
     },
     "glucose": {
         "name": "glucose",
@@ -83,7 +83,7 @@
         ],
         "call": "./gnovelty+",
         "gz": false,
-        "status": "unknown"
+        "status": "ok"
     },
     "gnovelty-plus2": {
         "name": "gnovelty+2",
@@ -95,7 +95,7 @@
         ],
         "call": "./gnovelty+2",
         "gz": false,
-        "status": "unknown"
+        "status": "FIXME compile error due to boost"
     },
     "gnovelty-plus2-h": {
         "name": "gnovelty+2-H",
@@ -107,7 +107,7 @@
         ],
         "call": "./gnovelty+2-H",
         "gz": false,
-        "status": "unknown"
+        "status": "FIXME compile error due to boost"
     },
     "gnovelty-plus-t": {
         "name": "gNovelty+-T",
@@ -120,10 +120,10 @@
         ],
         "call": "./gnovelty+",
         "gz": false,
-        "status": "unknown"
+        "status": "ok"
     },
-    "gnovelty-plus-v.2-t": {
-        "name": "gNovelty+-V.2-T",
+    "gnovelty-plus2-t": {
+        "name": "gNovelty+-v2-T",
         "version": "2009-03-22",
         "authors": "Duc-Nghia Pham, Charles Gretton",
         "args": [
@@ -133,10 +133,10 @@
         ],
         "call": "./gnovelty+",
         "gz": false,
-        "status": "unknown"
+        "status": "FIXME compile error due to boost"
     },
-    "gnovelty-plus-v.2-t-h": {
-        "name": "gNovelty+-V.2-T-H",
+    "gnovelty-plus2-t-h": {
+        "name": "gNovelty+-v2-T-H",
         "version": "2009-03-22",
         "authors": "Duc-Nghia Pham, Charles Gretton",
         "args": [
@@ -146,7 +146,7 @@
         ],
         "call": "./gnovelty+",
         "gz": false,
-        "status": "unknown"
+        "status": "FIXME compile error due to boost"
     },
     "hybrid2": {
         "name": "Hybrid2",
@@ -158,7 +158,7 @@
         ],
         "call": "./Hybrid2",
         "gz": false,
-        "status": "unknown"
+        "status": "ok"
     },
     "hybridgm": {
         "name": "hybridGM",
@@ -170,7 +170,7 @@
         ],
         "call": "./hybridGM",
         "gz": false,
-        "status": "unknown"
+        "status": "ok"
     },
     "hybridgm3": {
         "name": "hybridGM3",
@@ -182,7 +182,7 @@
         ],
         "call": "./hybridGM3",
         "gz": false,
-        "status": "unknown"
+        "status": "ok"
     },
     "hybridgm7": {
         "name": "hybridGM7",
@@ -194,7 +194,7 @@
         ],
         "call": "./hybridGM7",
         "gz": false,
-        "status": "unknown"
+        "status": "ok"
     },
     "hydrasat": {
         "name": "HydraSAT",
@@ -208,9 +208,9 @@
             "memory_limit",
             "MEMLIMIT"
         ],
-        "call": "DIR/hydrasat",
+        "call": "./hydrasat",
         "gz": false,
-        "status": "unknown"
+        "status": "ok"
     },
     "hydrasat-flat": {
         "name": "HydraSAT-Flat",
@@ -224,23 +224,23 @@
             "memory_limit",
             "MEMLIMIT"
         ],
-        "call": "DIR/hydrasat-flat",
+        "call": "./hydrasat-flat",
         "gz": false,
-        "status": "unknown"
+        "status": "ok"
     },
     "hydrasat-multi": {
         "name": "HydraSAT-Multi",
         "version": "2009-03-22-Multi",
         "authors": "Christoph Baldow, Friedrich Gr\u00e4ter, Steffen H\u00f6lldobler, Norbert Manthey, Max Seelemann, Peter Steinke, Christoph Wernhard, Konrad Winkler, Erik Zenker",
         "args": [
-            "DIR",
+            ".",
             "FILECNF",
             "MEMLIMIT",
             "RANDOMSEED"
         ],
-        "call": "DIR/hydrasat-multi.sh",
+        "call": "./hydrasat-multi.sh",
         "gz": false,
-        "status": "unknown"
+        "status": "ok"
     },
     "ipaws": {
         "name": "iPAWS",
@@ -252,7 +252,7 @@
         ],
         "call": "./iPAWS",
         "gz": false,
-        "status": "unknown"
+        "status": "ok"
     },
     "iut_bmb_sat": {
         "name": "IUT_BMB_SAT",
@@ -627,7 +627,7 @@
         ],
         "call": "./varsat-crafted_static",
         "gz": false,
-        "status": "unknown"
+        "status": "ok"
     },
     "varsat-industrial": {
         "name": "VARSAT-industrial",
@@ -639,7 +639,7 @@
         ],
         "call": "./varsat-industrial_static",
         "gz": false,
-        "status": "unknown"
+        "status": "ok"
     },
     "varsat-random": {
         "name": "VARSAT-random",
@@ -651,6 +651,6 @@
         ],
         "call": "./varsat-random_static",
         "gz": false,
-        "status": "unknown"
+        "status": "ok"
     }
 }

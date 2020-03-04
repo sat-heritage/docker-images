@@ -15,8 +15,9 @@
 # For the installatin in /dist, it tries in this order:
 #  - <set>/fixtures/SOLVER.install.sh
 #  - <set>/install.sh
-#  - if binary directory exists move its content to /dist
-#  - move all executable files in /src to /dist
+#  - if 'binary' directory exists move its content to /dist
+#  - if 'bin' directory exists move its content to /dist
+#  - move all executable files at the root of source directory to /dist
 #
 
 ARG BUILDER_BASE
@@ -60,7 +61,7 @@ RUN ASSET="$(ls /assets/*)" && set -ex && \
 # and installing binaries in /dist
 #
 FROM ${BUILDER_BASE}
-ENV LANG=C LC_ALL=C
+ENV LANG=C.UTF-8 LC_ALL=C.UTF-8
 
 RUN apt-get update --fix-missing &&\
     apt-get -y install zip gcc g++ cmake make patch curl zlib1g-dev
@@ -77,7 +78,7 @@ ARG SOLVER
 
 COPY setup.json build*.sh install* fixtures/$SOLVER* /
 
-RUN set -x && test -f /$SOLVER.pre_build.sh && bash /$SOLVER.pre_build.sh || true
+RUN set -ex && if test -f /$SOLVER.pre_build.sh; then bash /$SOLVER.pre_build.sh; fi
 
 RUN set -ex && cd `find -maxdepth 1 -mindepth 1 -type d` && \
     if test -f /$SOLVER.build.sh; then bash /$SOLVER.build.sh; \
@@ -86,11 +87,12 @@ RUN set -ex && cd `find -maxdepth 1 -mindepth 1 -type d` && \
     elif test -f build.sh; then sh build.sh;\
     else echo "did not found any building tool"; exit 1; fi
 
-RUN set -x && test -f /$SOLVER.post_build.sh && bash /$SOLVER.post_build.sh || true
+RUN set -ex && if test -f /$SOLVER.post_build.sh; then bash /$SOLVER.post_build.sh; fi
 
 RUN set -ex && mkdir /dist && cd `find -maxdepth 1 -mindepth 1 -type d` && \
     if test -f /$SOLVER.install.sh; then bash /$SOLVER.install.sh; \
     elif test -f /install.sh; then bash /install.sh; \
-    elif test -d binary; then mv -v binary/* /dist; \
+    elif test -d binary; then mv -v binary/* /dist/; \
+    elif test -d bin; then mv -v bin/* /dist/; \
     else find -perm +100 -type f -maxdepth 1 -exec mv -v {} /dist/{} \;; fi
 

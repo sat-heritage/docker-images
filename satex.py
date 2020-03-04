@@ -249,10 +249,11 @@ def prepare_image(args, docker_argv, image):
         info(" ".join(cmd))
         subprocess.check_call(cmd)
 
+_docker_opts = []
 def docker_runs(args, images, docker_args=(), image_args=()):
     docker_argv = check_docker()
     argv = ["run", "--rm"]
-    for opt in ["volume"]:
+    for opt in _docker_opts:
         if getattr(args, opt) is not None:
             val = getattr(args, opt)
             if isinstance(val, list):
@@ -518,6 +519,10 @@ def main(redirected=False):
             help="Explicitly pull the image")
     docker_parser.add_argument("-v", "--volume", action="append",
             help="(Docker option) Mount a volume")
+    _docker_opts.append("volume")
+    docker_parser.add_argument("-e", "--env", action="append",
+            help="(Docker option) Set environment variables")
+    _docker_opts.append("env")
     #
     ##
 
