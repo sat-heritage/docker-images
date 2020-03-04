@@ -1,71 +1,397 @@
 {
-    "riss6": {
-        "name": "Riss6",
-        "call": "./riss6",
+    "beansandeggs": {
+        "status": "ok",
+        "name": "BeansAndEggs",
+        "call": "./glucose",
         "gz": true,
         "args": [
-          "FILECNF"
+            "FILECNF",
+            "-model"
         ],
         "argsproof": [
-          "FILECNF",
-          "-proof=FILEPROOF",
-          "-proofFormat"
+            "FILECNF",
+            "-vbyte",
+            "-certified",
+            "-certified-output=FILEPROOF"
         ]
     },
-    "maple-comsps": {
-        "name": "MapleCOMSPS_DRUP",
-        "call": "./MapleCOMSPS",
+    "chbr_glucose": {
+        "status": "ok",
+        "name": "CHBR_glucose",
+        "call": "./CHBR_glucose",
         "gz": true,
         "args": [
-          "FILECNF"
+            "FILECNF",
+            "-model"
         ],
         "argsproof": [
-          "FILECNF",
-          "-drup-file=FILEPROOF"
+            "FILECNF",
+            "-vbyte",
+            "-certified",
+            "-certified-output=FILEPROOF"
         ]
     },
-    "abcdsat": {
-        "name": "abcdSAT_drup",
-        "call": "./abcdsat_drup",
+    "chbr_glucose_tuned": {
+        "status": "ok",
+        "name": "CHBR_glucose_tuned",
+        "call": "./CHBR_glucose_tuned",
         "gz": true,
         "args": [
-          "FILECNF"
+            "FILECNF",
+            "-model"
         ],
         "argsproof": [
-          "FILECNF",
-          "-certified",
-          "-certified-output=FILEPROOF"
+            "FILECNF",
+            "-vbyte",
+            "-certified",
+            "-certified-output=FILEPROOF"
+        ]
+    },
+    "cominisatpschandrasekhardrup": {
+        "status": "ok",
+        "name": "COMiniSatPSChandrasekharDRUP",
+        "call": "./minisat_static",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "-drup-file=FILEPROOF"
+        ]
+    },
+    "ghackcomsps_drup": {
+        "status": "ok",
+        "name": "GHackCOMSPS_DRUP",
+        "call": "./GHackCOMSPS",
+        "gz": true,
+        "args": [
+            "FILECNF",
+            "-model"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "-vbyte",
+            "-certified",
+            "-certified-output=FILEPROOF"
+        ]
+    },
+    "glucose_nbsat": {
+        "status": "ok",
+        "name": "Glucose_nbSat",
+        "call": "./GlucoseNBSAT",
+        "gz": true,
+        "args": [
+            "FILECNF",
+            "-model"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "-vbyte",
+            "-certified",
+            "-certified-output=FILEPROOF"
         ]
     },
     "lingeling": {
+        "status": "ok",
         "call": "./lingeling",
         "name": "Lingelingbbcmain",
         "gz": true,
         "args": [
-          "FILECNF"
+            "FILECNF"
         ],
         "argsproof": [
-          "FILECNF",
-          "-t",
-          "FILEPROOF"
+            "FILECNF",
+            "-t",
+            "FILEPROOF"
         ]
     },
-    "glucose-3_ts0": {
+    "maplecms": {
+        "status": "FIXME : misses xxd",
+        "name": "MapleCMS",
+        "call": "./maplecms",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF"
+        ]
+    },
+    "maplecomsps_chb_drup": {
+        "status": "ok",
+        "name": "MapleCOMSPS_CHB_DRUP",
+        "call": "./MapleCOMSPS_CHB",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "-drup-file=FILEPROOF"
+        ]
+    },
+    "maple-comsps": {
+        "status": "ok",
+        "name": "MapleCOMSPS_DRUP",
+        "call": "./MapleCOMSPS",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "-drup-file=FILEPROOF"
+        ]
+    },
+    "maplecomsps_lrb_drup": {
+        "status": "ok",
+        "name": "MapleCOMSPS_LRB_DRUP",
+        "call": "./MapleCOMSPS_LRB",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "-drup-file=FILEPROOF"
+        ]
+    },
+    "mapleglucose": {
+        "status": "ok",
+        "name": "MapleGlucose",
+        "call": "./glucose_static",
+        "gz": true,
+        "args": [
+            "FILECNF",
+            "-model"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "-vbyte",
+            "-certified",
+            "-certified-output=FILEPROOF"
+        ]
+    },
+    "riss6": {
+        "status": "ok",
+        "name": "Riss6",
+        "call": "./riss6",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "-proof=FILEPROOF",
+            "-proofFormat"
+        ]
+    },
+    "scavel_sat": {
+        "status": "ok",
+        "name": "Scavel_SAT",
+        "call": "./Scavel_SAT",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "-vbyte",
+            "FILEPROOF"
+        ]
+    },
+    "splatz06vmain": {
+        "status": "ok",
+        "name": "Splatz06vmain",
+        "call": "./splatz",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "-t",
+            "FILEPROOF"
+        ]
+    },
+    "yalsat03r": {
+        "status": "ok",
+        "name": "YalSAT03r",
+        "call": "./yalsat",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ]
+    },
+    "abcdsat_drup": {
+        "status": "ok",
+        "name": "abcdSAT_drup",
+        "call": "./abcdsat_drup",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "-certified",
+            "-certified-output=FILEPROOF"
+        ]
+    },
+    "cmsat5_autotune2": {
+        "status": "FIXME: xxd mssing",
+        "name": "cmsat5_autotune2",
+        "call": "./cmsat5_autotune2",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF"
+        ]
+    },
+    "cmsat5_main2": {
+        "status": "FIXME: xxd missing",
+        "name": "cmsat5_main2",
+        "call": "./cmsat5_main2",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF"
+        ]
+    },
+    "glucose": {
+        "status" : "ok",
+        "name": "glucose",
+        "call": "./glucose",
+        "gz": true,
+        "args": [
+            "FILECNF",
+            "-model"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "-vbyte",
+            "-certified",
+            "-certified-output=FILEPROOF"
+        ]
+    },
+    "glucoseple": {
+        "status" : "ok",
+        "name": "glucosePLE",
+        "call": "./glucosePLE",
+        "gz": true,
+        "args": [
+            "FILECNF",
+            "-model"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "-certified",
+            "-certified-output=FILEPROOF"
+        ]
+    },
+    "glucose_hack_kiel": {
         "status": "ok",
         "call": "./glucose",
         "name": "glucose_hack_kiel_newScript",
         "gz": true,
         "args": [
-          "FILECNF",
-          "-cla-decay=0.9999",
-          "-model"
+            "FILECNF",
+            "-cla-decay=0.9999",
+            "-model"
         ],
         "argsproof": [
-          "FILECNF",
-          "-cla-decay=0.9999",
-          "-certified",
-          "-certified-output=FILEPROOF",
-          "-model"
+            "FILECNF",
+            "-cla-decay=0.9999",
+            "-certified",
+            "-certified-output=FILEPROOF",
+            "-model"
+        ]
+    },
+    "glue_alt": {
+        "status": "ok",
+        "name": "glue_alt",
+        "call": "./glue_alt",
+        "gz": true,
+        "args": [
+            "FILECNF",
+            "-model"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "-certified",
+            "-certified-output=FILEPROOF"
+        ]
+    },
+    "glueminisat-2.2.10-81-main": {
+        "status": "ok",
+        "name": "glueminisat-2.2.10-81-main",
+        "call": "./glueminisat-simp-static",
+        "gz": true,
+        "args": [
+            "FILECNF",
+            "-no-lazy-simp",
+            "-model"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "-no-lazy-simp",
+            "-vbyte",
+            "-certified",
+            "-certified-output=FILEPROOF"
+        ]
+    },
+    "gulch": {
+        "status": "ok",
+        "name": "gulch",
+        "call": "./gulch",
+        "gz": true,
+        "args": [
+            "FILECNF",
+            "-model"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "-certified",
+            "-certified-output=FILEPROOF"
+        ]
+    },
+    "tb_glucose": {
+        "status": "ok",
+        "name": "tb_glucose",
+        "call": "./tb_glucose",
+        "gz": true,
+        "args": [
+            "FILECNF",
+            "-model"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "-vbyte",
+            "-certified",
+            "-certified-output=FILEPROOF"
+        ]
+    },
+    "tc_glucose": {
+        "status": "ok",
+        "name": "tc_glucose",
+        "call": "./tc_glucose",
+        "gz": true,
+        "args": [
+            "FILECNF",
+            "-model"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "-vbyte",
+            "-certified",
+            "-certified-output=FILEPROOF"
         ]
     }
 }
