@@ -322,7 +322,7 @@
         ]
     },
     "tch_glucose1": {
-        "status": "ok",
+        "status": "FIXME : executable not ok",
         "name": "tch_glucose1",
         "call": "./tch_glucose1",
         "gz": true,
