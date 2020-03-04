@@ -391,15 +391,24 @@ def build_images(args):
         docker_build(args, docker_argv, builder_target, root,
                 build_args=build_args, Dockerfile=builder_Dockerfile)
 
-        base = f"base:{setup['base_version']}"
-        if base not in bases_uptodate:
-            docker_build(args, docker_argv, f"{DOCKER_NS}/{base}", base.replace(":", "/"))
-            bases_uptodate.add(base)
+        base_version = setup["base_version"]
+        base_root = os.path.join("base", base_version)
+        base_from = setup.get("base_from")
+        base_args = {}
+        base_tag = base_version
+        if base_from:
+            base_args["BASE"] = base_from
+            from_tag = base_from.replace("/","_").replace(":","-")
+            base_tag = f"{base_version}-{from_tag}"
+        base_target = f"{DOCKER_NS}/base:{base_tag}"
+        if base_target not in bases_uptodate:
+            docker_build(args, docker_argv, base_target, base_root, base_args)
+            bases_uptodate.add(base_target)
 
         dist_version = setup.get("dist_version", "v1")
         dist_Dockerfile = f"generic/dist-{dist_version}/Dockerfile"
         dist_args = {
-            "BASE": f"{DOCKER_NS}/{base}",
+            "BASE": base_target,
             "BUILDER_BASE": builder_target,
             "IMAGE_NAME": image.name,
             "solver": build_args["solver"],

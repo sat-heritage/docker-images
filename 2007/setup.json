@@ -1,5 +1,6 @@
 {
     "base_version":"v1",
+    "base_from": "debian:stretch-slim",
     "builder":"generic/2007",
     "builder_base":"debian/eol:sarge-slim",
     "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2007-src/{SOLVER_NAME}.tgz",

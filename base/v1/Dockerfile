@@ -1,4 +1,5 @@
-FROM debian:stretch-slim
+ARG BASE
+FROM ${BASE}
 ENV LANG=C.UTF-8 LC_ALL=C.UTF-8
 
 ENTRYPOINT ["/entrypoint.sh"]
