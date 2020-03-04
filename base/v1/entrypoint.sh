@@ -41,15 +41,18 @@ mycall() {
         2) k=argsproof ;;
         *) usage
     esac
-    readarray -t args <<<$(get_param $k|jq -r ".[]")
+    args=()
+    while read -r value; do
+        args+=("$value")
+    done < <(get_param $k|jq -r '.[]')
     if [ -z ${args} ]; then
         echo "Error, this solver does not support arguments $k";
     fi
 
-    FILECNF="`realpath ${1}`"
+    FILECNF="`readlink -f -- "${1}"`"
     FILEPROOF=""
     if [ $# -eq 2 ]; then
-        FILEPROOF="`realpath ${2}`"
+        FILEPROOF="`readlink -f -- "${2}"`"
     fi
     RANDOMSEED=${RANDOMSEED:-1234567}
     MAXNBTHREAD=${MAXNBTHREAD:-1}
