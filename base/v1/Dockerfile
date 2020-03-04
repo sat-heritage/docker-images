@@ -6,7 +6,7 @@ ENTRYPOINT ["/entrypoint.sh"]
 WORKDIR /data
 
 RUN apt-get update --fix-missing &&\
-    apt install -y --no-install-recommends jq && \
-    apt clean -y && rm -rf /var/lib/apt/lists/*
+    apt-get install -y --no-install-recommends jq && \
+    apt-get clean -y && rm -rf /var/lib/apt/lists/*
 
 COPY entrypoint.sh /
