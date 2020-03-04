@@ -15,8 +15,9 @@
 # For the installatin in /dist, it tries in this order:
 #  - <set>/fixtures/SOLVER.install.sh
 #  - <set>/install.sh
-#  - if binary directory exists move its content to /dist
-#  - move all executable files in /src to /dist
+#  - if 'binary' directory exists move its content to /dist
+#  - if 'bin' directory exists move its content to /dist
+#  - move all executable files at the root of source directory to /dist
 #
 
 ARG BUILDER_BASE
@@ -60,7 +61,7 @@ RUN ASSET="$(ls /assets/*)" && set -ex && \
 # and installing binaries in /dist
 #
 FROM ${BUILDER_BASE}
-ENV LANG=C LC_ALL=C
+ENV LANG=C.UTF-8 LC_ALL=C.UTF-8
 
 RUN apt-get update --fix-missing &&\
     apt-get -y install zip gcc g++ cmake make patch curl zlib1g-dev
