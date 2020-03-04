@@ -56,6 +56,7 @@ mycall() {
     fi
     RANDOMSEED=${RANDOMSEED:-1234567}
     MAXNBTHREAD=${MAXNBTHREAD:-1}
+    MEMLIMIT=${MEMLIMIT:-1024}
 
     if [[ "${FILECNF##*.}" == "gz" ]]; then
         if [[ "$(get_param gz)" == "false" ]]; then
@@ -69,6 +70,7 @@ mycall() {
         a="${args[$i]/FILECNF/$FILECNF}"
         a="${a/RANDOMSEED/$RANDOMSEED}"
         a="${a/MAXNBTHREAD/$MAXNBTHREAD}"
+        a="${a/MEMLIMIT/$MEMLIMIT}"
         args[$i]="${a/FILEPROOF/$FILEPROOF}"
     done
     call_solver "${args[@]}"
