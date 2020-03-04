@@ -1,5 +1,5 @@
 {
-    "adaptg2wsat2009": {
+    "adaptg2wsat": {
         "name": "adaptg2wsat2009",
         "version": "2009-03-23",
         "authors": "chuMin Li, Wanxia Wei",
@@ -9,9 +9,9 @@
         ],
         "call": "./adaptg2wsat2009",
         "gz": false,
-        "status": "unknown"
+        "status": "ok"
     },
-    "adaptg2wsat2009-plus-plus": {
+    "adaptg2wsat-plus-plus": {
         "name": "adaptg2wsat2009++",
         "version": "2009-03-23",
         "authors": "chuMin Li, Wanxia Wei",
