@@ -1,1 +1,1 @@
-#chmod +x /solvers/tch_glucose1/tch_glucose1
+chmod +x /src/*/bin/tch_glucose1
