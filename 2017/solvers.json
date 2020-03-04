@@ -206,7 +206,7 @@
         ]
     },
     "bs_glucose": {
-        "status": "problem",
+        "status": "problem when runnning",
         "name": "bs_glucose",
         "call": "./bs_glucose1",
         "gz": true,
@@ -337,27 +337,33 @@
         ]
     },
     "tch_glucose2": {
+        "status": "ok",
         "name": "tch_glucose2",
         "call": "./tch_glucose2",
         "gz": true,
         "args": [
-            "FILECNF"
+            "FILECNF",
+            "-model"
         ],
         "argsproof": [
             "FILECNF",
-            "FILEPROOF"
+            "-certified",
+            "-certified-output=FILEPROOF"
         ]
     },
     "tch_glucose3": {
+        "status": "ok",
         "name": "tch_glucose3",
         "call": "./tch_glucose3",
         "gz": true,
         "args": [
-            "FILECNF"
+            "FILECNF",
+            "-model"
         ],
         "argsproof": [
             "FILECNF",
-            "FILEPROOF"
+            "-certified",
+            "-certified-output=FILEPROOF"
         ]
     }
 }
