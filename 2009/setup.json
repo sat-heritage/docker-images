@@ -4,5 +4,5 @@
     "builder":"generic/v1",
     "builder_base":"debian/eol:lenny-slim",
     "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2009-src/{SOLVER_NAME}.zip",
-    "BUILD_DEPENDS": "gcc-multilib libc6-i386 libc6-dev-i386"
+    "BUILD_DEPENDS": "gcc-multilib g++-multilib libc6-i386 libc6-dev-i386 lib32z1-dev"
 }
