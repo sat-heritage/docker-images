@@ -355,7 +355,7 @@ def build_images(args):
 
     bases_uptodate = set()
 
-    _dist_opts = ["RDEPENDS"]
+    only_dist_opts = ["RDEPENDS"]
 
     for name in repo.images:
         image = ImageManager(name, repo)
@@ -369,11 +369,13 @@ def build_images(args):
         root = str(image.entry)
 
         build_args = {k:v for k,v in setup.items() if \
-                        k not in ["generic_version",
+                        k not in ["base_version", "base_from",
                                     "builder", "builder_base",
-                                    "image_name"]+_dist_opts and isinstance(v, str)}
-        build_args["solver"] = image.solver_name
-        build_args["solver_id"] = image.solver
+                                    "image_name"]+only_dist_opts and isinstance(v, str)}
+        build_args["SOLVER"] = image.solver
+        build_args["SOLVER_NAME"] = image.solver_name
+        build_args["solver"] = build_args["SOLVER_NAME"] # To be removed
+        build_args["solver_id"] = build_args["SOLVER"] # To be removed
         for k in setup:
             if k in build_args:
                 build_args[k] = build_args[k].format(**fmtvars)
@@ -411,10 +413,10 @@ def build_images(args):
             "BASE": base_target,
             "BUILDER_BASE": builder_target,
             "IMAGE_NAME": image.name,
-            "solver": build_args["solver"],
-            "solver_id": build_args["solver_id"],
+            "SOLVER": build_args["SOLVER"],
+            "SOLVER_NAME": build_args["SOLVER_NAME"],
         }
-        for k in _dist_opts:
+        for k in only_dist_opts:
             if k in setup:
                 dist_args[k] = setup[k]
 

@@ -10,13 +10,13 @@ RUN if test "${RDEPENDS}"; then apt-get update --fix-missing && \
     apt-get install -y --no-install-recommends ${RDEPENDS} && \
     apt-get clean -y && rm -rf /var/lib/apt/lists/*; fi
 
-ARG solver
-ARG solver_id
+ARG SOLVER
+ARG SOLVER_NAME
 ARG IMAGE_NAME
-ENV SOLVER=$solver_id \
+ENV SOLVER=$SOLVER \
     DOCKER_IMAGE=$IMAGE_NAME
 
-COPY --from=builder /dist/ /solvers/$solver/
+COPY --from=builder /dist/ /solvers/$SOLVER_NAME/
 
 ARG dbjson
 COPY $dbjson /solvers/solvers.json
