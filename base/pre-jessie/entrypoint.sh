@@ -55,6 +55,7 @@ mycall() {
         FILEPROOF="`readlink -f -- "${2}"`"
     fi
     RANDOMSEED=${RANDOMSEED:-1234567}
+    MAXNBTHREAD=${MAXNBTHREAD:-1}
 
     if [[ "${FILECNF##*.}" == "gz" ]]; then
         if [[ "$(get_param gz)" == "false" ]]; then
@@ -67,6 +68,7 @@ mycall() {
     for (( i=0; i<${#args[@]}; ++i )); do
         a="${args[$i]/FILECNF/$FILECNF}"
         a="${a/RANDOMSEED/$RANDOMSEED}"
+        a="${a/MAXNBTHREAD/$MAXNBTHREAD}"
         args[$i]="${a/FILEPROOF/$FILEPROOF}"
     done
     call_solver "${args[@]}"
