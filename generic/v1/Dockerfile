@@ -3,8 +3,24 @@
 # 1. download and extract asset in /src
 # 2. compile the solver in the given BUILDER_BASE and install it in /dist
 #
+# The extraction tries to detect automatically the archive format
+# The compilation tries to detect automatically the building method and
+# installation method:
+# For the compilation, it tries in this order:
+#  - <set>/fixtures/SOLVER.build.sh
+#  - <set>/build.sh
+#  - Makefile
+#  - build.sh
+#
+# For the installatin in /dist, it tries in this order:
+#  - <set>/fixtures/SOLVER.install.sh
+#  - <set>/install.sh
+#  - if binary directory exists move its content to /dist
+#  - move all executable files in /src to /dist
+#
 
 ARG BUILDER_BASE
+ARG PLATFORM
 
 #
 # This first part takes care about downloading the archive
@@ -32,7 +48,7 @@ COPY setup.json unpack*.sh /
 RUN ASSET="$(ls /assets/*)" && set -ex && \
     if test -f /unpack.sh; then bash /unpack.sh "${ASSET}"; \
     else ext="${ASSET##*.}" && b="${ASSET%.*}" && \
-        if [[ "${b##.*}" == "tar" ]]; then ext="tar.${ext}" && b="${b%.*}"; fi; \
+        if [ "${b##.*}" = "tar" ]; then ext="tar.${ext}" && b="${b%.*}"; fi; \
         case "${ext}" in \
         tgz|tar.gz) tar xvzf "${ASSET}";; \
         zip) unzip "${ASSET}";; \
@@ -59,17 +75,22 @@ WORKDIR /src
 
 ARG SOLVER
 
-COPY setup.json build*.sh fixtures/$SOLVER* /
+COPY setup.json build*.sh install* fixtures/$SOLVER* /
 
 RUN set -x && test -f /$SOLVER.pre_build.sh && bash /$SOLVER.pre_build.sh || true
 
-RUN set -ex && mkdir /dist && cd `find -maxdepth 1 -mindepth 1 -type d` && \
+RUN set -ex && cd `find -maxdepth 1 -mindepth 1 -type d` && \
     if test -f /$SOLVER.build.sh; then bash /$SOLVER.build.sh; \
-    elif test -f /build.sh; then bash /build.sh; else \
-    if test -f Makefile; then make;\
+    elif test -f /build.sh; then bash /build.sh; \
+    elif test -f Makefile; then make;\
     elif test -f build.sh; then sh build.sh;\
-    else echo "did not found any building tool"; exit 1; fi; \
-    find -perm +100 -type f -exec mv -v {} /dist \;; fi
+    else echo "did not found any building tool"; exit 1; fi
 
 RUN set -x && test -f /$SOLVER.post_build.sh && bash /$SOLVER.post_build.sh || true
+
+RUN set -ex && mkdir /dist && cd `find -maxdepth 1 -mindepth 1 -type d` && \
+    if test -f /$SOLVER.install.sh; then bash /$SOLVER.install.sh; \
+    elif test -f /install.sh; then bash /install.sh; \
+    elif test -d binary; then mv -v binary/* /dist; \
+    else find -perm +100 -type f -exec mv -v {} /dist/{} \;; fi
 
