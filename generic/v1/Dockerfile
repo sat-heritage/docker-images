@@ -82,7 +82,7 @@ RUN set -x && test -f /$SOLVER.pre_build.sh && bash /$SOLVER.pre_build.sh || tru
 RUN set -ex && cd `find -maxdepth 1 -mindepth 1 -type d` && \
     if test -f /$SOLVER.build.sh; then bash /$SOLVER.build.sh; \
     elif test -f /build.sh; then bash /build.sh; \
-    elif test -f Makefile; then make;\
+    elif test -f Makefile -o -f makefile; then make;\
     elif test -f build.sh; then sh build.sh;\
     else echo "did not found any building tool"; exit 1; fi
 
