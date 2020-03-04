@@ -1,0 +1,1 @@
+varsat-crafted.build.sh

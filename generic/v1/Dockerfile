@@ -77,7 +77,7 @@ ARG SOLVER
 
 COPY setup.json build*.sh install* fixtures/$SOLVER* /
 
-RUN set -x && test -f /$SOLVER.pre_build.sh && bash /$SOLVER.pre_build.sh || true
+RUN set -ex && if test -f /$SOLVER.pre_build.sh; then bash /$SOLVER.pre_build.sh; fi
 
 RUN set -ex && cd `find -maxdepth 1 -mindepth 1 -type d` && \
     if test -f /$SOLVER.build.sh; then bash /$SOLVER.build.sh; \
@@ -86,11 +86,12 @@ RUN set -ex && cd `find -maxdepth 1 -mindepth 1 -type d` && \
     elif test -f build.sh; then sh build.sh;\
     else echo "did not found any building tool"; exit 1; fi
 
-RUN set -x && test -f /$SOLVER.post_build.sh && bash /$SOLVER.post_build.sh || true
+RUN set -ex && if test -f /$SOLVER.post_build.sh; then bash /$SOLVER.post_build.sh; fi
 
 RUN set -ex && mkdir /dist && cd `find -maxdepth 1 -mindepth 1 -type d` && \
     if test -f /$SOLVER.install.sh; then bash /$SOLVER.install.sh; \
     elif test -f /install.sh; then bash /install.sh; \
-    elif test -d binary; then mv -v binary/* /dist; \
+    elif test -d binary; then mv -v binary/* /dist/; \
+    elif test -d bin; then mv -v bin/* /dist/; \
     else find -perm +100 -type f -maxdepth 1 -exec mv -v {} /dist/{} \;; fi
 
