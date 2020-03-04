@@ -71,7 +71,7 @@
         ],
         "call": "glucose.sh",
         "gz": false,
-        "status": "unknown"
+        "status": "ok"
     },
     "gnovelty-plus": {
         "name": "gnovelty+",
