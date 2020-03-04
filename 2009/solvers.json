@@ -264,7 +264,7 @@
         ],
         "call": "IUT_BMB_SAT",
         "gz": false,
-        "status": "unknown"
+        "status": "FIXME compilation"
     },
     "kw": {
         "name": "kw",
@@ -275,7 +275,7 @@
         ],
         "call": "./kw",
         "gz": false,
-        "status": "unknown"
+        "status": "ok"
     },
     "lysat-c": {
         "name": "LySAT",
@@ -287,7 +287,7 @@
         ],
         "call": "lysat.sh",
         "gz": false,
-        "status": "unknown"
+        "status": "FIXME build and install"
     },
     "lysat-i": {
         "name": "LySAT",
@@ -299,10 +299,10 @@
         ],
         "call": "lysat.sh",
         "gz": false,
-        "status": "unknown"
+        "status": "FIXME build and install"
     },
     "manysat_1.1-aimd_0": {
-        "name": "ManySAT 1.1",
+        "name": "ManySAT-1.1",
         "version": "aimd 0/2009-03-20",
         "authors": "Youssef Hamadi, Sa\u00efd Jabbour, Lakhdar Sa\u00efs",
         "args": [
@@ -312,10 +312,10 @@
         ],
         "call": "manysat.sh",
         "gz": false,
-        "status": "unknown"
+        "status": "FIXME build and install"
     },
     "manysat_1.1-aimd_1": {
-        "name": "ManySAT 1.1",
+        "name": "ManySAT-1.1",
         "version": "aimd 1/2009-03-20",
         "authors": "Youssef Hamadi, Sa\u00efd Jabbour, Lakhdar Sa\u00efs",
         "args": [
@@ -325,10 +325,10 @@
         ],
         "call": "manysat.sh",
         "gz": false,
-        "status": "unknown"
+        "status": "FIXME build and install"
     },
     "manysat_1.1-aimd_2": {
-        "name": "ManySAT 1.1",
+        "name": "ManySAT-1.1",
         "version": "aimd 2/2009-03-20",
         "authors": "Youssef Hamadi, Sa\u00efd Jabbour, Lakhdar Sa\u00efs",
         "args": [
@@ -338,7 +338,7 @@
         ],
         "call": "manysat.sh",
         "gz": false,
-        "status": "unknown"
+        "status": "FIXME build and install"
     },
     "march_hi": {
         "name": "march_hi",
@@ -349,7 +349,7 @@
         ],
         "call": "./march_hi",
         "gz": false,
-        "status": "unknown"
+        "status": "ok"
     },
     "march_nn": {
         "name": "march_nn",
@@ -360,7 +360,7 @@
         ],
         "call": "./march_nn",
         "gz": false,
-        "status": "unknown"
+        "status": "ok"
     },
     "minisat": {
         "name": "MiniSat",

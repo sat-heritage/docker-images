@@ -10,5 +10,15 @@
     },
     "gnovelty-plus-t": {
         "BUILD_DEPENDS": "libboost-dev"
+    },
+    "kw": {
+        "builder": "generic/binary-v1",
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2009-bin/{SOLVER_NAME}"
+    },
+    "lysat-c": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2009-src/{SOLVER_NAME}c.zip"
+    },
+    "lysat-i": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2009-src/{SOLVER_NAME}i.zip"
     }
 }
