@@ -35,6 +35,7 @@
         "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/868"
     },
     "gluh": {
+        "BUILD_DEPENDS" : "g++-multilib",
         "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/794"
     },
     "gluh_simp": {
@@ -50,7 +51,9 @@
         "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/857"
     },
     "mipsat": {
-        "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/801"
+        "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/801",
+        "BUILD_DEPENDS" : "automake libtool",
+        "RDEPENDS" : "python"
     },
     "nigma": {
         "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/761"

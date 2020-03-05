@@ -99,38 +99,42 @@
         "name": "gluebit_lgl"
     },
     "glueminisat": {
+        "status": "ok",
         "args": [
             "-compe",
             "FILECNF"
         ],
         "authors": "Hidetomo Nabeshima, Koji Iwanuma, Katsumi Inoue",
         "call": "././glueminisat-simp",
-        "comments": "Launchcommand was:  ././glueminisat-simp -compe <instance> \nTrack was Core solvers, Sequential, Application SAT+UNSAT",
+        "comments": "Launchcommand was:  ./glueminisat-simp -compe <instance> \nTrack was Core solvers, Sequential, Application SAT+UNSAT",
         "gz": true,
         "name": "glueminisat"
     },
     "gluh": {
+        "status": "ok",
         "args": [
             "FILECNF",
             "/tmp"
         ],
         "authors": "Chanseok Oh",
         "call": "././gluH.sh",
-        "comments": "Launchcommand was:  ././gluH.sh  <instance>   <tempdir> \nTrack was Core solvers, Sequential, Application SAT+UNSAT",
+        "comments": "Launchcommand was:  ./gluH.sh  <instance>   <tempdir> \nTrack was Core solvers, Sequential, Application SAT+UNSAT",
         "gz": true,
         "name": "gluH"
     },
     "gluh_simp": {
+        "status": "ok",
         "args": [
             "FILECNF"
         ],
         "authors": "Chanseok Oh",
         "call": "././gluH_static",
-        "comments": "Launchcommand was:  ././gluH_static  <instance> \nTrack was Core solvers, Sequential, Application SAT+UNSAT",
+        "comments": "Launchcommand was:  ./gluH_static  <instance> \nTrack was Core solvers, Sequential, Application SAT+UNSAT",
         "gz": true,
         "name": "gluH_simp"
     },
     "lingeling": {
+        "status": "FIXME build does not work",
         "args": [
             "FILECNF"
         ],
@@ -141,6 +145,7 @@
         "name": "Lingeling"
     },
     "lingeling_1": {
+        "status": "FIXME build does not work",
         "args": [
             "FILECNF"
         ],
@@ -151,6 +156,7 @@
         "name": "Lingeling"
     },
     "minipure": {
+        "status": "ok",
         "args": [
             "FILECNF",
             "-freq_pure=3"
@@ -162,18 +168,20 @@
         "name": "minipure"
     },
     "mipsat": {
+        "status": "FIXME problem when running misses satelite...",
         "args": [
             "FILECNF",
             "-tmp",
             "/tmp"
         ],
         "authors": "Sergio N\u00fa\u00f1ez, Daniel Borrajo and Carlos Linares L\u00f3pez",
-        "call": ".//solve",
-        "comments": "Launchcommand was:  .//solve  <instance>  -tmp <tempdir> \nTrack was Core solvers, Sequential, Application SAT+UNSAT",
+        "call": "./solve",
+        "comments": "Launchcommand was:  ./solve  <instance>  -tmp <tempdir> \nTrack was Core solvers, Sequential, Application SAT+UNSAT",
         "gz": true,
         "name": "MIPSat"
     },
     "nigma": {
+        "status": "ok",
         "args": [
             "FILECNF",
             "--verbose",
@@ -189,6 +197,7 @@
         "name": "Nigma"
     },
     "nigma-nopb": {
+        "status" : "ok",
         "args": [
             "FILECNF",
             "--verbose",
@@ -203,6 +212,7 @@
         "name": "Nigma-NoPB"
     },
     "relback": {
+        "status" : "FIXME problem when building",
         "args": [
             "FILECNF",
             "-tmp",
@@ -215,6 +225,7 @@
         "name": "relback"
     },
     "riss3g": {
+        "status" : "ok",
         "args": [
             "FILECNF"
         ],
@@ -225,6 +236,7 @@
         "name": "Riss3g"
     },
     "riss3g_1": {
+        "status" : "ok",
         "args": [
             "FILECNF"
         ],
@@ -235,6 +247,7 @@
         "name": "Riss3g"
     },
     "rseq": {
+        "status": "ok",
         "args": [
             "FILECNF",
             "-s",
@@ -262,6 +275,7 @@
         "name": "SAT4J"
     },
     "sattimerelbackshr": {
+        "status" : "ok",
         "args": [
             "FILECNF",
             "-s",
@@ -274,6 +288,7 @@
         "name": "sattimeRelbackShr"
     },
     "satuzk": {
+        "status" : "FIXME : problem when building",
         "args": [
             "/tmp",
             "satUZK",
