@@ -78,7 +78,7 @@ WORKDIR /src
 
 ARG SOLVER
 
-COPY setup.json build*.sh install* fixtures/$SOLVER* /
+COPY setup.json build*.sh fixtures/$SOLVER.*build.sh /
 
 RUN set -ex && if test -f /$SOLVER.pre_build.sh; then bash /$SOLVER.pre_build.sh; fi
 
@@ -92,6 +92,8 @@ RUN set -ex && cd ./`find -maxdepth 1 -mindepth 1 -type d|tail -n1` && \
     else echo "did not found any building tool"; exit 1; fi
 
 RUN set -ex && if test -f /$SOLVER.post_build.sh; then bash /$SOLVER.post_build.sh; fi
+
+COPY setup.json install*.sh fixtures/$SOLVER.*install.sh /
 
 RUN set -ex && mkdir /dist && cd ./`find -maxdepth 1 -mindepth 1 -type d|tail -n1` && \
     if test -f /$SOLVER.install.sh; then bash /$SOLVER.install.sh; \
