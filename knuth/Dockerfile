@@ -8,15 +8,15 @@ RUN mkdir cweb && cd cweb && curl -LO ftp://ftp.cs.stanford.edu/pub/cweb/cweb.ta
 
 RUN mkdir sgb && cd sgb && curl -LO ftp://ftp.cs.stanford.edu/pub/sgb/sgb.tar.gz && tar -xvzf sgb.tar.gz && make tests && make install
 
-ARG solver
+ARG SOLVER_NAME
 
-WORKDIR /src/${solver}
-COPY run.sh /src/${solver}/bin/${solver}
+WORKDIR /src
 
-ARG SOURCE_FILE
-ADD https://www-cs-faculty.stanford.edu/~knuth/programs/${solver}.w /src/${solver}/
+ADD https://www-cs-faculty.stanford.edu/~knuth/programs/${SOLVER_NAME}.w /src/
 
-RUN ctangle ${solver}.w
-RUN gcc -o bin/${solver}.out ${solver}.c -I/usr/local/sgb/include -L/usr/local/lib -static -lgb
+RUN ctangle ${SOLVER_NAME}.w && \
+    mkdir bin && \
+    gcc -o bin/${SOLVER_NAME}.out ${SOLVER_NAME}.c -I/usr/local/sgb/include -L/usr/local/lib -static -lgb
 
-RUN mv /src/${solver}/bin /dist
+RUN mv bin /dist
+COPY run.sh /dist/${SOLVER_NAME}

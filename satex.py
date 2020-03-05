@@ -362,6 +362,13 @@ def build_images(args):
     bases_uptodate = set()
 
     only_dist_opts = ["RDEPENDS"]
+    hide_opts = [
+        "base_version",
+        "base_from",
+        "builder",
+        "builder_base",
+        "image_name",
+    ]
 
     for name in repo.images:
         image = ImageManager(name, repo)
@@ -374,17 +381,9 @@ def build_images(args):
 
         root = str(image.entry)
 
-        build_args = {k:v for k,v in setup.items() if \
-                        k not in ["base_version", "base_from",
-                                    "builder", "builder_base",
-                                    "image_name"]+only_dist_opts and isinstance(v, str)}
-        build_args["SOLVER"] = image.solver
-        build_args["SOLVER_NAME"] = image.solver_name
-        build_args["solver"] = build_args["SOLVER_NAME"] # To be removed
-        build_args["solver_id"] = build_args["SOLVER"] # To be removed
-        for k in setup:
-            if k in build_args:
-                build_args[k] = build_args[k].format(**fmtvars)
+        build_args = {k: v.format(**fmtvars) for k,v in setup.items() if \
+                k not in hide_opts and isinstance(v, str)}
+        build_args.update(fmtvars)
 
         builder_path = setup["builder"]
         if not builder_path.startswith("generic/"):
