@@ -274,7 +274,7 @@ def docker_runs(args, images, docker_args=(), image_args=()):
         else:
             info(" ".join(cmd))
             ret = subprocess.call(cmd)
-            assert ret == 0 or 10 <= ret <= 20, "Solver failed!"
+            assert ret == 0 or 10 <= ret <= 20, f"Solver failed! ({ret})"
     if not args.pretend:
         return ret
 

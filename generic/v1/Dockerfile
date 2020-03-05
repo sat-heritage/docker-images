@@ -9,8 +9,9 @@
 # For the compilation, it tries in this order:
 #  - <set>/fixtures/SOLVER.build.sh
 #  - <set>/build.sh
-#  - Makefile
 #  - build.sh
+#  - Makefile
+#  - ./configure && make
 #
 # For the installatin in /dist, it tries in this order:
 #  - <set>/fixtures/SOLVER.install.sh
@@ -80,16 +81,17 @@ COPY setup.json build*.sh install* fixtures/$SOLVER* /
 
 RUN set -ex && if test -f /$SOLVER.pre_build.sh; then bash /$SOLVER.pre_build.sh; fi
 
-RUN set -ex && cd `find -maxdepth 1 -mindepth 1 -type d` && \
+RUN set -ex && cd ./`find -maxdepth 1 -mindepth 1 -type d|tail -n1` && \
     if test -f /$SOLVER.build.sh; then bash /$SOLVER.build.sh; \
     elif test -f /build.sh; then bash /build.sh; \
-    elif test -f Makefile -o -f makefile; then make;\
     elif test -f build.sh; then sh build.sh;\
+    elif test -f Makefile -o -f makefile; then make;\
+    elif test -x configure; then ./configure && make && rm -f configure mkconfig;\
     else echo "did not found any building tool"; exit 1; fi
 
 RUN set -ex && if test -f /$SOLVER.post_build.sh; then bash /$SOLVER.post_build.sh; fi
 
-RUN set -ex && mkdir /dist && cd `find -maxdepth 1 -mindepth 1 -type d` && \
+RUN set -ex && mkdir /dist && cd ./`find -maxdepth 1 -mindepth 1 -type d|tail -n1` && \
     if test -f /$SOLVER.install.sh; then bash /$SOLVER.install.sh; \
     elif test -f /install.sh; then bash /install.sh; \
     elif test -d binary; then mv -v binary/* /dist/; \

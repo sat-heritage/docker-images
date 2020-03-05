@@ -287,7 +287,7 @@
         ],
         "call": "lysat.sh",
         "gz": false,
-        "status": "FIXME build and install"
+        "status": "FIXME build and install (minisat)"
     },
     "lysat-i": {
         "name": "LySAT",
@@ -299,7 +299,7 @@
         ],
         "call": "lysat.sh",
         "gz": false,
-        "status": "FIXME build and install"
+        "status": "FIXME build and install (minisat)"
     },
     "manysat_1.1-aimd_0": {
         "name": "ManySAT-1.1",
@@ -312,7 +312,7 @@
         ],
         "call": "manysat.sh",
         "gz": false,
-        "status": "FIXME build and install"
+        "status": "FIXME build and install (minisat)"
     },
     "manysat_1.1-aimd_1": {
         "name": "ManySAT-1.1",
@@ -371,10 +371,10 @@
         ],
         "call": "./minisat",
         "gz": false,
-        "status": "unknown"
+        "status": "ok"
     },
     "minisat_09z": {
-        "name": "MiniSAT 09z",
+        "name": "MiniSAT_09z",
         "version": "2009-03-22",
         "authors": "Markus Iser",
         "args": [
@@ -383,7 +383,7 @@
         ],
         "call": "SatELiteGTI",
         "gz": false,
-        "status": "unknown"
+        "status": "FIXME build and install (minisat)"
     },
     "minisat_cumr": {
         "name": "minisat_cumr",
@@ -394,7 +394,7 @@
         ],
         "call": "SatELiteGTI",
         "gz": false,
-        "status": "unknown"
+        "status": "FIXME build and install (minisat)"
     },
     "morsat": {
         "name": "MoRsat",
@@ -403,9 +403,9 @@
         "args": [
             "FILECNF"
         ],
-        "call": "./MoRsat",
+        "call": "./moRsat",
         "gz": false,
-        "status": "unknown"
+        "status": "ok"
     },
     "mxc": {
         "name": "mxc-sat09",
@@ -417,7 +417,7 @@
         ],
         "call": "./mxc-sat09",
         "gz": false,
-        "status": "unknown"
+        "status": "ok"
     },
     "ncvwr": {
         "name": "NCVWr",
@@ -429,7 +429,7 @@
         ],
         "call": "./NCVWr",
         "gz": false,
-        "status": "unknown"
+        "status": "ok"
     },
     "picosat": {
         "name": "picosat",
@@ -440,7 +440,7 @@
         ],
         "call": "./picosat",
         "gz": false,
-        "status": "unknown"
+        "status": "ok"
     },
     "precosat": {
         "name": "precosat",
@@ -451,7 +451,7 @@
         ],
         "call": "./precosat",
         "gz": false,
-        "status": "unknown"
+        "status": "ok"
     },
     "rsat": {
         "name": "Rsat",
@@ -463,10 +463,10 @@
         ],
         "call": "./rsat.sh",
         "gz": false,
-        "status": "unknown"
+        "status": "FIXME compilation error"
     },
     "sapperlot-base": {
-        "name": "SApperloT",
+        "name": "SApperloT-base",
         "version": "base",
         "authors": "Stephan Kottler",
         "args": [
@@ -475,10 +475,10 @@
         ],
         "call": "./SApperloT-base",
         "gz": false,
-        "status": "unknown"
+        "status": "FIXME compilation error (g++ version?)"
     },
     "sapperlot-hrp": {
-        "name": "SApperloT",
+        "name": "SApperloT-hrp",
         "version": "hrp",
         "authors": "Stephan Kottler",
         "args": [
@@ -487,7 +487,7 @@
         ],
         "call": "./SApperloT-hrp",
         "gz": false,
-        "status": "unknown"
+        "status": "FIXME compilation error (g++ version?)"
     },
     "sat4j-core": {
         "name": "sat4j-core",
@@ -501,9 +501,9 @@
             "./org.sat4j.core.jar",
             "FILECNF"
         ],
-        "call": "java6",
+        "call": "java",
         "gz": false,
-        "status": "unknown"
+        "status": "ok"
     },
     "satake": {
         "name": "satake",
@@ -516,7 +516,7 @@
         ],
         "call": "./satake",
         "gz": false,
-        "status": "unknown"
+        "status": "ok"
     },
     "satzilla2009_c": {
         "name": "SATzilla2009_C",
@@ -527,7 +527,7 @@
         ],
         "call": "./SATzilla2009_C",
         "gz": false,
-        "status": "unknown"
+        "status": "ok"
     },
     "satzilla2009_i": {
         "name": "SATzilla2009_I",
@@ -538,7 +538,7 @@
         ],
         "call": "./SATzilla2009_I",
         "gz": false,
-        "status": "unknown"
+        "status": "ok"
     },
     "satzilla2009_r": {
         "name": "SATzilla2009_R",
@@ -549,7 +549,7 @@
         ],
         "call": "./SATzilla2009_R",
         "gz": false,
-        "status": "unknown"
+        "status": "ok"
     },
     "slstc": {
         "name": "slstc",
@@ -579,7 +579,7 @@
         ],
         "call": "./slstc",
         "gz": false,
-        "status": "unknown"
+        "status": "ok"
     },
     "tnm": {
         "name": "TNM",
@@ -591,7 +591,7 @@
         ],
         "call": "./TNM",
         "gz": false,
-        "status": "unknown"
+        "status": "ok"
     },
     "tts": {
         "name": "tts",
@@ -602,7 +602,7 @@
         ],
         "call": "./tts-5-0",
         "gz": false,
-        "status": "unknown"
+        "status": "ok"
     },
     "ttsth-5-0": {
         "name": "ttsth-5-0",
@@ -613,9 +613,9 @@
             "MAXNBTHREAD",
             "FILECNF"
         ],
-        "call": "./ttsth-5-0",
+        "call": "./tts-5-0",
         "gz": false,
-        "status": "unknown"
+        "status": "ok"
     },
     "varsat-crafted": {
         "name": "VARSAT-crafted",

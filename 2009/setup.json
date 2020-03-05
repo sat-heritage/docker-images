@@ -20,5 +20,27 @@
     },
     "lysat-i": {
         "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2009-src/{SOLVER_NAME}i.zip"
+    },
+    "minisat": {
+        "builder": "generic/binary-v1",
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2009-bin/{SOLVER}"
+    },
+    "minisat_cumr": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2009-src/{SOLVER_NAME}p.zip"
+    },
+    "satzilla2009_c": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2009-src/SATzilla2009F.zip"
+    },
+    "satzilla2009_i": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2009-src/SATzilla2009F.zip"
+    },
+    "satzilla2009_r": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2009-src/SATzilla2009F.zip"
+    },
+    "sapperlot-base": {
+        "BUILD_DEPENDS": "g++-4.2-multilib gcc-4.2-multilib"
+    },
+    "sat4j-core": {
+        "RDEPENDS": "openjdk-6-jre"
     }
 }
