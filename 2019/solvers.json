@@ -213,10 +213,11 @@
     ]
   },
   "maple-lcmdistchronobtvariablereindexing": {
-    "status": "Problem: anaconda / python not installed",
+    "status": "ok",
     "name": "MapleLCMDistChronoBTVariableReindexing",
-    "call": "./maplelcmdistchronobtvariablereindexing",
-    "gz": true,
+    "call": "./custom_run",
+    "path": "MapleLCMDistChronoBTVariableReindexing/bin",
+    "gz": false,
     "args": [
       "FILECNF"
     ],

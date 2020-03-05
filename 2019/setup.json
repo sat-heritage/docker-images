@@ -3,5 +3,9 @@
     "base_from": "debian:stretch-slim",
     "builder": "generic/starexec",
     "builder_base": "debian:10.1-slim",
-    "download_url": "http://sat-race-2019.ciirc.cvut.cz/solvers/{SOLVER_NAME}.zip"
+    "download_url": "http://sat-race-2019.ciirc.cvut.cz/solvers/{SOLVER_NAME}.zip",
+    "maple-lcmdistchronobtvariablereindexing": {
+        "builder": "generic/v1",
+        "BUILD_DEPENDS": "bzip2"
+    }
 }
