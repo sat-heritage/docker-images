@@ -181,8 +181,8 @@ Python format strings can use the following variables:
 The images for running and building the solver (`base_from` and `builder_base`)
 are usually Debian distribution of the year of the competition:
 see [debian](https://hub.docker.com/_/debian) and [debian/eol](https://hub.docker.com/r/debian/eol/) DockerHub repositories, and
-[Debian version history](https://en.wikipedia.org/wiki/Debian_version_history#Release_table).
-
+[timeline](https://en.wikipedia.org/wiki/Debian_version_history#Release_timeline) and [detailed history](https://fr.wikipedia.org/wiki/Debian#Historique_des_versions)
+of Debian releases.
 
 Example:
 ```json
