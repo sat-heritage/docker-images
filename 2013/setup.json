@@ -25,6 +25,7 @@
         "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/861"
     },
     "glue_bit": {
+        "BUILD_DEPENDS" : "g++-multilib",
         "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/746"
     },
     "gluebit_lgl": {

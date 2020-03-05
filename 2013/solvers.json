@@ -12,7 +12,7 @@
         "name": "BreakIDGlucose"
     },
     "cshcappllc": {
-        "status": "build fails",
+        "status": "FIXME build fails",
         "args": [
             ".//algport.py",
             "--tmpdir",
@@ -53,14 +53,13 @@
         "name": "forl"
     },
     "glucored": {
+        "status": "ok",
         "args": [
             "FILECNF",
-            "-rnd-seed=",
-            "RANDOMSEED",
-            "-verb=0"
+            "-rnd-seed=RANDOMSEED"
         ],
         "authors": "Siert Wieringa",
-        "call": "././glucored-simp_release",
+        "call": "./glucored-simp_release",
         "comments": "Launchcommand was:  ././glucored-simp_release  <instance>  -rnd-seed= <seed>  -verb=0\nTrack was Core solvers, Sequential, Application SAT+UNSAT",
         "gz": true,
         "name": "GlucoRed"
@@ -77,6 +76,7 @@
         "name": "glucose"
     },
     "glue_bit": {
+        "status" : "ok",
         "args": [
             "FILECNF",
             "/tmp"
@@ -88,6 +88,7 @@
         "name": "glue_bit"
     },
     "gluebit_lgl": {
+        "status": "ok",
         "args": [
             "FILECNF"
         ],
