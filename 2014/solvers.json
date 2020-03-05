@@ -1,0 +1,355 @@
+{
+    "bfs-glucose": {
+        "args": [
+            "FILECNF"
+        ],
+        "authors": "D\u00e1vid Bart\u00f3k and Zolt\u00e1n \u00c1d\u00e1m Mann",
+        "call": "././BFSglucose",
+        "comments": "Launchcommand was:  ././BFSglucose  <instance> \nTrack was Sequential, Application SAT+UNSAT track",
+        "gz": true,
+        "name": "BFS-Glucose"
+    },
+    "bfs-glucose_mem_16_70": {
+        "args": [
+            "FILECNF"
+        ],
+        "authors": "D\u00e1vid Bart\u00f3k and Zolt\u00e1n \u00c1d\u00e1m Mann",
+        "call": "././BFSglucose",
+        "comments": "Launchcommand was:  ././BFSglucose  <instance> \nTrack was Sequential, Application SAT+UNSAT track",
+        "gz": true,
+        "name": "BFS-Glucose_mem_16_70"
+    },
+    "bfs-glucose_mem_32_70": {
+        "args": [
+            "FILECNF"
+        ],
+        "authors": "D\u00e1vid Bart\u00f3k and Zolt\u00e1n \u00c1d\u00e1m Mann",
+        "call": "././BFSglucose",
+        "comments": "Launchcommand was:  ././BFSglucose  <instance> \nTrack was Sequential, Application SAT+UNSAT track",
+        "gz": true,
+        "name": "BFS-Glucose_mem_32_70"
+    },
+    "bfs-glucose_mem_8_85": {
+        "args": [
+            "FILECNF"
+        ],
+        "authors": "D\u00e1vid Bart\u00f3k and Zolt\u00e1n \u00c1d\u00e1m Mann",
+        "call": "././BFSglucose",
+        "comments": "Launchcommand was:  ././BFSglucose  <instance> \nTrack was Sequential, Application SAT+UNSAT track",
+        "gz": true,
+        "name": "BFS-Glucose_mem_8_85"
+    },
+    "ccanr+glucose": {
+        "args": [
+            "FILECNF",
+            "RANDOMSEED",
+            "1000"
+        ],
+        "authors": "Shaowei Cai, Chuan Luo, Kaile Su",
+        "call": "././CCAnr+glucose.sh",
+        "comments": "Launchcommand was:  ././CCAnr+glucose.sh  <instance>   <seed>  1000\nTrack was Sequential, Application SAT+UNSAT track",
+        "gz": true,
+        "name": "CCAnr+glucose"
+    },
+    "cryptominisat-4.1-st": {
+        "args": [
+            "FILECNF"
+        ],
+        "authors": "Mate Soos",
+        "call": "././cryptominisat",
+        "comments": "Launchcommand was:  ././cryptominisat  <instance> \nTrack was Sequential, Application SAT+UNSAT track",
+        "gz": true,
+        "name": "cryptominisat-4.1-st"
+    },
+    "cryptominisat-v41-tuned-st": {
+        "args": [
+            "FILECNF"
+        ],
+        "authors": "Mate Soos, Marius Lindauer",
+        "call": "././cryptominisat",
+        "comments": "Launchcommand was:  ././cryptominisat  <instance> \nTrack was Sequential, Application SAT+UNSAT track",
+        "gz": true,
+        "name": "cryptominisat-v41-tuned-st"
+    },
+    "glucose": {
+        "args": [
+            "FILECNF"
+        ],
+        "authors": "Gilles Audemard and Laurent Simon",
+        "call": "././glucose",
+        "comments": "Launchcommand was:  ././glucose  <instance> \nTrack was Sequential, Application SAT+UNSAT track",
+        "gz": true,
+        "name": "glucose"
+    },
+    "glue_lgl_split": {
+        "args": [
+            "FILECNF"
+        ],
+        "authors": "Jingchao Chen",
+        "call": "././glue_lgl_split",
+        "comments": "Launchcommand was:  ././glue_lgl_split  <instance> \nTrack was Sequential, Application SAT+UNSAT track",
+        "gz": true,
+        "name": "glue_lgl_split"
+    },
+    "glueminisat": {
+        "args": [
+            "-show-model",
+            "FILECNF"
+        ],
+        "authors": "Hidetomo Nabeshima, Koji Iwanuma, Katsumi Inoue",
+        "call": ".//glueminisat-simp",
+        "comments": "Launchcommand was:  .//glueminisat-simp -show-model  <instance> \nTrack was Sequential, Application SAT+UNSAT track",
+        "gz": true,
+        "name": "glueminisat"
+    },
+    "glueminisat_1": {
+        "args": [
+            "-show-model",
+            "FILECNF"
+        ],
+        "authors": "Hidetomo Nabeshima, Koji Iwanuma, Katsumi Inoue",
+        "call": ".//glueminisat-simp",
+        "comments": "Launchcommand was:  .//glueminisat-simp -show-model  <instance> \nTrack was Sequential, Application SAT+UNSAT track",
+        "gz": true,
+        "name": "glueminisat"
+    },
+    "lingeling": {
+        "args": [
+            "-v",
+            "FILECNF"
+        ],
+        "authors": "Armin Biere",
+        "call": "./lingeling",
+        "comments": "Launchcommand was:  ./lingeling -v <instance> \nTrack was Sequential, Application SAT+UNSAT track",
+        "gz": true,
+        "name": "Lingeling"
+    },
+    "lingeling_(druplig)": {
+        "args": [
+            "-v",
+            "--druplig",
+            "FILECNF"
+        ],
+        "authors": "Armin Biere",
+        "call": "./lingeling",
+        "comments": "Launchcommand was:  ./lingeling -v --druplig <instance> \nTrack was Sequential, Application SAT+UNSAT track",
+        "gz": true,
+        "name": "Lingeling (druplig)"
+    },
+    "lingeling_(no_agile)": {
+        "args": [
+            "-v",
+            "--no-agile",
+            "FILECNF"
+        ],
+        "authors": "Armin Biere",
+        "call": "./lingeling",
+        "comments": "Launchcommand was:  ./lingeling -v --no-agile <instance> \nTrack was Sequential, Application SAT+UNSAT track",
+        "gz": true,
+        "name": "Lingeling (no agile)"
+    },
+    "minisat_blbd": {
+        "args": [
+            "FILECNF"
+        ],
+        "authors": "Jingchao Chen",
+        "call": "././minisat_blbd",
+        "comments": "Launchcommand was:  ././minisat_blbd  <instance> \nTrack was Sequential, Application SAT+UNSAT track",
+        "gz": true,
+        "name": "minisat_blbd"
+    },
+    "minisat_hack_1430ed": {
+        "args": [
+            "FILECNF"
+        ],
+        "authors": "Chanseok Oh",
+        "call": "././wrapper.sh",
+        "comments": "Launchcommand was:  ././wrapper.sh  <instance> \nTrack was Sequential, Application SAT+UNSAT track",
+        "gz": true,
+        "name": "MiniSat_HACK_1430ED"
+    },
+    "minisat_hack_999ed": {
+        "args": [
+            "FILECNF"
+        ],
+        "authors": "Chanseok Oh",
+        "call": "././wrapper.sh",
+        "comments": "Launchcommand was:  ././wrapper.sh  <instance> \nTrack was Sequential, Application SAT+UNSAT track",
+        "gz": true,
+        "name": "MiniSat_HACK_999ED"
+    },
+    "nigma": {
+        "args": [
+            "FILECNF",
+            "--display-assignments-if-sat",
+            "--partial-backtracking",
+            "--elimination-timeout",
+            "100",
+            "--probing-timeout",
+            "100"
+        ],
+        "authors": "Chuan Jiang, Gianfranco Ciardo",
+        "call": ".//nigma",
+        "comments": "Launchcommand was:  .//nigma  <instance>  --display-assignments-if-sat --partial-backtracking --elimination-timeout 100 --probing-timeout 100\nTrack was Sequential, Application SAT+UNSAT track",
+        "gz": true,
+        "name": "Nigma"
+    },
+    "ntusat": {
+        "args": [
+            "FILECNF"
+        ],
+        "authors": "Hsiao-Lun, Wang and J-H Roland, Jiang",
+        "call": "././ntusat",
+        "comments": "Launchcommand was:  ././ntusat  <instance> \nTrack was Sequential, Application SAT+UNSAT track",
+        "gz": true,
+        "name": "ntusat"
+    },
+    "ntusatbreak": {
+        "args": [
+            "FILECNF",
+            "/tmp"
+        ],
+        "authors": "Hsiao-Lun, Wang and J-H Roland, Jiang",
+        "call": "././runBreakIDntusat.sh",
+        "comments": "Launchcommand was:  ././runBreakIDntusat.sh  <instance>   <tempdir> \nTrack was Sequential, Application SAT+UNSAT track",
+        "gz": true,
+        "name": "ntusatbreak"
+    },
+    "riss": {
+        "args": [
+            "FILECNF",
+            "/tmp"
+        ],
+        "authors": "Norbert Manthey",
+        "call": "././Riss427DRAT.sh",
+        "comments": "Launchcommand was:  ././Riss427DRAT.sh  <instance>   <tempdir> \nTrack was Sequential, Application SAT+UNSAT track",
+        "gz": true,
+        "name": "Riss"
+    },
+    "riss_1": {
+        "args": [
+            "FILECNF",
+            "/tmp"
+        ],
+        "authors": "Enrique Matos Alfonso and Norbert Manthey",
+        "call": "././blackbox.sh",
+        "comments": "Launchcommand was:  ././blackbox.sh  <instance>   <tempdir> \nTrack was Sequential, Application SAT+UNSAT track",
+        "gz": true,
+        "name": "Riss"
+    },
+    "riss_2": {
+        "args": [
+            "FILECNF",
+            "/tmp"
+        ],
+        "authors": "Norbert Manthey",
+        "call": "././Riss427DRAT.sh",
+        "comments": "Launchcommand was:  ././Riss427DRAT.sh  <instance>   <tempdir> \nTrack was Sequential, Application SAT+UNSAT track",
+        "gz": true,
+        "name": "Riss"
+    },
+    "rokk": {
+        "args": [
+            "FILECNF",
+            "/tmp"
+        ],
+        "authors": "Takeru Yasumoto",
+        "call": "././rokk.sh",
+        "comments": "Launchcommand was:  ././rokk.sh  <instance>   <tempdir> \nTrack was Sequential, Application SAT+UNSAT track",
+        "gz": true,
+        "name": "ROKK"
+    },
+    "rokk(sat)": {
+        "args": [
+            "FILECNF"
+        ],
+        "authors": "Takeru Yasumoto",
+        "call": "././rokk_sat.sh",
+        "comments": "Launchcommand was:  ././rokk_sat.sh  <instance> \nTrack was Sequential, Application SAT+UNSAT track",
+        "gz": true,
+        "name": "ROKK(sat)"
+    },
+    "rseq2014": {
+        "args": [
+            "FILECNF",
+            "-s",
+            "RANDOMSEED",
+            "1200"
+        ],
+        "authors": "Chu Min Li and Djamal Habet",
+        "call": ".///RSeq2014.sh",
+        "comments": "Launchcommand was:  .///RSeq2014.sh  <instance>  -s <seed>  1200\nTrack was Sequential, Application SAT+UNSAT track",
+        "gz": true,
+        "name": "RSeq2014"
+    },
+    "sattime2014r": {
+        "args": [
+            "FILECNF",
+            "-seed",
+            "RANDOMSEED"
+        ],
+        "authors": "Chu-Min LI & Chong Huang & Yu Li",
+        "call": "./sattime2014r",
+        "comments": "Launchcommand was:  ./sattime2014r  <instance>  -seed <seed> \nTrack was Sequential, Application SAT+UNSAT track",
+        "gz": true,
+        "name": "sattime2014r"
+    },
+    "satuzk": {
+        "args": [
+            "/tmp",
+            "satUZK-seq",
+            "FILECNF"
+        ],
+        "authors": "Alexander van der Grinten, Andreas Wotzlaw, Ewald Speckemeyer",
+        "call": "././satUZK_wrapper",
+        "comments": "Launchcommand was:  ././satUZK_wrapper  <tempdir>  satUZK-seq  <instance> \nTrack was Sequential, Application SAT+UNSAT track",
+        "gz": true,
+        "name": "SatUZK"
+    },
+    "sgseq": {
+        "args": [
+            "FILECNF",
+            "-s",
+            "RANDOMSEED"
+        ],
+        "authors": "Chu Min Li,Hua Jiang,Ru Chu Xu",
+        "call": ".//SGSeq.sh",
+        "comments": "Launchcommand was:  .//SGSeq.sh  <instance>  -s <seed> \nTrack was Sequential, Application SAT+UNSAT track",
+        "gz": true,
+        "name": "SGSeq"
+    },
+    "sparrowtoriss": {
+        "args": [
+            "FILECNF",
+            "RANDOMSEED",
+            "/tmp"
+        ],
+        "authors": "Adrian Balint, Norbert Manthey",
+        "call": "././SparrowToRiss.sh",
+        "comments": "Launchcommand was:  ././SparrowToRiss.sh  <instance>   <seed>   <tempdir> \nTrack was Sequential, Application SAT+UNSAT track",
+        "gz": true,
+        "name": "SparrowToRiss"
+    },
+    "swdia5by": {
+        "args": [
+            "FILECNF"
+        ],
+        "authors": "Chanseok Oh",
+        "call": "./SWDiA5BY_static",
+        "comments": "Launchcommand was:  ./SWDiA5BY_static  <instance> \nTrack was Sequential, Application SAT+UNSAT track",
+        "gz": true,
+        "name": "SWDiA5BY"
+    },
+    "swdia5by_1": {
+        "args": [
+            "-lbd-cut=4",
+            "-core-learnt-hard-limit=1000000",
+            "FILECNF"
+        ],
+        "authors": "Chanseok Oh",
+        "call": "./SWDiA5BY_static",
+        "comments": "Launchcommand was:  ./SWDiA5BY_static -lbd-cut=4 -core-learnt-hard-limit=1000000  <instance> \nTrack was Sequential, Application SAT+UNSAT track",
+        "gz": true,
+        "name": "SWDiA5BY"
+    }
+}

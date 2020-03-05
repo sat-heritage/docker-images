@@ -1,0 +1,98 @@
+{
+    "bfs-glucose": {
+        "download_url": "http://satcompetition.org/edacc/sc14/solver-download/1438"
+    },
+    "bfs-glucose_mem_16_70": {
+        "download_url": "http://satcompetition.org/edacc/sc14/solver-download/1543"
+    },
+    "bfs-glucose_mem_32_70": {
+        "download_url": "http://satcompetition.org/edacc/sc14/solver-download/1549"
+    },
+    "bfs-glucose_mem_8_85": {
+        "download_url": "http://satcompetition.org/edacc/sc14/solver-download/1537"
+    },
+    "ccanr+glucose": {
+        "download_url": "http://satcompetition.org/edacc/sc14/solver-download/1449"
+    },
+    "cryptominisat-4.1-st": {
+        "download_url": "http://satcompetition.org/edacc/sc14/solver-download/1483"
+    },
+    "cryptominisat-v41-tuned-st": {
+        "download_url": "http://satcompetition.org/edacc/sc14/solver-download/1580"
+    },
+    "glucose": {
+        "download_url": "http://satcompetition.org/edacc/sc14/solver-download/1555"
+    },
+    "glue_lgl_split": {
+        "download_url": "http://satcompetition.org/edacc/sc14/solver-download/1461"
+    },
+    "glueminisat": {
+        "download_url": "http://satcompetition.org/edacc/sc14/solver-download/1617"
+    },
+    "glueminisat_1": {
+        "download_url": "http://satcompetition.org/edacc/sc14/solver-download/1630"
+    },
+    "lingeling": {
+        "download_url": "http://satcompetition.org/edacc/sc14/solver-download/1510"
+    },
+    "lingeling_(druplig)": {
+        "download_url": "http://satcompetition.org/edacc/sc14/solver-download/1589"
+    },
+    "lingeling_(no_agile)": {
+        "download_url": "http://satcompetition.org/edacc/sc14/solver-download/1524"
+    },
+    "minisat_blbd": {
+        "download_url": "http://satcompetition.org/edacc/sc14/solver-download/1407"
+    },
+    "minisat_hack_1430ed": {
+        "download_url": "http://satcompetition.org/edacc/sc14/solver-download/1533"
+    },
+    "minisat_hack_999ed": {
+        "download_url": "http://satcompetition.org/edacc/sc14/solver-download/1528"
+    },
+    "nigma": {
+        "download_url": "http://satcompetition.org/edacc/sc14/solver-download/1399"
+    },
+    "ntusat": {
+        "download_url": "http://satcompetition.org/edacc/sc14/solver-download/1426"
+    },
+    "ntusatbreak": {
+        "download_url": "http://satcompetition.org/edacc/sc14/solver-download/1428"
+    },
+    "riss": {
+        "download_url": "http://satcompetition.org/edacc/sc14/solver-download/1403"
+    },
+    "riss_1": {
+        "download_url": "http://satcompetition.org/edacc/sc14/solver-download/1412"
+    },
+    "riss_2": {
+        "download_url": "http://satcompetition.org/edacc/sc14/solver-download/1418"
+    },
+    "rokk": {
+        "download_url": "http://satcompetition.org/edacc/sc14/solver-download/1422"
+    },
+    "rokk(sat)": {
+        "download_url": "http://satcompetition.org/edacc/sc14/solver-download/1472"
+    },
+    "rseq2014": {
+        "download_url": "http://satcompetition.org/edacc/sc14/solver-download/1575"
+    },
+    "sattime2014r": {
+        "download_url": "http://satcompetition.org/edacc/sc14/solver-download/1456"
+    },
+    "satuzk": {
+        "download_url": "http://satcompetition.org/edacc/sc14/solver-download/1521"
+    },
+    "sgseq": {
+        "download_url": "http://satcompetition.org/edacc/sc14/solver-download/1565"
+    },
+    "sparrowtoriss": {
+        "download_url": "http://satcompetition.org/edacc/sc14/solver-download/1500"
+    },
+    "swdia5by": {
+        "download_url": "http://satcompetition.org/edacc/sc14/solver-download/1445"
+    },
+    "swdia5by_1": {
+        "download_url": "http://satcompetition.org/edacc/sc14/solver-download/1518"
+    }
+}
