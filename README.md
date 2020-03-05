@@ -34,10 +34,31 @@ satex list *:2018
 satex list maple*
 ```
 
+By default, `satex` considers only solvers which have been validated.
+Solvers which are not yet validated can be listed with `--unstable` option;
+those which are not compiling/working with `--fixme`;
+all the referenced solvers are considered with the `--all` option:
+```
+satex list --fixme      # solvers to be fixed
+satex list --unstable   # solvers to be tested
+satex list --all        # all referenced solvers
+```
+
+### Information
+
+Print information related to solvers, including authors, command line,
+validation status. and possibly comments.
+
+```
+satex info glucose*
+satex info *:2018 --all
+```
+
 ### Run images
 ```
 satex run cadical:2019 dimacs [proof]
 satex run *:2016 dimacs [proof]
+satex run *:2009 dimacs -e MAXNBTHREAD=24
 ```
 
 ### Run images with direct call to solvers
@@ -56,11 +77,6 @@ satex extract *:2019 /tmp/
 ```
 
 ### Repository management
-
-Alternative installation:
-```
-pip install --user -e .
-```
 
 Usage:
 ```
@@ -92,10 +108,21 @@ and values are JSON objects with the following keys:
 | --- | --- | --- |
 | name | string | Name of the solver, without case restriction |
 | call | string | Name of the executable |
+| path | string | Directory from which the executable should be called.<br>Default: `name` |
+| args | string list | arguments to the executable for simple solving. See below for allowed keywords. |
+| argsproof | string list | arguments to the executable for solving with proof output. See below for allowed keywords |
 | gz | boolean | If true, the solver supports natively gzipped input files.  If false, an input file ending with `.gz` will be first decompressed by the wrapper script. |
-| args | string list | arguments to the executable for simple solving. `FILECNF` will be replaced by the input filename. |
-| argsproof | string list | arguments to the executable for solving with proof output `FILEPROOF` |
 
+
+The following keywords are allowed in `args` and `argsproof`:
+
+| keyword | description |
+| --- | --- |
+| FILECNF | Replaced by the absolute path (within the Docker container) to the input DIMACS file.<br>Whenever the input file ends with `.gz` and `gz` is `False`, the input file is unzipped as `/tmp/gunzipped.cnf` |
+| FILEPOOF | Replaced by the absolute path (within the Docker container) to the output file for proof |
+| MAXNBTHREAD | Replaced by the `MAXNBTHREAD` environment variable; `1` by default.<br>Example: `satex run asolver:ayear my.cnf -e MAXNBTHREAD=8` |
+| MEMLIMIT | Replaced by the `MEMLIMIT` environment variable; `1024` by default. |
+| TIMEOUT | Replaced by the `TIMEOUT` environment variable; `3600` by default. |
 
 Example
 ```json
@@ -132,35 +159,42 @@ Example
 ### setup.json
 
 JSON object with the following keys, used by default for each solver.
-A solver can use specific values by adding a key with its identifier and a value
+A solver can override these by adding a key with its identifier and a value
 being a JSON object with a subset of the following keys.
 
 | key | description |
 | --- | --- |
-| base_version | Version (tag) of the base image for running the solver available in the `base/` directory |
-| dist_version | Name of the generic recipe for building the solver image available in the `generic/dist-{dist_version}` directory<br>Default: `"v1"` |
+| base_version | Version of the base image for running the solver available in the `base/` directory |
+| base_from | Image to inherit from for running the solver |
 | builder | Path to the Docker recipe for compiling the solver. If it is not starting with `generic/`, the path is relative to the set directory. The path should contain at least a `Dockerfile`. The builder recipe should install the solver binaries into `/dist`. |
-| builder_base | Image to inherit from for compiling the solver (`builder` recipe) |
+| builder_base | Image to inherit from for compiling the solver with `generic/...` builders |
 | image_name | Python format string with ENTRY being the set name and SOLVER the solver identifier<br/>Default: `"{SOLVER}:{ENTRY}"` |
+| dist_version | Version of the recipe for assembling the solver image (`generic/dist-{dist_version}`)<br>Default: `"v1"` |
 | download_url | Python format string for the downloading the solver source/binary |
-| BUILD_DEPENDS | Additional packages to install for compiling the solver. |
-| RDEPENDS | Additional packages to install for running the executable. |
+| BUILD_DEPENDS | Additional packages to install for compiling the solver.<br>Used by `generic/v1` builder |
+| RDEPENDS | Additional packages to install for running the executable.<br>Used by `generic/dist-v1` assembler |
 
 Python format strings can use the following variables:
-* `SOLVER`: solver identifier
+* `SOLVER`: solver identifier (keys in `solvers.json`)
 * `SOLVER_NAME`: solver name (specified in `solvers.json`)
 
+The images for running and building the solver (`base_from` and `builder_base`)
+are usually Debian distribution of the year of the competition:
+see [debian](https://hub.docker.com/_/debian) and [debian/eol](https://hub.docker.com/r/debian/eol/) DockerHub repositories, and
+[timeline](https://en.wikipedia.org/wiki/Debian_version_history#Release_timeline) and [detailed history](https://fr.wikipedia.org/wiki/Debian#Historique_des_versions)
+of Debian releases.
 
 Example:
 ```json
 {
-    "base_version": "potato",
-    "builder": "generic/binary-v1",
-    "builder_base": "debian/eol:potato",
-    "download_url": "https://zenodo.org/record/3676454/files/{SOLVER_NAME}?download=1",
-    "asat": {
-        "builder": "generic/2000",
-        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/packages/2000-{SOLVER_NAME}.src.tgz"
+    "base_version": "v1",
+    "base_from": "debian:stretch-slim",
+    "builder": "generic/v1",
+    "builder_base": "debian:stretch-slim",
+    "download_url": "https://zenodo.org/record/abcdef/files/{SOLVER_NAME}.zip?download=1",
+    "asolver": {
+        "builder": "generic/binary-v1",
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/packages/{SOLVER_NAME}"
     }
 }
 ```
