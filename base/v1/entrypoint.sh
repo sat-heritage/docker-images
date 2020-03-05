@@ -57,13 +57,14 @@ mycall() {
     RANDOMSEED=${RANDOMSEED:-1234567}
     MAXNBTHREAD=${MAXNBTHREAD:-1}
     MEMLIMIT=${MEMLIMIT:-1024}
+    TIMEOUT=${TIMEOUT:-3600}
 
     if [[ "${FILECNF##*.}" == "gz" ]]; then
         if [[ "$(get_param gz)" == "false" ]]; then
             echo "# gunzip ${FILECNF}..."
-            gunzip -c "${FILECNF}" > /tmp/cnf
+            gunzip -c "${FILECNF}" > /tmp/gunzipped.cnf
             echo "# ...done"
-            FILECNF=/tmp/cnf
+            FILECNF=/tmp/gunzipped.cnf
         fi
     fi
     for (( i=0; i<${#args[@]}; ++i )); do
@@ -71,6 +72,7 @@ mycall() {
         a="${a/RANDOMSEED/$RANDOMSEED}"
         a="${a/MAXNBTHREAD/$MAXNBTHREAD}"
         a="${a/MEMLIMIT/$MEMLIMIT}"
+        a="${a/TIMEOUT/$TIMEOUT}"
         args[$i]="${a/FILEPROOF/$FILEPROOF}"
     done
     call_solver "${args[@]}"
