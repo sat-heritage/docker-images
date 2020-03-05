@@ -293,7 +293,7 @@
     ]
   },
   "mergesat": {
-    "status": "Problem when compiling...",
+    "status": "FIXME when compiling...",
     "name": "MergeSAT",
     "call": "./mergesat",
     "gz": true,
@@ -437,7 +437,7 @@
     ]
   },
   "riss7.1": {
-    "status": "Problème au lancement",
+    "status": "FIXMEE  launch problem",
     "name": "Riss7.1",
     "call": "./riss",
     "gz": true,
@@ -466,7 +466,7 @@
     ]
   },
   "sparrowtomergesat": {
-    "status" : "Problem: Miss some executables",
+    "status" : "FIXME Miss some executables",
     "name": "SparrowToMergeSAT",
     "call": "./sparrowtomergesat",
     "gz": true,

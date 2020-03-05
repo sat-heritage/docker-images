@@ -30,7 +30,7 @@
         ]
     },
     "candyrsili": {
-        "status": "problem when building",
+        "status": "FIXME problem when building",
         "name": "CandyRSILi",
         "call": "./candy",
         "gz": true,
@@ -43,7 +43,7 @@
         ]
     },
     "candyrsilv": {
-        "status": "problem when building",
+        "status": "FIXME problem when building",
         "name": "CandyRSILv",
         "call": "./candy",
         "gz": true,
@@ -179,7 +179,7 @@
         ]
     },
     "riss7": {
-        "status": "no starexec_build",
+        "status": "FIXME no starexec_build",
         "name": "Riss7",
         "call": "./riss7",
         "gz": true,
@@ -206,7 +206,7 @@
         ]
     },
     "bs_glucose": {
-        "status": "problem when runnning",
+        "status": "FIXME problem when runnning",
         "name": "bs_glucose",
         "call": "./bs_glucose1",
         "gz": true,

@@ -289,7 +289,7 @@
         ]
     },
     "sparrow2riss-2018": {
-        "status": "Problem with prebuild",
+        "status": "FIXME Problem with prebuild",
         "name": "Sparrow2Riss-2018",
         "call": "./sparrow2riss-2018",
         "gz": true,
