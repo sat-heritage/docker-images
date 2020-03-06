@@ -8,7 +8,7 @@
     },
     "cshcappllc": {
         "RDEPENDS": "python",
-        "BUILD_DEPENDS": "libm4ri-dev libpython-dev libglpk-dev libboost-dev libgoogle-perftools-dev",
+        "BUILD_DEPENDS": "libm4ri-dev libpython-dev libglpk-dev libboost-dev libgoogle-perftools-dev libc6-dev-i386 gcc-multilib g++-multilib",
         "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/819"
     },
     "cshcappllg": {
@@ -16,6 +16,7 @@
         "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/813"
     },
     "forl": {
+        "BUILD_DEPENDS" : "libboost-dev libboost-program-options-dev",
         "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/780"
     },
     "glucored": {
@@ -52,7 +53,7 @@
     },
     "mipsat": {
         "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/801",
-        "BUILD_DEPENDS" : "automake libtool",
+        "BUILD_DEPENDS" : "automake libtool libc6-dev-i386 gcc-multilib g++-multilib",
         "RDEPENDS" : "python"
     },
     "nigma": {
@@ -62,7 +63,8 @@
         "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/763"
     },
     "relback": {
-        "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/792"
+        "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/792",
+        "BUILD_DEPENDS" : "libc6-dev-i386 gcc-multilib g++-multilib"
     },
     "riss3g": {
         "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/831"
