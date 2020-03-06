@@ -1,0 +1,560 @@
+{
+  "adaptnovelty": {
+    "status": "unstable",
+    "name": "adaptnovelty",
+    "call": "./adaptnovelty",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "brchaff": {
+    "status": "unstable",
+    "name": "brchaff",
+    "call": "./brchaff",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "brchaff2": {
+    "status": "unstable",
+    "name": "brchaff2",
+    "call": "./brchaff2",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "circus": {
+    "status": "unstable",
+    "name": "CirCUs",
+    "call": "./CirCUs",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "circush0": {
+    "status": "unstable",
+    "name": "CirCUsH0",
+    "call": "./CirCUsH0",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "circush1": {
+    "status": "unstable",
+    "name": "CirCUsH1",
+    "call": "./CirCUsH1",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "cls": {
+    "status": "unstable",
+    "name": "cls",
+    "call": "./cls",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "compsat": {
+    "status": "unstable",
+    "name": "compsat",
+    "call": "./compsat",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "cquest": {
+    "status": "unstable",
+    "name": "CQuest",
+    "call": "./CQuest",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "eqube1": {
+    "status": "unstable",
+    "name": "eqube1",
+    "call": "./eqube1",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "eqube2": {
+    "status": "unstable",
+    "name": "eqube2",
+    "call": "./eqube2",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "eureka": {
+    "status": "unstable",
+    "name": "eureka",
+    "call": "./eureka",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "forklift": {
+    "status": "unstable",
+    "name": "Forklift",
+    "call": "./Forklift",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "frankensat-high.dir.tgz": {
+    "status": "fixme",
+    "name": "frankensat-high.dir.tgz",
+    "call": "./frankensat-high.dir.tgz",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "frankensat-low.dir.tgz": {
+    "status": "fixme",
+    "name": "frankensat-low.dir.tgz",
+    "call": "./frankensat-low.dir.tgz",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "funex": {
+    "status": "unstable",
+    "name": "funex",
+    "call": "./funex",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "gasat": {
+    "status": "unstable",
+    "name": "GaSAT",
+    "call": "./GaSAT",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "isat1": {
+    "status": "unstable",
+    "name": "ISAT1",
+    "call": "./ISAT1",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "isat2": {
+    "status": "unstable",
+    "name": "ISAT2",
+    "call": "./ISAT2",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "isat3": {
+    "status": "unstable",
+    "name": "ISAT3",
+    "call": "./ISAT3",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "jerusat1.3": {
+    "status": "unstable",
+    "name": "Jerusat1.3",
+    "call": "./Jerusat1.3",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "kcnfs": {
+    "status": "unstable",
+    "name": "kcnfs",
+    "call": "./kcnfs",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "lsatv1.1": {
+    "status": "unstable",
+    "name": "lsatv1.1",
+    "call": "./lsatv1.1",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "march-001": {
+    "status": "unstable",
+    "name": "march-001",
+    "call": "./march-001",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "march-007": {
+    "status": "unstable",
+    "name": "march-007",
+    "call": "./march-007",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "march-eq-010": {
+    "status": "unstable",
+    "name": "march-eq-010",
+    "call": "./march-eq-010",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "march-eq-100": {
+    "status": "unstable",
+    "name": "march-eq-100",
+    "call": "./march-eq-100",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "minilearning.jar": {
+    "status": "unstable",
+    "name": "minilearning.jar",
+    "call": "./minilearning.jar",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "modoc": {
+    "status": "unstable",
+    "name": "modoc",
+    "call": "./modoc",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "nanosat": {
+    "status": "unstable",
+    "name": "nanosat",
+    "call": "./nanosat",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "novelty35": {
+    "status": "unstable",
+    "name": "novelty35",
+    "call": "./novelty35",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "novelty50": {
+    "status": "unstable",
+    "name": "novelty50",
+    "call": "./novelty50",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "oepira": {
+    "status": "unstable",
+    "name": "OepirA",
+    "call": "./OepirA",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "oepirb": {
+    "status": "unstable",
+    "name": "OepirB",
+    "call": "./OepirB",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "oepirc": {
+    "status": "unstable",
+    "name": "OepirC",
+    "call": "./OepirC",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "ofsat": {
+    "status": "unstable",
+    "name": "ofsat",
+    "call": "./ofsat",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "qingting": {
+    "status": "unstable",
+    "name": "QingTing",
+    "call": "./QingTing",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "quantor": {
+    "status": "unstable",
+    "name": "quantor",
+    "call": "./quantor",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "rsaps": {
+    "status": "unstable",
+    "name": "rsaps",
+    "call": "./rsaps",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "saprover": {
+    "status": "unstable",
+    "name": "saprover",
+    "call": "./saprover",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "saps": {
+    "status": "unstable",
+    "name": "saps",
+    "call": "./saps",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "sapsnr": {
+    "status": "unstable",
+    "name": "sapsnr",
+    "call": "./sapsnr",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "satelite_iota9": {
+    "status": "unstable",
+    "name": "SatELite_iota9",
+    "call": "./SatELite_iota9",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "satelite_lambda": {
+    "status": "unstable",
+    "name": "SatELite_lambda",
+    "call": "./SatELite_lambda",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "satelite_lambda_all": {
+    "status": "unstable",
+    "name": "SatELite_lambda_all",
+    "call": "./SatELite_lambda_all",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "satelite_mu": {
+    "status": "unstable",
+    "name": "SatELite_mu",
+    "call": "./SatELite_mu",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "sato4.2": {
+    "status": "unstable",
+    "name": "sato4.2",
+    "call": "./sato4.2",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "sato4.3": {
+    "status": "unstable",
+    "name": "sato4.3",
+    "call": "./sato4.3",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "satzilla": {
+    "status": "unstable",
+    "name": "satzilla",
+    "call": "./satzilla",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "satzilla-nr": {
+    "status": "unstable",
+    "name": "satzilla-nr",
+    "call": "./satzilla-nr",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "satzilla-r": {
+    "status": "unstable",
+    "name": "satzilla-r",
+    "call": "./satzilla-r",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "satzoo-1.02": {
+    "status": "unstable",
+    "name": "Satzoo-1.02",
+    "call": "./Satzoo-1.02",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "siege_v4": {
+    "status": "unstable",
+    "name": "siege_v4",
+    "call": "./siege_v4",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "tts-2-0": {
+    "status": "unstable",
+    "name": "tts-2-0",
+    "call": "./tts-2-0",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "unitwalk": {
+    "status": "unstable",
+    "name": "UnitWalk",
+    "call": "./UnitWalk",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "walksatauto.dir.tgz": {
+    "status": "fixme",
+    "name": "walksatauto.dir.tgz",
+    "call": "./walksatauto.dir.tgz",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "walksatmp": {
+    "status": "unstable",
+    "name": "walksatmp",
+    "call": "./walksatmp",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "walksatskc": {
+    "status": "unstable",
+    "name": "walksatskc",
+    "call": "./walksatskc",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "werewolf": {
+    "status": "unstable",
+    "name": "Werewolf",
+    "call": "./Werewolf",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "wllsatv1": {
+    "status": "unstable",
+    "name": "wllsatv1",
+    "call": "./wllsatv1",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "zchaff": {
+    "status": "unstable",
+    "name": "zchaff",
+    "call": "./zchaff",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "zchaff-rand": {
+    "status": "unstable",
+    "name": "zchaff-rand",
+    "call": "./zchaff-rand",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  }
+}
