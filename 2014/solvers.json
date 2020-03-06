@@ -271,7 +271,7 @@
         "name": "Riss"
     },
     "rokk": {
-        "status":"fixme in progress",
+        "status":"ok",
         "args": [
             "FILECNF",
             "/tmp"
@@ -283,7 +283,7 @@
         "name": "ROKK"
     },
     "rokk_sat": {
-        "status":"unstable",
+        "status":"ok",
         "args": [
             "FILECNF"
         ],
@@ -294,7 +294,7 @@
         "name": "ROKK(sat)"
     },
     "rseq2014": {
-        "status":"unstable",
+        "status":"ok",
         "args": [
             "FILECNF",
             "-s",
@@ -308,7 +308,7 @@
         "name": "RSeq2014"
     },
     "sattime2014r": {
-        "status":"unstable",
+        "status":"ok",
         "args": [
             "FILECNF",
             "-seed",
@@ -321,7 +321,7 @@
         "name": "sattime2014r"
     },
     "satuzk": {
-        "status":"fixme",
+        "status":"FIXME problem when building",
         "args": [
             "/tmp",
             "satUZK-seq",
@@ -334,7 +334,7 @@
         "name": "SatUZK"
     },
     "sgseq": {
-        "status":"unstable",
+        "status":"ok",
         "args": [
             "FILECNF",
             "-s",
@@ -347,7 +347,7 @@
         "name": "SGSeq"
     },
     "sparrowtoriss": {
-        "status":"unstable",
+        "status":"ok",
         "args": [
             "FILECNF",
             "RANDOMSEED",
@@ -360,7 +360,7 @@
         "name": "SparrowToRiss"
     },
     "swdia5by": {
-        "status":"unstable",
+        "status":"ok",
         "args": [
             "FILECNF"
         ],
@@ -371,7 +371,7 @@
         "name": "SWDiA5BY"
     },
     "swdia5by_1": {
-        "status":"unstable",
+        "status":"ok",
         "args": [
             "-lbd-cut=4",
             "-core-learnt-hard-limit=1000000",

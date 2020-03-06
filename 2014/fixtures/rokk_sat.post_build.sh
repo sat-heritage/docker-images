@@ -1,0 +1,1 @@
+find /src -name 'rokk_sat.sh' -exec chmod 755 {} \;

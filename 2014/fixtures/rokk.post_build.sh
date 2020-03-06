@@ -1,1 +1,1 @@
-chmod +x /src/*/bin/rokk.sh
+find /src -name 'rokk.sh' -exec chmod 755 {} \;
