@@ -7,5 +7,9 @@
     "maple-lcmdistchronobtvariablereindexing": {
         "builder": "generic/v1",
         "BUILD_DEPENDS": "bzip2"
+    },
+    "riss7.1": {
+        "builder": "generic/v1",
+        "BUILD_DEPENDS": "gcc-7 g++-7"
     }
 }

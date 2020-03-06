@@ -437,13 +437,12 @@
     ]
   },
   "riss7.1": {
-    "status": "FIXMEE  launch problem",
+    "status": "ok",
     "name": "Riss7.1",
     "call": "./riss",
     "gz": true,
     "args": [
-      "FILECNF",
-      "-nounsat"
+      "FILECNF"
     ],
     "argsproof": [
       "FILECNF",
