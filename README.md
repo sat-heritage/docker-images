@@ -124,6 +124,7 @@ The following keywords are allowed in `args` and `argsproof`:
 | FILEPROOF | Replaced by the absolute path (within the Docker container) to the output file for proof |
 | MAXNBTHREAD | Replaced by the `MAXNBTHREAD` environment variable; `1` by default.<br>Example: `satex run asolver:ayear my.cnf -e MAXNBTHREAD=8` |
 | MEMLIMIT | Replaced by the `MEMLIMIT` environment variable; `1024` by default. |
+| RANDOMSEED | Replaced by the `RANDOMSEED` environment variable; `1234567` by default. |
 | TIMEOUT | Replaced by the `TIMEOUT` environment variable; `3600` by default. |
 
 Example
