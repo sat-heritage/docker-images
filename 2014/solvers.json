@@ -1,6 +1,6 @@
 {
     "bfs-glucose": {
-        "status":"unstable",
+        "status":"ok",
         "args": [
             "FILECNF"
         ],
@@ -11,7 +11,7 @@
         "name": "BFS-Glucose"
     },
     "bfs-glucose_mem_16_70": {
-        "status":"unstable",
+        "status":"ok",
         "args": [
             "FILECNF"
         ],
@@ -22,7 +22,7 @@
         "name": "BFS-Glucose_mem_16_70"
     },
     "bfs-glucose_mem_32_70": {
-        "status":"unstable",
+        "status":"ok",
         "args": [
             "FILECNF"
         ],
@@ -33,7 +33,7 @@
         "name": "BFS-Glucose_mem_32_70"
     },
     "bfs-glucose_mem_8_85": {
-        "status":"unstable",
+        "status":"ok",
         "args": [
             "FILECNF"
         ],
@@ -44,7 +44,7 @@
         "name": "BFS-Glucose_mem_8_85"
     },
     "ccanr_glucose": {
-        "status":"unstable",
+        "status":"ok",
         "args": [
             "FILECNF",
             "RANDOMSEED",
@@ -57,7 +57,7 @@
         "name": "CCAnr+glucose"
     },
     "cryptominisat-4.1-st": {
-        "status":"unstable",
+        "status":"FIXME problem when building",
         "args": [
             "FILECNF"
         ],
@@ -68,7 +68,7 @@
         "name": "cryptominisat-4.1-st"
     },
     "cryptominisat-v41-tuned-st": {
-        "status":"unstable",
+        "status":"FIXME problem when building",
         "args": [
             "FILECNF"
         ],
@@ -90,7 +90,7 @@
         "name": "glucose"
     },
     "glue_lgl_split": {
-        "status":"unstable",
+        "status":"ok",
         "args": [
             "FILECNF"
         ],
@@ -101,33 +101,32 @@
         "name": "glue_lgl_split"
     },
     "glueminisat": {
-        "status":"unstable",
+        "status":"ok",
         "args": [
-            "-show-model",
             "FILECNF"
         ],
         "authors": "Hidetomo Nabeshima, Koji Iwanuma, Katsumi Inoue",
-        "call": ".//glueminisat-simp",
-        "comments": "Launchcommand was:  .//glueminisat-simp -show-model  <instance> \nTrack was Sequential, Application SAT+UNSAT track",
+        "call": "./glueminisat-simp",
+        "comments": "Launchcommand was:  .//glueminisat-simp   <instance> \nTrack was Sequential, Application SAT+UNSAT track",
         "gz": true,
         "name": "glueminisat"
     },
     "glueminisat_1": {
-        "status":"unstable",
+        "status":"ok",
         "args": [
-            "-show-model",
             "FILECNF"
         ],
         "authors": "Hidetomo Nabeshima, Koji Iwanuma, Katsumi Inoue",
         "call": ".//glueminisat-simp",
-        "comments": "Launchcommand was:  .//glueminisat-simp -show-model  <instance> \nTrack was Sequential, Application SAT+UNSAT track",
+        "comments": "Launchcommand was:  ./glueminisat-simp   <instance> \nTrack was Sequential, Application SAT+UNSAT track",
         "gz": true,
         "name": "glueminisat"
     },
     "lingeling": {
-        "status":"unstable",
+        "status":"ok",
         "args": [
             "-v",
+            "--witness",
             "FILECNF"
         ],
         "authors": "Armin Biere",
@@ -137,7 +136,7 @@
         "name": "Lingeling"
     },
     "lingeling_druplig": {
-        "status":"unstable",
+        "status":"ok",
         "args": [
             "-v",
             "--druplig",
@@ -150,7 +149,7 @@
         "name": "Lingeling (druplig)"
     },
     "lingeling_no_agile": {
-        "status":"unstable",
+        "status":"ok",
         "args": [
             "-v",
             "--no-agile",
@@ -163,7 +162,7 @@
         "name": "Lingeling (no agile)"
     },
     "minisat_blbd": {
-        "status":"unstable",
+        "status":"ok",
         "args": [
             "FILECNF"
         ],
@@ -174,7 +173,7 @@
         "name": "minisat_blbd"
     },
     "minisat_hack_1430ed": {
-        "status":"unstable",
+        "status":"ok",
         "args": [
             "FILECNF"
         ],
@@ -185,7 +184,7 @@
         "name": "MiniSat_HACK_1430ED"
     },
     "minisat_hack_999ed": {
-        "status":"unstable",
+        "status":"ok",
         "args": [
             "FILECNF"
         ],
@@ -196,7 +195,7 @@
         "name": "MiniSat_HACK_999ED"
     },
     "nigma": {
-        "status":"unstable",
+        "status":"ok",
         "args": [
             "FILECNF",
             "--display-assignments-if-sat",
@@ -213,7 +212,7 @@
         "name": "Nigma"
     },
     "ntusat": {
-        "status":"unstable",
+        "status":"ok",
         "args": [
             "FILECNF"
         ],
@@ -224,7 +223,7 @@
         "name": "ntusat"
     },
     "ntusatbreak": {
-        "status":"unstable",
+        "status":"ok",
         "args": [
             "FILECNF",
             "/tmp"
@@ -236,7 +235,7 @@
         "name": "ntusatbreak"
     },
     "riss": {
-        "status":"unstable",
+        "status":"ok",
         "args": [
             "FILECNF",
             "/tmp"
@@ -260,7 +259,7 @@
         "name": "Riss"
     },
     "riss_2": {
-        "status":"unstable",
+        "status":"ok",
         "args": [
             "FILECNF",
             "/tmp"
@@ -272,7 +271,7 @@
         "name": "Riss"
     },
     "rokk": {
-        "status":"unstable",
+        "status":"fixme in progress",
         "args": [
             "FILECNF",
             "/tmp"
