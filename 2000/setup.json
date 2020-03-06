@@ -1,5 +1,6 @@
 {
     "base_version": "potato",
+    "base_from": "debian/eol:potato",
     "builder_base": "debian/eol:potato",
     "builder": "generic/binary-v1",
     "download_url": "https://zenodo.org/record/3676454/files/{SOLVER_NAME}?download=1",

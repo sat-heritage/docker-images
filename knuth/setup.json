@@ -2,5 +2,6 @@
     "image_name": "{ENTRY}:{SOLVER}",
     "base_version": "v1",
     "base_from": "debian:stretch-slim",
-    "builder": "."
+    "builder": ".",
+    "builder_base": "debian:stretch-slim"
 }

@@ -7,11 +7,11 @@ RUN apt-get update --fix-missing && \
 
 WORKDIR /src
 
-ARG solver
+ARG SOLVER_NAME
 ARG download_url
 
 ADD $download_url /src
 
-COPY $solver.build.sh /src/build.sh
+COPY ${SOLVER_NAME}.build.sh /src/build.sh
 
 RUN mkdir /dist && bash build.sh

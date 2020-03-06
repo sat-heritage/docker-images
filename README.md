@@ -16,7 +16,9 @@ docker run --rm -v $PWD:/data satex/<tool>:<year> <DIMACS> [<PROOF>]
 
 ## `satex` Python script
 
-Python >= 3 is required.
+Requirements:
+* [Python](https://www.python.org/) ≥3.6
+* [Docker](https://docker.com)
 
 ```
 pip install -U satex     # you may have to use pip3
@@ -164,13 +166,13 @@ being a JSON object with a subset of the following keys.
 
 | key | description |
 | --- | --- |
-| base_version | Version of the base image for running the solver available in the `base/` directory |
+| base_version | Version of the base image for running the solver (`base/{base_version}`) |
 | base_from | Image to inherit from for running the solver |
 | builder | Path to the Docker recipe for compiling the solver. If it is not starting with `generic/`, the path is relative to the set directory. The path should contain at least a `Dockerfile`. The builder recipe should install the solver binaries into `/dist`. |
-| builder_base | Image to inherit from for compiling the solver with `generic/...` builders |
+| builder_base | Image to inherit from for compiling the solver |
 | image_name | Python format string with ENTRY being the set name and SOLVER the solver identifier<br/>Default: `"{SOLVER}:{ENTRY}"` |
 | dist_version | Version of the recipe for assembling the solver image (`generic/dist-{dist_version}`)<br>Default: `"v1"` |
-| download_url | Python format string for the downloading the solver source/binary |
+| download_url | Python format string for downloading the solver source/binary |
 | BUILD_DEPENDS | Additional packages to install for compiling the solver.<br>Used by `generic/v1` builder |
 | RDEPENDS | Additional packages to install for running the executable.<br>Used by `generic/dist-v1` assembler |
 

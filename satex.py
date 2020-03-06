@@ -16,7 +16,7 @@ import textwrap
 import time
 from urllib.request import urlopen
 
-__version__ = "0.97-dev"
+__version__ = "0.98-dev"
 
 DOCKER_NS = "satex"
 REGISTRY_URL = "https://github.com/sat-heritage/docker-images/releases/download/list/list.tgz"
@@ -152,30 +152,42 @@ def source(args):
     for name in repo.images:
         print(name)
 
-_info_first = ["name", "version", "authors"]
+_info_first = ["name", "version", "authors", "base_from"]
+_info_last = ["comment", "comments"]
 _info_ignore = {"call"}
 def print_info(args):
     repo = Repository(args)
     for name in repo.images:
         image = ImageManager(name, repo)
 
-        keys = [k for k in sorted(image.registry.keys()) if k not in _info_ignore]
-        for k in _info_first[::-1]:
-            if k in keys:
-                keys.remove(k)
-                keys.insert(0, k)
+        ignore = _info_ignore.union(_info_first).union(_info_last)
+        keys = _info_first \
+            + [k for k in sorted(image.registry.keys()) if k not in ignore] \
+            + _info_last
 
         key_width = 0
         info = []
         for key in keys:
-            value = image.registry[key]
+            if key == "base_from":
+                name = "Environment"
+                value = image.setup[key]
+                builder_base = image.setup.get("builder_base")
+                if builder_base:
+                    if builder_base == value:
+                        value += " (same as build)"
+                    else:
+                        value += f" (build: {builder_base})"
+            else:
+                if key not in image.registry:
+                    continue
+                name = key.title()
+                value = image.registry[key]
             if key in ["args", "argsproof"]:
                 name = "Call"
                 if key == "argsproof":
                     name += " (proof)"
                 value = f"{image.registry['call']} {' '.join(map(str,value))}"
             else:
-                name = key.title()
                 value = str(value)
             key_width = max(len(name), key_width)
             info.append((name,value))
@@ -192,10 +204,11 @@ def print_info(args):
         print("-"*line_width)
         for (key, value) in info:
             key = f"{key}: "
-            for line in textwrap.wrap(value):
-                print("{0:{key_width}}{1}".format(key, line,
-                    key_width=key_width))
-                key = ""
+            for p in value.splitlines():
+                for line in textwrap.wrap(p):
+                    print("{0:{key_width}}{1}".format(key, line,
+                        key_width=key_width))
+                    key = ""
         print()
 
 #
@@ -363,6 +376,13 @@ def build_images(args):
     bases_uptodate = set()
 
     only_dist_opts = ["RDEPENDS"]
+    hide_opts = [
+        "base_version",
+        "base_from",
+        "builder",
+        "builder_base",
+        "image_name",
+    ]
 
     for name in repo.images:
         image = ImageManager(name, repo)
@@ -375,17 +395,9 @@ def build_images(args):
 
         root = str(image.entry)
 
-        build_args = {k:v for k,v in setup.items() if \
-                        k not in ["base_version", "base_from",
-                                    "builder", "builder_base",
-                                    "image_name"]+only_dist_opts and isinstance(v, str)}
-        build_args["SOLVER"] = image.solver
-        build_args["SOLVER_NAME"] = image.solver_name
-        build_args["solver"] = build_args["SOLVER_NAME"] # To be removed
-        build_args["solver_id"] = build_args["SOLVER"] # To be removed
-        for k in setup:
-            if k in build_args:
-                build_args[k] = build_args[k].format(**fmtvars)
+        build_args = {k: v.format(**fmtvars) for k,v in setup.items() if \
+                k not in hide_opts and isinstance(v, str)}
+        build_args.update(fmtvars)
 
         builder_path = setup["builder"]
         if not builder_path.startswith("generic/"):
