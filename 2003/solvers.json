@@ -1,6 +1,6 @@
 {
   "berkmin561": {
-    "status": "unstable",
+    "status": "ok",
     "name": "BerkMin561",
     "call": "./BerkMin561",
     "gz": false,
@@ -9,7 +9,7 @@
     ]
   },
   "berkmin62": {
-    "status": "unstable",
+    "status": "ok",
     "name": "BerkMin62",
     "call": "./BerkMin62",
     "gz": false,
@@ -18,7 +18,7 @@
     ]
   },
   "bmsat": {
-    "status": "unstable",
+    "status": "ok",
     "name": "bmSat",
     "call": "./bmSat",
     "gz": false,
@@ -27,7 +27,7 @@
     ]
   },
   "compsat": {
-    "status": "unstable",
+    "status": "ok",
     "name": "compsat",
     "call": "./compsat",
     "gz": false,
@@ -45,7 +45,7 @@
     ]
   },
   "forklift": {
-    "status": "unstable",
+    "status": "ok",
     "name": "Forklift",
     "call": "./Forklift",
     "gz": false,
@@ -54,7 +54,7 @@
     ]
   },
   "funex": {
-    "status": "unstable",
+    "status": "ok",
     "name": "funex",
     "call": "./funex",
     "gz": false,
@@ -63,7 +63,7 @@
     ]
   },
   "jerusat1.1": {
-    "status": "unstable",
+    "status": "ok",
     "name": "Jerusat1.1",
     "call": "./Jerusat1.1",
     "gz": false,
@@ -72,7 +72,7 @@
     ]
   },
   "jerusat1.1.b": {
-    "status": "unstable",
+    "status": "ok",
     "name": "Jerusat1.1.b",
     "call": "./Jerusat1.1.b",
     "gz": false,
@@ -81,7 +81,7 @@
     ]
   },
   "jerusat1.1.c": {
-    "status": "unstable",
+    "status": "ok",
     "name": "Jerusat1.1.c",
     "call": "./Jerusat1.1.c",
     "gz": false,
@@ -99,7 +99,7 @@
     ]
   },
   "kcnfs": {
-    "status": "unstable",
+    "status": "ok",
     "name": "kcnfs",
     "call": "./kcnfs",
     "gz": false,
@@ -108,7 +108,7 @@
     ]
   },
   "limmat": {
-    "status": "unstable",
+    "status": "ok",
     "name": "limmat",
     "call": "./limmat",
     "gz": false,
@@ -117,7 +117,7 @@
     ]
   },
   "lsatv1.1": {
-    "status": "unstable",
+    "status": "ok",
     "name": "lsatv1.1",
     "call": "./lsatv1.1",
     "gz": false,
@@ -126,7 +126,7 @@
     ]
   },
   "march-sp": {
-    "status": "unstable",
+    "status": "ok",
     "name": "march-sp",
     "call": "./march-sp",
     "gz": false,
@@ -135,7 +135,7 @@
     ]
   },
   "march-tt": {
-    "status": "unstable",
+    "status": "ok",
     "name": "march-tt",
     "call": "./march-tt",
     "gz": false,
@@ -144,7 +144,7 @@
     ]
   },
   "march-xq": {
-    "status": "unstable",
+    "status": "ok",
     "name": "march-xq",
     "call": "./march-xq",
     "gz": false,
@@ -153,7 +153,7 @@
     ]
   },
   "oepir": {
-    "status": "unstable",
+    "status": "ok",
     "name": "Oepir",
     "call": "./Oepir",
     "gz": false,
@@ -180,7 +180,7 @@
     ]
   },
   "satnik": {
-    "status": "unstable",
+    "status": "ok",
     "name": "satnik",
     "call": "./satnik",
     "gz": false,
@@ -189,7 +189,7 @@
     ]
   },
   "sato": {
-    "status": "unstable",
+    "status": "ok",
     "name": "sato",
     "call": "./sato",
     "gz": false,
@@ -203,11 +203,12 @@
     "call": "./saturn",
     "gz": false,
     "args": [
-      "FILECNF"
+      "FILECNF",
+      1000
     ]
   },
   "satzilla": {
-    "status": "unstable",
+    "status": "ok",
     "name": "satzilla",
     "call": "./satzilla",
     "gz": false,
@@ -216,7 +217,7 @@
     ]
   },
   "satzilla2": {
-    "status": "unstable",
+    "status": "ok",
     "name": "satzilla2",
     "call": "./satzilla2",
     "gz": false,
@@ -225,7 +226,7 @@
     ]
   },
   "satzoo0": {
-    "status": "unstable",
+    "status": "ok",
     "name": "Satzoo0",
     "call": "./Satzoo0",
     "gz": false,
@@ -234,7 +235,7 @@
     ]
   },
   "satzoo1": {
-    "status": "unstable",
+    "status": "ok",
     "name": "Satzoo1",
     "call": "./Satzoo1",
     "gz": false,
@@ -243,7 +244,7 @@
     ]
   },
   "siege": {
-    "status": "unstable",
+    "status": "ok",
     "name": "siege",
     "call": "./siege",
     "gz": false,
@@ -251,17 +252,18 @@
       "FILECNF"
     ]
   },
-  "submit18": {
-    "status": "unstable",
+  "amvo": {
+    "status": "ok",
     "name": "submit18",
     "call": "./submit18",
     "gz": false,
     "args": [
-      "FILECNF"
+      "FILECNF",
+      1000
     ]
   },
   "tts": {
-    "status": "unstable",
+    "status": "ok",
     "name": "tts",
     "call": "./tts",
     "gz": false,
@@ -275,7 +277,8 @@
     "call": "./UnitWalk",
     "gz": false,
     "args": [
-      "FILECNF"
+      "FILECNF",
+      1000
     ]
   },
   "xqingting": {
@@ -284,11 +287,12 @@
     "call": "./xQingTing",
     "gz": false,
     "args": [
-      "FILECNF"
+      "FILECNF",
+      1000
     ]
   },
   "zchaff": {
-    "status": "unstable",
+    "status": "ok",
     "name": "zchaff",
     "call": "./zchaff",
     "gz": false,
