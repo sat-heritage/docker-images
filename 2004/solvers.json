@@ -1,6 +1,6 @@
 {
   "adaptnovelty": {
-    "status": "unstable",
+    "status": "ok",
     "name": "adaptnovelty",
     "call": "./adaptnovelty",
     "gz": false,
@@ -9,7 +9,7 @@
     ]
   },
   "brchaff": {
-    "status": "unstable",
+    "status": "ok",
     "name": "brchaff",
     "call": "./brchaff",
     "gz": false,
@@ -27,7 +27,7 @@
     ]
   },
   "circus": {
-    "status": "unstable",
+    "status": "ok",
     "name": "CirCUs",
     "call": "./CirCUs",
     "gz": false,
@@ -36,7 +36,7 @@
     ]
   },
   "circush0": {
-    "status": "unstable",
+    "status": "ok",
     "name": "CirCUsH0",
     "call": "./CirCUsH0",
     "gz": false,
@@ -45,7 +45,7 @@
     ]
   },
   "circush1": {
-    "status": "unstable",
+    "status": "ok",
     "name": "CirCUsH1",
     "call": "./CirCUsH1",
     "gz": false,
@@ -59,11 +59,12 @@
     "call": "./cls",
     "gz": false,
     "args": [
-      "FILECNF"
+      "FILECNF",
+      1000
     ]
   },
   "compsat": {
-    "status": "unstable",
+    "status": "ok",
     "name": "compsat",
     "call": "./compsat",
     "gz": false,
@@ -72,7 +73,7 @@
     ]
   },
   "cquest": {
-    "status": "unstable",
+    "status": "ok",
     "name": "CQuest",
     "call": "./CQuest",
     "gz": false,
@@ -81,7 +82,7 @@
     ]
   },
   "eqube1": {
-    "status": "unstable",
+    "status": "ok",
     "name": "eqube1",
     "call": "./eqube1",
     "gz": false,
@@ -90,7 +91,7 @@
     ]
   },
   "eqube2": {
-    "status": "unstable",
+    "status": "ok",
     "name": "eqube2",
     "call": "./eqube2",
     "gz": false,
@@ -108,7 +109,7 @@
     ]
   },
   "forklift": {
-    "status": "unstable",
+    "status": "ok",
     "name": "Forklift",
     "call": "./Forklift",
     "gz": false,
@@ -135,7 +136,7 @@
     ]
   },
   "funex": {
-    "status": "unstable",
+    "status": "ok",
     "name": "funex",
     "call": "./funex",
     "gz": false,
@@ -144,7 +145,7 @@
     ]
   },
   "gasat": {
-    "status": "unstable",
+    "status": "ok",
     "name": "GaSAT",
     "call": "./GaSAT",
     "gz": false,
@@ -180,7 +181,7 @@
     ]
   },
   "jerusat1.3": {
-    "status": "unstable",
+    "status": "ok",
     "name": "Jerusat1.3",
     "call": "./Jerusat1.3",
     "gz": false,
@@ -189,7 +190,7 @@
     ]
   },
   "kcnfs": {
-    "status": "unstable",
+    "status": "ok",
     "name": "kcnfs",
     "call": "./kcnfs",
     "gz": false,
@@ -198,7 +199,7 @@
     ]
   },
   "lsatv1.1": {
-    "status": "unstable",
+    "status": "ok",
     "name": "lsatv1.1",
     "call": "./lsatv1.1",
     "gz": false,
@@ -207,7 +208,7 @@
     ]
   },
   "march-001": {
-    "status": "unstable",
+    "status": "ok",
     "name": "march-001",
     "call": "./march-001",
     "gz": false,
@@ -216,7 +217,7 @@
     ]
   },
   "march-007": {
-    "status": "unstable",
+    "status": "ok",
     "name": "march-007",
     "call": "./march-007",
     "gz": false,
@@ -225,7 +226,7 @@
     ]
   },
   "march-eq-010": {
-    "status": "unstable",
+    "status": "ok",
     "name": "march-eq-010",
     "call": "./march-eq-010",
     "gz": false,
@@ -234,7 +235,7 @@
     ]
   },
   "march-eq-100": {
-    "status": "unstable",
+    "status": "ok",
     "name": "march-eq-100",
     "call": "./march-eq-100",
     "gz": false,
@@ -252,7 +253,7 @@
     ]
   },
   "modoc": {
-    "status": "unstable",
+    "status": "ok",
     "name": "modoc",
     "call": "./modoc",
     "gz": false,
@@ -261,7 +262,7 @@
     ]
   },
   "nanosat": {
-    "status": "unstable",
+    "status": "ok",
     "name": "nanosat",
     "call": "./nanosat",
     "gz": false,
@@ -288,7 +289,7 @@
     ]
   },
   "oepira": {
-    "status": "unstable",
+    "status": "ok",
     "name": "OepirA",
     "call": "./OepirA",
     "gz": false,
@@ -297,7 +298,7 @@
     ]
   },
   "oepirb": {
-    "status": "unstable",
+    "status": "ok",
     "name": "OepirB",
     "call": "./OepirB",
     "gz": false,
@@ -306,7 +307,7 @@
     ]
   },
   "oepirc": {
-    "status": "unstable",
+    "status": "ok",
     "name": "OepirC",
     "call": "./OepirC",
     "gz": false,
@@ -324,7 +325,7 @@
     ]
   },
   "qingting": {
-    "status": "unstable",
+    "status": "ok",
     "name": "QingTing",
     "call": "./QingTing",
     "gz": false,
@@ -333,7 +334,7 @@
     ]
   },
   "quantor": {
-    "status": "unstable",
+    "status": "ok",
     "name": "quantor",
     "call": "./quantor",
     "gz": false,
@@ -351,7 +352,7 @@
     ]
   },
   "saprover": {
-    "status": "unstable",
+    "status": "ok",
     "name": "saprover",
     "call": "./saprover",
     "gz": false,
@@ -378,7 +379,7 @@
     ]
   },
   "satelite_iota9": {
-    "status": "unstable",
+    "status": "ok",
     "name": "SatELite_iota9",
     "call": "./SatELite_iota9",
     "gz": false,
@@ -387,7 +388,7 @@
     ]
   },
   "satelite_lambda": {
-    "status": "unstable",
+    "status": "ok",
     "name": "SatELite_lambda",
     "call": "./SatELite_lambda",
     "gz": false,
@@ -396,7 +397,7 @@
     ]
   },
   "satelite_lambda_all": {
-    "status": "unstable",
+    "status": "ok",
     "name": "SatELite_lambda_all",
     "call": "./SatELite_lambda_all",
     "gz": false,
@@ -405,7 +406,7 @@
     ]
   },
   "satelite_mu": {
-    "status": "unstable",
+    "status": "ok",
     "name": "SatELite_mu",
     "call": "./SatELite_mu",
     "gz": false,
@@ -432,7 +433,7 @@
     ]
   },
   "satzilla": {
-    "status": "unstable",
+    "status": "ok",
     "name": "satzilla",
     "call": "./satzilla",
     "gz": false,
@@ -441,7 +442,7 @@
     ]
   },
   "satzilla-nr": {
-    "status": "unstable",
+    "status": "ok",
     "name": "satzilla-nr",
     "call": "./satzilla-nr",
     "gz": false,
@@ -450,7 +451,7 @@
     ]
   },
   "satzilla-r": {
-    "status": "unstable",
+    "status": "ok",
     "name": "satzilla-r",
     "call": "./satzilla-r",
     "gz": false,
@@ -459,7 +460,7 @@
     ]
   },
   "satzoo-1.02": {
-    "status": "unstable",
+    "status": "ok",
     "name": "Satzoo-1.02",
     "call": "./Satzoo-1.02",
     "gz": false,
@@ -477,7 +478,7 @@
     ]
   },
   "tts-2-0": {
-    "status": "unstable",
+    "status": "ok",
     "name": "tts-2-0",
     "call": "./tts-2-0",
     "gz": false,
@@ -504,7 +505,7 @@
     ]
   },
   "walksatmp": {
-    "status": "unstable",
+    "status": "ok",
     "name": "walksatmp",
     "call": "./walksatmp",
     "gz": false,
@@ -513,7 +514,7 @@
     ]
   },
   "walksatskc": {
-    "status": "unstable",
+    "status": "ok",
     "name": "walksatskc",
     "call": "./walksatskc",
     "gz": false,
@@ -531,7 +532,7 @@
     ]
   },
   "wllsatv1": {
-    "status": "unstable",
+    "status": "ok",
     "name": "wllsatv1",
     "call": "./wllsatv1",
     "gz": false,
@@ -540,7 +541,7 @@
     ]
   },
   "zchaff": {
-    "status": "unstable",
+    "status": "ok",
     "name": "zchaff",
     "call": "./zchaff",
     "gz": false,
@@ -549,7 +550,7 @@
     ]
   },
   "zchaff-rand": {
-    "status": "unstable",
+    "status": "ok",
     "name": "zchaff-rand",
     "call": "./zchaff-rand",
     "gz": false,
