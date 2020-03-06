@@ -1,0 +1,399 @@
+{
+  "adaptnovelty": {
+    "status": "unstable",
+    "name": "adaptnovelty",
+    "call": "./adaptnovelty",
+    "gz": false,
+    "args": [
+      "FILECNF",
+      "RANDOMSEED"
+    ]
+  },
+  "circusa": {
+    "status": "ok",
+    "name": "CirCUsA",
+    "call": "./CirCUsA",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "circusb": {
+    "status": "ok",
+    "name": "CirCUsB",
+    "call": "./CirCUsB",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "circusd": {
+    "status": "unstable",
+    "name": "CirCUsD",
+    "call": "./CirCUsD",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "compsat": {
+    "status": "ok",
+    "name": "compsat",
+    "call": "./compsat",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "csat-bis": {
+    "status": "ok",
+    "name": "csat",
+    "call": "./csat",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "dew-satz-1a": {
+    "status": "ok",
+    "name": "Dew-Satz-1a",
+    "call": "./Dew-Satz-1a",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "dew-satz-1b": {
+    "status": "ok",
+    "name": "Dew-Satz-1b",
+    "call": "./Dew-Satz-1b",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "dew-satz-1c": {
+    "status": "ok",
+    "name": "Dew-Satz-1c",
+    "call": "./Dew-Satz-1c",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "dew-satz-1d": {
+    "status": "ok",
+    "name": "Dew-Satz-1d",
+    "call": "./Dew-Satz-1d",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "dew-satz-1e": {
+    "status": "ok",
+    "name": "Dew-Satz-1e",
+    "call": "./Dew-Satz-1e",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "eureka-a": {
+    "status": "ok",
+    "name": "eureka-A",
+    "call": "./eureka-A",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "eureka-b": {
+    "status": "ok",
+    "name": "eureka-B",
+    "call": "./eureka-B",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "eureka-c": {
+    "status": "ok",
+    "name": "eureka-C",
+    "call": "./eureka-C",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "g2wsat": {
+    "status": "ok",
+    "name": "g2wsat",
+    "call": "./g2wsat",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "haifasat": {
+    "status": "ok",
+    "name": "HaifaSat",
+    "call": "./HaifaSat",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "haifasat2": {
+    "status": "ok",
+    "name": "HaifaSat2",
+    "call": "./HaifaSat2",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "hsat.1": {
+    "status": "ok",
+    "name": "hsat.1",
+    "call": "./hsat.1",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "hsat.5": {
+    "status": "ok",
+    "name": "hsat.5",
+    "call": "./hsat.5",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "hsatrr": {
+    "status": "ok",
+    "name": "hsatrr",
+    "call": "./hsatrr",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "jerusat1.31-a": {
+    "status": "ok",
+    "name": "Jerusat1.31-A",
+    "call": "./Jerusat1.31-A",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "jerusat1.31-b": {
+    "status": "ok",
+    "name": "Jerusat1.31-B",
+    "call": "./Jerusat1.31-B",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "kcnfs": {
+    "status": "unstable",
+    "name": "kcnfs",
+    "call": "./kcnfs",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "kcnfs-2004": {
+    "status": "unstable",
+    "name": "kcnfs-2004",
+    "call": "./kcnfs-2004",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "lsatv1.1": {
+    "status": "ok",
+    "name": "lsatv1.1",
+    "call": "./lsatv1.1",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "march-dl": {
+    "status": "ok",
+    "name": "march-dl",
+    "call": "./march-dl",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "march-eq-100": {
+    "status": "ok",
+    "name": "march-eq-100",
+    "call": "./march-eq-100",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "midisat-static": {
+    "status": "ok",
+    "name": "midisat-static",
+    "call": "./midisat-static",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "minisat-static": {
+    "status": "ok",
+    "name": "minisat-static",
+    "call": "./minisat-static",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "ranov": {
+    "status": "ok",
+    "name": "ranov",
+    "call": "./ranov",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "rpaws10": {
+    "status": "ok",
+    "name": "rpaws10",
+    "call": "./rpaws10",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "rpaws40": {
+    "status": "ok",
+    "name": "rpaws40",
+    "call": "./rpaws40",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "rpaws5": {
+    "status": "ok",
+    "name": "rpaws5",
+    "call": "./rpaws5",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "rrsaps": {
+    "status": "ok",
+    "name": "rrsaps",
+    "call": "./rrsaps",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "saps": {
+    "status": "fixme",
+    "name": "saps",
+    "call": "./saps",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "sat4j.jar": {
+    "status": "fixme",
+    "name": "sat4j.jar",
+    "call": "./sat4j.jar",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "sat4j-sat2005.jar": {
+    "status": "fixme",
+    "name": "sat4j-sat2005.jar",
+    "call": "./sat4j-sat2005.jar",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "satelitegti": {
+    "status": "fixme",
+    "name": "sateliteGTI.tgz",
+    "call": "./sateliteGTI",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "tts-3-0": {
+    "status": "ok",
+    "name": "tts-3-0",
+    "call": "./tts-3-0",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "vallst": {
+    "status": "fixme",
+    "name": "vallst.tgz",
+    "call": "./vallst.tgz",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "vw": {
+    "status": "fixme",
+    "name": "vw",
+    "call": "./vw",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "wllsatv1": {
+    "status": "ok",
+    "name": "wllsatv1",
+    "call": "./wllsatv1",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "zchaff": {
+    "status": "ok",
+    "name": "zchaff",
+    "call": "./zchaff",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  },
+  "zchaff-rand": {
+    "status": "ok",
+    "name": "zchaff-rand",
+    "call": "./zchaff-rand",
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ]
+  }
+}

@@ -1,0 +1,7 @@
+{
+    "base_version": "v1",
+    "base_from": "debian:stretch-slim",
+    "builder": "generic/binary-v1",
+    "builder_base": "debian:8.6",
+    "download_url": "https://zenodo.org/record/3699637/files/{SOLVER_NAME}?download=1"
+}
