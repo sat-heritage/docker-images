@@ -8,7 +8,15 @@
         "builder": "generic/v1",
         "BUILD_DEPENDS": "bzip2"
     },
+    "mergesat": {
+        "builder": "generic/v1",
+        "BUILD_DEPENDS": "gcc-7 g++-7"
+    },
     "riss7.1": {
+        "builder": "generic/v1",
+        "BUILD_DEPENDS": "gcc-7 g++-7"
+    },
+    "sparrowtomergesat": {
         "builder": "generic/v1",
         "BUILD_DEPENDS": "gcc-7 g++-7"
     }
