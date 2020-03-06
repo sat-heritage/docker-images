@@ -2,6 +2,7 @@
   "sat0": {
     "status": "ok",
     "name": "sat0",
+    "authors": "Donald Knuth",
     "call": "sat0",
     "gz": false,
     "args": [
@@ -11,6 +12,7 @@
   "sat0w": {
     "status": "ok",
     "name": "sat0w",
+    "authors": "Donald Knuth",
     "call": "sat0w",
     "gz": false,
     "args": [
@@ -20,6 +22,7 @@
   "sat8": {
     "status": "ok",
     "name": "sat8",
+    "authors": "Donald Knuth",
     "call": "sat8",
     "gz": false,
     "args": [
@@ -29,6 +32,7 @@
   "sat9": {
     "status": "ok",
     "name": "sat9",
+    "authors": "Donald Knuth",
     "call": "sat9",
     "gz": false,
     "args": [
@@ -38,6 +42,7 @@
   "sat10": {
     "status": "ok",
     "name": "sat10",
+    "authors": "Donald Knuth",
     "call": "sat10",
     "gz": false,
     "args": [
@@ -47,6 +52,7 @@
   "sat11": {
     "status": "ok",
     "name": "sat11",
+    "authors": "Donald Knuth",
     "call": "sat11",
     "gz": false,
     "args": [
@@ -56,6 +62,7 @@
   "sat12": {
     "status": "ok",
     "name": "sat12",
+    "authors": "Donald Knuth",
     "call": "sat12",
     "gz": false,
     "args": [
@@ -65,6 +72,7 @@
   "sat13": {
     "status": "ok",
     "name": "sat13",
+    "authors": "Donald Knuth",
     "call": "sat13",
     "gz": false,
     "args": [
