@@ -15,7 +15,7 @@
     "bfs-glucose_mem_8_85": {
         "download_url": "http://satcompetition.org/edacc/sc14/solver-download/1537"
     },
-    "ccanr+glucose": {
+    "ccanr_glucose": {
         "download_url": "http://satcompetition.org/edacc/sc14/solver-download/1449"
     },
     "cryptominisat-4.1-st": {
@@ -39,10 +39,10 @@
     "lingeling": {
         "download_url": "http://satcompetition.org/edacc/sc14/solver-download/1510"
     },
-    "lingeling_(druplig)": {
+    "lingeling_druplig": {
         "download_url": "http://satcompetition.org/edacc/sc14/solver-download/1589"
     },
-    "lingeling_(no_agile)": {
+    "lingeling_no_agile": {
         "download_url": "http://satcompetition.org/edacc/sc14/solver-download/1524"
     },
     "minisat_blbd": {
@@ -67,6 +67,8 @@
         "download_url": "http://satcompetition.org/edacc/sc14/solver-download/1403"
     },
     "riss_1": {
+        "BUILD_DEPENDS": "default-jdk",
+        "RDEPENDS": "default-jre",
         "download_url": "http://satcompetition.org/edacc/sc14/solver-download/1412"
     },
     "riss_2": {
@@ -75,7 +77,7 @@
     "rokk": {
         "download_url": "http://satcompetition.org/edacc/sc14/solver-download/1422"
     },
-    "rokk(sat)": {
+    "rokk_sat": {
         "download_url": "http://satcompetition.org/edacc/sc14/solver-download/1472"
     },
     "rseq2014": {

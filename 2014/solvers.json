@@ -1,5 +1,6 @@
 {
     "bfs-glucose": {
+        "status":"unstable",
         "args": [
             "FILECNF"
         ],
@@ -10,6 +11,7 @@
         "name": "BFS-Glucose"
     },
     "bfs-glucose_mem_16_70": {
+        "status":"unstable",
         "args": [
             "FILECNF"
         ],
@@ -20,6 +22,7 @@
         "name": "BFS-Glucose_mem_16_70"
     },
     "bfs-glucose_mem_32_70": {
+        "status":"unstable",
         "args": [
             "FILECNF"
         ],
@@ -30,6 +33,7 @@
         "name": "BFS-Glucose_mem_32_70"
     },
     "bfs-glucose_mem_8_85": {
+        "status":"unstable",
         "args": [
             "FILECNF"
         ],
@@ -39,7 +43,8 @@
         "gz": true,
         "name": "BFS-Glucose_mem_8_85"
     },
-    "ccanr+glucose": {
+    "ccanr_glucose": {
+        "status":"unstable",
         "args": [
             "FILECNF",
             "RANDOMSEED",
@@ -52,6 +57,7 @@
         "name": "CCAnr+glucose"
     },
     "cryptominisat-4.1-st": {
+        "status":"unstable",
         "args": [
             "FILECNF"
         ],
@@ -62,6 +68,7 @@
         "name": "cryptominisat-4.1-st"
     },
     "cryptominisat-v41-tuned-st": {
+        "status":"unstable",
         "args": [
             "FILECNF"
         ],
@@ -72,6 +79,7 @@
         "name": "cryptominisat-v41-tuned-st"
     },
     "glucose": {
+        "status":"ok",
         "args": [
             "FILECNF"
         ],
@@ -82,6 +90,7 @@
         "name": "glucose"
     },
     "glue_lgl_split": {
+        "status":"unstable",
         "args": [
             "FILECNF"
         ],
@@ -92,6 +101,7 @@
         "name": "glue_lgl_split"
     },
     "glueminisat": {
+        "status":"unstable",
         "args": [
             "-show-model",
             "FILECNF"
@@ -103,6 +113,7 @@
         "name": "glueminisat"
     },
     "glueminisat_1": {
+        "status":"unstable",
         "args": [
             "-show-model",
             "FILECNF"
@@ -114,6 +125,7 @@
         "name": "glueminisat"
     },
     "lingeling": {
+        "status":"unstable",
         "args": [
             "-v",
             "FILECNF"
@@ -124,7 +136,8 @@
         "gz": true,
         "name": "Lingeling"
     },
-    "lingeling_(druplig)": {
+    "lingeling_druplig": {
+        "status":"unstable",
         "args": [
             "-v",
             "--druplig",
@@ -136,7 +149,8 @@
         "gz": true,
         "name": "Lingeling (druplig)"
     },
-    "lingeling_(no_agile)": {
+    "lingeling_no_agile": {
+        "status":"unstable",
         "args": [
             "-v",
             "--no-agile",
@@ -149,6 +163,7 @@
         "name": "Lingeling (no agile)"
     },
     "minisat_blbd": {
+        "status":"unstable",
         "args": [
             "FILECNF"
         ],
@@ -159,6 +174,7 @@
         "name": "minisat_blbd"
     },
     "minisat_hack_1430ed": {
+        "status":"unstable",
         "args": [
             "FILECNF"
         ],
@@ -169,6 +185,7 @@
         "name": "MiniSat_HACK_1430ED"
     },
     "minisat_hack_999ed": {
+        "status":"unstable",
         "args": [
             "FILECNF"
         ],
@@ -179,6 +196,7 @@
         "name": "MiniSat_HACK_999ED"
     },
     "nigma": {
+        "status":"unstable",
         "args": [
             "FILECNF",
             "--display-assignments-if-sat",
@@ -195,6 +213,7 @@
         "name": "Nigma"
     },
     "ntusat": {
+        "status":"unstable",
         "args": [
             "FILECNF"
         ],
@@ -205,6 +224,7 @@
         "name": "ntusat"
     },
     "ntusatbreak": {
+        "status":"unstable",
         "args": [
             "FILECNF",
             "/tmp"
@@ -216,6 +236,7 @@
         "name": "ntusatbreak"
     },
     "riss": {
+        "status":"unstable",
         "args": [
             "FILECNF",
             "/tmp"
@@ -227,6 +248,7 @@
         "name": "Riss"
     },
     "riss_1": {
+        "status":"fixme",
         "args": [
             "FILECNF",
             "/tmp"
@@ -238,6 +260,7 @@
         "name": "Riss"
     },
     "riss_2": {
+        "status":"unstable",
         "args": [
             "FILECNF",
             "/tmp"
@@ -249,6 +272,7 @@
         "name": "Riss"
     },
     "rokk": {
+        "status":"unstable",
         "args": [
             "FILECNF",
             "/tmp"
@@ -259,7 +283,8 @@
         "gz": true,
         "name": "ROKK"
     },
-    "rokk(sat)": {
+    "rokk_sat": {
+        "status":"unstable",
         "args": [
             "FILECNF"
         ],
@@ -270,6 +295,7 @@
         "name": "ROKK(sat)"
     },
     "rseq2014": {
+        "status":"unstable",
         "args": [
             "FILECNF",
             "-s",
@@ -283,6 +309,7 @@
         "name": "RSeq2014"
     },
     "sattime2014r": {
+        "status":"unstable",
         "args": [
             "FILECNF",
             "-seed",
@@ -295,6 +322,7 @@
         "name": "sattime2014r"
     },
     "satuzk": {
+        "status":"fixme",
         "args": [
             "/tmp",
             "satUZK-seq",
@@ -307,6 +335,7 @@
         "name": "SatUZK"
     },
     "sgseq": {
+        "status":"unstable",
         "args": [
             "FILECNF",
             "-s",
@@ -319,6 +348,7 @@
         "name": "SGSeq"
     },
     "sparrowtoriss": {
+        "status":"unstable",
         "args": [
             "FILECNF",
             "RANDOMSEED",
@@ -331,6 +361,7 @@
         "name": "SparrowToRiss"
     },
     "swdia5by": {
+        "status":"unstable",
         "args": [
             "FILECNF"
         ],
@@ -341,6 +372,7 @@
         "name": "SWDiA5BY"
     },
     "swdia5by_1": {
+        "status":"unstable",
         "args": [
             "-lbd-cut=4",
             "-core-learnt-hard-limit=1000000",
