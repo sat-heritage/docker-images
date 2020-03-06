@@ -18,7 +18,7 @@
     ]
   },
   "brchaff2": {
-    "status": "unstable",
+    "status": "FIXME problem when running",
     "name": "brchaff2",
     "call": "./brchaff2",
     "gz": false,
@@ -54,7 +54,7 @@
     ]
   },
   "cls": {
-    "status": "unstable",
+    "status": "ok",
     "name": "cls",
     "call": "./cls",
     "gz": false,
@@ -100,7 +100,7 @@
     ]
   },
   "eureka": {
-    "status": "unstable",
+    "status": "FIXME problem when running",
     "name": "eureka",
     "call": "./eureka",
     "gz": false,

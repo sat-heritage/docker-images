@@ -36,7 +36,7 @@
     ]
   },
   "farseer": {
-    "status": "unstable",
+    "status": "FIXME problem when running",
     "name": "farseer",
     "call": "./farseer",
     "gz": false,
@@ -90,11 +90,15 @@
     ]
   },
   "jquest2.jar": {
-    "status": "unstable",
+    "status": "ok",
     "name": "jquest2.jar",
-    "call": "./jquest2.jar",
+    "call": "java",
     "gz": false,
     "args": [
+      "-Xmx1600m",
+      "-Xms1600m",
+      "-jar",
+      "./jquest2.jar",
       "FILECNF"
     ]
   },
@@ -162,16 +166,20 @@
     ]
   },
   "opensatcomp.jar": {
-    "status": "fixme",
+    "status": "ok",
     "name": "opensatcomp.jar",
-    "call": "./opensatcomp.jar",
+    "call": "java",
     "gz": false,
     "args": [
+      "-Xmx1600m",
+      "-Xms1600m",
+      "-jar",
+      "./opensatcomp.jar",
       "FILECNF"
     ]
   },
   "qingting": {
-    "status": "unstable",
+    "status": "FIXME problem when running",
     "name": "QingTing",
     "call": "./QingTing",
     "gz": false,
@@ -198,7 +206,7 @@
     ]
   },
   "saturn": {
-    "status": "unstable",
+    "status": "ok",
     "name": "saturn",
     "call": "./saturn",
     "gz": false,
@@ -272,7 +280,7 @@
     ]
   },
   "unitwalk": {
-    "status": "unstable",
+    "status": "ok",
     "name": "UnitWalk",
     "call": "./UnitWalk",
     "gz": false,
@@ -282,7 +290,7 @@
     ]
   },
   "xqingting": {
-    "status": "unstable",
+    "status": "ok",
     "name": "xQingTing",
     "call": "./xQingTing",
     "gz": false,
