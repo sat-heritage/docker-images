@@ -137,14 +137,19 @@ class ImageManager(object):
 
 
 def get_list(args):
-    images = Repository(args).names
-    assert len(images), "No matching images!"
+    images = Repository(args).images
+    if(len(images) == 0):
+        sys.exit("No matching images!")
     return images
 
 def print_list(args):
     for image in get_list(args):
         print(image)
 
+def source(args):
+    repo = Repository(args)
+    for name in repo.images:
+        print(name)
 
 _info_first = ["name", "version", "authors"]
 _info_ignore = {"call"}
@@ -536,6 +541,15 @@ def main(redirected=False):
     p.add_argument("pattern", default="*", nargs="?",
             help="Pattern for filtering images (default: *)")
     p.set_defaults(func=print_list)
+
+    p = subparsers.add_parser("source",
+        help=f"List {DOCKER_NS} Download solver (source or binary)",
+        parents=[status_parser]
+    )
+    p.add_argument("pattern", default="*", nargs="?",
+            help="Pattern for filtering images (default: *)")
+    p.set_defaults(func=source)
+
 
     p = subparsers.add_parser("info",
             help=f"Display information about the solver embedded in the given Docker images",

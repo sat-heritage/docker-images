@@ -58,10 +58,12 @@
         "download_url": "http://satcompetition.org/edacc/sc14/solver-download/1399"
     },
     "ntusat": {
-        "download_url": "http://satcompetition.org/edacc/sc14/solver-download/1426"
+        "download_url": "http://satcompetition.org/edacc/sc14/solver-download/1426",
+        "RDEPENDS": "libgomp1"
     },
     "ntusatbreak": {
-        "download_url": "http://satcompetition.org/edacc/sc14/solver-download/1428"
+        "download_url": "http://satcompetition.org/edacc/sc14/solver-download/1428",
+        "RDEPENDS": "libgomp1"
     },
     "riss": {
         "download_url": "http://satcompetition.org/edacc/sc14/solver-download/1403"
