@@ -16,10 +16,10 @@ COPY setup.json fixtures/$SOLVER_NAME* /src/
 
 WORKDIR /src
 
-RUN test -f $SOLVER_NAME.pre_build.sh && sh $SOLVER_NAME.pre_build.sh || true
+RUN test -f $SOLVER_NAME.pre_build.sh && bash $SOLVER_NAME.pre_build.sh || true
 
-RUN cd /src/$SOLVER_NAME && sh starexec_build
+RUN cd /src/$SOLVER_NAME && bash starexec_build
 
-RUN test -f $SOLVER_NAME.post_build.sh && sh $SOLVER_NAME.post_build.sh || true
+RUN test -f $SOLVER_NAME.post_build.sh && bash $SOLVER_NAME.post_build.sh || true
 
 RUN mv /src/$SOLVER_NAME/bin /dist

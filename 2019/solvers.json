@@ -293,7 +293,7 @@
     ]
   },
   "mergesat": {
-    "status": "FIXME when compiling...",
+    "status": "ok",
     "name": "MergeSAT",
     "call": "./mergesat",
     "gz": true,
