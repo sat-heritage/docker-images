@@ -27,6 +27,7 @@
         "name": "CSHCapplLC"
     },
     "cshcappllg": {
+        "status" : "FIXME does not compile",
         "args": [
             ".//algport.py",
             "--tmpdir",
@@ -41,6 +42,7 @@
         "name": "CSHCapplLG"
     },
     "forl": {
+        "status" : "FIXME does not compile",
         "args": [
             "--verb",
             "0",
@@ -168,7 +170,7 @@
         "name": "minipure"
     },
     "mipsat": {
-        "status": "FIXME problem when running misses satelite...",
+        "status": "ok",
         "args": [
             "FILECNF",
             "-tmp",
@@ -212,7 +214,7 @@
         "name": "Nigma-NoPB"
     },
     "relback": {
-        "status" : "FIXME problem when building",
+        "status" : "ok",
         "args": [
             "FILECNF",
             "-tmp",
@@ -301,17 +303,19 @@
         "name": "satUZK"
     },
     "shatterglucose": {
+        "status": "ok",
         "args": [
             "FILECNF",
             "/tmp"
         ],
         "authors": "Jo Devriendt, Bart Bogaerts",
-        "call": "././runShatterGlucose.sh",
+        "call": "./runShatterGlucose.sh",
         "comments": "Launchcommand was:  ././runShatterGlucose.sh  <instance>   <tempdir> \nTrack was Core solvers, Sequential, Application SAT+UNSAT",
         "gz": true,
         "name": "ShatterGlucose"
     },
     "solver43a": {
+        "status": "ok",
         "args": [
             "FILECNF"
         ],
@@ -322,6 +326,7 @@
         "name": "Solver43a"
     },
     "solver43b": {
+        "status": "ok",
         "args": [
             "FILECNF"
         ],
@@ -332,6 +337,7 @@
         "name": "Solver43b"
     },
     "strangenight": {
+        "status": "FIXME does not compile",
         "args": [
             "FILECNF"
         ],
@@ -342,6 +348,7 @@
         "name": "strangenight"
     },
     "zenn": {
+        "status" : "ok",
         "args": [
             "-ms=2",
             "-gmr",
