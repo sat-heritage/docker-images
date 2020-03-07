@@ -1,9 +1,22 @@
-# SAT Heritage - Docker images
+# SAT Heritage - Docker images of SAT solvers
+
+##  A community-driven effort for archiving, building and running more than thousand SAT solvers
 
 ![Solvers count](https://badgen.net/https/github.com/sat-heritage/docker-images/releases/download/list/counter.json)
 [![PyPI version](https://badge.fury.io/py/satex.svg)](https://badge.fury.io/py/satex)
 [![Docker Hub](https://badgen.net/badge/DockerHub/satex/blue?icon=docker)](https://hub.docker.com/u/satex)
 [![Zenodo](https://badgen.net/badge/Zenodo/satex/5cb85c)](https://zenodo.org/communities/satex)
+
+## Principles
+
+SAT research has a long history of source code and binary releases, thanks to competitions organized every year.
+However, since every cycle of competitions has its own set of rules and an adhoc way of publishing source code and
+binaries, compiling or even running any solver may be harder than what it seems. And there has been more than a thousand solvers published so far, some of them released in the early 90's! 
+
+**This project drives a community-driven effort to archive and to allow easy compilation and running of all SAT solvers
+that have been released so far**.  
+
+Thanks to our tool, building (or running) a solver from its source (or from its binary) can be done in one line.
 
 ## Usage
 
