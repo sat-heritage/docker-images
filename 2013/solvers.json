@@ -101,7 +101,7 @@
         "name": "gluebit_lgl"
     },
     "glueminisat": {
-        "status": "ok",
+        "status": "fixme",
         "args": [
             "-compe",
             "FILECNF"
@@ -170,7 +170,7 @@
         "name": "minipure"
     },
     "mipsat": {
-        "status": "ok",
+        "status": "fixme",
         "args": [
             "FILECNF",
             "-tmp",
@@ -348,7 +348,7 @@
         "name": "strangenight"
     },
     "zenn": {
-        "status" : "ok",
+        "status" : "fixme",
         "args": [
             "-ms=2",
             "-gmr",
