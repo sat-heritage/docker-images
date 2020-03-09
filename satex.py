@@ -285,6 +285,8 @@ def docker_runs(args, images, docker_args=(), image_args=()):
     docker_argv = check_docker()
     container_id = f"satex{os.getpid()}"
     argv = ["run", "--name", container_id, "--rm"]
+    if hasattr(args, "timeout"):
+        argv += ["-e", f"TIMEOUT={args.timeout}"]
     for opt in _docker_opts:
         if getattr(args, opt) is not None:
             val = getattr(args, opt)
@@ -312,7 +314,13 @@ def docker_runs(args, images, docker_args=(), image_args=()):
             info(" ".join(cmd))
             ret = subprocess.run(cmd).returncode
             signal.signal(signal.SIGINT, signal.SIG_DFL)
-            assert ret == 0 or 10 <= ret <= 20, f"Solver failed! ({ret})"
+            if ret == 124:
+                if args.fail_if_timeout:
+                    raise subprocess.TimeoutExpired(image, args.timeout)
+                else:
+                    warn(f"{image} timeout")
+            else:
+                assert ret == 0 or 10 <= ret <= 20, f"Solver failed! ({ret})"
     if not args.pretend:
         return ret
 
@@ -565,6 +573,12 @@ def main(redirected=False):
     docker_parser.add_argument("-e", "--env", action="append",
             help="(Docker option) Set environment variables")
     _docker_opts.append("env")
+
+    run_parser = argparse.ArgumentParser(add_help=False)
+    run_parser.add_argument("--timeout", type=int, default=3600,
+            help="Timeout for solver (in seconds; default: 3600)")
+    run_parser.add_argument("--fail-if-timeout", action="store_true",
+            help="Fail if timeout occurs")
     #
     ##
 
@@ -586,7 +600,7 @@ def main(redirected=False):
 
     p = subparsers.add_parser("run",
             help=f"Run one or several {DOCKER_NS} Docker images",
-            parents=[spec_parser, docker_parser])
+            parents=[spec_parser, run_parser, docker_parser])
     p.add_argument("dimacs",
             help="DIMACS file (possibly gzipped)")
     p.add_argument("proof", nargs="?",
@@ -595,7 +609,7 @@ def main(redirected=False):
 
     p = subparsers.add_parser("run-raw",
             help=f"Run one or several {DOCKER_NS} Docker images with direct call to solvers",
-            parents=[spec_parser, docker_parser])
+            parents=[spec_parser, run_parser, docker_parser])
     p.add_argument("args", nargs=argparse.REMAINDER,
             help="Arguments to docker image")
     p.set_defaults(func=runraw_images)
@@ -628,7 +642,7 @@ def main(redirected=False):
 
         p = subparsers.add_parser("test",
                 help=f"Test {DOCKER_NS} Docker images",
-                parents=[spec_parser, docker_parser])
+                parents=[spec_parser, run_parser, docker_parser])
         p.add_argument("--cnf", "-f", default="tests/cmu-bmc-barrel6.cnf.gz")
         p.set_defaults(func=test_images)
 
