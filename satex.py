@@ -8,6 +8,7 @@ import glob
 import os
 from pathlib import Path
 import platform
+import shutil
 import subprocess
 import sys
 import tarfile
@@ -334,15 +335,25 @@ def run_shell(args):
 def extract(args):
     images = get_list(args)
     docker_argv = check_docker()
+    os.makedirs(args.output_dir, exist_ok=True)
     for imageid in images:
+        dest_dir = os.path.join(args.output_dir, imageid.replace(":","-"))
+        if os.path.exists(dest_dir):
+            print(f"Warning: destination '{dest_dir}' already exists.")
+            print(f"CTRL+C to abort; ENTER to DELETE '{dest_dir}'")
+            input()
+            shutil.rmtree(dest_dir)
         image = f"{DOCKER_NS}/{imageid}"
         info(image)
         prepare_image(args, docker_argv, image)
-        container = subprocess.check_output(docker_argv + ["create", image]).decode().strip()
-        subprocess.check_call(docker_argv + ["cp", f"{container}:/solvers/", args.output_dir])
-        os.rename(os.path.join(args.output_dir, "solvers"),
-                os.path.join(args.output_dir, imageid.replace(":","-")))
-        check_cmd(docker_argv + ["rm", container])
+        argv = docker_argv + ["run", "--rm", "-w", "/", "--entrypoint", "tar",
+                image,  "-c", "solvers"]
+        info(" ".join(argv))
+        with subprocess.Popen(argv, stdout=subprocess.PIPE,
+                stderr=sys.stderr) as p:
+            with tarfile.open(mode="r|", fileobj=p.stdout) as t:
+                t.extractall(args.output_dir)
+        os.rename(os.path.join(args.output_dir, "solvers"), dest_dir)
 
 #
 ##
