@@ -9,6 +9,7 @@ import os
 from pathlib import Path
 import platform
 import shutil
+import signal
 import subprocess
 import sys
 import tarfile
@@ -31,6 +32,9 @@ on_linux = platform.system() == "Linux"
 def error(msg):
     print(msg, file=sys.stderr)
     sys.exit(1)
+
+def warn(msg):
+    print("\033[1;33m! %s\033[0m" % msg, file=sys.stderr)
 
 def info(msg):
     print("\033[92m+ %s\033[0m" % msg, file=sys.stderr)
@@ -279,7 +283,8 @@ def prepare_image(args, docker_argv, image):
 _docker_opts = []
 def docker_runs(args, images, docker_args=(), image_args=()):
     docker_argv = check_docker()
-    argv = ["run", "--rm"]
+    container_id = f"satex{os.getpid()}"
+    argv = ["run", "--name", container_id, "--rm"]
     for opt in _docker_opts:
         if getattr(args, opt) is not None:
             val = getattr(args, opt)
@@ -299,8 +304,14 @@ def docker_runs(args, images, docker_args=(), image_args=()):
         if args.pretend:
             print(" ".join(cmd))
         else:
+            def killer(s,f):
+                warn("Killing solver...")
+                argv = docker_argv + ["kill", container_id]
+                subprocess.run(argv, stdout=subprocess.DEVNULL)
+            signal.signal(signal.SIGINT, killer)
             info(" ".join(cmd))
-            ret = subprocess.call(cmd)
+            ret = subprocess.run(cmd).returncode
+            signal.signal(signal.SIGINT, signal.SIG_DFL)
             assert ret == 0 or 10 <= ret <= 20, f"Solver failed! ({ret})"
     if not args.pretend:
         return ret
