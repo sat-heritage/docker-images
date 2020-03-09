@@ -29,8 +29,13 @@ usage() {
 }
 
 call_solver() {
-    set -x
-    "/solvers/${SOLVER_PATH}/${SOLVER_CALL}" "${@}"
+    if [ ${TIMEOUT} -eq 0 ]; then
+        set -x
+         "/solvers/${SOLVER_PATH}/${SOLVER_CALL}" "${@}"
+    else
+        set -x
+        timeout ${TIMEOUT} "/solvers/${SOLVER_PATH}/${SOLVER_CALL}" "${@}"
+    fi
 }
 
 mycall() {
@@ -39,7 +44,7 @@ mycall() {
         *) usage
     esac
 
-
+    export TIMEOUT=${TIMEOUT:-3600}
 
     FILECNF="${1}"
     if [[ "${FILECNF##*.}" == "gz" ]]; then
