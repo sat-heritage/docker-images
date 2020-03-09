@@ -127,7 +127,10 @@ class ImageManager(object):
         self.setup = repo.setup[self.entry].copy()
         self.setup.update(self.setup.get(self.solver, {}))
         self.registry = repo.registry[self.entry][self.solver]
-
+        self.vars = {
+            "SOLVER": self.solver,
+            "SOLVER_NAME": self.solver_name,
+        }
     @property
     def solver_name(self):
         return self.registry["name"]
@@ -146,15 +149,15 @@ def print_list(args):
     for image in get_list(args):
         print(image)
 
-def source(args):
-    sys.exit("In progress")
-    repo = Repository(args)
-    for name in repo.images:
-        print(name)
-
 _info_first = ["name", "version", "authors", "base_from"]
-_info_last = ["comment", "comments"]
+_info_last = ["download_url", "status", "comment", "comments"]
 _info_ignore = {"call"}
+_info_label = {
+    "base_from": "Environment",
+    "download_url": "Download URL",
+    "gz": "Gzip input",
+}
+_info_nowrap = {"download_url"}
 def print_info(args):
     repo = Repository(args)
     for name in repo.images:
@@ -168,21 +171,21 @@ def print_info(args):
         key_width = 0
         info = []
         for key in keys:
+            if key in image.setup:
+                value = image.setup[key].format(**image.vars)
+            elif key in image.registry:
+                value = image.registry[key]
+            else:
+                continue
+            name = _info_label.get(key, key.title())
             if key == "base_from":
-                name = "Environment"
-                value = image.setup[key]
                 builder_base = image.setup.get("builder_base")
                 if builder_base:
                     if builder_base == value:
                         value += " (same as build)"
                     else:
                         value += f" (build: {builder_base})"
-            else:
-                if key not in image.registry:
-                    continue
-                name = key.title()
-                value = image.registry[key]
-            if key in ["args", "argsproof"]:
+            elif key in ["args", "argsproof"]:
                 name = "Call"
                 if key == "argsproof":
                     name += " (proof)"
@@ -190,7 +193,7 @@ def print_info(args):
             else:
                 value = str(value)
             key_width = max(len(name), key_width)
-            info.append((name,value))
+            info.append({"key": key, "name": name, "value": value})
 
         key_width += 2
         line_width = key_width + 70
@@ -202,13 +205,17 @@ def print_info(args):
             color = 33
         print(f"{DOCKER_NS}/\033[1;{color}m{image.name}\033[0m")
         print("-"*line_width)
-        for (key, value) in info:
-            key = f"{key}: "
-            for p in value.splitlines():
-                for line in textwrap.wrap(p):
-                    print("{0:{key_width}}{1}".format(key, line,
-                        key_width=key_width))
-                    key = ""
+        for d in info:
+            name = f"{d['name']}: "
+            if d["key"] in _info_nowrap:
+                print("{0:{key_width}}{1}".format(name, d["value"],
+                            key_width=key_width))
+            else:
+                for p in d["value"].splitlines():
+                    for line in textwrap.wrap(p):
+                        print("{0:{key_width}}{1}".format(name, line,
+                            key_width=key_width))
+                        name = ""
         print()
 
 #
@@ -388,16 +395,11 @@ def build_images(args):
         image = ImageManager(name, repo)
         setup = image.setup
 
-        fmtvars = {
-            "SOLVER": image.solver,
-            "SOLVER_NAME": image.solver_name,
-        }
-
         root = str(image.entry)
 
-        build_args = {k: v.format(**fmtvars) for k,v in setup.items() if \
+        build_args = {k: v.format(**image.vars) for k,v in setup.items() if \
                 k not in hide_opts and isinstance(v, str)}
-        build_args.update(fmtvars)
+        build_args.update(image.vars)
 
         builder_path = setup["builder"]
         if not builder_path.startswith("generic/"):
@@ -554,15 +556,6 @@ def main(redirected=False):
     p.add_argument("pattern", default="*", nargs="?",
             help="Pattern for filtering images (default: *)")
     p.set_defaults(func=print_list)
-
-    p = subparsers.add_parser("source",
-        help=f"List {DOCKER_NS} Download solver (source or binary)",
-        parents=[status_parser]
-    )
-    p.add_argument("pattern", default="*", nargs="?",
-            help="Pattern for filtering images (default: *)")
-    p.set_defaults(func=source)
-
 
     p = subparsers.add_parser("info",
             help=f"Display information about the solver embedded in the given Docker images",
