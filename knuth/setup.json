@@ -3,5 +3,9 @@
     "base_version": "v1",
     "base_from": "debian:stretch-slim",
     "builder": ".",
-    "builder_base": "debian:stretch-slim"
+    "builder_base": "debian:stretch-slim",
+    "download_url": "https://www-cs-faculty.stanford.edu/~knuth/programs/{SOLVER_NAME}.w",
+    "sat11k": {
+        "download_url": "https://www-cs-faculty.stanford.edu/~knuth/programs/{{sat11.w,{SOLVER_NAME}.ch}}"
+    }
 }

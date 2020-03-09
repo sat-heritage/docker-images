@@ -59,6 +59,16 @@
       "--satex", "FILECNF"
     ]
   },
+  "sat11k": {
+    "status": "ok",
+    "name": "sat11k",
+    "authors": "Donald Knuth",
+    "call": "sat11k",
+    "gz": false,
+    "args": [
+      "--satex", "FILECNF"
+    ]
+  },
   "sat12": {
     "status": "ok",
     "name": "sat12",
