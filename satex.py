@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 
-from appdirs import user_cache_dir
 import argparse
 import fnmatch
 import json
@@ -22,10 +21,6 @@ __version__ = "0.98-dev"
 
 DOCKER_NS = "satex"
 REGISTRY_URL = "https://github.com/sat-heritage/docker-images/releases/download/list/list.tgz"
-
-cache_validity = 3600*4
-cache_dir = user_cache_dir("satex", "satex")
-cache_file = os.path.join(cache_dir, "list.tgz")
 
 on_linux = platform.system() == "Linux"
 
@@ -59,6 +54,12 @@ def fetch_registry(args, opener):
         with opener(f"{tag}/setup.json") as fp:
             cfg[tag] = json.load(fp)
     return reg, cfg
+
+if not IN_REPOSITORY:
+    from appdirs import user_cache_dir
+    cache_validity = 3600*4
+    cache_dir = user_cache_dir("satex", "satex")
+    cache_file = os.path.join(cache_dir, "list.tgz")
 
 def is_cache_valid(args):
     if args.refresh_list:
