@@ -34,6 +34,6 @@ jobs:
                 set -ex
                 cat list.diff
                 for x in `cat list.diff`; do
-                    satex build $x
-                    satex push $x
+                    python satex.py build $x
+                    python satex.py push $x
                 done
