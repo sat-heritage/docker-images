@@ -8,18 +8,20 @@ jobs:
     docker-push:
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkout@v2
             - uses: actions/setup-python@v1
-            - run: |
-                set -ex
-                python satex.py list > list.new
-                git checkout $BEFORE
-                python satex.py list > list.old
-                python -c "new=set(open('list.new').read().splitlines());old=set(open('list.old').read().splitlines());print(' '.join(new.difference(old)))" > list.diff
+            - uses: actions/checkout@v2
+              with:
+                  ref: ${{ github.event.before }}
+            - run: python satex.py list > list.old
+            - uses: actions/checkout@v2
+              with:
+                  ref: ${{ github.event.after }}
+                  clean: false
+            - run: python satex.py list > list.new
+            - name: diff
+              run: |
+                python -c "new=set(open('list.new').read().splitlines());old=set(open('list.old').read().splitlines());print(' '.join(new.difference(old)),end='')" > list.diff
                 echo ::set-env name=HAS_CHANGES::`test -s list.diff && echo 1 || echo 0`
-                git checkout ${GITHUB_REF}
-              env:
-                  BEFORE: ${{ github.event.push.before }}
             - name: Login to docker hub
               if: env.HAS_CHANGES == 1
               uses: actions-hub/docker/login@master
@@ -30,6 +32,7 @@ jobs:
               if: env.HAS_CHANGES == 1
               run: |
                 set -ex
+                cat list.diff
                 for x in `cat list.diff`; do
                     satex build $x
                     satex push $x

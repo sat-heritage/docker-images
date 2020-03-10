@@ -60,7 +60,7 @@
     ]
   },
   "sat11k": {
-    "status": "change to ok",
+    "status": "ok",
     "name": "sat11k",
     "authors": "Donald Knuth",
     "call": "sat11k",
