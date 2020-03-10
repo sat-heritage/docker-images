@@ -1,0 +1,43 @@
+name: docker-push
+on:
+    push:
+        branches:
+            - master
+
+jobs:
+    docker-push:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/setup-python@v1
+            - uses: actions/checkout@v2
+              with:
+                  ref: ${{ github.event.before }}
+            - run: python satex.py list > list.old
+            - uses: actions/checkout@v2
+              with:
+                  ref: ${{ github.event.after }}
+                  clean: false
+            - run: python satex.py list > list.new
+            - name: diff
+              run: |
+                python -c "new=set(open('list.new').read().splitlines());old=set(open('list.old').read().splitlines());print(' '.join(new.difference(old)),end='')" > list.diff
+                echo ::set-env name=HAS_CHANGES::`test -s list.diff && echo 1 || echo 0`
+            - name:  build
+              if: env.HAS_CHANGES == 1
+              run: |
+                set -ex
+                cat list.diff
+                for x in `cat list.diff`; do
+                    python satex.py build $x
+                done
+            - name: push
+              if: env.HAS_CHANGES == 1
+              run: |
+                set -ex
+                docker login -u "${DOCKER_USERNAME}" -p "${DOCKER_PASSWORD}"
+                for x in `cat list.diff`; do
+                    docker push satex/$x
+                done
+              env:
+                  DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+                  DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}

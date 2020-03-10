@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 
-from appdirs import user_cache_dir
 import argparse
 import fnmatch
 import json
@@ -8,6 +7,8 @@ import glob
 import os
 from pathlib import Path
 import platform
+import shutil
+import signal
 import subprocess
 import sys
 import tarfile
@@ -21,15 +22,14 @@ __version__ = "0.98-dev"
 DOCKER_NS = "satex"
 REGISTRY_URL = "https://github.com/sat-heritage/docker-images/releases/download/list/list.tgz"
 
-cache_validity = 3600*4
-cache_dir = user_cache_dir("satex", "satex")
-cache_file = os.path.join(cache_dir, "list.tgz")
-
 on_linux = platform.system() == "Linux"
 
 def error(msg):
     print(msg, file=sys.stderr)
     sys.exit(1)
+
+def warn(msg):
+    print("\033[1;33m! %s\033[0m" % msg, file=sys.stderr)
 
 def info(msg):
     print("\033[92m+ %s\033[0m" % msg, file=sys.stderr)
@@ -54,6 +54,12 @@ def fetch_registry(args, opener):
         with opener(f"{tag}/setup.json") as fp:
             cfg[tag] = json.load(fp)
     return reg, cfg
+
+if not IN_REPOSITORY:
+    from appdirs import user_cache_dir
+    cache_validity = 3600*4
+    cache_dir = user_cache_dir("satex", "satex")
+    cache_file = os.path.join(cache_dir, "list.tgz")
 
 def is_cache_valid(args):
     if args.refresh_list:
@@ -278,7 +284,10 @@ def prepare_image(args, docker_argv, image):
 _docker_opts = []
 def docker_runs(args, images, docker_args=(), image_args=()):
     docker_argv = check_docker()
-    argv = ["run", "--rm"]
+    container_id = f"satex{os.getpid()}"
+    argv = ["run", "--name", container_id, "--rm"]
+    if hasattr(args, "timeout"):
+        argv += ["-e", f"TIMEOUT={args.timeout}"]
     for opt in _docker_opts:
         if getattr(args, opt) is not None:
             val = getattr(args, opt)
@@ -298,9 +307,21 @@ def docker_runs(args, images, docker_args=(), image_args=()):
         if args.pretend:
             print(" ".join(cmd))
         else:
+            def killer(s,f):
+                warn("Killing solver...")
+                argv = docker_argv + ["kill", container_id]
+                subprocess.run(argv, stdout=subprocess.DEVNULL)
+            signal.signal(signal.SIGINT, killer)
             info(" ".join(cmd))
-            ret = subprocess.call(cmd)
-            assert ret == 0 or 10 <= ret <= 20, f"Solver failed! ({ret})"
+            ret = subprocess.run(cmd).returncode
+            signal.signal(signal.SIGINT, signal.SIG_DFL)
+            if ret == 124:
+                if args.fail_if_timeout:
+                    raise subprocess.TimeoutExpired(image, args.timeout)
+                else:
+                    warn(f"{image} timeout")
+            else:
+                assert ret == 0 or 10 <= ret <= 20, f"Solver failed! ({ret})"
     if not args.pretend:
         return ret
 
@@ -334,15 +355,25 @@ def run_shell(args):
 def extract(args):
     images = get_list(args)
     docker_argv = check_docker()
+    os.makedirs(args.output_dir, exist_ok=True)
     for imageid in images:
+        dest_dir = os.path.join(args.output_dir, imageid.replace(":","-"))
+        if os.path.exists(dest_dir):
+            print(f"Warning: destination '{dest_dir}' already exists.")
+            print(f"CTRL+C to abort; ENTER to DELETE '{dest_dir}'")
+            input()
+            shutil.rmtree(dest_dir)
         image = f"{DOCKER_NS}/{imageid}"
         info(image)
         prepare_image(args, docker_argv, image)
-        container = subprocess.check_output(docker_argv + ["create", image]).decode().strip()
-        subprocess.check_call(docker_argv + ["cp", f"{container}:/solvers/", args.output_dir])
-        os.rename(os.path.join(args.output_dir, "solvers"),
-                os.path.join(args.output_dir, imageid.replace(":","-")))
-        check_cmd(docker_argv + ["rm", container])
+        argv = docker_argv + ["run", "--rm", "-w", "/", "--entrypoint", "tar",
+                image,  "-c", "solvers"]
+        info(" ".join(argv))
+        with subprocess.Popen(argv, stdout=subprocess.PIPE,
+                stderr=sys.stderr) as p:
+            with tarfile.open(mode="r|", fileobj=p.stdout) as t:
+                t.extractall(args.output_dir)
+        os.rename(os.path.join(args.output_dir, "solvers"), dest_dir)
 
 #
 ##
@@ -543,6 +574,12 @@ def main(redirected=False):
     docker_parser.add_argument("-e", "--env", action="append",
             help="(Docker option) Set environment variables")
     _docker_opts.append("env")
+
+    run_parser = argparse.ArgumentParser(add_help=False)
+    run_parser.add_argument("--timeout", type=int, default=3600,
+            help="Timeout for solver (in seconds; default: 3600)")
+    run_parser.add_argument("--fail-if-timeout", action="store_true",
+            help="Fail if timeout occurs")
     #
     ##
 
@@ -564,7 +601,7 @@ def main(redirected=False):
 
     p = subparsers.add_parser("run",
             help=f"Run one or several {DOCKER_NS} Docker images",
-            parents=[spec_parser, docker_parser])
+            parents=[spec_parser, run_parser, docker_parser])
     p.add_argument("dimacs",
             help="DIMACS file (possibly gzipped)")
     p.add_argument("proof", nargs="?",
@@ -573,7 +610,7 @@ def main(redirected=False):
 
     p = subparsers.add_parser("run-raw",
             help=f"Run one or several {DOCKER_NS} Docker images with direct call to solvers",
-            parents=[spec_parser, docker_parser])
+            parents=[spec_parser, run_parser, docker_parser])
     p.add_argument("args", nargs=argparse.REMAINDER,
             help="Arguments to docker image")
     p.set_defaults(func=runraw_images)
@@ -606,7 +643,7 @@ def main(redirected=False):
 
         p = subparsers.add_parser("test",
                 help=f"Test {DOCKER_NS} Docker images",
-                parents=[spec_parser, docker_parser])
+                parents=[spec_parser, run_parser, docker_parser])
         p.add_argument("--cnf", "-f", default="tests/cmu-bmc-barrel6.cnf.gz")
         p.set_defaults(func=test_images)
 

@@ -32,7 +32,14 @@ call_solver() {
     export PATH=.:$PATH
     set -x
     cd "/solvers/${SOLVER_PATH}"
-    "${SOLVER_CALL}" "${@}"
+    set +x
+    if [ ${TIMEOUT} -eq 0 ]; then
+        set -x
+        "${SOLVER_CALL}" "${@}"
+    else
+        set -x
+        timeout ${TIMEOUT} "${SOLVER_CALL}" "${@}"
+    fi
 }
 
 mycall() {
@@ -57,7 +64,7 @@ mycall() {
     RANDOMSEED=${RANDOMSEED:-1234567}
     MAXNBTHREAD=${MAXNBTHREAD:-1}
     MEMLIMIT=${MEMLIMIT:-1024}
-    TIMEOUT=${TIMEOUT:-3600}
+    export TIMEOUT=${TIMEOUT:-3600}
 
     if [[ "${FILECNF##*.}" == "gz" ]]; then
         if [[ "$(get_param gz)" == "false" ]]; then
