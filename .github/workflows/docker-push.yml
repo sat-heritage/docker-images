@@ -22,18 +22,24 @@ jobs:
               run: |
                 python -c "new=set(open('list.new').read().splitlines());old=set(open('list.old').read().splitlines());print(' '.join(new.difference(old)),end='')" > list.diff
                 echo ::set-env name=HAS_CHANGES::`test -s list.diff && echo 1 || echo 0`
-            - name: Login to docker hub
-              if: env.HAS_CHANGES == 1
-              uses: actions-hub/docker/login@master
-              env:
-                  DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-                  DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-            - name:  build and push
+            - name:  build
               if: env.HAS_CHANGES == 1
               run: |
                 set -ex
                 cat list.diff
                 for x in `cat list.diff`; do
                     python satex.py build $x
-                    python satex.py push $x
+                done
+            - name: Login to docker hub
+              if: env.HAS_CHANGES == 1
+              uses: actions-hub/docker/login@master
+              env:
+                  DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+                  DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+            - name: push
+              if: env.HAS_CHANGES == 1
+              run: |
+                set -ex
+                for x in `cat list.diff`; do
+                    docker push satex/$x
                 done
