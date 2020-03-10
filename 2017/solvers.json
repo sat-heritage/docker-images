@@ -179,9 +179,9 @@
         ]
     },
     "riss7": {
-        "status": "FIXME no starexec_build",
+        "status": "ok",
         "name": "Riss7",
-        "call": "./riss7",
+        "call": "./riss",
         "gz": true,
         "args": [
             "FILECNF"
