@@ -1,0 +1,36 @@
+name: docker-push
+on:
+    push:
+        branches:
+            - master
+
+jobs:
+    docker-push:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+            - run: pip install .
+            - run: |
+                set -ex
+                satex list > list.new
+                git checkout $BEFORE
+                satex list > list.old
+                python -c "new=set(open('list.new').read().splitlines());old=set(open('list.old').read().splitlines());print(' '.join(new.difference(old)))" > list.diff
+                echo ::set-env name=HAS_CHANGES::`test -s list.diff && echo 1 || echo 0`
+                git checkout ${GITHUB_REF}
+              env:
+                  BEFORE: ${{ github.event.push.before }}
+            - name: Login to docker hub
+              if: env.HAS_CHANGES == 1
+              uses: actions-hub/docker/login@master
+              env:
+                  DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+                  DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+            - name:  build and push
+              if: env.HAS_CHANGES == 1
+              run: |
+                set -ex
+                for x in `cat list.diff`; do
+                    satex build $x
+                    satex push $x
+                done
