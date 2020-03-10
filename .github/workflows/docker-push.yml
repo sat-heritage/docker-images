@@ -30,16 +30,14 @@ jobs:
                 for x in `cat list.diff`; do
                     python satex.py build $x
                 done
-            - name: Login to docker hub
-              if: env.HAS_CHANGES == 1
-              uses: actions-hub/docker/login@master
-              env:
-                  DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-                  DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
             - name: push
               if: env.HAS_CHANGES == 1
               run: |
                 set -ex
+                docker login -u "${DOCKER_LOGIN}" -p "${DOCKER_PASSWORD}"
                 for x in `cat list.diff`; do
                     docker push satex/$x
                 done
+              env:
+                  DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+                  DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
