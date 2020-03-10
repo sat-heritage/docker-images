@@ -34,7 +34,7 @@ jobs:
               if: env.HAS_CHANGES == 1
               run: |
                 set -ex
-                docker login -u "${DOCKER_LOGIN}" -p "${DOCKER_PASSWORD}"
+                docker login -u "${DOCKER_USERNAME}" -p "${DOCKER_PASSWORD}"
                 for x in `cat list.diff`; do
                     docker push satex/$x
                 done
