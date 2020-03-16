@@ -2,4 +2,3 @@ file*.json
 __pycache__
 *.egg-info
 dist
-/2007/fixtures/rsat.post_build.sh
