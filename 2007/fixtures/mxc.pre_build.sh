@@ -1,0 +1,1 @@
+mv /src/mxc/dlbcompile.sh /src/mxc/build.sh

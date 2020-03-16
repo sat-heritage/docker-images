@@ -276,7 +276,7 @@
         ],
         "call": "./mxc",
         "gz": false,
-        "status": "FIXME compilation"
+        "status": "FIXME run"
     },
     "ornithorynque": {
         "name": "ornithorynque",
@@ -298,7 +298,7 @@
         ],
         "call": "./picosat",
         "gz": false,
-        "status": "FIXME compilation"
+        "status": "ok"
     },
     "ranov": {
         "name": "ranov",
