@@ -212,17 +212,6 @@
         "gz": false,
         "status": "ok"
     },
-    "minisat-sat_2007_(with_assertions)": {
-        "name": "minisat",
-        "version": "SAT 2007 (with assertions)",
-        "authors": "Niklas Sorensson and Niklas Een",
-        "args": [
-            "FILECNF"
-        ],
-        "call": "./minisat",
-        "gz": false,
-        "status": "FIXME compilation"
-    },
     "miraxt-v1": {
         "name": "MiraXT",
         "version": "v1",
