@@ -3,5 +3,11 @@
     "base_from": "debian:stretch-slim",
     "builder": "generic/starexec",
     "builder_base": "debian:8.6",
-    "download_url": "https://baldur.iti.kit.edu/sat-competition-2016/solvers/main/{SOLVER_NAME}.zip"
+    "download_url": "https://baldur.iti.kit.edu/sat-competition-2016/solvers/main/{SOLVER_NAME}.zip",
+    "cmsat5_main2" : {
+        "BUILD_DEPENDS": "xxd"
+    },
+    "cmsat5_autotune2" : {
+        "BUILD_DEPENDS": "xxd"
+    }
 }
