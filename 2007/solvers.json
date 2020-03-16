@@ -208,9 +208,9 @@
         "args": [
             "FILECNF"
         ],
-        "call": "./minisat_noassertions",
+        "call": "./minisat_static",
         "gz": false,
-        "status": "FIXME compilation"
+        "status": "ok"
     },
     "minisat-sat_2007_(with_assertions)": {
         "name": "minisat",
