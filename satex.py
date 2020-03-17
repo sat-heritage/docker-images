@@ -281,6 +281,14 @@ def prepare_image(args, docker_argv, image):
         info(" ".join(cmd))
         subprocess.check_call(cmd)
 
+def easy_volume(v):
+    if ":" in v:
+        orig, dest = v.split(":")
+        if orig[0] != "/" and os.path.isdir(orig):
+            orig = os.path.abspath(orig)
+        v = f"{orig}:{dest}"
+    return v
+
 _docker_opts = []
 def docker_runs(args, images, docker_args=(), image_args=()):
     docker_argv = check_docker()
