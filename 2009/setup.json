@@ -42,5 +42,8 @@
     },
     "sat4j-core": {
         "RDEPENDS": "openjdk-6-jre"
+    },
+    "circus" : {
+        "BUILD_DEPENDS" : "libfl-dev flex bison libc6-dev libc6-dev-i386"
     }
 }

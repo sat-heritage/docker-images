@@ -34,7 +34,7 @@
         ],
         "call": "./CirCUs",
         "gz": false,
-        "status": "FIXME misses flex:i386"
+        "status": "FIXME misses libl for flex"
     },
     "clasp": {
         "name": "clasp",
@@ -285,9 +285,9 @@
             "FILECNF",
             "c"
         ],
-        "call": "lysat.sh",
+        "call": "minisat_static",
         "gz": false,
-        "status": "FIXME build and install (minisat)"
+        "status": "ok"
     },
     "lysat-i": {
         "name": "LySAT",
