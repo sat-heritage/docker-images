@@ -6,11 +6,15 @@
     "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2009-src/{SOLVER_NAME}.zip",
     "BUILD_DEPENDS": "gcc-multilib g++-multilib libc6-i386 libc6-dev-i386 lib32z1-dev",
     "gnovelty-plus2": {
-        "BUILD_DEPENDS": "libboost1.35-dev"
+        "BUILD_DEPENDS": "wget"
     },
     "gnovelty-plus-t": {
         "BUILD_DEPENDS": "libboost-dev"
     },
+    "gnovelty-plus2-h": {
+        "BUILD_DEPENDS": "wget"
+    },
+
     "kw": {
         "builder": "generic/binary-v1",
         "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2009-bin/{SOLVER_NAME}"

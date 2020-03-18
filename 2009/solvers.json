@@ -95,7 +95,7 @@
         ],
         "call": "./gnovelty+2",
         "gz": false,
-        "status": "FIXME compile error due to boost"
+        "status": "ok"
     },
     "gnovelty-plus2-h": {
         "name": "gnovelty+2-H",
@@ -107,7 +107,7 @@
         ],
         "call": "./gnovelty+2-H",
         "gz": false,
-        "status": "FIXME compile error due to boost"
+        "status": "ok"
     },
     "gnovelty-plus-t": {
         "name": "gNovelty+-T",
@@ -366,12 +366,11 @@
         "version": "2009-03-22",
         "authors": "Markus Iser",
         "args": [
-            "FILECNF",
-            "-random-seed=RANDOMSEED"
+            "FILECNF"
         ],
-        "call": "SatELiteGTI",
+        "call": "minisat",
         "gz": false,
-        "status": "FIXME build and install (minisat)"
+        "status": "ok"
     },
     "minisat_cumr": {
         "name": "minisat_cumr",
