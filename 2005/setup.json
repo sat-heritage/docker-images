@@ -3,5 +3,12 @@
     "base_from": "debian:stretch-slim",
     "builder": "generic/binary-v1",
     "builder_base": "debian:8.6",
-    "download_url": "https://zenodo.org/record/3699637/files/{SOLVER_NAME}?download=1"
+    "download_url": "https://zenodo.org/record/3699637/files/{SOLVER_NAME}?download=1",
+    "sat4j.jar" : {
+        "RDEPENDS" : "default-jre"
+    },
+    "sat4j-sat2005.jar" : {
+        "RDEPENDS" : "default-jre"
+    }
+
 }

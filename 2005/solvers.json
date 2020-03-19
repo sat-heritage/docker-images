@@ -1,6 +1,6 @@
 {
   "adaptnovelty": {
-    "status": "unstable",
+    "status": "ok",
     "name": "adaptnovelty",
     "call": "./adaptnovelty",
     "gz": false,
@@ -28,7 +28,7 @@
     ]
   },
   "circusd": {
-    "status": "unstable",
+    "status": "ok",
     "name": "CirCUsD",
     "call": "./CirCUsD",
     "gz": false,
@@ -199,7 +199,7 @@
     ]
   },
   "kcnfs": {
-    "status": "unstable",
+    "status": "ok",
     "name": "kcnfs",
     "call": "./kcnfs",
     "gz": false,
@@ -208,7 +208,7 @@
     ]
   },
   "kcnfs-2004": {
-    "status": "unstable",
+    "status": "ok",
     "name": "kcnfs-2004",
     "call": "./kcnfs-2004",
     "gz": false,
@@ -307,29 +307,38 @@
     ]
   },
   "saps": {
-    "status": "fixme",
+    "status": "ok",
     "name": "saps",
     "call": "./saps",
     "gz": false,
     "args": [
-      "FILECNF"
+      "FILECNF",
+      "RANDOMSEED"
     ]
   },
   "sat4j.jar": {
-    "status": "fixme",
+    "status": "ok",
     "name": "sat4j.jar",
-    "call": "./sat4j.jar",
+    "call": "java",
     "gz": false,
-    "args": [
+    "args" : [
+      "-Xms5g",
+      "-Xmx5g",
+      "-jar",
+      "./sat4j.jar",
       "FILECNF"
     ]
   },
   "sat4j-sat2005.jar": {
-    "status": "fixme",
+    "status": "ok",
     "name": "sat4j-sat2005.jar",
-    "call": "./sat4j-sat2005.jar",
+    "call": "java",
     "gz": false,
-    "args": [
+    "args" : [
+      "-Xms5g",
+      "-Xmx5g",
+      "-jar",
+      "./sat4j-sat2005.jar",
       "FILECNF"
     ]
   },
@@ -361,12 +370,13 @@
     ]
   },
   "vw": {
-    "status": "fixme",
+    "status": "ok",
     "name": "vw",
     "call": "./vw",
     "gz": false,
     "args": [
-      "FILECNF"
+      "FILECNF",
+      "RANDOMSEED"
     ]
   },
   "wllsatv1": {
