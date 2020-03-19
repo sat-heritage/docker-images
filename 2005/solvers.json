@@ -344,8 +344,8 @@
   },
   "satelitegti": {
     "status": "fixme",
-    "name": "sateliteGTI.tgz",
-    "call": "./sateliteGTI",
+    "name": "sateliteGTI",
+    "call": "./SatELiteGTI",
     "gz": false,
     "args": [
       "FILECNF"
