@@ -133,7 +133,7 @@
         ],
         "call": "./gnovelty+",
         "gz": false,
-        "status": "FIXME compile error due to boost"
+        "status": "ok"
     },
     "gnovelty-plus2-t-h": {
         "name": "gNovelty+-v2-T-H",
@@ -146,7 +146,7 @@
         ],
         "call": "./gnovelty+",
         "gz": false,
-        "status": "FIXME compile error due to boost"
+        "status": "ok"
     },
     "hybrid2": {
         "name": "Hybrid2",

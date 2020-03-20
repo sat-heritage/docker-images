@@ -6,15 +6,28 @@
     "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2009-src/{SOLVER_NAME}.zip",
     "BUILD_DEPENDS": "gcc-multilib g++-multilib libc6-i386 libc6-dev-i386 lib32z1-dev",
     "gnovelty-plus2": {
-        "BUILD_DEPENDS": "wget"
+        "base_from": "debian:stretch-slim",
+        "builder_base":"debian:8.6",
+        "BUILD_DEPENDS": "libboost-dev"
     },
     "gnovelty-plus-t": {
         "BUILD_DEPENDS": "libboost-dev"
     },
     "gnovelty-plus2-h": {
-        "BUILD_DEPENDS": "wget"
+        "base_from": "debian:stretch-slim",
+        "builder_base":"debian:8.6",
+        "BUILD_DEPENDS": "libboost-dev"
     },
-
+    "gnovelty-plus2-t" : {
+        "base_from": "debian:stretch-slim",
+        "builder_base":"debian:8.6",
+        "BUILD_DEPENDS": "libboost-dev"
+    },
+    "gnovelty-plus2-t-h" : {
+        "base_from": "debian:stretch-slim",
+        "builder_base":"debian:8.6",
+        "BUILD_DEPENDS": "libboost-dev"
+    },
     "kw": {
         "builder": "generic/binary-v1",
         "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2009-bin/{SOLVER_NAME}"
@@ -48,6 +61,8 @@
         "RDEPENDS": "openjdk-6-jre"
     },
     "circus" : {
-        "BUILD_DEPENDS" : "libfl-dev flex bison libc6-dev libc6-dev-i386"
+        "base_from": "debian:stretch-slim",
+        "builder_base":"debian:8.6",
+        "BUILD_DEPENDS" : "libfl-dev flex bison libc6-dev libc6-dev-i386 zlib1g zlib1g-dev"
     }
 }
