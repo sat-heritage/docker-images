@@ -343,7 +343,7 @@
     ]
   },
   "satelitegti": {
-    "status": "fixme",
+    "status": "ok",
     "name": "sateliteGTI",
     "call": "./SatELiteGTI",
     "gz": false,
@@ -363,7 +363,7 @@
   "vallst": {
     "status": "fixme",
     "name": "vallst.tgz",
-    "call": "./vallst.tgz",
+    "call": "./vallst",
     "gz": false,
     "args": [
       "FILECNF"

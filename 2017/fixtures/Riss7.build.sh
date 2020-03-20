@@ -1,10 +1,11 @@
-#set -x
-#mkdir debug
-#cd debug
-#cmake -D DRATPROOF=ON ..
-#make riss-simp
-
-#make riss-core
+mv riss7 Riss7
+set -x
+mkdir debug
+mkdir bin
+cd debug
+cmake -D DRATPROOF=ON ..
+make riss-simp
+make riss-core
 
 # Copy all scripts to the bin/ directory
-#make scripts
+cp bin/* ../bin
