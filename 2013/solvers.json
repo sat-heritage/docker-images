@@ -136,7 +136,7 @@
         "name": "gluH_simp"
     },
     "lingeling": {
-        "status": "FIXME build does not work",
+        "status": "ok",
         "args": [
             "FILECNF"
         ],
@@ -147,7 +147,7 @@
         "name": "Lingeling"
     },
     "lingeling_1": {
-        "status": "FIXME build does not work",
+        "status": "ok",
         "args": [
             "FILECNF"
         ],
@@ -348,7 +348,7 @@
         "name": "strangenight"
     },
     "zenn": {
-        "status" : "fixme",
+        "status" : "ok",
         "args": [
             "-ms=2",
             "-gmr",
