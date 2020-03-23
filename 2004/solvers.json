@@ -154,30 +154,33 @@
     ]
   },
   "isat1": {
-    "status": "unstable",
+    "status": "ok",
     "name": "ISAT1",
     "call": "./ISAT1",
     "gz": false,
     "args": [
-      "FILECNF"
+      "FILECNF",
+      "RANDOMSEED"
     ]
   },
   "isat2": {
-    "status": "unstable",
+    "status": "ok",
     "name": "ISAT2",
     "call": "./ISAT2",
     "gz": false,
     "args": [
-      "FILECNF"
+      "FILECNF",
+      "RANDOMSEED"
     ]
   },
   "isat3": {
-    "status": "unstable",
+    "status": "ok",
     "name": "ISAT3",
     "call": "./ISAT3",
     "gz": false,
     "args": [
-      "FILECNF"
+      "FILECNF",
+      "RANDOMSEED"
     ]
   },
   "jerusat1.3": {
@@ -244,11 +247,15 @@
     ]
   },
   "minilearning.jar": {
-    "status": "unstable",
+    "status": "ok",
     "name": "minilearning.jar",
-    "call": "./minilearning.jar",
+    "call": "java",
     "gz": false,
     "args": [
+      "-Xms5g",
+      "-Xmx5g",
+      "-jar",
+      "minilearning.jar",
       "FILECNF"
     ]
   },
@@ -276,16 +283,18 @@
     "call": "./novelty35",
     "gz": false,
     "args": [
-      "FILECNF"
+      "FILECNF",
+      "RANDOMSEED"
     ]
   },
   "novelty50": {
-    "status": "unstable",
+    "status": "ok",
     "name": "novelty50",
     "call": "./novelty50",
     "gz": false,
     "args": [
-      "FILECNF"
+      "FILECNF",
+      "RANDOMSEED"
     ]
   },
   "oepira": {
@@ -343,12 +352,13 @@
     ]
   },
   "rsaps": {
-    "status": "unstable",
+    "status": "ok",
     "name": "rsaps",
     "call": "./rsaps",
     "gz": false,
     "args": [
-      "FILECNF"
+      "FILECNF",
+      "RANDOMSEED"
     ]
   },
   "saprover": {
@@ -361,21 +371,23 @@
     ]
   },
   "saps": {
-    "status": "unstable",
+    "status": "ok",
     "name": "saps",
     "call": "./saps",
     "gz": false,
     "args": [
-      "FILECNF"
+      "FILECNF",
+      "RANDOMSEED"
     ]
   },
   "sapsnr": {
-    "status": "unstable",
+    "status": "ok",
     "name": "sapsnr",
     "call": "./sapsnr",
     "gz": false,
     "args": [
-      "FILECNF"
+      "FILECNF",
+      "RANDOMSEED"
     ]
   },
   "satelite_iota9": {
@@ -469,7 +481,7 @@
     ]
   },
   "siege_v4": {
-    "status": "unstable",
+    "status": "ok",
     "name": "siege_v4",
     "call": "./siege_v4",
     "gz": false,
@@ -487,12 +499,13 @@
     ]
   },
   "unitwalk": {
-    "status": "unstable",
+    "status": "ok",
     "name": "UnitWalk",
     "call": "./UnitWalk",
     "gz": false,
     "args": [
-      "FILECNF"
+      "FILECNF",
+      "RANDOMSEED"
     ]
   },
   "walksatauto.dir.tgz": {

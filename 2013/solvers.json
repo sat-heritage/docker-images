@@ -101,7 +101,7 @@
         "name": "gluebit_lgl"
     },
     "glueminisat": {
-        "status": "fixme",
+        "status": "ok",
         "args": [
             "-compe",
             "FILECNF"
