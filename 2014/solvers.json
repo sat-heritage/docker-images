@@ -247,7 +247,7 @@
         "name": "Riss"
     },
     "riss_1": {
-        "status":"fixme",
+        "status":"ok",
         "args": [
             "FILECNF",
             "/tmp"

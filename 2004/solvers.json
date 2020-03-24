@@ -278,7 +278,7 @@
     ]
   },
   "novelty35": {
-    "status": "unstable",
+    "status": "ok",
     "name": "novelty35",
     "call": "./novelty35",
     "gz": false,

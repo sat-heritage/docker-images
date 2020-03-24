@@ -459,9 +459,9 @@
         "args": [
             "FILECNF"
         ],
-        "call": "./TiniSatELite",
+        "call": "./tinisatelite.sh",
         "gz": false,
-        "status": "fixme"
+        "status": "ok"
     },
     "tts": {
         "name": "TTS",
