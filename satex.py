@@ -17,7 +17,7 @@ import textwrap
 import time
 from urllib.request import urlopen
 
-__version__ = "0.98-dev"
+__version__ = "0.99-dev"
 
 DOCKER_NS = "satex"
 REGISTRY_URL = "https://github.com/sat-heritage/docker-images/releases/download/list/list.tgz"
@@ -567,8 +567,7 @@ def main(redirected=False):
     status_parser.add_argument("--all", "-a", action="store_true",
             help="Consider all images, with any status")
 
-    spec_parser = argparse.ArgumentParser(add_help=False,
-            parents=[status_parser])
+    spec_parser = argparse.ArgumentParser(add_help=False)
     spec_parser.add_argument("pattern",
             help="Pattern for filtering images")
 
@@ -609,7 +608,7 @@ def main(redirected=False):
 
     p = subparsers.add_parser("run",
             help=f"Run one or several {DOCKER_NS} Docker images",
-            parents=[spec_parser, run_parser, docker_parser])
+            parents=[spec_parser, status_parser, run_parser, docker_parser])
     p.add_argument("dimacs",
             help="DIMACS file (possibly gzipped)")
     p.add_argument("proof", nargs="?",
@@ -618,7 +617,7 @@ def main(redirected=False):
 
     p = subparsers.add_parser("run-raw",
             help=f"Run one or several {DOCKER_NS} Docker images with direct call to solvers",
-            parents=[spec_parser, run_parser, docker_parser])
+            parents=[spec_parser, status_parser, run_parser, docker_parser])
     p.add_argument("args", nargs=argparse.REMAINDER,
             help="Arguments to docker image")
     p.set_defaults(func=runraw_images)
@@ -631,7 +630,7 @@ def main(redirected=False):
 
     p = subparsers.add_parser("extract",
             help=f"Extract solvers binaries from {DOCKER_NS} Docker images",
-            parents=[spec_parser, docker_parser])
+            parents=[spec_parser, status_parser, docker_parser])
     p.add_argument("output_dir", help="Output directory")
     p.set_defaults(func=extract)
 
@@ -644,20 +643,20 @@ def main(redirected=False):
     if IN_REPOSITORY:
         p = subparsers.add_parser("build",
                 help=f"Build {DOCKER_NS} Docker images",
-                parents=[spec_parser])
+                parents=[spec_parser, status_parser])
         p.add_argument("--no-cache", action="store_true",
                 help="docker build option")
         p.set_defaults(func=build_images)
 
         p = subparsers.add_parser("test",
                 help=f"Test {DOCKER_NS} Docker images",
-                parents=[spec_parser, run_parser, docker_parser])
+                parents=[spec_parser, status_parser, run_parser, docker_parser])
         p.add_argument("--cnf", "-f", default="tests/cmu-bmc-barrel6.cnf.gz")
         p.set_defaults(func=test_images)
 
         p = subparsers.add_parser("push",
                 help=f"Push {DOCKER_NS} Docker images",
-                parents=[spec_parser])
+                parents=[spec_parser, status_parser])
         p.set_defaults(func=push_images)
 
     subparsers.add_parser("version",
