@@ -66,7 +66,7 @@ validation status. and possibly comments.
 
 ```
 satex info glucose*
-satex info *:2018 --all
+satex info *:2018
 ```
 
 ### Run images
