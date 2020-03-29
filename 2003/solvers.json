@@ -36,7 +36,7 @@
     ]
   },
   "farseer": {
-    "status": "FIXME problem when running",
+    "status": "ok",
     "name": "farseer",
     "call": "./farseer",
     "gz": false,
