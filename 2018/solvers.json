@@ -650,5 +650,68 @@
             "-model",
             "-maxmemory=50000"
         ]
+    },
+    "ddc-submit18" : {
+        "status": "unstable",
+        "tracks" : ["parallel"],
+        "name": "ddc-submit18",
+        "call": "./glucose-syrup",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ]
+    },
+    "manyglucose" : {
+        "status": "ok",
+        "tracks" : ["parallel"],
+        "name": "manyglucose-4.1-2-satcomp2018",
+        "call": "./manyglucose-4.1-2_release",
+        "gz": true,
+        "args": [
+            "-maxmemory=50000",
+            "-model",
+            "FILECNF",
+            "nthreads=MAXNBTHREADS"
+        ]
+    },
+    "penelope_mdcl" : {
+        "status": "unstable",
+        "tracks" : ["parallel"],
+        "name": "penelope_MDCL",
+        "call": "./penelope",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ]
+    },
+    "plingeling" : {
+        "status": "ok",
+        "tracks" : ["parallel"],
+        "name": "plingeling-sc18-starexec",
+        "call": "./plingeling",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ]
+    },
+    "scalope" : {
+        "status": "FIXME TEMPDIR",
+        "tracks" : ["parallel"],
+        "name": "scalope",
+        "call": "./solver.sh",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ]
+    },
+    "treengeling" : {
+        "status": "ok",
+        "tracks" : ["parallel"],
+        "name": "treengeling-sc18-starexec",
+        "call": "./treengeling",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ]
     }
 }

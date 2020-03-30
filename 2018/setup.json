@@ -20,9 +20,34 @@
         "builder": "generic/v1",
         "download_url": "http://sat2018.forsyte.tuwien.ac.at/solvers/parallel/{SOLVER_NAME}.tar.gz"
     },
+    "ddc-submit18" : {
+        "builder": "generic/v1",
+        "download_url": "http://sat2018.forsyte.tuwien.ac.at/solvers/parallel/{SOLVER_NAME}.tar.gz",
+        "BUILD_DEPENDS" : "libopenmpi-dev mpic++"
+    },
+    "manyglucose" : {
+        "builder": "generic/v1",
+        "download_url": "http://sat2018.forsyte.tuwien.ac.at/solvers/parallel/{SOLVER_NAME}.zip"
+    },
+    "penelope_mdcl" : {
+        "builder": "generic/v1",
+        "download_url": "http://sat2018.forsyte.tuwien.ac.at/solvers/parallel/{SOLVER_NAME}.zip"
+    },
+    "plingeling" : {
+        "builder": "generic/v1",
+        "download_url": "http://sat2018.forsyte.tuwien.ac.at/solvers/parallel/{SOLVER_NAME}.zip"
+    },
+    "scalope" : {
+        "builder": "generic/v1",
+        "download_url": "http://sat2018.forsyte.tuwien.ac.at/solvers/parallel/{SOLVER_NAME}.zip"
+    },
     "syrup" : {
         "builder": "generic/v1",
         "download_url": "http://sat2018.forsyte.tuwien.ac.at/solvers/parallel/{SOLVER_NAME}.tgz"
+    },
+     "treengeling" : {
+        "builder": "generic/v1",
+        "download_url": "http://sat2018.forsyte.tuwien.ac.at/solvers/parallel/{SOLVER_NAME}.zip"
     },
     "painless-mcomsps" : {
         "builder": "generic/v1",
