@@ -106,7 +106,7 @@ class Repository(object):
         select_unstable = select_all or hasattr(args, "unstable") and args.unstable
         select_stable = select_all or (not select_unstable and not select_fixme)
 
-        select_tracks = set([args.track]) if hasattr(args, "track") else None
+        select_tracks = set([args.track]) if hasattr(args, "track") and args.track else None
 
         for entry in self.registry:
             for solver in self.registry[entry]:
