@@ -589,7 +589,7 @@
         ]
     },
     "abcd_para18" : {
-        "status": "FIXME",
+        "status": "ok",
         "tracks" : ["parallel"],
         "name": "abcd_para18",
         "call": "./abcdsat_p18",
@@ -599,10 +599,41 @@
         ]
     },
     "cbpenelope2018" : {
-        "status": "FIXME",
+        "status": "FIXME $TEMPDIR",
         "tracks" : ["parallel"],
         "name": "cbpenelope2018",
-        "call": "./abcdsat_p18",
+        "call": "./solver.sh",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ]
+    },
+    "ccspenelope2018" : {
+        "status": "FIXME : $TEMPDIR",
+        "tracks" : ["parallel"],
+        "name": "ccspenelope2018",
+        "call": "./solver.sh",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ]
+    },
+    "cmsat55_run_parallel" : {
+        "status": "unstable",
+        "tracks" : ["parallel"],
+        "name": "cmsat55_run_parallel",
+        "call": "./cryptominisat5_simple",
+        "gz": true,
+        "args": [
+            "FILECNF",
+            "--threads=MAXNBTHREAD"
+        ]
+    },
+    "painless-mcomsps" : {
+        "status": "ok",
+        "tracks" : ["parallel"],
+        "name": "painless-mcomsps",
+        "call": "./painless-mcomsps",
         "gz": true,
         "args": [
             "FILECNF"

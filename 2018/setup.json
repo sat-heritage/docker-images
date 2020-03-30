@@ -12,8 +12,20 @@
         "builder": "generic/v1",
         "download_url": "http://sat2018.forsyte.tuwien.ac.at/solvers/parallel/{SOLVER_NAME}.zip"
     },
+    "ccspenelope2018" : {
+        "builder": "generic/v1",
+        "download_url": "http://sat2018.forsyte.tuwien.ac.at/solvers/parallel/{SOLVER_NAME}.zip"
+    },
+    "cmsat55_run_parallel" : {
+        "builder": "generic/v1",
+        "download_url": "http://sat2018.forsyte.tuwien.ac.at/solvers/parallel/{SOLVER_NAME}.tar.gz"
+    },
     "syrup" : {
         "builder": "generic/v1",
         "download_url": "http://sat2018.forsyte.tuwien.ac.at/solvers/parallel/{SOLVER_NAME}.tgz"
+    },
+    "painless-mcomsps" : {
+        "builder": "generic/v1",
+        "download_url": "http://sat2018.forsyte.tuwien.ac.at/solvers/parallel/{SOLVER_NAME}.zip"
     }
 }
