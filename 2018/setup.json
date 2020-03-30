@@ -3,5 +3,9 @@
     "base_from": "debian:stretch-slim",
     "builder": "generic/starexec",
     "builder_base": "debian:9.5-slim",
-    "download_url": "http://sat2018.forsyte.tuwien.ac.at/solvers/main_and_glucose_hack/{SOLVER_NAME}.zip"
+    "download_url": "http://sat2018.forsyte.tuwien.ac.at/solvers/main_and_glucose_hack/{SOLVER_NAME}.zip",
+    "syrup" : {
+        "builder": "generic/v1",
+        "download_url": "http://sat2018.forsyte.tuwien.ac.at/solvers/parallel/{SOLVER_NAME}.tgz"
+    }
 }
