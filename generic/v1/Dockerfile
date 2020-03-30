@@ -52,7 +52,7 @@ RUN ASSET="$(ls /assets/*)" && set -ex && \
     if test -f /unpack.sh; then bash /unpack.sh "${ASSET}"; \
     else ext="${ASSET##*.}" && b="${ASSET%.*}" && \
         ext="${ext%\?*}" && \
-        if [ "${b##.*}" = "tar" ]; then ext="tar.${ext}" && b="${b%.*}"; fi; \
+        if [ "${b##*.}" = "tar" ]; then ext="tar.${ext}" && b="${b%.*}"; fi; \
         case "${ext}" in \
         tgz|tar.gz) tar xvzf "${ASSET}";; \
         zip) unzip "${ASSET}";; \
