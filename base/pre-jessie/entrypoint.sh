@@ -23,6 +23,7 @@ fi
 usage() {
     echo "Usage:"
     echo "  FILECNF [FILEPROOF]"
+    echo "  --mode MODE FILECNF [FILEPROOF]"
     echo "  --raw <$SOLVER arguments>"
     echo "  -h"
     exit 1
@@ -43,17 +44,16 @@ call_solver() {
 }
 
 mycall() {
-    case $# in
-        1) k=args ;;
-        2) k=argsproof ;;
-        *) usage
-    esac
+    if [ $# -eq 0 ]; then usage; fi
+    k=$1; shift
     args=()
     while read -r value; do
         args+=("$value")
     done < <(get_param $k|jq -r '.[]')
     if [ -z ${args} ]; then
-        echo "Error, this solver does not support arguments $k";
+        echo "WARNING, this solver has no $k, falling back to defaults.">&2
+        mycall args "${@}"
+        return
     fi
 
     FILECNF="`readlink -f -- "${1}"`"
@@ -94,5 +94,14 @@ fi
 case "${1:-}" in
     -h|--help) usage;;
     --raw) shift; call_solver "${@}";;
-    *) mycall "${@}"
+    --mode) shift
+        mode=$1; shift
+        mycall args$mode "${@}";;
+    *)
+        case $# in
+            1) mode=args;;
+            2) mode=argsproof;;
+            *) usage
+        esac
+        mycall $mode "${@}"
 esac
