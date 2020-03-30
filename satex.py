@@ -317,7 +317,8 @@ def docker_runs(args, images, docker_args=(), image_args=()):
             else:
                 argv += ["--%s" % opt, val]
     argv += list(docker_args)
-    image_argv = list(image_args)
+    image_argv = ["--mode", args.mode] if hasattr(args, "mode") and args.mode else []
+    image_argv += list(image_args)
     for image in images:
         image = f"{DOCKER_NS}/{image}"
         prepare_image(args, docker_argv, image)
@@ -623,6 +624,8 @@ def main(redirected=False):
             help=f"Run one or several {DOCKER_NS} Docker images",
             parents=[spec_parser, status_parser, tracks_parser,
                 run_parser, docker_parser])
+    p.add_argument("--mode",
+            help="Select args mode")
     p.add_argument("dimacs",
             help="DIMACS file (possibly gzipped)")
     p.add_argument("proof", nargs="?",
@@ -666,6 +669,8 @@ def main(redirected=False):
         p = subparsers.add_parser("test",
                 help=f"Test {DOCKER_NS} Docker images",
                 parents=[spec_parser, status_parser, run_parser, tracks_parser, docker_parser])
+        p.add_argument("--mode",
+            help="Select args mode")
         p.add_argument("--cnf", "-f", default="tests/cmu-bmc-barrel6.cnf.gz")
         p.set_defaults(func=test_images)
 
