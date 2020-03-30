@@ -588,6 +588,26 @@
             "FILECNF"
         ]
     },
+    "abcd_para18" : {
+        "status": "FIXME",
+        "tracks" : ["parallel"],
+        "name": "abcd_para18",
+        "call": "./abcdsat_p18",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ]
+    },
+    "cbpenelope2018" : {
+        "status": "FIXME",
+        "tracks" : ["parallel"],
+        "name": "cbpenelope2018",
+        "call": "./abcdsat_p18",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ]
+    },
     "syrup": {
         "status": "ok",
         "tracks" : ["parallel"],
