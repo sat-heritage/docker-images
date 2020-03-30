@@ -106,6 +106,8 @@ class Repository(object):
         select_unstable = select_all or hasattr(args, "unstable") and args.unstable
         select_stable = select_all or (not select_unstable and not select_fixme)
 
+        select_tracks = set([args.track]) if hasattr(args, "track") else None
+
         for entry in self.registry:
             for solver in self.registry[entry]:
                 name = make_name(self.registry, self.setup, entry, solver)
@@ -121,6 +123,11 @@ class Repository(object):
                         continue
                 elif not select_unstable:
                     continue
+
+                tracks = self.registry[entry][solver].get("tracks", [])
+                if select_tracks and not select_tracks.intersection(tracks):
+                    continue
+
                 self.images[name] = {"entry": entry, "solver": solver}
                 self.names.append(name)
 
@@ -197,7 +204,10 @@ def print_info(args):
                     name += " (proof)"
                 value = f"{image.registry['call']} {' '.join(map(str,value))}"
             else:
-                value = str(value)
+                if isinstance(value, list):
+                    value = ", ".join(map(str, value))
+                else:
+                    value = str(value)
             key_width = max(len(name), key_width)
             info.append({"key": key, "name": name, "value": value})
 
@@ -571,6 +581,9 @@ def main(redirected=False):
     spec_parser.add_argument("pattern",
             help="Pattern for filtering images")
 
+    tracks_parser = argparse.ArgumentParser(add_help=False)
+    tracks_parser.add_argument("--track",
+            help="Filter solvers from the given track")
 
     docker_parser = argparse.ArgumentParser(add_help=False)
     docker_parser.add_argument("--pull", action="store_true",
@@ -596,19 +609,20 @@ def main(redirected=False):
 
     p = subparsers.add_parser("list",
             help=f"List {DOCKER_NS} Docker images",
-            parents=[status_parser])
+            parents=[status_parser, tracks_parser])
     p.add_argument("pattern", default="*", nargs="?",
             help="Pattern for filtering images (default: *)")
     p.set_defaults(func=print_list)
 
     p = subparsers.add_parser("info",
             help=f"Display information about the solver embedded in the given Docker images",
-            parents=[spec_parser])
+            parents=[spec_parser, tracks_parser])
     p.set_defaults(func=print_info)
 
     p = subparsers.add_parser("run",
             help=f"Run one or several {DOCKER_NS} Docker images",
-            parents=[spec_parser, status_parser, run_parser, docker_parser])
+            parents=[spec_parser, status_parser, tracks_parser,
+                run_parser, docker_parser])
     p.add_argument("dimacs",
             help="DIMACS file (possibly gzipped)")
     p.add_argument("proof", nargs="?",
@@ -617,7 +631,8 @@ def main(redirected=False):
 
     p = subparsers.add_parser("run-raw",
             help=f"Run one or several {DOCKER_NS} Docker images with direct call to solvers",
-            parents=[spec_parser, status_parser, run_parser, docker_parser])
+            parents=[spec_parser, status_parser, tracks_parser,
+                run_parser, docker_parser])
     p.add_argument("args", nargs=argparse.REMAINDER,
             help="Arguments to docker image")
     p.set_defaults(func=runraw_images)
@@ -630,7 +645,7 @@ def main(redirected=False):
 
     p = subparsers.add_parser("extract",
             help=f"Extract solvers binaries from {DOCKER_NS} Docker images",
-            parents=[spec_parser, status_parser, docker_parser])
+            parents=[spec_parser, status_parser, tracks_parser, docker_parser])
     p.add_argument("output_dir", help="Output directory")
     p.set_defaults(func=extract)
 
@@ -643,20 +658,20 @@ def main(redirected=False):
     if IN_REPOSITORY:
         p = subparsers.add_parser("build",
                 help=f"Build {DOCKER_NS} Docker images",
-                parents=[spec_parser, status_parser])
+                parents=[spec_parser, status_parser, tracks_parser])
         p.add_argument("--no-cache", action="store_true",
                 help="docker build option")
         p.set_defaults(func=build_images)
 
         p = subparsers.add_parser("test",
                 help=f"Test {DOCKER_NS} Docker images",
-                parents=[spec_parser, status_parser, run_parser, docker_parser])
+                parents=[spec_parser, status_parser, run_parser, tracks_parser, docker_parser])
         p.add_argument("--cnf", "-f", default="tests/cmu-bmc-barrel6.cnf.gz")
         p.set_defaults(func=test_images)
 
         p = subparsers.add_parser("push",
                 help=f"Push {DOCKER_NS} Docker images",
-                parents=[spec_parser, status_parser])
+                parents=[spec_parser, status_parser, tracks_parser])
         p.set_defaults(func=push_images)
 
     subparsers.add_parser("version",
