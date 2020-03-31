@@ -1,6 +1,7 @@
 {
     "cominisatps_pulsar_drup": {
-        "status": "ok",
+	"tracks": ["main"],
+	"status": "ok",
         "name": "COMiniSatPS_Pulsar_drup",
         "call": "./minisat_static",
         "gz": true,
@@ -13,7 +14,8 @@
         ]
     },
     "candy": {
-        "status": "ok",
+        "tracks": ["main"],
+	      "status": "ok",
         "name": "Candy",
         "call": "./candy",
         "gz": true,
@@ -30,7 +32,8 @@
         ]
     },
     "candyrsili": {
-        "status": "FIXME problem when building",
+        "tracks": ["main"],
+	      "status": "FIXME problem when building",
         "name": "CandyRSILi",
         "call": "./candy",
         "gz": true,
@@ -43,7 +46,8 @@
         ]
     },
     "candyrsilv": {
-        "status": "FIXME problem when building",
+        "tracks": ["main"],
+	      "status": "FIXME problem when building",
         "name": "CandyRSILv",
         "call": "./candy",
         "gz": true,
@@ -56,7 +60,8 @@
         ]
     },
     "candysl21": {
-        "status": "ok",
+        "tracks": ["main"],
+	      "status": "ok",
         "name": "CandySL21",
         "call": "./candy",
         "gz": true,
@@ -73,7 +78,8 @@
         ]
     },
     "ghackcomsps_drup": {
-        "status": "ok",
+        "tracks": ["main"],
+	      "status": "ok",
         "name": "GHackCOMSPS_drup",
         "call": "./GHackCOMSPS",
         "gz": true,
@@ -88,7 +94,8 @@
         ]
     },
     "maplecomsps_chb_vsids_drup": {
-        "status": "ok",
+        "tracks": ["main"],
+	      "status": "ok",
         "name": "MapleCOMSPS_CHB_VSIDS_drup",
         "call": "./MapleCOMSPS_CHB_VSIDS",
         "gz": true,
@@ -101,7 +108,8 @@
         ]
     },
     "maplecomsps_lrb_vsids_2_drup": {
-        "status": "ok",
+        "tracks": ["main"],
+	      "status": "ok",
         "name": "MapleCOMSPS_LRB_VSIDS_2_drup",
         "call": "./MapleCOMSPS_LRB_VSIDS_2",
         "gz": true,
@@ -114,7 +122,8 @@
         ]
     },
     "maplecomsps_lrb_vsids_drup": {
-        "status": "ok",
+        "tracks": ["main"],
+	      "status": "ok",
         "name": "MapleCOMSPS_LRB_VSIDS_drup",
         "call": "./MapleCOMSPS_LRB_VSIDS",
         "gz": true,
@@ -127,7 +136,8 @@
         ]
     },
     "maplelrb_lcm": {
-        "status": "ok",
+        "tracks": ["main"],
+	      "status": "ok",
         "name": "MapleLRB_LCM",
         "call": "./glucose_static",
         "gz": true,
@@ -140,7 +150,8 @@
         ]
     },
     "maplelrb_lcmoccrestart": {
-        "status": "ok",
+        "tracks": ["main"],
+	      "status": "ok",
         "name": "MapleLRB_LCMoccRestart",
         "call": "./glucose_static",
         "gz": true,
@@ -153,7 +164,8 @@
         ]
     },
     "maple_lcm": {
-        "status": "ok",
+        "tracks": ["main"],
+	      "status": "ok",
         "name": "Maple_LCM",
         "call": "./glucose_static",
         "gz": true,
@@ -166,7 +178,8 @@
         ]
     },
     "maple_lcm_dist": {
-        "status": "ok",
+        "tracks": ["main"],
+	      "status": "ok",
         "name": "Maple_LCM_Dist",
         "call": "./glucose_static",
         "gz": true,
@@ -179,7 +192,8 @@
         ]
     },
     "riss7": {
-        "status": "ok",
+        "tracks": ["main"],
+	      "status": "ok",
         "name": "Riss7",
         "call": "./riss",
         "gz": true,
@@ -192,7 +206,8 @@
         ]
     },
     "abcdsat_r17": {
-        "status": "ok",
+        "tracks": ["main"],
+	      "status": "ok",
         "name": "abcdsat_r17",
         "call": "./abcdsat_r17",
         "gz": true,
@@ -206,7 +221,8 @@
         ]
     },
     "bs_glucose": {
-        "status": "FIXME problem when runnning",
+        "tracks": ["main"],
+	      "status": "FIXME problem when runnning",
         "name": "bs_glucose",
         "call": "./bs_glucose1",
         "gz": true,
@@ -221,7 +237,8 @@
         ]
     },
     "cadical-sc17-proof": {
-        "status": "ok",
+        "tracks": ["main"],
+	      "status": "ok",
         "name": "cadical-sc17-proof",
         "call": "./cadical",
         "gz": true,
@@ -234,7 +251,8 @@
         ]
     },
     "cadical-sc17-agile-proof": {
-        "status": "ok",
+        "tracks": ["main"],
+	      "status": "ok",
         "name": "cadical-sc17-agile-proof",
         "call": "./cadical",
         "gz": true,
@@ -247,7 +265,8 @@
         ]
     },
     "glu_vc": {
-        "status": "ok",
+        "tracks": ["main"],
+	      "status": "ok",
         "name": "glu_vc",
         "call": "./glu_vc",
         "gz": true,
@@ -262,7 +281,8 @@
         ]
     },
     "glucose-3.0-plus-width": {
-        "status": "ok",
+        "tracks": ["main"],
+	      "status": "ok",
         "name": "glucose-3.0+width",
         "call": "./glucose_static",
         "gz": true,
@@ -277,7 +297,8 @@
         ]
     },
     "glucose-4.1": {
-        "status": "ok",
+        "tracks": ["main"],
+	      "status": "ok",
         "name": "glucose-4.1",
         "call": "./glucose",
         "gz": true,
@@ -293,7 +314,8 @@
         ]
     },
     "lingeling-bbe": {
-        "status": "ok",
+        "tracks": ["main"],
+	      "status": "ok",
         "name": "lingeling-bbe",
         "call": "./lingeling",
         "gz": true,
@@ -309,7 +331,8 @@
         ]
     },
     "satuzk-seq": {
-        "status": "FIXME: only binary",
+        "tracks": ["main"],
+	      "status": "FIXME: only binary",
         "name": "satUZK-seq",
         "call": "./satuzk-seq",
         "gz": true,
@@ -322,7 +345,8 @@
         ]
     },
     "tch_glucose1": {
-        "status": "ok",
+        "tracks": ["main"],
+	      "status": "ok",
         "name": "tch_glucose1",
         "call": "./tch_glucose1",
         "gz": true,
@@ -337,7 +361,8 @@
         ]
     },
     "tch_glucose2": {
-        "status": "ok",
+        "tracks": ["main"],
+	      "status": "ok",
         "name": "tch_glucose2",
         "call": "./tch_glucose2",
         "gz": true,
@@ -352,7 +377,8 @@
         ]
     },
     "tch_glucose3": {
-        "status": "ok",
+        "tracks": ["main", "random"],
+	      "status": "ok",
         "name": "tch_glucose3",
         "call": "./tch_glucose3",
         "gz": true,
@@ -364,6 +390,116 @@
             "FILECNF",
             "-certified",
             "-certified-output=FILEPROOF"
+        ]
+    },
+    "score2sat" : {
+        "tracks": ["random"],
+	      "status": "unstable",
+        "name": "Score2SAT",
+        "call": "./score2sat",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ]
+    },
+    "yalsat" : {
+        "tracks": ["random"],
+	      "status": "ok",
+        "name": "yalsat-03s",
+        "call": "./yalsat",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ]
+    },
+    "abcdsat_parallel" : {
+        "tracks": ["parallel"],
+	      "status": "ok",
+        "name": "abcdsat_parallel",
+        "call": "./abcdsat_p",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ]
+    },
+    "cbpenelope" : {
+        "tracks": ["parallel"],
+	      "status": "FIXME TEMPDIR",
+        "name": "cbpenelope2017",
+        "call": "./solver.sh",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ]
+    },
+    "ccspenelope" : {
+        "tracks": ["parallel"],
+	      "status": "FIXME TEMPDIR",
+        "name": "ccspenelope2017",
+        "call": "./solver.sh",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ]
+    },
+    "ddc-submit" : {
+        "tracks": ["parallel"],
+	      "status": "unstable",
+        "name": "ddc-submit",
+        "call": "./yalsat",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ]
+    },
+    "painless" : {
+        "tracks": ["parallel"],
+	      "status": "ok",
+        "name": "painless",
+        "call": "./painless-maplecomsps",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ]
+    },
+    "plingeling" : {
+        "tracks": ["parallel"],
+	      "status": "ok",
+        "name": "plingeling-bbe-sc2017",
+        "call": "./plingeling",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ]
+    },
+    "scalope" : {
+        "tracks": ["parallel"],
+	      "status": "FIXME",
+        "name": "scalope",
+        "call": "./scalope",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ]
+    },
+    "syrup" : {
+        "tracks": ["parallel"],
+	      "status": "ok",
+        "name": "syrup",
+        "call": "./glucose-syrup",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ]
+    },
+    "treengeling" : {
+        "tracks": ["parallel"],
+	      "status": "ok",
+        "name": "treengeling-bbe-sc2017",
+        "call": "./treengeling",
+        "gz": true,
+        "args": [
+            "FILECNF"
         ]
     }
 }

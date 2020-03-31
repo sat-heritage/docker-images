@@ -3,5 +3,49 @@
     "base_from": "debian:stretch-slim",
     "builder": "generic/starexec",
     "builder_base": "debian:9.1",
-    "download_url": "https://baldur.iti.kit.edu/sat-competition-2017/solvers/main/{SOLVER_NAME}.zip"
+    "download_url": "https://baldur.iti.kit.edu/sat-competition-2017/solvers/main/{SOLVER_NAME}.zip",
+    "score2sat" : {
+        "builder": "generic/v1",
+        "download_url": "https://baldur.iti.kit.edu/sat-competition-2017/solvers/random/{SOLVER_NAME}.zip"
+    },
+    "yalsat" : {
+        "builder": "generic/v1",
+        "download_url": "https://baldur.iti.kit.edu/sat-competition-2017/solvers/random/{SOLVER_NAME}.zip"
+    },
+    "abcdsat_parallel" : {
+        "builder": "generic/v1",
+        "download_url": "https://baldur.iti.kit.edu/sat-competition-2017/solvers/parallel/{SOLVER_NAME}.zip"
+    },
+    "cbpenelope" : {
+        "builder": "generic/v1",
+        "download_url": "https://baldur.iti.kit.edu/sat-competition-2017/solvers/parallel/{SOLVER_NAME}.zip"
+    },
+    "ccspenelope" : {
+        "builder": "generic/v1",
+        "download_url": "https://baldur.iti.kit.edu/sat-competition-2017/solvers/parallel/{SOLVER_NAME}.zip"
+    },
+    "ddc-submit" : {
+        "builder": "generic/v1",
+        "download_url": "https://baldur.iti.kit.edu/sat-competition-2017/solvers/parallel/{SOLVER_NAME}.tar.gz"
+    },
+    "painless" : {
+        "builder": "generic/v1",
+        "download_url": "https://baldur.iti.kit.edu/sat-competition-2017/solvers/parallel/{SOLVER_NAME}.zip"
+    },
+    "plingeling" : {
+        "builder": "generic/v1",
+        "download_url": "https://baldur.iti.kit.edu/sat-competition-2017/solvers/parallel/{SOLVER_NAME}.zip"
+    },
+    "scalope" : {
+        "builder": "generic/v1",
+        "download_url": "https://baldur.iti.kit.edu/sat-competition-2017/solvers/parallel/{SOLVER_NAME}.zip"
+    },
+    "syrup" : {
+        "builder": "generic/v1",
+        "download_url": "https://baldur.iti.kit.edu/sat-competition-2017/solvers/parallel/{SOLVER_NAME}.zip"
+    },
+    "treengeling" : {
+        "builder": "generic/v1",
+        "download_url": "https://baldur.iti.kit.edu/sat-competition-2017/solvers/parallel/{SOLVER_NAME}.zip"
+    }
 }
