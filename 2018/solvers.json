@@ -45,6 +45,18 @@
             "-certified-output=FILEPROOF"
         ]
     },
+    "cpsparrow": {
+        "status": "ok",
+        "tracks":["random"],
+        "name": "CPSparrow",
+        "call": "./CPSparrow.sh",
+        "gz": true,
+        "args": [
+            "FILECNF",
+            "RANDOMSEED",
+            "/tmp"
+        ]
+    },
     "ghackcomsps_drup": {
         "status": "ok",
         "tracks":["main"],
@@ -311,7 +323,7 @@
     },
     "sparrow2riss-2018": {
         "status": "FIXME Problem with prebuild",
-        "tracks":["main"],
+        "tracks":["main", "random"],
         "name": "Sparrow2Riss-2018",
         "call": "./sparrow2riss-2018",
         "gz": true,
@@ -325,7 +337,7 @@
     },
     "yalsat": {
         "status": "ok",
-        "tracks":["main"],
+        "tracks":["main", "random"],
         "name": "YalSAT",
         "call": "./yalsat",
         "gz": true,
@@ -365,7 +377,7 @@
     },
     "expglucose": {
         "status": "ok",
-        "tracks":["main"],
+        "tracks":["main","random"],
         "name": "expGlucose",
         "call": "./glucose_static",
         "gz": true,
@@ -426,7 +438,7 @@
     },
     "gluhack": {
         "status": "ok",
-        "tracks":["main"],
+        "tracks":["main", "random"],
         "name": "gluHack",
         "call": "./gluHack",
         "gz": true,
@@ -475,7 +487,7 @@
     },
     "glucose-3.0_padc_3": {
         "status": "ok",
-        "tracks":["main"],
+        "tracks":["main", "random"],
         "name": "glucose-3.0_PADC_3",
         "call": "./glucose-3.0_PADC_static",
         "gz": true,
@@ -493,7 +505,7 @@
     },
     "glucose-3.0_padc_10": {
         "status": "ok",
-        "tracks":["main"],
+        "tracks":["main", "random"],
         "name": "glucose-3.0_PADC_10",
         "call": "./glucose-3.0_PADC_static",
         "gz": true,
@@ -629,33 +641,31 @@
             "--threads=MAXNBTHREAD"
         ]
     },
-    "painless-mcomsps" : {
-        "status": "ok",
-        "tracks" : ["parallel"],
-        "name": "painless-mcomsps",
-        "call": "./painless-mcomsps",
-        "gz": true,
-        "args": [
-            "FILECNF"
-        ]
-    },
-    "syrup": {
-        "status": "ok",
-        "tracks" : ["parallel"],
-        "name": "syrup",
-        "call": "./glucose-syrup",
-        "gz": true,
-        "args": [
-            "FILECNF",
-            "-model",
-            "-maxmemory=50000"
-        ]
-    },
     "ddc-submit18" : {
         "status": "unstable",
         "tracks" : ["parallel"],
         "name": "ddc-submit18",
         "call": "./glucose-syrup",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ]
+    },
+    "hordesat" : {
+        "status": "ok",
+        "tracks" : ["parallel"],
+        "name": "hordesat",
+        "call": "./hordesat",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ]
+    },
+    "painless-mcomsps" : {
+        "status": "ok",
+        "tracks" : ["parallel"],
+        "name": "painless-mcomsps",
+        "call": "./painless-mcomsps",
         "gz": true,
         "args": [
             "FILECNF"
@@ -704,11 +714,53 @@
             "FILECNF"
         ]
     },
+    "syrup": {
+        "status": "ok",
+        "tracks" : ["parallel"],
+        "name": "syrup",
+        "call": "./glucose-syrup",
+        "gz": true,
+        "args": [
+            "FILECNF",
+            "-model",
+            "-maxmemory=50000"
+        ]
+    },
     "treengeling" : {
         "status": "ok",
         "tracks" : ["parallel"],
         "name": "treengeling-sc18-starexec",
         "call": "./treengeling",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ]
+    },
+    "dimetheus" : {
+        "status": "FIXME",
+        "tracks" : ["random"],
+        "name": "dimetheus",
+        "call": "./dimetheus",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ]
+    },
+    "lawa" : {
+        "status": "ok",
+        "tracks" : ["random"],
+        "name": "lawa",
+        "call": "./lawa",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ]
+    },
+    "probsat" : {
+        "status": "unstable",
+        "tracks" : ["random"],
+        "name": "probSAT",
+        "call": "./probsat",
         "gz": true,
         "args": [
             "FILECNF"

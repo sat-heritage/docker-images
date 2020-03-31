@@ -4,6 +4,22 @@
     "builder": "generic/starexec",
     "builder_base": "debian:9.5-slim",
     "download_url": "http://sat2018.forsyte.tuwien.ac.at/solvers/main_and_glucose_hack/{SOLVER_NAME}.zip",
+    "cpsparrow" : {
+        "builder": "generic/v1",
+        "download_url": "http://sat2018.forsyte.tuwien.ac.at/solvers/random/{SOLVER_NAME}.zip"
+    },
+    "dimetheus" : {
+        "builder": "generic/v1",
+        "download_url": "http://sat2018.forsyte.tuwien.ac.at/solvers/random/{SOLVER_NAME}.zip"
+    },
+    "lawa" : {
+        "builder": "generic/v1",
+        "download_url": "http://sat2018.forsyte.tuwien.ac.at/solvers/random/{SOLVER_NAME}.zip"
+    },
+    "probsat" : {
+        "builder": "generic/v1",
+        "download_url": "http://sat2018.forsyte.tuwien.ac.at/solvers/random/{SOLVER_NAME}.zip"
+    },
     "abcd_para18" : {
         "builder": "generic/v1",
         "download_url": "http://sat2018.forsyte.tuwien.ac.at/solvers/parallel/{SOLVER_NAME}.zip"
@@ -19,6 +35,12 @@
     "cmsat55_run_parallel" : {
         "builder": "generic/v1",
         "download_url": "http://sat2018.forsyte.tuwien.ac.at/solvers/parallel/{SOLVER_NAME}.tar.gz"
+    },
+    "hordesat" : {
+        "builder": "generic/v1",
+        "download_url": "http://sat2018.forsyte.tuwien.ac.at/solvers/parallel/{SOLVER_NAME}.zip",
+        "BUILD_DEPENDS" : "mpic++",
+        "RDEPENDS" : "libmpich-dev"
     },
     "ddc-submit18" : {
         "builder": "generic/v1",
