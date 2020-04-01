@@ -1,6 +1,7 @@
 {
     "beansandeggs": {
-        "status": "ok",
+	"tracks": ["main"],
+	"status": "ok",
         "name": "BeansAndEggs",
         "call": "./glucose",
         "gz": true,
@@ -16,6 +17,7 @@
         ]
     },
     "chbr_glucose": {
+	      "tracks": ["main"],
         "status": "ok",
         "name": "CHBR_glucose",
         "call": "./CHBR_glucose",
@@ -32,6 +34,7 @@
         ]
     },
     "chbr_glucose_tuned": {
+	      "tracks": ["main"],
         "status": "ok",
         "name": "CHBR_glucose_tuned",
         "call": "./CHBR_glucose_tuned",
@@ -48,6 +51,7 @@
         ]
     },
     "cominisatpschandrasekhardrup": {
+	      "tracks": ["main"],
         "status": "ok",
         "name": "COMiniSatPSChandrasekharDRUP",
         "call": "./minisat_static",
@@ -61,6 +65,7 @@
         ]
     },
     "ghackcomsps_drup": {
+	      "tracks": ["main"],
         "status": "ok",
         "name": "GHackCOMSPS_DRUP",
         "call": "./GHackCOMSPS",
@@ -77,6 +82,7 @@
         ]
     },
     "glucose_nbsat": {
+	      "tracks": ["main"],
         "status": "ok",
         "name": "Glucose_nbSat",
         "call": "./GlucoseNBSAT",
@@ -93,6 +99,7 @@
         ]
     },
     "lingeling": {
+	      "tracks": ["main"],
         "status": "ok",
         "call": "./lingeling",
         "name": "Lingelingbbcmain",
@@ -107,6 +114,7 @@
         ]
     },
     "maplecms": {
+	      "tracks": ["main"],
         "status": "FIXME : misses xxd",
         "name": "MapleCMS",
         "call": "./maplecms",
@@ -120,6 +128,7 @@
         ]
     },
     "maplecomsps_chb_drup": {
+	      "tracks": ["main"],
         "status": "ok",
         "name": "MapleCOMSPS_CHB_DRUP",
         "call": "./MapleCOMSPS_CHB",
@@ -133,6 +142,7 @@
         ]
     },
     "maple-comsps": {
+	      "tracks": ["main"],
         "status": "ok",
         "name": "MapleCOMSPS_DRUP",
         "call": "./MapleCOMSPS",
@@ -146,6 +156,7 @@
         ]
     },
     "maplecomsps_lrb_drup": {
+	      "tracks": ["main"],
         "status": "ok",
         "name": "MapleCOMSPS_LRB_DRUP",
         "call": "./MapleCOMSPS_LRB",
@@ -159,6 +170,7 @@
         ]
     },
     "mapleglucose": {
+	      "tracks": ["main"],
         "status": "ok",
         "name": "MapleGlucose",
         "call": "./glucose_static",
@@ -175,6 +187,7 @@
         ]
     },
     "riss6": {
+	"tracks": ["main"],
         "status": "ok",
         "name": "Riss6",
         "call": "./riss6",
@@ -189,6 +202,7 @@
         ]
     },
     "scavel_sat": {
+	      "tracks": ["main"],
         "status": "ok",
         "name": "Scavel_SAT",
         "call": "./Scavel_SAT",
@@ -203,6 +217,7 @@
         ]
     },
     "splatz06vmain": {
+	      "tracks": ["main"],
         "status": "ok",
         "name": "Splatz06vmain",
         "call": "./splatz",
@@ -217,6 +232,7 @@
         ]
     },
     "yalsat03r": {
+	      "tracks": ["main", "random"],
         "status": "ok",
         "name": "YalSAT03r",
         "call": "./yalsat",
@@ -226,6 +242,7 @@
         ]
     },
     "abcdsat_drup": {
+	      "tracks": ["main"],
         "status": "ok",
         "name": "abcdSAT_drup",
         "call": "./abcdsat_drup",
@@ -240,6 +257,7 @@
         ]
     },
     "cmsat5_autotune2": {
+	      "tracks": ["main"],
         "status": "FIXME: xxd mssing",
         "name": "cmsat5_autotune2",
         "call": "./cmsat5_autotune2",
@@ -253,6 +271,7 @@
         ]
     },
     "cmsat5_main2": {
+	      "tracks": ["main"],
         "status": "FIXME: xxd missing",
         "name": "cmsat5_main2",
         "call": "./cmsat5_main2",
@@ -266,6 +285,7 @@
         ]
     },
     "glucose": {
+	      "tracks": ["main"],
         "status" : "ok",
         "name": "glucose",
         "call": "./glucose",
@@ -282,6 +302,7 @@
         ]
     },
     "glucoseple": {
+	      "tracks": ["main"],
         "status" : "ok",
         "name": "glucosePLE",
         "call": "./glucosePLE",
@@ -297,6 +318,7 @@
         ]
     },
     "glucose_hack_kiel": {
+        "tracks": ["main"],
         "status": "ok",
         "call": "./glucose",
         "name": "glucose_hack_kiel_newScript",
@@ -315,6 +337,7 @@
         ]
     },
     "glue_alt": {
+	      "tracks": ["main"],
         "status": "ok",
         "name": "glue_alt",
         "call": "./glue_alt",
@@ -330,6 +353,7 @@
         ]
     },
     "glueminisat-2.2.10-81-main": {
+	      "tracks": ["main"],
         "status": "ok",
         "name": "glueminisat-2.2.10-81-main",
         "call": "./glueminisat-simp-static",
@@ -348,6 +372,7 @@
         ]
     },
     "gulch": {
+	      "tracks": ["main"],
         "status": "ok",
         "name": "gulch",
         "call": "./gulch",
@@ -363,6 +388,7 @@
         ]
     },
     "tb_glucose": {
+	      "tracks": ["main"],
         "status": "ok",
         "name": "tb_glucose",
         "call": "./tb_glucose",
@@ -379,6 +405,7 @@
         ]
     },
     "tc_glucose": {
+	      "tracks": ["main"],
         "status": "ok",
         "name": "tc_glucose",
         "call": "./tc_glucose",
@@ -392,6 +419,221 @@
             "-vbyte",
             "-certified",
             "-certified-output=FILEPROOF"
+        ]
+    },
+        "csccsat" : {
+	      "tracks": ["random"],
+        "status": "ok",
+        "name": "CSCCSat",
+        "call": "./CSCCSat",
+        "gz": true,
+        "args": [
+            "FILECNF",
+            "1"
+        ]
+    },
+    "dccalm" : {
+	      "tracks": ["random"],
+        "status": "ok",
+        "name": "DCCAlm",
+        "call": "./DCCAlm",
+        "gz": true,
+        "args": [
+            "FILECNF",
+            "1"
+        ]
+    },
+    "cmsat5_agile" : {
+	      "tracks": ["random"],
+        "status": "unstable",
+        "name": "cmsat5_agile",
+        "call": "./cmsat5_agile",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ]
+    },
+    "dimetheus" : {
+	      "tracks": ["random"],
+        "status": "FIXME",
+        "name": "dimetheus",
+        "call": "./dimetheus",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ]
+    },
+    "multi-sat" : {
+	      "tracks": ["random"],
+        "status": "ok",
+        "name": "multi-sat",
+        "call": "./multi-sat",
+        "gz": true,
+        "args": [
+            "FILECNF",
+            "0",
+            "16",
+            "64"
+        ]
+    },
+    "polypower1.0" : {
+	      "tracks": ["random"],
+        "status": "ok",
+        "name": "polypower1.0",
+        "call": "./polypower",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ]
+    },
+    "polypower2.0" : {
+	      "tracks": ["random"],
+        "status": "ok",
+        "name": "polypower2.0",
+        "call": "./polypower",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ]
+    },
+    "stocbcd" : {
+	      "tracks": ["random"],
+        "status": "ok",
+        "name": "stocBCD",
+        "call": "./stocbcd",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ]
+    },
+    "paragluminisat" : {
+	      "tracks": ["parallel"],
+        "status": "FIXME",
+        "name": "ParaGlueminisat_2016",
+        "call": "./paragluminisat",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ]
+    },
+    "priss6": {
+	      "tracks": ["parallel"],
+        "status": "FIXME",
+        "name": "Priss6",
+        "call": "./priss6",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ]
+    },
+    "ampharos" : {
+	      "tracks": ["parallel"],
+        "status": "FIXME",
+        "name": "ampharos-sat-2016",
+        "call": "./ampharos",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ]
+    },
+    "cbpenelope" : {
+	      "tracks": ["parallel"],
+        "status": "ok",
+        "name": "cbpenelope2016",
+        "call": "./solver.sh",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ]
+    },
+    "ccspenelope" : {
+	      "tracks": ["parallel"],
+        "status": "ok",
+        "name": "ccspenelope2016",
+        "call": "./solver.sh",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ]
+    },
+    "cmsat5_run_parallel" : {
+	      "tracks": ["parallel"],
+        "status": "FIXME",
+        "name": "cmsat5_run_parallel",
+        "call": "./cmsat5_run_parallel",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ]
+    },
+    "dissolve-sat" : {
+	      "tracks": ["parallel"],
+        "status": "FIXME",
+        "name": "dissolve-SATcomp16",
+        "call": "./dissolve-SAT",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ]
+    },
+    "gluco_par" : {
+	      "tracks": ["parallel"],
+        "status": "FIXME",
+        "name": "gluco_par",
+        "call": "./gluco_par",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ]
+    },
+    "penelope" : {
+	      "tracks": ["parallel"],
+        "status": "ok",
+        "name": "penelope_for_2015_AICR_24_Pair_BUMP100",
+        "call": "./solver.sh",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ]
+    },
+    "plingeling" : {
+	      "tracks": ["parallel"],
+        "status": "ok",
+        "name": "plingeling-bbc-sc2016",
+        "call": "./plingeling",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ]
+    },
+    "syrup" : {
+	      "tracks": ["parallel"],
+        "status": "ok",
+        "name": "syrup",
+        "call": "./glucose-syrup",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ]
+    },
+    "tbparaglueminisat" : {
+	      "tracks": ["parallel"],
+        "status": "FIXME",
+        "name": "tbParaGlueminisat_2016",
+        "call": "./tbparaglueminisat",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ]
+    },
+    "treengeling" : {
+	      "tracks": ["parallel"],
+        "status": "ok",
+        "name": "treengeling-bbc-sc2016",
+        "call": "./treengeling",
+        "gz": true,
+        "args": [
+            "FILECNF"
         ]
     }
 }
