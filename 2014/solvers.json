@@ -1,5 +1,6 @@
 {
     "bfs-glucose": {
+	      "tracks" : ["application", "crafted"],
         "status":"ok",
         "args": [
             "FILECNF"
@@ -11,6 +12,7 @@
         "name": "BFS-Glucose"
     },
     "bfs-glucose_mem_16_70": {
+	      "tracks" : ["application", "crafted"],
         "status":"ok",
         "args": [
             "FILECNF"
@@ -22,6 +24,7 @@
         "name": "BFS-Glucose_mem_16_70"
     },
     "bfs-glucose_mem_32_70": {
+	      "tracks" : ["application", "crafted"],
         "status":"ok",
         "args": [
             "FILECNF"
@@ -33,6 +36,7 @@
         "name": "BFS-Glucose_mem_32_70"
     },
     "bfs-glucose_mem_8_85": {
+	      "tracks" : ["application", "crafted"],
         "status":"ok",
         "args": [
             "FILECNF"
@@ -44,6 +48,7 @@
         "name": "BFS-Glucose_mem_8_85"
     },
     "ccanr_glucose": {
+	      "tracks" : ["application", "crafted"],
         "status":"ok",
         "args": [
             "FILECNF",
@@ -57,6 +62,7 @@
         "name": "CCAnr+glucose"
     },
     "cryptominisat-4.1-st": {
+	      "tracks" : ["application", "crafted"],
         "status":"FIXME problem when building",
         "args": [
             "FILECNF"
@@ -68,6 +74,7 @@
         "name": "cryptominisat-4.1-st"
     },
     "cryptominisat-v41-tuned-st": {
+	      "tracks" : ["application", "crafted"],
         "status":"FIXME problem when building",
         "args": [
             "FILECNF"
@@ -79,6 +86,7 @@
         "name": "cryptominisat-v41-tuned-st"
     },
     "glucose": {
+	      "tracks" : ["application", "crafted"],
         "status":"ok",
         "args": [
             "FILECNF"
@@ -89,7 +97,8 @@
         "gz": true,
         "name": "glucose"
     },
-    "glue_lgl_split": {
+    "glue_lgl_split, \"crafted\"": {
+	      "tracks" : ["application"],
         "status":"ok",
         "args": [
             "FILECNF"
@@ -101,6 +110,7 @@
         "name": "glue_lgl_split"
     },
     "glueminisat": {
+	      "tracks" : ["application", "crafted"],
         "status":"ok",
         "args": [
             "FILECNF"
@@ -112,6 +122,7 @@
         "name": "glueminisat"
     },
     "glueminisat_1": {
+	      "tracks" : ["application", "crafted"],
         "status":"ok",
         "args": [
             "FILECNF"
@@ -123,6 +134,7 @@
         "name": "glueminisat"
     },
     "lingeling": {
+	      "tracks" : ["application", "crafted"],
         "status":"ok",
         "args": [
             "-v",
@@ -136,6 +148,7 @@
         "name": "Lingeling"
     },
     "lingeling_druplig": {
+	      "tracks" : ["application", "crafted"],
         "status":"ok",
         "args": [
             "-v",
@@ -149,6 +162,7 @@
         "name": "Lingeling (druplig)"
     },
     "lingeling_no_agile": {
+	      "tracks" : ["application", "crafted"],
         "status":"ok",
         "args": [
             "-v",
@@ -162,6 +176,7 @@
         "name": "Lingeling (no agile)"
     },
     "minisat_blbd": {
+	      "tracks" : ["application", "crafted"],
         "status":"ok",
         "args": [
             "FILECNF"
@@ -173,6 +188,7 @@
         "name": "minisat_blbd"
     },
     "minisat_hack_1430ed": {
+	      "tracks" : ["application", "crafted"],
         "status":"ok",
         "args": [
             "FILECNF"
@@ -184,6 +200,7 @@
         "name": "MiniSat_HACK_1430ED"
     },
     "minisat_hack_999ed": {
+	      "tracks" : ["application", "crafted"],
         "status":"ok",
         "args": [
             "FILECNF"
@@ -195,6 +212,7 @@
         "name": "MiniSat_HACK_999ED"
     },
     "nigma": {
+	      "tracks" : ["application", "crafted"],
         "status":"ok",
         "args": [
             "FILECNF",
@@ -212,6 +230,7 @@
         "name": "Nigma"
     },
     "ntusat": {
+	      "tracks" : ["application", "crafted"],
         "status":"ok",
         "args": [
             "FILECNF"
@@ -223,6 +242,7 @@
         "name": "ntusat"
     },
     "ntusatbreak": {
+	      "tracks" : ["application", "crafted"],
         "status":"ok",
         "args": [
             "FILECNF",
@@ -235,6 +255,7 @@
         "name": "ntusatbreak"
     },
     "riss": {
+	      "tracks" : ["application", "crafted"],
         "status":"ok",
         "args": [
             "FILECNF",
@@ -247,6 +268,7 @@
         "name": "Riss"
     },
     "riss_1": {
+	      "tracks" : ["application", "crafted"],
         "status":"ok",
         "args": [
             "FILECNF",
@@ -259,6 +281,7 @@
         "name": "Riss"
     },
     "riss_2": {
+	      "tracks" : ["application", "crafted"],
         "status":"ok",
         "args": [
             "FILECNF",
@@ -271,6 +294,7 @@
         "name": "Riss"
     },
     "rokk": {
+	      "tracks" : ["application", "crafted"],
         "status":"ok",
         "args": [
             "FILECNF",
@@ -283,6 +307,7 @@
         "name": "ROKK"
     },
     "rokk_sat": {
+	      "tracks" : ["application", "crafted"],
         "status":"ok",
         "args": [
             "FILECNF"
@@ -294,6 +319,7 @@
         "name": "ROKK(sat)"
     },
     "rseq2014": {
+	      "tracks" : ["application", "crafted"],
         "status":"ok",
         "args": [
             "FILECNF",
@@ -308,6 +334,7 @@
         "name": "RSeq2014"
     },
     "sattime2014r": {
+	      "tracks" : ["application", "crafted", "random"],
         "status":"ok",
         "args": [
             "FILECNF",
@@ -321,6 +348,7 @@
         "name": "sattime2014r"
     },
     "satuzk": {
+	      "tracks" : ["application", "crafted"],
         "status":"FIXME problem when building",
         "args": [
             "/tmp",
@@ -334,6 +362,7 @@
         "name": "SatUZK"
     },
     "sgseq": {
+	      "tracks" : ["application", "crafted", "random"],
         "status":"ok",
         "args": [
             "FILECNF",
@@ -347,6 +376,7 @@
         "name": "SGSeq"
     },
     "sparrowtoriss": {
+	      "tracks" : ["application", "crafted"],
         "status":"ok",
         "args": [
             "FILECNF",
@@ -360,6 +390,7 @@
         "name": "SparrowToRiss"
     },
     "swdia5by": {
+	      "tracks" : ["application", "crafted"],
         "status":"ok",
         "args": [
             "FILECNF"
@@ -371,6 +402,7 @@
         "name": "SWDiA5BY"
     },
     "swdia5by_1": {
+	      "tracks" : ["application", "crafted"],
         "status":"ok",
         "args": [
             "-lbd-cut=4",
@@ -382,5 +414,272 @@
         "comments": "Launchcommand was:  ./SWDiA5BY_static -lbd-cut=4 -core-learnt-hard-limit=1000000  <instance> \nTrack was Sequential, Application SAT+UNSAT track",
         "gz": true,
         "name": "SWDiA5BY"
+    },
+    "cbpenelope": {
+        "tracks" : ["parallel"],
+        "status" : "FIXME",
+        "args": [
+            "-config=./configuration.ini",
+            "FILECNF"
+        ],
+        "authors": "Tomohiro Sonobe, Shuya Kondoh",
+        "call": "././cb_penelope",
+        "comments": "Launchcommand was:  ././cb_penelope -config=./configuration.ini  <instance> \nTrack was Parallel, Application SAT+UNSAT track",
+        "gz": true,
+        "name": "CBPeneLoPe"
+    },
+    "cryptominisat-4.1-mt": {
+        "tracks" : ["parallel"],
+        "status" : "FIXME",
+        "args": [
+            "--threads=MAXNBTHREAD",
+            "FILECNF"
+        ],
+        "authors": "Mate Soos",
+        "call": "././cryptominisat",
+        "comments": "Launchcommand was:  ././cryptominisat --threads=8  <instance> \nTrack was Parallel, Application SAT+UNSAT track",
+        "gz": true,
+        "name": "cryptominisat-4.1-mt"
+    },
+    "syrup": {
+        "tracks" : ["parallel"],
+        "status" : "ok",
+        "args": [
+            "FILECNF"
+        ],
+        "authors": "Gilles Audemard and Laurent Simon",
+        "call": "./syrup",
+        "comments": "Launchcommand was:  ./syrup  <instance> \nTrack was Parallel, Application SAT+UNSAT track",
+        "gz": true,
+        "name": "glucose-syrup"
+    },
+    "paracirminisat": {
+        "tracks" : ["parallel"],
+        "status" : "ok",
+        "args": [
+            "-thread-num=MAXNBTHREAD",
+            "FILECNF"
+        ],
+        "authors": "Tomohiro Sonobe, Shuya Kondoh",
+        "call": "././paracirminisat",
+        "comments": "Launchcommand was:  ././paracirminisat -thread-num=12  <instance> \nTrack was Parallel, Application SAT+UNSAT track",
+        "gz": true,
+        "name": "ParaCIRMiniSAT"
+    },
+    "penelope": {
+        "tracks" : ["parallel"],
+        "status" : "ok",
+        "args": [
+            "FILECNF"
+        ],
+        "authors": "Audemard-Hoessen-Jabbour-Lagniez-Piette",
+        "call": ".//solver.sh",
+        "comments": "Launchcommand was:  .//solver.sh  <instance> \nTrack was Parallel, Application SAT+UNSAT track",
+        "gz": true,
+        "name": "PeneLoPe"
+    },
+    "plingeling": {
+        "tracks" : ["parallel"],
+        "status" : "ok",
+        "args": [
+            "-v",
+            "FILECNF"
+        ],
+        "authors": "Armin Biere",
+        "call": "./plingeling",
+        "comments": "Launchcommand was:  ./plingeling -v <instance> \nTrack was Parallel, Application SAT+UNSAT track",
+        "gz": true,
+        "name": "Plingeling"
+    },
+    "pmcsat": {
+        "tracks" : ["parallel"],
+        "status" : "ok",
+        "args": [
+            "FILECNF"
+        ],
+        "authors": "Ricardo Marques, Lu\u00eds Guerra e Silva, Paulo Flores and Lu\u00eds Miguel Silveira",
+        "call": ".//pmcsat_static",
+        "comments": "Launchcommand was:  .//pmcsat_static  <instance> \nTrack was Parallel, Application SAT+UNSAT track",
+        "gz": true,
+        "name": "pmcSAT"
+    },
+    "satuzkp": {
+        "tracks" : ["parallel"],
+        "status" : "FIXME",
+        "args": [
+            "/tmp",
+            "satUZK-par",
+            "FILECNF"
+        ],
+        "authors": "Alexander van der Grinten, Andreas Wotzlaw, Ewald Speckemeyer",
+        "call": "././satUZK_wrapper",
+        "comments": "Launchcommand was:  ././satUZK_wrapper  <tempdir>  satUZK-par  <instance> \nTrack was Parallel, Application SAT+UNSAT track",
+        "gz": true,
+        "name": "SatUZKp"
+    },
+    "satuzkpl": {
+        "tracks" : ["parallel"],
+        "status" : "FIXME",
+        "args": [
+            "/tmp",
+            "satUZK-par",
+            "FILECNF"
+        ],
+        "authors": "Alexander van der Grinten, Andreas Wotzlaw, Ewald Speckemeyer",
+        "call": "././satUZK_wrapper",
+        "comments": "Launchcommand was:  ././satUZK_wrapper  <tempdir>  satUZK-par  <instance> \nTrack was Parallel, Application SAT+UNSAT track",
+        "gz": true,
+        "name": "SatUZKpl"
+    },
+    "treengeling": {
+        "tracks" : ["parallel"],
+        "status" : "ok",
+        "args": [
+            "FILECNF"
+        ],
+        "authors": "Armin Biere",
+        "call": "./treengeling",
+        "comments": "Launchcommand was:  ./treengeling  <instance> \nTrack was Parallel, Application SAT+UNSAT track",
+        "gz": true,
+        "name": "Treengeling"
+    },
+    "gluesplit_clasp": {
+        "status" : "ok",
+        "tracks" : ["crafted"],
+        "args": [
+            "FILECNF"
+        ],
+        "authors": "Jingchao Chen",
+        "call": ".//glueSplit_clasp",
+        "comments": "Launchcommand was:  .//glueSplit_clasp  <instance> \nTrack was Sequential, Hard-combinatorial SAT track",
+        "gz": true,
+        "name": "glueSplit_clasp"
+    },
+    "balancedz": {
+        "status" : "ok",
+        "tracks" : ["random", "crafted-sat"],
+        "args": [
+            "FILECNF",
+            "-seed",
+            "RANDOMSEED"
+        ],
+        "authors": "Chong HUANG, Chumin LI, Ruchu XU",
+        "call": "././BalancedZ",
+        "comments": "Launchcommand was:  ././BalancedZ  <instance>  -seed <seed> \nTrack was Sequential, Hard-combinatorial SAT track",
+        "gz": true,
+        "name": "BalancedZ"
+    },
+    "cca2014": {
+        "status" : "ok",
+        "tracks" : ["random", "crafted-sat"],
+        "args": [
+            "FILECNF",
+            "RANDOMSEED"
+        ],
+        "authors": "Chengqian Li, Jianhong Li, Yuxiang Wu",
+        "call": "././CCA2014",
+        "comments": "Launchcommand was:  ././CCA2014  <instance>   <seed> \nTrack was Sequential, Hard-combinatorial SAT track",
+        "gz": true,
+        "name": "CCA2014"
+    },
+    "ccgscore": {
+        "status" : "ok",
+        "tracks" : ["random"],
+        "args": [
+            "FILECNF"
+        ],
+        "authors": "Shaowei Cai, Chuan Luo, Kaile Su",
+        "call": "././CCgscore",
+        "comments": "Launchcommand was:  ././CCgscore  <instance> \nTrack was Sequential, Random SAT track",
+        "gz": true,
+        "name": "CCgscore"
+    },
+    "csccsat2014": {
+        "status" : "ok",
+        "tracks" : ["random"],
+        "args": [
+            "FILECNF",
+            "RANDOMSEED"
+        ],
+        "authors": "Chuan Luo, Shaowei Cai, Wei Wu, Kaile Su",
+        "call": "././CSCCSat2014",
+        "comments": "Launchcommand was:  ././CSCCSat2014  <instance>   <seed> \nTrack was Sequential, Random SAT track",
+        "gz": true,
+        "name": "CSCCSat2014"
+    },
+    "dimetheus": {
+        "status" : "FIXME",
+        "tracks" : ["random"],
+        "args": [
+            "-formula",
+            "FILECNF",
+            "-seed",
+            "RANDOMSEED",
+            "-classifyInputDomain",
+            "10"
+        ],
+        "authors": "Oliver Gableske",
+        "call": "././dimetheus",
+        "comments": "Launchcommand was:  ././dimetheus -formula <instance>  -seed <seed>  -classifyInputDomain 10\nTrack was Sequential, Random SAT track",
+        "gz": true,
+        "name": "dimetheus"
+    },
+    "ncca": {
+        "status" : "FIXME",
+        "tracks" : ["random"],
+        "args": [
+            "FILECNF",
+            "-s",
+            "RANDOMSEED"
+        ],
+        "authors": "Djamal Habet, Donia Toumi, Andr\u00e9 Abram\u00e9",
+        "call": "././Ncca+",
+        "comments": "Launchcommand was:  ././Ncca+  <instance>  -s <seed> \nTrack was Sequential, Random SAT track",
+        "gz": true,
+        "name": "Ncca+"
+    },
+    "probsat": {
+        "status" : "ok",
+        "tracks" : ["random", "crafted-sat"],
+        "args": [
+            "-a",
+            "FILECNF",
+            "RANDOMSEED"
+        ],
+        "authors": "Adrian Balint, Uwe Sch\u00f6ning",
+        "call": "././probSAT",
+        "comments": "Launchcommand was:  ././probSAT -a <instance>   <seed> \nTrack was Sequential, Hard-combinatorial SAT track",
+        "gz": true,
+        "name": "probSAT"
+    },
+    "yalsat": {
+        "status" : "ok",
+        "tracks" : ["random", "crafted-sat"],
+        "args": [
+            "-v",
+            "FILECNF",
+            "RANDOMSEED"
+        ],
+        "authors": "Armin Biere",
+        "call": "./yalsat",
+        "comments": "Launchcommand was:  ./yalsat -v <instance>   <seed> \nTrack was Sequential, Application SAT track",
+        "gz": true,
+        "name": "YalSAT"
+    },
+    "pprobsat": {
+        "status" : "ok",
+        "tracks" : ["parallel-random"],
+        "args": [
+            ".//pprobSAT.py",
+            "FILECNF",
+            "RANDOMSEED",
+            "12",
+            "/tmp"
+        ],
+        "authors": "Adrian Balint, Uwe Sch\u00f6ning",
+        "call": "python",
+        "comments": "Launchcommand was: python .//pprobSAT.py  <instance>   <seed>  12  <tempdir> \nTrack was Parallel, Random SAT track",
+        "gz": true,
+        "name": "pprobSAT"
     }
 }

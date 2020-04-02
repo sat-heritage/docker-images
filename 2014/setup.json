@@ -102,5 +102,71 @@
     },
     "swdia5by_1": {
         "download_url": "http://satcompetition.org/edacc/sc14/solver-download/1518"
+    },
+    "cbpenelope": {
+        "download_url": "http://satcompetition.org/edacc/sc14/solver-download/1464"
+    },
+    "cryptominisat-4.1-mt": {
+        "download_url": "http://satcompetition.org/edacc/sc14/solver-download/1487"
+    },
+    "cryptominisat-4.1-mt-tuned-many": {
+        "download_url": "http://satcompetition.org/edacc/sc14/solver-download/1584"
+    },
+    "syrup": {
+        "download_url": "http://satcompetition.org/edacc/sc14/solver-download/1598",
+        "BUILD_DEPENDS" : "lib32ncurses5-dev",
+        "RDEPENDS": "lib32ncurses5-dev"
+    },
+    "paracirminisat": {
+        "download_url": "http://satcompetition.org/edacc/sc14/solver-download/1465"
+    },
+    "penelope": {
+        "download_url": "http://satcompetition.org/edacc/sc14/solver-download/1491"
+    },
+    "plingeling": {
+        "download_url": "http://satcompetition.org/edacc/sc14/solver-download/1503"
+    },
+    "pmcsat": {
+        "download_url": "http://satcompetition.org/edacc/sc14/solver-download/1395"
+    },
+    "satuzkp": {
+        "download_url": "http://satcompetition.org/edacc/sc14/solver-download/1515"
+    },
+    "satuzkpl": {
+        "download_url": "http://satcompetition.org/edacc/sc14/solver-download/1596"
+    },
+    "treengeling": {
+        "download_url": "http://satcompetition.org/edacc/sc14/solver-download/1506"
+    },
+    "gluesplit_clasp": {
+        "download_url": "http://satcompetition.org/edacc/sc14/solver-download/1779"
+    },
+    "balancedz": {
+        "download_url": "http://satcompetition.org/edacc/sc14/solver-download/1489"
+    },
+    "cca2014": {
+        "download_url": "http://satcompetition.org/edacc/sc14/solver-download/1571"
+    },
+    "ccgscore": {
+        "download_url": "http://satcompetition.org/edacc/sc14/solver-download/1479"
+    },
+    "csccsat2014": {
+        "download_url": "http://satcompetition.org/edacc/sc14/solver-download/1433"
+    },
+    "dimetheus": {
+        "download_url": "http://satcompetition.org/edacc/sc14/solver-download/1397"
+    },
+    "ncca+": {
+        "download_url": "http://satcompetition.org/edacc/sc14/solver-download/1586"
+    },
+    "probsat": {
+        "download_url": "http://satcompetition.org/edacc/sc14/solver-download/1558"
+    },
+    "yalsat": {
+        "download_url": "http://satcompetition.org/edacc/sc14/solver-download/1494"
+    },
+    "pprobsat": {
+        "RDEPENDS" : "python",
+        "download_url": "http://satcompetition.org/edacc/sc14/solver-download/1561"
     }
 }
