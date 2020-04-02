@@ -168,5 +168,8 @@
     "pprobsat": {
         "RDEPENDS" : "python",
         "download_url": "http://satcompetition.org/edacc/sc14/solver-download/1561"
+    },
+    "glucose_(certified_unsat)": {
+        "download_url": "http://satcompetition.org/edacc/sc14/solver-download/1600"
     }
 }

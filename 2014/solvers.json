@@ -67,6 +67,10 @@
         "args": [
             "FILECNF"
         ],
+        "argsproof": [
+            "FILECNF",
+            "-drup=1"
+        ],
         "authors": "Mate Soos",
         "call": "././cryptominisat",
         "comments": "Launchcommand was:  ././cryptominisat  <instance> \nTrack was Sequential, Application SAT+UNSAT track",
@@ -78,6 +82,10 @@
         "status":"FIXME problem when building",
         "args": [
             "FILECNF"
+        ],
+                "argsproof": [
+            "FILECNF",
+            "-drup=1"
         ],
         "authors": "Mate Soos, Marius Lindauer",
         "call": "././cryptominisat",
@@ -141,6 +149,12 @@
             "--witness",
             "FILECNF"
         ],
+        "argsproof" : [
+            "-v",
+            "--druplig",
+            "FILECNF",
+            "--drupligtrace"
+        ],
         "authors": "Armin Biere",
         "call": "./lingeling",
         "comments": "Launchcommand was:  ./lingeling -v <instance> \nTrack was Sequential, Application SAT+UNSAT track",
@@ -181,6 +195,10 @@
         "args": [
             "FILECNF"
         ],
+        "argspprrof": [
+            "FILECNF",
+            "C"
+        ],
         "authors": "Jingchao Chen",
         "call": "././minisat_blbd",
         "comments": "Launchcommand was:  ././minisat_blbd  <instance> \nTrack was Sequential, Application SAT+UNSAT track",
@@ -193,6 +211,10 @@
         "args": [
             "FILECNF"
         ],
+        "argsproof": [
+            "FILECNF",
+            "--DRUP"
+        ],
         "authors": "Chanseok Oh",
         "call": "././wrapper.sh",
         "comments": "Launchcommand was:  ././wrapper.sh  <instance> \nTrack was Sequential, Application SAT+UNSAT track",
@@ -204,6 +226,10 @@
         "status":"ok",
         "args": [
             "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "--DRUP"
         ],
         "authors": "Chanseok Oh",
         "call": "././wrapper.sh",
@@ -222,6 +248,16 @@
             "100",
             "--probing-timeout",
             "100"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "--display-assignments-if-sat",
+            "--partial-backtracking",
+            "--elimination-timeout",
+            "100",
+            "--probing-timeout",
+            "100",
+            "--output-drup-if-unsat"
         ],
         "authors": "Chuan Jiang, Gianfranco Ciardo",
         "call": ".//nigma",
@@ -261,6 +297,11 @@
             "FILECNF",
             "/tmp"
         ],
+        "argsproof": [
+            "FILECNF",
+            "/tmp",
+            "DRAT"
+        ],
         "authors": "Norbert Manthey",
         "call": "././Riss427DRAT.sh",
         "comments": "Launchcommand was:  ././Riss427DRAT.sh  <instance>   <tempdir> \nTrack was Sequential, Application SAT+UNSAT track",
@@ -273,6 +314,11 @@
         "args": [
             "FILECNF",
             "/tmp"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "/tmp",
+            "DRAT"
         ],
         "authors": "Enrique Matos Alfonso and Norbert Manthey",
         "call": "././blackbox.sh",
@@ -355,6 +401,10 @@
             "satUZK-seq",
             "FILECNF"
         ],
+        "argsproof": [
+            "FILECNF",
+            "-drat-proof"
+        ],
         "authors": "Alexander van der Grinten, Andreas Wotzlaw, Ewald Speckemeyer",
         "call": "././satUZK_wrapper",
         "comments": "Launchcommand was:  ././satUZK_wrapper  <tempdir>  satUZK-seq  <instance> \nTrack was Sequential, Application SAT+UNSAT track",
@@ -383,6 +433,13 @@
             "RANDOMSEED",
             "/tmp"
         ],
+        "argsproof": [
+            "FILECNF",
+            "RANDOMSEED",
+            "/tmp",
+            "DRAT"
+
+        ],
         "authors": "Adrian Balint, Norbert Manthey",
         "call": "././SparrowToRiss.sh",
         "comments": "Launchcommand was:  ././SparrowToRiss.sh  <instance>   <seed>   <tempdir> \nTrack was Sequential, Application SAT+UNSAT track",
@@ -395,6 +452,10 @@
         "args": [
             "FILECNF"
         ],
+        "args": [
+            "FILECNF",
+            "-drup"
+        ],
         "authors": "Chanseok Oh",
         "call": "./SWDiA5BY_static",
         "comments": "Launchcommand was:  ./SWDiA5BY_static  <instance> \nTrack was Sequential, Application SAT+UNSAT track",
@@ -405,6 +466,11 @@
 	      "tracks" : ["application", "crafted"],
         "status":"ok",
         "args": [
+            "-lbd-cut=4",
+            "-core-learnt-hard-limit=1000000",
+            "FILECNF"
+        ],
+        "argsproof": [
             "-lbd-cut=4",
             "-core-learnt-hard-limit=1000000",
             "FILECNF"
@@ -681,5 +747,18 @@
         "comments": "Launchcommand was: python .//pprobSAT.py  <instance>   <seed>  12  <tempdir> \nTrack was Parallel, Random SAT track",
         "gz": true,
         "name": "pprobSAT"
+    },
+    "glucose_(certified_unsat)": {
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF"
+        ],
+        "authors": "Gilles Audemard and Laurent Simon",
+        "call": "././glucose",
+        "comments": "Launchcommand was:  ././glucose  <instance> \nTrack was Sequential, Application certified UNSAT track",
+        "gz": true,
+        "name": "glucose (certified unsat)"
     }
 }
