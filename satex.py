@@ -95,6 +95,9 @@ def make_name(reg, cfg, entry, solver):
     pattern = cfg[entry].get("image_name", "{SOLVER}:{ENTRY}")
     return pattern.format(ENTRY=entry, SOLVER=solver)
 
+def is_no_pattern(spec):
+    return not set(spec).intersection("?[*")
+
 class Repository(object):
     def __init__(self, args):
         self.registry, self.setup = get_registry(args)
@@ -102,6 +105,8 @@ class Repository(object):
         self.names = []
 
         select_all = not hasattr(args, "all") or args.all
+        if hasattr(args, "pattern") and is_no_pattern(args.pattern):
+            select_all = True
         select_fixme = select_all or hasattr(args, "fixme") and args.fixme
         select_unstable = select_all or hasattr(args, "unstable") and args.unstable
         select_stable = select_all or (not select_unstable and not select_fixme)
