@@ -24,9 +24,10 @@ REGISTRY_URL = "https://github.com/sat-heritage/docker-images/releases/download/
 
 on_linux = platform.system() == "Linux"
 
-def error(msg):
-    print(msg, file=sys.stderr)
-    sys.exit(1)
+def error(msg, exit=True):
+    print("\033[1;31mERROR %s\033[0m" % msg, file=sys.stderr)
+    if exit:
+        sys.exit(1)
 
 def warn(msg):
     print("\033[1;33m! %s\033[0m" % msg, file=sys.stderr)
@@ -270,7 +271,7 @@ def docker_call():
         except KeyError:
             raise
         if not check_sudo():
-            error("""Error: 'sudo' is not installed and you are not in the 'docker' group.
+            error("""'sudo' is not installed and you are not in the 'docker' group.
 Either install sudo, or add your user to the docker group by doing
    su -c "usermod -aG docker $USER" """)
         return sudo_docker
@@ -279,11 +280,11 @@ Either install sudo, or add your user to the docker group by doing
 def check_docker():
     if not check_cmd(["docker", "version"]):
         if not on_linux:
-            error("""Error: Docker not found.
+            error("""Docker not found.
 If you are using Docker Toolbox, make sure you are running 'satex'
 within the 'Docker quickstart Terminal'.""")
         else:
-            error("Error: Docker not found.")
+            error("Docker not found.")
     docker_argv = docker_call()
     #if not check_cmd(docker_argv + ["version"]):
     #    error("Error: cannot connect to Docker. Make sure it is running.")
@@ -345,7 +346,8 @@ def docker_runs(args, images, docker_args=(), image_args=()):
                 else:
                     warn(f"{image} timeout")
             else:
-                assert ret == 0 or 10 <= ret <= 20, f"Solver failed! ({ret})"
+                if not (ret == 0 or 10 <= ret <= 20):
+                    error(f"Solver failed with return code {ret}")
     if not args.pretend:
         return ret
 
