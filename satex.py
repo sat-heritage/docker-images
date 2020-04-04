@@ -11,6 +11,7 @@ import shutil
 import signal
 import subprocess
 import sys
+import re
 import tarfile
 import tempfile
 import textwrap
@@ -99,6 +100,10 @@ def make_name(reg, cfg, entry, solver):
 def is_no_pattern(spec):
     return not set(spec).intersection("?[*")
 
+re_image_name = re.compile("[a-zA-Z0-9\-_\.]+:[a-zA-Z0-9\-_\.]+")
+def valid_name(name):
+    return re_image_name.match(name)
+
 class Repository(object):
     def __init__(self, args):
         self.registry, self.setup = get_registry(args)
@@ -117,6 +122,8 @@ class Repository(object):
         for entry in self.registry:
             for solver in self.registry[entry]:
                 name = make_name(self.registry, self.setup, entry, solver)
+                if not valid_name(name):
+                    error(f"invalid image name: '{name}'")
                 if hasattr(args, "pattern") and \
                         not fnmatch.fnmatch(name, args.pattern):
                     continue
