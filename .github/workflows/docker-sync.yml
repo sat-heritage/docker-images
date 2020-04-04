@@ -1,0 +1,46 @@
+name: docker-sync
+
+on:
+  repository_dispatch:
+    types: sync
+  schedule:
+    - cron: "45 23 * * 0"
+
+jobs:
+    docker-push:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/setup-python@v1
+            - uses: actions/checkout@v2
+              with:
+                  ref: master
+            - run: python satex.py list > list.local
+            - run: bash .github/workflow/list-docker-images.sh > list.docker
+              env:
+                  DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+                  DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+            - name: diff
+              run: |
+                python -c "new=set(open('list.local').read().splitlines());old=set(open('list.docker').read().splitlines());print(' '.join(new.difference(old)),end='')" > list.diff
+                echo ::set-env name=HAS_CHANGES::`test -s list.diff && echo 1 || echo 0`
+                cat list.diff
+                echo
+            - name:  build
+              if: env.HAS_CHANGES == 1
+              run: |
+                set -ex
+                cat list.diff
+                for x in `cat list.diff`; do
+                    python satex.py build $x
+                done
+            - name: push
+              if: env.HAS_CHANGES == 1
+              run: |
+                set -ex
+                docker login -u "${DOCKER_USERNAME}" -p "${DOCKER_PASSWORD}"
+                for x in `cat list.diff`; do
+                    docker push satex/$x
+                done
+              env:
+                  DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+                  DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
