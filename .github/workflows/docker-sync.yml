@@ -2,7 +2,7 @@ name: docker-sync
 
 on:
   repository_dispatch:
-    types: sync
+      types: [sync]
   schedule:
     - cron: "45 23 * * 0"
 
@@ -11,17 +11,18 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/setup-python@v1
+            - run: pip install requests
             - uses: actions/checkout@v2
               with:
                   ref: master
             - run: python satex.py list > list.local
-            - run: bash .github/workflow/list-docker-images.sh > list.docker
+            - run: python .github/workflows/list-docker-images.py | tee list.docker
               env:
                   DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
                   DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
             - name: diff
               run: |
-                python -c "new=set(open('list.local').read().splitlines());old=set(open('list.docker').read().splitlines());print(' '.join(new.difference(old)),end='')" > list.diff
+                python -c "new=set(open('list.local').read().splitlines());old=set(open('list.docker').read().splitlines());print(' '.join(list(sorted(new.difference(old)))[:10]),end='')" > list.diff
                 echo ::set-env name=HAS_CHANGES::`test -s list.diff && echo 1 || echo 0`
                 cat list.diff
                 echo
