@@ -22,6 +22,7 @@ jobs:
                   DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
             - name: diff
               run: |
+                wc -l list.*
                 python -c "new=set(open('list.local').read().splitlines());old=set(open('list.docker').read().splitlines());print(' '.join(list(sorted(new.difference(old)))[:24]),end='')" > list.diff
                 echo ::set-env name=HAS_CHANGES::`test -s list.diff && echo 1 || echo 0`
                 cat list.diff
