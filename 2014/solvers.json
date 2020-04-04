@@ -105,8 +105,8 @@
         "gz": true,
         "name": "glucose"
     },
-    "glue_lgl_split, \"crafted\"": {
-	      "tracks" : ["application"],
+    "glue_lgl_split": {
+	      "tracks" : ["application", "crafted"],
         "status":"ok",
         "args": [
             "FILECNF"
@@ -748,7 +748,9 @@
         "gz": true,
         "name": "pprobSAT"
     },
-    "glucose_(certified_unsat)": {
+    "glucose_certified_unsat": {
+        "status": "ok",
+        "tracks" : "",
         "args": [
             "FILECNF"
         ],
