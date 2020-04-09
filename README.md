@@ -6,6 +6,7 @@
 [![PyPI version](https://badge.fury.io/py/satex.svg)](https://badge.fury.io/py/satex)
 [![Docker Hub](https://badgen.net/badge/DockerHub/satex/blue?icon=docker)](https://hub.docker.com/u/satex)
 [![Zenodo](https://badgen.net/badge/Zenodo/satex/5cb85c)](https://zenodo.org/communities/satex)
+[![Gitter](https://badges.gitter.im/sat-heritage/community.svg)](https://gitter.im/sat-heritage/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
 ## Principles
 
@@ -45,8 +46,8 @@ See https://packaging.python.org/tutorials/installing-packages/#installing-to-th
 ### List images
 ```
 satex list
-satex list *:2018
-satex list maple*
+satex list '*:2018'
+satex list 'maple*'
 ```
 
 By default, `satex` considers only solvers which have been validated.
@@ -65,15 +66,15 @@ Print information related to solvers, including authors, command line,
 validation status. and possibly comments.
 
 ```
-satex info glucose*
-satex info *:2018
+satex info 'glucose*'
+satex info '*:2018'
 ```
 
 ### Run images
 ```
 satex run cadical:2019 dimacs [proof]
-satex run *:2016 dimacs [proof]
-satex run *:2009 dimacs -e MAXNBTHREAD=24
+satex run '*:2016' dimacs [proof]
+satex run '*:2009' dimacs -e MAXNBTHREAD=24
 ```
 
 ### Run images with direct call to solvers
@@ -88,16 +89,16 @@ satex shell cadical:2019
 
 ### Extract solvers binaries
 ```
-satex extract *:2019 /tmp/
+satex extract '*:2019' /tmp/
 ```
 
 ### Repository management
 
 Usage:
 ```
-satex build *:2018
-satex test *:2018
-satex push *:2018
+satex build '*:2018'
+satex test '*:2018'
+satex push '*:2018'
 ```
 
 ## Persistent storage for sources and binaries
