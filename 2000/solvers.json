@@ -18,7 +18,7 @@
     ]
   },
   "dr": {
-    "status": "segmentation fault (see https://github.com/sat-heritage/docker-images/issues/1)",
+    "status": "ok",
     "name": "dr",
     "call": "dr",
     "gz": false,

@@ -394,7 +394,7 @@
     },
     "score2sat" : {
         "tracks": ["random"],
-	      "status": "unstable",
+	      "status": "FIXME build",
         "name": "Score2SAT",
         "call": "./score2sat",
         "gz": true,
@@ -444,7 +444,7 @@
     },
     "ddc-submit" : {
         "tracks": ["parallel"],
-	      "status": "unstable",
+	      "status": "FIXME build",
         "name": "ddc-submit",
         "call": "./yalsat",
         "gz": true,

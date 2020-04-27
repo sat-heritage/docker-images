@@ -195,7 +195,7 @@
         "args": [
             "FILECNF"
         ],
-        "argspprrof": [
+        "argsproof": [
             "FILECNF",
             "C"
         ],
