@@ -13,5 +13,9 @@
     "satelitegti": {
         "download_url": "https://zenodo.org/record/3699637/files/{SOLVER_NAME}.tgz?download=1",
         "builder": "generic/v1"
+    },
+    "vallst": {
+        "download_url": "https://zenodo.org/record/3699637/files/{SOLVER_NAME}.tgz?download=1",
+        "builder": "generic/v1"
     }
 }

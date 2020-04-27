@@ -361,12 +361,13 @@
     ]
   },
   "vallst": {
-    "status": "fixme",
-    "name": "vallst.tgz",
-    "call": "./vallst",
+    "status": "ok",
+    "name": "vallst",
+    "call": "./solver37.sh",
     "gz": false,
     "args": [
-      "FILECNF"
+      "FILECNF",
+      "RANDOMSEED"
     ]
   },
   "vw": {
