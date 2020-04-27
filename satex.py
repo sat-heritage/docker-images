@@ -25,6 +25,15 @@ REGISTRY_URL = "https://github.com/sat-heritage/docker-images/releases/download/
 
 on_linux = platform.system() == "Linux"
 
+def color(s, color, mode=1):
+    return f"\033[{mode};{color}m{s}\033[0m"
+def red(s):
+    return color(s, 31)
+def green(s):
+    return color(s, 32)
+def yellow(s):
+    return color(s, 33)
+
 def error(msg, exit=True):
     print("\033[1;31mERROR %s\033[0m" % msg, file=sys.stderr)
     if exit:
@@ -319,6 +328,7 @@ def docker_runs(args, images, docker_args=(), image_args=()):
     argv = ["run", "--name", container_id, "--rm"]
     if hasattr(args, "timeout"):
         argv += ["-e", f"TIMEOUT={args.timeout}"]
+    quiet = hasattr(args, "quiet") and args.quiet
     for opt in _docker_opts:
         if getattr(args, opt) is not None:
             val = getattr(args, opt)
@@ -332,6 +342,12 @@ def docker_runs(args, images, docker_args=(), image_args=()):
     argv += list(docker_args)
     image_argv = ["--mode", args.mode] if hasattr(args, "mode") and args.mode else []
     image_argv += list(image_args)
+    run_args = {}
+    if quiet:
+        run_args["stdout"] = subprocess.DEVNULL
+        run_args["stderr"] = subprocess.DEVNULL
+    global stop
+    stop = False
     for image in images:
         image = f"{DOCKER_NS}/{image}"
         prepare_image(args, docker_argv, image)
@@ -340,21 +356,26 @@ def docker_runs(args, images, docker_args=(), image_args=()):
             print(" ".join(cmd))
         else:
             def killer(s,f):
+                global stop
+                stop = True
                 warn("Killing solver...")
                 argv = docker_argv + ["kill", container_id]
                 subprocess.run(argv, stdout=subprocess.DEVNULL)
             signal.signal(signal.SIGINT, killer)
-            info(" ".join(cmd))
-            ret = subprocess.run(cmd).returncode
+            info(" ".join(cmd)) if not quiet else None
+            ret = subprocess.run(cmd, **run_args).returncode
             signal.signal(signal.SIGINT, signal.SIG_DFL)
+            if stop:
+                sys.exit(1)
             if ret == 124:
                 if args.fail_if_timeout:
                     raise subprocess.TimeoutExpired(image, args.timeout)
-                else:
+                elif not quiet:
                     warn(f"{image} timeout")
             else:
                 if not (ret == 0 or 10 <= ret <= 20):
-                    error(f"Solver failed with return code {ret}")
+                    if not quiet:
+                        error(f"Solver failed with return code {ret}")
     if not args.pretend:
         return ret
 
@@ -518,13 +539,77 @@ def build_images(args):
             os.unlink(dbjson)
 
 
+_retstr = {
+    10: "SAT",
+    20: "UNSAT",
+    124: "TIMEOUT",
+}
+
 def test_images(args):
-    images = get_list(args)
     docker_args = ["-v", f"{os.path.abspath('tests')}:/data"]
-    dimacs = args.cnf
-    info(f"Testing {dimacs}")
-    dimacs = os.path.basename(dimacs)
-    docker_runs(args, images, docker_args, image_args=(dimacs,))
+
+    info(f"Testing with CNF {os.path.abspath('tests')}/{args.file}")
+
+    if args.timeout > 600:
+        args.timeout = 10
+
+    def call(test_name, image, image_args):
+        print(test_name, end="...", flush=True)
+        ret = docker_runs(args, [image.name], docker_args=docker_args,
+                    image_args=image_args)
+        msg = _retstr.get(ret, ret)
+        if ret == 124 or ret == 0 or 10 <= ret <= 20:
+            print(green("ok"), f"({msg})")
+            return True
+        else:
+            print(red("fail"), f"({msg})")
+            return False
+
+    def test_cnf(image):
+        image_args = [args.file]
+        return call("cnf", image, image_args)
+    def test_gz(image):
+        image_args = [f"{args.file}.gz"]
+        return call("gz", image, image_args)
+    def test_proof(image):
+        if not "argsproof" in image.registry:
+            return True
+        image_args = [args.file, "proof.tmp"]
+        return call("proof", image, image_args)
+    def test_modes(image):
+        ok = True
+        for mode in [k for k in image.registry if k.startswith("args")]:
+            mode = mode[4:]
+            if not mode or mode == "proof":
+                continue
+            image_args = ["--mode", mode[4:], "aim-200-1_6-yes1-1.cnf.gz", "proof.tmp"]
+            ok = call(mode, image, image_args) and ok
+        return ok
+
+    tests = [test_cnf, test_gz, test_proof, test_modes]
+
+    failures = []
+
+    repo = Repository(args)
+    docker_argv = check_docker()
+    for name in repo.images:
+        prepare_image(args, docker_argv, f"{DOCKER_NS}/{name}")
+    for name in repo.images:
+        image = ImageManager(name, repo)
+        info(f"Testing {image.name}")
+        fails = [test.__name__[5:] for test in tests if not test(image)]
+        if fails:
+            failures.append((image, fails))
+
+    if not failures:
+        print(green("Bravo :-)"))
+    else:
+        print(red("Failed tests:"))
+        for image, fails in failures:
+            print(f"{lightred(image.name)} failed tests {' '.join(fails)}")
+
+    if failures:
+        sys.exit(1)
 
 def push_images(args):
     docker_argv = check_docker()
@@ -683,9 +768,9 @@ def main(redirected=False):
         p = subparsers.add_parser("test",
                 help=f"Test {DOCKER_NS} Docker images",
                 parents=[spec_parser, status_parser, run_parser, tracks_parser, docker_parser])
-        p.add_argument("--mode",
-            help="Select args mode")
-        p.add_argument("--cnf", "-f", default="tests/cmu-bmc-barrel6.cnf.gz")
+        p.add_argument("--quiet", "-q", action="store_true")
+        p.add_argument("--file", "-f", default="aim-200-1_6-yes1-1.cnf",
+                help=".cnf test file (should also exists with .gz)")
         p.set_defaults(func=test_images)
 
         p = subparsers.add_parser("push",
