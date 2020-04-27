@@ -170,7 +170,7 @@
         "name": "minipure"
     },
     "mipsat": {
-        "status": "fixme",
+        "status": "ok",
         "args": [
             "FILECNF",
             "-tmp",
