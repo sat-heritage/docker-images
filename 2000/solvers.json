@@ -63,7 +63,7 @@
     ]
   },
   "nsat": {
-    "status": "fixme",
+    "status": "ok",
     "name": "nsat",
     "call": "nsat",
     "gz": false,
@@ -117,7 +117,7 @@
     ]
   },
   "relsat": {
-    "status": "fixme",
+    "status": "ok",
     "name": "relsat",
     "call": "relsat",
     "gz": false,
@@ -126,7 +126,7 @@
     ]
   },
   "relsat-200": {
-    "status": "fixme",
+    "status": "ok",
     "name": "relsat-200",
     "call": "relsat-200",
     "gz": false,
@@ -135,7 +135,7 @@
     ]
   },
   "sat-grasp": {
-    "status": "fixme",
+    "status": "ok",
     "name": "sat-grasp",
     "call": "sat-grasp",
     "gz": false,
@@ -189,7 +189,7 @@
     ]
   },
   "zchaff": {
-    "status": "fixme",
+    "status": "ok",
     "name": "zchaff",
     "call": "zchaff",
     "gz": false,
