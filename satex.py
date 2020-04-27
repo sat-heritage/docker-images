@@ -606,7 +606,7 @@ def test_images(args):
     else:
         print(red("Failed tests:"))
         for image, fails in failures:
-            print(f"{lightred(image.name)} failed tests {' '.join(fails)}")
+            print(f"{image.name} failed tests {' '.join(fails)}")
 
     if failures:
         sys.exit(1)
