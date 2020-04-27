@@ -117,19 +117,19 @@
       "FILECNF"
     ]
   },
-  "frankensat-high.dir.tgz": {
-    "status": "fixme",
-    "name": "frankensat-high.dir.tgz",
-    "call": "./frankensat-high.dir.tgz",
+  "frankensat-high": {
+    "status": "ok",
+    "name": "frankensat-high",
+    "call": "./frankensat-high",
     "gz": false,
     "args": [
       "FILECNF"
     ]
   },
-  "frankensat-low.dir.tgz": {
-    "status": "fixme",
-    "name": "frankensat-low.dir.tgz",
-    "call": "./frankensat-low.dir.tgz",
+  "frankensat-low": {
+    "status": "ok",
+    "name": "frankensat-low",
+    "call": "./frankensat-low",
     "gz": false,
     "args": [
       "FILECNF"
@@ -325,7 +325,7 @@
     ]
   },
   "ofsat": {
-    "status": "unstable",
+    "status": "FIXME",
     "name": "ofsat",
     "call": "./ofsat",
     "gz": false,
@@ -508,13 +508,14 @@
       "RANDOMSEED"
     ]
   },
-  "walksatauto.dir.tgz": {
-    "status": "fixme",
-    "name": "walksatauto.dir.tgz",
-    "call": "./walksatauto.dir.tgz",
+  "walksatauto": {
+    "status": "ok",
+    "name": "walksatauto",
+    "call": "./walksatauto",
     "gz": false,
     "args": [
-      "FILECNF"
+      "FILECNF",
+      "RANDOMSEED"
     ]
   },
   "walksatmp": {

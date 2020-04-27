@@ -4,7 +4,21 @@
     "builder": "generic/binary-v1",
     "builder_base": "debian:8.6",
     "download_url": "https://zenodo.org/record/3699078/files/{SOLVER_NAME}?download=1",
+    "frankensat-high": {
+        "download_url": "https://zenodo.org/record/3699078/files/{SOLVER_NAME}.dir.tgz?download=1",
+        "builder": "generic/v1",
+        "RDEPENDS": "tcsh"
+    },
+    "frankensat-low": {
+        "download_url": "https://zenodo.org/record/3699078/files/{SOLVER_NAME}.dir.tgz?download=1",
+        "builder": "generic/v1",
+        "RDEPENDS": "tcsh"
+    },
     "minilearning.jar" : {
         "RDEPENDS": "default-jre"
+    },
+    "walksatauto": {
+        "download_url": "https://zenodo.org/record/3699078/files/{SOLVER_NAME}.dir.tgz?download=1",
+        "builder": "generic/v1"
     }
 }
