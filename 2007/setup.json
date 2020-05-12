@@ -5,13 +5,15 @@
     "base_from": "debian:stretch-slim",
     "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2007-src/{SOLVER_NAME}.tgz",
     "kcnfs-2004": {
-        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2007-src/{SOLVER_NAME}-2004.tgz"
+        "builder_base": "debian/eol:woody-slim",
+        "BUILD_DEPENDS": "gcc-3.0",
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2007-src/{SOLVER}.tgz"
     },
     "kcnfs-2006": {
-        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2007-src/{SOLVER_NAME}-2006.tgz"
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2007-src/{SOLVER}.tgz"
     },
     "kcnfs-smp": {
-        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2007-src/{SOLVER_NAME}-smp.tgz"
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2007-src/{SOLVER}.tgz"
     },
     "miraxt-v1": {
         "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2007-src/{SOLVER_NAME}v1.tgz"

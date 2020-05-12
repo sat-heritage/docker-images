@@ -154,7 +154,8 @@
         ],
         "call": "./kcnfs-2004",
         "gz": false,
-        "status": "FIXME segmentation fault"
+        "status": "ok",
+        "comment": "compiled with gcc-3.0 with original options except the unsupported -m32 (with more recent gcc, -O3 leads to segmentation fault)"
     },
     "kcnfs-2006": {
         "name": "KCNFS",
