@@ -369,33 +369,36 @@
         "version": "CRAFTED",
         "authors": "Lin Xu, Frank Hutter, Holger H. Hoos and Kevin Leyton-Brown",
         "args": [
-            "FILECNF"
+            "FILECNF",
+            "RANDOMSEED"
         ],
         "call": "./SATzilla2007_C",
         "gz": false,
-        "status": "FIXME compilation"
+        "status": "ok"
     },
     "satzilla-full": {
         "name": "SATzilla",
         "version": "FULL",
         "authors": "Lin Xu, Frank Hutter, Holger H. Hoos and Kevin Leyton-Brown",
         "args": [
-            "FILECNF"
+            "FILECNF",
+            "RANDOMSEED"
         ],
         "call": "./SATzilla2007_F",
         "gz": false,
-        "status": "FIXME compilation"
+        "status": "ok"
     },
     "satzilla-random": {
         "name": "SATzilla",
         "version": "RANDOM",
         "authors": "Lin Xu, Frank Hutter, Holger H. Hoos and Kevin Leyton-Brown",
         "args": [
-            "FILECNF"
+            "FILECNF",
+            "RANDOMSEED"
         ],
         "call": "./SATzilla2007_R",
         "gz": false,
-        "status": "FIXME compilation"
+        "status": "ok"
     },
     "spear": {
         "name": "Spear",

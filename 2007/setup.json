@@ -46,5 +46,20 @@
     "spear_fhs": {
         "builder": "generic/binary-v1",
         "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2007-bin/Spear-32"
+    },
+    "satzilla-crafted": {
+        "builder_base": "debian/eol:etch-slim",
+        "BUILD_DEPENDS": "libc6-dev-i386",
+        "RDEPENDS": "libc6-i386"
+    },
+    "satzilla-full": {
+        "builder_base": "debian/eol:etch-slim",
+        "BUILD_DEPENDS": "libc6-dev-i386",
+        "RDEPENDS": "libc6-i386"
+    },
+    "satzilla-random": {
+        "builder_base": "debian/eol:etch-slim",
+        "BUILD_DEPENDS": "libc6-dev-i386",
+        "RDEPENDS": "libc6-i386"
     }
 }

@@ -71,7 +71,7 @@ RUN apt-get update --fix-missing &&\
 
 ARG BUILD_DEPENDS
 RUN if test "${BUILD_DEPENDS}"; then \
-    apt-get install -y --no-install-recommends ${BUILD_DEPENDS}; fi
+    apt-get install -y --no-install-recommends ${BUILD_DEPENDS} || apt-get install -y ${BUILD_DEPENDS}; fi
 
 COPY --from=unpack /src /src
 

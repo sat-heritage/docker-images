@@ -1,0 +1,1 @@
+satzilla-crafted.install.sh
