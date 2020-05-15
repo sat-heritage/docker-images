@@ -424,7 +424,7 @@
     },
     "cbpenelope" : {
         "tracks": ["parallel"],
-	      "status": "FIXME TEMPDIR",
+        "status": "ok",
         "name": "cbpenelope2017",
         "call": "./solver.sh",
         "gz": true,
@@ -434,7 +434,7 @@
     },
     "ccspenelope" : {
         "tracks": ["parallel"],
-	      "status": "FIXME TEMPDIR",
+	      "status": "ok",
         "name": "ccspenelope2017",
         "call": "./solver.sh",
         "gz": true,

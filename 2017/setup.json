@@ -18,14 +18,17 @@
     },
     "cbpenelope" : {
         "builder": "generic/v1",
+        "builder_base": "debian:8.9",
         "download_url": "https://baldur.iti.kit.edu/sat-competition-2017/solvers/parallel/{SOLVER_NAME}.zip"
     },
     "ccspenelope" : {
         "builder": "generic/v1",
+        "builder_base": "debian:8.9",
         "download_url": "https://baldur.iti.kit.edu/sat-competition-2017/solvers/parallel/{SOLVER_NAME}.zip"
     },
     "ddc-submit" : {
         "builder": "generic/v1",
+        "BUILD_DEPENDS": "git libboost-dev libmpich-dev python libboost-program-options-dev",
         "download_url": "https://baldur.iti.kit.edu/sat-competition-2017/solvers/parallel/{SOLVER_NAME}.tar.gz"
     },
     "painless" : {
