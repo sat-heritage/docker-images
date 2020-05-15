@@ -1,4 +1,5 @@
-FROM debian/eol:potato
+ARG BASE
+FROM ${BASE}
 
 ENTRYPOINT ["/entrypoint.sh"]
 WORKDIR /data

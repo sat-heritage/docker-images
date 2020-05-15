@@ -101,6 +101,7 @@ RUN set -ex && mkdir /dist && cd ./`find -maxdepth 1 -mindepth 1 -type d|tail -n
     elif test -f /install.sh; then bash /install.sh; \
     elif test -d binary; then mv -v binary/* /dist/; \
     elif test -d bin; then mv -v bin/* /dist/; \
-    elif find -perm /100 -type f -maxdepth 1 -exec mv -v {} /dist/{} \;; then : ; \
-    else find -perm +100 -type f -maxdepth 1 -exec mv -v {} /dist/{} \;; fi
+    else find -type f -maxdepth 1 -name '*.ini' -exec mv -v {} /dist/{} \;; \
+        if find -perm /100 -type f -maxdepth 1 -exec mv -v {} /dist/{} \;; then : ; \
+        else find -perm +100 -type f -maxdepth 1 -exec mv -v {} /dist/{} \;; fi; fi
 
