@@ -1,2 +1,2 @@
 set -x
-rm -rf _MACOSX
+rm -rf __MACOSX
