@@ -18,7 +18,7 @@
     ]
   },
   "brchaff2": {
-    "status": "FIXME problem when running",
+    "status": "ok",
     "name": "brchaff2",
     "call": "./brchaff2",
     "gz": false,
@@ -100,7 +100,7 @@
     ]
   },
   "eureka": {
-    "status": "FIXME problem when running",
+    "status": "ok",
     "name": "eureka",
     "call": "./eureka",
     "gz": false,
@@ -325,7 +325,7 @@
     ]
   },
   "ofsat": {
-    "status": "FIXME",
+    "status": "ok",
     "name": "ofsat",
     "call": "./ofsat",
     "gz": false,

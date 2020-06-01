@@ -4,6 +4,14 @@
     "builder": "generic/binary-v1",
     "builder_base": "debian:8.6",
     "download_url": "https://zenodo.org/record/3699078/files/{SOLVER_NAME}?download=1",
+    "brchaff2" : {
+        "base_version": "potato",
+        "base_from": "debian/eol:sarge-slim"
+    },
+    "eureka" : {
+        "base_version": "potato",
+        "base_from": "debian/eol:sarge-slim"
+    },
     "frankensat-high": {
         "download_url": "https://zenodo.org/record/3699078/files/{SOLVER_NAME}.dir.tgz?download=1",
         "builder": "generic/v1",
@@ -16,6 +24,10 @@
     },
     "minilearning.jar" : {
         "RDEPENDS": "default-jre"
+    },
+    "ofsat" : {
+        "base_version": "potato",
+        "base_from": "debian/eol:sarge-slim"
     },
     "walksatauto": {
         "download_url": "https://zenodo.org/record/3699078/files/{SOLVER_NAME}.dir.tgz?download=1",
