@@ -757,7 +757,7 @@
         ]
     },
     "probsat" : {
-        "status": "unstable",
+        "status": "ok",
         "tracks" : ["random"],
         "name": "probSAT",
         "call": "./probSAT",

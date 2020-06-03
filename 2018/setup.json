@@ -41,7 +41,7 @@
     "ddc-submit18" : {
         "builder": "generic/v1",
         "download_url": "http://sat2018.forsyte.tuwien.ac.at/solvers/parallel/{SOLVER_NAME}.tar.gz",
-        "BUILD_DEPENDS" : "libopenmpi-dev mpic++"
+        "BUILD_DEPENDS": "git libboost-dev libmpich-dev python"
     },
     "manyglucose" : {
         "builder": "generic/v1",
