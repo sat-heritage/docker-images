@@ -104,6 +104,7 @@
         "download_url": "http://satcompetition.org/edacc/sc14/solver-download/1518"
     },
     "cbpenelope": {
+        "RDEPENDS": "libgomp1",
         "download_url": "http://satcompetition.org/edacc/sc14/solver-download/1464"
     },
     "cryptominisat-4.1-mt": {
@@ -156,7 +157,7 @@
     "dimetheus": {
         "download_url": "http://satcompetition.org/edacc/sc14/solver-download/1397"
     },
-    "ncca+": {
+    "ncca": {
         "download_url": "http://satcompetition.org/edacc/sc14/solver-download/1586"
     },
     "probsat": {

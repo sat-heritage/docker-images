@@ -483,7 +483,7 @@
     },
     "cbpenelope": {
         "tracks" : ["parallel"],
-        "status" : "FIXME",
+        "status" : "ok",
         "args": [
             "-config=./configuration.ini",
             "FILECNF"
@@ -491,7 +491,7 @@
         "authors": "Tomohiro Sonobe, Shuya Kondoh",
         "call": "././cb_penelope",
         "comments": "Launchcommand was:  ././cb_penelope -config=./configuration.ini  <instance> \nTrack was Parallel, Application SAT+UNSAT track",
-        "gz": true,
+        "gz": false,
         "name": "CBPeneLoPe"
     },
     "cryptominisat-4.1-mt": {
@@ -674,7 +674,7 @@
         "name": "CSCCSat2014"
     },
     "dimetheus": {
-        "status" : "FIXME",
+        "status" : "ok",
         "tracks" : ["random"],
         "args": [
             "-formula",
@@ -687,11 +687,11 @@
         "authors": "Oliver Gableske",
         "call": "././dimetheus",
         "comments": "Launchcommand was:  ././dimetheus -formula <instance>  -seed <seed>  -classifyInputDomain 10\nTrack was Sequential, Random SAT track",
-        "gz": true,
+        "gz": false,
         "name": "dimetheus"
     },
     "ncca": {
-        "status" : "FIXME",
+        "status" : "ok",
         "tracks" : ["random"],
         "args": [
             "FILECNF",
@@ -701,7 +701,7 @@
         "authors": "Djamal Habet, Donia Toumi, Andr\u00e9 Abram\u00e9",
         "call": "././Ncca+",
         "comments": "Launchcommand was:  ././Ncca+  <instance>  -s <seed> \nTrack was Sequential, Random SAT track",
-        "gz": true,
+        "gz": false,
         "name": "Ncca+"
     },
     "probsat": {
