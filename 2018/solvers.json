@@ -760,9 +760,10 @@
         "status": "unstable",
         "tracks" : ["random"],
         "name": "probSAT",
-        "call": "./probsat",
-        "gz": true,
+        "call": "./probSAT",
+        "gz": false,
         "args": [
+            "-a",
             "FILECNF"
         ]
     }
