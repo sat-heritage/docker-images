@@ -4,21 +4,29 @@
     "builder": "generic/starexec",
     "builder_base": "debian:8.6",
     "download_url": "https://baldur.iti.kit.edu/sat-competition-2016/solvers/main/{SOLVER_NAME}.zip",
+    "cmsat5_agile" : {
+        "builder": "generic/v1",
+        "BUILD_DEPENDS": "vim-common",
+        "download_url": "https://baldur.iti.kit.edu/sat-competition-2016/solvers/random/{SOLVER_NAME}.zip"
+    },
     "cmsat5_main2" : {
-        "BUILD_DEPENDS": "xxd"
+        "builder": "generic/v1",
+        "BUILD_DEPENDS": "vim-common"
     },
     "cmsat5_autotune2" : {
-        "BUILD_DEPENDS": "xxd"
+        "builder": "generic/v1",
+        "BUILD_DEPENDS": "vim-common"
+    },
+    "cmsat5_run_parallel" : {
+        "builder": "generic/v1",
+        "BUILD_DEPENDS": "vim-common",
+        "download_url": "https://baldur.iti.kit.edu/sat-competition-2016/solvers/parallel16/{SOLVER_NAME}.zip"
     },
     "csccsat" : {
         "builder": "generic/v1",
         "download_url": "https://baldur.iti.kit.edu/sat-competition-2016/solvers/random/{SOLVER_NAME}.zip"
     },
     "dccalm" : {
-        "builder": "generic/v1",
-        "download_url": "https://baldur.iti.kit.edu/sat-competition-2016/solvers/random/{SOLVER_NAME}.zip"
-    },
-    "cmsat5_agile" : {
         "builder": "generic/v1",
         "download_url": "https://baldur.iti.kit.edu/sat-competition-2016/solvers/random/{SOLVER_NAME}.zip"
     },
@@ -59,10 +67,6 @@
         "download_url": "https://baldur.iti.kit.edu/sat-competition-2016/solvers/parallel16/{SOLVER_NAME}.zip"
     },
     "ccspenelope" : {
-        "builder": "generic/v1",
-        "download_url": "https://baldur.iti.kit.edu/sat-competition-2016/solvers/parallel16/{SOLVER_NAME}.zip"
-    },
-    "cmsat5_run_parallel" : {
         "builder": "generic/v1",
         "download_url": "https://baldur.iti.kit.edu/sat-competition-2016/solvers/parallel16/{SOLVER_NAME}.zip"
     },

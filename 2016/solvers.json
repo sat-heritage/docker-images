@@ -258,30 +258,32 @@
     },
     "cmsat5_autotune2": {
 	      "tracks": ["main"],
-        "status": "FIXME: xxd mssing",
+        "status": "ok",
         "name": "cmsat5_autotune2",
-        "call": "./cmsat5_autotune2",
-        "gz": true,
+        "call": "./cryptominisat4_simple",
+        "gz": false,
         "args": [
-            "FILECNF"
+            "FILECNF",
+            "--reconf=100"
         ],
         "argsproof": [
             "FILECNF",
-            "FILEPROOF"
+            "--drat=FILEPROOF",
+            "--reconf=100"
         ]
     },
     "cmsat5_main2": {
 	      "tracks": ["main"],
-        "status": "FIXME: xxd missing",
+        "status": "ok",
         "name": "cmsat5_main2",
-        "call": "./cmsat5_main2",
-        "gz": true,
+        "call": "./cryptominisat4_simple",
+        "gz": false,
         "args": [
             "FILECNF"
         ],
         "argsproof": [
             "FILECNF",
-            "FILEPROOF"
+            "--drat=FILEPROOF"
         ]
     },
     "glucose": {
@@ -445,10 +447,10 @@
     },
     "cmsat5_agile" : {
 	      "tracks": ["random"],
-        "status": "unstable",
+        "status": "ok",
         "name": "cmsat5_agile",
-        "call": "./cmsat5_agile",
-        "gz": true,
+        "call": "./cryptominisat4_simple",
+        "gz": false,
         "args": [
             "FILECNF"
         ]
@@ -558,12 +560,12 @@
     },
     "cmsat5_run_parallel" : {
 	      "tracks": ["parallel"],
-        "status": "FIXME",
+        "status": "ok",
         "name": "cmsat5_run_parallel",
-        "call": "./cmsat5_run_parallel",
-        "gz": true,
+        "call": "./cryptominisat4_simple",
+        "gz": false,
         "args": [
-            "FILECNF"
+            "FILECNF", "--threads=MAXNBTHREAD"
         ]
     },
     "dissolve-sat" : {
