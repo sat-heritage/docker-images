@@ -789,7 +789,7 @@
             "hard-combinatorial-cert-unsat",
             "application-cert-unsat"
         ],
-        "status": "OK",
+        "status": "ok",
         "args": [
             "FILECNF"
         ],
@@ -804,7 +804,7 @@
             "hard-combinatorial-cert-unsat",
             "application-cert-unsat"
         ],
-        "status": "OK",
+        "status": "ok",
         "args": [
             "FILECNF"
         ],
@@ -834,7 +834,7 @@
             "hard-combinatorial-cert-unsat",
             "application-cert-unsat"
         ],
-        "status": "OK",
+        "status": "ok",
         "args": [
             "FILECNF"
         ],
@@ -849,7 +849,7 @@
             "hard-combinatorial-cert-unsat",
             "application-cert-unsat"
         ],
-        "status": "OK",
+        "status": "ok",
         "args": [
             "FILECNF",
             "/tmp"
@@ -997,7 +997,7 @@
         "tracks": [
             "random-sat"
         ],
-        "status": "OK",
+        "status": "ok",
         "args": [
             "-formula",
             "FILECNF",
@@ -1016,7 +1016,7 @@
         "tracks": [
             "random-sat"
         ],
-        "status": "OK",
+        "status": "ok",
         "args": [
             "FILECNF",
             "RANDOMSEED"
@@ -1031,7 +1031,7 @@
         "tracks": [
             "random"
         ],
-        "status": "OK",
+        "status": "ok",
         "args": [
             "FILECNF"
         ],
@@ -1045,7 +1045,7 @@
         "tracks": [
             "random"
         ],
-        "status": "OK",
+        "status": "ok",
         "args": [
             "FILECNF",
             "-s",
@@ -1200,7 +1200,7 @@
         "tracks": [
             "parallel"
         ],
-        "status": "OK",
+        "status": "ok",
         "args": [
             "FILECNF",
             "-rnd-seed=RANDOMSEED",
@@ -1217,7 +1217,7 @@
         "tracks": [
             "parallel"
         ],
-        "status": "OK",
+        "status": "ok",
         "args": [
             "FILECNF",
             "/tmp"
@@ -1247,7 +1247,7 @@
         "tracks": [
             "parallel"
         ],
-        "status": "OK",
+        "status": "ok",
         "args": [
             "FILECNF"
         ],
@@ -1261,7 +1261,7 @@
         "tracks": [
             "parallel"
         ],
-        "status": "OK",
+        "status": "ok",
         "args": [
             "FILECNF"
         ],
@@ -1329,7 +1329,7 @@
         "tracks": [
             "parallel"
         ],
-        "status": "OK",
+        "status": "ok",
         "args": [
             "FILECNF"
         ],
