@@ -750,7 +750,7 @@
     },
     "glucose_certified_unsat": {
         "status": "ok",
-        "tracks" : "",
+        "tracks" : ["glucose-cert-unsat"],
         "args": [
             "FILECNF"
         ],
@@ -758,7 +758,7 @@
             "FILECNF"
         ],
         "authors": "Gilles Audemard and Laurent Simon",
-        "call": "././glucose",
+        "call": "./glucose",
         "comments": "Launchcommand was:  ././glucose  <instance> \nTrack was Sequential, Application certified UNSAT track",
         "gz": true,
         "name": "glucose (certified unsat)"

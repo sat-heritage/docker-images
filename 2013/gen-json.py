@@ -24,7 +24,7 @@ jsonsetup = {}
 
 for (experiment,track) in links:
     print(track)
-    if track != "Core solvers, Sequential, Application SAT+UNSAT":
+    if track == "Core solvers, Sequential, Application SAT+UNSAT":
         print("I am skipping the track", track, "(in this version, see code)")
         continue #FIXME: for other tracks, we must check if this is a similar solver by
     # Downloading the tar file, getting the code.zip and checking if this is the same
@@ -71,11 +71,11 @@ for (experiment,track) in links:
                     buildargs(launchcommand), "comments":"Launchcommand was: " + launchcommand +"\nTrack was "+track, "authors": authors}
             jsonsetup[normalizedname] = {"download_url":"http://satcompetition.org"+solverdetails[0]}
 
-with open("auto-setup.json","wt") as f:
+with open("auto-setup2.json","wt") as f:
   json.dump(jsonsetup, f, sort_keys=True, indent=4)
 print("File auto-setup.json created")
 
-with open("auto-solvers.json","wt") as f:
+with open("auto-solvers2.json","wt") as f:
   json.dump(jsonoutput, f, sort_keys=True, indent=4)
 print("File auto-solvers.json created")
 print("Warning, there is probably multiple entries for the same solver (when used in different tracks). Check the parameters to see if there is any difference. This scripts only builds starter json files.")

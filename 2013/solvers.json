@@ -1,20 +1,27 @@
 {
     "breakidglucose": {
+        "tracks": [
+            "application",
+            "hard-combinatorial"
+        ],
         "status": "ok",
         "args": [
             "FILECNF",
             "/tmp"
         ],
         "authors": "Jo Devriendt, Bart Bogaerts",
-        "call": "././runBreakIDGlucose.sh",
-        "comments": "Launchcommand was:  ././runBreakIDGlucose.sh  <instance>   <tempdir> \nTrack was Core solvers, Sequential, Application SAT+UNSAT",
-        "gz": true,
+        "call": "./runBreakIDGlucose.sh",
+        "comments": "Launchcommand was:  ./runBreakIDGlucose.sh  <instance>   <tempdir> \nTrack was Core solvers, Sequential, Application SAT+UNSAT",
+        "gz": false,
         "name": "BreakIDGlucose"
     },
     "cshcappllc": {
+        "tracks": [
+            "application"
+        ],
         "status": "FIXME build fails",
         "args": [
-            ".//algport.py",
+            "./algport.py",
             "--tmpdir",
             "/tmp",
             "CSHCapplLC",
@@ -22,12 +29,15 @@
         ],
         "authors": "Yuri Malitsky, Ashish Sabharwal, Horst Samulowitz, Meinolf Sellmann.",
         "call": "python",
-        "comments": "Launchcommand was: python .//algport.py --tmpdir <tempdir>  CSHCapplLC  <instance> \nTrack was Core solvers, Sequential, Application SAT+UNSAT",
+        "comments": "Launchcommand was: python ./algport.py --tmpdir <tempdir>  CSHCapplLC  <instance> \nTrack was Core solvers, Sequential, Application SAT+UNSAT",
         "gz": true,
         "name": "CSHCapplLC"
     },
     "cshcappllg": {
-        "status" : "FIXME does not compile",
+        "tracks": [
+            "application"
+        ],
+        "status": "FIXME does not compile",
         "args": [
             ".//algport.py",
             "--tmpdir",
@@ -42,7 +52,11 @@
         "name": "CSHCapplLG"
     },
     "forl": {
-        "status" : "FIXME does not compile",
+        "tracks": [
+            "application",
+            "hard-combinatorial"
+        ],
+        "status": "FIXME does not compile",
         "args": [
             "--verb",
             "0",
@@ -55,6 +69,11 @@
         "name": "forl"
     },
     "glucored": {
+        "tracks": [
+            "application",
+            "hard-combinatorial",
+            "parallel"
+        ],
         "status": "ok",
         "args": [
             "FILECNF",
@@ -67,6 +86,10 @@
         "name": "GlucoRed"
     },
     "glucose": {
+        "tracks": [
+            "application",
+            "hard-combinatorial"
+        ],
         "status": "ok",
         "args": [
             "FILECNF"
@@ -78,7 +101,10 @@
         "name": "glucose"
     },
     "glue_bit": {
-        "status" : "ok",
+        "tracks": [
+            "application"
+        ],
+        "status": "ok",
         "args": [
             "FILECNF",
             "/tmp"
@@ -90,6 +116,9 @@
         "name": "glue_bit"
     },
     "gluebit_lgl": {
+        "tracks": [
+            "application"
+        ],
         "status": "ok",
         "args": [
             "FILECNF"
@@ -101,6 +130,10 @@
         "name": "gluebit_lgl"
     },
     "glueminisat": {
+        "tracks": [
+            "application",
+            "hard-combinatorial"
+        ],
         "status": "ok",
         "args": [
             "-compe",
@@ -113,6 +146,10 @@
         "name": "glueminisat"
     },
     "gluh": {
+        "tracks": [
+            "application",
+            "hard-combinatorial"
+        ],
         "status": "ok",
         "args": [
             "FILECNF",
@@ -125,6 +162,10 @@
         "name": "gluH"
     },
     "gluh_simp": {
+        "tracks": [
+            "application",
+            "hard-combinatorial"
+        ],
         "status": "ok",
         "args": [
             "FILECNF"
@@ -135,7 +176,11 @@
         "gz": true,
         "name": "gluH_simp"
     },
-    "lingeling": {
+    "lingeling_587f": {
+        "tracks": [
+            "application",
+            "hard-combinatorial"
+        ],
         "status": "ok",
         "args": [
             "FILECNF"
@@ -146,7 +191,11 @@
         "gz": true,
         "name": "Lingeling"
     },
-    "lingeling_1": {
+    "lingeling_aqw": {
+        "tracks": [
+            "application",
+            "hard-combinatorial"
+        ],
         "status": "ok",
         "args": [
             "FILECNF"
@@ -158,6 +207,11 @@
         "name": "Lingeling"
     },
     "minipure": {
+        "tracks": [
+            "application",
+            "hard-combinatorial",
+            "random"
+        ],
         "status": "ok",
         "args": [
             "FILECNF",
@@ -170,6 +224,9 @@
         "name": "minipure"
     },
     "mipsat": {
+        "tracks": [
+            "application"
+        ],
         "status": "ok",
         "args": [
             "FILECNF",
@@ -183,6 +240,9 @@
         "name": "MIPSat"
     },
     "nigma": {
+        "tracks": [
+            "application"
+        ],
         "status": "ok",
         "args": [
             "FILECNF",
@@ -199,7 +259,10 @@
         "name": "Nigma"
     },
     "nigma-nopb": {
-        "status" : "ok",
+        "tracks": [
+            "application"
+        ],
+        "status": "ok",
         "args": [
             "FILECNF",
             "--verbose",
@@ -214,7 +277,11 @@
         "name": "Nigma-NoPB"
     },
     "relback": {
-        "status" : "ok",
+        "tracks": [
+            "application",
+            "hard-combinatorial"
+        ],
+        "status": "ok",
         "args": [
             "FILECNF",
             "-tmp",
@@ -227,7 +294,11 @@
         "name": "relback"
     },
     "riss3g": {
-        "status" : "ok",
+        "tracks": [
+            "application",
+            "hard-combinatorial"
+        ],
+        "status": "ok",
         "args": [
             "FILECNF"
         ],
@@ -237,18 +308,10 @@
         "gz": true,
         "name": "Riss3g"
     },
-    "riss3g_1": {
-        "status" : "ok",
-        "args": [
-            "FILECNF"
-        ],
-        "authors": "Norbert Manthey",
-        "call": ".//riss3g-cert.sh",
-        "comments": "Launchcommand was:  .//riss3g-cert.sh  <instance> \nTrack was Core solvers, Sequential, Application SAT+UNSAT",
-        "gz": true,
-        "name": "Riss3g"
-    },
     "rseq": {
+        "tracks": [
+            "application"
+        ],
         "status": "ok",
         "args": [
             "FILECNF",
@@ -262,6 +325,10 @@
         "name": "RSeq"
     },
     "sat4j": {
+        "tracks": [
+            "application",
+            "hard-combinatorial"
+        ],
         "status": "ok",
         "args": [
             "-Xms5g",
@@ -277,7 +344,12 @@
         "name": "SAT4J"
     },
     "sattimerelbackshr": {
-        "status" : "ok",
+        "tracks": [
+            "application",
+            "hard-combinatorial",
+            "random"
+        ],
+        "status": "ok",
         "args": [
             "FILECNF",
             "-s",
@@ -290,7 +362,11 @@
         "name": "sattimeRelbackShr"
     },
     "satuzk": {
-        "status" : "FIXME : problem when building",
+        "tracks": [
+            "application",
+            "hard-combinatorial"
+        ],
+        "status": "FIXME : problem when building",
         "args": [
             "/tmp",
             "satUZK",
@@ -303,6 +379,10 @@
         "name": "satUZK"
     },
     "shatterglucose": {
+        "tracks": [
+            "application",
+            "hard-combinatorial"
+        ],
         "status": "ok",
         "args": [
             "FILECNF",
@@ -315,6 +395,11 @@
         "name": "ShatterGlucose"
     },
     "solver43a": {
+        "tracks": [
+            "application",
+            "hard-combinatorial",
+            "random"
+        ],
         "status": "ok",
         "args": [
             "FILECNF"
@@ -326,6 +411,11 @@
         "name": "Solver43a"
     },
     "solver43b": {
+        "tracks": [
+            "application",
+            "hard-combinatorial",
+            "random"
+        ],
         "status": "ok",
         "args": [
             "FILECNF"
@@ -337,6 +427,11 @@
         "name": "Solver43b"
     },
     "strangenight": {
+        "tracks": [
+            "application",
+            "hard-combinatorial",
+            "random"
+        ],
         "status": "FIXME does not compile",
         "args": [
             "FILECNF"
@@ -348,7 +443,11 @@
         "name": "strangenight"
     },
     "zenn": {
-        "status" : "ok",
+        "tracks": [
+            "application",
+            "hard-combinatorial"
+        ],
+        "status": "ok",
         "args": [
             "-ms=2",
             "-gmr",
@@ -366,5 +465,878 @@
         "comments": "Launchcommand was:  ././zenn -ms=2 -gmr -recover=0 -safe_low=2 -safe_high=60 -var_luby=2 -phase_decay -glue_decay=0.800 -sinn_decay=0.990  <instance> \nTrack was Core solvers, Sequential, Application SAT+UNSAT",
         "gz": true,
         "name": "ZENN"
+    },
+    "clasp_vflip": {
+        "tracks": [
+            "hard-combinatorial"
+        ],
+        "status": "ok",
+        "args": [
+            "FILECNF"
+        ],
+        "authors": "Jingchao Chen",
+        "call": "./clasp_vflip",
+        "comments": "Launchcommand was:  ./clasp_vflip  <instance> \nTrack was Core solvers, Sequential, Hard-combinatorial SAT+UNSAT",
+        "gz": false,
+        "name": "clasp_vflip"
+    },
+    "cshccombcs": {
+        "tracks": [
+            "hard-combinatorial"
+        ],
+        "status": "FIXME build fails",
+        "args": [
+            ".//algport.py",
+            "--tmpdir",
+            "/tmp",
+            "CSHCcombCS",
+            "FILECNF"
+        ],
+        "authors": "Yuri Malitsky, Ashish Sabharwal, Horst Samulowitz, Meinolf Sellmann.",
+        "call": "python",
+        "comments": "Launchcommand was: python .//algport.py --tmpdir <tempdir>  CSHCcombCS  <instance> \nTrack was Core solvers, Sequential, Hard-combinatorial SAT",
+        "gz": true,
+        "name": "CSHCcombCS"
+    },
+    "dk-sat11": {
+        "tracks": [
+            "hard-combinatorial",
+            "random"
+        ],
+        "status": "ok",
+        "args": [
+            "FILECNF"
+        ],
+        "authors": "Donald Knuth",
+        "call": ".//dk-run.sh",
+        "comments": "Launchcommand was:  .//dk-run.sh  <instance> \nTrack was Core solvers, Sequential, Hard-combinatorial SAT",
+        "gz": false,
+        "name": "dk-SAT11"
+    },
+    "dk-sat11_1": {
+        "tracks": [
+            "hard-combinatorial-cert-unsat"
+        ],
+        "status": "ok",
+        "args": [
+            "FILECNF"
+        ],
+        "authors": "Donald Knuth",
+        "call": ".//dk-run.sh",
+        "comments": "Launchcommand was:  .//dk-run.sh  <instance> \nTrack was Core solvers, Sequential, Hard-combinatorial SAT",
+        "gz": false,
+        "name": "dk-SAT11"
+    },
+    "gluebit_clasp": {
+        "args": [
+            "FILECNF"
+        ],
+        "tracks": [
+            "hard-combinatorial"
+        ],
+        "status": "ok",
+        "authors": "Jingchao Chen",
+        "call": "././gluebit_clasp",
+        "comments": "Launchcommand was:  ././gluebit_clasp  <instance> \nTrack was Core solvers, Sequential, Hard-combinatorial SAT",
+        "gz": true,
+        "name": "gluebit_clasp"
+    },
+    "gnovelty-gca": {
+        "tracks": [
+            "hard-combinatorial",
+            "random"
+        ],
+        "status": "ok",
+        "args": [
+            "FILECNF",
+            "RANDOMSEED"
+        ],
+        "authors": "Thach-Thao Duong, Duc Nghia Pham",
+        "call": "././gNovelty+GCa",
+        "comments": "Launchcommand was:  ././gNovelty+GCa  <instance>   <seed> \nTrack was Core solvers, Sequential, Hard-combinatorial SAT",
+        "gz": false,
+        "name": "gNovelty+GCa"
+    },
+    "gnovelty-gcwa": {
+        "tracks": [
+            "hard-combinatorial",
+            "random"
+        ],
+        "status": "ok",
+        "args": [
+            "FILECNF",
+            "RANDOMSEED"
+        ],
+        "authors": "Thach-Thao Duong, Duc Nghia Pham",
+        "call": "././gNovelty+GCwa",
+        "comments": "Launchcommand was:  ././gNovelty+GCwa  <instance>   <seed> \nTrack was Core solvers, Sequential, Hard-combinatorial SAT",
+        "gz": false,
+        "name": "gNovelty+GCwa"
+    },
+    "march_br": {
+        "tracks": [
+            "hard-combinatorial",
+            "random"
+        ],
+        "status": "ok",
+        "args": [
+            "FILECNF"
+        ],
+        "authors": "Marijn Heule",
+        "call": "././march_br",
+        "comments": "Launchcommand was:  ././march_br  <instance> \nTrack was Core solvers, Sequential, Hard-combinatorial SAT",
+        "gz": false,
+        "name": "march_br"
+    },
+    "mipsat_1": {
+        "tracks": [
+            "hard-combinatorial"
+        ],
+        "status": "ok",
+        "args": [
+            "FILECNF",
+            "-tmp",
+            "/tmp"
+        ],
+        "authors": "Sergio N\u00fa\u00f1ez, Daniel Borrajo and Carlos Linares L\u00f3pez",
+        "call": "././solve",
+        "comments": "Launchcommand was:  ././solve  <instance>  -tmp <tempdir> \nTrack was Core solvers, Sequential, Hard-combinatorial SAT",
+        "gz": true,
+        "name": "MIPSat"
+    },
+    "mipsat_2": {
+        "tracks": [
+            "hard-combinatorial"
+        ],
+        "status": "ok",
+        "args": [
+            "FILECNF",
+            "-tmp",
+            "/tmp"
+        ],
+        "authors": "Sergio N\u00fa\u00f1ez, Daniel Borrajo and Carlos Linares L\u00f3pez",
+        "call": "././solve",
+        "comments": "Launchcommand was:  ././solve  <instance>  -tmp <tempdir> \nTrack was Core solvers, Sequential, Hard-combinatorial SAT+UNSAT",
+        "gz": true,
+        "name": "MIPSat"
+    },
+    "sattime2013": {
+        "tracks": [
+            "hard-combinatorial",
+            "random"
+        ],
+        "status": "FIXME needs INTEL compiler (icc)",
+        "args": [
+            "FILECNF",
+            "-seed",
+            "RANDOMSEED",
+            "-nbsol",
+            "1"
+        ],
+        "authors": "Chu Min LI and Yu LI",
+        "call": "./sattime2013",
+        "comments": "Launchcommand was:  ./sattime2013  <instance>  -seed <seed>  -nbsol 1\nTrack was Core solvers, Sequential, Hard-combinatorial SAT",
+        "gz": true,
+        "name": "sattime2013"
+    },
+    "sattimeclasp": {
+        "tracks": [
+            "hard-combinatorial",
+            "random"
+        ],
+        "status": "ok",
+        "args": [
+            "FILECNF",
+            "-s",
+            "RANDOMSEED",
+            "2500"
+        ],
+        "authors": "Jiang hua, chumin li, Xu Ruchu",
+        "call": "././SCSeq.sh",
+        "comments": "Launchcommand was:  ././SCSeq.sh  <instance>  -s <seed>  2500\nTrack was Core solvers, Sequential, Hard-combinatorial SAT+UNSAT",
+        "gz": false,
+        "name": "sattimeClasp"
+    },
+    "sattimerelbackseq": {
+        "tracks": [
+            "hard-combinatorial",
+            "random"
+        ],
+        "status": "FIXME needs INTEL compiler (icc)",
+        "args": [
+            "FILECNF",
+            "-s",
+            "RANDOMSEED",
+            "2500",
+            "-tmp",
+            "/tmp"
+        ],
+        "authors": "Chu Min LI and Hua Jiang and Djamal Habet",
+        "call": "./SRSeq.sh",
+        "comments": "Launchcommand was:  ./SRSeq.sh  <instance>  -s <seed>  2500 -tmp <tempdir> \nTrack was Core solvers, Sequential, Hard-combinatorial SAT",
+        "gz": true,
+        "name": "sattimeRelbackSeq"
+    },
+    "sparrowtoriss": {
+        "tracks": [
+            "hard-combinatorial"
+        ],
+        "status": "ok",
+        "args": [
+            "FILECNF",
+            "RANDOMSEED"
+        ],
+        "authors": "Adrian Balint, Norbert Manthey",
+        "call": "././SparrowToRiss.sh",
+        "comments": "Launchcommand was:  ././SparrowToRiss.sh  <instance>  <seed>\nTrack was Core solvers, Sequential, Hard-combinatorial SAT",
+        "gz": true,
+        "name": "SparrowToRiss"
+    },
+    "balancedz": {
+        "tracks": [
+            "hard-combinatorial-sat"
+        ],
+        "status": "FIXME",
+        "args": [
+            "FILECNF",
+            "-seed",
+            "RANDOMSEED"
+        ],
+        "authors": "Chong HUANG",
+        "call": ".//BalancedZ",
+        "comments": "Launchcommand was:  .//BalancedZ  <instance>  -seed <seed> \nTrack was Core solvers, Sequential, Hard-combinatorial SAT",
+        "gz": true,
+        "name": "BalancedZ"
+    },
+    "ccanr": {
+        "tracks": [
+            "hard-combinatorial-sat"
+        ],
+        "status": "ok",
+        "args": [
+            "FILECNF",
+            "RANDOMSEED"
+        ],
+        "authors": "Shaowei Cai, Kaile Su",
+        "call": "././CCAnr",
+        "comments": "Launchcommand was:  ././CCAnr  <instance>   <seed> \nTrack was Core solvers, Sequential, Hard-combinatorial SAT",
+        "gz": false,
+        "name": "CCAnr"
+    },
+    "doug_hains": {
+        "tracks": [
+            "hard-combinatorial-sat"
+        ],
+        "status": "ok",
+        "args": [
+            "FILECNF"
+        ],
+        "authors": "Doug Hains, Darrell Whitley, Adele Howe",
+        "call": "././hyperplane_minisat.sh",
+        "comments": "Launchcommand was:  ././hyperplane_minisat.sh  <instance> \nTrack was Core solvers, Sequential, Application SAT",
+        "gz": true,
+        "name": "Doug Hains"
+    },
+    "mipsat_3": {
+        "tracks": [
+            "hard-combinatorial-sat"
+        ],
+        "status": "ok",
+        "args": [
+            "FILECNF",
+            "-tmp",
+            "/tmp"
+        ],
+        "authors": "Sergio N\u00fa\u00f1ez, Daniel Borrajo and Carlos Linares L\u00f3pez",
+        "call": "././solve",
+        "comments": "Launchcommand was:  ././solve  <instance>  -tmp <tempdir> \nTrack was Core solvers, Sequential, Hard-combinatorial SAT",
+        "gz": false,
+        "name": "MIPSat"
+    },
+    "sparrow-cp3": {
+        "tracks": [
+            "hard-combinatorial-sat"
+        ],
+        "status": "ok",
+        "args": [
+            "FILECNF",
+            "RANDOMSEED"
+        ],
+        "authors": "Adrian Balint, Norbert Manthey",
+        "call": "././Sparrow+CP3.sh",
+        "comments": "Launchcommand was:  ././Sparrow+CP3.sh  <instance>  <seed>\nTrack was Core solvers, Sequential, Hard-combinatorial SAT",
+        "gz": true,
+        "name": "Sparrow+CP3"
+    },
+    "forl-drup": {
+        "tracks": [
+            "hard-combinatorial-sat"
+        ],
+        "status": "FIXME",
+        "args": [
+            "--verb",
+            "0",
+            "FILECNF"
+        ],
+        "authors": "Mate Soos",
+        "call": "./forl-drup",
+        "comments": "Launchcommand was:  ./forl-drup --verb 0  <instance> \nTrack was Core solvers, Sequential, Hard-combinatorial certified UNSAT",
+        "gz": true,
+        "name": "forl"
+    },
+    "glucose-drup": {
+        "tracks": [
+            "hard-combinatorial-cert-unsat",
+            "application-cert-unsat"
+        ],
+        "status": "OK",
+        "args": [
+            "FILECNF"
+        ],
+        "authors": "Gilles Audemard and Laurent Simon",
+        "call": "././glucose",
+        "comments": "Launchcommand was:  ././glucose  <instance> \nTrack was Core solvers, Sequential, Hard-combinatorial certified UNSAT",
+        "gz": true,
+        "name": "glucose"
+    },
+    "glueminisat-cert-unsat": {
+        "tracks": [
+            "hard-combinatorial-cert-unsat",
+            "application-cert-unsat"
+        ],
+        "status": "OK",
+        "args": [
+            "FILECNF"
+        ],
+        "authors": "Hidetomo Nabeshima, Koji Iwanuma, Katsumi Inoue",
+        "call": "././glueminisat-cert-unsat.sh",
+        "comments": "Launchcommand was:  ././glueminisat-cert-unsat.sh  <instance> \nTrack was Core solvers, Sequential, Application certified UNSAT",
+        "gz": true,
+        "name": "glueminisat-cert-unsat"
+    },
+    "lingeling_aqw_drup": {
+        "tracks": [
+            "hard-combinatorial-cert-unsat",
+            "application-cert-unsat"
+        ],
+        "status": "FIXME",
+        "args": [
+            "FILECNF"
+        ],
+        "authors": "Armin Biere",
+        "call": "./lingeling",
+        "comments": "Launchcommand was:  ./lingeling  <instance> \nTrack was Core solvers, Sequential, Hard-combinatorial certified UNSAT",
+        "gz": true,
+        "name": "Lingeling"
+    },
+    "minisat_drup": {
+        "tracks": [
+            "hard-combinatorial-cert-unsat",
+            "application-cert-unsat"
+        ],
+        "status": "OK",
+        "args": [
+            "FILECNF"
+        ],
+        "authors": "Niklas E\u00e9n and Niklas S\u00f6rensson ",
+        "call": "././minisat",
+        "comments": "Launchcommand was:  ././minisat  <instance> \nTrack was Core solvers, Sequential, Application certified UNSAT",
+        "gz": true,
+        "name": "minisat DRUP"
+    },
+    "riss3g-cert": {
+        "tracks": [
+            "hard-combinatorial-cert-unsat",
+            "application-cert-unsat"
+        ],
+        "status": "OK",
+        "args": [
+            "FILECNF",
+            "/tmp"
+        ],
+        "authors": "Norbert Manthey",
+        "call": "././riss3g-cert.sh",
+        "comments": "Launchcommand was:  ././riss3g-cert.sh  <instance>   <tempdir> \nTrack was Core solvers, Sequential, Hard-combinatorial certified UNSAT",
+        "gz": true,
+        "name": "Riss3g"
+    },
+    "sat4j_certified": {
+        "tracks": [
+            "hard-combinatorial-cert-unsat",
+            "application-cert-unsat"
+        ],
+        "status": "FIXME unable to download some packages",
+        "args": [
+            "/tmp",
+            "FILECNF"
+        ],
+        "authors": "Daniel Le Berre",
+        "call": "././unsatproof.sh",
+        "comments": "Launchcommand was:  ././unsatproof.sh  <tempdir>   <instance> \nTrack was Core solvers, Sequential, Application certified UNSAT",
+        "gz": true,
+        "name": "SAT4J Certified"
+    },
+    "minisat_bit_u": {
+        "tracks": [
+            "application-cert-unsat"
+        ],
+        "status": "ok",
+        "args": [
+            "FILECNF"
+        ],
+        "authors": "Jingchao Chen",
+        "call": "././minisat_bit_u",
+        "comments": "Launchcommand was:  ././minisat_bit_u  <instance> \nTrack was Core solvers, Sequential, Application certified UNSAT",
+        "gz": true,
+        "name": "minisat_bit_u"
+    },
+    "nigma-drup": {
+        "tracks": [
+            "application-cert-unsat"
+        ],
+        "status": "ok",
+        "args": [
+            "FILECNF",
+            "--verbose",
+            "--display-assignments-if-sat",
+            "--output-drup-if-unsat",
+            "--partial-backtracking",
+            "--preprocessing-timeout",
+            "200"
+        ],
+        "authors": "Chuan Jiang, Ting Zhang",
+        "call": "./nigma",
+        "comments": "Launchcommand was:  ./nigma  <instance>  --verbose --display-assignments-if-sat --output-drup-if-unsat --partial-backtracking --preprocessing-timeout 200\nTrack was Core solvers, Sequential, Application certified UNSAT",
+        "gz": true,
+        "name": "Nigma-DRUP"
+    },
+    "nigma-nopb-drup": {
+        "tracks": [
+            "application-cert-unsat"
+        ],
+        "status": "ok",
+        "args": [
+            "FILECNF",
+            "--verbose",
+            "--display-assignments-if-sat",
+            "--output-drup-if-unsat",
+            "--preprocessing-timeout",
+            "200"
+        ],
+        "authors": "Chuan Jiang, Ting Zhang",
+        "call": "./nigma",
+        "comments": "Launchcommand was:  ./nigma  <instance>  --verbose --display-assignments-if-sat --output-drup-if-unsat --preprocessing-timeout 200\nTrack was Core solvers, Sequential, Application certified UNSAT",
+        "gz": true,
+        "name": "Nigma-NoPB-DRUP"
+    },
+    "balancedz_1": {
+        "tracks": [
+            "random-sat"
+        ],
+        "status": "FIXME does not compile",
+        "args": [
+            "FILECNF",
+            "-seed",
+            "RANDOMSEED"
+        ],
+        "authors": "Chong HUANG",
+        "call": ".//BalancedZ",
+        "comments": "Launchcommand was:  .//BalancedZ  <instance>  -seed <seed> \nTrack was Core solvers, Sequential, Random SAT",
+        "gz": true,
+        "name": "BalancedZ"
+    },
+    "cca2013": {
+        "tracks": [
+            "random-sat"
+        ],
+        "status": "ok",
+        "args": [
+            "FILECNF",
+            "RANDOMSEED"
+        ],
+        "authors": "Chengqian Li, Fan Yi",
+        "call": ".//CCA2013",
+        "comments": "Launchcommand was:  .//CCA2013  <instance>   <seed> \nTrack was Core solvers, Sequential, Random SAT",
+        "gz": false,
+        "name": "CCA2013"
+    },
+    "cscoresat2013": {
+        "tracks": [
+            "random-sat"
+        ],
+        "status": "ok",
+        "args": [
+            "FILECNF",
+            "RANDOMSEED"
+        ],
+        "authors": "Shaowei Cai, Chuan Luo, Kaile Su",
+        "call": "././CScoreSAT2013",
+        "comments": "Launchcommand was:  ././CScoreSAT2013  <instance>   <seed> \nTrack was Core solvers, Sequential, Random SAT",
+        "gz": true,
+        "name": "CScoreSAT2013"
+    },
+    "cshcrandmc": {
+        "tracks": [
+            "random"
+        ],
+        "status": "FIXME",
+        "args": [
+            ".//algport.py",
+            "--tmpdir",
+            "/tmp",
+            "CSHCrandMC",
+            "FILECNF"
+        ],
+        "authors": "Yuri Malitsky, Ashish Sabharwal, Horst Samulowitz, Meinolf Sellmann.",
+        "call": "python",
+        "comments": "Launchcommand was: python .//algport.py --tmpdir <tempdir>  CSHCrandMC  <instance> \nTrack was Core solvers, Sequential, Random SAT",
+        "gz": true,
+        "name": "CSHCrandMC"
+    },
+    "dimetheusmps": {
+        "tracks": [
+            "random-sat"
+        ],
+        "status": "OK",
+        "args": [
+            "-formula",
+            "FILECNF",
+            "-seed",
+            "RANDOMSEED",
+            "-guide",
+            "5"
+        ],
+        "authors": "Oliver Gableske",
+        "call": "././DimetheusMPS",
+        "comments": "Launchcommand was:  ././DimetheusMPS -formula <instance>  -seed <seed>  -guide 5\nTrack was Core solvers, Sequential, Random SAT",
+        "gz": false,
+        "name": "DimetheusMPS"
+    },
+    "frwcb2013": {
+        "tracks": [
+            "random-sat"
+        ],
+        "status": "OK",
+        "args": [
+            "FILECNF",
+            "RANDOMSEED"
+        ],
+        "authors": "Chuan Luo and Kaile Su",
+        "call": "././FrwCB2013",
+        "comments": "Launchcommand was:  ././FrwCB2013  <instance>   <seed> \nTrack was Core solvers, Sequential, Random SAT",
+        "gz": false,
+        "name": "FrwCB2013"
+    },
+    "march_vflip": {
+        "tracks": [
+            "random"
+        ],
+        "status": "OK",
+        "args": [
+            "FILECNF"
+        ],
+        "authors": "Jingchao Chen",
+        "call": "././march_vflip",
+        "comments": "Launchcommand was:  ././march_vflip  <instance> \nTrack was Core solvers, Sequential, Random SAT",
+        "gz": false,
+        "name": "march_vflip"
+    },
+    "ncca-plus": {
+        "tracks": [
+            "random"
+        ],
+        "status": "OK",
+        "args": [
+            "FILECNF",
+            "-s",
+            "RANDOMSEED"
+        ],
+        "authors": "Djamal Habet and Donia Toumi and Andr\u00e9 Abram\u00e9",
+        "call": "././Ncca+",
+        "comments": "Launchcommand was:  ././Ncca+  <instance>  -s <seed> \nTrack was Core solvers, Sequential, Random SAT",
+        "gz": true,
+        "name": "Ncca+"
+    },
+    "probsat": {
+        "tracks": [
+            "random-sat"
+        ],
+        "status": "FIXME needs intel compiler",
+        "args": [
+            "FILECNF",
+            "RANDOMSEED"
+        ],
+        "authors": "Adrian Balint, Uwe Sch\u00f6ning",
+        "call": "././probSATsc13",
+        "comments": "Launchcommand was:  ././probSATsc13  <instance>   <seed> \nTrack was Core solvers, Sequential, Random SAT",
+        "gz": false,
+        "name": "probSAT"
+    },
+    "vflipnum": {
+        "tracks": [
+            "random-sat"
+        ],
+        "status": "ok",
+        "args": [
+            "FILECNF",
+            "RANDOMSEED"
+        ],
+        "authors": "Jingchao Chen and Yuyang Huang",
+        "call": "././vflipnum",
+        "comments": "Launchcommand was:  ././vflipnum  <instance>   <seed> \nTrack was Core solvers, Sequential, Random SAT",
+        "gz": true,
+        "name": "vflipnum"
+    },
+    "walksatlm2013": {
+        "tracks": [
+            "random-sat"
+        ],
+        "status": "ok",
+        "args": [
+            "FILECNF",
+            "RANDOMSEED"
+        ],
+        "authors": "Shaowei Cai",
+        "call": "././WalkSATlm2013",
+        "comments": "Launchcommand was:  ././WalkSATlm2013  <instance>   <seed> \nTrack was Core solvers, Sequential, Random SAT",
+        "gz": false,
+        "name": "WalkSATlm2013"
+    },
+    "march_br-unsat": {
+        "tracks": [
+            "random-cert-unsat"
+        ],
+        "status": "ok",
+        "args": [
+            "FILECNF"
+        ],
+        "authors": "Marijn Heule",
+        "call": "././march_br",
+        "comments": "Launchcommand was:  ././march_br  <instance> \nTrack was Core solvers, Sequential, Random certified UNSAT",
+        "gz": false,
+        "name": "march_br"
+    },
+    "minigolf": {
+        "tracks": [
+            "minisat-hack"
+        ],
+        "status": "ok",
+        "args": [
+            "FILECNF"
+        ],
+        "authors": "Norbert Manthey",
+        "call": "././minigolf",
+        "comments": "Launchcommand was:  ././minigolf  <instance> \nTrack was Core solvers, Sequential, MiniSAT Hack-track, Application SAT+UNSAT",
+        "gz": true,
+        "name": "MiniGolf"
+    },
+    "minigolf_prefetch": {
+        "tracks": [
+            "minisat-hack"
+        ],
+        "status": "ok",
+        "args": [
+            "-p",
+            "FILECNF"
+        ],
+        "authors": "Norbert Manthey",
+        "call": "././minigolf",
+        "comments": "Launchcommand was:  ././minigolf -p <instance> \nTrack was Core solvers, Sequential, MiniSAT Hack-track, Application SAT+UNSAT",
+        "gz": true,
+        "name": "MiniGolf"
+    },
+    "minisat_bit": {
+        "tracks": [
+            "minisat-hack"
+        ],
+        "status": "ok",
+        "args": [
+            "FILECNF"
+        ],
+        "authors": "Jingchao Chen",
+        "call": "././minisat_bit",
+        "comments": "Launchcommand was:  ././minisat_bit  <instance> \nTrack was Core solvers, Sequential, MiniSAT Hack-track, Application SAT+UNSAT",
+        "gz": true,
+        "name": "minisat_bit"
+    },
+    "sinnminisat": {
+        "tracks": [
+            "minisat-hack"
+        ],
+        "status": "ok",
+        "args": [
+            "FILECNF"
+        ],
+        "authors": "Takeru Yasumoto",
+        "call": "././sinn",
+        "comments": "Launchcommand was:  ././sinn  <instance> \nTrack was Core solvers, Sequential, MiniSAT Hack-track, Application SAT+UNSAT",
+        "gz": true,
+        "name": "SINNminisat"
+    },
+    "glucans": {
+        "tracks": [
+            "parallel"
+        ],
+        "status": "FIXME",
+        "args": [
+            "FILECNF",
+            "-tmpdir=",
+            "/tmp",
+            "-mem-lim=15000",
+            "-contrasat",
+            "-nof-threads=8",
+            "-strictlbd",
+            "-keep-lbd=2",
+            "-se-lim=120",
+            "-sendmore"
+        ],
+        "authors": "Xiaojuan Xu, Yuichi Shimizu, Shota Matsumoto and Kazunori Ueda",
+        "call": "././glucan_static",
+        "comments": "Launchcommand was:  ././glucan_static  <instance>  -tmpdir= <tempdir>  -mem-lim=15000 -contrasat -nof-threads=8 -strictlbd -keep-lbd=2 -se-lim=120 -sendmore\nTrack was Core Solvers, Parallel, Application SAT+UNSAT",
+        "gz": true,
+        "name": "Glucans"
+    },
+    "glucored-multi": {
+        "tracks": [
+            "parallel"
+        ],
+        "status": "OK",
+        "args": [
+            "FILECNF",
+            "-rnd-seed=RANDOMSEED",
+            "-nc=1",
+            "-ns=3"
+        ],
+        "authors": "Siert Wieringa",
+        "call": "././glucored-multi_release",
+        "comments": "Launchcommand was:  ././glucored-multi_release  <instance>  -rnd-seed= <seed>  -nc=1 -ns=3\nTrack was Core Solvers, Parallel, Application SAT+UNSAT",
+        "gz": true,
+        "name": "GlucoRed-Multi"
+    },
+    "pcasso": {
+        "tracks": [
+            "parallel"
+        ],
+        "status": "OK",
+        "args": [
+            "FILECNF",
+            "/tmp"
+        ],
+        "authors": "Ahmed Irfan, Davide Lanti, Norbert Manthey",
+        "call": "././cp3.sh",
+        "comments": "Launchcommand was:  ././cp3.sh  <instance>   <tempdir> \nTrack was Core Solvers, Parallel, Application SAT+UNSAT",
+        "gz": true,
+        "name": "pcasso"
+    },
+    "penelope": {
+        "tracks": [
+            "parallel"
+        ],
+        "status": "FIXME does not compule (cdefs)",
+        "args": [
+            ".//solver.sh",
+            "FILECNF"
+        ],
+        "authors": "Gilles Audemard, Beno\u00eet Hoessen, Sa\u00efd Jabbour, Jean-Marie Lagniez, C\u00e9dric Piette",
+        "call": "sh",
+        "comments": "Launchcommand was: sh .//solver.sh  <instance> \nTrack was Core Solvers, Parallel, Application SAT+UNSAT",
+        "gz": true,
+        "name": "PeneLoPe"
+    },
+    "plingeling": {
+        "tracks": [
+            "parallel"
+        ],
+        "status": "OK",
+        "args": [
+            "FILECNF"
+        ],
+        "authors": "Armin Biere",
+        "call": "./plingeling",
+        "comments": "Launchcommand was:  ./plingeling  <instance> \nTrack was Core Solvers, Parallel, Application SAT+UNSAT",
+        "gz": true,
+        "name": "Plingeling"
+    },
+    "pmcsat": {
+        "tracks": [
+            "parallel"
+        ],
+        "status": "OK",
+        "args": [
+            "FILECNF"
+        ],
+        "authors": "Ricardo Marques, Lu\u00eds Guerra e Silva, Paulo Flores and Lu\u00eds Miguel Silveira",
+        "call": "././pmcsat_static",
+        "comments": "Launchcommand was:  ././pmcsat_static  <instance> \nTrack was Core Solvers, Parallel, Application SAT+UNSAT",
+        "gz": true,
+        "name": "pmcSAT"
+    },
+    "sat4j_parallel": {
+        "tracks": [
+            "parallel"
+        ],
+        "status": "FIXME",
+        "args": [
+            "-Xms12g",
+            "-Xmx12g",
+            "-jar",
+            ".//sat4j2013.jar",
+            "Parallel",
+            "FILECNF"
+        ],
+        "authors": "Daniel Le Berre",
+        "call": "java",
+        "comments": "Launchcommand was: java -Xms12g -Xmx12g -jar  .//sat4j2013.jar Parallel  <instance> \nTrack was Core Solvers, Parallel, Application SAT+UNSAT",
+        "gz": true,
+        "name": "SAT4J Parallel"
+    },
+    "satx10-glci": {
+        "tracks": [
+            "parallel"
+        ],
+        "status": "FIXME (cdefs)",
+        "args": [
+            ".//runSatX10.py",
+            "--x10ppconfig=SC2013.ppconfig",
+            "--x10nplaces=8",
+            "--x10usepre",
+            "--tmpdir",
+            "/tmp",
+            "FILECNF"
+        ],
+        "authors": "David Grove, Benjamin Herta, Ashish Sabharwal, Horst Samulowitz, Vijay Saraswat, George Katsirelos, Laurent Simon ",
+        "call": "python",
+        "comments": "Launchcommand was: python .//runSatX10.py --x10ppconfig=SC2013.ppconfig --x10nplaces=8 --x10usepre --tmpdir <tempdir>   <instance> \nTrack was Core Solvers, Parallel, Application SAT+UNSAT",
+        "gz": true,
+        "name": "SatX10-GLCI"
+    },
+        "strangenight-mt": {
+        "tracks": [
+            "parallel"
+        ],
+        "status": "FIXME does not compile",
+        "args": [
+            "--threads=4",
+            "FILECNF"
+        ],
+        "authors": "Mate Soos",
+        "call": "./strangenight",
+        "comments": "Launchcommand was:  ./strangenight --threads=4  <instance> \nTrack was Core Solvers, Parallel, Application SAT+UNSAT",
+        "gz": true,
+        "name": "strangenight"
+    },
+    "treengeling": {
+        "tracks": [
+            "parallel"
+        ],
+        "status": "OK",
+        "args": [
+            "FILECNF"
+        ],
+        "authors": "Armin Biere",
+        "call": "./treengeling",
+        "comments": "Launchcommand was:  ./treengeling  <instance> \nTrack was Core Solvers, Parallel, Application SAT+UNSAT",
+        "gz": true,
+        "name": "Treengeling"
     }
 }

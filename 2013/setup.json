@@ -1,8 +1,8 @@
 {
-    "base_version":"v1",
+    "base_version": "v1",
     "base_from": "debian:stretch-slim",
-    "builder":"generic/v1",
-    "builder_base":"debian:8.6",
+    "builder": "generic/v1",
+    "builder_base": "debian:8.6",
     "breakidglucose": {
         "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/838"
     },
@@ -16,7 +16,7 @@
         "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/813"
     },
     "forl": {
-        "BUILD_DEPENDS" : "libboost-dev libboost-program-options-dev",
+        "BUILD_DEPENDS": "libboost-dev libboost-program-options-dev",
         "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/780"
     },
     "glucored": {
@@ -26,7 +26,7 @@
         "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/861"
     },
     "glue_bit": {
-        "BUILD_DEPENDS" : "g++-multilib",
+        "BUILD_DEPENDS": "g++-multilib",
         "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/746"
     },
     "gluebit_lgl": {
@@ -36,16 +36,16 @@
         "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/868"
     },
     "gluh": {
-        "BUILD_DEPENDS" : "g++-multilib",
+        "BUILD_DEPENDS": "g++-multilib",
         "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/794"
     },
     "gluh_simp": {
         "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/836"
     },
-    "lingeling": {
+    "lingeling_587f": {
         "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/842"
     },
-    "lingeling_1": {
+    "lingeling_aqw": {
         "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/844"
     },
     "minipure": {
@@ -53,8 +53,8 @@
     },
     "mipsat": {
         "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/801",
-        "BUILD_DEPENDS" : "automake libtool libc6-dev-i386 gcc-multilib g++-multilib",
-        "RDEPENDS" : "python"
+        "BUILD_DEPENDS": "automake libtool libc6-dev-i386 gcc-multilib g++-multilib",
+        "RDEPENDS": "python"
     },
     "nigma": {
         "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/761"
@@ -64,13 +64,10 @@
     },
     "relback": {
         "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/792",
-        "BUILD_DEPENDS" : "libc6-dev-i386 gcc-multilib g++-multilib"
+        "BUILD_DEPENDS": "libc6-dev-i386 gcc-multilib g++-multilib"
     },
     "riss3g": {
         "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/831"
-    },
-    "riss3g_1": {
-        "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/876"
     },
     "rseq": {
         "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/890"
@@ -100,5 +97,178 @@
     },
     "zenn": {
         "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/797"
+    },
+    "clasp_vflip": {
+        "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/750"
+    },
+    "cshccombcs": {
+        "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/940"
+    },
+    "dk-sat11": {
+        "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/735"
+    },
+    "dk-sat11_1": {
+        "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/733"
+    },
+    "gluebit_clasp": {
+        "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/927"
+    },
+    "gnovelty-gca": {
+        "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/941"
+    },
+    "gnovelty-gcwa": {
+        "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/942"
+    },
+    "march_br": {
+        "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/737"
+    },
+    "mipsat_1": {
+        "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/803",
+        "RDEPENDS": "python"
+    },
+    "mipsat_2": {
+        "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/804",
+        "RDEPENDS": "python"
+    },
+    "mipsat_3": {
+        "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/802",
+        "RDEPENDS": "python"
+    },
+    "sattime2013": {
+        "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/950"
+    },
+    "sattimeclasp": {
+        "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/881"
+    },
+    "sattimerelbackseq": {
+        "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/955"
+    },
+    "sparrowtoriss": {
+        "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/924"
+    },
+    "balancedz": {
+        "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/873",
+        "BUILD_DEPENDS": "libc6-dev"
+    },
+    "ccanr": {
+        "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/743"
+    },
+    "doug_hains": {
+        "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/773"
+    },
+    "sparrow-cp3": {
+        "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/730"
+    },
+    "forl-drup": {
+        "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/784"
+    },
+    "glucose-drup": {
+        "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/864"
+    },
+    "glueminisat-cert-unsat": {
+        "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/871"
+    },
+    "lingeling_aqw_drup": {
+        "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/851"
+    },
+    "minisat_drup": {
+        "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/883"
+    },
+    "riss3g-cert": {
+        "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/877"
+    },
+    "sat4j_certified": {
+        "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/817",
+        "BUILD_DEPENDS": "default-jdk",
+        "RDEPENDS": "default-jre"
+    },
+    "minisat_bit_u": {
+        "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/775"
+    },
+    "nigma-drup": {
+        "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/762"
+    },
+    "nigma-nopb-drup": {
+        "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/764"
+    },
+    "balancedz_1": {
+        "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/874"
+    },
+    "cca2013": {
+        "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/854"
+    },
+    "cscoresat2013": {
+        "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/741"
+    },
+    "cshcrandmc": {
+        "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/916"
+    },
+    "dimetheusmps": {
+        "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/824"
+    },
+    "frwcb2013": {
+        "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/752"
+    },
+    "march_vflip": {
+        "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/911"
+    },
+    "ncca-plus": {
+        "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/889"
+    },
+    "probsat": {
+        "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/732"
+    },
+    "vflipnum": {
+        "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/745"
+    },
+    "walksatlm2013": {
+        "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/739"
+    },
+    "march_br-unsat": {
+        "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/729"
+    },
+    "minigolf": {
+        "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/791"
+    },
+    "minigolf_prefetch": {
+        "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/888"
+    },
+    "minisat_bit": {
+        "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/747"
+    },
+    "sinnminisat": {
+        "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/796"
+    },
+    "glucans": {
+        "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/770"
+    },
+    "glucored-multi": {
+        "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/758"
+    },
+    "pcasso": {
+        "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/828"
+    },
+    "penelope": {
+        "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/765"
+    },
+    "plingeling": {
+        "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/846"
+    },
+    "pmcsat": {
+        "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/852"
+    },
+    "sat4j_parallel": {
+        "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/814",
+        "BUILD_DEPENDS": "default-jdk",
+        "RDEPENDS": "default-jre"
+    },
+    "satx10-glci": {
+        "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/808"
+    },
+    "strangenight-mt": {
+        "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/785"
+    },
+    "treengeling": {
+        "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/848"
     }
 }
