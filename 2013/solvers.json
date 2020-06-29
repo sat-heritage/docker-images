@@ -56,7 +56,7 @@
             "application",
             "hard-combinatorial"
         ],
-        "status": "FIXME does not compile",
+        "status": "ok",
         "args": [
             "--verb",
             "0",
