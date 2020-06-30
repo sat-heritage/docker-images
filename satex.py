@@ -321,6 +321,10 @@ def easy_volume(v):
         v = f"{orig}:{dest}"
     return v
 
+def get_docker_volumes(args):
+    opts = getattr(args, "volume") or []
+    return [easy_volume(opt).split(":") for opt in opts]
+
 _docker_opts = []
 def docker_runs(args, images, docker_args=(), image_args=()):
     docker_argv = check_docker()
@@ -398,6 +402,12 @@ def run_images(args):
 def runraw_images(args):
     images = get_list(args)
     # automatically tries to detect filenames and make volumes
+    volumes = [v[1] for v in get_docker_volumes(args)]
+    volume = "/data"
+    i = 1
+    while volume in volumes:
+        volume = f"/data{i}"
+        i += 1
     paths = []
     docker_args = []
     for arg in args.args:
@@ -408,14 +418,14 @@ def runraw_images(args):
             paths.append(path)
     if paths:
         root = Path(os.path.commonpath(paths))
-        warn(f"Mounting {root} as /data")
-        docker_args = ["-v", f"{root.as_posix()}:/data"]
+        warn(f"Mounting {root} as {volume}")
+        docker_args = ["-v", f"{root.as_posix()}:{volume}"]
     def update_path(path):
         if not os.path.exists(path):
             return path
         r = Path(path).resolve().relative_to(root).as_posix()
-        r = os.path.join("/data", r)
-        warn(f"Argument '{path}' detected as a path, it has been rewritten to {r}")
+        r = os.path.join(volume, r)
+        warn(f"Argument '{path}' detected as a local path, it has been rewritten to {r}")
         return r
     image_args = ["--raw"] + [update_path(arg) for arg in args.args]
     ret = docker_runs(args, images, docker_args, image_args)
