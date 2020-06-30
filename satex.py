@@ -397,7 +397,28 @@ def run_images(args):
 
 def runraw_images(args):
     images = get_list(args)
-    ret = docker_runs(args, images, image_args=["--raw"]+args.args)
+    # automatically tries to detect filenames and make volumes
+    paths = []
+    docker_args = []
+    for arg in args.args:
+        if os.path.exists(arg):
+            path = Path(arg).resolve()
+            if not os.path.isdir(arg):
+                path = path.parent
+            paths.append(path)
+    if paths:
+        root = Path(os.path.commonpath(paths))
+        warn(f"Mounting {root} as /data")
+        docker_args = ["-v", f"{root.as_posix()}:/data"]
+    def update_path(path):
+        if not os.path.exists(path):
+            return path
+        r = Path(path).resolve().relative_to(root).as_posix()
+        r = os.path.join("/data", r)
+        warn(f"Argument '{path}' detected as a path, it has been rewritten to {r}")
+        return r
+    image_args = ["--raw"] + [update_path(arg) for arg in args.args]
+    ret = docker_runs(args, images, docker_args, image_args)
     if ret is not None:
         sys.exit(ret)
 
