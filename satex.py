@@ -402,7 +402,7 @@ def run_images(args):
 def runraw_images(args):
     images = get_list(args)
     # automatically tries to detect filenames and make volumes
-    volumes = [v[1] for v in get_docker_volumes(args)]
+    volumes = [v[-1].rstrip("/") for v in get_docker_volumes(args)]
     volume = "/data"
     i = 1
     while volume in volumes:
@@ -410,8 +410,10 @@ def runraw_images(args):
         i += 1
     paths = []
     docker_args = []
+    def is_localfile(p):
+        return os.path.exists(arg) or arg.startswith("./")
     for arg in args.args:
-        if os.path.exists(arg):
+        if is_localfile(arg):
             path = Path(arg).resolve()
             if not os.path.isdir(arg):
                 path = path.parent
@@ -421,7 +423,7 @@ def runraw_images(args):
         warn(f"Mounting {root} as {volume}")
         docker_args = ["-v", f"{root.as_posix()}:{volume}"]
     def update_path(path):
-        if not os.path.exists(path):
+        if not is_localfile(path):
             return path
         r = Path(path).resolve().relative_to(root).as_posix()
         r = os.path.join(volume, r)
