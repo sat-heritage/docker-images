@@ -865,7 +865,7 @@
             "hard-combinatorial-cert-unsat",
             "application-cert-unsat"
         ],
-        "status": "FIXME unable to download some packages",
+        "status": "ok",
         "args": [
             "/tmp",
             "FILECNF"
