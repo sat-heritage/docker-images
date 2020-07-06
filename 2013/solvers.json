@@ -1177,7 +1177,7 @@
         "tracks": [
             "parallel"
         ],
-        "status": "FIXME",
+        "status": "ok",
         "args": [
             "FILECNF",
             "-tmpdir=",
@@ -1232,7 +1232,7 @@
         "tracks": [
             "parallel"
         ],
-        "status": "FIXME does not compule (cdefs)",
+        "status": "FIXME : problem when launching",
         "args": [
             ".//solver.sh",
             "FILECNF"

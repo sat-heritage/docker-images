@@ -240,7 +240,8 @@
         "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/796"
     },
     "glucans": {
-        "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/770"
+        "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/770",
+        "BUILD_DEPENDS": "g++-multilib"
     },
     "glucored-multi": {
         "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/758"
@@ -249,7 +250,8 @@
         "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/828"
     },
     "penelope": {
-        "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/765"
+        "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/765",
+        "BUILD_DEPENDS": "g++-multilib"
     },
     "plingeling": {
         "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/846"
@@ -263,7 +265,8 @@
         "RDEPENDS": "default-jre"
     },
     "satx10-glci": {
-        "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/808"
+        "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/808",
+        "BUILD_DEPENDS": "g++-multilib"
     },
     "strangenight-mt": {
         "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/785"
