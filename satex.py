@@ -18,7 +18,7 @@ import textwrap
 import time
 from urllib.request import urlopen
 
-__version__ = "1.2-dev"
+__version__ = "1.2.1-dev"
 
 DOCKER_NS = "satex"
 REGISTRY_URL = "https://github.com/sat-heritage/docker-images/releases/download/list/list.tgz"
@@ -411,7 +411,7 @@ def runraw_images(args):
     paths = []
     docker_args = []
     def is_localfile(p):
-        return os.path.exists(arg) or arg.startswith("./")
+        return os.path.exists(p) or p.startswith("./")
     for arg in args.args:
         if is_localfile(arg):
             path = Path(arg).resolve()
