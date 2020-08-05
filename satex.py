@@ -1,5 +1,8 @@
 #!/usr/bin/env python
 
+# Homepage: https://github.com/sat-heritage/docker-images
+# MIT License
+
 import argparse
 import fnmatch
 import json

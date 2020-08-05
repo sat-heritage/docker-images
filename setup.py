@@ -21,6 +21,7 @@ setup(name="satex",
     description = "Helper script for managing SAT Heritage docker images",
     py_modules = ["satex"],
     install_requires = ["appdirs"],
+    license = "MIT",
     entry_points = {
         "console_scripts": [
             "satex= satex:main"
