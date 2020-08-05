@@ -221,6 +221,6 @@ Example:
 
 The Docker images are for academic and educational use only.
 
-The `satex` (`satex.py`) program is licensed under the MIT license. Please see the
+The `satex` (`satex.py`) program is distributed under the MIT license. Please see the
 [LICENSE](LICENSE) file for more details.
 
