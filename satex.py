@@ -672,6 +672,21 @@ def mrproper(args):
         info(" ".join(argv))
         sys.exit(subprocess.call(argv))
 
+def dependencies(args):
+    docker_argv = check_docker()
+    repo = Repository(args)
+    deps = set()
+    for name in repo.images:
+        image = ImageManager(name, repo)
+        setup = image.setup
+        if "builder_base" in setup:
+            deps.add(setup["builder_base"])
+        deps.add(setup["base_from"])
+    for image in deps:
+        print(image)
+        if args.pull:
+            prepare_image(args, docker_argv, image)
+
 def print_version(args):
     print(__version__)
 #
@@ -813,6 +828,13 @@ def main(redirected=False):
                 help=f"Push {DOCKER_NS} Docker images",
                 parents=[spec_parser, status_parser, tracks_parser])
         p.set_defaults(func=push_images)
+
+        p = subparsers.add_parser("image-deps",
+                help=f"List Docker image dependencies")
+        p.add_argument("--pull", action="store_true",
+                help="pull images")
+        p.set_defaults(func=dependencies)
+
 
     subparsers.add_parser("version",
                 help="Print script version")\

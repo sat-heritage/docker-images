@@ -1,0 +1,20 @@
+name: ping-deps
+
+on:
+  repository_dispatch:
+      types: [deps]
+  schedule:
+    - cron: "0 10 5 * *"
+
+jobs:
+    ping-deps:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/setup-python@v1
+            - run: pip install requests
+            - uses: actions/checkout@v2
+              with:
+                  ref: master
+            - run: python satex.py image-deps --pull
+
+
