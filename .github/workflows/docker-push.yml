@@ -30,7 +30,7 @@ jobs:
                 for x in `cat list.diff`; do
                     python satex.py build $x
                 done
-            - name: push
+            - name: DockerHub push
               if: env.HAS_CHANGES == 1
               run: |
                 set -ex
@@ -41,3 +41,15 @@ jobs:
               env:
                   DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
                   DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+            - name: GH Package push
+              if: env.HAS_CHANGES == 1
+              run: |
+                set -ex
+                docker login -u "${DOCKER_USERNAME}" -p "${DOCKER_PASSWORD}"
+                for x in `cat list.diff`; do
+                    docker tag satex/$x docker.pkg.github.com/sat-heritage/docker-images/$x
+                    docker push docker.pkg.github.com/sat-heritage/docker-images/$x
+                done
+              env:
+                  DOCKER_USERNAME: ${{ github.actor }}
+                  DOCKER_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
