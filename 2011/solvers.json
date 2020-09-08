@@ -1,0 +1,1474 @@
+{
+    "adaptg2wsat2011": {
+        "name": "adaptg2wsat2011",
+        "version": "2011-03-02",
+        "authors": "Chumin LI, Yu Li, Wanxia Wei",
+        "tracks": [
+            "application",
+            "crafted",
+            "random"
+        ],
+        "args": [
+            "FILECNF",
+            "RANDOMSEED"
+        ],
+        "call": "adaptg2wsat2011",
+        "gz": false,
+        "status": "unknown"
+    },
+    "black_hole_sat": {
+        "name": "Black Hole SAT",
+        "version": "2011-03-08",
+        "authors": "Markus Iser",
+        "tracks": [
+            "application",
+            "crafted",
+            "random"
+        ],
+        "args": [
+            "FILECNF"
+        ],
+        "call": "saturn",
+        "gz": false,
+        "status": "unknown"
+    },
+    "borg-sat-11.03.02-par-industrial": {
+        "name": "borg-sat",
+        "version": "11.03.02-par-industrial",
+        "authors": "Bryan Silverthorn",
+        "tracks": [
+            "application"
+        ],
+        "args": [
+            "DIR/solve",
+            "DIR/etc/borg-mix+class.industrial.pickle",
+            "FILECNF",
+            "-seed",
+            "RANDOMSEED",
+            "-budget",
+            "TIMEOUT",
+            "-cores",
+            "NBCORE"
+        ],
+        "call": "python",
+        "gz": false,
+        "status": "unknown"
+    },
+    "borg-sat-11.03.02-par-random": {
+        "name": "borg-sat",
+        "version": "11.03.02-par-random",
+        "authors": "Bryan Silverthorn",
+        "tracks": [
+            "random"
+        ],
+        "args": [
+            "DIR/solve",
+            "DIR/etc/borg-mix+class.random.pickle",
+            "FILECNF",
+            "-seed",
+            "RANDOMSEED",
+            "-budget",
+            "TIMEOUT",
+            "-cores",
+            "NBCORE"
+        ],
+        "call": "python",
+        "gz": false,
+        "status": "unknown"
+    },
+    "borg-sat-11.03.02-seq-industrial": {
+        "name": "borg-sat",
+        "version": "11.03.02-seq-industrial",
+        "authors": "Bryan Silverthorn",
+        "tracks": [
+            "application"
+        ],
+        "args": [
+            "DIR/solve",
+            "DIR/etc/borg-mix+class.industrial.pickle",
+            "FILECNF",
+            "-seed",
+            "RANDOMSEED",
+            "-budget",
+            "TIMEOUT"
+        ],
+        "call": "python",
+        "gz": false,
+        "status": "unknown"
+    },
+    "borg-sat-11.03.02-seq-random": {
+        "name": "borg-sat",
+        "version": "11.03.02-seq-random",
+        "authors": "Bryan Silverthorn",
+        "tracks": [
+            "random"
+        ],
+        "args": [
+            "DIR/solve",
+            "DIR/etc/borg-mix+class.random.pickle",
+            "FILECNF",
+            "-seed",
+            "RANDOMSEED",
+            "-budget",
+            "TIMEOUT"
+        ],
+        "call": "python",
+        "gz": false,
+        "status": "unknown"
+    },
+    "clasp-2.0-r4092-crafted": {
+        "name": "clasp",
+        "version": "2.0-R4092-crafted",
+        "authors": "Benjamin Kaufmann",
+        "tracks": [
+            "crafted"
+        ],
+        "args": [
+            "--sat-p=20,25,120,-1,0",
+            "--berk-max=512",
+            "--berk-once",
+            "--otfs=1",
+            "--recursive-str",
+            "--dinit=800,10000",
+            "--dsched=20000,1.1",
+            "--reverse-arcs=2",
+            "FILECNF"
+        ],
+        "call": "./clasp",
+        "gz": false,
+        "status": "unknown"
+    },
+    "clasp-2.0-r4092-indust": {
+        "name": "clasp",
+        "version": "2.0-R4092-indust",
+        "authors": "Benjamin Kaufmann",
+        "tracks": [
+            "application"
+        ],
+        "args": [
+            "--berk-max=512",
+            "--berk-once",
+            "--restarts=256",
+            "--reverse-arcs=2",
+            "--recursive-str",
+            "--dinit=800,10000",
+            "--dsched=10000,1.1",
+            "--dscore=2",
+            "--update-lbd",
+            "--dalgo=2",
+            "FILECNF"
+        ],
+        "call": "./clasp",
+        "gz": false,
+        "status": "unknown"
+    },
+    "claspmt": {
+        "name": "claspmt",
+        "version": "2.0-R4095-patched",
+        "authors": "Benjamin Kaufmann",
+        "tracks": [
+            "application",
+            "crafted"
+        ],
+        "args": [
+            "-tNBCORE",
+            "-p",
+            "./sat11-port.txt",
+            "--distribute=all,2",
+            "FILECNF"
+        ],
+        "call": "./claspmt",
+        "gz": false,
+        "status": "unknown"
+    },
+    "cryptominisat-strange-night-1-mt": {
+        "name": "CryptoMiniSat",
+        "version": "Strange-Night-1-mt",
+        "authors": "Mate Soos",
+        "tracks": [
+            "application",
+            "crafted",
+            "random"
+        ],
+        "args": [
+            "--threads=NBCORE",
+            "FILECNF"
+        ],
+        "call": "./strangenight1-mt",
+        "gz": false,
+        "status": "unknown"
+    },
+    "cryptominisat-strange-night-1-st": {
+        "name": "CryptoMiniSat",
+        "version": "Strange-Night-1-st",
+        "authors": "Mate Soos",
+        "tracks": [
+            "application",
+            "crafted",
+            "random"
+        ],
+        "args": [
+            "FILECNF"
+        ],
+        "call": "./strangenight1-st",
+        "gz": false,
+        "status": "unknown"
+    },
+    "cryptominisat-strange-night-2-mt": {
+        "name": "CryptoMiniSat",
+        "version": "Strange-Night-2-mt",
+        "authors": "Mate Soos",
+        "tracks": [
+            "application",
+            "crafted",
+            "random"
+        ],
+        "args": [
+            "--threads=NBCORE",
+            "FILECNF"
+        ],
+        "call": "./strangenight2-mt",
+        "gz": false,
+        "status": "unknown"
+    },
+    "cryptominisat-strange-night2-st": {
+        "name": "CryptoMiniSat",
+        "version": "Strange-Night2-st",
+        "authors": "Mate Soos",
+        "tracks": [
+            "application",
+            "crafted",
+            "random"
+        ],
+        "args": [
+            "FILECNF"
+        ],
+        "call": "./strangenight2-st",
+        "gz": false,
+        "status": "unknown"
+    },
+    "cryptominisat-techdemo-alpha-mt": {
+        "name": "CryptoMiniSat",
+        "version": "TechDemo-Alpha-mt",
+        "authors": "George Katsirelos, Laurent Simon, Mate Soos",
+        "tracks": [
+            "application",
+            "crafted",
+            "random"
+        ],
+        "args": [
+            "--threads=NBCORE",
+            "FILECNF"
+        ],
+        "call": "./techdemo",
+        "gz": false,
+        "status": "unknown"
+    },
+    "cryptominisat-techdemo-alpha-st": {
+        "name": "CryptoMiniSat",
+        "version": "TechDemo-Alpha-st",
+        "authors": "George Katsirelos, Laurent Simon, Mate Soos",
+        "tracks": [
+            "application",
+            "crafted",
+            "random"
+        ],
+        "args": [
+            "--threads=1",
+            "FILECNF"
+        ],
+        "call": "./techdemo",
+        "gz": false,
+        "status": "unknown"
+    },
+    "csls-pnorm-8cores": {
+        "name": "csls",
+        "version": "pnorm-8cores",
+        "authors": "Alejandro Arbelaez and Youssef Hamadi",
+        "tracks": [
+            "random"
+        ],
+        "args": [
+            "-maxcores",
+            "8",
+            "FILECNF",
+            "NBCORE",
+            "RANDOMSEED"
+        ],
+        "call": "./csls-pnorm",
+        "gz": false,
+        "status": "unknown"
+    },
+    "csls-prob-4cores": {
+        "name": "csls",
+        "version": "prob-4cores",
+        "authors": "Alejandro Arbelaez and Youssef Hamadi",
+        "tracks": [
+            "random"
+        ],
+        "args": [
+            "-maxcores",
+            "4",
+            "FILECNF",
+            "NBCORE",
+            "RANDOMSEED"
+        ],
+        "call": "./csls-prob",
+        "gz": false,
+        "status": "unknown"
+    },
+    "csls-prob-8cores": {
+        "name": "csls",
+        "version": "prob-8cores",
+        "authors": "Alejandro Arbelaez and Youssef Hamadi",
+        "tracks": [
+            "random"
+        ],
+        "args": [
+            "-maxcores",
+            "8",
+            "FILECNF",
+            "NBCORE",
+            "RANDOMSEED"
+        ],
+        "call": "./csls-prob",
+        "gz": false,
+        "status": "unknown"
+    },
+    "eagleup": {
+        "name": "EagleUP",
+        "version": "1.565.350",
+        "authors": "Oliver Gableske",
+        "tracks": [
+            "random"
+        ],
+        "args": [
+            "FILECNF",
+            "RANDOMSEED"
+        ],
+        "call": "./EagleUP",
+        "gz": false,
+        "status": "unknown"
+    },
+    "ebglucose": {
+        "name": "EBGlucose",
+        "version": "1.0",
+        "authors": "Bryan Matsuo",
+        "tracks": [
+            "application"
+        ],
+        "args": [
+            "FILECNF"
+        ],
+        "call": "DIR/ebglucose.sh",
+        "gz": false,
+        "status": "unknown"
+    },
+    "glucose": {
+        "name": "glucose",
+        "version": "2",
+        "authors": "Gilles Audemard and Laurent Simon",
+        "tracks": [
+            "application",
+            "crafted"
+        ],
+        "args": [
+            "FILECNF"
+        ],
+        "call": "glucose.sh",
+        "gz": false,
+        "status": "unknown"
+    },
+    "glueminisat": {
+        "name": "glueminisat",
+        "version": "2.2.5",
+        "authors": "Hidetomo NABESHIMA",
+        "tracks": [
+            "application"
+        ],
+        "args": [
+            "-compe",
+            "FILECNF"
+        ],
+        "call": "glueminisat",
+        "gz": false,
+        "status": "unknown"
+    },
+    "jminisat": {
+        "name": "jMiniSat",
+        "version": "2011",
+        "authors": "Carsten Sinz",
+        "tracks": [
+            "application",
+            "crafted",
+            "random"
+        ],
+        "args": [
+            "-sc-mode",
+            "FILECNF"
+        ],
+        "call": "./jMiniSat",
+        "gz": false,
+        "status": "unknown"
+    },
+    "kw": {
+        "name": "kw",
+        "version": "2011-02-28",
+        "authors": "Johan Alfredsson",
+        "tracks": [
+            "application"
+        ],
+        "args": [
+            "--tmp-path=/tmp",
+            "FILECNF"
+        ],
+        "call": "kw",
+        "gz": false,
+        "status": "unknown"
+    },
+    "lingeling": {
+        "name": "Lingeling",
+        "version": "587f",
+        "authors": "Armin Biere",
+        "tracks": [
+            "application",
+            "crafted"
+        ],
+        "args": [
+            "FILECNF"
+        ],
+        "call": "lingeling",
+        "gz": false,
+        "status": "unknown"
+    },
+    "march_rw": {
+        "name": "march_rw",
+        "version": "2011-03-02",
+        "authors": "Marijn Heule",
+        "tracks": [
+            "application",
+            "crafted",
+            "random"
+        ],
+        "args": [
+            "FILECNF"
+        ],
+        "call": "./march_rw",
+        "gz": false,
+        "status": "unknown"
+    },
+    "minisat_hack:_cir_minisat-2011-03-02": {
+        "name": "minisat hack: cir_minisat",
+        "version": "2011-03-02",
+        "authors": "Tomohiro Sonobe",
+        "tracks": [
+            "application"
+        ],
+        "args": [
+            "FILECNF"
+        ],
+        "call": "./cir_minisat",
+        "gz": false,
+        "status": "unknown"
+    },
+    "minisat_hack:_cir_minisat-2011-05-13_(simp)": {
+        "name": "minisat hack: cir_minisat",
+        "version": "2011-05-13 (simp)",
+        "authors": "Tomohiro Sonobe",
+        "tracks": [
+            "application"
+        ],
+        "args": [
+            "FILECNF"
+        ],
+        "call": "./cir_minisat",
+        "gz": false,
+        "status": "unknown"
+    },
+    "minisat_hack:_contrasat": {
+        "name": "minisat hack: contrasat",
+        "version": "2011-03-02",
+        "authors": "Allen Van Gelder",
+        "tracks": [
+            "application"
+        ],
+        "args": [
+            "FILECNF"
+        ],
+        "call": "contrasat_release",
+        "gz": false,
+        "status": "unknown"
+    },
+    "minisat_hack:_ebminisat": {
+        "name": "minisat hack: EBMiniSAT",
+        "version": "2011-03-02",
+        "authors": "Bryan Matsuo",
+        "tracks": [
+            "application"
+        ],
+        "args": [
+            "FILECNF",
+            "-verb=0"
+        ],
+        "call": "DIR/ebminisat_release",
+        "gz": false,
+        "status": "unknown"
+    },
+    "minisat_hack:_lr_gl_noshr": {
+        "name": "minisat hack: LR_GL_NOSHR",
+        "version": "2011-03-02",
+        "authors": "Vadim Ryvchin",
+        "tracks": [
+            "application"
+        ],
+        "args": [
+            "FILECNF",
+            "-verb=0",
+            "-model",
+            "-no-shrinking"
+        ],
+        "call": "./lr_gl_shr",
+        "gz": false,
+        "status": "unknown"
+    },
+    "minisat_hack:_lr_gl_shr": {
+        "name": "minisat hack: LR_GL_SHR",
+        "version": "2011-03-02",
+        "authors": "Vadim Ryvchin",
+        "tracks": [
+            "application"
+        ],
+        "args": [
+            "FILECNF",
+            "-verb=0",
+            "-model"
+        ],
+        "call": "./lr_gl_shr",
+        "gz": false,
+        "status": "unknown"
+    },
+    "minisat_hack:_lr_nogl_noshr": {
+        "name": "minisat hack: LR_NOGL_NOSHR",
+        "version": "2011-03-02",
+        "authors": "Vadim Ryvchin",
+        "tracks": [
+            "application"
+        ],
+        "args": [
+            "FILECNF",
+            "-verb=0",
+            "-model",
+            "-no-shrinking",
+            "-no-glucose"
+        ],
+        "call": "./lr_gl_shr",
+        "gz": false,
+        "status": "unknown"
+    },
+    "minisat_hack:_minisat": {
+        "name": "minisat hack: MiniSAT",
+        "version": "2.2.0-agile-26",
+        "authors": "Armin Biere",
+        "tracks": [
+            "application"
+        ],
+        "args": [
+            "FILECNF"
+        ],
+        "call": "minisat",
+        "gz": false,
+        "status": "unknown"
+    },
+    "minisat_hack:_minisat_psm": {
+        "name": "minisat hack: minisat_psm",
+        "version": "2011-04-01",
+        "authors": "Jean-Marie Lagniez",
+        "tracks": [
+            "application"
+        ],
+        "args": [
+            "FILECNF"
+        ],
+        "call": "./esg_static.sh",
+        "gz": false,
+        "status": "unknown"
+    },
+    "minisat_hack_reference:_minisat": {
+        "name": "minisat hack reference: minisat",
+        "version": "2.2.0",
+        "authors": "Niklas Sorensson",
+        "tracks": [
+            "application"
+        ],
+        "args": [
+            "FILECNF"
+        ],
+        "call": "minisat_release",
+        "gz": false,
+        "status": "unknown"
+    },
+    "mphasesat": {
+        "name": "MPhaseSAT",
+        "version": "2011-02-15",
+        "authors": "Jingchao chen",
+        "tracks": [
+            "application",
+            "crafted",
+            "random"
+        ],
+        "args": [
+            "FILECNF"
+        ],
+        "call": "MPhaseSAT",
+        "gz": false,
+        "status": "unknown"
+    },
+    "mphasesat64": {
+        "name": "MPhaseSAT64",
+        "version": "2011-05-14",
+        "authors": "Jingchao chen",
+        "tracks": [
+            "application",
+            "crafted",
+            "random"
+        ],
+        "args": [
+            "FILECNF"
+        ],
+        "call": "MPhaseSAT64",
+        "gz": false,
+        "status": "unknown"
+    },
+    "mphasesat_m": {
+        "name": "MPhaseSAT_M",
+        "version": "2011-02-16",
+        "authors": "Jingchao chen",
+        "tracks": [
+            "application",
+            "crafted",
+            "random"
+        ],
+        "args": [
+            "FILECNF"
+        ],
+        "call": "MPhaseSAT_M",
+        "gz": false,
+        "status": "unknown"
+    },
+    "multiflip": {
+        "name": "MultiFlip",
+        "version": "2011-02-11",
+        "authors": "Jingchao chen",
+        "tracks": [
+            "random"
+        ],
+        "args": [
+            "FILECNF"
+        ],
+        "call": "MultiFlip",
+        "gz": false,
+        "status": "unknown"
+    },
+    "picosat": {
+        "name": "PicoSAT",
+        "version": "941",
+        "authors": "Armin Biere",
+        "tracks": [
+            "application",
+            "crafted"
+        ],
+        "args": [
+            "FILECNF"
+        ],
+        "call": "picosat",
+        "gz": false,
+        "status": "unknown"
+    },
+    "plingeling": {
+        "name": "Plingeling",
+        "version": "587f",
+        "authors": "Armin Biere",
+        "tracks": [
+            "application",
+            "crafted"
+        ],
+        "args": [
+            "-t",
+            "NBCORE",
+            "FILECNF"
+        ],
+        "call": "plingeling",
+        "gz": false,
+        "status": "unknown"
+    },
+    "ppfolio-par": {
+        "name": "ppfolio",
+        "version": "par",
+        "authors": "Olivier ROUSSEL",
+        "tracks": [
+            "application",
+            "crafted",
+            "random"
+        ],
+        "args": [
+            "FILECNF"
+        ],
+        "call": "ppfolio",
+        "gz": false,
+        "status": "unknown"
+    },
+    "ppfolio-seq": {
+        "name": "ppfolio",
+        "version": "seq",
+        "authors": "Olivier ROUSSEL",
+        "tracks": [
+            "application",
+            "crafted",
+            "random"
+        ],
+        "args": [
+            "--nbcore=1",
+            "FILECNF"
+        ],
+        "call": "ppfolio",
+        "gz": false,
+        "status": "unknown"
+    },
+    "priss-1.0": {
+        "name": "priss",
+        "version": "1.0",
+        "authors": "Norbert Manthey",
+        "tracks": [
+            "application",
+            "crafted"
+        ],
+        "args": [
+            "DIR",
+            "FILECNF",
+            "RANDOMSEED",
+            "TIMELIMIT",
+            "MEMLIMIT",
+            "NBCORE"
+        ],
+        "call": "DIR/priss.sh",
+        "gz": false,
+        "status": "unknown"
+    },
+    "priss-auto": {
+        "name": "priss",
+        "version": "Auto",
+        "authors": "Norbert Manthey",
+        "tracks": [
+            "application",
+            "crafted"
+        ],
+        "args": [
+            "DIR",
+            "FILECNF",
+            "RANDOMSEED",
+            "TIMELIMIT",
+            "MEMLIMIT",
+            "NBCORE"
+        ],
+        "call": "DIR/prissAuto.sh",
+        "gz": false,
+        "status": "unknown"
+    },
+    "priss-up": {
+        "name": "priss",
+        "version": "UP",
+        "authors": "Norbert Manthey",
+        "tracks": [
+            "application",
+            "crafted"
+        ],
+        "args": [
+            "DIR",
+            "FILECNF",
+            "RANDOMSEED",
+            "TIMELIMIT",
+            "MEMLIMIT",
+            "NBCORE"
+        ],
+        "call": "DIR/prissup.sh",
+        "gz": false,
+        "status": "unknown"
+    },
+    "qutersat": {
+        "name": "QuteRSat",
+        "version": "2011-05-12",
+        "authors": "Chi-An Wu",
+        "tracks": [
+            "application",
+            "crafted",
+            "random"
+        ],
+        "args": [
+            "FILECNF",
+            "RANDOMSEED"
+        ],
+        "call": "qutersat_release",
+        "gz": false,
+        "status": "unknown"
+    },
+    "rcl": {
+        "name": "rcl",
+        "version": "2011-04-01",
+        "authors": "Jean-Marie Lagniez",
+        "tracks": [
+            "application",
+            "crafted"
+        ],
+        "args": [
+            "FILECNF"
+        ],
+        "call": "./esg_static.sh",
+        "gz": false,
+        "status": "unknown"
+    },
+    "restartsat-a75": {
+        "name": "RestartSAT",
+        "version": "A75",
+        "authors": "Peter van der Tak, Marijn Heule, Antonio Ramos",
+        "tracks": [
+            "application",
+            "crafted",
+            "random"
+        ],
+        "args": [
+            "-rfirst=1",
+            "-var-decay=0.75",
+            "FILECNF"
+        ],
+        "call": "./RestartSAT",
+        "gz": false,
+        "status": "unknown"
+    },
+    "restartsat-b95": {
+        "name": "RestartSAT",
+        "version": "B95",
+        "authors": "Peter van der Tak, Marijn Heule, Antonio Ramos",
+        "tracks": [
+            "application",
+            "crafted",
+            "random"
+        ],
+        "args": [
+            "-rfirst=1",
+            "-var-decay=0.95",
+            "FILECNF"
+        ],
+        "call": "./RestartSAT",
+        "gz": false,
+        "status": "unknown"
+    },
+    "riss-1.0": {
+        "name": "riss",
+        "version": "1.0",
+        "authors": "Norbert Manthey",
+        "tracks": [
+            "application",
+            "crafted"
+        ],
+        "args": [
+            "DIR",
+            "FILECNF",
+            "RANDOMSEED",
+            "TIMELIMIT",
+            "MEMLIMIT",
+            "NBCORE"
+        ],
+        "call": "DIR/riss.sh",
+        "gz": false,
+        "status": "unknown"
+    },
+    "riss-auto": {
+        "name": "riss",
+        "version": "Auto",
+        "authors": "Norbert Manthey",
+        "tracks": [
+            "application",
+            "crafted"
+        ],
+        "args": [
+            "DIR",
+            "FILECNF",
+            "RANDOMSEED",
+            "TIMELIMIT",
+            "MEMLIMIT",
+            "NBCORE"
+        ],
+        "call": "DIR/rissAuto.sh",
+        "gz": false,
+        "status": "unknown"
+    },
+    "riss-auto_(1200_s_timeout)": {
+        "name": "riss",
+        "version": "Auto (1200 s timeout)",
+        "authors": "Norbert Manthey",
+        "tracks": [
+            "application",
+            "crafted"
+        ],
+        "args": [
+            "DIR",
+            "FILECNF",
+            "RANDOMSEED",
+            "TIMELIMIT",
+            "MEMLIMIT",
+            "NBCORE"
+        ],
+        "call": "DIR/rissAuto.sh",
+        "gz": false,
+        "status": "unknown"
+    },
+    "riss-exp": {
+        "name": "riss",
+        "version": "Exp",
+        "authors": "Norbert Manthey",
+        "tracks": [
+            "application",
+            "crafted"
+        ],
+        "args": [
+            "DIR",
+            "FILECNF",
+            "RANDOMSEED",
+            "TIMELIMIT",
+            "MEMLIMIT",
+            "NBCORE"
+        ],
+        "call": "DIR/rissExp.sh",
+        "gz": false,
+        "status": "unknown"
+    },
+    "sapperlot": {
+        "name": "SApperloT",
+        "version": "2011-03-23",
+        "authors": "Stephan Kottler",
+        "tracks": [
+            "application",
+            "crafted"
+        ],
+        "args": [
+            "FILECNF"
+        ],
+        "call": "SApperloT",
+        "gz": false,
+        "status": "unknown"
+    },
+    "sapperlot2010": {
+        "name": "SApperloT2010",
+        "version": "2011-05-15",
+        "authors": "Stephan Kottler and Christian Zielke",
+        "tracks": [
+            "application",
+            "crafted"
+        ],
+        "args": [
+            "FILECNF"
+        ],
+        "call": "SApperloT2010",
+        "gz": false,
+        "status": "unknown"
+    },
+    "sartagnan": {
+        "name": "SArTagnan",
+        "version": "2011-05-15",
+        "authors": "Stephan Kottler",
+        "tracks": [
+            "application",
+            "crafted"
+        ],
+        "args": [
+            "FILECNF",
+            "-threads=NBCORE"
+        ],
+        "call": "SArTagnan",
+        "gz": false,
+        "status": "unknown"
+    },
+    "sat07_reference_solver:_minisat": {
+        "name": "SAT07 reference solver: minisat",
+        "version": "SAT 2007",
+        "authors": "Niklas Sorensson and Niklas Een",
+        "tracks": [
+            "crafted"
+        ],
+        "args": [
+            "FILECNF"
+        ],
+        "call": "./minisat_noassertions",
+        "gz": false,
+        "status": "unknown"
+    },
+    "sat09_reference_solver:_clasp": {
+        "name": "SAT09 reference solver: clasp",
+        "version": "1.2.0-SAT09-32",
+        "authors": "Benjamin Kaufmann",
+        "tracks": [
+            "crafted"
+        ],
+        "args": [
+            "--file=FILECNF",
+            "--dimacs",
+            "--number=1",
+            "--sat-p=20,25,150",
+            "--hParam=0,512"
+        ],
+        "call": "./clasp",
+        "gz": false,
+        "status": "unknown"
+    },
+    "sat09_reference_solver:glucose": {
+        "name": "SAT09 reference solver:glucose",
+        "version": "1.0",
+        "authors": "Gilles Audemard and Laurent Simon",
+        "tracks": [
+            "application"
+        ],
+        "args": [
+            "FILECNF"
+        ],
+        "call": "glucose.sh",
+        "gz": false,
+        "status": "unknown"
+    },
+    "sat09_reference_solver:_gnovelty-plus2": {
+        "name": "SAT09 reference solver: gnovelty+2",
+        "version": "2009-03-22",
+        "authors": "Duc-Nghia Pham and Charles Gretton",
+        "tracks": [
+            "random"
+        ],
+        "args": [
+            "FILECNF",
+            "RANDOMSEED"
+        ],
+        "call": "./gnovelty+2",
+        "gz": false,
+        "status": "unknown"
+    },
+    "sat09_reference_solver:lysat": {
+        "name": "SAT09 reference solver:LySAT",
+        "version": "i/2009-03-20",
+        "authors": "Youssef Hamadi, Sa\u00efd Jabbour, Lakhdar Sa\u00efs",
+        "tracks": [
+            "application"
+        ],
+        "args": [
+            "FILECNF",
+            "i"
+        ],
+        "call": "lysat.sh",
+        "gz": false,
+        "status": "unknown"
+    },
+    "sat09_reference_solver:_manysat_1.1": {
+        "name": "SAT09 reference solver: ManySAT 1.1",
+        "version": "aimd 1/2009-03-20",
+        "authors": "Youssef Hamadi, Sa\u00efd Jabbour, Lakhdar Sa\u00efs",
+        "tracks": [
+            "application"
+        ],
+        "args": [
+            "FILECNF",
+            "aimd",
+            "1"
+        ],
+        "call": "manysat.sh",
+        "gz": false,
+        "status": "unknown"
+    },
+    "sat09_reference_solver:_march_hi": {
+        "name": "SAT09 reference solver: march_hi",
+        "version": "hi",
+        "authors": "Marijn Heule",
+        "tracks": [
+            "random"
+        ],
+        "args": [
+            "FILECNF"
+        ],
+        "call": "./march_hi",
+        "gz": false,
+        "status": "unknown"
+    },
+    "sat09_reference_solver:precosat": {
+        "name": "SAT09 reference solver:precosat",
+        "version": "236",
+        "authors": "Armin Biere",
+        "tracks": [
+            "application"
+        ],
+        "args": [
+            "FILECNF"
+        ],
+        "call": "./precosat",
+        "gz": false,
+        "status": "unknown"
+    },
+    "sat09_reference_solver:_satzilla2009_c": {
+        "name": "SAT09 reference solver: SATzilla2009_C",
+        "version": "2009-03-22",
+        "authors": "Lin Xu, Frank Hutter, Holger H. Hoos and Kevin Leyton-Brown",
+        "tracks": [
+            "crafted"
+        ],
+        "args": [
+            "FILECNF"
+        ],
+        "call": "./SATzilla2009_C",
+        "gz": false,
+        "status": "unknown"
+    },
+    "sat09_reference_solver:_satzilla2009_r": {
+        "name": "SAT09 reference solver: SATzilla2009_R",
+        "version": "2009-03-22",
+        "authors": "Lin Xu, Frank Hutter, Holger H. Hoos and Kevin Leyton-Brown",
+        "tracks": [
+            "random"
+        ],
+        "args": [
+            "FILECNF"
+        ],
+        "call": "./SATzilla2009_R",
+        "gz": false,
+        "status": "unknown"
+    },
+    "sat09_reference_solver:_tnm": {
+        "name": "SAT09 reference solver: TNM",
+        "version": "2009-03-22",
+        "authors": "Wanxia Wei and Chu Min Li",
+        "tracks": [
+            "random"
+        ],
+        "args": [
+            "FILECNF",
+            "RANDOMSEED"
+        ],
+        "call": "./TNM",
+        "gz": false,
+        "status": "unknown"
+    },
+    "sat4j_core": {
+        "name": "SAT4J core",
+        "version": "2.3.0 SNAPSHOT 2011-02-06",
+        "authors": "Daniel Le Berre",
+        "tracks": [
+            "application",
+            "crafted",
+            "random"
+        ],
+        "args": [
+            "-server",
+            "-XX:MaxPermSize=256m",
+            "-Xms7000m",
+            "-Xmx7000m",
+            "-jar",
+            "org.sat4j.core.jar",
+            "FILECNF"
+        ],
+        "call": "java",
+        "gz": false,
+        "status": "unknown"
+    },
+    "sathys": {
+        "name": "sathys",
+        "version": "2011-04-01",
+        "authors": "Jean-Marie Lagniez",
+        "tracks": [
+            "application",
+            "crafted",
+            "random"
+        ],
+        "args": [
+            "FILECNF",
+            "rnovelty"
+        ],
+        "call": "./esg_static.sh",
+        "gz": false,
+        "status": "unknown"
+    },
+    "sat_intersec_01": {
+        "name": "SAT_Intersec_01",
+        "version": "2011-03-01",
+        "authors": "Igor Ulyanovsky",
+        "tracks": [
+            "random"
+        ],
+        "args": [
+            "-Xms7000m",
+            "-Xmx7000m",
+            "-jar",
+            "DIR/SAT_Intersec_01.jar",
+            "FILECNF"
+        ],
+        "call": "java",
+        "gz": false,
+        "status": "unknown"
+    },
+    "satisfiability_solver_selector-2011-03-18": {
+        "name": "Satisfiability Solver Selector",
+        "version": "2011-03-18",
+        "authors": "Meinolf Sellmann",
+        "tracks": [
+            "application",
+            "crafted",
+            "random"
+        ],
+        "args": [
+            "portfolio_solver.py",
+            "-t",
+            "TIMELIMIT",
+            "-s",
+            "RANDOMSEED",
+            "FILECNF"
+        ],
+        "call": "python",
+        "gz": false,
+        "status": "unknown"
+    },
+    "satisfiability_solver_selector-2011-03-18_(1200_s_timeout)": {
+        "name": "Satisfiability Solver Selector",
+        "version": "2011-03-18 (1200 s timeout)",
+        "authors": "Meinolf Sellmann",
+        "tracks": [
+            "application",
+            "crafted",
+            "random"
+        ],
+        "args": [
+            "portfolio_solver.py",
+            "-t",
+            "TIMELIMIT",
+            "-s",
+            "RANDOMSEED",
+            "FILECNF"
+        ],
+        "call": "python",
+        "gz": false,
+        "status": "unknown"
+    },
+    "sattime": {
+        "name": "sattime",
+        "version": "2011-03-02",
+        "authors": "Chumin Li, Yu Li",
+        "tracks": [
+            "application",
+            "crafted",
+            "random"
+        ],
+        "args": [
+            "FILECNF",
+            "RANDOMSEED"
+        ],
+        "call": "sattime",
+        "gz": false,
+        "status": "unknown"
+    },
+    "sattime-plus": {
+        "name": "sattime+",
+        "version": "2011-03-02",
+        "authors": "Chumin LI, Yu Li",
+        "tracks": [
+            "application",
+            "crafted",
+            "random"
+        ],
+        "args": [
+            "FILECNF",
+            "RANDOMSEED"
+        ],
+        "call": "sattime+",
+        "gz": false,
+        "status": "unknown"
+    },
+    "sattime2011": {
+        "name": "sattime2011",
+        "version": "2011-03-02",
+        "authors": "Chumin Li, Yu Li",
+        "tracks": [
+            "application",
+            "crafted",
+            "random"
+        ],
+        "args": [
+            "FILECNF",
+            "RANDOMSEED"
+        ],
+        "call": "sattime2011",
+        "gz": false,
+        "status": "unknown"
+    },
+    "shortsattime-plus": {
+        "name": "shortsattime+",
+        "version": "2011-03-02",
+        "authors": "Chumin LI, Yu Li",
+        "tracks": [
+            "application",
+            "crafted",
+            "random"
+        ],
+        "args": [
+            "FILECNF",
+            "RANDOMSEED"
+        ],
+        "call": "shortsattime+",
+        "gz": false,
+        "status": "unknown"
+    },
+    "shortsattime2011": {
+        "name": "shortsattime2011",
+        "version": "2011-03-02",
+        "authors": "Chumin Li, Yu Li",
+        "tracks": [
+            "application",
+            "crafted",
+            "random"
+        ],
+        "args": [
+            "FILECNF",
+            "RANDOMSEED"
+        ],
+        "call": "shortsattime2011",
+        "gz": false,
+        "status": "unknown"
+    },
+    "sol": {
+        "name": "Sol",
+        "version": "2011-04-04",
+        "authors": "Michael Ostapenko",
+        "tracks": [
+            "application",
+            "crafted",
+            "random"
+        ],
+        "args": [
+            "Main.exe",
+            "FILECNF"
+        ],
+        "call": "mono",
+        "gz": false,
+        "status": "unknown"
+    },
+    "sparrow2011": {
+        "name": "sparrow2011",
+        "version": "sparrow2011_ubcsat1.2_2011-03-02",
+        "authors": "Adrian Balint & Andreas Froehlich and Dave Tompkins & Holger Hoos",
+        "tracks": [
+            "random"
+        ],
+        "args": [
+            "FILECNF",
+            "RANDOMSEED"
+        ],
+        "call": "sparrow2011",
+        "gz": false,
+        "status": "unknown"
+    },
+    "structure-0.1": {
+        "name": "STRUCTure",
+        "version": "0.1",
+        "authors": "Alexandru Mosoi",
+        "tracks": [
+            "application",
+            "crafted",
+            "random"
+        ],
+        "args": [
+            "15000",
+            "NBCORE",
+            "/tmp",
+            "DIR",
+            "FILECNF"
+        ],
+        "call": "run",
+        "gz": false,
+        "status": "unknown"
+    },
+    "structure-0.1_(hbr=2)": {
+        "name": "STRUCTure",
+        "version": "0.1 (hbr=2)",
+        "authors": "Alexandru Mosoi",
+        "tracks": [
+            "application",
+            "crafted",
+            "random"
+        ],
+        "args": [
+            "15000",
+            "NBCORE",
+            "/tmp",
+            "DIR",
+            "FILECNF",
+            "-hbr",
+            "2"
+        ],
+        "call": "run",
+        "gz": false,
+        "status": "unknown"
+    },
+    "synit_sat": {
+        "name": "synit_sat",
+        "version": "2011-03-03",
+        "authors": "CHIH-JEN HSU, Chung-Yang Ric Huang",
+        "tracks": [
+            "application",
+            "crafted",
+            "random"
+        ],
+        "args": [
+            "FILECNF",
+            "RANDOMSEED"
+        ],
+        "call": "./synit_sat",
+        "gz": false,
+        "status": "unknown"
+    },
+    "tts": {
+        "name": "tts",
+        "version": "5-4",
+        "authors": "Ivor Spence",
+        "tracks": [
+            "crafted"
+        ],
+        "args": [
+            "FILECNF"
+        ],
+        "call": "DIR/tts-5-4",
+        "gz": false,
+        "status": "unknown"
+    },
+    "ttsth": {
+        "name": "ttsth",
+        "version": "5-4",
+        "authors": "Ivor Spence",
+        "tracks": [
+            "crafted"
+        ],
+        "args": [
+            "-num-threads",
+            "NBCORE",
+            "FILECNF"
+        ],
+        "call": "DIR/ttsth-5-4",
+        "gz": false,
+        "status": "unknown"
+    },
+    "umsat": {
+        "name": "UmSat",
+        "version": "2011-05-12",
+        "authors": "Daniel Andr\u00e9n",
+        "tracks": [
+            "application",
+            "crafted"
+        ],
+        "args": [
+            "FILECNF"
+        ],
+        "call": "umsat",
+        "gz": false,
+        "status": "unknown"
+    }
+}

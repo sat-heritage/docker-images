@@ -6,9 +6,7 @@ Name adaptg2wsat2011
 Version 2011-03-02
 Authors Chumin LI, Yu Li, Wanxia Wei
 Complete/Incomplete Incomplete
-Is able to solve APPLICATION
-CRAFTED
-RANDOM
+Is able to solve APPLICATION CRAFTED RANDOM
 Solver command line adaptg2wsat2011 BENCHNAME RANDOMSEED
 Conversion script command line 
 Comments 
@@ -28,9 +26,7 @@ Name Black Hole SAT
 Version 2011-03-08
 Authors Markus Iser
 Complete/Incomplete Complete
-Is able to solve APPLICATION
-CRAFTED
-RANDOM
+Is able to solve APPLICATION CRAFTED RANDOM
 Solver command line saturn BENCHNAME
 Conversion script command line 
 Comments Improved Learnt-Clauses and Memory-Handling
@@ -42,160 +38,17 @@ saturn 09a5bb108af28b8cf1a653a5efccf0c5
 Meta md5sum: 73bc997ebd35aad2bb68dd3f27ae7502
 
 
-Event SAT 2011 Competition: main competition (phase 1)
-Type SAT
-Submitter Bryan Silverthorn
-Date of submission 2011-03-02 23:46
-Name borg-sat
-Version 11.03.02-industrial
-Authors Bryan Silverthorn and Risto Miikkulainen
-Complete/Incomplete Complete
-Is able to solve APPLICATION
-Solver command line python DIR/solve
-DIR/etc/borg-mix+class.industrial.pickle BENCHNAME -seed RANDOMSEED
--budget TIMEOUT -cores NBCORE
-Conversion script command line 
-Comments The solver tarball includes a README with detailed instructions
-for installing the Python dependencies on CentOS 5.4. Please contact me
-if you run into any issues\!
-Solver files and checksums 
-[Show/Hide files]
-
-File md5sum
-borg/build/lib/borg/bilevel.py 7ef1cf08c28fe25fe0983a42db89d4da
-borg/build/lib/borg/bilevel.pyc a406a20ea559b2cdade23e4c16d5acf8
-borg/build/lib/borg/defaults.py e3af47cce1a648892191ba3c3a5e6739
-borg/build/lib/borg/defaults.pyc f0be127a3886b0aba1e959284edd05fc
-borg/build/lib/borg/features.so dda0b780acd3e3a1eed58e77f2ee8d03
-borg/build/lib/borg/__init__.py 6ab0dbcbcc9aa759e5c874c00290bde8
-borg/build/lib/borg/__init__.pyc b1c232f192add79b16a9f5da937affe3
-borg/build/lib/borg/instance.so aff8e363b3ba5fe855158e1022454250
-borg/build/lib/borg/models.so 811c80f1cc055eb17d2e215b797a5449
-borg/build/lib/borg/portfolios.py 08c35a6289cb74e301a0fbbc2f89c75c
-borg/build/lib/borg/portfolios.pyc ab1f6f66fdf7eebdac440f511237d3ed
-borg/build/lib/borg/solvers.py b1a2e6f026d8516e4f2da90cbd8094e9
-borg/build/lib/borg/solvers.pyc 263fe1b00d2a081e0a8d7d2247019728
-borg/build/lib/borg/tools/calibrate.py 522c9b69b565ea7da3cd7c60bb29f249
-borg/build/lib/borg/tools/calibrate.pyc eed84f386943466da000f9eaf6651d4c
-borg/build/lib/borg/tools/dump_model.py d3decfa1cf78723a5c4029360eb4bc51
-borg/build/lib/borg/tools/get_features.py c5e4c27465ccb63c648ee34b81c23261
-borg/build/lib/borg/tools/__init__.py d41d8cd98f00b204e9800998ecf8427e
-borg/build/lib/borg/tools/__init__.pyc 0acdad6bcfef3a7433f4261b6e5ce36f
-borg/build/lib/borg/tools/run_solvers.py 442c7b19bbc50836a7900d7e72c6df97
-borg/build/lib/borg/tools/run_validation.py 3c0db006735d69f3cefb275c0ffa4556
-borg/build/lib/borg/tools/solve.py bcc0d6578cc43ef5d422bd8a98b8b6a2
-borg/build/lib/borg/tools/train.py 58972f6037c9e859f65194c150b679c0
-borg/build/lib/cargo_site_defaults.py 2185a0b00138477cbca691c998c88520
-borg/build/lib/cargo_site_defaults.pyc 6e3525d90305c431a25954ec13d87728
-cargo/build/lib/cargo/condor.py 06ee872b730383c8b246f64fcb3d8373
-cargo/build/lib/cargo/condor.pyc 04d4e500e7a604ab164bb254fd705c7a
-cargo/build/lib/cargo/defaults.py 9cf5eb22bef557c33242ff973f348eda
-cargo/build/lib/cargo/defaults.pyc 5fd59456695bb15cce205f3e28864c40
-cargo/build/lib/cargo/errors.py c84eecdc5302d57632a42ba0aeba7238
-cargo/build/lib/cargo/errors.pyc 2634f03c35c891c86cd7d71e6649c457
-cargo/build/lib/cargo/_files/for_tests/echo_and_exit
-6fb30ec49b9657fb92378ace8938ef84
-cargo/build/lib/cargo/__init__.py 971eb5143e6ef3d2630f2491e516c21d
-cargo/build/lib/cargo/__init__.pyc 27008ef8e3733b518001934decb26d76
-cargo/build/lib/cargo/io.py f935425a0226787846b8ae6039e6770a
-cargo/build/lib/cargo/io.pyc 0053a1c14cad89b247c2468a16d66219
-cargo/build/lib/cargo/iterators.py 863d98124181df910d9469b75a79de3d
-cargo/build/lib/cargo/iterators.pyc 6e80e104d5b8907c418b1a85ae5fb978
-cargo/build/lib/cargo/json.py 1be3050964ad262564a30b94cc151b00
-cargo/build/lib/cargo/labor2.py 470d75bcf9490e9925fb0a1a8766b860
-cargo/build/lib/cargo/labor2.pyc ca98dc5c9ec7ac92aa5f318d30acf5ac
-cargo/build/lib/cargo/labor.py f00536f9c37bf1610d59135afa59b272
-cargo/build/lib/cargo/log.py 81927c3005c33238687a73451a923d76
-cargo/build/lib/cargo/log.pyc 8e3899c945218f605db451e1b1843e09
-cargo/build/lib/cargo/numpy.py d51552855f1ab421e2e12d7da924a42e
-cargo/build/lib/cargo/numpy.pyc d6f8c9e3f0b42af1bf99dcf19c18b745
-cargo/build/lib/cargo/plot.py abd281e5113f1c4b85c3ca245d89c57b
-cargo/build/lib/cargo/profile.py 64ba9a220933d3ef4d3f2521c26838b5
-cargo/build/lib/cargo/profile.pyc d2e47899352c5f0eae458abee5c63954
-cargo/build/lib/cargo/random.py 824c0edb6a5b438fcb874acd25c58fda
-cargo/build/lib/cargo/random.pyc e44efdc052dce72f0117b33c81c66c53
-cargo/build/lib/cargo/sql/actions.py f3625c6f14e68e374eb3b3d50e81acd5
-cargo/build/lib/cargo/sql/alchemy.py db0e70a44690c0be7841ccccb607c17d
-cargo/build/lib/cargo/sql/__init__.py a6a49ab728efe27da8c3c123d32b4558
-cargo/build/lib/cargo/sugar.py 1e23c2a2076f96ff3c872372ee9e3e5b
-cargo/build/lib/cargo/sugar.pyc 423cda81911c2949b7a3348bb9d2e282
-cargo/build/lib/cargo/temporal.py 41109c0a634bbc85a495600965d929dc
-cargo/build/lib/cargo/temporal.pyc 765f9133a0dbf59683842b499e8fdfc1
-cargo/build/lib/cargo/testing.py 8cea80184e6c2358772d9cf6dbb438ef
-cargo/build/lib/cargo/test/__init__.py d41d8cd98f00b204e9800998ecf8427e
-cargo/build/lib/cargo/test/test_io.py 2ffa4ff160e0e38ec9b007a7c94a0c15
-cargo/build/lib/cargo/test/test_iterators.py
-f4e37baee4839955429f4e23bcfc8815
-cargo/build/lib/cargo/test/test_json.py 70dd21918347293648721fede6c18831
-cargo/build/lib/cargo/test/test_numpy.py 2fd3771bae4ace3264f8a4af6b7caffc
-cargo/build/lib/cargo/test/test_random.py 70545c12fec340d9e59fe7551442ba31
-cargo/build/lib/cargo/test/test_sugar.py adeb5b1c201b2ef60d21294a2df9064d
-cargo/build/lib/cargo/test/test_temporal.py 53f5d046d36cfbd270004ce437afbf1c
-cargo/build/lib/cargo/tools/__init__.py d41d8cd98f00b204e9800998ecf8427e
-cargo/build/lib/cargo/tools/labor/delete.py 4b5131e241a6bef83fb158724bec7387
-cargo/build/lib/cargo/tools/labor/__init__.py
-d41d8cd98f00b204e9800998ecf8427e
-cargo/build/lib/cargo/tools/labor/submit2.py
-70c63c64520ecc8f5829496eff7e047a
-cargo/build/lib/cargo/tools/labor/submit.py 6e4e28e053feafb68677d0774c61e553
-cargo/build/lib/cargo/tools/labor/work2.py c0dd6d6204bf9485ccd8a8caa6a0385f
-cargo/build/lib/cargo/tools/labor/work.py b664df0b649d9353de5846711c3c5274
-cargo/build/lib/cargo/tools/sql/copy.py afa43212dfd27a185d56a1abfe0d81c1
-cargo/build/lib/cargo/tools/sql/describe.py 54db3dc7c3b72015bbfa1a38d490f9af
-cargo/build/lib/cargo/tools/sql/__init__.py d41d8cd98f00b204e9800998ecf8427e
-cargo/build/lib/cargo/tools/sql/prune.py e51f2c7dea3e3ce6995d7babb39e7eb2
-cargo/build/lib/cargo/tools/sql/test/__init__.py
-d41d8cd98f00b204e9800998ecf8427e
-cargo/build/lib/cargo/tools/triggered.py f2e74c0789b474cde87b9811817018ae
-cargo/build/lib/cargo/unix/accounting.py 2a6d462aa9e63d836126e448fc576edb
-cargo/build/lib/cargo/unix/accounting.pyc 5ddbdd5ed4c01fac5744c37e3b230bde
-cargo/build/lib/cargo/unix/__init__.py d41d8cd98f00b204e9800998ecf8427e
-cargo/build/lib/cargo/unix/__init__.pyc a123f9e199e415a15e0c0a8aabe63f74
-cargo/build/lib/cargo/unix/proc.py 420ac8f45c491e89015a7ed6a880ab7b
-cargo/build/lib/cargo/unix/proc.pyc 961c1a12f58093b1728db518059fd847
-cargo/build/lib/cargo/unix/sessions.py a341628ebfa8c164224e1bd93f6e3176
-cargo/build/lib/cargo/unix/sessions.pyc 5d2584a44d32abc382aeba6b7e8244dc
-etc/borg-mix+class.industrial.pickle e285ae87d503901cfb2d02a5d128c130
-etc/borg-mix+class.random.pickle a9755421c2d52489663c585cbe721bb9
-etc/local_speed 769b6262e33ad421ebe7c8083b431582
-etc/model_speed 8a4df6343141ac796756d6603b47b99c
-solve 12b33cd9ef5c6eabdac49b37f6b96756
-solvers/adaptg2wsat2009++/adaptg2wsat2009++ cead572e3ae4215a8975427edb1db9a6
-solvers/cryptominisat-2.9.0/cryptominisat-2.9.0Linux64
-d143e7d530fa28bae9e6b58c951d54df
-solvers/FH/FH 66e89d2f6cc83b08cc375d9da949b205
-solvers/glucose/glucose_static 0552098a1a637d6795b8d5ac7b3c630c
-solvers/glucosER/glucoser_static 03184c5cd299a6596fcaa4b9bcf3c0e4
-solvers/gnovelty+2/gnovelty+2 4fcfb52cf43647590054700c09a370a0
-solvers/hybridGM3/hybridGM3 277dcffb656b573a34c67a0465176fd3
-solvers/iPAWS/iPAWS 6c414f6c99c79999fcbc46dabb166b64
-solvers/kcnfs-2006/kcnfs-2006 9618885681958aedfb08c60c9d3493f4
-solvers/lingeling-276-6264d55-100731/lingeling
-2c07a0da2c583c2bd10ab8fe8d7b03de
-solvers/lingeling-276-6264d55-100731/plingeling
-6f8619d260a43620cdc6bd8d8446dd60
-solvers/march_hi/march_hi 9cd4f4ca0f0b022fe3effb99a7f8b9d4
-solvers/NCVWr/NCVWr a1553d98cdc8632698a2c40a3f890204
-solvers/precosat-570-239dbbe-100801/precosat
-4ec0a0fcec90119db821c76f4e0c2a56
-solvers/run-1.4/run 281cfd44abcd37815794dc964e203b71
-solvers/SApperloT/SApperloT-base 7f553541b6c8028180ac48d39cb6946e
-solvers/TNM/TNM b10bb8daedd6a1962b39ee0982fa5d22
-Meta md5sum: b553949df0b2a602f20d0ac28007db53
-
 
 Event SAT 2011 Competition: main competition (phase 1)
 Type SAT
 Submitter Bryan Silverthorn
 Date of submission 2011-05-11 23:36
 Name borg-sat
-Version 11.03.02-par-industrial (fixed)
+Version 11.03.02-par-industrial
 Authors Bryan Silverthorn
 Complete/Incomplete Complete
 Is able to solve APPLICATION
-Solver command line python DIR/solve
-DIR/etc/borg-mix+class.industrial.pickle BENCHNAME -seed RANDOMSEED
--budget TIMEOUT -cores NBCORE
+Solver command line python DIR/solve DIR/etc/borg-mix+class.industrial.pickle BENCHNAME -seed RANDOMSEED -budget TIMEOUT -cores NBCORE
 Conversion script command line 
 Comments Parallel industrial-instance portfolio. Only the command line
 differs from other borg-sat submissions.
@@ -334,13 +187,11 @@ Type SAT
 Submitter Bryan Silverthorn
 Date of submission 2011-05-11 23:29
 Name borg-sat
-Version 11.03.02-par-random (fixed)
+Version 11.03.02-par-random
 Authors Bryan Silverthorn
 Complete/Incomplete Complete
 Is able to solve RANDOM
-Solver command line python DIR/solve
-DIR/etc/borg-mix+class.random.pickle BENCHNAME -seed RANDOMSEED -budget
-TIMEOUT -cores NBCORE
+Solver command line python DIR/solve DIR/etc/borg-mix+class.random.pickle BENCHNAME -seed RANDOMSEED -budget TIMEOUT -cores NBCORE
 Conversion script command line 
 Comments Parallel random-instance portfolio. Only the command line
 differs from other borg-sat submissions.
@@ -474,160 +325,17 @@ solvers/TNM/TNM b10bb8daedd6a1962b39ee0982fa5d22
 Meta md5sum: c081de0e80bb6144e1db087f7ca30883
 
 
-Event SAT 2011 Competition: main competition (phase 1)
-Type SAT
-Submitter Bryan Silverthorn
-Date of submission 2011-03-02 23:41
-Name borg-sat
-Version 11.03.02-random
-Authors Bryan Silverthorn
-Complete/Incomplete Complete
-Is able to solve RANDOM
-Solver command line python DIR/solve
-DIR/etc/borg-mix+class.random.pickle BENCHNAME -seed RANDOMSEED -budget
-TIMEOUT -cores NBCORE
-Conversion script command line 
-Comments The solver tarball includes a README with detailed instructions
-for installing the Python dependencies on CentOS 5.4. (Please contact me
-if you run into any issues\!)
-Solver files and checksums 
-[Show/Hide files]
-
-File md5sum
-borg/build/lib/borg/bilevel.py 7ef1cf08c28fe25fe0983a42db89d4da
-borg/build/lib/borg/bilevel.pyc a406a20ea559b2cdade23e4c16d5acf8
-borg/build/lib/borg/defaults.py e3af47cce1a648892191ba3c3a5e6739
-borg/build/lib/borg/defaults.pyc f0be127a3886b0aba1e959284edd05fc
-borg/build/lib/borg/features.so dda0b780acd3e3a1eed58e77f2ee8d03
-borg/build/lib/borg/__init__.py 6ab0dbcbcc9aa759e5c874c00290bde8
-borg/build/lib/borg/__init__.pyc b1c232f192add79b16a9f5da937affe3
-borg/build/lib/borg/instance.so aff8e363b3ba5fe855158e1022454250
-borg/build/lib/borg/models.so 811c80f1cc055eb17d2e215b797a5449
-borg/build/lib/borg/portfolios.py 08c35a6289cb74e301a0fbbc2f89c75c
-borg/build/lib/borg/portfolios.pyc ab1f6f66fdf7eebdac440f511237d3ed
-borg/build/lib/borg/solvers.py b1a2e6f026d8516e4f2da90cbd8094e9
-borg/build/lib/borg/solvers.pyc 263fe1b00d2a081e0a8d7d2247019728
-borg/build/lib/borg/tools/calibrate.py 522c9b69b565ea7da3cd7c60bb29f249
-borg/build/lib/borg/tools/calibrate.pyc eed84f386943466da000f9eaf6651d4c
-borg/build/lib/borg/tools/dump_model.py d3decfa1cf78723a5c4029360eb4bc51
-borg/build/lib/borg/tools/get_features.py c5e4c27465ccb63c648ee34b81c23261
-borg/build/lib/borg/tools/__init__.py d41d8cd98f00b204e9800998ecf8427e
-borg/build/lib/borg/tools/__init__.pyc 0acdad6bcfef3a7433f4261b6e5ce36f
-borg/build/lib/borg/tools/run_solvers.py 442c7b19bbc50836a7900d7e72c6df97
-borg/build/lib/borg/tools/run_validation.py 3c0db006735d69f3cefb275c0ffa4556
-borg/build/lib/borg/tools/solve.py bcc0d6578cc43ef5d422bd8a98b8b6a2
-borg/build/lib/borg/tools/train.py 58972f6037c9e859f65194c150b679c0
-borg/build/lib/cargo_site_defaults.py 2185a0b00138477cbca691c998c88520
-borg/build/lib/cargo_site_defaults.pyc 6e3525d90305c431a25954ec13d87728
-cargo/build/lib/cargo/condor.py 06ee872b730383c8b246f64fcb3d8373
-cargo/build/lib/cargo/condor.pyc 04d4e500e7a604ab164bb254fd705c7a
-cargo/build/lib/cargo/defaults.py 9cf5eb22bef557c33242ff973f348eda
-cargo/build/lib/cargo/defaults.pyc 5fd59456695bb15cce205f3e28864c40
-cargo/build/lib/cargo/errors.py c84eecdc5302d57632a42ba0aeba7238
-cargo/build/lib/cargo/errors.pyc 2634f03c35c891c86cd7d71e6649c457
-cargo/build/lib/cargo/_files/for_tests/echo_and_exit
-6fb30ec49b9657fb92378ace8938ef84
-cargo/build/lib/cargo/__init__.py 971eb5143e6ef3d2630f2491e516c21d
-cargo/build/lib/cargo/__init__.pyc 27008ef8e3733b518001934decb26d76
-cargo/build/lib/cargo/io.py f935425a0226787846b8ae6039e6770a
-cargo/build/lib/cargo/io.pyc 0053a1c14cad89b247c2468a16d66219
-cargo/build/lib/cargo/iterators.py 863d98124181df910d9469b75a79de3d
-cargo/build/lib/cargo/iterators.pyc 6e80e104d5b8907c418b1a85ae5fb978
-cargo/build/lib/cargo/json.py 1be3050964ad262564a30b94cc151b00
-cargo/build/lib/cargo/labor2.py 470d75bcf9490e9925fb0a1a8766b860
-cargo/build/lib/cargo/labor2.pyc ca98dc5c9ec7ac92aa5f318d30acf5ac
-cargo/build/lib/cargo/labor.py f00536f9c37bf1610d59135afa59b272
-cargo/build/lib/cargo/log.py 81927c3005c33238687a73451a923d76
-cargo/build/lib/cargo/log.pyc 8e3899c945218f605db451e1b1843e09
-cargo/build/lib/cargo/numpy.py d51552855f1ab421e2e12d7da924a42e
-cargo/build/lib/cargo/numpy.pyc d6f8c9e3f0b42af1bf99dcf19c18b745
-cargo/build/lib/cargo/plot.py abd281e5113f1c4b85c3ca245d89c57b
-cargo/build/lib/cargo/profile.py 64ba9a220933d3ef4d3f2521c26838b5
-cargo/build/lib/cargo/profile.pyc d2e47899352c5f0eae458abee5c63954
-cargo/build/lib/cargo/random.py 824c0edb6a5b438fcb874acd25c58fda
-cargo/build/lib/cargo/random.pyc e44efdc052dce72f0117b33c81c66c53
-cargo/build/lib/cargo/sql/actions.py f3625c6f14e68e374eb3b3d50e81acd5
-cargo/build/lib/cargo/sql/alchemy.py db0e70a44690c0be7841ccccb607c17d
-cargo/build/lib/cargo/sql/__init__.py a6a49ab728efe27da8c3c123d32b4558
-cargo/build/lib/cargo/sugar.py 1e23c2a2076f96ff3c872372ee9e3e5b
-cargo/build/lib/cargo/sugar.pyc 423cda81911c2949b7a3348bb9d2e282
-cargo/build/lib/cargo/temporal.py 41109c0a634bbc85a495600965d929dc
-cargo/build/lib/cargo/temporal.pyc 765f9133a0dbf59683842b499e8fdfc1
-cargo/build/lib/cargo/testing.py 8cea80184e6c2358772d9cf6dbb438ef
-cargo/build/lib/cargo/test/__init__.py d41d8cd98f00b204e9800998ecf8427e
-cargo/build/lib/cargo/test/test_io.py 2ffa4ff160e0e38ec9b007a7c94a0c15
-cargo/build/lib/cargo/test/test_iterators.py
-f4e37baee4839955429f4e23bcfc8815
-cargo/build/lib/cargo/test/test_json.py 70dd21918347293648721fede6c18831
-cargo/build/lib/cargo/test/test_numpy.py 2fd3771bae4ace3264f8a4af6b7caffc
-cargo/build/lib/cargo/test/test_random.py 70545c12fec340d9e59fe7551442ba31
-cargo/build/lib/cargo/test/test_sugar.py adeb5b1c201b2ef60d21294a2df9064d
-cargo/build/lib/cargo/test/test_temporal.py 53f5d046d36cfbd270004ce437afbf1c
-cargo/build/lib/cargo/tools/__init__.py d41d8cd98f00b204e9800998ecf8427e
-cargo/build/lib/cargo/tools/labor/delete.py 4b5131e241a6bef83fb158724bec7387
-cargo/build/lib/cargo/tools/labor/__init__.py
-d41d8cd98f00b204e9800998ecf8427e
-cargo/build/lib/cargo/tools/labor/submit2.py
-70c63c64520ecc8f5829496eff7e047a
-cargo/build/lib/cargo/tools/labor/submit.py 6e4e28e053feafb68677d0774c61e553
-cargo/build/lib/cargo/tools/labor/work2.py c0dd6d6204bf9485ccd8a8caa6a0385f
-cargo/build/lib/cargo/tools/labor/work.py b664df0b649d9353de5846711c3c5274
-cargo/build/lib/cargo/tools/sql/copy.py afa43212dfd27a185d56a1abfe0d81c1
-cargo/build/lib/cargo/tools/sql/describe.py 54db3dc7c3b72015bbfa1a38d490f9af
-cargo/build/lib/cargo/tools/sql/__init__.py d41d8cd98f00b204e9800998ecf8427e
-cargo/build/lib/cargo/tools/sql/prune.py e51f2c7dea3e3ce6995d7babb39e7eb2
-cargo/build/lib/cargo/tools/sql/test/__init__.py
-d41d8cd98f00b204e9800998ecf8427e
-cargo/build/lib/cargo/tools/triggered.py f2e74c0789b474cde87b9811817018ae
-cargo/build/lib/cargo/unix/accounting.py 2a6d462aa9e63d836126e448fc576edb
-cargo/build/lib/cargo/unix/accounting.pyc 5ddbdd5ed4c01fac5744c37e3b230bde
-cargo/build/lib/cargo/unix/__init__.py d41d8cd98f00b204e9800998ecf8427e
-cargo/build/lib/cargo/unix/__init__.pyc a123f9e199e415a15e0c0a8aabe63f74
-cargo/build/lib/cargo/unix/proc.py 420ac8f45c491e89015a7ed6a880ab7b
-cargo/build/lib/cargo/unix/proc.pyc 961c1a12f58093b1728db518059fd847
-cargo/build/lib/cargo/unix/sessions.py a341628ebfa8c164224e1bd93f6e3176
-cargo/build/lib/cargo/unix/sessions.pyc 5d2584a44d32abc382aeba6b7e8244dc
-etc/borg-mix+class.industrial.pickle e285ae87d503901cfb2d02a5d128c130
-etc/borg-mix+class.random.pickle a9755421c2d52489663c585cbe721bb9
-etc/local_speed 769b6262e33ad421ebe7c8083b431582
-etc/model_speed 8a4df6343141ac796756d6603b47b99c
-solve 12b33cd9ef5c6eabdac49b37f6b96756
-solvers/adaptg2wsat2009++/adaptg2wsat2009++ cead572e3ae4215a8975427edb1db9a6
-solvers/cryptominisat-2.9.0/cryptominisat-2.9.0Linux64
-d143e7d530fa28bae9e6b58c951d54df
-solvers/FH/FH 66e89d2f6cc83b08cc375d9da949b205
-solvers/glucose/glucose_static 0552098a1a637d6795b8d5ac7b3c630c
-solvers/glucosER/glucoser_static 03184c5cd299a6596fcaa4b9bcf3c0e4
-solvers/gnovelty+2/gnovelty+2 4fcfb52cf43647590054700c09a370a0
-solvers/hybridGM3/hybridGM3 277dcffb656b573a34c67a0465176fd3
-solvers/iPAWS/iPAWS 6c414f6c99c79999fcbc46dabb166b64
-solvers/kcnfs-2006/kcnfs-2006 9618885681958aedfb08c60c9d3493f4
-solvers/lingeling-276-6264d55-100731/lingeling
-2c07a0da2c583c2bd10ab8fe8d7b03de
-solvers/lingeling-276-6264d55-100731/plingeling
-6f8619d260a43620cdc6bd8d8446dd60
-solvers/march_hi/march_hi 9cd4f4ca0f0b022fe3effb99a7f8b9d4
-solvers/NCVWr/NCVWr a1553d98cdc8632698a2c40a3f890204
-solvers/precosat-570-239dbbe-100801/precosat
-4ec0a0fcec90119db821c76f4e0c2a56
-solvers/run-1.4/run 281cfd44abcd37815794dc964e203b71
-solvers/SApperloT/SApperloT-base 7f553541b6c8028180ac48d39cb6946e
-solvers/TNM/TNM b10bb8daedd6a1962b39ee0982fa5d22
-Meta md5sum: b553949df0b2a602f20d0ac28007db53
-
 
 Event SAT 2011 Competition: main competition (phase 1)
 Type SAT
 Submitter Bryan Silverthorn
 Date of submission 2011-05-11 23:33
 Name borg-sat
-Version 11.03.02-seq-industrial (fixed)
+Version 11.03.02-seq-industrial
 Authors Bryan Silverthorn
 Complete/Incomplete Complete
 Is able to solve APPLICATION
-Solver command line python DIR/solve
-DIR/etc/borg-mix+class.industrial.pickle BENCHNAME -seed RANDOMSEED
--budget TIMEOUT
+Solver command line python DIR/solve DIR/etc/borg-mix+class.industrial.pickle BENCHNAME -seed RANDOMSEED -budget TIMEOUT
 Conversion script command line 
 Comments Sequential industrial-instance portfolio. Only the command line
 differs from other borg-sat submissions.
@@ -761,149 +469,6 @@ solvers/TNM/TNM b10bb8daedd6a1962b39ee0982fa5d22
 Meta md5sum: c081de0e80bb6144e1db087f7ca30883
 
 
-Event SAT 2011 Competition: main competition (phase 1)
-Type SAT
-Submitter Bryan Silverthorn
-Date of submission 2011-05-11 23:33
-Name borg-sat
-Version 11.03.02-seq-industrial (fixed, 1200 s timeout)
-Authors Bryan Silverthorn
-Complete/Incomplete Complete
-Is able to solve APPLICATION
-Solver command line python DIR/solve
-DIR/etc/borg-mix+class.industrial.pickle BENCHNAME -seed RANDOMSEED
--budget TIMEOUT
-Conversion script command line 
-Comments Sequential industrial-instance portfolio. Only the command line
-differs from other borg-sat submissions.
-
-The solver tarball includes a README with detailed instructions for
-installing the Python dependencies on CentOS 5.4. (Please contact me if
-you run into any issues\!)
-Solver files and checksums 
-[Show/Hide files]
-
-File md5sum
-borg/build/lib/borg/bilevel.py 7ef1cf08c28fe25fe0983a42db89d4da
-borg/build/lib/borg/bilevel.pyc 51bf8e8a03108ee0df9ecbce6f9cae74
-borg/build/lib/borg/defaults.py e3af47cce1a648892191ba3c3a5e6739
-borg/build/lib/borg/defaults.pyc 91ca852e5576f48748ee9da262959f16
-borg/build/lib/borg/features.so df2cc2ffd6419cb5b778f59ed31268be
-borg/build/lib/borg/__init__.py 6ab0dbcbcc9aa759e5c874c00290bde8
-borg/build/lib/borg/__init__.pyc 162bc3f7087ed0dccb9aadc9d788ba65
-borg/build/lib/borg/instance.so 93d81e297f4acfc16d30d0cc1cbd3ed3
-borg/build/lib/borg/models.so 74af8ab2dd81667b93bbc31cd3c16492
-borg/build/lib/borg/portfolios.py 08c35a6289cb74e301a0fbbc2f89c75c
-borg/build/lib/borg/portfolios.pyc 56bc8f821e72c13ee07d41e039d7ff7c
-borg/build/lib/borg/solvers.py b1a2e6f026d8516e4f2da90cbd8094e9
-borg/build/lib/borg/solvers.pyc 4b8d9edc9533194a26c28bf4fb30ca57
-borg/build/lib/borg/tools/calibrate.py 522c9b69b565ea7da3cd7c60bb29f249
-borg/build/lib/borg/tools/calibrate.pyc 67841fc9b1f049c20e7e181d7995b221
-borg/build/lib/borg/tools/dump_model.py d3decfa1cf78723a5c4029360eb4bc51
-borg/build/lib/borg/tools/get_features.py c5e4c27465ccb63c648ee34b81c23261
-borg/build/lib/borg/tools/__init__.py d41d8cd98f00b204e9800998ecf8427e
-borg/build/lib/borg/tools/__init__.pyc 4554997e9b03e6eca7f1ed518f4097ab
-borg/build/lib/borg/tools/run_solvers.py 442c7b19bbc50836a7900d7e72c6df97
-borg/build/lib/borg/tools/run_validation.py 3c0db006735d69f3cefb275c0ffa4556
-borg/build/lib/borg/tools/solve.py ee3c00f792f6aade0dbaaebfea7480ff
-borg/build/lib/borg/tools/train.py 58972f6037c9e859f65194c150b679c0
-borg/build/lib/cargo_site_defaults.py 2185a0b00138477cbca691c998c88520
-borg/build/lib/cargo_site_defaults.pyc 28a774a9b17471ed6d8c2b7dd54a47ed
-cargo/build/lib/cargo/condor.py 06ee872b730383c8b246f64fcb3d8373
-cargo/build/lib/cargo/condor.pyc 173bd87a175fb7855a92c674171eaf07
-cargo/build/lib/cargo/defaults.py 9cf5eb22bef557c33242ff973f348eda
-cargo/build/lib/cargo/defaults.pyc 087a5b8d58ab738200bfa3f093a13431
-cargo/build/lib/cargo/errors.py c84eecdc5302d57632a42ba0aeba7238
-cargo/build/lib/cargo/errors.pyc e9c46981e1a9ebd5856f3cb3d9edc509
-cargo/build/lib/cargo/_files/for_tests/echo_and_exit
-6fb30ec49b9657fb92378ace8938ef84
-cargo/build/lib/cargo/__init__.py 971eb5143e6ef3d2630f2491e516c21d
-cargo/build/lib/cargo/__init__.pyc 368128f87d436fe8ec977a58d45f5c4a
-cargo/build/lib/cargo/io.py f935425a0226787846b8ae6039e6770a
-cargo/build/lib/cargo/io.pyc 8272052d11c74cf366562a6887c6fe7d
-cargo/build/lib/cargo/iterators.py 863d98124181df910d9469b75a79de3d
-cargo/build/lib/cargo/iterators.pyc 9ade0b6f4702d3c7af1b91dff6a2dc00
-cargo/build/lib/cargo/json.py 1be3050964ad262564a30b94cc151b00
-cargo/build/lib/cargo/labor2.py 470d75bcf9490e9925fb0a1a8766b860
-cargo/build/lib/cargo/labor2.pyc 6413e6a4835281ba1325ada300a16be6
-cargo/build/lib/cargo/labor.py f00536f9c37bf1610d59135afa59b272
-cargo/build/lib/cargo/log.py 81927c3005c33238687a73451a923d76
-cargo/build/lib/cargo/log.pyc da5ca3c437605282087b5784c7dc4316
-cargo/build/lib/cargo/numpy.py d51552855f1ab421e2e12d7da924a42e
-cargo/build/lib/cargo/numpy.pyc ef718b30d538e4b04d05f1f25b3d5809
-cargo/build/lib/cargo/plot.py abd281e5113f1c4b85c3ca245d89c57b
-cargo/build/lib/cargo/profile.py 64ba9a220933d3ef4d3f2521c26838b5
-cargo/build/lib/cargo/profile.pyc 429e748989d99ce2f32d2837bd8c7022
-cargo/build/lib/cargo/random.py 824c0edb6a5b438fcb874acd25c58fda
-cargo/build/lib/cargo/random.pyc 7ad59bfa0f90e2b847555dbc8bd7d88f
-cargo/build/lib/cargo/sql/actions.py f3625c6f14e68e374eb3b3d50e81acd5
-cargo/build/lib/cargo/sql/alchemy.py db0e70a44690c0be7841ccccb607c17d
-cargo/build/lib/cargo/sql/__init__.py a6a49ab728efe27da8c3c123d32b4558
-cargo/build/lib/cargo/sugar.py 1e23c2a2076f96ff3c872372ee9e3e5b
-cargo/build/lib/cargo/sugar.pyc bc270347ffce588c37aaeafbe53d5e2f
-cargo/build/lib/cargo/temporal.py 41109c0a634bbc85a495600965d929dc
-cargo/build/lib/cargo/temporal.pyc b82a6070284fb0882b183597bf7c5b10
-cargo/build/lib/cargo/testing.py 8cea80184e6c2358772d9cf6dbb438ef
-cargo/build/lib/cargo/test/__init__.py d41d8cd98f00b204e9800998ecf8427e
-cargo/build/lib/cargo/test/test_io.py 2ffa4ff160e0e38ec9b007a7c94a0c15
-cargo/build/lib/cargo/test/test_iterators.py
-f4e37baee4839955429f4e23bcfc8815
-cargo/build/lib/cargo/test/test_json.py 70dd21918347293648721fede6c18831
-cargo/build/lib/cargo/test/test_numpy.py 2fd3771bae4ace3264f8a4af6b7caffc
-cargo/build/lib/cargo/test/test_random.py 70545c12fec340d9e59fe7551442ba31
-cargo/build/lib/cargo/test/test_sugar.py adeb5b1c201b2ef60d21294a2df9064d
-cargo/build/lib/cargo/test/test_temporal.py 53f5d046d36cfbd270004ce437afbf1c
-cargo/build/lib/cargo/tools/__init__.py d41d8cd98f00b204e9800998ecf8427e
-cargo/build/lib/cargo/tools/labor/delete.py 4b5131e241a6bef83fb158724bec7387
-cargo/build/lib/cargo/tools/labor/__init__.py
-d41d8cd98f00b204e9800998ecf8427e
-cargo/build/lib/cargo/tools/labor/submit2.py
-70c63c64520ecc8f5829496eff7e047a
-cargo/build/lib/cargo/tools/labor/submit.py 6e4e28e053feafb68677d0774c61e553
-cargo/build/lib/cargo/tools/labor/work2.py c0dd6d6204bf9485ccd8a8caa6a0385f
-cargo/build/lib/cargo/tools/labor/work.py b664df0b649d9353de5846711c3c5274
-cargo/build/lib/cargo/tools/sql/copy.py afa43212dfd27a185d56a1abfe0d81c1
-cargo/build/lib/cargo/tools/sql/describe.py 54db3dc7c3b72015bbfa1a38d490f9af
-cargo/build/lib/cargo/tools/sql/__init__.py d41d8cd98f00b204e9800998ecf8427e
-cargo/build/lib/cargo/tools/sql/prune.py e51f2c7dea3e3ce6995d7babb39e7eb2
-cargo/build/lib/cargo/tools/sql/test/__init__.py
-d41d8cd98f00b204e9800998ecf8427e
-cargo/build/lib/cargo/tools/triggered.py f2e74c0789b474cde87b9811817018ae
-cargo/build/lib/cargo/unix/accounting.py 2a6d462aa9e63d836126e448fc576edb
-cargo/build/lib/cargo/unix/accounting.pyc 72bd29cae93fad7d4fdbef4704fe64f4
-cargo/build/lib/cargo/unix/__init__.py d41d8cd98f00b204e9800998ecf8427e
-cargo/build/lib/cargo/unix/__init__.pyc f7a776f1b31d9fde8c8aa7c2e0c99bfa
-cargo/build/lib/cargo/unix/proc.py 420ac8f45c491e89015a7ed6a880ab7b
-cargo/build/lib/cargo/unix/proc.pyc 054dc103e8944b1dc10eb60b0f4834ab
-cargo/build/lib/cargo/unix/sessions.py a341628ebfa8c164224e1bd93f6e3176
-cargo/build/lib/cargo/unix/sessions.pyc 302201620ef655066dfee0e478cfc703
-etc/borg-mix+class.industrial.pickle e285ae87d503901cfb2d02a5d128c130
-etc/borg-mix+class.random.pickle a9755421c2d52489663c585cbe721bb9
-etc/local_speed 769b6262e33ad421ebe7c8083b431582
-etc/model_speed 8a4df6343141ac796756d6603b47b99c
-solve 12b33cd9ef5c6eabdac49b37f6b96756
-solvers/adaptg2wsat2009++/adaptg2wsat2009++ cead572e3ae4215a8975427edb1db9a6
-solvers/cryptominisat-2.9.0/cryptominisat-2.9.0Linux64
-0eb2251ff40346a3475749ec933e91e1
-solvers/FH/FH 66e89d2f6cc83b08cc375d9da949b205
-solvers/glucose/glucose_static 0552098a1a637d6795b8d5ac7b3c630c
-solvers/glucosER/glucoser_static 1b1ea3df3f9cada56c55d0b58ab03a72
-solvers/gnovelty+2/gnovelty+2 4fcfb52cf43647590054700c09a370a0
-solvers/hybridGM3/hybridGM3 277dcffb656b573a34c67a0465176fd3
-solvers/iPAWS/iPAWS 6c414f6c99c79999fcbc46dabb166b64
-solvers/kcnfs-2006/kcnfs-2006 9618885681958aedfb08c60c9d3493f4
-solvers/lingeling-276-6264d55-100731/lingeling
-9efefd49aa2da2f571113c94e2739b14
-solvers/lingeling-276-6264d55-100731/plingeling
-22d85afa2f4ca9973825a92eb5aabbcf
-solvers/march_hi/march_hi 9cd4f4ca0f0b022fe3effb99a7f8b9d4
-solvers/NCVWr/NCVWr a1553d98cdc8632698a2c40a3f890204
-solvers/precosat-570-239dbbe-100801/precosat
-f1d2e646b5e6c2f2a77fbcfc15cc5b43
-solvers/run-1.4/run 272894736447ba021ff31bb0e7142b89
-solvers/SApperloT/SApperloT-base 7f553541b6c8028180ac48d39cb6946e
-solvers/TNM/TNM b10bb8daedd6a1962b39ee0982fa5d22
-Meta md5sum: c081de0e80bb6144e1db087f7ca30883
 
 
 Event SAT 2011 Competition: main competition (phase 1)
@@ -911,13 +476,11 @@ Type SAT
 Submitter Bryan Silverthorn
 Date of submission 2011-05-11 23:26
 Name borg-sat
-Version 11.03.02-seq-random (fixed)
+Version 11.03.02-seq-random
 Authors Bryan Silverthorn
 Complete/Incomplete Complete
 Is able to solve RANDOM
-Solver command line python DIR/solve
-DIR/etc/borg-mix+class.random.pickle BENCHNAME -seed RANDOMSEED -budget
-TIMEOUT
+Solver command line python DIR/solve DIR/etc/borg-mix+class.random.pickle BENCHNAME -seed RANDOMSEED -budget TIMEOUT
 Conversion script command line 
 Comments Sequential random-instance portfolio. Only the command line
 differs from other borg-sat submissions.
@@ -1051,149 +614,6 @@ solvers/TNM/TNM b10bb8daedd6a1962b39ee0982fa5d22
 Meta md5sum: c081de0e80bb6144e1db087f7ca30883
 
 
-Event SAT 2011 Competition: main competition (phase 1)
-Type SAT
-Submitter Bryan Silverthorn
-Date of submission 2011-05-11 23:26
-Name borg-sat
-Version 11.03.02-seq-random (fixed, 1200 s timeout)
-Authors Bryan Silverthorn
-Complete/Incomplete Complete
-Is able to solve RANDOM
-Solver command line python DIR/solve
-DIR/etc/borg-mix+class.random.pickle BENCHNAME -seed RANDOMSEED -budget
-TIMEOUT
-Conversion script command line 
-Comments Sequential random-instance portfolio. Only the command line
-differs from other borg-sat submissions.
-
-The solver tarball includes a README with detailed instructions for
-installing the Python dependencies on CentOS 5.4. (Please contact me if
-you run into any issues\!)
-Solver files and checksums 
-[Show/Hide files]
-
-File md5sum
-borg/build/lib/borg/bilevel.py 7ef1cf08c28fe25fe0983a42db89d4da
-borg/build/lib/borg/bilevel.pyc 51bf8e8a03108ee0df9ecbce6f9cae74
-borg/build/lib/borg/defaults.py e3af47cce1a648892191ba3c3a5e6739
-borg/build/lib/borg/defaults.pyc 91ca852e5576f48748ee9da262959f16
-borg/build/lib/borg/features.so df2cc2ffd6419cb5b778f59ed31268be
-borg/build/lib/borg/__init__.py 6ab0dbcbcc9aa759e5c874c00290bde8
-borg/build/lib/borg/__init__.pyc 162bc3f7087ed0dccb9aadc9d788ba65
-borg/build/lib/borg/instance.so 93d81e297f4acfc16d30d0cc1cbd3ed3
-borg/build/lib/borg/models.so 74af8ab2dd81667b93bbc31cd3c16492
-borg/build/lib/borg/portfolios.py 08c35a6289cb74e301a0fbbc2f89c75c
-borg/build/lib/borg/portfolios.pyc 56bc8f821e72c13ee07d41e039d7ff7c
-borg/build/lib/borg/solvers.py b1a2e6f026d8516e4f2da90cbd8094e9
-borg/build/lib/borg/solvers.pyc 4b8d9edc9533194a26c28bf4fb30ca57
-borg/build/lib/borg/tools/calibrate.py 522c9b69b565ea7da3cd7c60bb29f249
-borg/build/lib/borg/tools/calibrate.pyc 67841fc9b1f049c20e7e181d7995b221
-borg/build/lib/borg/tools/dump_model.py d3decfa1cf78723a5c4029360eb4bc51
-borg/build/lib/borg/tools/get_features.py c5e4c27465ccb63c648ee34b81c23261
-borg/build/lib/borg/tools/__init__.py d41d8cd98f00b204e9800998ecf8427e
-borg/build/lib/borg/tools/__init__.pyc 4554997e9b03e6eca7f1ed518f4097ab
-borg/build/lib/borg/tools/run_solvers.py 442c7b19bbc50836a7900d7e72c6df97
-borg/build/lib/borg/tools/run_validation.py 3c0db006735d69f3cefb275c0ffa4556
-borg/build/lib/borg/tools/solve.py ee3c00f792f6aade0dbaaebfea7480ff
-borg/build/lib/borg/tools/train.py 58972f6037c9e859f65194c150b679c0
-borg/build/lib/cargo_site_defaults.py 2185a0b00138477cbca691c998c88520
-borg/build/lib/cargo_site_defaults.pyc 28a774a9b17471ed6d8c2b7dd54a47ed
-cargo/build/lib/cargo/condor.py 06ee872b730383c8b246f64fcb3d8373
-cargo/build/lib/cargo/condor.pyc 173bd87a175fb7855a92c674171eaf07
-cargo/build/lib/cargo/defaults.py 9cf5eb22bef557c33242ff973f348eda
-cargo/build/lib/cargo/defaults.pyc 087a5b8d58ab738200bfa3f093a13431
-cargo/build/lib/cargo/errors.py c84eecdc5302d57632a42ba0aeba7238
-cargo/build/lib/cargo/errors.pyc e9c46981e1a9ebd5856f3cb3d9edc509
-cargo/build/lib/cargo/_files/for_tests/echo_and_exit
-6fb30ec49b9657fb92378ace8938ef84
-cargo/build/lib/cargo/__init__.py 971eb5143e6ef3d2630f2491e516c21d
-cargo/build/lib/cargo/__init__.pyc 368128f87d436fe8ec977a58d45f5c4a
-cargo/build/lib/cargo/io.py f935425a0226787846b8ae6039e6770a
-cargo/build/lib/cargo/io.pyc 8272052d11c74cf366562a6887c6fe7d
-cargo/build/lib/cargo/iterators.py 863d98124181df910d9469b75a79de3d
-cargo/build/lib/cargo/iterators.pyc 9ade0b6f4702d3c7af1b91dff6a2dc00
-cargo/build/lib/cargo/json.py 1be3050964ad262564a30b94cc151b00
-cargo/build/lib/cargo/labor2.py 470d75bcf9490e9925fb0a1a8766b860
-cargo/build/lib/cargo/labor2.pyc 6413e6a4835281ba1325ada300a16be6
-cargo/build/lib/cargo/labor.py f00536f9c37bf1610d59135afa59b272
-cargo/build/lib/cargo/log.py 81927c3005c33238687a73451a923d76
-cargo/build/lib/cargo/log.pyc da5ca3c437605282087b5784c7dc4316
-cargo/build/lib/cargo/numpy.py d51552855f1ab421e2e12d7da924a42e
-cargo/build/lib/cargo/numpy.pyc ef718b30d538e4b04d05f1f25b3d5809
-cargo/build/lib/cargo/plot.py abd281e5113f1c4b85c3ca245d89c57b
-cargo/build/lib/cargo/profile.py 64ba9a220933d3ef4d3f2521c26838b5
-cargo/build/lib/cargo/profile.pyc 429e748989d99ce2f32d2837bd8c7022
-cargo/build/lib/cargo/random.py 824c0edb6a5b438fcb874acd25c58fda
-cargo/build/lib/cargo/random.pyc 7ad59bfa0f90e2b847555dbc8bd7d88f
-cargo/build/lib/cargo/sql/actions.py f3625c6f14e68e374eb3b3d50e81acd5
-cargo/build/lib/cargo/sql/alchemy.py db0e70a44690c0be7841ccccb607c17d
-cargo/build/lib/cargo/sql/__init__.py a6a49ab728efe27da8c3c123d32b4558
-cargo/build/lib/cargo/sugar.py 1e23c2a2076f96ff3c872372ee9e3e5b
-cargo/build/lib/cargo/sugar.pyc bc270347ffce588c37aaeafbe53d5e2f
-cargo/build/lib/cargo/temporal.py 41109c0a634bbc85a495600965d929dc
-cargo/build/lib/cargo/temporal.pyc b82a6070284fb0882b183597bf7c5b10
-cargo/build/lib/cargo/testing.py 8cea80184e6c2358772d9cf6dbb438ef
-cargo/build/lib/cargo/test/__init__.py d41d8cd98f00b204e9800998ecf8427e
-cargo/build/lib/cargo/test/test_io.py 2ffa4ff160e0e38ec9b007a7c94a0c15
-cargo/build/lib/cargo/test/test_iterators.py
-f4e37baee4839955429f4e23bcfc8815
-cargo/build/lib/cargo/test/test_json.py 70dd21918347293648721fede6c18831
-cargo/build/lib/cargo/test/test_numpy.py 2fd3771bae4ace3264f8a4af6b7caffc
-cargo/build/lib/cargo/test/test_random.py 70545c12fec340d9e59fe7551442ba31
-cargo/build/lib/cargo/test/test_sugar.py adeb5b1c201b2ef60d21294a2df9064d
-cargo/build/lib/cargo/test/test_temporal.py 53f5d046d36cfbd270004ce437afbf1c
-cargo/build/lib/cargo/tools/__init__.py d41d8cd98f00b204e9800998ecf8427e
-cargo/build/lib/cargo/tools/labor/delete.py 4b5131e241a6bef83fb158724bec7387
-cargo/build/lib/cargo/tools/labor/__init__.py
-d41d8cd98f00b204e9800998ecf8427e
-cargo/build/lib/cargo/tools/labor/submit2.py
-70c63c64520ecc8f5829496eff7e047a
-cargo/build/lib/cargo/tools/labor/submit.py 6e4e28e053feafb68677d0774c61e553
-cargo/build/lib/cargo/tools/labor/work2.py c0dd6d6204bf9485ccd8a8caa6a0385f
-cargo/build/lib/cargo/tools/labor/work.py b664df0b649d9353de5846711c3c5274
-cargo/build/lib/cargo/tools/sql/copy.py afa43212dfd27a185d56a1abfe0d81c1
-cargo/build/lib/cargo/tools/sql/describe.py 54db3dc7c3b72015bbfa1a38d490f9af
-cargo/build/lib/cargo/tools/sql/__init__.py d41d8cd98f00b204e9800998ecf8427e
-cargo/build/lib/cargo/tools/sql/prune.py e51f2c7dea3e3ce6995d7babb39e7eb2
-cargo/build/lib/cargo/tools/sql/test/__init__.py
-d41d8cd98f00b204e9800998ecf8427e
-cargo/build/lib/cargo/tools/triggered.py f2e74c0789b474cde87b9811817018ae
-cargo/build/lib/cargo/unix/accounting.py 2a6d462aa9e63d836126e448fc576edb
-cargo/build/lib/cargo/unix/accounting.pyc 72bd29cae93fad7d4fdbef4704fe64f4
-cargo/build/lib/cargo/unix/__init__.py d41d8cd98f00b204e9800998ecf8427e
-cargo/build/lib/cargo/unix/__init__.pyc f7a776f1b31d9fde8c8aa7c2e0c99bfa
-cargo/build/lib/cargo/unix/proc.py 420ac8f45c491e89015a7ed6a880ab7b
-cargo/build/lib/cargo/unix/proc.pyc 054dc103e8944b1dc10eb60b0f4834ab
-cargo/build/lib/cargo/unix/sessions.py a341628ebfa8c164224e1bd93f6e3176
-cargo/build/lib/cargo/unix/sessions.pyc 302201620ef655066dfee0e478cfc703
-etc/borg-mix+class.industrial.pickle e285ae87d503901cfb2d02a5d128c130
-etc/borg-mix+class.random.pickle a9755421c2d52489663c585cbe721bb9
-etc/local_speed 769b6262e33ad421ebe7c8083b431582
-etc/model_speed 8a4df6343141ac796756d6603b47b99c
-solve 12b33cd9ef5c6eabdac49b37f6b96756
-solvers/adaptg2wsat2009++/adaptg2wsat2009++ cead572e3ae4215a8975427edb1db9a6
-solvers/cryptominisat-2.9.0/cryptominisat-2.9.0Linux64
-0eb2251ff40346a3475749ec933e91e1
-solvers/FH/FH 66e89d2f6cc83b08cc375d9da949b205
-solvers/glucose/glucose_static 0552098a1a637d6795b8d5ac7b3c630c
-solvers/glucosER/glucoser_static 1b1ea3df3f9cada56c55d0b58ab03a72
-solvers/gnovelty+2/gnovelty+2 4fcfb52cf43647590054700c09a370a0
-solvers/hybridGM3/hybridGM3 277dcffb656b573a34c67a0465176fd3
-solvers/iPAWS/iPAWS 6c414f6c99c79999fcbc46dabb166b64
-solvers/kcnfs-2006/kcnfs-2006 9618885681958aedfb08c60c9d3493f4
-solvers/lingeling-276-6264d55-100731/lingeling
-9efefd49aa2da2f571113c94e2739b14
-solvers/lingeling-276-6264d55-100731/plingeling
-22d85afa2f4ca9973825a92eb5aabbcf
-solvers/march_hi/march_hi 9cd4f4ca0f0b022fe3effb99a7f8b9d4
-solvers/NCVWr/NCVWr a1553d98cdc8632698a2c40a3f890204
-solvers/precosat-570-239dbbe-100801/precosat
-f1d2e646b5e6c2f2a77fbcfc15cc5b43
-solvers/run-1.4/run 272894736447ba021ff31bb0e7142b89
-solvers/SApperloT/SApperloT-base 7f553541b6c8028180ac48d39cb6946e
-solvers/TNM/TNM b10bb8daedd6a1962b39ee0982fa5d22
-Meta md5sum: c081de0e80bb6144e1db087f7ca30883
 
 
 Event SAT 2011 Competition: main competition (phase 1)
@@ -1205,9 +625,7 @@ Version 2.0-R4092-crafted
 Authors Benjamin Kaufmann
 Complete/Incomplete Complete
 Is able to solve CRAFTED
-Solver command line HOME/clasp --sat-p=20,25,120,-1,0 --berk-max=512
---berk-once --otfs=1 --recursive-str --dinit=800,10000
---dsched=20000,1.1 --reverse-arcs=2 BENCHNAME
+Solver command line HOME/clasp --sat-p=20,25,120,-1,0 --berk-max=512 --berk-once --otfs=1 --recursive-str --dinit=800,10000 --dsched=20000,1.1 --reverse-arcs=2 BENCHNAME
 Conversion script command line 
 Comments Installation Instructions:
 ==========================
@@ -1234,9 +652,7 @@ Version 2.0-R4092-indust
 Authors Benjamin Kaufmann
 Complete/Incomplete Complete
 Is able to solve APPLICATION
-Solver command line HOME/clasp --berk-max=512 --berk-once --restarts=256
---reverse-arcs=2 --recursive-str --dinit=800,10000 --dsched=10000,1.1
---dscore=2 --update-lbd --dalgo=2 BENCHNAME
+Solver command line HOME/clasp --berk-max=512 --berk-once --restarts=256 --reverse-arcs=2 --recursive-str --dinit=800,10000 --dsched=10000,1.1 --dscore=2 --update-lbd --dalgo=2 BENCHNAME
 Conversion script command line 
 Comments Installation Instructions:
 ==========================
@@ -1254,41 +670,6 @@ clasp 736b0bc9d5d4c9a72b4cfb41da0ad090
 Meta md5sum: 7045767f069b01b180e45d193cedf7e6
 
 
-Event SAT 2011 Competition: main competition (phase 1)
-Type SAT
-Submitter Benjamin Kaufmann
-Date of submission 2011-03-02 18:13
-Name claspmt
-Version 2.0-R4095
-Authors Benjamin Kaufmann
-Complete/Incomplete Complete
-Is able to solve APPLICATION
-CRAFTED
-Solver command line HOME/claspmt -tNBCORE -p HOME/sat11-port.txt
---distribute=all,2 BENCHNAME
-Conversion script command line 
-Comments Installation Instructions:
-==========================
-NOTE: claspmt requires Intel Threading Building Blocks
-version 3.0 or higher. Assuming the TBB header files are located
-in TBB30_INSTALL_DIR/include and the TBB library files are
-located in TBB30_INSTALL_DIR/lib:
-
-1. tar xfz claspmt-2.0-R4092.tar.gz
-2. cd claspmt-2.0-R4092/
-3. ./configure.sh --with-mt TBB_INCLUDE=TBB30_INSTALL_DIR/include
-TBB_LIB=TBB30_INSTALL_DIR/lib
-3. cd build/release_mt/
-4. make
-5. cp bin/clasp HOME/claspmt
-6. cp ../../tools/sat11-port.txt HOME/
-Solver files and checksums 
-[Show/Hide files]
-
-File md5sum
-claspmt b9874be9e859f60c489269e980ade909
-sat11-port.txt 8a8848165a1df16b6f6f5d04bb4621f1
-Meta md5sum: b9cb8a886568e33999af28052cd4f2f7
 
 
 Event SAT 2011 Competition: main competition (phase 1)
@@ -1296,13 +677,11 @@ Type SAT
 Submitter Benjamin Kaufmann
 Date of submission 2011-05-12 11:03
 Name claspmt
-Version 2.0-R4095-patched (fixed)
+Version 2.0-R4095-patched
 Authors Benjamin Kaufmann
 Complete/Incomplete Complete
-Is able to solve APPLICATION
-CRAFTED
-Solver command line HOME/claspmt -tNBCORE -p HOME/sat11-port.txt
---distribute=all,2 BENCHNAME
+Is able to solve APPLICATION CRAFTED
+Solver command line HOME/claspmt -tNBCORE -p HOME/sat11-port.txt --distribute=all,2 BENCHNAME
 Conversion script command line 
 Comments BUG FIX FOR claspmt-2.0-R4095 which gave wrong
 answers in some of the test runs.
@@ -1321,26 +700,6 @@ sat11-port.txt 8a8848165a1df16b6f6f5d04bb4621f1
 Meta md5sum: 8473c91db4aff83d7f8ef42af2aa4a5a
 
 
-Event SAT 2011 Competition: main competition (phase 1)
-Type SAT
-Submitter Mate Soos
-Date of submission 2011-03-02 14:27
-Name CryptoMiniSat
-Version Strange-Night-1-mt
-Authors Mate Soos
-Complete/Incomplete Complete
-Is able to solve APPLICATION
-CRAFTED
-RANDOM
-Solver command line ./strangenight1-mt --threads=NBCORE BENCHNAME
-Conversion script command line 
-Comments Multi-Threaded version.
-Solver files and checksums 
-[Show/Hide files]
-
-File md5sum
-strangenight1-mt 651157d7b7f1820bd368e51c3eba0156
-Meta md5sum: 33ec739da4724e28267cece11ba91bdf
 
 
 Event SAT 2011 Competition: main competition (phase 1)
@@ -1348,12 +707,10 @@ Type SAT
 Submitter Mate Soos
 Date of submission 2011-05-14 00:00
 Name CryptoMiniSat
-Version Strange-Night-1-mt (fixed)
+Version Strange-Night-1-mt
 Authors Mate Soos
 Complete/Incomplete Complete
-Is able to solve APPLICATION
-CRAFTED
-RANDOM
+Is able to solve APPLICATION CRAFTED RANDOM
 Solver command line ./strangenight1-mt --threads=NBCORE BENCHNAME
 Conversion script command line 
 Comments Multi-Threaded version.
@@ -1365,26 +722,6 @@ strangenight1-mt b4c89e0ac7585244dd9104ec472d3f4b
 Meta md5sum: cd7fccba179292bff8d24ef690c62052
 
 
-Event SAT 2011 Competition: main competition (phase 1)
-Type SAT
-Submitter Mate Soos
-Date of submission 2011-03-02 14:26
-Name CryptoMiniSat
-Version Strange-Night-1-st
-Authors Mate Soos
-Complete/Incomplete Complete
-Is able to solve APPLICATION
-CRAFTED
-RANDOM
-Solver command line ./strangenight1-st BENCHNAME
-Conversion script command line 
-Comments Single-threaded version.
-Solver files and checksums 
-[Show/Hide files]
-
-File md5sum
-strangenight1-st c6e0eead9c2ea5fbe209f3a6fce5df05
-Meta md5sum: ca9fd154b12211753f66e13ac7a4960d
 
 
 Event SAT 2011 Competition: main competition (phase 1)
@@ -1392,12 +729,10 @@ Type SAT
 Submitter Mate Soos
 Date of submission 2011-05-14 00:00
 Name CryptoMiniSat
-Version Strange-Night-1-st (fixed)
+Version Strange-Night-1-st
 Authors Mate Soos
 Complete/Incomplete Complete
-Is able to solve APPLICATION
-CRAFTED
-RANDOM
+Is able to solve APPLICATION CRAFTED RANDOM
 Solver command line ./strangenight1-st BENCHNAME
 Conversion script command line 
 Comments Single-threaded version.
@@ -1409,26 +744,6 @@ strangenight1-st 22bb0264ab7d52af0444f18ae308fa85
 Meta md5sum: 469e2f37ab6d56538697f91a0da44e0d
 
 
-Event SAT 2011 Competition: main competition (phase 1)
-Type SAT
-Submitter Mate Soos
-Date of submission 2011-03-02 15:16
-Name CryptoMiniSat
-Version Strange-Night-2-mt
-Authors Mate Soos
-Complete/Incomplete Complete
-Is able to solve APPLICATION
-CRAFTED
-RANDOM
-Solver command line ./strangenight2-mt --threads=NBCORE BENCHNAME
-Conversion script command line 
-Comments Multi-threaded version
-Solver files and checksums 
-[Show/Hide files]
-
-File md5sum
-strangenight2-mt 4951e5a328edcba5a60011ca2acf1437
-Meta md5sum: 38b4aa206c1729bb54264405118789f3
 
 
 Event SAT 2011 Competition: main competition (phase 1)
@@ -1436,12 +751,10 @@ Type SAT
 Submitter Mate Soos
 Date of submission 2011-05-14 00:00
 Name CryptoMiniSat
-Version Strange-Night-2-mt (fixed)
+Version Strange-Night-2-mt
 Authors Mate Soos
 Complete/Incomplete Complete
-Is able to solve APPLICATION
-CRAFTED
-RANDOM
+Is able to solve APPLICATION CRAFTED RANDOM
 Solver command line ./strangenight2-mt --threads=NBCORE BENCHNAME
 Conversion script command line 
 Comments Multi-threaded version
@@ -1453,26 +766,6 @@ strangenight2-mt 3ef60c4ed224349f6e374e249c23465b
 Meta md5sum: 9a037f5dd7e4fb15772841f92692a992
 
 
-Event SAT 2011 Competition: main competition (phase 1)
-Type SAT
-Submitter Mate Soos
-Date of submission 2011-03-02 14:30
-Name CryptoMiniSat
-Version Strange-Night2-st
-Authors Mate Soos
-Complete/Incomplete Complete
-Is able to solve APPLICATION
-CRAFTED
-RANDOM
-Solver command line ./strangenight2-st BENCHNAME
-Conversion script command line 
-Comments Single-threaded version.
-Solver files and checksums 
-[Show/Hide files]
-
-File md5sum
-strangenight2-st 6d145c9ded455499bb8ed512b141934c
-Meta md5sum: 7846e986cf02bc65d795db0fe5184e6c
 
 
 Event SAT 2011 Competition: main competition (phase 1)
@@ -1480,12 +773,10 @@ Type SAT
 Submitter Mate Soos
 Date of submission 2011-05-14 00:00
 Name CryptoMiniSat
-Version Strange-Night2-st (fixed)
+Version Strange-Night2-st
 Authors Mate Soos
 Complete/Incomplete Complete
-Is able to solve APPLICATION
-CRAFTED
-RANDOM
+Is able to solve APPLICATION CRAFTED RANDOM
 Solver command line ./strangenight2-st BENCHNAME
 Conversion script command line 
 Comments Single-threaded version.
@@ -1505,9 +796,7 @@ Name CryptoMiniSat
 Version TechDemo-Alpha-mt
 Authors George Katsirelos, Laurent Simon, Mate Soos
 Complete/Incomplete Complete
-Is able to solve APPLICATION
-CRAFTED
-RANDOM
+Is able to solve APPLICATION CRAFTED RANDOM
 Solver command line ./techdemo --threads=NBCORE BENCHNAME
 Conversion script command line 
 Comments Both single-threaded and multi-threaded solver. Please give
@@ -1532,9 +821,7 @@ Name CryptoMiniSat
 Version TechDemo-Alpha-st
 Authors George Katsirelos, Laurent Simon, Mate Soos
 Complete/Incomplete Complete
-Is able to solve APPLICATION
-CRAFTED
-RANDOM
+Is able to solve APPLICATION CRAFTED RANDOM
 Solver command line ./techdemo --threads=1 BENCHNAME
 Conversion script command line 
 Comments Both single-threaded and multi-threaded solver. Please give
@@ -1686,8 +973,7 @@ Name glucose
 Version 2
 Authors Gilles Audemard and Laurent Simon
 Complete/Incomplete Complete
-Is able to solve APPLICATION
-CRAFTED
+Is able to solve APPLICATION CRAFTED
 Solver command line glucose.sh BENCHNAME
 Conversion script command line 
 Comments 
@@ -1736,9 +1022,7 @@ Name jMiniSat
 Version 2011
 Authors Carsten Sinz
 Complete/Incomplete Complete
-Is able to solve APPLICATION
-CRAFTED
-RANDOM
+Is able to solve APPLICATION CRAFTED RANDOM
 Solver command line ./jMiniSat -sc-mode BENCHNAME
 Conversion script command line 
 Comments jMiniSat is a Java port of MiniSat 2.2.
@@ -1771,30 +1055,6 @@ kw 381229157b4f0a31293b50822550a2af
 Meta md5sum: 212ca072a53f1587cbbb5a3a3307e1f6
 
 
-Event SAT 2011 Competition: main competition (phase 1)
-Type SAT
-Submitter Armin Biere
-Date of submission 2011-03-02 14:33
-Name Lingeling
-Version 587
-Authors Armin Biere
-Complete/Incomplete Complete
-Is able to solve APPLICATION
-CRAFTED
-Solver command line lingeling BENCHNAME
-Conversion script command line 
-Comments Please try to use
-./configure --competition; make
-If this does not work (uses profiling and runs one
-instances for about 20 seconds), then use
-./configure; make
-I will use the same archive for Plingeling.
-Solver files and checksums 
-[Show/Hide files]
-
-File md5sum
-lingeling 1d88bc98e3cee1d653f20e4848eb0b45
-Meta md5sum: 81165b97f7faf0aca9d49bc88ffe507d
 
 
 Event SAT 2011 Competition: main competition (phase 1)
@@ -1802,11 +1062,10 @@ Type SAT
 Submitter Armin Biere
 Date of submission 2011-05-13 10:43
 Name Lingeling
-Version 587f (fixed)
+Version 587f
 Authors Armin Biere
 Complete/Incomplete Complete
-Is able to solve APPLICATION
-CRAFTED
+Is able to solve APPLICATION CRAFTED
 Solver command line lingeling BENCHNAME
 Conversion script command line 
 Comments ./configure --competition; make
@@ -1838,9 +1097,7 @@ Name march_rw
 Version 2011-03-02
 Authors Marijn Heule
 Complete/Incomplete Complete
-Is able to solve APPLICATION
-CRAFTED
-RANDOM
+Is able to solve APPLICATION CRAFTED RANDOM
 Solver command line ./march_rw BENCHNAME
 Conversion script command line 
 Comments for compilation run: make
@@ -1989,8 +1246,7 @@ Version 2011-03-02
 Authors Vadim Ryvchin
 Complete/Incomplete Complete
 Is able to solve APPLICATION
-Solver command line HOME/lr_gl_shr BENCHNAME -verb=0 -model
--no-shrinking -no-glucose
+Solver command line HOME/lr_gl_shr BENCHNAME -verb=0 -model -no-shrinking -no-glucose
 Conversion script command line 
 Comments 1. Local Restart
 Solver files and checksums 
@@ -2077,9 +1333,7 @@ Name MPhaseSAT
 Version 2011-02-15
 Authors Jingchao chen
 Complete/Incomplete Complete
-Is able to solve APPLICATION
-CRAFTED
-RANDOM
+Is able to solve APPLICATION CRAFTED RANDOM
 Solver command line MPhaseSAT BENCHNAME
 Conversion script command line 
 Comments 
@@ -2091,26 +1345,6 @@ MPhaseSAT 7ad0d82076ba6ac8b149c961518e2c09
 Meta md5sum: 72883935fd57160fbd8a3c017f27c21b
 
 
-Event SAT 2011 Competition: main competition (phase 1)
-Type SAT
-Submitter Jingchao chen
-Date of submission 2011-03-03 04:43
-Name MPhaseSAT64
-Version 2011-03-03
-Authors Jingchao chen
-Complete/Incomplete Complete
-Is able to solve APPLICATION
-CRAFTED
-RANDOM
-Solver command line MPhaseSAT64 BENCHNAME
-Conversion script command line 
-Comments The solver should be compiled for 64 bits architecture.
-Solver files and checksums 
-[Show/Hide files]
-
-File md5sum
-MPhaseSAT64 a3ce8f3509c2ef9ee4b21059fae4d8ac
-Meta md5sum: 62673d48caac3810dda4063426c45563
 
 
 Event SAT 2011 Competition: main competition (phase 1)
@@ -2118,12 +1352,10 @@ Type SAT
 Submitter Jingchao chen
 Date of submission 2011-05-14 07:59
 Name MPhaseSAT64
-Version 2011-05-14 (fixed)
+Version 2011-05-14
 Authors Jingchao chen
 Complete/Incomplete Complete
-Is able to solve APPLICATION
-CRAFTED
-RANDOM
+Is able to solve APPLICATION CRAFTED RANDOM
 Solver command line MPhaseSAT64 BENCHNAME
 Conversion script command line 
 Comments In function Loadsolver(decision_limit,...), because the memory
@@ -2145,9 +1377,7 @@ Name MPhaseSAT_M
 Version 2011-02-16
 Authors Jingchao chen
 Complete/Incomplete Complete
-Is able to solve APPLICATION
-CRAFTED
-RANDOM
+Is able to solve APPLICATION CRAFTED RANDOM
 Solver command line MPhaseSAT_M BENCHNAME
 Conversion script command line 
 Comments 
@@ -2187,8 +1417,7 @@ Name PicoSAT
 Version 941
 Authors Armin Biere
 Complete/Incomplete Complete
-Is able to solve APPLICATION
-CRAFTED
+Is able to solve APPLICATION CRAFTED
 Solver command line picosat BENCHNAME
 Conversion script command line 
 Comments ./configure && make
@@ -2204,34 +1433,6 @@ picosat 6af08719c750625a8ce9299dbca567e1
 Meta md5sum: a736965ede54457ee0aa9cd844046b8b
 
 
-Event SAT 2011 Competition: main competition (phase 1)
-Type SAT
-Submitter Armin Biere
-Date of submission 2011-03-02 14:35
-Name Plingeling
-Version 587
-Authors Armin Biere
-Complete/Incomplete Complete
-Is able to solve APPLICATION
-CRAFTED
-Solver command line plingeling -t NBCORE BENCHNAME
-Conversion script command line 
-Comments Lingeling and Plingeling are compiled together,
-since they share the same base library. I also
-submitted the same archive for Lingeling and
-for Plingeling. As with Lingeling pleas try
-to use
-./configure --competition; make
-This will run and profile Lingeling for a second
-compilation. The run will take approximately 20 seconds.
-Again if this does not work, use the following:
-./configure; make
-Solver files and checksums 
-[Show/Hide files]
-
-File md5sum
-plingeling b39ffef323cf02fd5670640fc749888d
-Meta md5sum: eecc8ee257d2f78bcd3370be8829a562
 
 
 Event SAT 2011 Competition: main competition (phase 1)
@@ -2239,11 +1440,10 @@ Type SAT
 Submitter Armin Biere
 Date of submission 2011-05-13 10:46
 Name Plingeling
-Version 587f (fixed)
+Version 587f
 Authors Armin Biere
 Complete/Incomplete Complete
-Is able to solve APPLICATION
-CRAFTED
+Is able to solve APPLICATION CRAFTED
 Solver command line plingeling -t NBCORE BENCHNAME
 Conversion script command line 
 Comments ./configure --competition; make
@@ -2275,9 +1475,7 @@ Name ppfolio
 Version par
 Authors Olivier ROUSSEL
 Complete/Incomplete Complete
-Is able to solve APPLICATION
-CRAFTED
-RANDOM
+Is able to solve APPLICATION CRAFTED RANDOM
 Solver command line ppfolio BENCHNAME
 Conversion script command line 
 Comments A very naive portfolio
@@ -2303,9 +1501,7 @@ Name ppfolio
 Version seq
 Authors Olivier ROUSSEL
 Complete/Incomplete Complete
-Is able to solve APPLICATION
-CRAFTED
-RANDOM
+Is able to solve APPLICATION CRAFTED RANDOM
 Solver command line ppfolio --nbcore=1 BENCHNAME
 Conversion script command line 
 Comments A very naive portfolio
@@ -2331,10 +1527,8 @@ Name priss
 Version 1.0
 Authors Norbert Manthey
 Complete/Incomplete Complete
-Is able to solve APPLICATION
-CRAFTED
-Solver command line DIR/priss.sh DIR BENCHNAME RANDOMSEED TIMELIMIT
-MEMLIMIT NBCORE
+Is able to solve APPLICATION CRAFTED
+Solver command line DIR/priss.sh DIR BENCHNAME RANDOMSEED TIMELIMIT MEMLIMIT NBCORE
 Conversion script command line 
 Comments Build solver:
 
@@ -2359,10 +1553,8 @@ Name priss
 Version Auto
 Authors Norbert Manthey
 Complete/Incomplete Complete
-Is able to solve APPLICATION
-CRAFTED
-Solver command line DIR/prissAuto.sh DIR BENCHNAME RANDOMSEED TIMELIMIT
-MEMLIMIT NBCORE
+Is able to solve APPLICATION CRAFTED
+Solver command line DIR/prissAuto.sh DIR BENCHNAME RANDOMSEED TIMELIMIT MEMLIMIT NBCORE
 Conversion script command line 
 Comments Build solver:
 
@@ -2387,10 +1579,8 @@ Name priss
 Version UP
 Authors Norbert Manthey
 Complete/Incomplete Complete
-Is able to solve APPLICATION
-CRAFTED
-Solver command line DIR/prissup.sh DIR BENCHNAME RANDOMSEED TIMELIMIT
-MEMLIMIT NBCORE
+Is able to solve APPLICATION CRAFTED
+Solver command line DIR/prissup.sh DIR BENCHNAME RANDOMSEED TIMELIMIT MEMLIMIT NBCORE
 Conversion script command line 
 Comments Build solver:
 
@@ -2407,26 +1597,6 @@ prissup.sh 54372737b9043289e787ce7de4ee9f72
 Meta md5sum: ca605f5c5cd48423e1b790d2b6bdc2d3
 
 
-Event SAT 2011 Competition: main competition (phase 1)
-Type SAT
-Submitter Chi-An Wu
-Date of submission 2011-03-01 03:13
-Name QuteRSat
-Version 2011-03-01
-Authors Chi-An Wu, Chung-Yang (Ric) Huang
-Complete/Incomplete Complete
-Is able to solve APPLICATION
-CRAFTED
-RANDOM
-Solver command line qutersat_release BENCHNAME RANDOMSEED
-Conversion script command line 
-Comments 
-Solver files and checksums 
-[Show/Hide files]
-
-File md5sum
-qutersat_release 48cdd929338d20f5880d6404e6d1667d
-Meta md5sum: d4fb665d6f1c95187a4be916bf0f63e2
 
 
 Event SAT 2011 Competition: main competition (phase 1)
@@ -2434,12 +1604,10 @@ Type SAT
 Submitter Chi-An Wu
 Date of submission 2011-05-12 19:12
 Name QuteRSat
-Version 2011-05-12 (fixed)
+Version 2011-05-12
 Authors Chi-An Wu
 Complete/Incomplete Complete
-Is able to solve APPLICATION
-CRAFTED
-RANDOM
+Is able to solve APPLICATION CRAFTED RANDOM
 Solver command line qutersat_release BENCHNAME RANDOMSEED
 Conversion script command line 
 Comments I fixed two bugs:
@@ -2466,8 +1634,7 @@ Name rcl
 Version 2011-04-01
 Authors Jean-Marie Lagniez
 Complete/Incomplete Complete
-Is able to solve APPLICATION
-CRAFTED
+Is able to solve APPLICATION CRAFTED
 Solver command line ./esg_static.sh BENCHNAME
 Conversion script command line 
 Comments 
@@ -2490,9 +1657,7 @@ Name RestartSAT
 Version A75
 Authors Peter van der Tak, Marijn Heule, Antonio Ramos
 Complete/Incomplete Complete
-Is able to solve APPLICATION
-CRAFTED
-RANDOM
+Is able to solve APPLICATION CRAFTED RANDOM
 Solver command line HOME/RestartSAT -rfirst=1 -var-decay=0.75 BENCHNAME
 Conversion script command line 
 Comments 
@@ -2512,9 +1677,7 @@ Name RestartSAT
 Version B95
 Authors Peter van der Tak, Marijn Heule, Antonio Ramos
 Complete/Incomplete Complete
-Is able to solve APPLICATION
-CRAFTED
-RANDOM
+Is able to solve APPLICATION CRAFTED RANDOM
 Solver command line HOME/RestartSAT -rfirst=1 -var-decay=0.95 BENCHNAME
 Conversion script command line 
 Comments 
@@ -2534,10 +1697,8 @@ Name riss
 Version 1.0
 Authors Norbert Manthey
 Complete/Incomplete Complete
-Is able to solve APPLICATION
-CRAFTED
-Solver command line DIR/riss.sh DIR BENCHNAME RANDOMSEED TIMELIMIT
-MEMLIMIT NBCORE
+Is able to solve APPLICATION CRAFTED
+Solver command line DIR/riss.sh DIR BENCHNAME RANDOMSEED TIMELIMIT MEMLIMIT NBCORE
 Conversion script command line 
 Comments Build solver:
 
@@ -2562,10 +1723,8 @@ Name riss
 Version Auto
 Authors Norbert Manthey
 Complete/Incomplete Complete
-Is able to solve APPLICATION
-CRAFTED
-Solver command line DIR/rissAuto.sh DIR BENCHNAME RANDOMSEED TIMELIMIT
-MEMLIMIT NBCORE
+Is able to solve APPLICATION CRAFTED
+Solver command line DIR/rissAuto.sh DIR BENCHNAME RANDOMSEED TIMELIMIT MEMLIMIT NBCORE
 Conversion script command line 
 Comments Build solver:
 
@@ -2590,10 +1749,8 @@ Name riss
 Version Auto (1200 s timeout)
 Authors Norbert Manthey
 Complete/Incomplete Complete
-Is able to solve APPLICATION
-CRAFTED
-Solver command line DIR/rissAuto.sh DIR BENCHNAME RANDOMSEED TIMELIMIT
-MEMLIMIT NBCORE
+Is able to solve APPLICATION CRAFTED
+Solver command line DIR/rissAuto.sh DIR BENCHNAME RANDOMSEED TIMELIMIT MEMLIMIT NBCORE
 Conversion script command line 
 Comments Build solver:
 
@@ -2618,10 +1775,8 @@ Name riss
 Version Exp
 Authors Norbert Manthey
 Complete/Incomplete Complete
-Is able to solve APPLICATION
-CRAFTED
-Solver command line DIR/rissExp.sh DIR BENCHNAME RANDOMSEED TIMELIMIT
-MEMLIMIT NBCORE
+Is able to solve APPLICATION CRAFTED
+Solver command line DIR/rissExp.sh DIR BENCHNAME RANDOMSEED TIMELIMIT MEMLIMIT NBCORE
 Conversion script command line 
 Comments Build solver:
 
@@ -2644,8 +1799,7 @@ Name SApperloT
 Version 2011-03-23
 Authors Stephan Kottler
 Complete/Incomplete Complete
-Is able to solve APPLICATION
-CRAFTED
+Is able to solve APPLICATION CRAFTED
 Solver command line SApperloT BENCHNAME
 Conversion script command line 
 Comments \!\!\! I just realised (by implementing the MUS version of
@@ -2664,26 +1818,6 @@ SApperloT f46277c2a678529417ef5f23a8164775
 Meta md5sum: 099da143553911194f0b227c4a46217f
 
 
-Event SAT 2011 Competition: main competition (phase 1)
-Type SAT
-Submitter Stephan Kottler
-Date of submission 2011-03-04 01:58
-Name SApperloT2010
-Version 2011-03-04
-Authors Stephan Kottler and Christian Zielke
-Complete/Incomplete Complete
-Is able to solve APPLICATION
-CRAFTED
-Solver command line SApperloT2010 BENCHNAME
-Conversion script command line 
-Comments This is the version of SApperloT as submitted to the SAT Race
-2010. It's a hybrid solver using DMRP as described in the SAT 2010 paper.
-Solver files and checksums 
-[Show/Hide files]
-
-File md5sum
-SApperloT2010 2b2f94f0fe331264f673a2cdbb0150d9
-Meta md5sum: e3c488dc1dd879fd49fc22a7990cf53f
 
 
 Event SAT 2011 Competition: main competition (phase 1)
@@ -2691,11 +1825,10 @@ Type SAT
 Submitter Stephan Kottler
 Date of submission 2011-05-15 00:58
 Name SApperloT2010
-Version 2011-05-15 (fixed)
+Version 2011-05-15
 Authors Stephan Kottler and Christian Zielke
 Complete/Incomplete Complete
-Is able to solve APPLICATION
-CRAFTED
+Is able to solve APPLICATION CRAFTED
 Solver command line SApperloT2010 BENCHNAME
 Conversion script command line 
 Comments By mistake, I had chosen a wrong cvs branch for submission.
@@ -2711,29 +1844,6 @@ SApperloT2010 d1f5393f73a550a56e1d671a05697e86
 Meta md5sum: 77836ead1bf9113517094f9672e9004e
 
 
-Event SAT 2011 Competition: main competition (phase 1)
-Type SAT
-Submitter Stephan Kottler
-Date of submission 2011-03-24 19:10
-Name SArTagnan
-Version 2011-03-24
-Authors Stephan Kottler
-Complete/Incomplete Complete
-Is able to solve APPLICATION
-CRAFTED
-Solver command line SArTagnan BENCHNAME -threads=NBCORE
-Conversion script command line 
-Comments Bugfix with terminating 0 in the values line.
-Sorry for the very late update!
-There is a Makefile in the submitted archive that is now also changed to
-link statically.
-It should compile without any warnings.
-Solver files and checksums 
-[Show/Hide files]
-
-File md5sum
-SArTagnan 6432589ab47092788599bd6b2fc45e3c
-Meta md5sum: 4f4e36895d97d5458bbab5b9086515cc
 
 
 Event SAT 2011 Competition: main competition (phase 1)
@@ -2741,11 +1851,10 @@ Type SAT
 Submitter Stephan Kottler
 Date of submission 2011-05-15 23:00
 Name SArTagnan
-Version 2011-05-15 (fixed)
+Version 2011-05-15
 Authors Stephan Kottler
 Complete/Incomplete Complete
-Is able to solve APPLICATION
-CRAFTED
+Is able to solve APPLICATION CRAFTED
 Solver command line SArTagnan BENCHNAME -threads=NBCORE
 Conversion script command line 
 Comments Correct elimination of binary clauses in combination with DMRP.
@@ -2788,8 +1897,7 @@ Version 1.2.0-SAT09-32
 Authors Benjamin Kaufmann
 Complete/Incomplete Complete
 Is able to solve CRAFTED
-Solver command line HOME/clasp --file=BENCHNAME --dimacs --number=1
---sat-p=20,25,150 --hParam=0,512
+Solver command line HOME/clasp --file=BENCHNAME --dimacs --number=1 --sat-p=20,25,150 --hParam=0,512
 Conversion script command line 
 Comments Build instructions:
 1. unzip archive
@@ -3056,11 +2164,8 @@ Name SAT4J core
 Version 2.3.0 SNAPSHOT 2011-02-06
 Authors Daniel Le Berre
 Complete/Incomplete Complete
-Is able to solve APPLICATION
-CRAFTED
-RANDOM
-Solver command line java -server -XX:MaxPermSize=256m -Xms7000m
--Xmx7000m -jar org.sat4j.core.jar BENCHNAME
+Is able to solve APPLICATION CRAFTED RANDOM
+Solver command line java -server -XX:MaxPermSize=256m -Xms7000m -Xmx7000m -jar org.sat4j.core.jar BENCHNAME
 Conversion script command line 
 Comments That solver requires a 64 bits VM.
 Solver files and checksums 
@@ -3079,9 +2184,7 @@ Name sathys
 Version 2011-04-01
 Authors Jean-Marie Lagniez
 Complete/Incomplete Complete
-Is able to solve APPLICATION
-CRAFTED
-RANDOM
+Is able to solve APPLICATION CRAFTED RANDOM
 Solver command line ./esg_static.sh BENCHNAME rnovelty
 Conversion script command line 
 Comments 
@@ -3104,8 +2207,7 @@ Version 2011-03-01
 Authors Igor Ulyanovsky
 Complete/Incomplete Complete
 Is able to solve RANDOM
-Solver command line java -Xms7000m -Xmx7000m -jar
-DIR/SAT_Intersec_01.jar BENCHNAME
+Solver command line java -Xms7000m -Xmx7000m -jar DIR/SAT_Intersec_01.jar BENCHNAME
 Conversion script command line 
 Comments This solver is based on new principles.
 Solver files and checksums 
@@ -3124,11 +2226,8 @@ Name Satisfiability Solver Selector
 Version 2011-03-18
 Authors Meinolf Sellmann
 Complete/Incomplete Complete
-Is able to solve APPLICATION
-CRAFTED
-RANDOM
-Solver command line python portfolio_solver.py -t TIMELIMIT -s
-RANDOMSEED BENCHNAME
+Is able to solve APPLICATION CRAFTED RANDOM
+Solver command line python portfolio_solver.py -t TIMELIMIT -s RANDOMSEED BENCHNAME
 Conversion script command line 
 Comments Dear Organizers,
 
@@ -3187,11 +2286,8 @@ Name Satisfiability Solver Selector
 Version 2011-03-18 (1200 s timeout)
 Authors Meinolf Sellmann
 Complete/Incomplete Complete
-Is able to solve APPLICATION
-CRAFTED
-RANDOM
-Solver command line python portfolio_solver.py -t TIMELIMIT -s
-RANDOMSEED BENCHNAME
+Is able to solve APPLICATION CRAFTED RANDOM
+Solver command line python portfolio_solver.py -t TIMELIMIT -s RANDOMSEED BENCHNAME
 Conversion script command line 
 Comments Dear Organizers,
 
@@ -3250,9 +2346,7 @@ Name sattime
 Version 2011-03-02
 Authors Chumin Li, Yu Li
 Complete/Incomplete Incomplete
-Is able to solve APPLICATION
-CRAFTED
-RANDOM
+Is able to solve APPLICATION CRAFTED RANDOM
 Solver command line sattime BENCHNAME RANDOMSEED
 Conversion script command line 
 Comments 
@@ -3272,9 +2366,7 @@ Name sattime+
 Version 2011-03-02
 Authors Chumin LI, Yu Li
 Complete/Incomplete Incomplete
-Is able to solve APPLICATION
-CRAFTED
-RANDOM
+Is able to solve APPLICATION CRAFTED RANDOM
 Solver command line sattime+ BENCHNAME RANDOMSEED
 Conversion script command line 
 Comments 
@@ -3294,9 +2386,7 @@ Name sattime2011
 Version 2011-03-02
 Authors Chumin Li, Yu Li
 Complete/Incomplete Incomplete
-Is able to solve APPLICATION
-CRAFTED
-RANDOM
+Is able to solve APPLICATION CRAFTED RANDOM
 Solver command line sattime2011 BENCHNAME RANDOMSEED
 Conversion script command line 
 Comments 
@@ -3316,9 +2406,7 @@ Name shortsattime+
 Version 2011-03-02
 Authors Chumin LI, Yu Li
 Complete/Incomplete Incomplete
-Is able to solve APPLICATION
-CRAFTED
-RANDOM
+Is able to solve APPLICATION CRAFTED RANDOM
 Solver command line shortsattime+ BENCHNAME RANDOMSEED
 Conversion script command line 
 Comments 
@@ -3338,9 +2426,7 @@ Name shortsattime2011
 Version 2011-03-02
 Authors Chumin Li, Yu Li
 Complete/Incomplete Incomplete
-Is able to solve APPLICATION
-CRAFTED
-RANDOM
+Is able to solve APPLICATION CRAFTED RANDOM
 Solver command line shortsattime2011 BENCHNAME RANDOMSEED
 Conversion script command line 
 Comments 
@@ -3360,9 +2446,7 @@ Name Sol
 Version 2011-04-04
 Authors Michael Ostapenko
 Complete/Incomplete Complete
-Is able to solve APPLICATION
-CRAFTED
-RANDOM
+Is able to solve APPLICATION CRAFTED RANDOM
 Solver command line mono Main.exe BENCHNAME
 Conversion script command line 
 Comments a replacement for the previous submission.
@@ -3408,9 +2492,7 @@ Name STRUCTure
 Version 0.1
 Authors Alexandru Mosoi
 Complete/Incomplete Complete
-Is able to solve APPLICATION
-CRAFTED
-RANDOM
+Is able to solve APPLICATION CRAFTED RANDOM
 Solver command line run 15000 NBCORE TMPDIR DIR BENCHNAME
 Conversion script command line 
 Comments 
@@ -3431,9 +2513,7 @@ Name STRUCTure
 Version 0.1 (hbr=2)
 Authors Alexandru Mosoi
 Complete/Incomplete Complete
-Is able to solve APPLICATION
-CRAFTED
-RANDOM
+Is able to solve APPLICATION CRAFTED RANDOM
 Solver command line run 15000 NBCORE TMPDIR DIR BENCHNAME -hbr 2
 Conversion script command line 
 Comments 
@@ -3454,9 +2534,7 @@ Name synit_sat
 Version 2011-03-03
 Authors CHIH-JEN HSU, Chung-Yang Ric Huang
 Complete/Incomplete Complete
-Is able to solve APPLICATION
-CRAFTED
-RANDOM
+Is able to solve APPLICATION CRAFTED RANDOM
 Solver command line HOME/synit_sat BENCHNAME RANDOMSEED
 Conversion script command line 
 Comments sorry the submit file is mistake at 03-01
@@ -3532,27 +2610,6 @@ ttsth-5-4 6e2c806864d6707287f992187958be26
 Meta md5sum: fbfd112541211fe19fe6e59b80e4f0d3
 
 
-Event SAT 2011 Competition: main competition (phase 1)
-Type SAT
-Submitter Daniel Andrén
-Date of submission 2011-02-25 14:56
-Name UmSat
-Version 2011-02-25
-Authors Daniel Andrén
-Complete/Incomplete Complete
-Is able to solve APPLICATION
-CRAFTED
-RANDOM
-Solver command line umsat BENCHNAME
-Conversion script command line 
-Comments To build use:
-make
-Solver files and checksums 
-[Show/Hide files]
-
-File md5sum
-umsat 8acff7ef5b5f95306760597d9cf23ec1
-Meta md5sum: facaec0c32eb3dc15c0fc960a4b0461c
 
 
 Event SAT 2011 Competition: main competition (phase 1)
@@ -3560,11 +2617,10 @@ Type SAT
 Submitter Daniel Andrén
 Date of submission 2011-05-12 15:55
 Name UmSat
-Version 2011-05-12 (fixed)
+Version 2011-05-12
 Authors Daniel Andrén
 Complete/Incomplete Complete
-Is able to solve APPLICATION
-CRAFTED
+Is able to solve APPLICATION CRAFTED
 Solver command line umsat BENCHNAME
 Conversion script command line 
 Comments Bugfix. Fixed initial simplification since it was buggy.
