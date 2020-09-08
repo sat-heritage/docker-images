@@ -14,7 +14,7 @@
         ],
         "call": "adaptg2wsat2011",
         "gz": false,
-        "status": "unknown"
+        "status": "ok"
     },
     "black_hole_sat": {
         "name": "Black Hole SAT",
@@ -746,7 +746,7 @@
             "DIR",
             "FILECNF",
             "RANDOMSEED",
-            "TIMELIMIT",
+            "TIMEOUT",
             "MEMLIMIT",
             "NBCORE"
         ],
@@ -766,7 +766,7 @@
             "DIR",
             "FILECNF",
             "RANDOMSEED",
-            "TIMELIMIT",
+            "TIMEOUT",
             "MEMLIMIT",
             "NBCORE"
         ],
@@ -786,7 +786,7 @@
             "DIR",
             "FILECNF",
             "RANDOMSEED",
-            "TIMELIMIT",
+            "TIMEOUT",
             "MEMLIMIT",
             "NBCORE"
         ],
@@ -874,7 +874,7 @@
             "DIR",
             "FILECNF",
             "RANDOMSEED",
-            "TIMELIMIT",
+            "TIMEOUT",
             "MEMLIMIT",
             "NBCORE"
         ],
@@ -894,7 +894,7 @@
             "DIR",
             "FILECNF",
             "RANDOMSEED",
-            "TIMELIMIT",
+            "TIMEOUT",
             "MEMLIMIT",
             "NBCORE"
         ],
@@ -914,7 +914,7 @@
             "DIR",
             "FILECNF",
             "RANDOMSEED",
-            "TIMELIMIT",
+            "TIMEOUT",
             "MEMLIMIT",
             "NBCORE"
         ],
@@ -934,7 +934,7 @@
             "DIR",
             "FILECNF",
             "RANDOMSEED",
-            "TIMELIMIT",
+            "TIMEOUT",
             "MEMLIMIT",
             "NBCORE"
         ],
@@ -1220,7 +1220,7 @@
         "args": [
             "portfolio_solver.py",
             "-t",
-            "TIMELIMIT",
+            "TIMEOUT",
             "-s",
             "RANDOMSEED",
             "FILECNF"
@@ -1241,7 +1241,7 @@
         "args": [
             "portfolio_solver.py",
             "-t",
-            "TIMELIMIT",
+            "TIMEOUT",
             "-s",
             "RANDOMSEED",
             "FILECNF"

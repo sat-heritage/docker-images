@@ -4,6 +4,7 @@
     "builder": "generic/v1",
     "builder_base": "debian/eol:squeeze",
     "adaptg2wsat2011": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2009-bin/{SOLVER_NAME}.tar.gz"
     },
     "black_hole_sat": {},
     "borg-sat-11.03.02-par-industrial": {},
