@@ -471,7 +471,7 @@
         "gz": false,
         "status": "unknown"
     },
-    "minisat_hack:_cir_minisat-2011-05-13_(simp)": {
+    "minisat_hack:_cir_minisat-2011-05-13_simp": {
         "name": "minisat hack: cir_minisat",
         "version": "2011-05-13 (simp)",
         "authors": "Tomohiro Sonobe",
@@ -902,7 +902,7 @@
         "gz": false,
         "status": "unknown"
     },
-    "riss-auto_(1200_s_timeout)": {
+    "riss-auto_1200_s_timeout": {
         "name": "riss",
         "version": "Auto (1200 s timeout)",
         "authors": "Norbert Manthey",
@@ -1229,7 +1229,7 @@
         "gz": false,
         "status": "unknown"
     },
-    "satisfiability_solver_selector-2011-03-18_(1200_s_timeout)": {
+    "satisfiability_solver_selector-2011-03-18_1200_s_timeout": {
         "name": "Satisfiability Solver Selector",
         "version": "2011-03-18 (1200 s timeout)",
         "authors": "Meinolf Sellmann",
@@ -1387,7 +1387,7 @@
         "gz": false,
         "status": "unknown"
     },
-    "structure-0.1_(hbr=2)": {
+    "structure-0.1_hbr2": {
         "name": "STRUCTure",
         "version": "0.1 (hbr=2)",
         "authors": "Alexandru Mosoi",
