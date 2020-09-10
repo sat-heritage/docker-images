@@ -1,0 +1,669 @@
+{
+    "cadical-sc2020": {
+        "status": "ok",
+        "name": "CaDiCaL-sc2020",
+        "call": "./cadical",
+        "tracks": [
+            "main"
+        ],
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF"
+        ]
+    },
+    "duriansat": {
+        "status": "ok",
+        "name": "DurianSat",
+        "call": "./duriansat",
+        "tracks": [
+            "main"
+        ],
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "-drup-file=FILEPROOF"
+        ]
+    },
+    "exmaplelcmdistchronobt_padc_dl": {
+        "status": "ok",
+        "name": "ExMapleLCMDistChronoBT",
+        "call": "./glucose_static",
+        "tracks": [
+            "main"
+        ],
+        "gz": true,
+        "args": [
+            "FILECNF",
+            "-verb=0",
+            "-use-padc",
+            "-no-use-psids",
+            "-use-dl",
+            "-no-use-ovau",
+            "-nbIncRedDB=5",
+            "-clearType=0"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "-verb=0",
+            "-use-padc",
+            "-no-use-psids",
+            "-use-dl",
+            "-no-use-ovau",
+            "-nbIncRedDB=5",
+            "-clearType=0",
+            "-drup-file=FILEPROOF"
+        ]
+    },
+    "exmaplelcmdistchronobt_padc_dl_ovau_exp": {
+        "status": "ok",
+        "name": "ExMapleLCMDistChronoBT",
+        "call": "./glucose_static",
+        "tracks": [
+            "main"
+        ],
+        "gz": true,
+        "args": [
+            "FILECNF",
+            "-verb=0",
+            "-use-padc",
+            "-no-use-psids",
+            "-use-dl",
+            "-use-ovau",
+            "-exponent",
+            "-update-vsids",
+            "-nbIncRedDB=5",
+            "-clearType=0"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "-verb=0",
+            "-use-padc",
+            "-no-use-psids",
+            "-use-dl",
+            "-use-ovau",
+            "-exponent",
+            "-update-vsids",
+            "-nbIncRedDB=5",
+            "-clearType=0",
+            "-drup-file=FILEPROOF"
+        ]
+    },
+    "exmaplelcmdistchronobt_padc_dl_ovau_lin": {
+        "status": "ok",
+        "name": "ExMapleLCMDistChronoBT",
+        "call": "./glucose_static",
+        "tracks": [
+            "main"
+        ],
+        "gz": true,
+        "args": [
+            "FILECNF",
+            "-verb=0",
+            "-use-padc",
+            "-no-use-psids",
+            "-use-dl",
+            "-use-ovau",
+            "-linear",
+            "-update-chb",
+            "-nbIncRedDB=5",
+            "-clearType=0"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "-verb=0",
+            "-use-padc",
+            "-no-use-psids",
+            "-use-dl",
+            "-use-ovau",
+            "-linear",
+            "-update-chb",
+            "-nbIncRedDB=5",
+            "-clearType=0",
+            "-drup-file=FILEPROOF"
+        ]
+    },
+    "exmaplelcmdistchronobt_psids_dl": {
+        "status": "ok",
+        "name": "ExMapleLCMDistChronoBT",
+        "call": "./glucose_static",
+        "tracks": [
+            "main"
+        ],
+        "gz": true,
+        "args": [
+            "FILECNF",
+            "-verb=0",
+            "-no-use-padc",
+            "-use-psids",
+            "-use-dl",
+            "-no-use-ovau"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "-verb=0",
+            "-no-use-padc",
+            "-use-psids",
+            "-use-dl",
+            "-no-use-ovau",
+            "-drup-file=FILEPROOF"
+        ]
+    },
+    "kissat-sc2020-default": {
+        "status": "ok",
+        "name": "Kissat-sc2020-default",
+        "call": "./kissat",
+        "tracks": [
+            "main"
+        ],
+        "gz": true,
+        "args": [
+            "FILECNF",
+            "--default"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "--default",
+            "FILEPROOF"
+        ]
+    },
+    "kissat-sc2020-sat": {
+        "status": "ok",
+        "name": "Kissat-sc2020-sat",
+        "call": "./kissat",
+        "tracks": [
+            "main"
+        ],
+        "gz": true,
+        "args": [
+            "FILECNF",
+            "--sat"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "--sat",
+            "FILEPROOF"
+        ]
+    },
+    "kissat-sc2020-unsat": {
+        "status": "ok",
+        "name": "Kissat-sc2020-unsat",
+        "call": "./kissat",
+        "tracks": [
+            "main"
+        ],
+        "gz": true,
+        "args": [
+            "FILECNF",
+            "--unsat"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "--unsat",
+            "FILEPROOF"
+        ]
+    },
+    "MLCMDCHRONOBT-DL-V2.2SCAVELRFV": {
+    },
+    "mlcmdchronobt-dl-scavel": {
+        "status": "ok",
+        "name": "MLCMDChronoBT-DL-Scavel",
+        "call": "./MLCMDCBT-DL-v2.2_Scavel",
+        "tracks": [
+            "main"
+        ],
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "-drup-file=FILEPROOF"
+        ]
+    },
+    "maple-lcm-dist-alluip-trail": {
+        "status": "ok",
+        "name": "Maple-LCM-Dist-alluip-trail",
+        "call": "./glucose_static",
+        "tracks": [
+            "main"
+        ],
+        "gz": true,
+        "args": [
+            "-i-uip",
+            "-i-mini",
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "-i-uip",
+            "-i-mini",
+            "-drup-file=FILEPROOF"
+        ]
+    },
+    "maplecomsps_lrb_vsids_2": {
+        "status": "ok",
+        "name": "MapleCOMSPS_LRB_VSIDS_2",
+        "call": "./MapleCOMSPS_LRB_VSIDS_2",
+        "tracks": [
+            "main"
+        ],
+        "gz": true,
+        "args": [
+            "FILECNF",
+            "-act-init=1",
+            "-pol-init=1"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "-act-init=1",
+            "-pol-init=1",
+            "-drup-file=FILEPROOF"
+        ]
+    },
+    "maplelcmdistchronobt-dl-scavel01": {
+        "status": "ok",
+        "name": "MapleLCMDistChronoBT-DL-Scavel01",
+        "call": "./MapleLCMDistChrBt-DL-v2.2",
+        "tracks": [
+            "main"
+        ],
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "-drup-file=FILEPROOF"
+        ]
+    },
+    "maplelcmdistchronobt-dl-scavel02": {
+        "status": "ok",
+        "name": "MapleLCMDistChronoBT-DL-Scavel02",
+        "call": "./MapleLCMDistChrBt-DL-v2.2",
+        "tracks": [
+            "main"
+        ],
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "-drup-file=FILEPROOF"
+        ]
+    },
+    "maplelcmdistchronobt-dl-f2trc": {
+        "status": "ok",
+        "name": "MapleLCMDistChronoBT-DL-f2trc",
+        "call": "./MLCDBT-DL-f2trc",
+        "tracks": [
+            "main"
+        ],
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "-drup-file=FILEPROOF"
+        ]
+    },
+    "maplelcmdistchronobt-dl-v3": {
+        "status": "ok",
+        "name": "MapleLCMDistChronoBT-DL-v3",
+        "call": "./MapleLCMDistChrBt-DL-v3",
+        "tracks": [
+            "main"
+        ],
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "-drup-file=FILEPROOF"
+        ]
+    },
+    "maplelcmdistchronobt-f2trc-s": {
+        "status": "ok",
+        "name": "MapleLCMDistChronoBT-f2trc-s",
+        "call": "./MLDCBT-f2trc-s",
+        "tracks": [
+            "main"
+        ],
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "-drup-file=FILEPROOF"
+        ]
+    },
+    "maplelcmdistchronobt-f2trc": {
+        "status": "ok",
+        "name": "MapleLCMDistChronoBT-f2trc",
+        "call": "./MLCDBT-f2trc",
+        "tracks": [
+            "main"
+        ],
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "-drup-file=FILEPROOF"
+        ]
+    },
+    "maple_cm-dist-sattime2s--": {
+        "status": "unstable",
+        "name": "Maple_CM-dist-sattime2s--",
+        "call": "./MLCDBT-f2trc",
+        "tracks": [
+            "main"
+        ],
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "-drup-file=FILEPROOF"
+        ]
+    },
+    "Maple_CM-dist-simp2--": {},
+    "Maple_CM-dist": {},
+    "Maple_CMused-dist": {},
+    "maple_mix": {
+        "status": "ok",
+        "name": "Maple_mix",
+        "call": "./Maple_mix",
+        "tracks": [
+            "main"
+        ],
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "-drup-file=FILEPROOF"
+        ]
+    },
+    "maple_simp": {
+        "status": "ok",
+        "name": "Maple_simp",
+        "call": "./Maple_simp",
+        "tracks": [
+            "main"
+        ],
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "-drup-file=FILEPROOF"
+        ]
+    },
+    "parafrost": {
+        "status": "ok",
+        "name": "ParaFROST",
+        "call": "./parafrost",
+        "tracks": [
+            "main"
+        ],
+        "gz": false,
+        "args": [
+            "FILECNF",
+            "-q"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "--proof-file=FILEPROOF",
+            "-q"
+        ]
+    },
+    "parafrost_cbt": {
+        "status": "ok",
+        "name": "ParaFROST_CBT",
+        "call": "./parafrost",
+        "tracks": [
+            "main"
+        ],
+        "gz": false,
+        "args": [
+            "FILECNF",
+            "-q",
+            "-cbt"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "--proof-file=FILEPROOF",
+            "-q",
+            "-cbt"
+        ]
+    },
+    "pausat": {
+        "status": "ok",
+        "name": "PauSat",
+        "call": "./PauSat",
+        "tracks": [
+            "main"
+        ],
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF"
+        ]
+    },
+    "relaxed_lcmdcbdl": {
+        "status": "ok",
+        "name": "Relaxed_LCMDCBDL",
+        "call": "./Relaxed_LCMDCBDL",
+        "tracks": [
+            "main"
+        ],
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "-drup-file=FILEPROOF"
+        ]
+    },
+    "relaxed_lcmdcbdl_newtech": {
+        "status": "ok",
+        "name": "Relaxed_LCMDCBDL_newTech",
+        "call": "./Relaxed_LCMDCBDL_newTech",
+        "tracks": [
+            "main"
+        ],
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "-drup-file=FILEPROOF"
+        ]
+    },
+    "slime": {
+        "status": "fixme: zip is malformed",
+        "name": "SLIME",
+        "call": "./slime",
+        "tracks": [
+            "main"
+        ],
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "-drup-file=FILEPROOF"
+        ]
+    },
+    "top16-undominated-lc-maplelcmdiscchronobt-dl": {
+        "status": "ok",
+        "name": "Top16-Undominated-LC-MapleLCMDiscChronoBT-DL",
+        "call": "./MapleLCMDistChrBt-DL-v3-Top16LC",
+        "tracks": [
+            "main"
+        ],
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "-drup-file=FILEPROOF"
+        ]
+    },
+    "top24-undominated-lc-maplelcmdiscchronobt-dl": {
+        "status": "ok",
+        "name": "Top24-Undominated-LC-MapleLCMDiscChronoBT-DL",
+        "call": "./MapleLCMDistChrBt-DL-v3-Top24LC",
+        "tracks": [
+            "main"
+        ],
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "-drup-file=FILEPROOF"
+        ]
+    },
+    "top36-undominated-lc-maplelcmdiscchronobt-dl": {
+        "status": "ok",
+        "name": "Top36-Undominated-LC-MapleLCMDiscChronoBT-DL",
+        "call": "./MapleLCMDistChrBt-DL-v3-Top36LC",
+        "tracks": [
+            "main"
+        ],
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "-drup-file=FILEPROOF"
+        ]
+    },
+    "undominated-lc-maplelcmdiscchronobt-dl": {
+        "status": "ok",
+        "name": "Undominated-LC-MapleLCMDiscChronoBT-DL",
+        "call": "./MapleLCMDistChrBt-DL-v3-Topk-Undominated",
+        "tracks": [
+            "main"
+        ],
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "-drup-file=FILEPROOF"
+        ]
+    },
+    "cadical-alluip-trail": {
+        "status": "fixme",
+        "name": "cadical-alluip-trail",
+        "call": "./cadical",
+        "tracks": [
+            "main"
+        ],
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF"
+        ]
+    },
+    "cadical-alluip": {
+        "status": "fixme",
+        "name": "cadical-alluip",
+        "call": "./cadical",
+        "tracks": [
+            "main"
+        ],
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF"
+        ]
+    },
+    "cryptominisat-ccnr-lsids": {
+        "status": "ok",
+        "name": "cryptominisat-ccnr-lsids",
+        "call": "./cryptominisat5_simple",
+        "tracks": [
+            "main"
+        ],
+        "gz": false,
+        "args": [
+            "--verb=0",
+            "--chronophasen=2",
+            "--sls=ccnr"
+            ,"FILECNF"
+        ],
+        "argsproof": [
+            "--verb=0",
+            "--chronophasen=2",
+            "--sls=ccnr",
+            "--drat=FILEPROOF",
+            "FILECNF"
+        ]
+    },
+    "cryptominisat-ccnr": {
+        "status": "unkown",
+        "name": "cryptominisat-ccnr",
+        "call": "./cryptominisat5_simple",
+        "tracks": [
+            "main"
+        ],
+        "gz": false,
+        "args": [
+            "--verb=0",
+            "--chronophasen=2",
+            "--sls=ccnr"
+            ,"FILECNF"
+        ],
+        "argsproof": [
+            "--verb=0",
+            "--chronophasen=2",
+            "--sls=ccnr",
+            "--drat=FILEPROOF",
+            "FILECNF"
+        ]
+
+    },
+    "cryptominisat-walksat": {},
+    "exp_L_MLD_CBT_DL": {},
+    "exp_V_LGB_MLD_CBT_DL": {},
+    "exp_V_L_MLD_CBT_DL": {},
+    "exp_V_MLD_CBT_DL": {},
+    "glucose-3.0-inprocess": {},
+    "mergesat": {},
+    "optsatm20": {},
+    "upGlucose-3.0_PADC": {}
+}

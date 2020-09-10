@@ -1,0 +1,7 @@
+{
+    "base_version": "v1",
+    "base_from": "debian:stretch-slim",
+    "builder": "generic/starexec",
+    "builder_base": "debian:10.1-slim",
+    "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2020-src/{SOLVER_NAME}.zip"
+}
