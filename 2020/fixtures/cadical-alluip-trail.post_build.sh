@@ -1,1 +1,1 @@
-chmod +x bin/cadical
+chmod +x cadical-alluip-trail/bin/cadical

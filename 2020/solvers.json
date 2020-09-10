@@ -581,7 +581,7 @@
         ]
     },
     "cadical-alluip-trail": {
-        "status": "fixme",
+        "status": "ok",
         "name": "cadical-alluip-trail",
         "call": "./cadical",
         "tracks": [
@@ -597,7 +597,7 @@
         ]
     },
     "cadical-alluip": {
-        "status": "fixme",
+        "status": "ok",
         "name": "cadical-alluip",
         "call": "./cadical",
         "tracks": [
@@ -623,8 +623,8 @@
         "args": [
             "--verb=0",
             "--chronophasen=2",
-            "--sls=ccnr"
-            ,"FILECNF"
+            "--sls=ccnr",
+            "FILECNF"
         ],
         "argsproof": [
             "--verb=0",
@@ -635,7 +635,7 @@
         ]
     },
     "cryptominisat-ccnr": {
-        "status": "unkown",
+        "status": "ok",
         "name": "cryptominisat-ccnr",
         "call": "./cryptominisat5_simple",
         "tracks": [
@@ -644,26 +644,138 @@
         "gz": false,
         "args": [
             "--verb=0",
-            "--chronophasen=2",
-            "--sls=ccnr"
-            ,"FILECNF"
+            "--sls=ccnr",
+            "FILECNF"
         ],
         "argsproof": [
             "--verb=0",
-            "--chronophasen=2",
             "--sls=ccnr",
             "--drat=FILEPROOF",
             "FILECNF"
         ]
-
     },
-    "cryptominisat-walksat": {},
-    "exp_L_MLD_CBT_DL": {},
-    "exp_V_LGB_MLD_CBT_DL": {},
-    "exp_V_L_MLD_CBT_DL": {},
-    "exp_V_MLD_CBT_DL": {},
-    "glucose-3.0-inprocess": {},
-    "mergesat": {},
-    "optsatm20": {},
-    "upGlucose-3.0_PADC": {}
+    "cryptominisat-walksat": {
+        "status": "ok",
+        "name": "cryptominisat-walksat",
+        "call": "./cryptominisat5_simple",
+        "tracks": [
+            "main"
+        ],
+        "gz": false,
+        "args": [
+            "--verb=0",
+            "--sls=walksat",
+            "FILECNF"
+        ],
+        "argsproof": [
+            "--verb=0",
+            "--sls=ccnr",
+            "--drat=FILEPROOF",
+            "FILECNF"
+        ]
+    },
+    "exp_l_mld_cbt_dl": {
+        "status": "ok",
+        "name": "exp_L_MLD_CBT_DL",
+        "call": "./glucose",
+        "tracks": [
+            "main"
+        ],
+        "gz": false,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "-drup-file=FILEPROOF"
+        ]
+    },
+    "exp_v_lgb_mld_cbt_dl": {
+        "status": "ok",
+        "name": "exp_V_LGB_MLD_CBT_DL",
+        "call": "./glucose",
+        "tracks": [
+            "main"
+        ],
+        "gz": false,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "-drup-file=FILEPROOF"
+        ]
+    },
+    "exp_v_l_mld_cbt_dl": {
+        "status": "ok",
+        "name": "exp_V_L_MLD_CBT_DL",
+        "call": "./glucose",
+        "tracks": [
+            "main"
+        ],
+        "gz": false,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "-drup-file=FILEPROOF"
+        ]
+    },
+    "exp_v_mld_cbt_dl": {
+        "status": "ok",
+        "name": "exp_V_MLD_CBT_DL",
+        "call": "./glucose",
+        "tracks": [
+            "main"
+        ],
+        "gz": false,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "-drup-file=FILEPROOF"
+        ]
+    },
+    "glucose-3.0-inprocess": {
+        "status": "ok",
+        "name": "glucose-3.0-inprocess",
+        "call": "./glucose_static",
+        "tracks": [
+            "main"
+        ],
+        "gz": false,
+        "args": [
+            "-model",
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "-model",
+            "-certified",
+            "-certified-output=FILEPROOF"
+        ]
+    },
+    "upglucose-3.0_padc": {
+        "status": "ok",
+        "name": "upGlucose-3.0_PADC",
+        "call": "./glucose_static",
+        "tracks": [
+            "main"
+        ],
+        "gz": false,
+        "args": [
+            "-model",
+            "-nbIncRedDB=10",
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "-model",
+            "-nbIncRedDB=10",
+            "-certified",
+            "-certified-output=FILEPROOF"
+        ]
+    }
 }
