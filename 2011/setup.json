@@ -1,95 +1,268 @@
 {
-    "base_version": "v1",
+    "base_version":"pre-jessie",
     "base_from": "debian/eol:squeeze-slim",
     "builder": "generic/v1",
     "builder_base": "debian/eol:squeeze",
     "adaptg2wsat2011": {
-        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2009-bin/{SOLVER_NAME}.tar.gz"
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/adaptg2wsat2011fold.tar.gz"
     },
-    "black_hole_sat": {},
-    "borg-sat-11.03.02-par-industrial": {},
-    "borg-sat-11.03.02-par-random": {},
-    "borg-sat-11.03.02-seq-industrial": {},
-    "borg-sat-11.03.02-seq-random": {},
-    "clasp-2.0-r4092-crafted": {},
-    "clasp-2.0-r4092-indust": {},
-    "claspmt": {},
-    "cryptominisat-strange-night-1-mt": {},
-    "cryptominisat-strange-night-1-st": {},
-    "cryptominisat-strange-night-2-mt": {},
-    "cryptominisat-strange-night2-st": {},
-    "cryptominisat-techdemo-alpha-mt": {},
-    "cryptominisat-techdemo-alpha-st": {},
-    "csls-pnorm-8cores": {},
-    "csls-prob-4cores": {},
-    "csls-prob-8cores": {},
-    "eagleup": {},
-    "ebglucose": {},
-    "glucose": {},
-    "glueminisat": {},
-    "jminisat": {},
-    "kw": {},
-    "lingeling": {},
-    "march_rw": {},
-    "minisat_hack:_cir_minisat-2011-03-02": {},
-    "minisat_hack:_cir_minisat-2011-05-13_(simp)": {},
-    "minisat_hack:_contrasat": {},
-    "minisat_hack:_ebminisat": {},
-    "minisat_hack:_lr_gl_noshr": {},
-    "minisat_hack:_lr_gl_shr": {},
-    "minisat_hack:_lr_nogl_noshr": {},
-    "minisat_hack:_minisat": {},
-    "minisat_hack:_minisat_psm": {},
-    "minisat_hack_reference:_minisat": {},
-    "mphasesat": {},
-    "mphasesat64": {},
-    "mphasesat_m": {},
-    "multiflip": {},
-    "picosat": {},
-    "plingeling": {},
-    "ppfolio-par": {},
-    "ppfolio-seq": {},
-    "priss-1.0": {},
-    "priss-auto": {},
-    "priss-up": {},
-    "qutersat": {},
-    "rcl": {},
-    "restartsat-a75": {},
-    "restartsat-b95": {},
-    "riss-1.0": {},
-    "riss-auto": {},
-    "riss-auto_(1200_s_timeout)": {},
-    "riss-exp": {},
-    "sapperlot": {},
-    "sapperlot2010": {},
-    "sartagnan": {},
-    "sat07_reference_solver:_minisat": {},
-    "sat09_reference_solver:_clasp": {},
-    "sat09_reference_solver:glucose": {},
-    "sat09_reference_solver:_gnovelty-plus2": {},
-    "sat09_reference_solver:lysat": {},
-    "sat09_reference_solver:_manysat_1.1": {},
-    "sat09_reference_solver:_march_hi": {},
-    "sat09_reference_solver:precosat": {},
-    "sat09_reference_solver:_satzilla2009_c": {},
-    "sat09_reference_solver:_satzilla2009_r": {},
-    "sat09_reference_solver:_tnm": {},
-    "sat4j_core": {},
-    "sathys": {},
-    "sat_intersec_01": {},
-    "satisfiability_solver_selector-2011-03-18": {},
-    "satisfiability_solver_selector-2011-03-18_(1200_s_timeout)": {},
-    "sattime": {},
-    "sattime-plus": {},
-    "sattime2011": {},
-    "shortsattime-plus": {},
-    "shortsattime2011": {},
-    "sol": {},
-    "sparrow2011": {},
-    "structure-0.1": {},
-    "structure-0.1_(hbr=2)": {},
-    "synit_sat": {},
-    "tts": {},
-    "ttsth": {},
-    "umsat": {}
+    "black_hole_sat": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/BlackHoleSAT4.tar.gz",
+        "BUILD_DEPENDS" : "libtbb-dev"
+    },
+    "borg-sat-11.03.02-par-industrial": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+    },
+    "borg-sat-11.03.02-par-random": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+    },
+    "borg-sat-11.03.02-seq-industrial": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+    },
+    "borg-sat-11.03.02-seq-random": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+    },
+    "clasp-2.0-r4092-crafted": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/claspmt-2.0-R4095-patched.tar.gz"
+    },
+    "clasp-2.0-r4092-indust": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+    },
+    "claspmt": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+    },
+    "cryptominisat-strange-night-1-mt": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+    },
+    "cryptominisat-strange-night-1-st": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+    },
+    "cryptominisat-strange-night-2-mt": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+    },
+    "cryptominisat-strange-night2-st": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+    },
+    "cryptominisat-techdemo-alpha-mt": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+    },
+    "cryptominisat-techdemo-alpha-st": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+    },
+    "csls-pnorm-8cores": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+    },
+    "csls-prob-4cores": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+    },
+    "csls-prob-8cores": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+    },
+    "eagleup": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+    },
+    "ebglucose": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+    },
+    "glucose": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+    },
+    "glueminisat": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+    },
+    "jminisat": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+    },
+    "kw": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+    },
+    "lingeling": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+    },
+    "march_rw": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+    },
+    "minisat_hack:_cir_minisat-2011-03-02": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+    },
+    "minisat_hack:_cir_minisat-2011-05-13_(simp)": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+    },
+    "minisat_hack:_contrasat": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+    },
+    "minisat_hack:_ebminisat": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+    },
+    "minisat_hack:_lr_gl_noshr": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+    },
+    "minisat_hack:_lr_gl_shr": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+    },
+    "minisat_hack:_lr_nogl_noshr": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+    },
+    "minisat_hack:_minisat": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+    },
+    "minisat_hack:_minisat_psm": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+    },
+    "minisat_hack_reference:_minisat": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+    },
+    "mphasesat": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+    },
+    "mphasesat64": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+    },
+    "mphasesat_m": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+    },
+    "multiflip": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+    },
+    "picosat": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+    },
+    "plingeling": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+    },
+    "ppfolio-par": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+    },
+    "ppfolio-seq": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+    },
+    "priss-1.0": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+    },
+    "priss-auto": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+    },
+    "priss-up": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+    },
+    "qutersat": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+    },
+    "rcl": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+    },
+    "restartsat-a75": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+    },
+    "restartsat-b95": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+    },
+    "riss-1.0": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+    },
+    "riss-auto": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+    },
+    "riss-auto_(1200_s_timeout)": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+    },
+    "riss-exp": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+    },
+    "sapperlot": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+    },
+    "sapperlot2010": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+    },
+    "sartagnan": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+    },
+    "sat07_reference_solver:_minisat": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+    },
+    "sat09_reference_solver:_clasp": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+    },
+    "sat09_reference_solver:glucose": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+    },
+    "sat09_reference_solver:_gnovelty-plus2": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+    },
+    "sat09_reference_solver:lysat": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+    },
+    "sat09_reference_solver:_manysat_1.1": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+    },
+    "sat09_reference_solver:_march_hi": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+    },
+    "sat09_reference_solver:precosat": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+    },
+    "sat09_reference_solver:_satzilla2009_c": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+    },
+    "sat09_reference_solver:_satzilla2009_r": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+    },
+    "sat09_reference_solver:_tnm": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+    },
+    "sat4j_core": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+    },
+    "sathys": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+    },
+    "sat_intersec_01": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+    },
+    "satisfiability_solver_selector-2011-03-18": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+    },
+    "satisfiability_solver_selector-2011-03-18_(1200_s_timeout)": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+    },
+    "sattime": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+    },
+    "sattime-plus": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+    },
+    "sattime2011": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+    },
+    "shortsattime-plus": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+    },
+    "shortsattime2011": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+    },
+    "sol": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+    },
+    "sparrow2011": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+    },
+    "structure-0.1": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+    },
+    "structure-0.1_(hbr=2)": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+    },
+    "synit_sat": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+    },
+    "tts": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+    },
+    "ttsth": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+    },
+    "umsat": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+    }
 }

@@ -89,6 +89,7 @@ RUN set -ex && cd ./`find -maxdepth 1 -mindepth 1 -type d|tail -n1` && \
     elif test -f starexec_build; then bash starexec_build;\
     elif test -f build.sh; then bash build.sh;\
     elif test -f Makefile -o -f makefile; then make;\
+    elif test -x compile; then sh compile;\
     elif test -x configure; then ./configure && make && rm -f configure mkconfig;\
     else echo "did not found any building tool"; exit 1; fi
 

@@ -30,7 +30,7 @@
         ],
         "call": "saturn",
         "gz": false,
-        "status": "unknown"
+        "status": "ok"
     },
     "borg-sat-11.03.02-par-industrial": {
         "name": "borg-sat",
@@ -136,7 +136,7 @@
         ],
         "call": "./clasp",
         "gz": false,
-        "status": "unknown"
+        "status": "fixme"
     },
     "clasp-2.0-r4092-indust": {
         "name": "clasp",
@@ -160,7 +160,7 @@
         ],
         "call": "./clasp",
         "gz": false,
-        "status": "unknown"
+        "status": "fixme"
     },
     "claspmt": {
         "name": "claspmt",
@@ -179,7 +179,7 @@
         ],
         "call": "./claspmt",
         "gz": false,
-        "status": "unknown"
+        "status": "fixme"
     },
     "cryptominisat-strange-night-1-mt": {
         "name": "CryptoMiniSat",
