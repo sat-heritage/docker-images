@@ -209,8 +209,6 @@
             "FILEPROOF"
         ]
     },
-    "MLCMDCHRONOBT-DL-V2.2SCAVELRFV": {
-    },
     "mlcmdchronobt-dl-scavel": {
         "status": "ok",
         "name": "MLCMDChronoBT-DL-Scavel",
@@ -363,10 +361,10 @@
             "-drup-file=FILEPROOF"
         ]
     },
-    "maple_cm-dist-sattime2s--": {
-        "status": "unstable",
-        "name": "Maple_CM-dist-sattime2s--",
-        "call": "./MLCDBT-f2trc",
+    "maple_cm-dist-sattime2s": {
+        "status": "ok",
+        "name": "Maple_CM+dist+sattime2s+-",
+        "call": "./glucose_static",
         "tracks": [
             "main"
         ],
@@ -379,9 +377,54 @@
             "-drup-file=FILEPROOF"
         ]
     },
-    "Maple_CM-dist-simp2--": {},
-    "Maple_CM-dist": {},
-    "Maple_CMused-dist": {},
+    "maple_cm-dist-simp2": {
+        "status": "ok",
+        "name": "Maple_CM+dist+simp2--",
+        "call": "./glucose_static",
+        "tracks": [
+            "main"
+        ],
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "-drup-file=FILEPROOF"
+        ]
+    },
+    "maple_cm-dist": {
+        "status": "ok",
+        "name": "Maple_CM+dist",
+        "call": "./glucose_static",
+        "tracks": [
+            "main"
+        ],
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "-drup-file=FILEPROOF"
+        ]
+    },
+    "maple_cmused-dist": {
+        "status": "ok",
+        "name": "Maple_CMused+dist",
+        "call": "./glucose_static",
+        "tracks": [
+            "main"
+        ],
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "-drup-file=FILEPROOF"
+        ]
+    },
     "maple_mix": {
         "status": "ok",
         "name": "Maple_mix",
