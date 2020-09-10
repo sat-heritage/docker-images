@@ -45,7 +45,7 @@ jobs:
               if: env.HAS_CHANGES == 1
               run: |
                 set -ex
-                docker login -u "${DOCKER_USERNAME}" -p "${DOCKER_PASSWORD}"
+                docker login https://docker.pkg.github.com -u "${DOCKER_USERNAME}" -p "${DOCKER_PASSWORD}"
                 for x in `cat list.diff`; do
                     docker tag satex/$x docker.pkg.github.com/sat-heritage/docker-images/$x
                     docker push docker.pkg.github.com/sat-heritage/docker-images/$x
