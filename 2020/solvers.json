@@ -655,6 +655,9 @@
             "FILEPROOF"
         ]
     },
+    "cadical-trail" : {
+        "status": "FIXME: miss sources."
+    },
     "cryptominisat-ccnr-lsids": {
         "status": "ok",
         "name": "cryptominisat-ccnr-lsids",
@@ -817,6 +820,25 @@
             "FILECNF",
             "-model",
             "-nbIncRedDB=10",
+            "-certified",
+            "-certified-output=FILEPROOF"
+        ]
+    },
+    "glucose-3.0-inprocess": {
+        "status": "ok",
+        "name": "glucose-3.0-inprocess",
+        "call": "./glucose_static",
+        "tracks": [
+            "main"
+        ],
+        "gz": false,
+        "args": [
+            "-model",
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "-model",
             "-certified",
             "-certified-output=FILEPROOF"
         ]
