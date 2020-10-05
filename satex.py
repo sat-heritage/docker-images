@@ -171,7 +171,7 @@ class ImageManager(object):
         }
     @property
     def solver_name(self):
-        return self.registry["name"]
+        return self.registry.get("name", self.name)
     @property
     def status(self):
         return self.registry.get("status", "unknown")
