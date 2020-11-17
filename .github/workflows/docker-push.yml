@@ -8,7 +8,7 @@ jobs:
     docker-push:
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/setup-python@v1
+            - uses: actions/setup-python@v2
             - uses: actions/checkout@v2
               with:
                   ref: ${{ github.event.before }}
@@ -21,7 +21,7 @@ jobs:
             - name: diff
               run: |
                 python -c "new=set(open('list.new').read().splitlines());old=set(open('list.old').read().splitlines());print(' '.join(new.difference(old)),end='')" > list.diff
-                echo ::set-env name=HAS_CHANGES::`test -s list.diff && echo 1 || echo 0`
+                echo HAS_CHANGES=`test -s list.diff && echo 1 || echo 0` >> $GITHUB_ENV
             - name:  build
               if: env.HAS_CHANGES == 1
               run: |

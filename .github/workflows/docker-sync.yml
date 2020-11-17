@@ -10,7 +10,7 @@ jobs:
     docker-push:
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/setup-python@v1
+            - uses: actions/setup-python@v2
             - run: pip install requests
             - uses: actions/checkout@v2
               with:
@@ -24,7 +24,7 @@ jobs:
               run: |
                 wc -l list.*
                 python -c "new=set(open('list.local').read().splitlines());old=set(open('list.docker').read().splitlines());print(' '.join(list(sorted(new.difference(old)))[:24]),end='')" > list.diff
-                echo ::set-env name=HAS_CHANGES::`test -s list.diff && echo 1 || echo 0`
+                echo HAS_CHANGES=`test -s list.diff && echo 1 || echo 0` >> $GITHUB_ENV
                 cat list.diff
                 echo
             - name:  build

@@ -10,7 +10,7 @@ jobs:
     ping-deps:
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/setup-python@v1
+            - uses: actions/setup-python@v2
             - run: pip install requests
             - uses: actions/checkout@v2
               with:
