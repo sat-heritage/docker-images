@@ -32,15 +32,9 @@ jobs:
               run: |
                 set -ex
                 cat list.diff
-                for x in `cat list.diff`; do
-                    python satex.py build $x
-                done
-            - name: push
-              if: env.HAS_CHANGES == 1
-              run: |
-                set -ex
                 docker login -u "${DOCKER_USERNAME}" -p "${DOCKER_PASSWORD}"
                 for x in `cat list.diff`; do
+                    python satex.py build $x
                     docker push satex/$x
                 done
               env:
