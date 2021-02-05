@@ -16,22 +16,18 @@ jobs:
               with:
                   ref: master
             - run: python satex.py list > list.local
-            - run: python .github/workflows/list-docker-images.py | tee list.docker
+            - run: python .github/workflows/list-docker-images.py > list.docker
               env:
                   DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
                   DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
             - name: diff
               run: |
                 wc -l list.*
-                python -c "new=set(open('list.local').read().splitlines());old=set(open('list.docker').read().splitlines());print(' '.join(list(sorted(new.difference(old)))[:24]),end='')" > list.diff
-                echo HAS_CHANGES=`test -s list.diff && echo 1 || echo 0` >> $GITHUB_ENV
+                python -c "new=set(open('list.local').read().splitlines());old=set(open('list.docker').read().splitlines());print('\n'.join(list(new.difference(old))))" |shuf|head -n 24 > list.diff
                 cat list.diff
-                echo
             - name:  build
-              if: env.HAS_CHANGES == 1
               run: |
                 set -ex
-                cat list.diff
                 docker login -u "${DOCKER_USERNAME}" -p "${DOCKER_PASSWORD}"
                 for x in `cat list.diff`; do
                     python satex.py build $x

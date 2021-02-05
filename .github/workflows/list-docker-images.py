@@ -26,7 +26,8 @@ while next_url:
 for repo in repositories:
     r = get(f"{registry}/v2/repositories/{namespace}/{repo}/tags/?page_size=10000")
     d = r.json()
+    if "results" not in d:
+        print(f"No results for {repo}! {d}")
+        continue
     for t in d["results"]:
         print(f"{repo}:{t['name']}")
-
-
