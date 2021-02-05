@@ -43,13 +43,13 @@
         "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/115-gluH_simp-ChanseokOh.zip"
     },
     "lingeling_587f": {
-        "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/842"
+        "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/123-Lingeling-ArminBiere.zip"
     },
     "lingeling_aqw": {
-        "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/844"
+        "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/124-Lingeling-ArminBiere.zip"
     },
     "minipure": {
-        "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/857"
+        "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/134-minipure-Hsiao-LunWang.zip"
     },
     "mipsat": {
         "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/801",
@@ -63,14 +63,14 @@
         "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/38-Nigma-ChuanJiang_and_TingZhang.zip"
     },
     "relback": {
-        "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/792",
+        "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/79-relback-DjamalHabetandChuMinLi.zip",
         "BUILD_DEPENDS": "libc6-dev-i386 gcc-multilib g++-multilib"
     },
     "riss3g": {
         "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/831"
     },
     "rseq": {
-        "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/890"
+        "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/149-RSeq-DjamalHabetandChuMinLiandJiangHua.zip"
     },
     "sat4j": {
         "BUILD_DEPENDS": "default-jdk",
@@ -169,7 +169,7 @@
         "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/139-glueminisat-HidetomoNabeshima_and_KojiIwanuma_and_KatsumiInoue.zip"
     },
     "lingeling_aqw_drup": {
-        "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/851"
+        "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/129-Lingeling-ArminBiere.zip"
     },
     "minisat_drup": {
         "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/145-minisatDRUP-NiklasEénandNiklasSörensson.zip"
