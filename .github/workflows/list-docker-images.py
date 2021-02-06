@@ -1,6 +1,7 @@
 
 import os
 from requests import get, post
+import sys
 
 registry = "https://hub.docker.com"
 namespace = "satex"
@@ -27,7 +28,7 @@ for repo in repositories:
     r = get(f"{registry}/v2/repositories/{namespace}/{repo}/tags/?page_size=10000")
     d = r.json()
     if "results" not in d:
-        print(f"No results for {repo}! {d}")
+        print(f"No results for {repo}! {d}", file=sys.stderr)
         continue
     for t in d["results"]:
         print(f"{repo}:{t['name']}")
