@@ -3,6 +3,10 @@ import os
 from requests import get, post
 import sys
 
+from ratelimit import *
+
+get = sleep_and_retry(limits(calls=1, period=0.25)(get))
+
 registry = "https://hub.docker.com"
 namespace = "satex"
 

@@ -7,11 +7,11 @@ on:
     - cron: "45 23 * * */2"
 
 jobs:
-    docker-push:
+    docker-sync:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/setup-python@v2
-            - run: pip install requests
+            - run: pip install requests ratelimit
             - uses: actions/checkout@v2
               with:
                   ref: master
