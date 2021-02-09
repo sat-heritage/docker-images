@@ -4,19 +4,19 @@
     "builder":"generic/v1",
     "builder_base":"debian:8.6",
     "bfs-glucose": {
-        "download_url": "http://satcompetition.org/edacc/sc14/solver-download/1438"
+        "download_url": "https://github.com/sat-heritage/sat_competition_2014_sources/raw/master/40-BFS-Glucose-D%C3%A1vidBart%C3%B3kandZolt%C3%A1n%C3%81d%C3%A1mMann.zip"
     },
     "bfs-glucose_mem_16_70": {
-        "download_url": "http://satcompetition.org/edacc/sc14/solver-download/1543"
+        "download_url": "https://github.com/sat-heritage/sat_competition_2014_sources/raw/master/114-BFS-Glucose_mem_16_70-D%C3%A1vidBart%C3%B3kandZolt%C3%A1n%C3%81d%C3%A1mMann.zip"
     },
     "bfs-glucose_mem_32_70": {
-        "download_url": "http://satcompetition.org/edacc/sc14/solver-download/1549"
+        "download_url": "https://github.com/sat-heritage/sat_competition_2014_sources/raw/master/115-BFS-Glucose_mem_32_70-D%C3%A1vidBart%C3%B3kandZolt%C3%A1n%C3%81d%C3%A1mMann.zip"
     },
     "bfs-glucose_mem_8_85": {
-        "download_url": "http://satcompetition.org/edacc/sc14/solver-download/1537"
+        "download_url": "https://github.com/sat-heritage/sat_competition_2014_sources/raw/master/113-BFS-Glucose_mem_8_85-D%C3%A1vidBart%C3%B3kandZolt%C3%A1n%C3%81d%C3%A1mMann.zip"
     },
     "ccanr_glucose": {
-        "download_url": "http://satcompetition.org/edacc/sc14/solver-download/1449"
+        "download_url": "https://github.com/sat-heritage/sat_competition_2014_sources/raw/master/44-CCAnr+glucose-ShaoweiCai_and_ChuanLuo_and_KaileSu.zip"
     },
     "cryptominisat-4.1-st": {
         "download_url": "http://satcompetition.org/edacc/sc14/solver-download/1483"
