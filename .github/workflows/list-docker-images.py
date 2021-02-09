@@ -5,7 +5,7 @@ import sys
 
 from ratelimit import *
 
-get = sleep_and_retry(limits(calls=1, period=0.25)(get))
+get = sleep_and_retry(limits(calls=1, period=0.5)(get))
 
 registry = "https://hub.docker.com"
 namespace = "satex"
