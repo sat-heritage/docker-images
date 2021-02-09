@@ -588,7 +588,7 @@
         "gz": false,
         "name": "march_br"
     },
-    "mipsat_1": {
+    "mipsat-hard_sat": {
         "tracks": [
             "hard-combinatorial"
         ],
@@ -604,7 +604,7 @@
         "gz": true,
         "name": "MIPSat"
     },
-    "mipsat_2": {
+    "mipsat-hard_both_2": {
         "tracks": [
             "hard-combinatorial"
         ],
@@ -736,22 +736,6 @@
         "comments": "Launchcommand was:  ././hyperplane_minisat.sh  <instance> \nTrack was Core solvers, Sequential, Application SAT",
         "gz": true,
         "name": "Doug Hains"
-    },
-    "mipsat_3": {
-        "tracks": [
-            "hard-combinatorial-sat"
-        ],
-        "status": "ok",
-        "args": [
-            "FILECNF",
-            "-tmp",
-            "/tmp"
-        ],
-        "authors": "Sergio N\u00fa\u00f1ez, Daniel Borrajo and Carlos Linares L\u00f3pez",
-        "call": "././solve",
-        "comments": "Launchcommand was:  ././solve  <instance>  -tmp <tempdir> \nTrack was Core solvers, Sequential, Hard-combinatorial SAT",
-        "gz": false,
-        "name": "MIPSat"
     },
     "sparrow-cp3": {
         "tracks": [

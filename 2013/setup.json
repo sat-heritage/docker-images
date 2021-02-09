@@ -52,7 +52,7 @@
         "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/134-minipure-Hsiao-LunWang.zip"
     },
     "mipsat": {
-        "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/801",
+        "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/85-MIPSat-SergioN%C3%BA%C3%B1ez_and_DanielBorrajoandCarlosLinaresL%C3%B3pez.zip",
         "BUILD_DEPENDS": "automake libtool libc6-dev-i386 gcc-multilib g++-multilib",
         "RDEPENDS": "python"
     },
@@ -67,7 +67,7 @@
         "BUILD_DEPENDS": "libc6-dev-i386 gcc-multilib g++-multilib"
     },
     "riss3g": {
-        "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/831"
+        "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/111-Riss3g-NorbertManthey.zip"
     },
     "rseq": {
         "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/149-RSeq-DjamalHabetandChuMinLiandJiangHua.zip"
@@ -122,16 +122,12 @@
     "march_br": {
         "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/10-march_br-MarijnHeule.zip"
     },
-    "mipsat_1": {
-        "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/803",
+    "mipsat-hard_sat": {
+        "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/86-MIPSat-SergioN%C3%BA%C3%B1ez_and_DanielBorrajoandCarlosLinaresL%C3%B3pez.zip",
         "RDEPENDS": "python"
     },
-    "mipsat_2": {
-        "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/804",
-        "RDEPENDS": "python"
-    },
-    "mipsat_3": {
-        "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/802",
+    "mipsat-hard_both_2": {
+        "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/88-MIPSat-SergioN%C3%BA%C3%B1ez_and_DanielBorrajoandCarlosLinaresL%C3%B3pez.zip",
         "RDEPENDS": "python"
     },
     "sattime2013": {
@@ -175,7 +171,7 @@
         "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/145-minisatDRUP-NiklasEénandNiklasSörensson.zip"
     },
     "riss3g-cert": {
-        "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/877"
+        "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/142-Riss3g-NorbertManthey.zip"
     },
     "sat4j_certified": {
         "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/95-SAT4J-DanielLeBerre.zip",
