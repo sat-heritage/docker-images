@@ -1,0 +1,22 @@
+name: docker-sync
+
+on:
+  schedule:
+    - cron: "45 11 * * */3"
+
+jobs:
+    random-builds:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/setup-python@v2
+            - uses: actions/checkout@v2
+              with:
+                  ref: master
+            - run: python satex.py list | shuf | head -n 10 > list
+            - name:  build-and-test
+              run: |
+                set -ex
+                for x in `cat list`; do
+                    python satex.py build $x
+                    python satex.py test $x
+                done
