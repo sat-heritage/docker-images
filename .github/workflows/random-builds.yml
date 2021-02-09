@@ -1,4 +1,4 @@
-name: docker-sync
+name: random-builds
 
 on:
   schedule:
