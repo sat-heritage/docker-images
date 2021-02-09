@@ -8,7 +8,7 @@
         "authors": "D\u00e1vid Bart\u00f3k and Zolt\u00e1n \u00c1d\u00e1m Mann",
         "call": "././BFSglucose",
         "comments": "Launchcommand was:  ././BFSglucose  <instance> \nTrack was Sequential, Application SAT+UNSAT track",
-        "gz": true,
+        "gz": false,
         "name": "BFS-Glucose"
     },
     "bfs-glucose_mem_16_70": {
@@ -20,7 +20,7 @@
         "authors": "D\u00e1vid Bart\u00f3k and Zolt\u00e1n \u00c1d\u00e1m Mann",
         "call": "././BFSglucose",
         "comments": "Launchcommand was:  ././BFSglucose  <instance> \nTrack was Sequential, Application SAT+UNSAT track",
-        "gz": true,
+        "gz": false,
         "name": "BFS-Glucose_mem_16_70"
     },
     "bfs-glucose_mem_32_70": {
@@ -32,7 +32,7 @@
         "authors": "D\u00e1vid Bart\u00f3k and Zolt\u00e1n \u00c1d\u00e1m Mann",
         "call": "././BFSglucose",
         "comments": "Launchcommand was:  ././BFSglucose  <instance> \nTrack was Sequential, Application SAT+UNSAT track",
-        "gz": true,
+        "gz": false,
         "name": "BFS-Glucose_mem_32_70"
     },
     "bfs-glucose_mem_8_85": {
@@ -44,7 +44,7 @@
         "authors": "D\u00e1vid Bart\u00f3k and Zolt\u00e1n \u00c1d\u00e1m Mann",
         "call": "././BFSglucose",
         "comments": "Launchcommand was:  ././BFSglucose  <instance> \nTrack was Sequential, Application SAT+UNSAT track",
-        "gz": true,
+        "gz": false,
         "name": "BFS-Glucose_mem_8_85"
     },
     "ccanr_glucose": {
