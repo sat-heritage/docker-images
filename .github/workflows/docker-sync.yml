@@ -25,7 +25,9 @@ jobs:
                 wc -l list.*
                 python -c "new=set(open('list.local').read().splitlines());old=set(open('list.docker').read().splitlines());print('\n'.join(list(new.difference(old))))" |shuf|head -n 24 > list.diff
                 cat list.diff
+                echo HAS_CHANGES=`test -s list.diff && echo 1 || echo 0` >> $GITHUB_ENV
             - name:  build
+              if: env.HAS_CHANGES == 1
               run: |
                 set -ex
                 docker login -u "${DOCKER_USERNAME}" -p "${DOCKER_PASSWORD}"
