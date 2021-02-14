@@ -312,7 +312,7 @@
         "tracks": [
             "application"
         ],
-        "status": "ok",
+        "status": "not working (sattime missing)",
         "args": [
             "FILECNF",
             "-s",
