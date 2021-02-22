@@ -126,7 +126,7 @@
         "authors": "Jingchao Chen",
         "call": "././gluebit_lgl",
         "comments": "Launchcommand was:  ././gluebit_lgl  <instance> \nTrack was Core solvers, Sequential, Application SAT+UNSAT",
-        "gz": true,
+        "gz": false,
         "name": "gluebit_lgl"
     },
     "glueminisat": {
