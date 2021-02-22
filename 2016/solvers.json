@@ -610,7 +610,7 @@
     },
     "syrup" : {
 	      "tracks": ["parallel"],
-        "status": "ok",
+        "status": "error (Floating point excpetion)",
         "name": "syrup",
         "call": "./glucose-syrup",
         "gz": true,
