@@ -747,7 +747,7 @@
     ]
   },
   "smallsat": {
-    "status" : "ok",
+    "status" : "FIXME: Floating point exception",
     "name": "smallsat",
     "call": "./smallsat",
     "gz": true,

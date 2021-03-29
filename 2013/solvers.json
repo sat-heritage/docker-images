@@ -517,7 +517,7 @@
         "tracks": [
             "hard-combinatorial-cert-unsat"
         ],
-        "status": "ok",
+        "status": "FIXME non-standard returncode",
         "args": [
             "FILECNF"
         ],
