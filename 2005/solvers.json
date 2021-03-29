@@ -343,7 +343,7 @@
     ]
   },
   "satelitegti": {
-    "status": "ok",
+    "status": "FIXME ./solver35: not found",
     "name": "sateliteGTI",
     "call": "./SatELiteGTI",
     "gz": false,

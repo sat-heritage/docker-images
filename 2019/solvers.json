@@ -560,7 +560,7 @@
     ]
   },
   "cmsatv56-walksat-chronobt": {
-    "status" : "ok",
+    "status" : "FIXME no native gz, include cryptominisat5",
     "name": "cmsatv56-walksat-chronobt",
     "call": "./cryptominisat5_simple",
     "gz": true,
