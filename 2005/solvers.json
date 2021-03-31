@@ -226,7 +226,7 @@
     ]
   },
   "march-dl": {
-    "status": "ok",
+    "status": "FIXME segfault",
     "name": "march-dl",
     "call": "./march-dl",
     "gz": false,
