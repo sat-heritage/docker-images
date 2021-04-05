@@ -538,7 +538,7 @@
         "authors": "Jingchao Chen",
         "call": "././gluebit_clasp",
         "comments": "Launchcommand was:  ././gluebit_clasp  <instance> \nTrack was Core solvers, Sequential, Hard-combinatorial SAT",
-        "gz": true,
+        "gz": false,
         "name": "gluebit_clasp"
     },
     "gnovelty-gca": {
