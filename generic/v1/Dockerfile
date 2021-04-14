@@ -83,7 +83,7 @@ COPY setup.json build*.sh fixtures/$SOLVER.*build.sh /
 
 RUN set -ex && if test -f /$SOLVER.pre_build.sh; then bash /$SOLVER.pre_build.sh; fi
 
-RUN set -ex && cd ./`find -maxdepth 1 -mindepth 1 -type d|tail -n1` && \
+RUN set -ex && cd ./`find -maxdepth 1 -mindepth 1 -type d|sort|grep -v __MACOSX|tail -n1` && \
     if test -f /$SOLVER.build.sh; then bash /$SOLVER.build.sh; \
     elif test -f /build.sh; then bash /build.sh; \
     elif test -f starexec_build; then bash starexec_build;\
