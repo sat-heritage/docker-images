@@ -255,7 +255,7 @@
         "authors": "Chuan Jiang, Ting Zhang",
         "call": "./nigma",
         "comments": "Launchcommand was:  ./nigma  <instance>  --verbose --display-assignments-if-sat --partial-backtracking --preprocessing-timeout 200\nTrack was Core solvers, Sequential, Application SAT+UNSAT",
-        "gz": true,
+        "gz": false,
         "name": "Nigma"
     },
     "nigma-nopb": {
