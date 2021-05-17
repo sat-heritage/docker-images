@@ -618,7 +618,7 @@
         "authors": "Jingchao Chen",
         "call": ".//glueSplit_clasp",
         "comments": "Launchcommand was:  .//glueSplit_clasp  <instance> \nTrack was Sequential, Hard-combinatorial SAT track",
-        "gz": true,
+        "gz": false,
         "name": "glueSplit_clasp"
     },
     "balancedz": {
