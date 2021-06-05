@@ -161,14 +161,14 @@
         "download_url": "https://github.com/sat-heritage/sat_competition_2014_sources/raw/master/130-Ncca+-DjamalHabet_and_DoniaToumi_and_Andr%C3%A9Abram%C3%A9.zip"
     },
     "probsat": {
-        "download_url": "https://github.com/sat-heritage/sat_competition_2014_sources/raw/master/119-probSAT-AdrianBalint_and_UweSchöning.zip"
+        "download_url": "https://github.com/sat-heritage/sat_competition_2014_sources/raw/master/119-probSAT-AdrianBalint_and_UweSch%C3%B6ning.zip"
     },
     "yalsat": {
         "download_url": "https://github.com/sat-heritage/sat_competition_2014_sources/raw/master/83-YalSAT-ArminBiere.zip"
     },
     "pprobsat": {
         "RDEPENDS" : "python",
-        "download_url": "https://github.com/sat-heritage/sat_competition_2014_sources/raw/master/120-pprobSAT-AdrianBalint_and_UweSchöning.zip"
+        "download_url": "https://github.com/sat-heritage/sat_competition_2014_sources/raw/master/120-pprobSAT-AdrianBalint_and_UweSch%C3%B6ning.zip"
     },
     "glucose_certified_unsat": {
         "download_url": "https://github.com/sat-heritage/sat_competition_2014_sources/raw/master/139-glucose(certifiedunsat)-GillesAudemardandLaurentSimon.zip"
