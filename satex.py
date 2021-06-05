@@ -759,6 +759,10 @@ def download_src(args):
                 error(f"{image.name}: error while downloading {src_url} ({e})",
                         exit=False)
 
+            except Exception as e:
+                error(f"{image.name}: error while downloading {src_url} ({type(e)} {e})",
+                        exit=False)
+
 
 def print_version(args):
     print(__version__)
