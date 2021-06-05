@@ -732,6 +732,8 @@ def download_src(args):
         src_urls = setup["download_url"].format(**image.vars)
         src_urls = brace_expand(src_urls)
         for src_url in src_urls:
+            if args.subdir_entry:
+                os.makedirs(os.path.join(args.output_dir, str(image.entry)), exist_ok=True)
             try:
                 with urlopen(src_url) as fp:
                     if "Content-Disposition" in fp.headers:
@@ -739,6 +741,10 @@ def download_src(args):
                         raise NotImplementedError
                     else:
                         filename = os.path.basename(src_url)
+
+                    if args.subdir_entry:
+                        filename = os.path.join(str(image.entry), filename)
+                    filename = os.path.join(args.output_dir, filename)
                     if os.path.exists(filename) and not args.overwrite:
                         error(f"{image.name}: {filename} already exists. Use --overwrite option to overwrite it")
                     print(f"{image.name}: downloading to {filename}...", end="", flush=True)
@@ -907,6 +913,8 @@ def main(redirected=False):
                 parents=[spec_parser])
         p.add_argument("output_dir", help="Output directory")
         p.add_argument("--overwrite", help="Allow writing over existing files",
+                action="store_true", default=False)
+        p.add_argument("--subdir-entry", help="Output in sub-directory named as the entry (year)",
                 action="store_true", default=False)
         p.set_defaults(func=download_src)
 
