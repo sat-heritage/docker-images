@@ -1313,7 +1313,7 @@
         "tracks": [
             "parallel"
         ],
-        "status": "ok",
+        "status": "FIXME cnf parse error (see https://github.com/sat-heritage/docker-images/issues/26)",
         "args": [
             "FILECNF"
         ],
