@@ -19,6 +19,7 @@ import tarfile
 import tempfile
 import textwrap
 import time
+from urllib.error import HTTPError
 from urllib.request import urlopen
 
 __version__ = "1.2.1-dev"
@@ -687,6 +688,72 @@ def dependencies(args):
         if args.pull:
             prepare_image(args, docker_argv, image)
 
+def download_src(args):
+    def brace_expand(s):
+        """
+        Bash-like brace+comma expansion
+        Source: https://rosettacode.org/wiki/Brace_expansion
+        """
+        def getitem(s, depth=0):
+            out = [""]
+            while s:
+                c = s[0]
+                if depth and (c == ',' or c == '}'):
+                    return out,s
+                if c == '{':
+                    x = getgroup(s[1:], depth+1)
+                    if x:
+                        out,s = [a+b for a in out for b in x[0]], x[1]
+                        continue
+                if c == '\\' and len(s) > 1:
+                    s, c = s[1:], c + s[1]
+                out, s = [a+c for a in out], s[1:]
+            return out,s
+
+        def getgroup(s, depth):
+            out, comma = [], False
+            while s:
+                g,s = getitem(s, depth)
+                if not s: break
+                out += g
+                if s[0] == '}':
+                    if comma: return out, s[1:]
+                    return ['{' + a + '}' for a in out], s[1:]
+                if s[0] == ',':
+                    comma,s = True, s[1:]
+            return None
+        return getitem(s)[0]
+
+    os.makedirs(args.output_dir, exist_ok=True)
+    repo = Repository(args)
+    for name in repo.images:
+        image = ImageManager(name, repo)
+        setup = image.setup
+        src_urls = setup["download_url"].format(**image.vars)
+        src_urls = brace_expand(src_urls)
+        for src_url in src_urls:
+            try:
+                with urlopen(src_url) as fp:
+                    if "Content-Disposition" in fp.headers:
+                        print(fp.headers)
+                        raise NotImplementedError
+                    else:
+                        filename = os.path.basename(src_url)
+                    if os.path.exists(filename) and not args.overwrite:
+                        error(f"{image.name}: {filename} already exists. Use --overwrite option to overwrite it")
+                    print(f"{image.name}: downloading to {filename}...", end="", flush=True)
+                    with open(filename, "wb") as dest:
+                        dest.write(fp.read())
+                    print(green("ok"))
+
+            except HTTPError as e:
+                error(f"{image.name}: error while downloading {src_url} ({e})",
+                        exit=False)
+            except Exception as e:
+                error(f"{image.name}: error while downloading {src_url} ({e})",
+                        exit=False)
+
+
 def print_version(args):
     print(__version__)
 #
@@ -834,6 +901,14 @@ def main(redirected=False):
         p.add_argument("--pull", action="store_true",
                 help="pull images")
         p.set_defaults(func=dependencies)
+
+        p = subparsers.add_parser("fetch-sources",
+                help=f"Fetch solver sources",
+                parents=[spec_parser])
+        p.add_argument("output_dir", help="Output directory")
+        p.add_argument("--overwrite", help="Allow writing over existing files",
+                action="store_true", default=False)
+        p.set_defaults(func=download_src)
 
 
     subparsers.add_parser("version",
