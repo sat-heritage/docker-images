@@ -168,7 +168,7 @@
         "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/129-Lingeling-ArminBiere.zip"
     },
     "minisat_drup": {
-        "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/145-minisatDRUP-NiklasEénandNiklasSörensson.zip"
+        "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/145-minisatDRUP-NiklasE%C3%A9nandNiklasS%C3%B6rensson.zip"
     },
     "riss3g-cert": {
         "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/142-Riss3g-NorbertManthey.zip"
@@ -212,7 +212,7 @@
         "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/148-Ncca+-DjamalHabetandDoniaToumiandAndr%C3%A9Abram%C3%A9.zip"
     },
     "probsat": {
-        "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/18-probSAT-AdrianBalint_and_UweSchöning.zip"
+        "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/18-probSAT-AdrianBalint_and_UweSch%C3%B6ning.zip"
     },
     "vflipnum": {
         "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/26-vflipnum-JingchaoChenandYuyangHuang.zip"
@@ -246,14 +246,14 @@
         "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/110-pcasso-AhmedIrfan_and_DavideLanti_and_NorbertManthey.zip"
     },
     "penelope": {
-        "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/67-PeneLoPe-GillesAudemard_and_BenoîtHoessen_and_SaïdJabbour_and_Jean-MarieLagniez_and_CédricPiette.zip",
+        "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/67-PeneLoPe-GillesAudemard_and_Beno%C3%AEtHoessen_and_Sa%C3%AFdJabbour_and_Jean-MarieLagniez_and_C%C3%A9dricPiette.zip",
         "BUILD_DEPENDS": "g++-multilib"
     },
     "plingeling": {
         "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/126-Plingeling-ArminBiere.zip"
     },
     "pmcsat": {
-        "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/130-pmcSAT-RicardoMarques_and_LuísGuerraeSilva_and_PauloFloresandLuísMiguelSilveira.zip"
+        "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/130-pmcSAT-RicardoMarques_and_Lu%C3%ADsGuerraeSilva_and_PauloFloresandLu%C3%ADsMiguelSilveira.zip"
     },
     "sat4j_parallel": {
         "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/95-SAT4J-DanielLeBerre.zip",
