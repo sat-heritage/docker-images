@@ -4,6 +4,7 @@
 # MIT License
 
 import argparse
+import cgi
 import fnmatch
 import json
 import glob
@@ -737,10 +738,12 @@ def download_src(args):
             try:
                 with urlopen(src_url) as fp:
                     if "Content-Disposition" in fp.headers:
-                        print(fp.headers)
-                        raise NotImplementedError
+                        _, params = cgi.parse_header(fp.headers["Content-Disposition"])
+                        filename = params['filename']
                     else:
                         filename = os.path.basename(src_url)
+                        if "?" in filename:
+                            filename = filename.split("?")[0]
 
                     if args.subdir_entry:
                         filename = os.path.join(str(image.entry), filename)
@@ -753,9 +756,6 @@ def download_src(args):
                     print(green("ok"))
 
             except HTTPError as e:
-                error(f"{image.name}: error while downloading {src_url} ({e})",
-                        exit=False)
-            except Exception as e:
                 error(f"{image.name}: error while downloading {src_url} ({e})",
                         exit=False)
 
