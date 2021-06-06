@@ -754,6 +754,8 @@ def download_src(args):
                     with open(filename, "wb") as dest:
                         dest.write(fp.read())
                     print(green("ok"))
+                    if "zenodo.org" in src_url:
+                        time.sleep(0.5)
 
             except HTTPError as e:
                 error(f"{image.name}: error while downloading {src_url} ({e})",
