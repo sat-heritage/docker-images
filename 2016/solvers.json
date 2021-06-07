@@ -218,7 +218,7 @@
     },
     "splatz06vmain": {
 	      "tracks": ["main"],
-        "status": "ok",
+        "status": "FIXME CNF parsing error (https://github.com/sat-heritage/docker-images/issues/27)",
         "name": "Splatz06vmain",
         "call": "./splatz",
         "gz": true,
