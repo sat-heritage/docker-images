@@ -39,6 +39,9 @@
         "builder": "generic/v1",
         "download_url": "https://baldur.iti.kit.edu/sat-competition-2017/solvers/parallel/{SOLVER_NAME}.zip"
     },
+    "riss7": {
+        "builder": "generic/v1"
+    },
     "scalope" : {
         "builder": "generic/v1",
         "download_url": "https://baldur.iti.kit.edu/sat-competition-2017/solvers/parallel/{SOLVER_NAME}.zip"
