@@ -273,7 +273,7 @@
         "authors": "Chuan Jiang, Ting Zhang",
         "call": "./nigma",
         "comments": "Launchcommand was:  ./nigma  <instance>  --verbose --display-assignments-if-sat --preprocessing-timeout 200\nTrack was Core solvers, Sequential, Application SAT+UNSAT",
-        "gz": true,
+        "gz": false,
         "name": "Nigma-NoPB"
     },
     "relback": {
@@ -891,7 +891,7 @@
         "authors": "Chuan Jiang, Ting Zhang",
         "call": "./nigma",
         "comments": "Launchcommand was:  ./nigma  <instance>  --verbose --display-assignments-if-sat --output-drup-if-unsat --partial-backtracking --preprocessing-timeout 200\nTrack was Core solvers, Sequential, Application certified UNSAT",
-        "gz": true,
+        "gz": false,
         "name": "Nigma-DRUP"
     },
     "nigma-nopb-drup": {
@@ -910,7 +910,7 @@
         "authors": "Chuan Jiang, Ting Zhang",
         "call": "./nigma",
         "comments": "Launchcommand was:  ./nigma  <instance>  --verbose --display-assignments-if-sat --output-drup-if-unsat --preprocessing-timeout 200\nTrack was Core solvers, Sequential, Application certified UNSAT",
-        "gz": true,
+        "gz": false,
         "name": "Nigma-NoPB-DRUP"
     },
     "balancedz_1": {
