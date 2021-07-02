@@ -563,7 +563,7 @@
     "status" : "FIXME no native gz, include cryptominisat5",
     "name": "cmsatv56-walksat-chronobt",
     "call": "./cryptominisat5_simple",
-    "gz": true,
+    "gz": false,
     "args": [
       "--sls=walksat",
       "--bva=1",
@@ -580,7 +580,7 @@
     "status" : "ok",
     "name": "cmsatv56-walksat",
     "call": "./cryptominisat5_simple",
-    "gz": true,
+    "gz": false,
     "args": [
       "FILECNF",
       "--sls=walksat",
@@ -597,7 +597,7 @@
     "status" : "ok",
     "name": "cmsatv56-yalsat-chronobt",
     "call": "./cryptominisat5_simple",
-    "gz": true,
+    "gz": false,
     "args": [
       "FILECNF",
       "--sls=yalsat",
@@ -614,7 +614,7 @@
     "status" : "ok",
     "name": "cmsatv56-yalsat",
     "call": "./cryptominisat5_simple",
-    "gz": true,
+    "gz": false,
     "args": [
       "FILECNF",
       "--sls=yalsat",
