@@ -129,18 +129,6 @@
         "gz": true,
         "name": "glueminisat"
     },
-    "glueminisat_1": {
-	      "tracks" : ["application", "crafted"],
-        "status":"ok",
-        "args": [
-            "FILECNF"
-        ],
-        "authors": "Hidetomo Nabeshima, Koji Iwanuma, Katsumi Inoue",
-        "call": ".//glueminisat-simp",
-        "comments": "Launchcommand was:  ./glueminisat-simp   <instance> \nTrack was Sequential, Application SAT+UNSAT track",
-        "gz": true,
-        "name": "glueminisat"
-    },
     "lingeling": {
 	      "tracks" : ["application", "crafted"],
         "status": "ok",

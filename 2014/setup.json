@@ -33,9 +33,6 @@
     "glueminisat": {
         "download_url": "https://github.com/sat-heritage/sat_competition_2014_sources/raw/master/135-glueminisat-HidetomoNabeshima_and_KojiIwanuma_and_KatsumiInoue.zip"
     },
-    "glueminisat_1": {
-        "download_url": "http://satcompetition.org/edacc/sc14/solver-download/1630"
-    },
     "lingeling": {
         "download_url": "https://github.com/sat-heritage/sat_competition_2014_sources/raw/master/92-Lingeling-ArminBiere.zip"
     },
