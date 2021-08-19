@@ -1,0 +1,18 @@
+{
+  "cadical-hack-gb": {
+    "status": "ok",
+    "name": "cadical-hack-gb",
+    "call": "./cadical",
+    "tracks": [
+      "main"
+    ],
+    "gz": true,
+    "args": [
+      "FILECNF"
+    ],
+    "argsproof": [
+      "FILECNF",
+      "FILEPROOF"
+    ]
+  }
+}

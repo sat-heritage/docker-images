@@ -36,7 +36,8 @@ RUN apt-get update --fix-missing && \
     apt-get install -y --no-install-recommends \
         ca-certificates\
         curl\
-        unzip
+        unzip\
+        xz-utils
 
 WORKDIR /assets
 
@@ -55,6 +56,7 @@ RUN ASSET="$(ls /assets/*)" && set -ex && \
         if [ "${b##*.}" = "tar" ]; then ext="tar.${ext}" && b="${b%.*}"; fi; \
         case "${ext}" in \
         tgz|tar.gz) tar xvzf "${ASSET}";; \
+        tar.xz) tar xJf "${ASSET}";; \
         zip) unzip "${ASSET}";; \
          *) echo "Unknown archive type!" && exit 1;; esac; fi
 
@@ -88,9 +90,9 @@ RUN set -ex && cd ./`find -maxdepth 1 -mindepth 1 -type d|sort|grep -v __MACOSX|
     elif test -f /build.sh; then bash /build.sh; \
     elif test -f starexec_build; then bash starexec_build;\
     elif test -f build.sh; then bash build.sh;\
+    elif test -x configure; then ./configure && make && rm -f configure mkconfig;\
     elif test -f Makefile -o -f makefile; then make;\
     elif test -x compile; then sh compile;\
-    elif test -x configure; then ./configure && make && rm -f configure mkconfig;\
     else echo "did not found any building tool"; exit 1; fi
 
 RUN set -ex && if test -f /$SOLVER.post_build.sh; then bash /$SOLVER.post_build.sh; fi
@@ -102,6 +104,7 @@ RUN set -ex && mkdir /dist && cd ./`find -maxdepth 1 -mindepth 1 -type d|tail -n
     elif test -f /install.sh; then bash /install.sh; \
     elif test -d binary; then mv -v binary/* /dist/; \
     elif test -d bin; then mv -v bin/* /dist/; \
+    elif test -d build; then mv build/* /dist/; \
     else find -type f -maxdepth 1 -name '*.ini' -exec mv -v {} /dist/{} \;; \
         if find -perm /100 -type f -maxdepth 1 -exec mv -v {} /dist/{} \;; then : ; \
         else find -perm +100 -type f -maxdepth 1 -exec mv -v {} /dist/{} \;; fi; fi
