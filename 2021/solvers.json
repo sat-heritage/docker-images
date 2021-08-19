@@ -14,5 +14,117 @@
       "FILECNF",
       "FILEPROOF"
     ]
+  },
+  "cadical-less-up": {
+    "status": "ok",
+    "name": "cadical-less-UP",
+    "call": "./cadical",
+    "tracks": [
+      "main"
+    ],
+    "gz": true,
+    "args": [
+      "FILECNF"
+    ],
+    "argsproof": [
+      "FILECNF",
+      "FILEPROOF"
+    ]
+  },
+  "cadical-pripro": {
+    "status": "ok",
+    "name": "cadical-PriPro",
+    "call": "./cadical",
+    "tracks": [
+      "main"
+    ],
+    "gz": true,
+    "args": [
+      "FILECNF"
+    ],
+    "argsproof": [
+      "FILECNF",
+      "FILEPROOF"
+    ]
+  },
+  "cadical-pripro_no_bin": {
+    "status": "ok",
+    "name": "cadical-PriPro_no_bin",
+    "call": "./cadical",
+    "tracks": [
+      "main"
+    ],
+    "gz": true,
+    "args": [
+      "FILECNF"
+    ],
+    "argsproof": [
+      "FILECNF",
+      "FILEPROOF"
+    ]
+  },
+  "cadical-rp": {
+    "status": "ok",
+    "name": "cadical-rp",
+    "call": "./cadical",
+    "tracks": [
+      "main"
+    ],
+    "gz": true,
+    "args": [
+      "FILECNF"
+    ],
+    "argsproof": [
+      "FILECNF",
+      "FILEPROOF"
+    ]
+  },
+  "cadical-sc2021": {
+    "status": "ok",
+    "name": "cadical-sc2021",
+    "call": "./cadical",
+    "tracks": [
+      "main"
+    ],
+    "gz": true,
+    "args": [
+      "FILECNF"
+    ],
+    "argsproof": [
+      "FILECNF",
+      "FILEPROOF"
+    ]
+  },
+  "cadical_scavel01": {
+    "status": "fixme",
+    "name": "Cadical_SCAVEL01",
+    "call": "./cadical",
+    "tracks": [
+      "main"
+    ],
+    "gz": true,
+    "args": [
+      "FILECNF"
+    ],
+    "argsproof": [
+      "FILECNF",
+      "FILEPROOF"
+    ]
+  },
+  "cadical_scavel02": {
+    "status": "fixme",
+    "name": "Cadical_SCAVEL02",
+    "call": "./cadical",
+    "tracks": [
+      "main"
+    ],
+    "gz": true,
+    "args": [
+      "FILECNF"
+    ],
+    "argsproof": [
+      "FILECNF",
+      "FILEPROOF"
+    ]
   }
 }
