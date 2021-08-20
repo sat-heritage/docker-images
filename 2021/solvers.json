@@ -562,7 +562,7 @@
     ]
   },
   "slime": {
-    "status": "ok",
+    "status": "unstable",
     "name": "SLIME",
     "call": "./glucose",
     "tracks": [
