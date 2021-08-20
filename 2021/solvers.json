@@ -302,5 +302,137 @@
       "FILECNF",
       "FILEPROOF"
     ]
+  },
+  "lstech_maple": {
+    "status": "ok",
+    "name": "lstech_maple",
+    "call": "./glucose",
+    "tracks": [
+      "main"
+    ],
+    "gz": true,
+    "args": [
+      "FILECNF"
+    ],
+    "argsproof": [
+      "FILECNF",
+      "-drup-file=FILEPROOF"
+    ]
+  },
+  "maplessv": {
+    "status": "unstable",
+    "name": "mapleSSV",
+    "call": "./glucose",
+    "tracks": [
+      "main"
+    ],
+    "gz": true,
+    "args": [
+      "FILECNF"
+    ],
+    "argsproof": [
+      "FILECNF",
+      "-drup-file=FILEPROOF"
+    ]
+  },
+  "maple_mbdr_bjl7_local": {
+    "status": "ok",
+    "name": "Maple_MBDR_BJL7_Local",
+    "call": "./glucose",
+    "tracks": [
+      "main"
+    ],
+    "gz": true,
+    "args": [
+      "FILECNF"
+    ],
+    "argsproof": [
+      "FILECNF",
+      "-drup-file=FILEPROOF"
+    ]
+  },
+  "maple_mbdr_cent_perm_10k": {
+    "status": "ok",
+    "name": "Maple_MBDR_Cent_PERM_10K",
+    "call": "./glucose",
+    "tracks": [
+      "main"
+    ],
+    "gz": true,
+    "args": [
+      "FILECNF"
+    ],
+    "argsproof": [
+      "FILECNF",
+      "-drup-file=FILEPROOF"
+    ]
+  },
+  "maple_mbdr_cent_perm_75k": {
+    "status": "ok",
+    "name": "Maple_MBDR_Cent_PERM_75K",
+    "call": "./glucose",
+    "tracks": [
+      "main"
+    ],
+    "gz": true,
+    "args": [
+      "FILECNF"
+    ],
+    "argsproof": [
+      "FILECNF",
+      "-drup-file=FILEPROOF"
+    ]
+  },
+  "maple_simp21": {
+    "status": "ok",
+    "name": "maple_simp21",
+    "call": "./glucose",
+    "tracks": [
+      "main"
+    ],
+    "gz": true,
+    "args": [
+      "FILECNF"
+    ],
+    "argsproof": [
+      "FILECNF",
+      "-drup-file=FILEPROOF"
+    ]
+  },
+  "optsat_m21": {
+    "status": "ok",
+    "name": "optsat_m21",
+    "call": "./glucose",
+    "tracks": [
+      "main"
+    ],
+    "gz": true,
+    "args": [
+      "FILECNF"
+    ],
+    "argsproof": [
+      "FILECNF",
+       "FILECNF",
+      "-certified",
+      "-certified-output=FILEPROOF"
+    ]
+  },
+  "optsat_r21": {
+    "status": "ok",
+    "name": "optsat_R21",
+    "call": "./glucose",
+    "tracks": [
+      "main"
+    ],
+    "gz": true,
+    "args": [
+      "FILECNF"
+    ],
+    "argsproof": [
+      "FILECNF",
+      "-certified",
+      "-certified-output=FILEPROOF"
+    ]
   }
 }
+
