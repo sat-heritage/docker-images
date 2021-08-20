@@ -96,7 +96,7 @@
     ]
   },
   "cadical_scavel01": {
-    "status": "fixme",
+    "status": "ok",
     "name": "Cadical_SCAVEL01",
     "call": "./cadical",
     "tracks": [
@@ -112,9 +112,185 @@
     ]
   },
   "cadical_scavel02": {
-    "status": "fixme",
+    "status": "ok",
     "name": "Cadical_SCAVEL02",
     "call": "./cadical",
+    "tracks": [
+      "main"
+    ],
+    "gz": true,
+    "args": [
+      "FILECNF"
+    ],
+    "argsproof": [
+      "FILECNF",
+      "FILEPROOF"
+    ]
+  },
+  "cleanmaple": {
+    "status": "ok",
+    "name": "CleanMaple",
+    "call": "./cleanmaple",
+    "tracks": [
+      "main"
+    ],
+    "gz": true,
+    "args": [
+      "FILECNF"
+    ],
+    "argsproof": [
+      "FILECNF",
+      "-drup-file=FILEPROOF"
+    ]
+  },
+  "cleanmaple_pripro": {
+    "status": "ok",
+    "name": "CleanMaple_PriPro",
+    "call": "./cleanmaple",
+    "tracks": [
+      "main"
+    ],
+    "gz": true,
+    "args": [
+      "FILECNF"
+    ],
+    "argsproof": [
+      "FILECNF",
+      "-drup-file=FILEPROOF"
+    ]
+  },
+  "cms_expV_gbL": {
+    "status": "unstable",
+    "name": "cms_expV_gbL",
+    "call": "./cleanmaple",
+    "tracks": [
+      "main"
+    ],
+    "gz": true,
+    "args": [
+      "FILECNF"
+    ],
+    "argsproof": [
+      "FILECNF",
+      "-drup-file=FILEPROOF"
+    ]
+  },
+  "hcad": {
+    "status": "ok",
+    "name": "hCaD",
+    "call": "./cadical",
+    "tracks": [
+      "main"
+    ],
+    "gz": true,
+    "args": [
+      "FILECNF"
+    ],
+    "argsproof": [
+      "FILECNF",
+      "FILEPROOF"
+    ]
+  },
+    "hkis": {
+    "status": "ok",
+    "name": "hKiS",
+    "call": "./kissat",
+    "tracks": [
+      "main"
+    ],
+    "gz": true,
+    "args": [
+      "FILECNF"
+    ],
+    "argsproof": [
+      "FILECNF",
+      "FILEPROOF"
+    ]
+  },
+    "kissat-mab": {
+    "status": "ok",
+    "name": "kissat-MAB",
+    "call": "./kissat",
+    "tracks": [
+      "main"
+    ],
+    "gz": true,
+    "args": [
+      "FILECNF"
+    ],
+    "argsproof": [
+      "FILECNF",
+      "FILEPROOF"
+    ]
+  },
+    "kissat-sat_crvr_gb": {
+    "status": "ok",
+    "name": "kissat-sat_crvr_gb",
+    "call": "./kissat",
+    "tracks": [
+      "main"
+    ],
+    "gz": true,
+    "args": [
+      "FILECNF"
+    ],
+    "argsproof": [
+      "FILECNF",
+      "FILEPROOF"
+    ]
+  },
+    "kissat-sc2021": {
+    "status": "ok",
+    "name": "kissat-sc2021",
+    "call": "./kissat",
+    "tracks": [
+      "main"
+    ],
+    "gz": true,
+    "args": [
+      "FILECNF"
+    ],
+    "argsproof": [
+      "FILECNF",
+      "FILEPROOF"
+    ]
+  },
+    "kissat_bonus": {
+    "status": "ok",
+    "name": "kissat_bonus",
+    "call": "./kissat",
+    "tracks": [
+      "main"
+    ],
+    "gz": true,
+    "args": [
+      "FILECNF"
+    ],
+    "argsproof": [
+      "FILECNF",
+      "FILEPROOF"
+    ]
+  },
+    "kissat_cf": {
+    "status": "ok",
+    "name": "kissat_cf",
+    "call": "./kissat",
+    "tracks": [
+      "main"
+    ],
+    "gz": true,
+    "args": [
+      "FILECNF"
+    ],
+    "argsproof": [
+      "FILECNF",
+      "FILEPROOF"
+    ]
+  },
+    "kissat_gb": {
+    "status": "ok",
+    "name": "kissat_gb",
+    "call": "./kissat",
     "tracks": [
       "main"
     ],
