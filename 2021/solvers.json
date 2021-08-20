@@ -412,7 +412,6 @@
     ],
     "argsproof": [
       "FILECNF",
-       "FILECNF",
       "-certified",
       "-certified-output=FILEPROOF"
     ]
@@ -432,6 +431,150 @@
       "FILECNF",
       "-certified",
       "-certified-output=FILEPROOF"
+    ]
+  },
+  "parafrost-nomdm-sc2021": {
+    "status": "ok",
+    "name": "parafrost-nomdm-sc2021",
+    "call": "./release/parafrost",
+    "tracks": [
+      "main"
+    ],
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ],
+    "argsproof": [
+      "FILECNF",
+      "--proofout=FILEPROOF"
+    ]
+  },
+  "parafrost-sc2021": {
+    "status": "ok",
+    "name": "parafrost-sc2021",
+    "call": "./release/parafrost",
+    "tracks": [
+      "main"
+    ],
+    "gz": false,
+    "args": [
+      "FILECNF"
+    ],
+    "argsproof": [
+      "FILECNF",
+      "--proofout=FILEPROOF"
+    ]
+  },
+  "relaxed_lcftp": {
+    "status": "ok",
+    "name": "Relaxed_LCFTP",
+    "call": "./glucose",
+    "tracks": [
+      "main"
+    ],
+    "gz": true,
+    "args": [
+      "FILECNF"
+    ],
+    "argsproof": [
+      "FILECNF",
+      "-drup-file=FILEPROOF"
+    ]
+  },
+  "relaxed_lcftp_v2": {
+    "status": "ok",
+    "name": "Relaxed_LCFTP_V2",
+    "call": "./glucose",
+    "tracks": [
+      "main"
+    ],
+    "gz": true,
+    "args": [
+      "FILECNF"
+    ],
+    "argsproof": [
+      "FILECNF",
+      "-drup-file=FILEPROOF"
+    ]
+  },
+  "relaxed_lcftp_v3": {
+    "status": "ok",
+    "name": "Relaxed_LCFTP_V3",
+    "call": "./glucose",
+    "tracks": [
+      "main"
+    ],
+    "gz": true,
+    "args": [
+      "FILECNF"
+    ],
+    "argsproof": [
+      "FILECNF",
+      "-drup-file=FILEPROOF"
+    ]
+  },
+  "relaxed_lcmdcmdl_blb": {
+    "status": "ok",
+    "name": "Relaxed_LCMDCBDL_BLB",
+    "call": "./glucose",
+    "tracks": [
+      "main"
+    ],
+    "gz": true,
+    "args": [
+      "FILECNF"
+    ],
+    "argsproof": [
+      "FILECNF",
+      "-drup-file=FILEPROOF"
+    ]
+  },
+  "relaxed_lcmdcmdl_scavel01": {
+    "status": "ok",
+    "name": "Relaxed_LCMDCBDL_SCAVEL01",
+    "call": "./glucose",
+    "tracks": [
+      "main"
+    ],
+    "gz": true,
+    "args": [
+      "FILECNF"
+    ],
+    "argsproof": [
+      "FILECNF",
+      "-drup-file=FILEPROOF"
+    ]
+  },
+  "relaxed_lcmdcmdl_scavel02": {
+    "status": "ok",
+    "name": "Relaxed_LCMDCBDL_SCAVEL02",
+    "call": "./glucose",
+    "tracks": [
+      "main"
+    ],
+    "gz": true,
+    "args": [
+      "FILECNF"
+    ],
+    "argsproof": [
+      "FILECNF",
+      "-drup-file=FILEPROOF"
+    ]
+  },
+  "slime": {
+    "status": "ok",
+    "name": "SLIME",
+    "call": "./glucose",
+    "tracks": [
+      "main"
+    ],
+    "gz": true,
+    "args": [
+      "FILECNF"
+    ],
+    "argsproof": [
+      "FILECNF",
+      "-drup-file=FILEPROOF"
     ]
   }
 }

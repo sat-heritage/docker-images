@@ -3,5 +3,11 @@
     "base_from": "debian:stretch-slim",
     "builder": "generic/v1",
     "builder_base": "debian:10.1-slim",
-    "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2021-competition/{SOLVER_NAME}.tar.xz"
+    "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2021-competition/{SOLVER_NAME}.tar.xz",
+    "parafrost-nomdm-sc2021": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2021-competition/parafrost-nomdm-sc2021.zip"
+    },
+    "parafrost-sc2021": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2021-competition/parafrost-sc2021.zip"
+    }
 }
