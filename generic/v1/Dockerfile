@@ -87,6 +87,7 @@ RUN set -ex && if test -f /$SOLVER.pre_build.sh; then bash /$SOLVER.pre_build.sh
 
 RUN set -ex && cd ./`find -maxdepth 1 -mindepth 1 -type d|sort|grep -v __MACOSX|tail -n1` && \
     if test -f /$SOLVER.build.sh; then bash /$SOLVER.build.sh; \
+    elif test -f /src/build.sh; then cd /src && bash ./build.sh; \
     elif test -f /build.sh; then bash /build.sh; \
     elif test -f /src/configure; then cd /src && ./configure && make ; \
     elif test -f starexec_build; then bash starexec_build;\

@@ -1,0 +1,1 @@
+mkdir /src/bin

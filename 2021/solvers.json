@@ -562,19 +562,19 @@
     ]
   },
   "slime": {
-    "status": "unstable",
+    "status": "ok",
     "name": "SLIME",
-    "call": "./glucose",
+    "call": "./slime",
     "tracks": [
       "main"
     ],
-    "gz": true,
+    "gz": false,
     "args": [
       "FILECNF"
     ],
     "argsproof": [
       "FILECNF",
-      "-drup-file=FILEPROOF"
+      "FILEPROOF"
     ]
   }
 }
