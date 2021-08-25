@@ -12,7 +12,7 @@ jobs:
             - uses: actions/checkout@v2
               with:
                   ref: master
-            - run: python satex.py list | shuf | head -n 10 > list
+            - run: python satex.py list | grep -v ':2018' | shuf | head -n 10 > list
             - name:  build-and-test
               run: |
                 set -ex
