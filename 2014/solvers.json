@@ -249,7 +249,7 @@
         "authors": "Chuan Jiang, Gianfranco Ciardo",
         "call": ".//nigma",
         "comments": "Launchcommand was:  .//nigma  <instance>  --display-assignments-if-sat --partial-backtracking --elimination-timeout 100 --probing-timeout 100\nTrack was Sequential, Application SAT+UNSAT track",
-        "gz": true,
+        "gz": false,
         "name": "Nigma"
     },
     "ntusat": {
