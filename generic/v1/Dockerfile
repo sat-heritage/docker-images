@@ -69,7 +69,7 @@ FROM ${BUILDER_BASE}
 ENV LANG=C.UTF-8 LC_ALL=C.UTF-8
 
 RUN apt-get update --fix-missing &&\
-    apt-get -y install zip gcc g++ cmake make patch curl zlib1g-dev
+    apt-get -y install zip gcc g++ cmake make patch curl xz-utils zlib1g-dev
 
 ARG BUILD_DEPENDS
 RUN if test "${BUILD_DEPENDS}"; then \
