@@ -1068,7 +1068,7 @@
         "authors": "Jingchao Chen and Yuyang Huang",
         "call": "././vflipnum",
         "comments": "Launchcommand was:  ././vflipnum  <instance>   <seed> \nTrack was Core solvers, Sequential, Random SAT",
-        "gz": true,
+        "gz": false,
         "name": "vflipnum"
     },
     "walksatlm2013": {
