@@ -1,57 +1,16 @@
 {
     "base_version": "v1",
     "base_from": "debian:stretch-slim",
-    "builder": "generic/starexec",
+    "builder": "generic/v1",
     "builder_base": "debian:9.1",
-    "download_url": "https://baldur.iti.kit.edu/sat-competition-2017/solvers/main/{SOLVER_NAME}.zip",
-    "score2sat" : {
-        "builder": "generic/v1",
-        "download_url": "https://baldur.iti.kit.edu/sat-competition-2017/solvers/random/{SOLVER_NAME}.zip"
-    },
-    "yalsat" : {
-        "builder": "generic/v1",
-        "download_url": "https://baldur.iti.kit.edu/sat-competition-2017/solvers/random/{SOLVER_NAME}.zip"
-    },
-    "abcdsat_parallel" : {
-        "builder": "generic/v1",
-        "download_url": "https://baldur.iti.kit.edu/sat-competition-2017/solvers/parallel/{SOLVER_NAME}.zip"
-    },
+    "download_url": "https://zenodo.org/record/5713813/files/{SOLVER_NAME}.zip",
     "cbpenelope" : {
-        "builder": "generic/v1",
-        "builder_base": "debian:8.9",
-        "download_url": "https://baldur.iti.kit.edu/sat-competition-2017/solvers/parallel/{SOLVER_NAME}.zip"
+        "builder_base": "debian:8.9"
     },
     "ccspenelope" : {
-        "builder": "generic/v1",
-        "builder_base": "debian:8.9",
-        "download_url": "https://baldur.iti.kit.edu/sat-competition-2017/solvers/parallel/{SOLVER_NAME}.zip"
+        "builder_base": "debian:8.9"
     },
     "ddc-submit" : {
-        "builder": "generic/v1",
-        "BUILD_DEPENDS": "git libboost-dev libmpich-dev python libboost-program-options-dev",
-        "download_url": "https://baldur.iti.kit.edu/sat-competition-2017/solvers/parallel/{SOLVER_NAME}.tar.gz"
-    },
-    "painless" : {
-        "builder": "generic/v1",
-        "download_url": "https://baldur.iti.kit.edu/sat-competition-2017/solvers/parallel/{SOLVER_NAME}.zip"
-    },
-    "plingeling" : {
-        "builder": "generic/v1",
-        "download_url": "https://baldur.iti.kit.edu/sat-competition-2017/solvers/parallel/{SOLVER_NAME}.zip"
-    },
-    "riss7": {
-        "builder": "generic/v1"
-    },
-    "scalope" : {
-        "builder": "generic/v1",
-        "download_url": "https://baldur.iti.kit.edu/sat-competition-2017/solvers/parallel/{SOLVER_NAME}.zip"
-    },
-    "syrup" : {
-        "builder": "generic/v1",
-        "download_url": "https://baldur.iti.kit.edu/sat-competition-2017/solvers/parallel/{SOLVER_NAME}.zip"
-    },
-    "treengeling" : {
-        "builder": "generic/v1",
-        "download_url": "https://baldur.iti.kit.edu/sat-competition-2017/solvers/parallel/{SOLVER_NAME}.zip"
+        "BUILD_DEPENDS": "git libboost-dev libmpich-dev python libboost-program-options-dev"
     }
 }
