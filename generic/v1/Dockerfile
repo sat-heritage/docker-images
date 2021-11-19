@@ -85,7 +85,7 @@ COPY setup.json build*.sh fixtures/$SOLVER.*build.sh /
 
 RUN set -ex && if test -f /$SOLVER.pre_build.sh; then bash /$SOLVER.pre_build.sh; fi
 
-RUN set -ex && cd ./`find -maxdepth 1 -mindepth 1 -type d|sort|grep -v __MACOSX|tail -n1` && \
+RUN set -ex && cd "./`find -maxdepth 1 -mindepth 1 -type d|sort|grep -v __MACOSX|tail -n1`" && \
     if test -f /$SOLVER.build.sh; then bash /$SOLVER.build.sh; \
     elif test -f /src/build.sh; then cd /src && bash ./build.sh; \
     elif test -f /build.sh; then bash /build.sh; \
@@ -101,7 +101,7 @@ RUN set -ex && if test -f /$SOLVER.post_build.sh; then bash /$SOLVER.post_build.
 
 COPY setup.json install*.sh fixtures/$SOLVER.*install.sh /
 
-RUN set -ex && mkdir /dist && cd ./`find -maxdepth 1 -mindepth 1 -type d|tail -n1` && \
+RUN set -ex && mkdir /dist && cd "./`find -maxdepth 1 -mindepth 1 -type d|sort|grep -v __MACOSX|tail -n1`" && \
     if test -f /$SOLVER.install.sh; then bash /$SOLVER.install.sh; \
     elif test -f /install.sh; then bash /install.sh; \
     elif test -d binary; then mv -v binary/* /dist/; \
