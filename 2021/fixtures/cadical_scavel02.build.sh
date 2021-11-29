@@ -1,3 +1,0 @@
-cd /src
-./configure
-make
