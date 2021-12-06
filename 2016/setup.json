@@ -3,11 +3,10 @@
     "base_from": "debian:stretch-slim",
     "builder": "generic/starexec",
     "builder_base": "debian:8.6",
-    "download_url": "https://baldur.iti.kit.edu/sat-competition-2016/solvers/main/{SOLVER_NAME}.zip",
+    "download_url": "https://zenodo.org/record/5761200/files/{SOLVER_NAME}.zip",
     "cmsat5_agile" : {
         "builder": "generic/v1",
-        "BUILD_DEPENDS": "vim-common",
-        "download_url": "https://baldur.iti.kit.edu/sat-competition-2016/solvers/random/{SOLVER_NAME}.zip"
+        "BUILD_DEPENDS": "vim-common"
     },
     "cmsat5_main2" : {
         "builder": "generic/v1",
@@ -19,83 +18,63 @@
     },
     "cmsat5_run_parallel" : {
         "builder": "generic/v1",
-        "BUILD_DEPENDS": "vim-common",
-        "download_url": "https://baldur.iti.kit.edu/sat-competition-2016/solvers/parallel16/{SOLVER_NAME}.zip"
+        "BUILD_DEPENDS": "vim-common"
     },
     "csccsat" : {
-        "builder": "generic/v1",
-        "download_url": "https://baldur.iti.kit.edu/sat-competition-2016/solvers/random/{SOLVER_NAME}.zip"
+        "builder": "generic/v1"
     },
     "dccalm" : {
-        "builder": "generic/v1",
-        "download_url": "https://baldur.iti.kit.edu/sat-competition-2016/solvers/random/{SOLVER_NAME}.zip"
+        "builder": "generic/v1"
     },
     "dimetheus" : {
-        "builder": "generic/v1",
-        "download_url": "https://baldur.iti.kit.edu/sat-competition-2016/solvers/random/{SOLVER_NAME}.zip"
+        "builder": "generic/v1"
     },
     "multi-sat" : {
-        "builder": "generic/v1",
-        "download_url": "https://baldur.iti.kit.edu/sat-competition-2016/solvers/random/{SOLVER_NAME}.zip"
+        "builder": "generic/v1"
     },
     "polypower1.0" : {
-        "builder": "generic/v1",
-        "download_url": "https://baldur.iti.kit.edu/sat-competition-2016/solvers/random/{SOLVER_NAME}.zip"
+        "builder": "generic/v1"
     },
     "polypower2.0" : {
-        "builder": "generic/v1",
-        "download_url": "https://baldur.iti.kit.edu/sat-competition-2016/solvers/random/{SOLVER_NAME}.zip"
+        "builder": "generic/v1"
     },
     "stocbcd" : {
-        "builder": "generic/v1",
-        "download_url": "https://baldur.iti.kit.edu/sat-competition-2016/solvers/random/{SOLVER_NAME}.zip"
+        "builder": "generic/v1"
     },
     "paragluminisat" : {
-        "builder": "generic/v1",
-        "download_url": "https://baldur.iti.kit.edu/sat-competition-2016/solvers/parallel16/{SOLVER_NAME}.zip"
+        "builder": "generic/v1"
     },
     "priss6": {
-        "builder": "generic/v1",
-        "download_url": "https://baldur.iti.kit.edu/sat-competition-2016/solvers/parallel16/{SOLVER_NAME}.zip"
+        "builder": "generic/v1"
     },
     "ampharos" : {
-        "builder": "generic/v1",
-        "download_url": "https://baldur.iti.kit.edu/sat-competition-2016/solvers/parallel16/{SOLVER_NAME}.zip"
+        "builder": "generic/v1"
     },
     "cbpenelope" : {
-        "builder": "generic/v1",
-        "download_url": "https://baldur.iti.kit.edu/sat-competition-2016/solvers/parallel16/{SOLVER_NAME}.zip"
+        "builder": "generic/v1"
     },
     "ccspenelope" : {
-        "builder": "generic/v1",
-        "download_url": "https://baldur.iti.kit.edu/sat-competition-2016/solvers/parallel16/{SOLVER_NAME}.zip"
+        "builder": "generic/v1"
     },
     "dissolve-sat" : {
-        "builder": "generic/v1",
-        "download_url": "https://baldur.iti.kit.edu/sat-competition-2016/solvers/parallel16/{SOLVER_NAME}.tar.gz"
+        "builder": "generic/v1"
     },
     "gluco_par" : {
-        "builder": "generic/v1",
-        "download_url": "https://baldur.iti.kit.edu/sat-competition-2016/solvers/parallel16/{SOLVER_NAME}.zip"
+        "builder": "generic/v1"
     },
     "penelope" : {
-        "builder": "generic/v1",
-        "download_url": "https://baldur.iti.kit.edu/sat-competition-2016/solvers/parallel16/{SOLVER_NAME}.zip"
+        "builder": "generic/v1"
     },
     "plingeling" : {
-        "builder": "generic/v1",
-        "download_url": "https://baldur.iti.kit.edu/sat-competition-2016/solvers/parallel16/{SOLVER_NAME}.zip"
+        "builder": "generic/v1"
     },
     "syrup" : {
-        "builder": "generic/v1",
-        "download_url": "https://baldur.iti.kit.edu/sat-competition-2016/solvers/parallel16/{SOLVER_NAME}.zip"
+        "builder": "generic/v1"
     },
     "tbparaglueminisat" : {
-        "builder": "generic/v1",
-        "download_url": "https://baldur.iti.kit.edu/sat-competition-2016/solvers/parallel16/{SOLVER_NAME}.zip"
+        "builder": "generic/v1"
     },
     "treengeling" : {
-        "builder": "generic/v1",
-        "download_url": "https://baldur.iti.kit.edu/sat-competition-2016/solvers/parallel16/{SOLVER_NAME}.zip"
+        "builder": "generic/v1"
     }
 }
