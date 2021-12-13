@@ -18,4 +18,4 @@ Sources of the SAT solvers
 | 2019 | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5634103.svg)](https://doi.org/10.5281/zenodo.5634103) |
 | 2020 | https://github.com/sat-heritage/docker-images/releases/tag/2020-src | To be moved to Zenodo
 | 2021 | https://github.com/sat-heritage/docker-images/releases/tag/2021-competition | To be moved to Zenodo
-| knuth | https://www-cs-faculty.stanford.edu/~knuth/programs.html | To be moved to Zenodo
+| knuth | https://www-cs-faculty.stanford.edu/~knuth/programs.html | Archived at https://web.archive.org/web/20211128174728/https://www-cs-faculty.stanford.edu/~knuth/programs.html
