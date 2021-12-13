@@ -10,12 +10,12 @@ Sources of the SAT solvers
 | 2007 | https://github.com/sat-heritage/docker-images/releases/tag/2007-src | To be moved to Zenodo
 | 2009 | https://github.com/sat-heritage/docker-images/releases/tag/2009-src | To be moved to Zenodo
 | 2011 | https://github.com/sat-heritage/docker-images/releases/tag/2011-src | To be moved to Zenodo
-| 2013 | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5776223.svg)](https://doi.org/10.5281/zenodo.5776223) | Recovered from http://satcompetition.org/sc13solver.sql.xz
-| 2014 | https://github.com/sat-heritage/sat_competition_2014_sources | To be moved to Zenodo
+| 2013 | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5776223.svg)](https://doi.org/10.5281/zenodo.5776223) | Recovered from http://satcompetition.org/sc13solver.sql.xz |
+| 2014 | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5776517.svg)](https://doi.org/10.5281/zenodo.5776517) | Recovered from http://satcompetition.org/sc14solver.sql.xz |
 | 2016 | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5761200.svg)](https://doi.org/10.5281/zenodo.5761200) |
 | 2017 | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5713813.svg)](https://doi.org/10.5281/zenodo.5713813) |
 | 2018 | http://sat2018.forsyte.tuwien.ac.at | :warning: Down, see [issue #25](https://github.com/sat-heritage/docker-images/issues/25) |
 | 2019 | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5634103.svg)](https://doi.org/10.5281/zenodo.5634103) |
 | 2020 | https://github.com/sat-heritage/docker-images/releases/tag/2020-src | To be moved to Zenodo
 | 2021 | https://github.com/sat-heritage/docker-images/releases/tag/2021-competition | To be moved to Zenodo
-| knuth | https://www-cs-faculty.stanford.edu/~knuth/programs.html | Archived at https://web.archive.org/web/20211128174728/https://www-cs-faculty.stanford.edu/~knuth/programs.html
+| knuth | https://www-cs-faculty.stanford.edu/~knuth/programs.html | Archived at https://web.archive.org/web/20211128174728/https://www-cs-faculty.stanford.edu/~knuth/programs.html |
