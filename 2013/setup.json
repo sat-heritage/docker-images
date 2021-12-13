@@ -4,270 +4,270 @@
     "builder": "generic/v1",
     "builder_base": "debian:8.6",
     "breakidglucose": {
-        "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/121-BreakIDGlucose-JoDevriendt_and_BartBogaerts.zip"
+        "download_url": "https://zenodo.org/record/5776223/files/121-{SOLVER_NAME}.zip"
     },
     "cshcappllc": {
         "RDEPENDS": "python",
         "BUILD_DEPENDS": "libm4ri-dev libpython-dev libglpk-dev libboost-dev libgoogle-perftools-dev libc6-dev-i386 gcc-multilib g++-multilib",
-        "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/819"
+        "download_url": "https://zenodo.org/record/5776223/files/103-{SOLVER_NAME}.zip"
     },
     "cshcappllg": {
         "RDEPENDS": "python",
-        "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/813"
+        "download_url": "https://zenodo.org/record/5776223/files/99-{SOLVER_NAME}.zip"
     },
     "forl": {
         "BUILD_DEPENDS": "libboost-dev libboost-program-options-dev",
-        "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/74-forl-MateSoos.zip"
+        "download_url": "https://zenodo.org/record/5776223/files/74-forl.zip"
     },
     "glucored": {
-        "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/34-GlucoRed-SiertWieringa.zip"
+        "download_url": "https://zenodo.org/record/5776223/files/34-GlucoRed.zip"
     },
     "glucose": {
-        "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/135-glucose-GillesAudemardandLaurentSimon.zip"
+        "download_url": "https://zenodo.org/record/5776223/files/135-glucose.zip"
     },
     "glue_bit": {
         "BUILD_DEPENDS": "g++-multilib",
-        "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/27-glue_bit-JingchaoChen.zip"
+        "download_url": "https://zenodo.org/record/5776223/files/27-glue_bit.zip"
     },
     "gluebit_lgl": {
-        "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/29-gluebit_lgl-JingchaoChen.zip"
+        "download_url": "https://zenodo.org/record/5776223/files/29-gluebit_lgl.zip"
     },
     "glueminisat": {
-        "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/139-glueminisat-HidetomoNabeshima_and_KojiIwanuma_and_KatsumiInoue.zip"
+        "download_url": "https://zenodo.org/record/5776223/files/139-glueminisat.zip"
     },
     "gluh": {
         "BUILD_DEPENDS": "g++-multilib",
-        "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/80-gluH-ChanseokOh.zip"
+        "download_url": "https://zenodo.org/record/5776223/files/80-gluH.zip"
     },
     "gluh_simp": {
-        "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/115-gluH_simp-ChanseokOh.zip"
+        "download_url": "https://zenodo.org/record/5776223/files/115-gluH_simp.zip"
     },
     "lingeling_587f": {
-        "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/123-Lingeling-ArminBiere.zip"
+        "download_url": "https://zenodo.org/record/5776223/files/123-Lingeling.zip"
     },
     "lingeling_aqw": {
-        "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/124-Lingeling-ArminBiere.zip"
+        "download_url": "https://zenodo.org/record/5776223/files/124-Lingeling.zip"
     },
     "minipure": {
-        "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/134-minipure-Hsiao-LunWang.zip"
+        "download_url": "https://zenodo.org/record/5776223/files/134-minipure.zip"
     },
     "mipsat": {
-        "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/85-MIPSat-SergioN%C3%BA%C3%B1ez_and_DanielBorrajoandCarlosLinaresL%C3%B3pez.zip",
+        "download_url": "https://zenodo.org/record/5776223/files/85-MIPSat.zip",
         "BUILD_DEPENDS": "automake libtool libc6-dev-i386 gcc-multilib g++-multilib",
         "RDEPENDS": "python"
     },
     "nigma": {
-        "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/38-Nigma-ChuanJiang_and_TingZhang.zip"
+        "download_url": "https://zenodo.org/record/5776223/files/38-Nigma.zip"
     },
     "nigma-nopb": {
-        "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/38-Nigma-ChuanJiang_and_TingZhang.zip"
+        "download_url": "https://zenodo.org/record/5776223/files/38-Nigma.zip"
     },
     "relback": {
-        "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/79-relback-DjamalHabetandChuMinLi.zip",
+        "download_url": "https://zenodo.org/record/5776223/files/79-relback.zip",
         "BUILD_DEPENDS": "libc6-dev-i386 gcc-multilib g++-multilib"
     },
     "riss3g": {
-        "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/111-Riss3g-NorbertManthey.zip"
+        "download_url": "https://zenodo.org/record/5776223/files/111-Riss3g.zip"
     },
     "rseq": {
-        "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/149-RSeq-DjamalHabetandChuMinLiandJiangHua.zip"
+        "download_url": "https://zenodo.org/record/5776223/files/149-RSeq.zip"
     },
     "sat4j": {
         "BUILD_DEPENDS": "default-jdk",
         "RDEPENDS": "default-jre",
-        "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/95-SAT4J-DanielLeBerre.zip"
+        "download_url": "https://zenodo.org/record/5776223/files/95-SAT4J.zip"
     },
     "sattimerelbackshr": {
-        "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/146-sattimeRelbackShr-Jianghua_and_chuminli_and_DjamalHabet.zip"
+        "download_url": "https://zenodo.org/record/5776223/files/146-sattimeRelbackShr.zip"
     },
     "satuzk": {
-        "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/113-satUZK-AlexandervanderGrinten_and_AndreasWotzlaw_and_EwaldSpeckemeyer.zip"
+        "download_url": "https://zenodo.org/record/5776223/files/113-satUZK.zip"
     },
     "shatterglucose": {
-        "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/122-ShatterGlucose-JoDevriendt_and_BartBogaerts.zip"
+        "download_url": "https://zenodo.org/record/5776223/files/122-ShatterGlucose.zip"
     },
     "solver43a": {
-        "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/68-Solver43a-ValeriyBalabanov.zip"
+        "download_url": "https://zenodo.org/record/5776223/files/68-Solver43a.zip"
     },
     "solver43b": {
-        "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/73-Solver43b-ValeriyBalabanov.zip"
+        "download_url": "https://zenodo.org/record/5776223/files/73-Solver43b.zip"
     },
     "strangenight": {
-        "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/76-strangenight-MateSoos.zip"
+        "download_url": "https://zenodo.org/record/5776223/files/76-strangenight.zip"
     },
     "zenn": {
-        "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/82-ZENN-TakeruYasumoto.zip"
+        "download_url": "https://zenodo.org/record/5776223/files/82-ZENN.zip"
     },
     "clasp_vflip": {
-        "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/31-clasp_vflip-JingchaoChen.zip"
+        "download_url": "https://zenodo.org/record/5776223/files/31-clasp_vflip.zip"
     },
     "cshccombcs": {
-        "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/940"
+        "download_url": "https://zenodo.org/record/5776223/files/97-{SOLVER_NAME}.zip"
     },
     "dk-sat11": {
-        "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/19-dk-SAT11-DonaldKnuth.zip"
+        "download_url": "https://zenodo.org/record/5776223/files/19-dk-SAT11.zip"
     },
     "dk-sat11_1": {
-        "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/20-dk-SAT11-DonaldKnuth.zip"
+        "download_url": "https://zenodo.org/record/5776223/files/20-dk-SAT11.zip"
     },
     "gluebit_clasp": {
-        "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/30-gluebit_clasp-JingchaoChen.zip"
+        "download_url": "https://zenodo.org/record/5776223/files/30-gluebit_clasp.zip"
     },
     "gnovelty-gca": {
-        "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/104-gNovelty+GCa-Thach-ThaoDuong_and_DucNghiaPham.zip"
+        "download_url": "https://zenodo.org/record/5776223/files/104-gNovelty+GCa.zip"
     },
     "gnovelty-gcwa": {
-        "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/105-gNovelty+GCwa-Thach-ThaoDuong_and_DucNghiaPham.zip"
+        "download_url": "https://zenodo.org/record/5776223/files/105-gNovelty+GCwa.zip"
     },
     "march_br": {
-        "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/10-march_br-MarijnHeule.zip"
+        "download_url": "https://zenodo.org/record/5776223/files/10-march_br.zip"
     },
     "mipsat-hard_sat": {
-        "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/86-MIPSat-SergioN%C3%BA%C3%B1ez_and_DanielBorrajoandCarlosLinaresL%C3%B3pez.zip",
+        "download_url": "https://zenodo.org/record/5776223/files/86-MIPSat.zip",
         "RDEPENDS": "python"
     },
     "mipsat-hard_both_2": {
-        "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/88-MIPSat-SergioN%C3%BA%C3%B1ez_and_DanielBorrajoandCarlosLinaresL%C3%B3pez.zip",
+        "download_url": "https://zenodo.org/record/5776223/files/88-MIPSat.zip",
         "RDEPENDS": "python"
     },
     "sattime2013": {
-        "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/133-sattime2013-ChuMinLIandYuLI.zip"
+        "download_url": "https://zenodo.org/record/5776223/files/133-sattime2013.zip"
     },
     "sattimeclasp": {
-        "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/144-sattimeClasp-Jianghua_and_chuminli_and_XuRuchu.zip"
+        "download_url": "https://zenodo.org/record/5776223/files/144-sattimeClasp.zip"
     },
     "sattimerelbackseq": {
-        "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/146-sattimeRelbackShr-Jianghua_and_chuminli_and_DjamalHabet.zip"
+        "download_url": "https://zenodo.org/record/5776223/files/146-sattimeRelbackShr.zip"
     },
     "sparrowtoriss": {
-        "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/15-SparrowToRiss-AdrianBalint_and_NorbertManthey.zip"
+        "download_url": "https://zenodo.org/record/5776223/files/15-SparrowToRiss.zip"
     },
     "balancedz": {
-        "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/141-BalancedZ-ChongHUANG.zip",
+        "download_url": "https://zenodo.org/record/5776223/files/141-BalancedZ.zip",
         "BUILD_DEPENDS": "libc6-dev"
     },
     "ccanr": {
-        "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/24-CCAnr-ShaoweiCai_and_KaileSu.zip"
+        "download_url": "https://zenodo.org/record/5776223/files/24-CCAnr.zip"
     },
     "doug_hains": {
-        "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/70-DougHains-DougHains_and_DarrellWhitley_and_AdeleHowe.zip"
+        "download_url": "https://zenodo.org/record/5776223/files/70-Doug_Hains.zip"
     },
     "sparrow-cp3": {
-        "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/14-Sparrow+CP3-AdrianBalint_and_NorbertManthey.zip"
+        "download_url": "https://zenodo.org/record/5776223/files/14-Sparrow+CP3.zip"
     },
     "forl-drup": {
-        "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/75-forl-MateSoos.zip"
+        "download_url": "https://zenodo.org/record/5776223/files/75-forl.zip"
     },
     "glucose-drup": {
-        "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/136-glucose-GillesAudemardandLaurentSimon.zip"
+        "download_url": "https://zenodo.org/record/5776223/files/136-glucose.zip"
     },
     "glueminisat-cert-unsat": {
-        "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/139-glueminisat-HidetomoNabeshima_and_KojiIwanuma_and_KatsumiInoue.zip"
+        "download_url": "https://zenodo.org/record/5776223/files/139-glueminisat.zip"
     },
     "lingeling_aqw_drup": {
-        "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/129-Lingeling-ArminBiere.zip"
+        "download_url": "https://zenodo.org/record/5776223/files/129-Lingeling.zip"
     },
     "minisat_drup": {
-        "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/145-minisatDRUP-NiklasE%C3%A9nandNiklasS%C3%B6rensson.zip"
+        "download_url": "https://zenodo.org/record/5776223/files/145-minisat_DRUP.zip"
     },
     "riss3g-cert": {
-        "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/142-Riss3g-NorbertManthey.zip"
+        "download_url": "https://zenodo.org/record/5776223/files/142-Riss3g.zip"
     },
     "sat4j_certified": {
-        "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/95-SAT4J-DanielLeBerre.zip",
+        "download_url": "https://zenodo.org/record/5776223/files/95-SAT4J.zip",
         "BUILD_DEPENDS": "default-jdk",
         "RDEPENDS": "default-jre"
     },
     "minisat_bit_u": {
-        "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/71-minisat_bit_u-JingchaoChen.zip"
+        "download_url": "https://zenodo.org/record/5776223/files/71-minisat_bit_u.zip"
     },
     "nigma-drup": {
-        "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/52-Nigma-DRUP-ChuanJiang_and_TingZhang.zip"
+        "download_url": "https://zenodo.org/record/5776223/files/52-Nigma-DRUP.zip"
     },
     "nigma-nopb-drup": {
-        "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/52-Nigma-DRUP-ChuanJiang_and_TingZhang.zip"
+        "download_url": "https://zenodo.org/record/5776223/files/52-Nigma-DRUP.zip"
     },
     "balancedz_1": {
-        "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/151-BalancedZfixed.zip"
+        "download_url": "https://zenodo.org/record/5776223/files/151-BalancedZ_fixed.zip"
     },
     "cca2013": {
-        "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/132-CCA2013-ChengqianLi_and_FanYi.zip"
+        "download_url": "https://zenodo.org/record/5776223/files/132-CCA2013.zip"
     },
     "cscoresat2013": {
-        "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/23-CScoreSAT2013-ShaoweiCai_and_ChuanLuo_and_KaileSu.zip"
+        "download_url": "https://zenodo.org/record/5776223/files/23-CScoreSAT2013.zip"
     },
     "cshcrandmc": {
-        "download_url": "http://satcompetition.org/edacc/SATCompetition2013/solver-download/916"
+        "download_url": "https://zenodo.org/record/5776223/files/98-{SOLVER_NAME}.zip"
     },
     "dimetheusmps": {
-        "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/106-DimetheusMPS-OliverGableske.zip"
+        "download_url": "https://zenodo.org/record/5776223/files/106-DimetheusMPS.zip"
     },
     "frwcb2013": {
-        "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/33-FrwCB2013-ChuanLuoandKaileSu.zip"
+        "download_url": "https://zenodo.org/record/5776223/files/33-FrwCB2013.zip"
     },
     "march_vflip": {
-        "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/25-march_vflip-JingchaoChen.zip"
+        "download_url": "https://zenodo.org/record/5776223/files/25-march_vflip.zip"
     },
     "ncca-plus": {
-        "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/148-Ncca+-DjamalHabetandDoniaToumiandAndr%C3%A9Abram%C3%A9.zip"
+        "download_url": "https://zenodo.org/record/5776223/files/148-Ncca+.zip"
     },
     "probsat": {
-        "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/18-probSAT-AdrianBalint_and_UweSch%C3%B6ning.zip"
+        "download_url": "https://zenodo.org/record/5776223/files/18-probSAT.zip"
     },
     "vflipnum": {
-        "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/26-vflipnum-JingchaoChenandYuyangHuang.zip"
+        "download_url": "https://zenodo.org/record/5776223/files/26-vflipnum.zip"
     },
     "walksatlm2013": {
-        "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/22-WalkSATlm2013-ShaoweiCai.zip"
+        "download_url": "https://zenodo.org/record/5776223/files/22-WalkSATlm2013.zip"
     },
     "march_br-unsat": {
-        "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/21-march_br-MarijnHeule.zip"
+        "download_url": "https://zenodo.org/record/5776223/files/21-march_br.zip"
     },
     "minigolf": {
-        "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/78-MiniGolf-NorbertManthey.zip"
+        "download_url": "https://zenodo.org/record/5776223/files/78-MiniGolf.zip"
     },
     "minigolf_prefetch": {
-        "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/78-MiniGolf-NorbertManthey.zip"
+        "download_url": "https://zenodo.org/record/5776223/files/78-MiniGolf.zip"
     },
     "minisat_bit": {
-        "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/28-minisat_bit-JingchaoChen.zip"
+        "download_url": "https://zenodo.org/record/5776223/files/28-minisat_bit.zip"
     },
     "sinnminisat": {
-        "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/81-SINNminisat-TakeruYasumoto.zip"
+        "download_url": "https://zenodo.org/record/5776223/files/81-SINNminisat.zip"
     },
     "glucans": {
-        "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/69-Glucans-XiaojuanXu_and_YuichiShimizu_and_ShotaMatsumotoandKazunoriUeda.zip",
+        "download_url": "https://zenodo.org/record/5776223/files/69-Glucans.zip",
         "BUILD_DEPENDS": "g++-multilib"
     },
     "glucored-multi": {
-        "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/34-GlucoRed-SiertWieringa.zip"
+        "download_url": "https://zenodo.org/record/5776223/files/34-GlucoRed.zip"
     },
     "pcasso": {
-        "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/110-pcasso-AhmedIrfan_and_DavideLanti_and_NorbertManthey.zip"
+        "download_url": "https://zenodo.org/record/5776223/files/110-pcasso.zip"
     },
     "penelope": {
-        "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/67-PeneLoPe-GillesAudemard_and_Beno%C3%AEtHoessen_and_Sa%C3%AFdJabbour_and_Jean-MarieLagniez_and_C%C3%A9dricPiette.zip",
+        "download_url": "https://zenodo.org/record/5776223/files/67-PeneLoPe.zip",
         "BUILD_DEPENDS": "g++-multilib"
     },
     "plingeling": {
-        "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/126-Plingeling-ArminBiere.zip"
+        "download_url": "https://zenodo.org/record/5776223/files/126-Plingeling.zip"
     },
     "pmcsat": {
-        "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/130-pmcSAT-RicardoMarques_and_Lu%C3%ADsGuerraeSilva_and_PauloFloresandLu%C3%ADsMiguelSilveira.zip"
+        "download_url": "https://zenodo.org/record/5776223/files/130-pmcSAT.zip"
     },
     "sat4j_parallel": {
-        "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/95-SAT4J-DanielLeBerre.zip",
+        "download_url": "https://zenodo.org/record/5776223/files/95-SAT4J.zip",
         "BUILD_DEPENDS": "default-jdk",
         "RDEPENDS": "default-jre"
     },
     "satx10-glci": {
-        "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/92-SatX10-GLCI-DavidGrove_and_BenjaminHerta_and_AshishSabharwal_and_HorstSamulowitz_and_VijaySaraswat_and_GeorgeKatsirelos_and_LaurentSimon.zip",
+        "download_url": "https://zenodo.org/record/5776223/files/92-SatX10-GLCI.zip",
         "BUILD_DEPENDS": "g++-multilib"
     },
     "strangenight-mt": {
-        "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/76-strangenight-MateSoos.zip"
+        "download_url": "https://zenodo.org/record/5776223/files/76-strangenight.zip"
     },
     "treengeling": {
-        "download_url": "https://github.com/sat-heritage/sat_competition_2013_sources/raw/master/128-Treengeling-ArminBiere.zip"
+        "download_url": "https://zenodo.org/record/5776223/files/128-Treengeling.zip"
     }
 }

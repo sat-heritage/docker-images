@@ -10,7 +10,7 @@ Sources of the SAT solvers
 | 2007 | https://github.com/sat-heritage/docker-images/releases/tag/2007-src | To be moved to Zenodo
 | 2009 | https://github.com/sat-heritage/docker-images/releases/tag/2009-src | To be moved to Zenodo
 | 2011 | https://github.com/sat-heritage/docker-images/releases/tag/2011-src | To be moved to Zenodo
-| 2013 | https://github.com/sat-heritage/sat_competition_2013_sources | To be moved to Zenodo
+| 2013 | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5776223.svg)](https://doi.org/10.5281/zenodo.5776223) | Recovered from http://satcompetition.org/sc13solver.sql.xz
 | 2014 | https://github.com/sat-heritage/sat_competition_2014_sources | To be moved to Zenodo
 | 2016 | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5761200.svg)](https://doi.org/10.5281/zenodo.5761200) |
 | 2017 | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5713813.svg)](https://doi.org/10.5281/zenodo.5713813) |
