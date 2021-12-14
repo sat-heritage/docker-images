@@ -1,79 +1,69 @@
 {
     "base_version": "v1",
     "base_from": "debian:stretch-slim",
-    "builder": "generic/starexec",
+    "builder": "generic/v1",
     "builder_base": "debian:9.5-slim",
-    "download_url": "http://sat2018.forsyte.tuwien.ac.at/solvers/main_and_glucose_hack/{SOLVER_NAME}.zip",
+    "download_url": "https://zenodo.org/record/5778760/files/{SOLVER_NAME}.zip",
     "cpsparrow" : {
-        "builder": "generic/v1",
-        "download_url": "http://sat2018.forsyte.tuwien.ac.at/solvers/random/{SOLVER_NAME}.zip"
+        "builder": "generic/v1"
     },
     "dimetheus" : {
-        "builder": "generic/v1",
-        "download_url": "http://sat2018.forsyte.tuwien.ac.at/solvers/random/{SOLVER_NAME}.zip"
+        "builder": "generic/v1"
     },
     "lawa" : {
-        "builder": "generic/v1",
-        "download_url": "http://sat2018.forsyte.tuwien.ac.at/solvers/random/{SOLVER_NAME}.zip"
+        "builder": "generic/v1"
     },
     "abcd_para18" : {
         "builder": "generic/v1",
-        "download_url": "http://sat2018.forsyte.tuwien.ac.at/solvers/parallel/{SOLVER_NAME}.zip"
+        "download_url": "https://zenodo.org/record/5778760/files/{SOLVER_NAME}_1.zip"
     },
     "cbpenelope2018" : {
-        "builder": "generic/v1",
-        "download_url": "http://sat2018.forsyte.tuwien.ac.at/solvers/parallel/{SOLVER_NAME}.zip"
+        "builder": "generic/v1"
     },
     "ccspenelope2018" : {
-        "builder": "generic/v1",
-        "download_url": "http://sat2018.forsyte.tuwien.ac.at/solvers/parallel/{SOLVER_NAME}.zip"
+        "builder": "generic/v1"
     },
     "cmsat55_run_parallel" : {
-        "builder": "generic/v1",
-        "download_url": "http://sat2018.forsyte.tuwien.ac.at/solvers/parallel/{SOLVER_NAME}.tar.gz"
+        "builder": "generic/v1"
     },
     "hordesat" : {
         "builder": "generic/v1",
-        "download_url": "http://sat2018.forsyte.tuwien.ac.at/solvers/parallel/{SOLVER_NAME}.zip",
         "BUILD_DEPENDS" : "mpic++",
         "RDEPENDS" : "libmpich-dev"
     },
     "ddc-submit18" : {
         "builder": "generic/v1",
-        "download_url": "http://sat2018.forsyte.tuwien.ac.at/solvers/parallel/{SOLVER_NAME}.tar.gz",
         "BUILD_DEPENDS": "git libboost-dev libmpich-dev python"
     },
     "manyglucose" : {
-        "builder": "generic/v1",
-        "download_url": "http://sat2018.forsyte.tuwien.ac.at/solvers/parallel/{SOLVER_NAME}.zip"
+        "builder": "generic/v1"
+    },
+    "maple-lcm-scavel": {
+        "download_url": "https://zenodo.org/record/5778760/files/{SOLVER_NAME}_fix2.zip"
+    },
+    "maple_lcm_scavel_200": {
+        "download_url": "https://zenodo.org/record/5778760/files/{SOLVER_NAME}_fix2.zip"
     },
     "penelope_mdcl" : {
-        "builder": "generic/v1",
-        "download_url": "http://sat2018.forsyte.tuwien.ac.at/solvers/parallel/{SOLVER_NAME}.zip"
+        "builder": "generic/v1"
     },
     "plingeling" : {
-        "builder": "generic/v1",
-        "download_url": "http://sat2018.forsyte.tuwien.ac.at/solvers/parallel/{SOLVER_NAME}.zip"
+        "builder": "generic/v1"
     },
     "probsat" : {
         "builder": "generic/v1",
-        "builder_base": "debian:8.11-slim",
-        "download_url": "http://sat2018.forsyte.tuwien.ac.at/solvers/random/{SOLVER_NAME}.zip"
+        "builder_base": "debian:8.11-slim"
     },
     "scalope" : {
-        "builder": "generic/v1",
-        "download_url": "http://sat2018.forsyte.tuwien.ac.at/solvers/parallel/{SOLVER_NAME}.zip"
+        "builder": "generic/v1"
     },
     "syrup" : {
-        "builder": "generic/v1",
-        "download_url": "http://sat2018.forsyte.tuwien.ac.at/solvers/parallel/{SOLVER_NAME}.tgz"
+        "builder": "generic/v1"
     },
      "treengeling" : {
-        "builder": "generic/v1",
-        "download_url": "http://sat2018.forsyte.tuwien.ac.at/solvers/parallel/{SOLVER_NAME}.zip"
+        "builder": "generic/v1"
     },
     "painless-mcomsps" : {
-        "builder": "generic/v1",
-        "download_url": "http://sat2018.forsyte.tuwien.ac.at/solvers/parallel/{SOLVER_NAME}.zip"
+        "builder": "generic/v1"
     }
 }
