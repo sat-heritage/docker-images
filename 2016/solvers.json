@@ -503,7 +503,7 @@
         "status": "ok",
         "name": "stocBCD",
         "call": "./stocbcd",
-        "gz": true,
+        "gz": false,
         "args": [
             "FILECNF"
         ]
