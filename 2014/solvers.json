@@ -593,7 +593,7 @@
         "authors": "Armin Biere",
         "call": "./treengeling",
         "comments": "Launchcommand was:  ./treengeling  <instance> \nTrack was Parallel, Application SAT+UNSAT track",
-        "gz": true,
+        "gz": false,
         "name": "Treengeling"
     },
     "gluesplit_clasp": {
