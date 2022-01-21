@@ -4,6 +4,9 @@
     "builder": "generic/v1",
     "builder_base": "debian:9.1",
     "download_url": "https://zenodo.org/record/5713813/files/{SOLVER_NAME}.zip",
+    "cadical-sc17-proof" : {
+        "BUILD_DEPENDS": "xz-utils"
+    },
     "cbpenelope" : {
         "builder_base": "debian:8.9"
     },
