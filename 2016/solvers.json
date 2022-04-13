@@ -560,7 +560,7 @@
     },
     "cmsat5_run_parallel" : {
 	      "tracks": ["parallel"],
-        "status": "ok",
+        "status": "FIXME - https://github.com/sat-heritage/docker-images/issues/28",
         "name": "cmsat5_run_parallel",
         "call": "./cryptominisat4_simple",
         "gz": false,
