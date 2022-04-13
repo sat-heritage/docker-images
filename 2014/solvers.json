@@ -720,7 +720,7 @@
         "name": "YalSAT"
     },
     "pprobsat": {
-        "status" : "ok",
+        "status" : "FIXME https://github.com/sat-heritage/docker-images/issues/29",
         "tracks" : ["parallel-random"],
         "args": [
             ".//pprobSAT.py",
