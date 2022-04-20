@@ -258,7 +258,7 @@
     },
     "cmsat5_autotune2": {
 	      "tracks": ["main"],
-        "status": "ok",
+        "status": "FIXME - https://github.com/sat-heritage/docker-images/issues/28",
         "name": "cmsat5_autotune2",
         "call": "./cryptominisat4_simple",
         "gz": false,
