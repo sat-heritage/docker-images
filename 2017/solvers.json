@@ -414,7 +414,7 @@
     },
     "abcdsat_parallel" : {
         "tracks": ["parallel"],
-	      "status": "ok",
+	      "status": "FIXME - segmentation fault https://github.com/sat-heritage/docker-images/issues/32",
         "name": "abcdsat_parallel",
         "call": "./abcdsat_p",
         "gz": true,

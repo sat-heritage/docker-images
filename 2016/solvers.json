@@ -4,7 +4,6 @@
 	"status": "ok",
         "name": "BeansAndEggs",
         "call": "./glucose",
-        "gz": true,
         "args": [
             "FILECNF",
             "-model"
