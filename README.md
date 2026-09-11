@@ -105,6 +105,8 @@ satex push '*:2018'
 instance, and, when supported by the image, an UNSAT proof check.  A timeout,
 an invalid return code, a contradictory status, an invalid SAT model, or an
 invalid proof makes the command fail.
+Tests run in a temporary workspace, so files created by legacy solvers do not
+pollute the repository.
 
 Validate the registry metadata and run the Python regression tests with:
 

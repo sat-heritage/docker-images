@@ -31,15 +31,22 @@ usage() {
 
 call_solver() {
     export PATH=.:$PATH
+    export TIMEOUT=${TIMEOUT:-3600}
+    case "${TIMEOUT}" in
+        *[!0-9]*|'')
+            echo "Invalid TIMEOUT value: ${TIMEOUT}" >&2
+            return 2
+            ;;
+    esac
     set -x
     cd "/solvers/${SOLVER_PATH}"
     set +x
-    if [ ${TIMEOUT} -eq 0 ]; then
+    if [ "${TIMEOUT}" -eq 0 ]; then
         set -x
         "${SOLVER_CALL}" "${@}"
     else
         set -x
-        timeout ${TIMEOUT} "${SOLVER_CALL}" "${@}"
+        timeout "${TIMEOUT}" "${SOLVER_CALL}" "${@}"
     fi
 }
 
@@ -64,8 +71,6 @@ mycall() {
     RANDOMSEED=${RANDOMSEED:-1234567}
     MAXNBTHREAD=${MAXNBTHREAD:-1}
     MEMLIMIT=${MEMLIMIT:-1024}
-    export TIMEOUT=${TIMEOUT:-3600}
-
     if [[ "${FILECNF##*.}" == "gz" ]]; then
         if [[ "$(get_param gz)" == "false" ]]; then
             echo "# gunzip ${FILECNF}..."

@@ -86,6 +86,22 @@ class SafetyTests(unittest.TestCase):
         self.assertTrue(satex.check_cmd(["sh", "-c", "exit 0"]))
         self.assertFalse(satex.check_cmd(["sh", "-c", "exit 42"]))
 
+    def test_host_timeout_stops_legacy_image_run(self):
+        run_args = {
+            "stdout": satex.subprocess.PIPE,
+            "stderr": satex.subprocess.STDOUT,
+            "text": True,
+        }
+        result = satex.run_docker_process(
+            ["sh", "-c", "printf started; sleep 1"],
+            run_args,
+            0.05,
+            ["true"],
+            "test-container",
+        )
+        self.assertEqual(result.returncode, 124)
+        self.assertEqual(result.stdout, "started")
+
     def test_tar_path_traversal_is_rejected(self):
         data = io.BytesIO()
         with tarfile.open(fileobj=data, mode="w") as archive:

@@ -36,6 +36,7 @@ __version__ = "1.2.1-dev"
 DOCKER_NS = "satex"
 REGISTRY_URL = "https://github.com/sat-heritage/docker-images/releases/download/list/list.tgz"
 NETWORK_TIMEOUT = 30
+HOST_TIMEOUT_GRACE = 2
 
 on_linux = platform.system() == "Linux"
 
@@ -331,6 +332,27 @@ within the 'Docker quickstart Terminal'.""")
     #    error("Error: cannot connect to Docker. Make sure it is running.")
     return docker_argv
 
+def run_docker_process(cmd, run_args, timeout, docker_argv, container_id):
+    """Run Docker with a host-side deadline for legacy images.
+
+    Older published images do not enforce the TIMEOUT environment variable.
+    Killing the Docker client alone would leave their container running, so an
+    expired host deadline also explicitly kills the named container.
+    """
+    try:
+        return subprocess.run(cmd, timeout=timeout, **run_args)
+    except subprocess.TimeoutExpired as exc:
+        subprocess.run(
+            docker_argv + ["kill", container_id],
+            stdout=subprocess.DEVNULL,
+            stderr=subprocess.DEVNULL,
+            check=False,
+        )
+        output = exc.stdout or ""
+        if isinstance(output, bytes):
+            output = output.decode("utf-8", errors="replace")
+        return subprocess.CompletedProcess(cmd, 124, stdout=output)
+
 def prepare_image(args, docker_argv, image):
     if args.pull or\
             not subprocess.check_output(docker_argv + ["images", "-q", image]):
@@ -394,11 +416,20 @@ def docker_runs(args, images, docker_args=(), image_args=(), capture_output=Fals
                 global stop
                 stop = True
                 warn("Killing solver...")
-                argv = docker_argv + ["kill", container_id]
-                subprocess.run(argv, stdout=subprocess.DEVNULL)
+                subprocess.run(
+                    docker_argv + ["kill", container_id],
+                    stdout=subprocess.DEVNULL,
+                    stderr=subprocess.DEVNULL,
+                    check=False,
+                )
             signal.signal(signal.SIGINT, killer)
             info(" ".join(cmd)) if not quiet else None
-            result = subprocess.run(cmd, **run_args)
+            host_timeout = None
+            if hasattr(args, "timeout") and args.timeout > 0:
+                host_timeout = args.timeout + HOST_TIMEOUT_GRACE
+            result = run_docker_process(
+                cmd, run_args, host_timeout, docker_argv, container_id
+            )
             ret = result.returncode
             signal.signal(signal.SIGINT, signal.SIG_DFL)
             if stop:
@@ -643,14 +674,22 @@ _retstr = {
 }
 
 def test_images(args):
-    tests_dir = Path("tests").resolve()
+    with tempfile.TemporaryDirectory(prefix="satex-tests-") as workspace:
+        return test_images_in_workspace(args, Path(workspace))
+
+def test_images_in_workspace(args, tests_dir):
+    source_tests_dir = Path("tests").resolve()
+    filenames = [args.file, f"{args.file}.gz", args.unsat_file]
+    for filename in filenames:
+        source = source_tests_dir / filename
+        if not source.is_file():
+            error(f"missing test instance: {source}")
+        shutil.copy2(source, tests_dir / filename)
+
     docker_args = ["-v", f"{tests_dir}:/data"]
     sat_path = tests_dir / args.file
     sat_gz_path = tests_dir / f"{args.file}.gz"
     unsat_path = tests_dir / args.unsat_file
-    for path in (sat_path, sat_gz_path, unsat_path):
-        if not path.is_file():
-            error(f"missing test instance: {path}")
 
     info(f"Testing SAT with {sat_path}")
     info(f"Testing UNSAT with {unsat_path}")
