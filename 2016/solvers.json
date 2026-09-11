@@ -114,7 +114,8 @@
     },
     "maplecms": {
 	      "tracks": ["main"],
-        "status": "FIXME : misses xxd",
+        "status": "fixme",
+        "status_detail": "FIXME : misses xxd",
         "name": "MapleCMS",
         "call": "./maplecms",
         "gz": true,
@@ -217,7 +218,8 @@
     },
     "splatz06vmain": {
 	      "tracks": ["main"],
-        "status": "FIXME CNF parsing error (https://github.com/sat-heritage/docker-images/issues/27)",
+        "status": "fixme",
+        "status_detail": "FIXME CNF parsing error (https://github.com/sat-heritage/docker-images/issues/27)",
         "name": "Splatz06vmain",
         "call": "./splatz",
         "gz": true,
@@ -257,7 +259,8 @@
     },
     "cmsat5_autotune2": {
 	      "tracks": ["main"],
-        "status": "FIXME - https://github.com/sat-heritage/docker-images/issues/28",
+        "status": "fixme",
+        "status_detail": "FIXME - https://github.com/sat-heritage/docker-images/issues/28",
         "name": "cmsat5_autotune2",
         "call": "./cryptominisat4_simple",
         "gz": false,
@@ -446,7 +449,8 @@
     },
     "cmsat5_agile" : {
 	      "tracks": ["random"],
-        "status": "FIXME - https://github.com/sat-heritage/docker-images/issues/28",
+        "status": "fixme",
+        "status_detail": "FIXME - https://github.com/sat-heritage/docker-images/issues/28",
         "name": "cmsat5_agile",
         "call": "./cryptominisat4_simple",
         "gz": false,
@@ -456,7 +460,8 @@
     },
     "dimetheus" : {
 	      "tracks": ["random"],
-        "status": "FIXME",
+        "status": "fixme",
+        "status_detail": "FIXME",
         "name": "dimetheus",
         "call": "./dimetheus",
         "gz": true,
@@ -509,7 +514,8 @@
     },
     "paragluminisat" : {
 	      "tracks": ["parallel"],
-        "status": "FIXME",
+        "status": "fixme",
+        "status_detail": "FIXME",
         "name": "ParaGlueminisat_2016",
         "call": "./paragluminisat",
         "gz": true,
@@ -519,7 +525,8 @@
     },
     "priss6": {
 	      "tracks": ["parallel"],
-        "status": "FIXME",
+        "status": "fixme",
+        "status_detail": "FIXME",
         "name": "Priss6",
         "call": "./priss6",
         "gz": true,
@@ -529,7 +536,8 @@
     },
     "ampharos" : {
 	      "tracks": ["parallel"],
-        "status": "FIXME",
+        "status": "fixme",
+        "status_detail": "FIXME",
         "name": "ampharos-sat-2016",
         "call": "./ampharos",
         "gz": true,
@@ -559,7 +567,8 @@
     },
     "cmsat5_run_parallel" : {
 	      "tracks": ["parallel"],
-        "status": "FIXME - https://github.com/sat-heritage/docker-images/issues/28",
+        "status": "fixme",
+        "status_detail": "FIXME - https://github.com/sat-heritage/docker-images/issues/28",
         "name": "cmsat5_run_parallel",
         "call": "./cryptominisat4_simple",
         "gz": false,
@@ -569,7 +578,8 @@
     },
     "dissolve-sat" : {
 	      "tracks": ["parallel"],
-        "status": "FIXME",
+        "status": "fixme",
+        "status_detail": "FIXME",
         "name": "dissolve-SATcomp16",
         "call": "./dissolve-SAT",
         "gz": true,
@@ -579,7 +589,8 @@
     },
     "gluco_par" : {
 	      "tracks": ["parallel"],
-        "status": "FIXME",
+        "status": "fixme",
+        "status_detail": "FIXME",
         "name": "gluco_par",
         "call": "./gluco_par",
         "gz": true,
@@ -609,7 +620,8 @@
     },
     "syrup" : {
 	      "tracks": ["parallel"],
-        "status": "error (Floating point excpetion)",
+        "status": "fixme",
+        "status_detail": "error (Floating point excpetion)",
         "name": "syrup",
         "call": "./glucose-syrup",
         "gz": true,
@@ -619,7 +631,8 @@
     },
     "tbparaglueminisat" : {
 	      "tracks": ["parallel"],
-        "status": "FIXME",
+        "status": "fixme",
+        "status_detail": "FIXME",
         "name": "tbParaGlueminisat_2016",
         "call": "./tbparaglueminisat",
         "gz": true,

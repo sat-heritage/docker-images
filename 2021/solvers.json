@@ -159,7 +159,7 @@
       "-drup-file=FILEPROOF"
     ]
   },
-  "cms_expV_gbL": {
+  "cms_expv_gbl": {
     "status": "unstable",
     "name": "cms_expV_gbL",
     "call": "./cleanmaple",
@@ -578,4 +578,3 @@
     ]
   }
 }
-

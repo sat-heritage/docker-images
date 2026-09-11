@@ -31,7 +31,7 @@ docker run --rm -v $PWD:/data satex/<tool>:<year> <DIMACS> [<PROOF>]
 ## `satex` Python script
 
 Requirements:
-* [Python](https://www.python.org/) ≥3.6
+* [Python](https://www.python.org/) 3.10–3.14
 * [Docker](https://docker.com)
 
 ```
@@ -100,6 +100,23 @@ satex build '*:2018'
 satex test '*:2018'
 satex push '*:2018'
 ```
+
+`satex test` runs a SAT instance (plain and gzip-compressed), an UNSAT
+instance, and, when supported by the image, an UNSAT proof check.  A timeout,
+an invalid return code, a contradictory status, an invalid SAT model, or an
+invalid proof makes the command fail.
+
+Validate the registry metadata and run the Python regression tests with:
+
+```
+pip install -r requirements-dev.txt
+python tools/validate_metadata.py
+python -m unittest discover -s tests -v
+```
+
+The JSON schemas are stored in `schemas/`.  Solver statuses are restricted to
+`ok`, `unknown`, `unstable`, and `fixme`; legacy details are kept in
+`status_detail`.
 
 ## Persistent storage for sources and binaries
 
@@ -223,4 +240,3 @@ The Docker images are for academic and educational use only.
 
 The `satex` (`satex.py`) program is distributed under the MIT license. Please see the
 [LICENSE](LICENSE) file for more details.
-

@@ -322,7 +322,8 @@
         ]
     },
     "sparrow2riss-2018": {
-        "status": "FIXME Problem with prebuild",
+        "status": "fixme",
+        "status_detail": "FIXME Problem with prebuild",
         "tracks":["main", "random"],
         "name": "Sparrow2Riss-2018",
         "call": "./sparrow2riss-2018",
@@ -572,7 +573,8 @@
         ]
     },
     "smallsat": {
-        "status": "error (Floating point exeception)",
+        "status": "fixme",
+        "status_detail": "error (Floating point exeception)",
         "tracks":["main"],
         "name": "smallsat",
         "call": "./smallsat",
@@ -611,7 +613,8 @@
         ]
     },
     "cbpenelope2018" : {
-        "status": "FIXME $TEMPDIR",
+        "status": "fixme",
+        "status_detail": "FIXME $TEMPDIR",
         "tracks" : ["parallel"],
         "name": "cbpenelope2018",
         "call": "./solver.sh",
@@ -621,7 +624,8 @@
         ]
     },
     "ccspenelope2018" : {
-        "status": "FIXME : $TEMPDIR",
+        "status": "fixme",
+        "status_detail": "FIXME : $TEMPDIR",
         "tracks" : ["parallel"],
         "name": "ccspenelope2018",
         "call": "./solver.sh",
@@ -705,7 +709,8 @@
         ]
     },
     "scalope" : {
-        "status": "FIXME TEMPDIR",
+        "status": "fixme",
+        "status_detail": "FIXME TEMPDIR",
         "tracks" : ["parallel"],
         "name": "scalope",
         "call": "./solver.sh",
@@ -737,7 +742,8 @@
         ]
     },
     "dimetheus" : {
-        "status": "FIXME",
+        "status": "fixme",
+        "status_detail": "FIXME",
         "tracks" : ["random"],
         "name": "dimetheus",
         "call": "./dimetheus",

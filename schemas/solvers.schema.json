@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sat-heritage.github.io/docker-images/schemas/solvers.schema.json",
+  "title": "SAT Heritage solver registry",
+  "type": "object",
+  "propertyNames": { "pattern": "^[^/\\s]+$" },
+  "additionalProperties": {
+    "type": "object",
+    "properties": {
+      "status": { "enum": ["ok", "unknown", "unstable", "fixme"] },
+      "status_detail": { "type": "string", "minLength": 1 },
+      "name": { "type": "string", "minLength": 1 },
+      "version": { "type": ["string", "number"] },
+      "authors": { "type": "string" },
+      "call": { "type": "string", "minLength": 1 },
+      "path": { "type": "string" },
+      "comment": { "type": "string" },
+      "comments": { "type": "string" },
+      "gz": { "type": "boolean" },
+      "tracks": {
+        "type": "array",
+        "items": { "type": "string", "minLength": 1 },
+        "uniqueItems": true
+      }
+    },
+    "patternProperties": {
+      "^args(?:[A-Za-z0-9_.-]+)?$": {
+        "type": "array",
+        "items": { "type": ["string", "number"] }
+      }
+    },
+    "additionalProperties": false,
+    "allOf": [
+      {
+        "if": {
+          "not": {
+            "properties": { "status": { "const": "fixme" } },
+            "required": ["status"]
+          }
+        },
+        "then": { "required": ["call", "args"] }
+      }
+    ]
+  }
+}

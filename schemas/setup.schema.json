@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sat-heritage.github.io/docker-images/schemas/setup.schema.json",
+  "title": "SAT Heritage build setup",
+  "type": "object",
+  "required": ["base_version", "base_from", "builder"],
+  "properties": {
+    "base_version": { "type": "string", "minLength": 1 },
+    "base_from": { "type": "string", "minLength": 1 },
+    "builder": { "type": "string", "minLength": 1 },
+    "builder_base": { "type": "string", "minLength": 1 },
+    "download_url": { "type": "string", "minLength": 1 },
+    "image_name": { "type": "string", "minLength": 1 },
+    "BUILD_DEPENDS": { "type": "string" },
+    "RDEPENDS": { "type": "string" }
+  },
+  "additionalProperties": {
+    "type": "object",
+    "additionalProperties": { "type": ["string", "number", "boolean"] }
+  }
+}

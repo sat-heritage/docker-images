@@ -4,7 +4,6 @@
 # MIT License
 
 import argparse
-import cgi
 import fnmatch
 import json
 import glob
@@ -21,12 +20,22 @@ import tempfile
 import textwrap
 import time
 from urllib.error import HTTPError
+from urllib.parse import unquote, urlparse
 from urllib.request import urlopen
+
+from satex_validation import (
+    SATISFIABLE,
+    UNSATISFIABLE,
+    ValidationError,
+    validate_drup_proof,
+    validate_solver_run,
+)
 
 __version__ = "1.2.1-dev"
 
 DOCKER_NS = "satex"
 REGISTRY_URL = "https://github.com/sat-heritage/docker-images/releases/download/list/list.tgz"
+NETWORK_TIMEOUT = 30
 
 on_linux = platform.system() == "Linux"
 
@@ -91,9 +100,9 @@ def refresh_cache(args, force=False):
     if force or not is_cache_valid(args):
         os.makedirs(cache_dir, exist_ok=True)
         info(f"fetching {REGISTRY_URL}")
-        with urlopen(REGISTRY_URL) as orig, \
+        with urlopen(REGISTRY_URL, timeout=NETWORK_TIMEOUT) as orig, \
                 open(cache_file, "wb") as dest:
-            dest.write(orig.read())
+            shutil.copyfileobj(orig, dest, length=1024 * 1024)
 
 def get_registry(args):
     if IN_REPOSITORY:
@@ -114,9 +123,15 @@ def make_name(reg, cfg, entry, solver):
 def is_no_pattern(spec):
     return not set(spec).intersection("?[*")
 
-re_image_name = re.compile("[a-zA-Z0-9\-_\.]+:[a-zA-Z0-9\-_\.]+")
+re_image_name = re.compile(r"[a-z0-9][a-z0-9._-]*:[A-Za-z0-9_][A-Za-z0-9_.-]*")
 def valid_name(name):
-    return re_image_name.match(name)
+    return re_image_name.fullmatch(name) is not None
+
+def normalize_status(status):
+    status = status.lower()
+    if status in {"ok", "unstable", "fixme"}:
+        return status
+    return "unstable"
 
 class Repository(object):
     def __init__(self, args):
@@ -136,20 +151,23 @@ class Repository(object):
         for entry in self.registry:
             for solver in self.registry[entry]:
                 name = make_name(self.registry, self.setup, entry, solver)
-                if not valid_name(name):
-                    error(f"invalid image name: '{name}'")
                 if hasattr(args, "pattern") and \
                         not fnmatch.fnmatch(name, args.pattern):
                     continue
-                status = self.registry[entry][solver].get("status", "unknown")
+                status = normalize_status(
+                    self.registry[entry][solver].get("status", "unknown")
+                )
                 if status == "ok":
                     if not select_stable:
                         continue
-                elif status.startswith("FIXME"):
+                elif status == "fixme":
                     if not select_fixme:
                         continue
                 elif not select_unstable:
                     continue
+
+                if not valid_name(name):
+                    error(f"invalid image name: '{name}'")
 
                 tracks = self.registry[entry][solver].get("tracks", [])
                 if select_tracks and not select_tracks.intersection(tracks):
@@ -176,7 +194,7 @@ class ImageManager(object):
         return self.registry.get("name", self.name)
     @property
     def status(self):
-        return self.registry.get("status", "unknown")
+        return normalize_status(self.registry.get("status", "unknown"))
 
 
 def get_list(args):
@@ -242,7 +260,7 @@ def print_info(args):
         line_width = key_width + 70
         if image.status == "ok":
             color = 32
-        elif image.status.startswith("FIXME"):
+        elif image.status == "fixme":
             color = 31
         else:
             color = 33
@@ -272,9 +290,11 @@ def check_cmd(argv):
     DEVNULL = subprocess.DEVNULL if hasattr(subprocess, "DEVNULL") \
                 else open(os.devnull, 'w')
     try:
-        subprocess.call(argv, stdout=DEVNULL, stderr=DEVNULL, close_fds=True)
-        return True
-    except:
+        result = subprocess.run(
+            argv, stdout=DEVNULL, stderr=DEVNULL, close_fds=True, check=False
+        )
+        return result.returncode == 0
+    except OSError:
         return False
 
 def check_sudo():
@@ -331,7 +351,7 @@ def get_docker_volumes(args):
     return [easy_volume(opt).split(":") for opt in opts]
 
 _docker_opts = []
-def docker_runs(args, images, docker_args=(), image_args=()):
+def docker_runs(args, images, docker_args=(), image_args=(), capture_output=False):
     docker_argv = check_docker()
     container_id = f"satex{os.getpid()}"
     argv = ["run", "--name", container_id, "--rm"]
@@ -352,7 +372,13 @@ def docker_runs(args, images, docker_args=(), image_args=()):
     image_argv = ["--mode", args.mode] if hasattr(args, "mode") and args.mode else []
     image_argv += list(image_args)
     run_args = {}
-    if quiet:
+    if capture_output:
+        run_args["stdout"] = subprocess.PIPE
+        run_args["stderr"] = subprocess.STDOUT
+        run_args["text"] = True
+        run_args["encoding"] = "utf-8"
+        run_args["errors"] = "replace"
+    elif quiet:
         run_args["stdout"] = subprocess.DEVNULL
         run_args["stderr"] = subprocess.DEVNULL
     global stop
@@ -372,20 +398,23 @@ def docker_runs(args, images, docker_args=(), image_args=()):
                 subprocess.run(argv, stdout=subprocess.DEVNULL)
             signal.signal(signal.SIGINT, killer)
             info(" ".join(cmd)) if not quiet else None
-            ret = subprocess.run(cmd, **run_args).returncode
+            result = subprocess.run(cmd, **run_args)
+            ret = result.returncode
             signal.signal(signal.SIGINT, signal.SIG_DFL)
             if stop:
                 sys.exit(1)
             if ret == 124:
-                if args.fail_if_timeout:
+                if args.fail_if_timeout and not capture_output:
                     raise subprocess.TimeoutExpired(image, args.timeout)
                 elif not quiet:
                     warn(f"{image} timeout")
             else:
-                if not (ret == 0 or 10 <= ret <= 20):
+                if not capture_output and ret not in {0, 10, 20}:
                     if not quiet:
                         error(f"Solver failed with return code {ret}")
     if not args.pretend:
+        if capture_output:
+            return ret, result.stdout
         return ret
 
 def run_images(args):
@@ -444,6 +473,27 @@ def run_shell(args):
     assert args.image in images, "Unknown image"
     docker_runs(args, [args.image], ("-it", "--entrypoint", "bash"))
 
+def safe_tar_members(tar, output_dir):
+    """Yield only regular archive entries that remain below output_dir."""
+    root = Path(output_dir).resolve()
+    for member in tar:
+        target = (root / member.name).resolve()
+        try:
+            target.relative_to(root)
+        except ValueError as exc:
+            raise tarfile.FilterError(
+                f"archive member escapes destination: {member.name}"
+            ) from exc
+        if member.isdev() or member.isfifo():
+            raise tarfile.FilterError(
+                f"archive contains special file: {member.name}"
+            )
+        if member.issym() or member.islnk():
+            raise tarfile.FilterError(
+                f"archive contains unsupported link: {member.name}"
+            )
+        yield member
+
 def extract(args):
     images = get_list(args)
     docker_argv = check_docker()
@@ -464,7 +514,15 @@ def extract(args):
         with subprocess.Popen(argv, stdout=subprocess.PIPE,
                 stderr=sys.stderr) as p:
             with tarfile.open(mode="r|", fileobj=p.stdout) as t:
-                t.extractall(args.output_dir)
+                if hasattr(tarfile, "data_filter"):
+                    t.extractall(args.output_dir, filter="data")
+                else:
+                    t.extractall(
+                        args.output_dir,
+                        members=safe_tar_members(t, args.output_dir),
+                    )
+            if p.wait() != 0:
+                raise subprocess.CalledProcessError(p.returncode, argv)
         os.rename(os.path.join(args.output_dir, "solvers"), dest_dir)
 
 #
@@ -483,7 +541,8 @@ def docker_uptodate_image(args, docker_argv, image):
         subprocess.check_call(argv)
         FROM_UPTODATE.add(image)
 
-def docker_build(args, docker_argv, tag, root, build_args={}, Dockerfile=None):
+def docker_build(args, docker_argv, tag, root, build_args=None, Dockerfile=None):
+    build_args = build_args or {}
     with open(Dockerfile or os.path.join(root, "Dockerfile")) as fp:
         FROMs = [l.split()[1] for l in fp.readlines() \
                     if l.startswith("FROM") and "{" not in l]
@@ -584,47 +643,85 @@ _retstr = {
 }
 
 def test_images(args):
-    docker_args = ["-v", f"{os.path.abspath('tests')}:/data"]
+    tests_dir = Path("tests").resolve()
+    docker_args = ["-v", f"{tests_dir}:/data"]
+    sat_path = tests_dir / args.file
+    sat_gz_path = tests_dir / f"{args.file}.gz"
+    unsat_path = tests_dir / args.unsat_file
+    for path in (sat_path, sat_gz_path, unsat_path):
+        if not path.is_file():
+            error(f"missing test instance: {path}")
 
-    info(f"Testing with CNF {os.path.abspath('tests')}/{args.file}")
+    info(f"Testing SAT with {sat_path}")
+    info(f"Testing UNSAT with {unsat_path}")
 
-    if args.timeout > 600:
-        args.timeout = 10
-
-    def call(test_name, image, image_args):
+    def call(test_name, image, image_args, cnf_path, expected_status):
         print(test_name, end="...", flush=True)
-        ret = docker_runs(args, [image.name], docker_args=docker_args,
-                    image_args=image_args)
+        ret, output = docker_runs(
+            args,
+            [image.name],
+            docker_args=docker_args,
+            image_args=image_args,
+            capture_output=True,
+        )
         msg = _retstr.get(ret, ret)
-        if ret == 124 or ret == 0 or 10 <= ret <= 20:
+        try:
+            validate_solver_run(cnf_path, expected_status, ret, output)
+        except (OSError, ValidationError, ValueError) as exc:
+            print(red("fail"), f"({msg}: {exc})")
+            if output and not args.quiet:
+                print(output, end="" if output.endswith("\n") else "\n")
+            return False
+        else:
             print(green("ok"), f"({msg})")
             return True
-        else:
-            print(red("fail"), f"({msg})")
-            return False
 
     def test_cnf(image):
-        image_args = [args.file]
-        return call("cnf", image, image_args)
+        return call("sat", image, [args.file], sat_path, SATISFIABLE)
+
     def test_gz(image):
-        image_args = [f"{args.file}.gz"]
-        return call("gz", image, image_args)
+        return call("sat-gz", image, [f"{args.file}.gz"], sat_gz_path, SATISFIABLE)
+
+    def test_unsat(image):
+        return call("unsat", image, [args.unsat_file], unsat_path, UNSATISFIABLE)
+
     def test_proof(image):
-        if not "argsproof" in image.registry:
+        if "argsproof" not in image.registry:
             return True
-        image_args = [args.file, "proof.tmp"]
-        return call("proof", image, image_args)
+        proof_path = tests_dir / "proof.tmp"
+        proof_path.unlink(missing_ok=True)
+        try:
+            if not call(
+                "proof-result",
+                image,
+                [args.unsat_file, proof_path.name],
+                unsat_path,
+                UNSATISFIABLE,
+            ):
+                return False
+            print("proof-check", end="...", flush=True)
+            validate_drup_proof(unsat_path, proof_path)
+            print(green("ok"))
+            return True
+        except (OSError, ValidationError, ValueError) as exc:
+            print(red("fail"), f"({exc})")
+            return False
+        finally:
+            proof_path.unlink(missing_ok=True)
+
     def test_modes(image):
         ok = True
         for mode in [k for k in image.registry if k.startswith("args")]:
             mode = mode[4:]
             if not mode or mode == "proof":
                 continue
-            image_args = ["--mode", mode[4:], "aim-200-1_6-yes1-1.cnf.gz", "proof.tmp"]
-            ok = call(mode, image, image_args) and ok
+            image_args = ["--mode", mode, f"{args.file}.gz"]
+            ok = call(
+                f"mode-{mode}", image, image_args, sat_gz_path, SATISFIABLE
+            ) and ok
         return ok
 
-    tests = [test_cnf, test_gz, test_proof, test_modes]
+    tests = [test_cnf, test_gz, test_unsat, test_proof, test_modes]
 
     failures = []
 
@@ -736,14 +833,13 @@ def download_src(args):
             if args.subdir_entry:
                 os.makedirs(os.path.join(args.output_dir, str(image.entry)), exist_ok=True)
             try:
-                with urlopen(src_url) as fp:
-                    if "Content-Disposition" in fp.headers:
-                        _, params = cgi.parse_header(fp.headers["Content-Disposition"])
-                        filename = params['filename']
-                    else:
-                        filename = os.path.basename(src_url)
-                        if "?" in filename:
-                            filename = filename.split("?")[0]
+                with urlopen(src_url, timeout=NETWORK_TIMEOUT) as fp:
+                    filename = fp.headers.get_filename()
+                    if not filename:
+                        filename = unquote(os.path.basename(urlparse(src_url).path))
+                    filename = os.path.basename(filename)
+                    if not filename or filename in {".", ".."}:
+                        raise ValueError("download URL does not provide a safe filename")
 
                     if args.subdir_entry:
                         filename = os.path.join(str(image.entry), filename)
@@ -752,7 +848,7 @@ def download_src(args):
                         error(f"{image.name}: {filename} already exists. Use --overwrite option to overwrite it")
                     print(f"{image.name}: downloading to {filename}...", end="", flush=True)
                     with open(filename, "wb") as dest:
-                        dest.write(fp.read())
+                        shutil.copyfileobj(fp, dest, length=1024 * 1024)
                     print(green("ok"))
                     if "zenodo.org" in src_url:
                         time.sleep(0.5)
@@ -901,7 +997,9 @@ def main(redirected=False):
         p.add_argument("--quiet", "-q", action="store_true")
         p.add_argument("--file", "-f", default="aim-200-1_6-yes1-1.cnf",
                 help=".cnf test file (should also exists with .gz)")
-        p.set_defaults(func=test_images)
+        p.add_argument("--unsat-file", default="simple-unsat.cnf",
+                help="UNSAT .cnf test file (default: simple-unsat.cnf)")
+        p.set_defaults(func=test_images, timeout=10, fail_if_timeout=True)
 
         p = subparsers.add_parser("push",
                 help=f"Push {DOCKER_NS} Docker images",
