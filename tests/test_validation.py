@@ -1,7 +1,10 @@
 import io
+import json
 import tarfile
 import tempfile
 import unittest
+from types import SimpleNamespace
+from urllib.error import HTTPError
 from pathlib import Path
 
 import satex
@@ -115,6 +118,50 @@ class SafetyTests(unittest.TestCase):
             self.assertRaises(tarfile.FilterError),
         ):
             list(satex.safe_tar_members(archive, output_dir))
+
+
+class BuildDiagnosticTests(unittest.TestCase):
+    def test_source_url_brace_expansion(self):
+        self.assertEqual(
+            satex.brace_expand("https://example.test/{one,two}.tar.gz"),
+            [
+                "https://example.test/one.tar.gz",
+                "https://example.test/two.tar.gz",
+            ],
+        )
+
+    def test_dockerfile_base_images_ignore_named_stages(self):
+        with tempfile.TemporaryDirectory() as directory:
+            dockerfile = Path(directory) / "Dockerfile"
+            dockerfile.write_text(
+                "FROM debian:stretch AS source\n"
+                "FROM source AS builder\n"
+                "FROM ${BASE} AS runtime\n"
+                "FROM runtime AS image\n",
+                encoding="utf-8",
+            )
+            self.assertEqual(
+                satex.dockerfile_base_images(directory),
+                ["debian:stretch"],
+            )
+
+    def test_build_reporter_writes_json_lines(self):
+        with tempfile.TemporaryDirectory() as directory:
+            status_file = Path(directory) / "status.jsonl"
+            reporter = satex.BuildReporter(
+                SimpleNamespace(terse=False, status_file=str(status_file))
+            )
+            reporter.report("fail", "glucose:2011", "source-download", "HTTP 404")
+            event = json.loads(status_file.read_text(encoding="utf-8"))
+            self.assertEqual(event["stage"], "source-download")
+            self.assertEqual(event["detail"], "HTTP 404")
+
+    def test_http_error_has_stable_diagnostic(self):
+        error = HTTPError("https://example.test/missing", 404, "", {}, None)
+        try:
+            self.assertEqual(satex.source_error_detail(error), "HTTP 404")
+        finally:
+            error.close()
 
 
 if __name__ == "__main__":

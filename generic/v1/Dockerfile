@@ -88,7 +88,7 @@ RUN ASSET="$(ls /assets/*)" && set -ex && \
 # This part takes care about compiling the solver
 # and installing binaries in /dist
 #
-FROM ${BUILDER_BASE}
+FROM ${BUILDER_BASE} AS buildenv
 ENV LANG=C.UTF-8 LC_ALL=C.UTF-8
 
 # The builder may use another archived Debian release.
@@ -120,6 +120,8 @@ RUN apt-get update --fix-missing &&\
 ARG BUILD_DEPENDS
 RUN if test "${BUILD_DEPENDS}"; then \
     apt-get install -y --no-install-recommends ${BUILD_DEPENDS} || apt-get install -y ${BUILD_DEPENDS}; fi
+
+FROM buildenv AS builder
 
 COPY --from=unpack /src /src
 

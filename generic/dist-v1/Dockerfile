@@ -2,7 +2,7 @@ ARG BASE
 ARG BUILDER_BASE
 FROM ${BUILDER_BASE} as builder
 
-FROM ${BASE}
+FROM ${BASE} AS runtime
 
 # Debian releases used by historical solvers have moved to archive.debian.org.
 RUN set -eu; \
@@ -33,6 +33,8 @@ RUN if test "${RDEPENDS}"; then apt-get update --fix-missing && \
     (apt-get install -y --no-install-recommends ${RDEPENDS} ||\
      apt-get install -y ${RDEPENDS}) && \
     apt-get clean -y && rm -rf /var/lib/apt/lists/*; fi
+
+FROM runtime AS image
 
 ARG SOLVER
 ARG SOLVER_NAME

@@ -1,6 +1,6 @@
 ARG BASE
 ARG BUILDER_BASE
-FROM ${BUILDER_BASE} as builder
+FROM ${BUILDER_BASE} AS buildenv
 
 # Debian releases used by historical solvers have moved to archive.debian.org.
 RUN set -eu; \
@@ -28,6 +28,8 @@ RUN set -eu; \
 RUN apt-get update --fix-missing && \
     apt-get -y install gcc make libc6-dev
 
+FROM buildenv AS source
+
 WORKDIR /src
 
 ARG SOLVER_NAME
@@ -36,5 +38,7 @@ ARG download_url
 ADD $download_url /src
 
 COPY ${SOLVER_NAME}.build.sh /src/build.sh
+
+FROM source AS builder
 
 RUN mkdir /dist && bash build.sh

@@ -19,9 +19,9 @@ import tarfile
 import tempfile
 import textwrap
 import time
-from urllib.error import HTTPError
+from urllib.error import HTTPError, URLError
 from urllib.parse import unquote, urlparse
-from urllib.request import urlopen
+from urllib.request import Request, urlopen
 
 from satex_validation import (
     SATISFIABLE,
@@ -41,7 +41,133 @@ REGISTRY_URL = "https://github.com/sat-heritage/docker-images/releases/download/
 NETWORK_TIMEOUT = 30
 HOST_TIMEOUT_GRACE = 2
 
+BUILDER_STAGES = {
+    "generic/2000": [
+        ("build-environment", "buildenv"),
+        ("source-extract", "source"),
+        ("compile", "builder"),
+    ],
+    "generic/v1": [
+        ("source-extract", "unpack"),
+        ("build-environment", "buildenv"),
+        ("compile", "builder"),
+    ],
+    "generic/starexec": [
+        ("build-environment", "buildenv"),
+        ("source-extract", "source"),
+        ("compile", "builder"),
+    ],
+    "generic/binary-v1": [("source-extract", "source")],
+    "generic/binary-tar": [("source-extract", "source")],
+}
+
+DIST_STAGES = {
+    "v1": [
+        ("runtime-dependencies", "runtime"),
+        ("image-assemble", "image"),
+    ],
+}
+
 on_linux = platform.system() == "Linux"
+
+
+def brace_expand(s):
+    """Perform the limited brace-and-comma expansion used by source URLs."""
+    def getitem(value, depth=0):
+        out = [""]
+        while value:
+            c = value[0]
+            if depth and (c == ',' or c == '}'):
+                return out, value
+            if c == '{':
+                group = getgroup(value[1:], depth + 1)
+                if group:
+                    out, value = [a + b for a in out for b in group[0]], group[1]
+                    continue
+            if c == '\\' and len(value) > 1:
+                value, c = value[1:], c + value[1]
+            out, value = [a + c for a in out], value[1:]
+        return out, value
+
+    def getgroup(value, depth):
+        out, comma = [], False
+        while value:
+            group, value = getitem(value, depth)
+            if not value:
+                break
+            out += group
+            if value[0] == '}':
+                if comma:
+                    return out, value[1:]
+                return ['{' + a + '}' for a in out], value[1:]
+            if value[0] == ',':
+                comma, value = True, value[1:]
+        return None
+
+    return getitem(s)[0]
+
+
+class BuildReporter:
+    def __init__(self, args):
+        self.terse = getattr(args, "terse", False)
+        self.status_file = getattr(args, "status_file", None)
+        if self.status_file:
+            status_path = Path(self.status_file)
+            status_path.parent.mkdir(parents=True, exist_ok=True)
+            status_path.write_text("", encoding="utf-8")
+
+    def report(self, status, image, stage, detail=""):
+        detail = str(detail).replace("\n", " ").strip()
+        event = {
+            "image": image,
+            "stage": stage,
+            "status": status,
+        }
+        if detail:
+            event["detail"] = detail
+        if self.status_file:
+            with open(self.status_file, "a", encoding="utf-8") as fp:
+                json.dump(event, fp, sort_keys=True)
+                fp.write("\n")
+        if self.terse:
+            suffix = f" ({detail})" if detail else ""
+            print(f"{status:<4} {image:<35} {stage}{suffix}", flush=True)
+
+
+def source_urls(image):
+    template = image.setup.get("download_url")
+    if not isinstance(template, str) or not template:
+        return []
+    return brace_expand(template.format(**image.vars))
+
+
+def probe_source_url(url, opener=urlopen):
+    parsed = urlparse(url)
+    if parsed.scheme not in {"http", "https", "ftp"}:
+        if not os.path.isfile(url):
+            raise FileNotFoundError(url)
+        return
+    request = Request(
+        url,
+        headers={
+            "Range": "bytes=0-0",
+            "User-Agent": f"satex/{__version__}",
+        },
+    )
+    with opener(request, timeout=NETWORK_TIMEOUT):
+        pass
+
+
+def source_error_detail(exc):
+    if isinstance(exc, HTTPError):
+        return f"HTTP {exc.code}"
+    if isinstance(exc, URLError):
+        return str(exc.reason)
+    if isinstance(exc, TimeoutError):
+        return "timeout"
+    if isinstance(exc, FileNotFoundError):
+        return "local file not found"
+    return str(exc)
 
 def color(s, color, mode=1):
     return f"\033[{mode};{color}m{s}\033[0m"
@@ -573,33 +699,76 @@ def extract(args):
 
 FROM_UPTODATE = set()
 
+def diagnostic_subprocess_args(args):
+    if getattr(args, "terse", False):
+        return {"stdout": sys.stderr, "stderr": sys.stderr}
+    return {}
+
+
 def docker_uptodate_image(args, docker_argv, image):
     if image not in FROM_UPTODATE:
         argv = docker_argv + ["pull", image]
         info(" ".join(argv))
-        subprocess.check_call(argv)
+        subprocess.check_call(argv, **diagnostic_subprocess_args(args))
         FROM_UPTODATE.add(image)
 
-def docker_build(args, docker_argv, tag, root, build_args=None, Dockerfile=None):
-    build_args = build_args or {}
+
+def dockerfile_base_images(root, Dockerfile=None):
+    images = []
+    aliases = set()
     with open(Dockerfile or os.path.join(root, "Dockerfile")) as fp:
-        FROMs = [l.split()[1] for l in fp.readlines() \
-                    if l.startswith("FROM") and "{" not in l]
-        for f in FROMs:
-            docker_uptodate_image(args, docker_argv, f)
+        for line in fp:
+            if not line.startswith("FROM"):
+                continue
+            fields = line.split()
+            image = fields[1]
+            if "{" not in image and image not in aliases:
+                images.append(image)
+            if len(fields) >= 4 and fields[-2].lower() == "as":
+                aliases.add(fields[-1])
+    return images
+
+
+def docker_prepare_base_images(args, docker_argv, root, Dockerfile=None):
+    for image in dockerfile_base_images(root, Dockerfile):
+        docker_uptodate_image(args, docker_argv, image)
+
+
+def docker_build(
+    args,
+    docker_argv,
+    tag,
+    root,
+    build_args=None,
+    Dockerfile=None,
+    target=None,
+):
+    build_args = build_args or {}
+    docker_prepare_base_images(args, docker_argv, root, Dockerfile)
     argv = docker_argv + ["build", "-t", tag, root]
     if args.no_cache:
         argv += ["--no-cache"]
     if Dockerfile:
         argv += ["-f", Dockerfile]
+    if target:
+        argv += ["--target", target]
     for k,v in build_args.items():
         argv += ["--build-arg", f"{k}={v}"]
     info(" ".join(argv))
-    subprocess.check_call(argv)
+    subprocess.check_call(argv, **diagnostic_subprocess_args(args))
 
 def build_images(args):
-    docker_argv = check_docker()
     repo = Repository(args)
+    reporter = BuildReporter(args)
+
+    try:
+        docker_argv = check_docker()
+    except SystemExit:
+        for name in repo.images:
+            reporter.report("fail", name, "docker-engine", "unavailable")
+        raise
+    for name in repo.images:
+        reporter.report("ok", name, "docker-engine")
 
     bases_uptodate = set()
 
@@ -615,6 +784,26 @@ def build_images(args):
     for name in repo.images:
         image = ImageManager(name, repo)
         setup = image.setup
+        stage_image_tags = []
+
+        def failure_detail(exc):
+            if isinstance(
+                exc,
+                (HTTPError, URLError, TimeoutError, FileNotFoundError),
+            ):
+                return source_error_detail(exc)
+            if isinstance(exc, subprocess.CalledProcessError):
+                return f"exit {exc.returncode}"
+            return str(exc) or exc.__class__.__name__
+
+        def run_stage(stage, action, detail=""):
+            reporter.report("run", image.name, stage, detail)
+            try:
+                action()
+            except Exception as exc:
+                reporter.report("fail", image.name, stage, failure_detail(exc))
+                raise
+            reporter.report("ok", image.name, stage)
 
         root = str(image.entry)
 
@@ -628,51 +817,165 @@ def build_images(args):
         builder_Dockerfile = os.path.join(builder_path, "Dockerfile")
         builder_target = f"{DOCKER_NS}/builder-{image.name}"
 
-        if "builder_base" in setup:
-            build_args["BUILDER_BASE"] = setup["builder_base"]
-            docker_uptodate_image(args, docker_argv, setup["builder_base"])
-
-        docker_build(args, docker_argv, builder_target, root,
-                build_args=build_args, Dockerfile=builder_Dockerfile)
-
-        base_version = setup["base_version"]
-        base_root = os.path.join("base", base_version)
-        base_from = setup.get("base_from")
-        base_args = {}
-        base_tag = base_version
-        if base_from:
-            base_args["BASE"] = base_from
-            from_tag = base_from.replace("/","_").replace(":","-")
-            base_tag = f"{base_version}-{from_tag}"
-        base_target = f"{DOCKER_NS}/base:{base_tag}"
-        if base_target not in bases_uptodate:
-            docker_build(args, docker_argv, base_target, base_root, base_args)
-            bases_uptodate.add(base_target)
-
-        dist_version = setup.get("dist_version", "v1")
-        dist_Dockerfile = f"generic/dist-{dist_version}/Dockerfile"
-        dist_args = {
-            "BASE": base_target,
-            "BUILDER_BASE": builder_target,
-            "IMAGE_NAME": image.name,
-            "SOLVER": build_args["SOLVER"],
-            "SOLVER_NAME": build_args["SOLVER_NAME"],
-        }
-        for k in only_dist_opts:
-            if k in setup:
-                dist_args[k] = setup[k]
-
-        fd, dbjson = tempfile.mkstemp(".json", "file", root)
         try:
-            fp = os.fdopen(fd, "w")
-            json.dump({image.solver: image.registry}, fp)
-            fp.close()
-            dist_args["dbjson"] = os.path.basename(dbjson)
+            urls = source_urls(image)
+            if urls:
+                def probe_sources():
+                    for url in urls:
+                        probe_source_url(url)
+                run_stage("source-download", probe_sources)
+            else:
+                reporter.report("skip", image.name, "source-download", "no URL")
 
-            docker_build(args, docker_argv, f"{DOCKER_NS}/{image.name}",
-                    root, dist_args, Dockerfile=dist_Dockerfile)
+            if "builder_base" in setup:
+                build_args["BUILDER_BASE"] = setup["builder_base"]
+
+            def prepare_builder_images():
+                if "builder_base" in setup:
+                    docker_uptodate_image(
+                        args, docker_argv, setup["builder_base"]
+                    )
+                docker_prepare_base_images(
+                    args, docker_argv, root, builder_Dockerfile
+                )
+
+            run_stage("builder-base-image", prepare_builder_images)
+
+            builder_stages = BUILDER_STAGES.get(setup["builder"])
+            if builder_stages:
+                for index, (stage, target) in enumerate(builder_stages):
+                    last_stage = index == len(builder_stages) - 1
+                    stage_tag = builder_target if last_stage else (
+                        f"{DOCKER_NS}/stage-{stage}-{image.name}"
+                    )
+                    if not last_stage:
+                        stage_image_tags.append(stage_tag)
+                    run_stage(
+                        stage,
+                        lambda stage_tag=stage_tag, target=target: docker_build(
+                            args,
+                            docker_argv,
+                            stage_tag,
+                            root,
+                            build_args=build_args,
+                            Dockerfile=builder_Dockerfile,
+                            target=target,
+                        ),
+                    )
+                if not any(stage == "compile" for stage, _ in builder_stages):
+                    reporter.report(
+                        "skip", image.name, "compile", "binary distribution"
+                    )
+            else:
+                run_stage(
+                    "builder-build",
+                    lambda: docker_build(
+                        args,
+                        docker_argv,
+                        builder_target,
+                        root,
+                        build_args=build_args,
+                        Dockerfile=builder_Dockerfile,
+                    ),
+                    "custom builder",
+                )
+
+            base_version = setup["base_version"]
+            base_root = os.path.join("base", base_version)
+            base_from = setup.get("base_from")
+            base_args = {}
+            base_tag = base_version
+            if base_from:
+                base_args["BASE"] = base_from
+                from_tag = base_from.replace("/","_").replace(":","-")
+                base_tag = f"{base_version}-{from_tag}"
+            base_target = f"{DOCKER_NS}/base:{base_tag}"
+            if base_target not in bases_uptodate:
+                def prepare_runtime_images():
+                    if base_from:
+                        docker_uptodate_image(args, docker_argv, base_from)
+                    docker_prepare_base_images(args, docker_argv, base_root)
+
+                run_stage("runtime-base-image", prepare_runtime_images)
+                run_stage(
+                    "runtime-base",
+                    lambda: docker_build(
+                        args,
+                        docker_argv,
+                        base_target,
+                        base_root,
+                        base_args,
+                    ),
+                )
+                bases_uptodate.add(base_target)
+            else:
+                reporter.report(
+                    "skip", image.name, "runtime-base", "already built"
+                )
+
+            dist_version = setup.get("dist_version", "v1")
+            dist_Dockerfile = f"generic/dist-{dist_version}/Dockerfile"
+            dist_args = {
+                "BASE": base_target,
+                "BUILDER_BASE": builder_target,
+                "IMAGE_NAME": image.name,
+                "SOLVER": build_args["SOLVER"],
+                "SOLVER_NAME": build_args["SOLVER_NAME"],
+            }
+            for k in only_dist_opts:
+                if k in setup:
+                    dist_args[k] = setup[k]
+
+            fd, dbjson = tempfile.mkstemp(".json", "file", root)
+            try:
+                fp = os.fdopen(fd, "w")
+                json.dump({image.solver: image.registry}, fp)
+                fp.close()
+                dist_args["dbjson"] = os.path.basename(dbjson)
+
+                dist_stages = DIST_STAGES.get(dist_version)
+                if dist_stages:
+                    for index, (stage, target) in enumerate(dist_stages):
+                        last_stage = index == len(dist_stages) - 1
+                        stage_tag = f"{DOCKER_NS}/{image.name}" if last_stage else (
+                            f"{DOCKER_NS}/stage-{stage}-{image.name}"
+                        )
+                        if not last_stage:
+                            stage_image_tags.append(stage_tag)
+                        run_stage(
+                            stage,
+                            lambda stage_tag=stage_tag, target=target: docker_build(
+                                args,
+                                docker_argv,
+                                stage_tag,
+                                root,
+                                dist_args,
+                                Dockerfile=dist_Dockerfile,
+                                target=target,
+                            ),
+                        )
+                else:
+                    run_stage(
+                        "image-assemble",
+                        lambda: docker_build(
+                            args,
+                            docker_argv,
+                            f"{DOCKER_NS}/{image.name}",
+                            root,
+                            dist_args,
+                            Dockerfile=dist_Dockerfile,
+                        ),
+                    )
+            finally:
+                os.unlink(dbjson)
         finally:
-            os.unlink(dbjson)
+            for stage_tag in stage_image_tags:
+                subprocess.run(
+                    docker_argv + ["image", "rm", "-f", stage_tag],
+                    stdout=subprocess.DEVNULL,
+                    stderr=subprocess.DEVNULL,
+                    check=False,
+                )
 
 
 _retstr = {
@@ -915,41 +1218,6 @@ def dependencies(args):
             prepare_image(args, docker_argv, image)
 
 def download_src(args):
-    def brace_expand(s):
-        """
-        Bash-like brace+comma expansion
-        Source: https://rosettacode.org/wiki/Brace_expansion
-        """
-        def getitem(s, depth=0):
-            out = [""]
-            while s:
-                c = s[0]
-                if depth and (c == ',' or c == '}'):
-                    return out,s
-                if c == '{':
-                    x = getgroup(s[1:], depth+1)
-                    if x:
-                        out,s = [a+b for a in out for b in x[0]], x[1]
-                        continue
-                if c == '\\' and len(s) > 1:
-                    s, c = s[1:], c + s[1]
-                out, s = [a+c for a in out], s[1:]
-            return out,s
-
-        def getgroup(s, depth):
-            out, comma = [], False
-            while s:
-                g,s = getitem(s, depth)
-                if not s: break
-                out += g
-                if s[0] == '}':
-                    if comma: return out, s[1:]
-                    return ['{' + a + '}' for a in out], s[1:]
-                if s[0] == ',':
-                    comma,s = True, s[1:]
-            return None
-        return getitem(s)[0]
-
     os.makedirs(args.output_dir, exist_ok=True)
     repo = Repository(args)
     for name in repo.images:
@@ -1117,6 +1385,10 @@ def main(redirected=False):
                 parents=[spec_parser, status_parser, tracks_parser])
         p.add_argument("--no-cache", action="store_true",
                 help="docker build option")
+        p.add_argument("--terse", action="store_true",
+                help="Print one concise status line for each build stage")
+        p.add_argument("--status-file",
+                help="Write build stage events as JSON Lines")
         p.set_defaults(func=build_images)
 
         p = subparsers.add_parser("test",

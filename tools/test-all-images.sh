@@ -98,6 +98,9 @@ cleanup_current_image() {
     if [[ -n "$current_image" ]]; then
         remove_image_if_present "satex/$current_image" || true
         remove_image_if_present "satex/builder-$current_image" || true
+        remove_image_if_present "satex/stage-source-extract-$current_image" || true
+        remove_image_if_present "satex/stage-build-environment-$current_image" || true
+        remove_image_if_present "satex/stage-runtime-dependencies-$current_image" || true
         current_image=""
     fi
 }
@@ -156,17 +159,17 @@ while IFS= read -r image; do
     report "info" "$image" "progress" "$index/$total"
     safe_name=${image//[:\/]/-}
     build_log="$log_dir/$safe_name-build.log"
+    build_status="$log_dir/$safe_name-build.jsonl"
     test_log="$log_dir/$safe_name-test.log"
 
     build_ok=true
     if [[ "$build_sources" == true ]]; then
-        report "run" "$image" "source-build"
-        build_command=(python3 satex.py build)
+        build_command=(python3 satex.py build --terse --status-file "$build_status")
         [[ "$no_cache" == true ]] && build_command+=(--no-cache)
-        if "${build_command[@]}" "$image" >"$build_log" 2>&1; then
-            report "ok" "$image" "source-build"
-        else
-            report "fail" "$image" "source-build" "$build_log"
+        if ! "${build_command[@]}" "$image" 2>"$build_log"; then
+            if ! grep -q '"status": "fail"' "$build_status" 2>/dev/null; then
+                report "fail" "$image" "build-unknown" "$build_log"
+            fi
             build_ok=false
         fi
     else
