@@ -113,6 +113,16 @@ def validate_solver_run(
     cnf_path: str | Path, expected_status: str, returncode: int, output: str
 ) -> None:
     """Validate exit code, textual status and, for SAT, the printed model."""
+    model = validate_solver_result(expected_status, returncode, output)
+    if expected_status == SATISFIABLE:
+        variables, clauses = read_dimacs(cnf_path)
+        validate_model(variables, clauses, model)
+
+
+def validate_solver_result(
+    expected_status: str, returncode: int, output: str
+) -> list[int]:
+    """Validate the exit code and textual status, then return model literals."""
     if expected_status not in {SATISFIABLE, UNSATISFIABLE}:
         raise ValueError(f"unsupported expected status: {expected_status}")
 
@@ -129,9 +139,7 @@ def validate_solver_run(
         raise ValidationError(
             f"expected status {expected_status}, solver reported {status}"
         )
-    if expected_status == SATISFIABLE:
-        variables, clauses = read_dimacs(cnf_path)
-        validate_model(variables, clauses, model)
+    return model
 
 
 def _text_proof_steps(data: bytes) -> Iterator[tuple[bool, tuple[int, ...]]]:

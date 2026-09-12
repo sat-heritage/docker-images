@@ -27,7 +27,10 @@ from satex_validation import (
     SATISFIABLE,
     UNSATISFIABLE,
     ValidationError,
+    read_dimacs,
     validate_drup_proof,
+    validate_model,
+    validate_solver_result,
     validate_solver_run,
 )
 
@@ -357,8 +360,13 @@ def prepare_image(args, docker_argv, image):
     if args.pull or\
             not subprocess.check_output(docker_argv + ["images", "-q", image]):
         cmd = docker_argv + ["pull", image]
-        info(" ".join(cmd))
-        subprocess.check_call(cmd)
+        quiet = getattr(args, "quiet", False) or getattr(args, "terse", False)
+        if not quiet:
+            info(" ".join(cmd))
+        run_args = {}
+        if quiet:
+            run_args = {"stdout": subprocess.DEVNULL, "stderr": subprocess.DEVNULL}
+        subprocess.check_call(cmd, **run_args)
 
 def easy_volume(v):
     if ":" in v:
@@ -379,7 +387,7 @@ def docker_runs(args, images, docker_args=(), image_args=(), capture_output=Fals
     argv = ["run", "--name", container_id, "--rm"]
     if hasattr(args, "timeout"):
         argv += ["-e", f"TIMEOUT={args.timeout}"]
-    quiet = hasattr(args, "quiet") and args.quiet
+    quiet = getattr(args, "quiet", False) or getattr(args, "terse", False)
     for opt in _docker_opts:
         if getattr(args, opt) is not None:
             val = getattr(args, opt)
@@ -691,11 +699,24 @@ def test_images_in_workspace(args, tests_dir):
     sat_gz_path = tests_dir / f"{args.file}.gz"
     unsat_path = tests_dir / args.unsat_file
 
-    info(f"Testing SAT with {sat_path}")
-    info(f"Testing UNSAT with {unsat_path}")
+    if not args.terse:
+        info(f"Testing SAT with {sat_path}")
+        info(f"Testing UNSAT with {unsat_path}")
 
-    def call(test_name, image, image_args, cnf_path, expected_status):
-        print(test_name, end="...", flush=True)
+    def report(status, image, test_name, detail=""):
+        suffix = f" ({detail})" if detail else ""
+        print(f"{status:<4} {image.name} {test_name}{suffix}", flush=True)
+
+    def call(
+        test_name,
+        image,
+        image_args,
+        cnf_path,
+        expected_status,
+        report_launch=False,
+    ):
+        if not args.terse:
+            print(test_name, end="...", flush=True)
         ret, output = docker_runs(
             args,
             [image.name],
@@ -704,6 +725,54 @@ def test_images_in_workspace(args, tests_dir):
             capture_output=True,
         )
         msg = _retstr.get(ret, ret)
+        if args.terse:
+            launched = ret not in {125, 126, 127}
+            if report_launch:
+                report(
+                    "ok" if launched else "fail",
+                    image,
+                    "launch",
+                    "" if launched else msg,
+                )
+            if not launched:
+                report("skip", image, f"{test_name}-termination", "launch failed")
+                report("skip", image, f"{test_name}-result", "launch failed")
+                if expected_status == SATISFIABLE:
+                    report("skip", image, f"{test_name}-model", "launch failed")
+                return False
+
+            terminated = ret != 124
+            report(
+                "ok" if terminated else "fail",
+                image,
+                f"{test_name}-termination",
+                msg,
+            )
+            if not terminated:
+                report("skip", image, f"{test_name}-result", "timeout")
+                if expected_status == SATISFIABLE:
+                    report("skip", image, f"{test_name}-model", "timeout")
+                return False
+
+            try:
+                model = validate_solver_result(expected_status, ret, output)
+            except (ValidationError, ValueError) as exc:
+                report("fail", image, f"{test_name}-result", str(exc))
+                if expected_status == SATISFIABLE:
+                    report("skip", image, f"{test_name}-model", "invalid result")
+                return False
+
+            report("ok", image, f"{test_name}-result", msg)
+            if expected_status == SATISFIABLE:
+                try:
+                    variables, clauses = read_dimacs(cnf_path)
+                    validate_model(variables, clauses, model)
+                except (OSError, ValidationError, ValueError) as exc:
+                    report("fail", image, f"{test_name}-model", str(exc))
+                    return False
+                report("ok", image, f"{test_name}-model")
+            return True
+
         try:
             validate_solver_run(cnf_path, expected_status, ret, output)
         except (OSError, ValidationError, ValueError) as exc:
@@ -716,34 +785,51 @@ def test_images_in_workspace(args, tests_dir):
             return True
 
     def test_cnf(image):
-        return call("sat", image, [args.file], sat_path, SATISFIABLE)
+        return call(
+            "sat", image, [args.file], sat_path, SATISFIABLE, report_launch=True
+        )
 
     def test_gz(image):
-        return call("sat-gz", image, [f"{args.file}.gz"], sat_gz_path, SATISFIABLE)
+        return call(
+            "sat-gzip",
+            image,
+            [f"{args.file}.gz"],
+            sat_gz_path,
+            SATISFIABLE,
+        )
 
     def test_unsat(image):
         return call("unsat", image, [args.unsat_file], unsat_path, UNSATISFIABLE)
 
     def test_proof(image):
         if "argsproof" not in image.registry:
+            if args.terse:
+                report("skip", image, "unsat-proof", "unsupported")
             return True
         proof_path = tests_dir / "proof.tmp"
         proof_path.unlink(missing_ok=True)
         try:
             if not call(
-                "proof-result",
+                "unsat-proof-run",
                 image,
                 [args.unsat_file, proof_path.name],
                 unsat_path,
                 UNSATISFIABLE,
             ):
                 return False
-            print("proof-check", end="...", flush=True)
+            if not args.terse:
+                print("proof-check", end="...", flush=True)
             validate_drup_proof(unsat_path, proof_path)
-            print(green("ok"))
+            if args.terse:
+                report("ok", image, "unsat-proof")
+            else:
+                print(green("ok"))
             return True
         except (OSError, ValidationError, ValueError) as exc:
-            print(red("fail"), f"({exc})")
+            if args.terse:
+                report("fail", image, "unsat-proof", str(exc))
+            else:
+                print(red("fail"), f"({exc})")
             return False
         finally:
             proof_path.unlink(missing_ok=True)
@@ -770,12 +856,15 @@ def test_images_in_workspace(args, tests_dir):
         prepare_image(args, docker_argv, f"{DOCKER_NS}/{name}")
     for name in repo.images:
         image = ImageManager(name, repo)
-        info(f"Testing {image.name}")
+        if not args.terse:
+            info(f"Testing {image.name}")
         fails = [test.__name__[5:] for test in tests if not test(image)]
         if fails:
             failures.append((image, fails))
 
-    if not failures:
+    if args.terse:
+        pass
+    elif not failures:
         print(green("Bravo :-)"))
     else:
         print(red("Failed tests:"))
@@ -1034,6 +1123,8 @@ def main(redirected=False):
                 help=f"Test {DOCKER_NS} Docker images",
                 parents=[spec_parser, status_parser, run_parser, tracks_parser, docker_parser])
         p.add_argument("--quiet", "-q", action="store_true")
+        p.add_argument("--terse", action="store_true",
+                help="Print one concise status line for each validation stage")
         p.add_argument("--file", "-f", default="aim-200-1_6-yes1-1.cnf",
                 help=".cnf test file (should also exists with .gz)")
         p.add_argument("--unsat-file", default="simple-unsat.cnf",

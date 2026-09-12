@@ -16,12 +16,16 @@ registry test, which can take a long time.
 ```sh
 tools/test-all-images.sh --dry-run
 tools/test-all-images.sh '*:2019'
+tools/test-all-images.sh --build '*:2019'
 tools/test-all-images.sh
 ```
 
 The command exits with a non-zero status if a solver test fails or an image
 cannot be removed. It does not prune shared layers, builder images, or unrelated
-Docker data.
+Docker data. With `--build`, it compiles each archived source before testing and
+removes both the resulting solver image and its builder image. Detailed logs are
+stored in `test-results/`, while the console displays only concise status lines
+for compilation, launch, termination, SAT model, UNSAT result, and UNSAT proof.
 
 ### `validate_metadata.py`
 
