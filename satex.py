@@ -57,6 +57,11 @@ BUILDER_STAGES = {
         ("source-extract", "source"),
         ("compile", "builder"),
     ],
+    "generic/starexec-v2": [
+        ("build-environment", "buildenv"),
+        ("source-extract", "source"),
+        ("compile", "builder"),
+    ],
     "generic/binary-v1": [("source-extract", "source")],
     "generic/binary-tar": [("source-extract", "source")],
 }
