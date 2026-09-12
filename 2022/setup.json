@@ -1,0 +1,9 @@
+{
+    "base_version": "v1",
+    "base_from": "debian:bullseye-20220711-slim@sha256:f576b8067b77ff85c70725c976b7b6cde960898e2f19b9abab3fb148407614e2",
+    "builder": "generic/v1",
+    "builder_base": "debian:bullseye-20220711-slim@sha256:f576b8067b77ff85c70725c976b7b6cde960898e2f19b9abab3fb148407614e2",
+    "APT_SNAPSHOT": "20220711T000000Z",
+    "APT_CODENAME": "bullseye",
+    "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2022-competition/{SOLVER_NAME}.zip"
+}

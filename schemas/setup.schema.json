@@ -12,7 +12,12 @@
     "download_url": { "type": "string", "minLength": 1 },
     "image_name": { "type": "string", "minLength": 1 },
     "BUILD_DEPENDS": { "type": "string" },
-    "RDEPENDS": { "type": "string" }
+    "RDEPENDS": { "type": "string" },
+    "APT_SNAPSHOT": {
+      "type": "string",
+      "pattern": "^[0-9]{8}T[0-9]{6}Z$"
+    },
+    "APT_CODENAME": { "type": "string", "pattern": "^[a-z]+$" }
   },
   "additionalProperties": {
     "type": "object",

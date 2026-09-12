@@ -1,0 +1,20 @@
+{
+    "kissat-mab-hywalk": {
+        "status": "ok",
+        "name": "Kissat_MAB-HyWalk",
+        "version": "1.0.3",
+        "authors": "Jiongzhi Zheng, Kun He, Zhuo Chen, Jianrong Zhou, Chu-Min Li",
+        "call": "./kissat",
+        "tracks": [
+            "main"
+        ],
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF"
+        ]
+    }
+}

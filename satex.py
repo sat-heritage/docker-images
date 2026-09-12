@@ -107,6 +107,20 @@ def brace_expand(s):
     return getitem(s)[0]
 
 
+def base_cache_tag(base_version, base_from=None, apt_snapshot=None):
+    """Build a short Docker tag for a possibly digest-pinned base image."""
+    tag = base_version
+    if base_from:
+        from_image, separator, from_digest = base_from.partition("@")
+        from_tag = from_image.replace("/", "_").replace(":", "-")
+        if separator:
+            from_tag += "-" + from_digest.rsplit(":", 1)[-1][:12]
+        tag += f"-{from_tag}"
+    if apt_snapshot:
+        tag += f"-snapshot-{apt_snapshot[:8]}"
+    return tag
+
+
 class BuildReporter:
     def __init__(self, args):
         self.terse = getattr(args, "terse", False)
@@ -772,7 +786,7 @@ def build_images(args):
 
     bases_uptodate = set()
 
-    only_dist_opts = ["RDEPENDS"]
+    only_dist_opts = ["RDEPENDS", "APT_SNAPSHOT", "APT_CODENAME"]
     hide_opts = [
         "base_version",
         "base_from",
@@ -884,11 +898,13 @@ def build_images(args):
             base_root = os.path.join("base", base_version)
             base_from = setup.get("base_from")
             base_args = {}
-            base_tag = base_version
             if base_from:
                 base_args["BASE"] = base_from
-                from_tag = base_from.replace("/","_").replace(":","-")
-                base_tag = f"{base_version}-{from_tag}"
+            apt_snapshot = setup.get("APT_SNAPSHOT")
+            if apt_snapshot:
+                base_args["APT_SNAPSHOT"] = apt_snapshot
+                base_args["APT_CODENAME"] = setup["APT_CODENAME"]
+            base_tag = base_cache_tag(base_version, base_from, apt_snapshot)
             base_target = f"{DOCKER_NS}/base:{base_tag}"
             if base_target not in bases_uptodate:
                 def prepare_runtime_images():
