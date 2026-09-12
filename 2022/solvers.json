@@ -829,14 +829,15 @@
         "tracks": [
             "main"
         ],
-        "gz": true,
+        "gz": false,
         "args": [
             "FILECNF"
         ],
         "argsproof": [
             "FILECNF",
             "-drup-file=FILEPROOF"
-        ]
+        ],
+        "comment": "Unlike the other Maple-based entries, this binary hangs on gzip-compressed input, so satex decompresses it first."
     },
     "maplelcmdistchrbt-dl-v3": {
         "status": "ok",

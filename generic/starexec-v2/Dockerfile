@@ -51,6 +51,7 @@ ARG BUILD_ARGS=
 ARG CONFIGURE_ARGS=
 ARG MAKE_ARGS=
 ARG BUILD_COMMAND=
+ARG BUILD_ENV=
 ARG BINARY_PATH
 ARG BINARY_NAME
 
@@ -64,6 +65,7 @@ RUN set -eu; \
     find "$root" -type f \( -name configure -o -name 'starexec_build*' -o -name '*.sh' \) \
       -exec chmod +x {} \;; \
     cd "$root/$BUILD_SUBDIR"; \
+    if [ -n "$BUILD_ENV" ]; then eval "export $BUILD_ENV"; fi; \
     kind="$BUILD_KIND"; \
     if [ "$kind" = auto ]; then \
       if [ -f starexec_build ]; then kind=starexec; \

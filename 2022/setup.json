@@ -126,7 +126,8 @@
     "kissat-mab-rephasing": {
         "BUILD_KIND": "starexec",
         "BINARY_PATH": "bin/kissat",
-        "BINARY_NAME": "kissat"
+        "BINARY_NAME": "kissat",
+        "BUILD_ENV": "CC=\"gcc -fcommon\""
     },
     "kissat-mab-scavel": {
         "BUILD_KIND": "configure",
@@ -159,18 +160,21 @@
     "kissat-adaptive-restart": {
         "BUILD_KIND": "starexec",
         "BINARY_PATH": "bin/kissat",
-        "BINARY_NAME": "kissat"
+        "BINARY_NAME": "kissat",
+        "BUILD_ENV": "CC=\"gcc -fcommon\""
     },
     "kissat-cfexp": {
         "BUILD_KIND": "starexec",
         "BINARY_PATH": "bin/kissat",
-        "BINARY_NAME": "kissat"
+        "BINARY_NAME": "kissat",
+        "BUILD_ENV": "CC=\"gcc -fcommon\""
     },
     "kissat-inc": {
         "BUILD_KIND": "configure",
         "BUILD_SUBDIR": "sources",
         "BINARY_PATH": "sources/build/kissat",
-        "BINARY_NAME": "kissat"
+        "BINARY_NAME": "kissat",
+        "BUILD_ENV": "CC=\"gcc -fcommon\""
     },
     "kissat-mab-esa": {
         "BUILD_KIND": "starexec",
@@ -193,12 +197,14 @@
         "BUILD_KIND": "configure",
         "BUILD_SUBDIR": "sources",
         "BINARY_PATH": "sources/build/kissat",
-        "BINARY_NAME": "kissat"
+        "BINARY_NAME": "kissat",
+        "BUILD_ENV": "CC=\"gcc -fcommon\""
     },
     "kissat-relaxed": {
         "BUILD_KIND": "starexec",
         "BINARY_PATH": "bin/kissat",
-        "BINARY_NAME": "kissat"
+        "BINARY_NAME": "kissat",
+        "BUILD_ENV": "CC=\"gcc -fcommon\""
     },
     "lstech-maple-bandsat": {
         "BUILD_KIND": "make",
@@ -228,7 +234,8 @@
         "BUILD_KIND": "configure",
         "BUILD_SUBDIR": "sources",
         "BINARY_PATH": "sources/build/kissat",
-        "BINARY_NAME": "kissat"
+        "BINARY_NAME": "kissat",
+        "BUILD_ENV": "CC=\"gcc -fcommon\""
     },
     "lstech-maple": {
         "BUILD_KIND": "make",
@@ -275,7 +282,7 @@
         "BUILD_COMMAND": "cmake -S . -B build -DCMAKE_BUILD_TYPE=Release && cmake --build build -- -j2",
         "BINARY_PATH": "bin/slime",
         "BINARY_NAME": "slime",
-        "RDEPENDS": "libopenmpi3"
+        "RDEPENDS": "libopenmpi3 openmpi-bin"
     },
     "hkis-psids": {
         "BUILD_KIND": "starexec",
@@ -317,7 +324,7 @@
         "BUILD_COMMAND": "cmake -S . -B build -DCMAKE_BUILD_TYPE=Release && cmake --build build -- -j2",
         "BINARY_PATH": "bin/slime",
         "BINARY_NAME": "slime",
-        "RDEPENDS": "libopenmpi3"
+        "RDEPENDS": "libopenmpi3 openmpi-bin"
     },
     "slime-sc-2022-beta": {
         "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2022-competition/SLIME.SC-2022.zip",
@@ -326,7 +333,7 @@
         "BUILD_COMMAND": "cmake -S . -B build -DCMAKE_BUILD_TYPE=Release && cmake --build build -- -j2",
         "BINARY_PATH": "bin/slime",
         "BINARY_NAME": "slime",
-        "RDEPENDS": "libopenmpi3"
+        "RDEPENDS": "libopenmpi3 openmpi-bin"
     },
     "slime-sc-2022-gamma": {
         "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2022-competition/SLIME.SC-2022.zip",
@@ -335,6 +342,6 @@
         "BUILD_COMMAND": "cmake -S . -B build -DCMAKE_BUILD_TYPE=Release && cmake --build build -- -j2",
         "BINARY_PATH": "bin/slime",
         "BINARY_NAME": "slime",
-        "RDEPENDS": "libopenmpi3"
+        "RDEPENDS": "libopenmpi3 openmpi-bin"
     }
 }

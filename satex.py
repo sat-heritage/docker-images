@@ -5,6 +5,7 @@
 
 import argparse
 import fnmatch
+import itertools
 import json
 import glob
 import os
@@ -526,9 +527,12 @@ def get_docker_volumes(args):
     return [easy_volume(opt).split(":") for opt in opts]
 
 _docker_opts = []
+_container_counter = itertools.count(1)
 def docker_runs(args, images, docker_args=(), image_args=(), capture_output=False):
     docker_argv = check_docker()
-    container_id = f"satex{os.getpid()}"
+    # One name per invocation: after a timeout the previous container may
+    # still be waiting for removal, and Docker refuses to reuse its name.
+    container_id = f"satex{os.getpid()}-{next(_container_counter)}"
     argv = ["run", "--name", container_id, "--rm"]
     if hasattr(args, "timeout"):
         argv += ["-e", f"TIMEOUT={args.timeout}"]

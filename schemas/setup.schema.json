@@ -17,6 +17,7 @@
     "BUILD_SCRIPT": { "type": "string" },
     "BUILD_ARGS": { "type": "string" },
     "BUILD_COMMAND": { "type": "string" },
+    "BUILD_ENV": { "type": "string" },
     "CONFIGURE_ARGS": { "type": "string" },
     "MAKE_ARGS": { "type": "string" },
     "BINARY_PATH": { "type": "string" },
