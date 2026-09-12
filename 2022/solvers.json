@@ -344,7 +344,8 @@
         "argsproof": [
             "FILECNF",
             "FILEPROOF"
-        ]
+        ],
+        "comment": "The submitted build/build.sh relies on Red Hat's scl llvm-toolset-7.0; its steps (make competition with clang and LTO) are transcribed in setup.json, with -march=native replaced by a generic x86-64 target so the image runs on any host."
     },
     "kissat-adaptive-restart": {
         "status": "ok",
@@ -500,7 +501,8 @@
             "--default",
             "FILECNF",
             "FILEPROOF"
-        ]
+        ],
+        "comment": "Built by the submitted starexec_build. Its make test step fails because the archive does not ship test/cnf, but the script does not stop on errors and installs the compiled binary."
     },
     "kissat-mab-gb": {
         "status": "ok",

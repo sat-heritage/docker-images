@@ -30,16 +30,16 @@
         "BINARY_NAME": "cadical"
     },
     "cadical-dvdl-v1": {
-        "BUILD_KIND": "configure",
-        "BUILD_SUBDIR": "build/cadical",
+        "BUILD_KIND": "command",
         "BINARY_PATH": "build/cadical/build/cadical",
-        "BINARY_NAME": "cadical"
+        "BINARY_NAME": "cadical",
+        "BUILD_COMMAND": "rm -rf build/cadical && cd build && bash ./build.sh"
     },
     "cadical-dvdl-v2": {
-        "BUILD_KIND": "configure",
-        "BUILD_SUBDIR": "build/cadical",
+        "BUILD_KIND": "command",
         "BINARY_PATH": "build/cadical/build/cadical",
-        "BINARY_NAME": "cadical"
+        "BINARY_NAME": "cadical",
+        "BUILD_COMMAND": "rm -rf build/cadical && cd build && bash ./build.sh"
     },
     "cadical-rel-scavel": {
         "BUILD_KIND": "configure",
@@ -53,25 +53,22 @@
         "BINARY_NAME": "cadical"
     },
     "ekissat-mab-db-v1": {
-        "BUILD_KIND": "configure",
-        "BUILD_SUBDIR": "build/kissat",
-        "CONFIGURE_ARGS": "--competition --test",
+        "BUILD_KIND": "command",
         "BINARY_PATH": "build/kissat/build/kissat",
-        "BINARY_NAME": "kissat"
+        "BINARY_NAME": "kissat",
+        "BUILD_COMMAND": "rm -rf build/kissat && cd build && bash ./build.sh"
     },
     "ekissat-mab-db-v2": {
-        "BUILD_KIND": "configure",
-        "BUILD_SUBDIR": "build/kissat",
-        "CONFIGURE_ARGS": "--competition --test",
+        "BUILD_KIND": "command",
         "BINARY_PATH": "build/kissat/build/kissat",
-        "BINARY_NAME": "kissat"
+        "BINARY_NAME": "kissat",
+        "BUILD_COMMAND": "rm -rf build/kissat && cd build && bash ./build.sh"
     },
     "ekissat-mab-gb-db": {
-        "BUILD_KIND": "configure",
-        "BUILD_SUBDIR": "build/kissat",
-        "CONFIGURE_ARGS": "--competition --test",
+        "BUILD_KIND": "command",
         "BINARY_PATH": "build/kissat/build/kissat",
-        "BINARY_NAME": "kissat"
+        "BINARY_NAME": "kissat",
+        "BUILD_COMMAND": "rm -rf build/kissat && cd build && bash ./build.sh"
     },
     "glucose-reboot": {
         "BUILD_KIND": "command",
@@ -97,39 +94,34 @@
         "BINARY_NAME": "isasat"
     },
     "kissat-els-v1": {
-        "BUILD_KIND": "configure",
-        "BUILD_SUBDIR": "build/kissat",
-        "CONFIGURE_ARGS": "--competition --default --test",
+        "BUILD_KIND": "command",
         "BINARY_PATH": "build/kissat/build/kissat",
-        "BINARY_NAME": "kissat"
+        "BINARY_NAME": "kissat",
+        "BUILD_COMMAND": "rm -rf build/kissat && cd build && bash ./build.sh"
     },
     "kissat-els-v2": {
-        "BUILD_KIND": "configure",
-        "BUILD_SUBDIR": "build/kissat",
-        "CONFIGURE_ARGS": "--competition --default --test",
+        "BUILD_KIND": "command",
         "BINARY_PATH": "build/kissat/build/kissat",
-        "BINARY_NAME": "kissat"
+        "BINARY_NAME": "kissat",
+        "BUILD_COMMAND": "rm -rf build/kissat && cd build && bash ./build.sh"
     },
     "kissat-els-v3": {
-        "BUILD_KIND": "configure",
-        "BUILD_SUBDIR": "build/kissat",
-        "CONFIGURE_ARGS": "--competition --default --test",
+        "BUILD_KIND": "command",
         "BINARY_PATH": "build/kissat/build/kissat",
-        "BINARY_NAME": "kissat"
+        "BINARY_NAME": "kissat",
+        "BUILD_COMMAND": "rm -rf build/kissat && cd build && bash ./build.sh"
     },
     "kissat-els-v4": {
-        "BUILD_KIND": "configure",
-        "BUILD_SUBDIR": "build/kissat",
-        "CONFIGURE_ARGS": "--competition --default --test",
+        "BUILD_KIND": "command",
         "BINARY_PATH": "build/kissat/build/kissat",
-        "BINARY_NAME": "kissat"
+        "BINARY_NAME": "kissat",
+        "BUILD_COMMAND": "rm -rf build/kissat && cd build && bash ./build.sh"
     },
     "kissat-mab-gb": {
-        "BUILD_KIND": "configure",
-        "BUILD_SUBDIR": "build/kissat",
-        "CONFIGURE_ARGS": "--competition --test",
+        "BUILD_KIND": "command",
         "BINARY_PATH": "build/kissat/build/kissat",
-        "BINARY_NAME": "kissat"
+        "BINARY_NAME": "kissat",
+        "BUILD_COMMAND": "rm -rf build/kissat && cd build && bash ./build.sh"
     },
     "kissat-mab-rephasing": {
         "BUILD_KIND": "starexec",
@@ -142,25 +134,22 @@
         "BINARY_NAME": "kissat"
     },
     "kissat-sc2022-bulky": {
-        "BUILD_KIND": "configure",
-        "BUILD_SUBDIR": "build/kissat",
-        "CONFIGURE_ARGS": "--competition --test",
+        "BUILD_KIND": "command",
         "BINARY_PATH": "build/kissat/build/kissat",
-        "BINARY_NAME": "kissat"
+        "BINARY_NAME": "kissat",
+        "BUILD_COMMAND": "rm -rf build/kissat && cd build && bash ./build.sh"
     },
     "kissat-sc2022-hyper": {
-        "BUILD_KIND": "configure",
-        "BUILD_SUBDIR": "build/kissat",
-        "CONFIGURE_ARGS": "--competition --test",
+        "BUILD_KIND": "command",
         "BINARY_PATH": "build/kissat/build/kissat",
-        "BINARY_NAME": "kissat"
+        "BINARY_NAME": "kissat",
+        "BUILD_COMMAND": "rm -rf build/kissat && cd build && bash ./build.sh"
     },
     "kissat-sc2022-light": {
-        "BUILD_KIND": "configure",
-        "BUILD_SUBDIR": "build/kissat",
-        "CONFIGURE_ARGS": "--competition --test",
+        "BUILD_KIND": "command",
         "BINARY_PATH": "build/kissat/build/kissat",
-        "BINARY_NAME": "kissat"
+        "BINARY_NAME": "kissat",
+        "BUILD_COMMAND": "rm -rf build/kissat && cd build && bash ./build.sh"
     },
     "kissat-watchsat-lto": {
         "BUILD_KIND": "starexec",
@@ -184,24 +173,21 @@
         "BINARY_NAME": "kissat"
     },
     "kissat-mab-esa": {
-        "BUILD_KIND": "configure",
-        "CONFIGURE_ARGS": "--competition --default",
+        "BUILD_KIND": "starexec",
         "BINARY_PATH": "build/kissat",
         "BINARY_NAME": "kissat"
     },
     "kissat-mab-moss": {
-        "BUILD_KIND": "configure",
-        "BUILD_SUBDIR": "build/kissat",
-        "CONFIGURE_ARGS": "--competition --default --test",
+        "BUILD_KIND": "command",
         "BINARY_PATH": "build/kissat/build/kissat",
-        "BINARY_NAME": "kissat"
+        "BINARY_NAME": "kissat",
+        "BUILD_COMMAND": "rm -rf build/kissat && cd build && bash ./build.sh"
     },
     "kissat-mab-ucb": {
-        "BUILD_KIND": "configure",
-        "BUILD_SUBDIR": "build/kissat",
-        "CONFIGURE_ARGS": "--competition --default --test",
+        "BUILD_KIND": "command",
         "BINARY_PATH": "build/kissat/build/kissat",
-        "BINARY_NAME": "kissat"
+        "BINARY_NAME": "kissat",
+        "BUILD_COMMAND": "rm -rf build/kissat && cd build && bash ./build.sh"
     },
     "kissat-pre": {
         "BUILD_KIND": "configure",
@@ -233,10 +219,10 @@
         "BINARY_NAME": "LStech-Maple-HyWalk"
     },
     "lstech-cadical": {
-        "BUILD_KIND": "configure",
-        "BUILD_SUBDIR": "build/cadical",
+        "BUILD_KIND": "command",
         "BINARY_PATH": "build/cadical/build/cadical",
-        "BINARY_NAME": "cadical"
+        "BINARY_NAME": "cadical",
+        "BUILD_COMMAND": "rm -rf build/cadical && cd build && bash ./build.sh"
     },
     "lstech-kissat": {
         "BUILD_KIND": "configure",

@@ -38,6 +38,11 @@ RUN mkdir -p /src && \
     rm /tmp/submission.zip
 
 FROM source AS builder
+# Build as an unprivileged user, like StarExec does: some submitted build
+# scripts run the solver's own test suite, which refuses to run as root.
+RUN useradd --create-home --shell /bin/bash builder && \
+    mkdir -p /dist && chown -R builder:builder /src /dist
+USER builder
 ARG SOLVER_NAME
 ARG BUILD_KIND=auto
 ARG BUILD_SUBDIR=.
