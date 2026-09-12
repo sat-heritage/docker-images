@@ -41,6 +41,38 @@ the schemas in `schemas/`.
 Reports legacy solver status strings. Pass `--write` to normalize them while
 preserving their original text in `status_detail`.
 
+### `archive_competition_solvers.py`
+
+Downloads one or more official competition ZIP/TAR distributions and creates
+one deterministic `.tar.xz` archive per top-level solver directory. The command
+is read-only with respect to GitHub unless `--upload` is explicitly supplied.
+Generated files and a SHA-256 provenance manifest are stored below the ignored
+`dist/` directory by default.
+
+To prepare only the first solver being integrated from SAT Competition 2022:
+
+```sh
+python3 tools/archive_competition_solvers.py 2022 \
+  --archive https://satcompetition.github.io/2022/downloads/sequential-solvers.zip \
+  --solver Kissat_MAB-HyWalk
+```
+
+Inspect `dist/competition-sources/2022/manifest.json`, then publish the asset to
+the `2022-competition` release with a GitHub token having `contents: write`:
+
+```sh
+GH_TOKEN=... python3 tools/archive_competition_solvers.py 2022 \
+  --archive https://satcompetition.github.io/2022/downloads/sequential-solvers.zip \
+  --solver Kissat_MAB-HyWalk \
+  --upload
+```
+
+On subsequent runs, an identical existing asset is skipped. A differing asset
+is never overwritten unless `--replace` is also given. Use repeated `--archive`
+options for multiple official track archives, repeated `--solver` options to
+select several entries, and `--rename SOURCE=ASSET` when a filesystem-friendly
+release asset name is needed.
+
 ## Future audit scripts
 
 Further repository-wide checks belong here as independent, documented tools.
