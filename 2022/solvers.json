@@ -1,4 +1,526 @@
 {
+    "cadical-dvdl-v1": {
+        "status": "ok",
+        "name": "CaDiCaL_DVDL_V1",
+        "version": "1.4.1",
+        "authors": "Zhenjiang Zhao, Takahisa Toda, Takashi Kitamura",
+        "call": "./cadical",
+        "tracks": [
+            "main"
+        ],
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF"
+        ]
+    },
+    "cadical-dvdl-v2": {
+        "status": "ok",
+        "name": "CaDiCaL_DVDL_V2",
+        "version": "1.4.1",
+        "authors": "Zhenjiang Zhao, Takahisa Toda, Takashi Kitamura",
+        "call": "./cadical",
+        "tracks": [
+            "main"
+        ],
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF"
+        ]
+    },
+    "cadical-hack-gb": {
+        "status": "ok",
+        "name": "cadical-hack-gb",
+        "version": "1.4.1",
+        "authors": "Md Solimul Chowdhury",
+        "call": "./cadical",
+        "tracks": [
+            "main"
+        ],
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF"
+        ]
+    },
+    "cadical-hywalk": {
+        "status": "ok",
+        "name": "CaDiCaL-HyWalk",
+        "version": "1.4.1",
+        "authors": "Jiongzhi Zheng, Kun He, Zhuo Chen, Jianrong Zhou, Chu-Min Li",
+        "call": "./cadical",
+        "tracks": [
+            "main"
+        ],
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF"
+        ]
+    },
+    "cadical-rel-scavel": {
+        "status": "ok",
+        "name": "cadical_rel_Scavel",
+        "version": "1.4.1",
+        "authors": "Zhihui Li, Guanfeng Wu, Zhibin Yu, Yang Xu, Huimin Fu",
+        "call": "./cadical",
+        "tracks": [
+            "main"
+        ],
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF"
+        ]
+    },
+    "cadical-reorder": {
+        "status": "ok",
+        "name": "CadicalReorder",
+        "version": "1.4.1",
+        "authors": "Junhua Huang, Hui-Ling Zhen, Wanqian Luo, Mingxuan Yuan",
+        "call": "./cadical",
+        "tracks": [
+            "main"
+        ],
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF"
+        ]
+    },
+    "cadical-watchsat-lto": {
+        "status": "ok",
+        "name": "CaDiCaL-watchsat-lto",
+        "version": "1.4.1",
+        "authors": "Norbert Manthey",
+        "call": "./cadical",
+        "tracks": [
+            "main"
+        ],
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF"
+        ]
+    },
+    "ekissat-mab-db-v1": {
+        "status": "ok",
+        "name": "ekissat-mab-db-v1",
+        "version": "1.0.3",
+        "authors": "Md Solimul Chowdhury",
+        "call": "./kissat",
+        "tracks": [
+            "main"
+        ],
+        "gz": true,
+        "args": [
+            "--default",
+            "FILECNF"
+        ],
+        "argsproof": [
+            "--default",
+            "FILECNF",
+            "FILEPROOF"
+        ]
+    },
+    "ekissat-mab-db-v2": {
+        "status": "ok",
+        "name": "ekissat-mab-db-v2",
+        "version": "1.0.3",
+        "authors": "Md Solimul Chowdhury",
+        "call": "./kissat",
+        "tracks": [
+            "main"
+        ],
+        "gz": true,
+        "args": [
+            "--substantialcdfactor=10",
+            "--default",
+            "FILECNF"
+        ],
+        "argsproof": [
+            "--substantialcdfactor=10",
+            "--default",
+            "FILECNF",
+            "FILEPROOF"
+        ]
+    },
+    "ekissat-mab-gb-db": {
+        "status": "ok",
+        "name": "ekissat-mab-gb-db",
+        "version": "1.0.3",
+        "authors": "Md Solimul Chowdhury",
+        "call": "./kissat",
+        "tracks": [
+            "main"
+        ],
+        "gz": true,
+        "args": [
+            "--default",
+            "FILECNF"
+        ],
+        "argsproof": [
+            "--default",
+            "FILECNF",
+            "FILEPROOF"
+        ]
+    },
+    "glucose-reboot": {
+        "status": "ok",
+        "name": "glucose-reboot",
+        "authors": "Gilles Audemard, Laurent Simon",
+        "call": "./glucose",
+        "tracks": [
+            "main"
+        ],
+        "gz": true,
+        "args": [
+            "-vbyte",
+            "-model",
+            "FILECNF"
+        ],
+        "argsproof": [
+            "-vbyte",
+            "-certified",
+            "-certified-output=FILEPROOF",
+            "-model",
+            "FILECNF"
+        ]
+    },
+    "hcad-v1": {
+        "status": "ok",
+        "name": "hCaD_V1",
+        "version": "1.4.0",
+        "authors": "Rodrigue Konan Tchinda, Clémentin Tayou Djamegni",
+        "call": "./cadical",
+        "tracks": [
+            "main"
+        ],
+        "gz": true,
+        "args": [
+            "--psids=1",
+            "--target=2",
+            "--walk=false",
+            "--chrono=true",
+            "FILECNF"
+        ],
+        "argsproof": [
+            "--psids=1",
+            "--target=2",
+            "--walk=false",
+            "--chrono=true",
+            "FILECNF",
+            "FILEPROOF"
+        ]
+    },
+    "hcad-v2": {
+        "status": "ok",
+        "name": "hCaD_V2",
+        "version": "1.4.1",
+        "authors": "Rodrigue Konan Tchinda, Clémentin Tayou Djamegni",
+        "call": "./cadical",
+        "tracks": [
+            "main"
+        ],
+        "gz": true,
+        "args": [
+            "--target=0",
+            "--walk=false",
+            "FILECNF"
+        ],
+        "argsproof": [
+            "--target=0",
+            "--walk=false",
+            "FILECNF",
+            "FILEPROOF"
+        ]
+    },
+    "hkis-psids": {
+        "status": "ok",
+        "name": "hKis",
+        "version": "1.0.3",
+        "authors": "Rodrigue Konan Tchinda, Clémentin Tayou Djamegni",
+        "call": "./kissat",
+        "tracks": [
+            "main"
+        ],
+        "gz": true,
+        "args": [
+            "--unsat",
+            "--psids=true",
+            "FILECNF"
+        ],
+        "argsproof": [
+            "--unsat",
+            "--psids=true",
+            "FILECNF",
+            "FILEPROOF"
+        ],
+        "comment": "configuration of the hKis submission"
+    },
+    "hkis-sat": {
+        "status": "ok",
+        "name": "hKis",
+        "version": "1.0.3",
+        "authors": "Rodrigue Konan Tchinda, Clémentin Tayou Djamegni",
+        "call": "./kissat",
+        "tracks": [
+            "main"
+        ],
+        "gz": true,
+        "args": [
+            "--sat",
+            "--walkinitially=true",
+            "FILECNF"
+        ],
+        "argsproof": [
+            "--sat",
+            "--walkinitially=true",
+            "FILECNF",
+            "FILEPROOF"
+        ],
+        "comment": "configuration of the hKis submission"
+    },
+    "hkis-unsat": {
+        "status": "ok",
+        "name": "hKis",
+        "version": "1.0.3",
+        "authors": "Rodrigue Konan Tchinda, Clémentin Tayou Djamegni",
+        "call": "./kissat",
+        "tracks": [
+            "main"
+        ],
+        "gz": true,
+        "args": [
+            "--target=1",
+            "--walkinitially=true",
+            "--chrono=true",
+            "FILECNF"
+        ],
+        "argsproof": [
+            "--target=1",
+            "--walkinitially=true",
+            "--chrono=true",
+            "FILECNF",
+            "FILEPROOF"
+        ],
+        "comment": "configuration of the hKis submission"
+    },
+    "isasat": {
+        "status": "ok",
+        "name": "IsaSAT",
+        "authors": "Armin Biere, Mathias Fleury",
+        "call": "./isasat",
+        "tracks": [
+            "main"
+        ],
+        "gz": false,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF"
+        ]
+    },
+    "kissat-adaptive-restart": {
+        "status": "ok",
+        "name": "Kissat_adaptive_restart",
+        "version": "2.0.1",
+        "authors": "Yang Li, Yuqi Jia, Wanqian Luo, Hui-Ling Zhen, Xijun Li, Mingxuan Yuan, Junchi Yan",
+        "call": "./kissat",
+        "tracks": [
+            "main"
+        ],
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF"
+        ]
+    },
+    "kissat-cfexp": {
+        "status": "ok",
+        "name": "Kissat_cfexp",
+        "version": "1.0.3",
+        "authors": "Yang Li, Yuqi Jia, Wanqian Luo, Hui-Ling Zhen, Xijun Li, Mingxuan Yuan, Junchi Yan",
+        "call": "./kissat",
+        "tracks": [
+            "main"
+        ],
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF"
+        ]
+    },
+    "kissat-els-v1": {
+        "status": "ok",
+        "name": "kissat-els-v1",
+        "version": "2.0.2",
+        "authors": "Fei Geng, Lei Yan, ShuCheng Zhang",
+        "call": "./kissat",
+        "tracks": [
+            "main"
+        ],
+        "gz": true,
+        "args": [
+            "--default",
+            "FILECNF"
+        ],
+        "argsproof": [
+            "--default",
+            "FILECNF",
+            "FILEPROOF"
+        ]
+    },
+    "kissat-els-v2": {
+        "status": "ok",
+        "name": "kissat-els-v2",
+        "version": "2.0.2",
+        "authors": "Fei Geng, Lei Yan, ShuCheng Zhang",
+        "call": "./kissat",
+        "tracks": [
+            "main"
+        ],
+        "gz": true,
+        "args": [
+            "--default",
+            "FILECNF"
+        ],
+        "argsproof": [
+            "--default",
+            "FILECNF",
+            "FILEPROOF"
+        ]
+    },
+    "kissat-els-v3": {
+        "status": "ok",
+        "name": "kissat-els-v3",
+        "version": "2.0.3",
+        "authors": "Fei Geng, Lei Yan, ShuCheng Zhang",
+        "call": "./kissat",
+        "tracks": [
+            "main"
+        ],
+        "gz": true,
+        "args": [
+            "--default",
+            "FILECNF"
+        ],
+        "argsproof": [
+            "--default",
+            "FILECNF",
+            "FILEPROOF"
+        ]
+    },
+    "kissat-els-v4": {
+        "status": "ok",
+        "name": "kissat-els-v4",
+        "version": "2.0.3",
+        "authors": "Fei Geng, Lei Yan, ShuCheng Zhang",
+        "call": "./kissat",
+        "tracks": [
+            "main"
+        ],
+        "gz": true,
+        "args": [
+            "--default",
+            "FILECNF"
+        ],
+        "argsproof": [
+            "--default",
+            "FILECNF",
+            "FILEPROOF"
+        ]
+    },
+    "kissat-inc": {
+        "status": "ok",
+        "name": "kissat_inc",
+        "version": "1.0.3",
+        "authors": "Zhihan Chen, Xindi Zhang, Shaowei Cai, Pinyan Lu",
+        "call": "./kissat",
+        "tracks": [
+            "main"
+        ],
+        "gz": true,
+        "args": [
+            "--default",
+            "FILECNF"
+        ],
+        "argsproof": [
+            "--default",
+            "FILECNF",
+            "FILEPROOF"
+        ]
+    },
+    "kissat-mab-esa": {
+        "status": "ok",
+        "name": "Kissat_MAB_ESA",
+        "version": "1.0.3",
+        "authors": "Shuolin Li, Jordi Coll, Chu-Min Li, Mao Luo, Djamal Habet, Felip Manyà",
+        "call": "./kissat",
+        "tracks": [
+            "main"
+        ],
+        "gz": true,
+        "args": [
+            "--default",
+            "FILECNF"
+        ],
+        "argsproof": [
+            "--default",
+            "FILECNF",
+            "FILEPROOF"
+        ]
+    },
+    "kissat-mab-gb": {
+        "status": "ok",
+        "name": "kissat-mab-gb",
+        "version": "1.0.3",
+        "authors": "Md Solimul Chowdhury",
+        "call": "./kissat",
+        "tracks": [
+            "main"
+        ],
+        "gz": true,
+        "args": [
+            "--default",
+            "FILECNF"
+        ],
+        "argsproof": [
+            "--default",
+            "FILECNF",
+            "FILEPROOF"
+        ]
+    },
     "kissat-mab-hywalk": {
         "status": "ok",
         "name": "Kissat_MAB-HyWalk",
@@ -16,5 +538,532 @@
             "FILECNF",
             "FILEPROOF"
         ]
+    },
+    "kissat-mab-moss": {
+        "status": "ok",
+        "name": "Kissat_MAB_MOSS",
+        "version": "1.0.3",
+        "authors": "Mohamed Sami Cherif, Djamal Habet, Cyril Terrioux",
+        "call": "./kissat",
+        "tracks": [
+            "main"
+        ],
+        "gz": true,
+        "args": [
+            "--default",
+            "FILECNF"
+        ],
+        "argsproof": [
+            "--default",
+            "FILECNF",
+            "FILEPROOF"
+        ]
+    },
+    "kissat-mab-rephasing": {
+        "status": "ok",
+        "name": "Kissat-MAB-rephasing",
+        "version": "2.0.1",
+        "authors": "Xinyan Chen, Wenxuan Guo, Wanqian Luo, Hui-Ling Zhen, Xijun Li, Mingxuan Yuan, Junchi Yan",
+        "call": "./kissat",
+        "tracks": [
+            "main"
+        ],
+        "gz": true,
+        "args": [
+            "--mabcmagnitude=0",
+            "FILECNF"
+        ],
+        "argsproof": [
+            "--mabcmagnitude=0",
+            "FILECNF",
+            "FILEPROOF"
+        ]
+    },
+    "kissat-mab-scavel": {
+        "status": "ok",
+        "name": "kissat-MAB_SCAVEL",
+        "version": "1.0.3",
+        "authors": "Zhihui Li, Guanfeng Wu, Zhibin Yu, Yang Xu, Huimin Fu",
+        "call": "./kissat",
+        "tracks": [
+            "main"
+        ],
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF"
+        ]
+    },
+    "kissat-mab-ucb": {
+        "status": "ok",
+        "name": "Kissat_MAB_UCB",
+        "version": "1.0.3",
+        "authors": "Mohamed Sami Cherif, Djamal Habet, Cyril Terrioux",
+        "call": "./kissat",
+        "tracks": [
+            "main"
+        ],
+        "gz": true,
+        "args": [
+            "--default",
+            "FILECNF"
+        ],
+        "argsproof": [
+            "--default",
+            "FILECNF",
+            "FILEPROOF"
+        ]
+    },
+    "kissat-pre": {
+        "status": "ok",
+        "name": "kissat_pre",
+        "version": "1.0.3",
+        "authors": "Zhihan Chen, Xindi Zhang, Shaowei Cai, Pinyan Lu",
+        "call": "./kissat",
+        "tracks": [
+            "main"
+        ],
+        "gz": true,
+        "args": [
+            "--default",
+            "FILECNF"
+        ],
+        "argsproof": [
+            "--default",
+            "FILECNF",
+            "FILEPROOF"
+        ]
+    },
+    "kissat-relaxed": {
+        "status": "ok",
+        "name": "kissat_relaxed",
+        "version": "1.0.3",
+        "authors": "Xinyan Chen, Wenxuan Guo, Wanqian Luo, Hui-Ling Zhen, Xijun Li, Mingxuan Yuan, Junchi Yan",
+        "call": "./kissat",
+        "tracks": [
+            "main"
+        ],
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF"
+        ]
+    },
+    "kissat-sc2022-bulky": {
+        "status": "ok",
+        "name": "kissat-sc2022-bulky",
+        "version": "sc2022-bulky",
+        "authors": "Armin Biere, Mathias Fleury",
+        "call": "./kissat",
+        "tracks": [
+            "main"
+        ],
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF"
+        ]
+    },
+    "kissat-sc2022-hyper": {
+        "status": "ok",
+        "name": "kissat-sc2022-hyper",
+        "version": "sc2022-hyper",
+        "authors": "Armin Biere, Mathias Fleury",
+        "call": "./kissat",
+        "tracks": [
+            "main"
+        ],
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF"
+        ]
+    },
+    "kissat-sc2022-light": {
+        "status": "ok",
+        "name": "kissat-sc2022-light",
+        "version": "sc2022-light",
+        "authors": "Armin Biere, Mathias Fleury",
+        "call": "./kissat",
+        "tracks": [
+            "main"
+        ],
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF"
+        ]
+    },
+    "kissat-watchsat-lto": {
+        "status": "ok",
+        "name": "kissat-watchsat-lto",
+        "version": "2.0.1",
+        "authors": "Norbert Manthey",
+        "call": "./kissat",
+        "tracks": [
+            "main"
+        ],
+        "gz": true,
+        "args": [
+            "--default",
+            "FILECNF"
+        ],
+        "argsproof": [
+            "--default",
+            "FILECNF",
+            "FILEPROOF"
+        ]
+    },
+    "lstech-cadical": {
+        "status": "ok",
+        "name": "LSTech_CaDiCaL",
+        "version": "1.4.1",
+        "authors": "Zhihan Chen, Xindi Zhang, Shaowei Cai, Pinyan Lu",
+        "call": "./cadical",
+        "tracks": [
+            "main"
+        ],
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF"
+        ]
+    },
+    "lstech-kissat": {
+        "status": "ok",
+        "name": "LSTech_kissat",
+        "version": "1.0.3",
+        "authors": "Zhihan Chen, Xindi Zhang, Shaowei Cai, Pinyan Lu",
+        "call": "./kissat",
+        "tracks": [
+            "main"
+        ],
+        "gz": true,
+        "args": [
+            "--default",
+            "FILECNF"
+        ],
+        "argsproof": [
+            "--default",
+            "FILECNF",
+            "FILEPROOF"
+        ]
+    },
+    "lstech-maple-bandsat": {
+        "status": "ok",
+        "name": "LStech-Maple-BandSAT",
+        "authors": "Jiongzhi Zheng, Kun He, Zhuo Chen, Jianrong Zhou, Chu-Min Li",
+        "call": "./LStech-Maple-BandSAT",
+        "tracks": [
+            "main"
+        ],
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "-drup-file=FILEPROOF"
+        ]
+    },
+    "lstech-maple-fps": {
+        "status": "ok",
+        "name": "LStech-Maple-FPS",
+        "authors": "Jiongzhi Zheng, Kun He, Zhuo Chen, Jianrong Zhou, Chu-Min Li",
+        "call": "./LStech-Maple-FPS",
+        "tracks": [
+            "main"
+        ],
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "-drup-file=FILEPROOF"
+        ]
+    },
+    "lstech-maple-hywalk": {
+        "status": "ok",
+        "name": "LStech-Maple-HyWalk",
+        "authors": "Jiongzhi Zheng, Kun He, Zhuo Chen, Jianrong Zhou, Chu-Min Li",
+        "call": "./LStech-Maple-HyWalk",
+        "tracks": [
+            "main"
+        ],
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "-drup-file=FILEPROOF"
+        ]
+    },
+    "lstech-maple": {
+        "status": "ok",
+        "name": "LSTech_Maple",
+        "authors": "Zhihan Chen, Xindi Zhang, Shaowei Cai, Pinyan Lu",
+        "call": "./lstech_maple",
+        "tracks": [
+            "main"
+        ],
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "-drup-file=FILEPROOF"
+        ]
+    },
+    "maplelcmdistchrbt-dl-v3": {
+        "status": "ok",
+        "name": "MapleLCMDistChrBt-DL-v3",
+        "authors": "Stepan Kochemazov, Oleg Zaikin, Victor Kondratiev, Alexander Semenov",
+        "call": "./MapleLCMDistChrBt-DL-v3",
+        "tracks": [
+            "main"
+        ],
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "-drup-file=FILEPROOF"
+        ]
+    },
+    "mergesat-4.0-rc1": {
+        "status": "ok",
+        "name": "MergeSat 4.0-rc",
+        "version": "4.0-rc1",
+        "authors": "Norbert Manthey",
+        "call": "./mergesat",
+        "tracks": [
+            "main"
+        ],
+        "gz": true,
+        "args": [
+            "FILECNF",
+            "-verb=0"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "-verb=0",
+            "-drup-file=FILEPROOF"
+        ],
+        "comment": "configuration of the MergeSat 4.0-rc submission"
+    },
+    "mergesat-4.0-rc2": {
+        "status": "ok",
+        "name": "MergeSat 4.0-rc",
+        "version": "4.0-rc2",
+        "authors": "Norbert Manthey",
+        "call": "./mergesat",
+        "tracks": [
+            "main"
+        ],
+        "gz": true,
+        "args": [
+            "FILECNF",
+            "-verb=0",
+            "-diversify-rank=1"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "-verb=0",
+            "-diversify-rank=1",
+            "-drup-file=FILEPROOF"
+        ],
+        "comment": "configuration of the MergeSat 4.0-rc submission"
+    },
+    "mergesat-4.0-rc3": {
+        "status": "ok",
+        "name": "MergeSat 4.0-rc",
+        "version": "4.0-rc3",
+        "authors": "Norbert Manthey",
+        "call": "./mergesat",
+        "tracks": [
+            "main"
+        ],
+        "gz": true,
+        "args": [
+            "FILECNF",
+            "-verb=0",
+            "-diversify-rank=2",
+            "-lib-math"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "-verb=0",
+            "-diversify-rank=2",
+            "-lib-math",
+            "-drup-file=FILEPROOF"
+        ],
+        "comment": "configuration of the MergeSat 4.0-rc submission"
+    },
+    "seqfrost": {
+        "status": "ok",
+        "name": "SeqFROST",
+        "version": "1.0.0",
+        "authors": "Muhammad Osama, Anton Wijs",
+        "call": "./seqfrost",
+        "tracks": [
+            "main"
+        ],
+        "gz": false,
+        "args": [
+            "FILECNF",
+            "-competition",
+            "--redundancyextend=1"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "-competition",
+            "--proofout=FILEPROOF",
+            "--redundancyextend=1"
+        ]
+    },
+    "seqfrost-ere-all": {
+        "status": "ok",
+        "name": "SeqFROST-ERE-All",
+        "version": "1.0.0",
+        "authors": "Muhammad Osama, Anton Wijs",
+        "call": "./seqfrost",
+        "tracks": [
+            "main"
+        ],
+        "gz": false,
+        "args": [
+            "FILECNF",
+            "-competition",
+            "--redundancyextend=2"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "-competition",
+            "--proofout=FILEPROOF",
+            "--redundancyextend=2"
+        ]
+    },
+    "seqfrost-noextend": {
+        "status": "ok",
+        "name": "SeqFROST-NoExtend",
+        "version": "1.0.0",
+        "authors": "Muhammad Osama, Anton Wijs",
+        "call": "./seqfrost",
+        "tracks": [
+            "main"
+        ],
+        "gz": false,
+        "args": [
+            "FILECNF",
+            "-competition",
+            "--redundancyextend=0"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "-competition",
+            "--proofout=FILEPROOF",
+            "--redundancyextend=0"
+        ]
+    },
+    "slime-sc-2022": {
+        "status": "ok",
+        "name": "SLIME SC-2022",
+        "authors": "Oscar Riveros",
+        "call": "./slime",
+        "tracks": [
+            "main"
+        ],
+        "gz": false,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF"
+        ]
+    },
+    "slime-sc-2022-alpha": {
+        "status": "ok",
+        "name": "SLIME SC-2022",
+        "authors": "Oscar Riveros",
+        "call": "./slime",
+        "tracks": [
+            "main"
+        ],
+        "gz": false,
+        "args": [
+            "FILECNF",
+            "-invert-polarity"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "-invert-polarity",
+            "FILEPROOF"
+        ],
+        "comment": "configuration of the SLIME SC-2022 submission"
+    },
+    "slime-sc-2022-beta": {
+        "status": "ok",
+        "name": "SLIME SC-2022",
+        "authors": "Oscar Riveros",
+        "call": "./slime",
+        "tracks": [
+            "main"
+        ],
+        "gz": false,
+        "args": [
+            "FILECNF",
+            "-no-use-distance"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "-no-use-distance",
+            "FILEPROOF"
+        ],
+        "comment": "configuration of the SLIME SC-2022 submission"
+    },
+    "slime-sc-2022-gamma": {
+        "status": "ok",
+        "name": "SLIME SC-2022",
+        "authors": "Oscar Riveros",
+        "call": "./slime",
+        "tracks": [
+            "main"
+        ],
+        "gz": false,
+        "args": [
+            "FILECNF",
+            "-no-use-distance",
+            "-invert-polarity"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "-no-use-distance",
+            "-invert-polarity",
+            "FILEPROOF"
+        ],
+        "comment": "configuration of the SLIME SC-2022 submission"
     }
 }

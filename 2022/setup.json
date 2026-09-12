@@ -14,50 +14,340 @@
         "BINARY_PATH": "build/kissat",
         "BINARY_NAME": "kissat"
     },
-    "cadical-hack-gb": { "BUILD_KIND": "configure", "BINARY_PATH": "build/cadical", "BINARY_NAME": "cadical" },
-    "cadical-hywalk": { "BUILD_KIND": "configure", "BINARY_PATH": "build/cadical", "BINARY_NAME": "cadical" },
-    "cadical-watchsat-lto": { "BUILD_KIND": "starexec", "BINARY_PATH": "bin/cadical", "BINARY_NAME": "cadical" },
-    "cadical-dvdl-v1": { "BUILD_KIND": "configure", "BUILD_SUBDIR": "build/cadical", "BINARY_PATH": "build/cadical/build/cadical", "BINARY_NAME": "cadical" },
-    "cadical-dvdl-v2": { "BUILD_KIND": "configure", "BUILD_SUBDIR": "build/cadical", "BINARY_PATH": "build/cadical/build/cadical", "BINARY_NAME": "cadical" },
-    "cadical-rel-scavel": { "BUILD_KIND": "configure", "BINARY_PATH": "build/cadical", "BINARY_NAME": "cadical" },
-    "cadical-reorder": { "BUILD_KIND": "configure", "BUILD_SUBDIR": "CadicalReorder", "BINARY_PATH": "CadicalReorder/build/cadical", "BINARY_NAME": "cadical" },
-    "ekissat-mab-db-v1": { "BUILD_KIND": "configure", "BUILD_SUBDIR": "build/kissat", "CONFIGURE_ARGS": "--competition --test", "BINARY_PATH": "build/kissat/build/kissat", "BINARY_NAME": "kissat" },
-    "ekissat-mab-db-v2": { "BUILD_KIND": "configure", "BUILD_SUBDIR": "build/kissat", "CONFIGURE_ARGS": "--competition --test", "BINARY_PATH": "build/kissat/build/kissat", "BINARY_NAME": "kissat" },
-    "ekissat-mab-gb-db": { "BUILD_KIND": "configure", "BUILD_SUBDIR": "build/kissat", "CONFIGURE_ARGS": "--competition --test", "BINARY_PATH": "build/kissat/build/kissat", "BINARY_NAME": "kissat" },
-    "glucose-reboot": { "BUILD_KIND": "command", "BUILD_COMMAND": "cmake -S glucose-reboot -B glucose-reboot/build -DCMAKE_BUILD_TYPE=Release && cmake --build glucose-reboot/build --target glucose -- -j2", "BINARY_PATH": "glucose-reboot/simp/glucose", "BINARY_NAME": "glucose" },
-    "hcad-v1": { "BUILD_KIND": "starexec", "BINARY_PATH": "bin/cadical", "BINARY_NAME": "cadical" },
-    "hcad-v2": { "BUILD_KIND": "starexec", "BINARY_PATH": "bin/cadical", "BINARY_NAME": "cadical" },
-    "hkis": { "BUILD_KIND": "starexec", "BINARY_PATH": "bin/kissat", "BINARY_NAME": "kissat" },
-    "isasat": { "BUILD_DEPENDS": "clang", "BUILD_KIND": "command", "BUILD_COMMAND": "sed -i 's/-Omtune=native -Omarch=native/-mtune=generic -march=x86-64/' build/isasat/src/Makefile && make -C build/isasat/src competition", "BINARY_PATH": "build/isasat/src/isasat", "BINARY_NAME": "isasat" },
-    "kissat-els-v1": { "BUILD_KIND": "configure", "BUILD_SUBDIR": "build/kissat", "CONFIGURE_ARGS": "--competition --default --test", "BINARY_PATH": "build/kissat/build/kissat", "BINARY_NAME": "kissat" },
-    "kissat-els-v2": { "BUILD_KIND": "configure", "BUILD_SUBDIR": "build/kissat", "CONFIGURE_ARGS": "--competition --default --test", "BINARY_PATH": "build/kissat/build/kissat", "BINARY_NAME": "kissat" },
-    "kissat-els-v3": { "BUILD_KIND": "configure", "BUILD_SUBDIR": "build/kissat", "CONFIGURE_ARGS": "--competition --default --test", "BINARY_PATH": "build/kissat/build/kissat", "BINARY_NAME": "kissat" },
-    "kissat-els-v4": { "BUILD_KIND": "configure", "BUILD_SUBDIR": "build/kissat", "CONFIGURE_ARGS": "--competition --default --test", "BINARY_PATH": "build/kissat/build/kissat", "BINARY_NAME": "kissat" },
-    "kissat-mab-gb": { "BUILD_KIND": "configure", "BUILD_SUBDIR": "build/kissat", "CONFIGURE_ARGS": "--competition --test", "BINARY_PATH": "build/kissat/build/kissat", "BINARY_NAME": "kissat" },
-    "kissat-mab-rephasing": { "BUILD_KIND": "starexec", "BINARY_PATH": "bin/kissat", "BINARY_NAME": "kissat" },
-    "kissat-mab-scavel": { "BUILD_KIND": "configure", "BINARY_PATH": "build/kissat", "BINARY_NAME": "kissat" },
-    "kissat-sc2022-bulky": { "BUILD_KIND": "configure", "BUILD_SUBDIR": "build/kissat", "CONFIGURE_ARGS": "--competition --test", "BINARY_PATH": "build/kissat/build/kissat", "BINARY_NAME": "kissat" },
-    "kissat-sc2022-hyper": { "BUILD_KIND": "configure", "BUILD_SUBDIR": "build/kissat", "CONFIGURE_ARGS": "--competition --test", "BINARY_PATH": "build/kissat/build/kissat", "BINARY_NAME": "kissat" },
-    "kissat-sc2022-light": { "BUILD_KIND": "configure", "BUILD_SUBDIR": "build/kissat", "CONFIGURE_ARGS": "--competition --test", "BINARY_PATH": "build/kissat/build/kissat", "BINARY_NAME": "kissat" },
-    "kissat-watchsat-lto": { "BUILD_KIND": "starexec", "BINARY_PATH": "bin/kissat", "BINARY_NAME": "kissat" },
-    "kissat-adaptive-restart": { "BUILD_KIND": "starexec", "BINARY_PATH": "bin/kissat", "BINARY_NAME": "kissat" },
-    "kissat-cfexp": { "BUILD_KIND": "starexec", "BINARY_PATH": "bin/kissat", "BINARY_NAME": "kissat" },
-    "kissat-inc": { "BUILD_KIND": "configure", "BUILD_SUBDIR": "sources", "BINARY_PATH": "sources/build/kissat", "BINARY_NAME": "kissat" },
-    "kissat-mab-esa": { "BUILD_KIND": "configure", "CONFIGURE_ARGS": "--competition --default", "BINARY_PATH": "build/kissat", "BINARY_NAME": "kissat" },
-    "kissat-mab-moss": { "BUILD_KIND": "configure", "BUILD_SUBDIR": "build/kissat", "CONFIGURE_ARGS": "--competition --default --test", "BINARY_PATH": "build/kissat/build/kissat", "BINARY_NAME": "kissat" },
-    "kissat-mab-ucb": { "BUILD_KIND": "configure", "BUILD_SUBDIR": "build/kissat", "CONFIGURE_ARGS": "--competition --default --test", "BINARY_PATH": "build/kissat/build/kissat", "BINARY_NAME": "kissat" },
-    "kissat-pre": { "BUILD_KIND": "configure", "BUILD_SUBDIR": "sources", "BINARY_PATH": "sources/build/kissat", "BINARY_NAME": "kissat" },
-    "kissat-relaxed": { "BUILD_KIND": "starexec", "BINARY_PATH": "bin/kissat", "BINARY_NAME": "kissat" },
-    "lstech-maple-bandsat": { "BUILD_KIND": "make", "MAKE_ARGS": "-C core r", "BINARY_PATH": "core/glucose_release", "BINARY_NAME": "LStech-Maple-BandSAT" },
-    "lstech-maple-fps": { "BUILD_KIND": "make", "MAKE_ARGS": "-C core r", "BINARY_PATH": "core/glucose_release", "BINARY_NAME": "LStech-Maple-FPS" },
-    "lstech-maple-hywalk": { "BUILD_KIND": "make", "MAKE_ARGS": "-C core r", "BINARY_PATH": "core/glucose_release", "BINARY_NAME": "LStech-Maple-HyWalk" },
-    "lstech-cadical": { "BUILD_KIND": "configure", "BUILD_SUBDIR": "build/cadical", "BINARY_PATH": "build/cadical/build/cadical", "BINARY_NAME": "cadical" },
-    "lstech-kissat": { "BUILD_KIND": "configure", "BUILD_SUBDIR": "sources", "BINARY_PATH": "sources/build/kissat", "BINARY_NAME": "kissat" },
-    "lstech-maple": { "BUILD_KIND": "make", "BUILD_SUBDIR": "sources", "MAKE_ARGS": "-C core r", "BINARY_PATH": "sources/core/glucose_release", "BINARY_NAME": "lstech_maple" },
-    "maplelcmdistchrbt-dl-v3": { "BUILD_KIND": "make", "BUILD_SUBDIR": "MapleLCMDistChrBt-DL-v3", "MAKE_ARGS": "-C core r", "BINARY_PATH": "MapleLCMDistChrBt-DL-v3/core/glucose_release", "BINARY_NAME": "MapleLCMDistChrBt-DL-v3" },
-    "mergesat-4.0-rc": { "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2022-competition/MergeSat%204.0-rc.zip", "BUILD_KIND": "command", "BUILD_COMMAND": "cd mergesat && ln -s . minisat && make AR=gcc-ar", "BINARY_PATH": "mergesat/build/release/bin/mergesat", "BINARY_NAME": "mergesat" },
-    "seqfrost": { "BUILD_KIND": "script", "BUILD_SUBDIR": "seqfrost", "BUILD_SCRIPT": "install.sh", "BUILD_ARGS": "--quiet", "BINARY_PATH": "seqfrost/build/seqfrost", "BINARY_NAME": "seqfrost" },
-    "seqfrost-ere-all": { "BUILD_KIND": "script", "BUILD_SUBDIR": "seqfrost", "BUILD_SCRIPT": "install.sh", "BUILD_ARGS": "--quiet", "BINARY_PATH": "seqfrost/build/seqfrost", "BINARY_NAME": "seqfrost" },
-    "seqfrost-noextend": { "BUILD_KIND": "script", "BUILD_SUBDIR": "seqfrost", "BUILD_SCRIPT": "install.sh", "BUILD_ARGS": "--quiet", "BINARY_PATH": "seqfrost/build/seqfrost", "BINARY_NAME": "seqfrost" },
-    "slime-sc-2022": { "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2022-competition/SLIME%20SC-2022.zip", "BUILD_DEPENDS": "libopenmpi-dev", "BUILD_KIND": "command", "BUILD_COMMAND": "cmake -S . -B build -DCMAKE_BUILD_TYPE=Release && cmake --build build -- -j2", "BINARY_PATH": "bin/slime", "BINARY_NAME": "slime" }
+    "cadical-hack-gb": {
+        "BUILD_KIND": "configure",
+        "BINARY_PATH": "build/cadical",
+        "BINARY_NAME": "cadical"
+    },
+    "cadical-hywalk": {
+        "BUILD_KIND": "configure",
+        "BINARY_PATH": "build/cadical",
+        "BINARY_NAME": "cadical"
+    },
+    "cadical-watchsat-lto": {
+        "BUILD_KIND": "starexec",
+        "BINARY_PATH": "bin/cadical",
+        "BINARY_NAME": "cadical"
+    },
+    "cadical-dvdl-v1": {
+        "BUILD_KIND": "configure",
+        "BUILD_SUBDIR": "build/cadical",
+        "BINARY_PATH": "build/cadical/build/cadical",
+        "BINARY_NAME": "cadical"
+    },
+    "cadical-dvdl-v2": {
+        "BUILD_KIND": "configure",
+        "BUILD_SUBDIR": "build/cadical",
+        "BINARY_PATH": "build/cadical/build/cadical",
+        "BINARY_NAME": "cadical"
+    },
+    "cadical-rel-scavel": {
+        "BUILD_KIND": "configure",
+        "BINARY_PATH": "build/cadical",
+        "BINARY_NAME": "cadical"
+    },
+    "cadical-reorder": {
+        "BUILD_KIND": "configure",
+        "BUILD_SUBDIR": "CadicalReorder",
+        "BINARY_PATH": "CadicalReorder/build/cadical",
+        "BINARY_NAME": "cadical"
+    },
+    "ekissat-mab-db-v1": {
+        "BUILD_KIND": "configure",
+        "BUILD_SUBDIR": "build/kissat",
+        "CONFIGURE_ARGS": "--competition --test",
+        "BINARY_PATH": "build/kissat/build/kissat",
+        "BINARY_NAME": "kissat"
+    },
+    "ekissat-mab-db-v2": {
+        "BUILD_KIND": "configure",
+        "BUILD_SUBDIR": "build/kissat",
+        "CONFIGURE_ARGS": "--competition --test",
+        "BINARY_PATH": "build/kissat/build/kissat",
+        "BINARY_NAME": "kissat"
+    },
+    "ekissat-mab-gb-db": {
+        "BUILD_KIND": "configure",
+        "BUILD_SUBDIR": "build/kissat",
+        "CONFIGURE_ARGS": "--competition --test",
+        "BINARY_PATH": "build/kissat/build/kissat",
+        "BINARY_NAME": "kissat"
+    },
+    "glucose-reboot": {
+        "BUILD_KIND": "command",
+        "BUILD_COMMAND": "cd glucose-reboot/pfactory && sh ./configure && make clean && make -j2 && cd .. && cmake -S . -B build -DCMAKE_BUILD_TYPE=Release && cmake --build build --target glucose -- -j2",
+        "BINARY_PATH": "glucose-reboot/simp/glucose",
+        "BINARY_NAME": "glucose"
+    },
+    "hcad-v1": {
+        "BUILD_KIND": "starexec",
+        "BINARY_PATH": "bin/cadical",
+        "BINARY_NAME": "cadical"
+    },
+    "hcad-v2": {
+        "BUILD_KIND": "starexec",
+        "BINARY_PATH": "bin/cadical",
+        "BINARY_NAME": "cadical"
+    },
+    "isasat": {
+        "BUILD_DEPENDS": "clang llvm-11-dev",
+        "BUILD_KIND": "command",
+        "BUILD_COMMAND": "sed -i 's/-Omtune=native -Omarch=native/-mtune=generic -march=x86-64/' build/isasat/src/Makefile && make -C build/isasat/src competition",
+        "BINARY_PATH": "build/isasat/src/isasat",
+        "BINARY_NAME": "isasat"
+    },
+    "kissat-els-v1": {
+        "BUILD_KIND": "configure",
+        "BUILD_SUBDIR": "build/kissat",
+        "CONFIGURE_ARGS": "--competition --default --test",
+        "BINARY_PATH": "build/kissat/build/kissat",
+        "BINARY_NAME": "kissat"
+    },
+    "kissat-els-v2": {
+        "BUILD_KIND": "configure",
+        "BUILD_SUBDIR": "build/kissat",
+        "CONFIGURE_ARGS": "--competition --default --test",
+        "BINARY_PATH": "build/kissat/build/kissat",
+        "BINARY_NAME": "kissat"
+    },
+    "kissat-els-v3": {
+        "BUILD_KIND": "configure",
+        "BUILD_SUBDIR": "build/kissat",
+        "CONFIGURE_ARGS": "--competition --default --test",
+        "BINARY_PATH": "build/kissat/build/kissat",
+        "BINARY_NAME": "kissat"
+    },
+    "kissat-els-v4": {
+        "BUILD_KIND": "configure",
+        "BUILD_SUBDIR": "build/kissat",
+        "CONFIGURE_ARGS": "--competition --default --test",
+        "BINARY_PATH": "build/kissat/build/kissat",
+        "BINARY_NAME": "kissat"
+    },
+    "kissat-mab-gb": {
+        "BUILD_KIND": "configure",
+        "BUILD_SUBDIR": "build/kissat",
+        "CONFIGURE_ARGS": "--competition --test",
+        "BINARY_PATH": "build/kissat/build/kissat",
+        "BINARY_NAME": "kissat"
+    },
+    "kissat-mab-rephasing": {
+        "BUILD_KIND": "starexec",
+        "BINARY_PATH": "bin/kissat",
+        "BINARY_NAME": "kissat"
+    },
+    "kissat-mab-scavel": {
+        "BUILD_KIND": "configure",
+        "BINARY_PATH": "build/kissat",
+        "BINARY_NAME": "kissat"
+    },
+    "kissat-sc2022-bulky": {
+        "BUILD_KIND": "configure",
+        "BUILD_SUBDIR": "build/kissat",
+        "CONFIGURE_ARGS": "--competition --test",
+        "BINARY_PATH": "build/kissat/build/kissat",
+        "BINARY_NAME": "kissat"
+    },
+    "kissat-sc2022-hyper": {
+        "BUILD_KIND": "configure",
+        "BUILD_SUBDIR": "build/kissat",
+        "CONFIGURE_ARGS": "--competition --test",
+        "BINARY_PATH": "build/kissat/build/kissat",
+        "BINARY_NAME": "kissat"
+    },
+    "kissat-sc2022-light": {
+        "BUILD_KIND": "configure",
+        "BUILD_SUBDIR": "build/kissat",
+        "CONFIGURE_ARGS": "--competition --test",
+        "BINARY_PATH": "build/kissat/build/kissat",
+        "BINARY_NAME": "kissat"
+    },
+    "kissat-watchsat-lto": {
+        "BUILD_KIND": "starexec",
+        "BINARY_PATH": "bin/kissat",
+        "BINARY_NAME": "kissat"
+    },
+    "kissat-adaptive-restart": {
+        "BUILD_KIND": "starexec",
+        "BINARY_PATH": "bin/kissat",
+        "BINARY_NAME": "kissat"
+    },
+    "kissat-cfexp": {
+        "BUILD_KIND": "starexec",
+        "BINARY_PATH": "bin/kissat",
+        "BINARY_NAME": "kissat"
+    },
+    "kissat-inc": {
+        "BUILD_KIND": "configure",
+        "BUILD_SUBDIR": "sources",
+        "BINARY_PATH": "sources/build/kissat",
+        "BINARY_NAME": "kissat"
+    },
+    "kissat-mab-esa": {
+        "BUILD_KIND": "configure",
+        "CONFIGURE_ARGS": "--competition --default",
+        "BINARY_PATH": "build/kissat",
+        "BINARY_NAME": "kissat"
+    },
+    "kissat-mab-moss": {
+        "BUILD_KIND": "configure",
+        "BUILD_SUBDIR": "build/kissat",
+        "CONFIGURE_ARGS": "--competition --default --test",
+        "BINARY_PATH": "build/kissat/build/kissat",
+        "BINARY_NAME": "kissat"
+    },
+    "kissat-mab-ucb": {
+        "BUILD_KIND": "configure",
+        "BUILD_SUBDIR": "build/kissat",
+        "CONFIGURE_ARGS": "--competition --default --test",
+        "BINARY_PATH": "build/kissat/build/kissat",
+        "BINARY_NAME": "kissat"
+    },
+    "kissat-pre": {
+        "BUILD_KIND": "configure",
+        "BUILD_SUBDIR": "sources",
+        "BINARY_PATH": "sources/build/kissat",
+        "BINARY_NAME": "kissat"
+    },
+    "kissat-relaxed": {
+        "BUILD_KIND": "starexec",
+        "BINARY_PATH": "bin/kissat",
+        "BINARY_NAME": "kissat"
+    },
+    "lstech-maple-bandsat": {
+        "BUILD_KIND": "make",
+        "MAKE_ARGS": "-C simp r",
+        "BINARY_PATH": "simp/glucose_release",
+        "BINARY_NAME": "LStech-Maple-BandSAT"
+    },
+    "lstech-maple-fps": {
+        "BUILD_KIND": "make",
+        "MAKE_ARGS": "-C simp r",
+        "BINARY_PATH": "simp/glucose_release",
+        "BINARY_NAME": "LStech-Maple-FPS"
+    },
+    "lstech-maple-hywalk": {
+        "BUILD_KIND": "make",
+        "MAKE_ARGS": "-C simp r",
+        "BINARY_PATH": "simp/glucose_release",
+        "BINARY_NAME": "LStech-Maple-HyWalk"
+    },
+    "lstech-cadical": {
+        "BUILD_KIND": "configure",
+        "BUILD_SUBDIR": "build/cadical",
+        "BINARY_PATH": "build/cadical/build/cadical",
+        "BINARY_NAME": "cadical"
+    },
+    "lstech-kissat": {
+        "BUILD_KIND": "configure",
+        "BUILD_SUBDIR": "sources",
+        "BINARY_PATH": "sources/build/kissat",
+        "BINARY_NAME": "kissat"
+    },
+    "lstech-maple": {
+        "BUILD_KIND": "make",
+        "BUILD_SUBDIR": "sources",
+        "MAKE_ARGS": "-C simp r",
+        "BINARY_PATH": "sources/simp/glucose_release",
+        "BINARY_NAME": "lstech_maple"
+    },
+    "maplelcmdistchrbt-dl-v3": {
+        "BUILD_KIND": "make",
+        "BUILD_SUBDIR": "MapleLCMDistChrBt-DL-v3",
+        "MAKE_ARGS": "-C simp r",
+        "BINARY_PATH": "MapleLCMDistChrBt-DL-v3/simp/glucose_release",
+        "BINARY_NAME": "MapleLCMDistChrBt-DL-v3"
+    },
+    "seqfrost": {
+        "BUILD_KIND": "script",
+        "BUILD_SUBDIR": "seqfrost",
+        "BUILD_SCRIPT": "install.sh",
+        "BUILD_ARGS": "--quiet",
+        "BINARY_PATH": "seqfrost/build/seqfrost",
+        "BINARY_NAME": "seqfrost"
+    },
+    "seqfrost-ere-all": {
+        "BUILD_KIND": "script",
+        "BUILD_SUBDIR": "seqfrost",
+        "BUILD_SCRIPT": "install.sh",
+        "BUILD_ARGS": "--quiet",
+        "BINARY_PATH": "seqfrost/build/seqfrost",
+        "BINARY_NAME": "seqfrost"
+    },
+    "seqfrost-noextend": {
+        "BUILD_KIND": "script",
+        "BUILD_SUBDIR": "seqfrost",
+        "BUILD_SCRIPT": "install.sh",
+        "BUILD_ARGS": "--quiet",
+        "BINARY_PATH": "seqfrost/build/seqfrost",
+        "BINARY_NAME": "seqfrost"
+    },
+    "slime-sc-2022": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2022-competition/SLIME.SC-2022.zip",
+        "BUILD_DEPENDS": "libopenmpi-dev",
+        "BUILD_KIND": "command",
+        "BUILD_COMMAND": "cmake -S . -B build -DCMAKE_BUILD_TYPE=Release && cmake --build build -- -j2",
+        "BINARY_PATH": "bin/slime",
+        "BINARY_NAME": "slime"
+    },
+    "hkis-psids": {
+        "BUILD_KIND": "starexec",
+        "BINARY_PATH": "bin/kissat",
+        "BINARY_NAME": "kissat"
+    },
+    "hkis-sat": {
+        "BUILD_KIND": "starexec",
+        "BINARY_PATH": "bin/kissat",
+        "BINARY_NAME": "kissat"
+    },
+    "hkis-unsat": {
+        "BUILD_KIND": "starexec",
+        "BINARY_PATH": "bin/kissat",
+        "BINARY_NAME": "kissat"
+    },
+    "mergesat-4.0-rc1": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2022-competition/MergeSat.4.0-rc.zip",
+        "BUILD_KIND": "command",
+        "BUILD_COMMAND": "cd mergesat && ln -s . minisat && make AR=gcc-ar",
+        "BINARY_PATH": "mergesat/build/release/bin/mergesat",
+        "BINARY_NAME": "mergesat"
+    },
+    "mergesat-4.0-rc2": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2022-competition/MergeSat.4.0-rc.zip",
+        "BUILD_KIND": "command",
+        "BUILD_COMMAND": "cd mergesat && ln -s . minisat && make AR=gcc-ar",
+        "BINARY_PATH": "mergesat/build/release/bin/mergesat",
+        "BINARY_NAME": "mergesat"
+    },
+    "mergesat-4.0-rc3": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2022-competition/MergeSat.4.0-rc.zip",
+        "BUILD_KIND": "command",
+        "BUILD_COMMAND": "cd mergesat && ln -s . minisat && make AR=gcc-ar",
+        "BINARY_PATH": "mergesat/build/release/bin/mergesat",
+        "BINARY_NAME": "mergesat"
+    },
+    "slime-sc-2022-alpha": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2022-competition/SLIME.SC-2022.zip",
+        "BUILD_DEPENDS": "libopenmpi-dev",
+        "BUILD_KIND": "command",
+        "BUILD_COMMAND": "cmake -S . -B build -DCMAKE_BUILD_TYPE=Release && cmake --build build -- -j2",
+        "BINARY_PATH": "bin/slime",
+        "BINARY_NAME": "slime"
+    },
+    "slime-sc-2022-beta": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2022-competition/SLIME.SC-2022.zip",
+        "BUILD_DEPENDS": "libopenmpi-dev",
+        "BUILD_KIND": "command",
+        "BUILD_COMMAND": "cmake -S . -B build -DCMAKE_BUILD_TYPE=Release && cmake --build build -- -j2",
+        "BINARY_PATH": "bin/slime",
+        "BINARY_NAME": "slime"
+    },
+    "slime-sc-2022-gamma": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2022-competition/SLIME.SC-2022.zip",
+        "BUILD_DEPENDS": "libopenmpi-dev",
+        "BUILD_KIND": "command",
+        "BUILD_COMMAND": "cmake -S . -B build -DCMAKE_BUILD_TYPE=Release && cmake --build build -- -j2",
+        "BINARY_PATH": "bin/slime",
+        "BINARY_NAME": "slime"
     }
+}

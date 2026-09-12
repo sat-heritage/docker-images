@@ -209,6 +209,18 @@ being a JSON object with a subset of the following keys.
 | download_url | Python format string for downloading the solver source/binary |
 | BUILD_DEPENDS | Additional packages to install for compiling the solver.<br>Used by `generic/v1` builder |
 | RDEPENDS | Additional packages to install for running the executable.<br>Used by `generic/dist-v1` assembler |
+| APT_SNAPSHOT | Timestamp (`YYYYMMDDThhmmssZ`) of the [snapshot.debian.org](https://snapshot.debian.org) archive used for installing packages, so that recent entries are compiled with the toolchain available at competition time. Requires `APT_CODENAME`.<br>Used by `base/v1`, `generic/v1`, `generic/dist-v1` and `generic/starexec-v2` |
+| APT_CODENAME | Debian codename (for example `bullseye`) matching `APT_SNAPSHOT` |
+| BUILD_KIND | Build method for the `generic/starexec-v2` builder: `auto` (default, detected from the archive), `starexec` (`starexec_build`), `build-subdir` (`build/build.sh`), `script` (`BUILD_SCRIPT`), `configure` (`./configure` then `make`), `make` or `command` (`BUILD_COMMAND`) |
+| BUILD_SUBDIR | Directory, relative to the root of the submission archive, where the build is run.<br>Default: `.` |
+| BUILD_SCRIPT, BUILD_ARGS, CONFIGURE_ARGS, MAKE_ARGS, BUILD_COMMAND | Parameters of the corresponding `BUILD_KIND` |
+| BINARY_PATH | Path, relative to the root of the submission archive, of the executable produced by the build. It is installed in `/dist`, so the precompiled binaries shipped in competition archives are never used.<br>Required by `generic/starexec-v2` |
+| BINARY_NAME | Name of the installed executable.<br>Default: basename of `BINARY_PATH` |
+
+The `generic/starexec-v2` builder is intended for StarExec submissions of
+recent competitions (2022 onwards): one ZIP archive per solver, whose top-level
+directory is the solver name, and per-solver build parameters declared in
+`setup.json` instead of fixture scripts.
 
 Python format strings can use the following variables:
 * `SOLVER`: solver identifier (keys in `solvers.json`)

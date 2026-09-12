@@ -1031,6 +1031,14 @@ def test_images_in_workspace(args, tests_dir):
         suffix = f" ({detail})" if detail else ""
         print(f"{status:<4} {image.name} {test_name}{suffix}", flush=True)
 
+    def dump_output(image, test_name, output):
+        # In terse mode the solver output is captured; keep it on stderr so
+        # that a failure remains diagnosable from the test log.
+        if not output:
+            return
+        print(f"==== {image.name} {test_name}: solver output ====", file=sys.stderr)
+        print(output, end="" if output.endswith("\n") else "\n", file=sys.stderr, flush=True)
+
     def call(
         test_name,
         image,
@@ -1059,6 +1067,7 @@ def test_images_in_workspace(args, tests_dir):
                     "" if launched else msg,
                 )
             if not launched:
+                dump_output(image, test_name, output)
                 report("skip", image, f"{test_name}-termination", "launch failed")
                 report("skip", image, f"{test_name}-result", "launch failed")
                 if expected_status == SATISFIABLE:
@@ -1073,6 +1082,7 @@ def test_images_in_workspace(args, tests_dir):
                 msg,
             )
             if not terminated:
+                dump_output(image, test_name, output)
                 report("skip", image, f"{test_name}-result", "timeout")
                 if expected_status == SATISFIABLE:
                     report("skip", image, f"{test_name}-model", "timeout")
@@ -1082,6 +1092,7 @@ def test_images_in_workspace(args, tests_dir):
                 model = validate_solver_result(expected_status, ret, output)
             except (ValidationError, ValueError) as exc:
                 report("fail", image, f"{test_name}-result", str(exc))
+                dump_output(image, test_name, output)
                 if expected_status == SATISFIABLE:
                     report("skip", image, f"{test_name}-model", "invalid result")
                 return False
@@ -1093,6 +1104,7 @@ def test_images_in_workspace(args, tests_dir):
                     validate_model(variables, clauses, model)
                 except (OSError, ValidationError, ValueError) as exc:
                     report("fail", image, f"{test_name}-model", str(exc))
+                    dump_output(image, test_name, output)
                     return False
                 report("ok", image, f"{test_name}-model")
             return True
@@ -1420,8 +1432,8 @@ def main(redirected=False):
                 help="Print one concise status line for each validation stage")
         p.add_argument("--file", "-f", default="aim-200-1_6-yes1-1.cnf",
                 help=".cnf test file (should also exists with .gz)")
-        p.add_argument("--unsat-file", default="simple-unsat.cnf",
-                help="UNSAT .cnf test file (default: simple-unsat.cnf)")
+        p.add_argument("--unsat-file", default="php-4-3.cnf",
+                help="UNSAT .cnf test file (default: php-4-3.cnf)")
         p.set_defaults(func=test_images, timeout=10, fail_if_timeout=True)
 
         p = subparsers.add_parser("push",

@@ -205,12 +205,19 @@ def _binary_proof_steps(data: bytes) -> Iterator[tuple[bool, tuple[int, ...]]]:
 def _unit_conflict(
     clauses: Iterable[tuple[int, ...]], assumptions: Iterable[int]
 ) -> bool:
+    return _propagate(clauses, assumptions)[0]
+
+
+def _propagate(
+    clauses: Iterable[tuple[int, ...]], assumptions: Iterable[int]
+) -> tuple[bool, dict[int, bool]]:
+    """Unit propagation; return (conflict, assignment)."""
     assignment: dict[int, bool] = {}
     for literal in assumptions:
         variable = abs(literal)
         value = literal > 0
         if variable in assignment and assignment[variable] != value:
-            return True
+            return True, assignment
         assignment[variable] = value
 
     changed = True
@@ -230,26 +237,56 @@ def _unit_conflict(
             if satisfied:
                 continue
             if not unresolved:
-                return True
+                return True, assignment
             if len(unresolved) == 1:
                 literal = unresolved[0]
                 variable = abs(literal)
                 value = literal > 0
                 if variable in assignment:
                     if assignment[variable] != value:
-                        return True
+                        return True, assignment
                 else:
                     assignment[variable] = value
                     changed = True
-    return False
+    return False, assignment
+
+
+def _is_rat(
+    clauses: list[tuple[int, ...]], clause: tuple[int, ...]
+) -> bool:
+    """Resolution asymmetric tautology check on the first literal (DRAT)."""
+    if not clause:
+        return False
+    pivot = clause[0]
+    for other in clauses:
+        if -pivot not in other:
+            continue
+        resolvent = clause + tuple(l for l in other if l != -pivot)
+        if not _unit_conflict(clauses, (-literal for literal in resolvent)):
+            return False
+    return True
+
+
+def _is_reason_clause(
+    clauses: list[tuple[int, ...]], clause: tuple[int, ...]
+) -> bool:
+    """True when the clause is unit under top-level propagation.
+
+    Solvers commonly delete clauses that are the reason of a top-level unit;
+    like drat-trim, such deletions are ignored to keep the proof checkable.
+    """
+    _, assignment = _propagate(clauses, ())
+    not_false = [l for l in clause if assignment.get(abs(l)) != (l < 0)]
+    return len(not_false) == 1
 
 
 def validate_drup_proof(cnf_path: str | Path, proof_path: str | Path) -> None:
-    """Validate a text DRUP or binary DRAT proof using reverse unit propagation.
+    """Validate a text DRUP or binary DRAT proof.
 
-    DRAT additions that require the asymmetric-tautology rule are rejected.  The
-    repository smoke test uses a tiny contradiction, for which all conforming
-    proof-producing solvers can emit a short RUP proof.
+    Each added clause must be RUP or RAT (on its first literal) with respect to
+    the current clause set.  Deletions of clauses that are the reason of a
+    top-level unit are ignored, as drat-trim does.  This checker is meant for
+    the small repository smoke instances only.
     """
     _, original_clauses = read_dimacs(cnf_path)
     proof_data = Path(proof_path).read_bytes()
@@ -267,13 +304,18 @@ def validate_drup_proof(cnf_path: str | Path, proof_path: str | Path) -> None:
     for deletion, clause in steps:
         step_count += 1
         if deletion:
+            if _is_reason_clause(clauses, clause):
+                continue
             try:
                 clauses.remove(clause)
             except ValueError:
                 pass
             continue
         if not _unit_conflict(clauses, (-literal for literal in clause)):
-            raise ValidationError(f"proof step {step_count} is not RUP")
+            if not _is_rat(clauses, clause):
+                raise ValidationError(
+                    f"proof step {step_count} is neither RUP nor RAT"
+                )
         clauses.append(clause)
         if not clause:
             derived_empty = True

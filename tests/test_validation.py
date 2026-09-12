@@ -78,6 +78,30 @@ class ProofTests(unittest.TestCase):
         with self.assertRaisesRegex(ValidationError, "empty clause"):
             validate_drup_proof(TESTS / "simple-unsat.cnf", self._proof(b"1 0\n"))
 
+    def _cnf(self, text):
+        with tempfile.NamedTemporaryFile("w", suffix=".cnf", delete=False) as tmp:
+            self.addCleanup(Path(tmp.name).unlink, missing_ok=True)
+            tmp.write(text)
+            return tmp.name
+
+    def test_rat_step_is_accepted(self):
+        # Adding the unit 1 is not RUP but is RAT on 1: the only clause
+        # containing -1 resolves to (2) which follows by unit propagation
+        # from the clause set once 1 is assumed false.
+        cnf = self._cnf("p cnf 2 3\n1 2 0\n-1 2 0\n-2 0\n")
+        validate_drup_proof(Path(cnf), self._proof(b"1 0\n0\n"))
+
+    def test_non_rat_step_is_rejected(self):
+        cnf = self._cnf("p cnf 2 2\n1 2 0\n-1 -2 0\n")
+        with self.assertRaisesRegex(ValidationError, "neither RUP nor RAT"):
+            validate_drup_proof(Path(cnf), self._proof(b"1 0\n"))
+
+    def test_reason_clause_deletion_is_ignored(self):
+        # (1) is the reason of the top-level unit 1; deleting it must not
+        # make the empty clause underivable.
+        cnf = self._cnf("p cnf 1 2\n1 0\n-1 0\n")
+        validate_drup_proof(Path(cnf), self._proof(b"d 1 0\n0\n"))
+
 
 class SafetyTests(unittest.TestCase):
     def test_image_name_must_match_entire_string(self):
