@@ -41,12 +41,28 @@ class CompetitionArchiveTests(unittest.TestCase):
             assets, manifest = archiver.mirror(
                 "2022", [str(source)], output, {"Solver-A"}, {}
             )
-            self.assertEqual([path.name for path in assets], ["Solver-A.tar.xz"])
+            self.assertEqual([path.name for path in assets], ["Solver-A.zip"])
             self.assertEqual(manifest["assets"][0]["solver"], "Solver-A")
+            self.assertEqual(manifest["assets"][0]["archive_format"], "zip")
+            with zipfile.ZipFile(assets[0]) as archive:
+                names = archive.namelist()
+                self.assertEqual(
+                    names, ["Solver-A/", "Solver-A/README", "Solver-A/bin/solve"]
+                )
+                mode = archive.getinfo("Solver-A/bin/solve").external_attr >> 16
+                self.assertEqual(stat.S_IMODE(mode), 0o755)
+
+    def test_explicit_tar_xz_output(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            source = self.make_zip(root)
+            assets, manifest = archiver.mirror(
+                "2022", [str(source)], root / "output", {"Solver-B"}, {}, "tar.xz"
+            )
+            self.assertEqual(assets[0].name, "Solver-B.tar.xz")
+            self.assertEqual(manifest["assets"][0]["archive_format"], "tar.xz")
             with tarfile.open(assets[0], "r:xz") as archive:
-                names = archive.getnames()
-                self.assertEqual(names, ["Solver-A", "Solver-A/README", "Solver-A/bin/solve"])
-                self.assertEqual(archive.getmember("Solver-A/bin/solve").mode, 0o755)
+                self.assertIn("Solver-B/main.c", archive.getnames())
 
     def test_output_is_deterministic(self):
         with tempfile.TemporaryDirectory() as directory:
@@ -83,7 +99,7 @@ class CompetitionArchiveTests(unittest.TestCase):
             )
             self.assertEqual(status, 0)
             data = json.loads((output / "manifest.json").read_text(encoding="utf-8"))
-            self.assertEqual(data["assets"][0]["asset"], "Solver-B.tar.xz")
+            self.assertEqual(data["assets"][0]["asset"], "Solver-B.zip")
 
 
 if __name__ == "__main__":

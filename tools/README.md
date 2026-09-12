@@ -44,10 +44,12 @@ preserving their original text in `status_detail`.
 ### `archive_competition_solvers.py`
 
 Downloads one or more official competition ZIP/TAR distributions and creates
-one deterministic `.tar.xz` archive per top-level solver directory. The command
-is read-only with respect to GitHub unless `--upload` is explicitly supplied.
-Generated files and a SHA-256 provenance manifest are stored below the ignored
-`dist/` directory by default.
+one deterministic archive per top-level solver directory. By default, a ZIP
+competition distribution produces ZIP assets, preserving the format chosen by
+the organizers. Use `--format tar.xz` only when that format is explicitly
+wanted. The command is read-only with respect to GitHub unless `--upload` is
+supplied. Generated files and a SHA-256 provenance manifest are stored below
+the ignored `dist/` directory by default.
 
 To prepare only the first solver being integrated from SAT Competition 2022:
 

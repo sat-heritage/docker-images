@@ -14,6 +14,7 @@ import calendar
 import copy
 import hashlib
 import json
+import mimetypes
 import os
 import posixpath
 import shutil
@@ -114,21 +115,29 @@ class SolverArchive:
                         roots.add(root)
         return sorted(roots, key=str.casefold)
 
-    def write_solver(self, solver: str, destination: Path) -> None:
+    def output_format(self, requested: str) -> str:
+        if requested == "auto":
+            return "zip" if self.kind == "zip" else "tar.xz"
+        return requested
+
+    def write_solver(self, solver: str, destination: Path, output_format: str) -> None:
         destination.parent.mkdir(parents=True, exist_ok=True)
         temporary = destination.with_suffix(destination.suffix + ".tmp")
         temporary.unlink(missing_ok=True)
         try:
-            with tarfile.open(temporary, "w:xz", format=tarfile.PAX_FORMAT) as output:
-                root = tarfile.TarInfo(solver)
-                root.type = tarfile.DIRTYPE
-                root.mode = 0o755
-                root.mtime = 0
-                output.addfile(root)
-                if self.kind == "zip":
-                    count = self._write_zip_solver(output, solver)
-                else:
-                    count = self._write_tar_solver(output, solver)
+            if output_format == "zip":
+                count = self._write_solver_zip(temporary, solver)
+            else:
+                with tarfile.open(temporary, "w:xz", format=tarfile.PAX_FORMAT) as output:
+                    root = tarfile.TarInfo(solver)
+                    root.type = tarfile.DIRTYPE
+                    root.mode = 0o755
+                    root.mtime = 0
+                    output.addfile(root)
+                    if self.kind == "zip":
+                        count = self._write_zip_solver_to_tar(output, solver)
+                    else:
+                        count = self._write_tar_solver_to_tar(output, solver)
             if count == 0:
                 raise ArchiveError(f"solver directory not found: {solver!r}")
             temporary.replace(destination)
@@ -136,7 +145,35 @@ class SolverArchive:
             temporary.unlink(missing_ok=True)
             raise
 
-    def _write_zip_solver(self, output: tarfile.TarFile, solver: str) -> int:
+    def _write_solver_zip(self, destination: Path, solver: str) -> int:
+        if self.kind != "zip":
+            raise ArchiveError(
+                "ZIP output from a TAR source is not supported; use --format tar.xz"
+            )
+        count = 0
+        with zipfile.ZipFile(self.path) as source, zipfile.ZipFile(destination, "w") as output:
+            root = zipfile.ZipInfo(solver + "/")
+            root.date_time = (1980, 1, 1, 0, 0, 0)
+            root.create_system = 3
+            root.external_attr = (stat.S_IFDIR | 0o755) << 16
+            output.writestr(root, b"")
+            members = sorted(source.infolist(), key=lambda member: member.filename)
+            for member in members:
+                name = normalized_member_name(member.filename)
+                if name == solver:
+                    continue
+                if not name.startswith(solver + "/"):
+                    continue
+                mode = member.external_attr >> 16
+                if stat.S_ISLNK(mode):
+                    validate_link(name, source.read(member).decode("utf-8"))
+                info = copy.copy(member)
+                info.filename = name + ("/" if member.is_dir() else "")
+                output.writestr(info, source.read(member))
+                count += 1
+        return count
+
+    def _write_zip_solver_to_tar(self, output: tarfile.TarFile, solver: str) -> int:
         count = 0
         with zipfile.ZipFile(self.path) as source:
             members = sorted(source.infolist(), key=lambda member: member.filename)
@@ -171,7 +208,7 @@ class SolverArchive:
                 count += 1
         return count
 
-    def _write_tar_solver(self, output: tarfile.TarFile, solver: str) -> int:
+    def _write_tar_solver_to_tar(self, output: tarfile.TarFile, solver: str) -> int:
         count = 0
         with tarfile.open(self.path, "r:*") as source:
             members = sorted(source.getmembers(), key=lambda member: member.name)
@@ -307,7 +344,8 @@ class GitHubRelease:
         url = (
             f"{UPLOAD_ROOT}/repos/{self.repository}/releases/{release_id}/assets?{query}"
         )
-        self._request("POST", url, path.read_bytes(), "application/x-xz")
+        content_type = mimetypes.guess_type(path.name)[0] or "application/octet-stream"
+        self._request("POST", url, path.read_bytes(), content_type)
 
 
 def public_asset_sha256(asset: dict[str, object]) -> str | None:
@@ -345,6 +383,7 @@ def mirror(
     output_dir: Path,
     selected: set[str],
     renames: dict[str, str],
+    output_format: str = "auto",
 ) -> tuple[list[Path], dict[str, object]]:
     output_dir.mkdir(parents=True, exist_ok=True)
     source_records: list[dict[str, object]] = []
@@ -375,18 +414,21 @@ def mirror(
         used_asset_names: set[str] = set()
         for solver in names:
             asset_stem = renames.get(solver, solver)
-            asset_name = f"{asset_stem}.tar.xz"
+            solver_format = discovered[solver].output_format(output_format)
+            extension = ".zip" if solver_format == "zip" else ".tar.xz"
+            asset_name = f"{asset_stem}{extension}"
             if asset_name in used_asset_names:
                 raise ArchiveError(f"duplicate output asset name: {asset_name!r}")
             used_asset_names.add(asset_name)
             destination = output_dir / asset_name
-            discovered[solver].write_solver(solver, destination)
+            discovered[solver].write_solver(solver, destination, solver_format)
             digest = sha256_file(destination)
             assets.append(destination)
             asset_records.append(
                 {
                     "solver": solver,
                     "asset": asset_name,
+                    "archive_format": solver_format,
                     "size": destination.stat().st_size,
                     "sha256": digest,
                 }
@@ -471,6 +513,12 @@ def parser() -> argparse.ArgumentParser:
         help="rename an output asset while preserving the source directory",
     )
     result.add_argument("--output-dir", type=Path, help="default: dist/competition-sources/YEAR")
+    result.add_argument(
+        "--format",
+        choices=("auto", "zip", "tar.xz"),
+        default="auto",
+        help="output format; auto (default) preserves ZIP competition distributions",
+    )
     result.add_argument("--repo", default=DEFAULT_REPOSITORY, help="GitHub owner/repository")
     result.add_argument("--release-tag", help="default: YEAR-competition")
     result.add_argument("--release-name", help="default: SAT Competition YEAR sources")
@@ -497,7 +545,7 @@ def main(arguments: list[str] | None = None) -> int:
             )
         output_dir = args.output_dir or Path("dist") / "competition-sources" / args.year
         assets, manifest = mirror(
-            args.year, args.archives, output_dir, selected, renames
+            args.year, args.archives, output_dir, selected, renames, args.format
         )
         if not args.upload:
             print(f"[PLAN] {len(assets)} asset(s) ready in {output_dir}; nothing uploaded")
