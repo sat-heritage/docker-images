@@ -75,7 +75,7 @@
     },
     "glucose-reboot": {
         "BUILD_KIND": "command",
-        "BUILD_COMMAND": "cd glucose-reboot/pfactory && sh ./configure && make clean && make -j2 && cd .. && cmake -S . -B build -DCMAKE_BUILD_TYPE=Release && cmake --build build --target glucose -- -j2",
+        "BUILD_COMMAND": "sed -i 's|(nb2\\*100)/nb|(nb ? (nb2*100)/nb : 0)|; s|(nb3\\*100)/nb|(nb ? (nb3*100)/nb : 0)|' glucose-reboot/simp/Main.cc && cd glucose-reboot/pfactory && sh ./configure && make clean && make -j2 && cd .. && cmake -S . -B build -DCMAKE_BUILD_TYPE=Release && cmake --build build --target glucose -- -j2",
         "BINARY_PATH": "glucose-reboot/simp/glucose",
         "BINARY_NAME": "glucose"
     },
@@ -288,7 +288,8 @@
         "BUILD_KIND": "command",
         "BUILD_COMMAND": "cmake -S . -B build -DCMAKE_BUILD_TYPE=Release && cmake --build build -- -j2",
         "BINARY_PATH": "bin/slime",
-        "BINARY_NAME": "slime"
+        "BINARY_NAME": "slime",
+        "RDEPENDS": "libopenmpi3"
     },
     "hkis-psids": {
         "BUILD_KIND": "starexec",
@@ -307,22 +308,19 @@
     },
     "mergesat-4.0-rc1": {
         "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2022-competition/MergeSat.4.0-rc.zip",
-        "BUILD_KIND": "command",
-        "BUILD_COMMAND": "cd mergesat && ln -s . minisat && make AR=gcc-ar",
+        "BUILD_KIND": "starexec",
         "BINARY_PATH": "mergesat/build/release/bin/mergesat",
         "BINARY_NAME": "mergesat"
     },
     "mergesat-4.0-rc2": {
         "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2022-competition/MergeSat.4.0-rc.zip",
-        "BUILD_KIND": "command",
-        "BUILD_COMMAND": "cd mergesat && ln -s . minisat && make AR=gcc-ar",
+        "BUILD_KIND": "starexec",
         "BINARY_PATH": "mergesat/build/release/bin/mergesat",
         "BINARY_NAME": "mergesat"
     },
     "mergesat-4.0-rc3": {
         "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2022-competition/MergeSat.4.0-rc.zip",
-        "BUILD_KIND": "command",
-        "BUILD_COMMAND": "cd mergesat && ln -s . minisat && make AR=gcc-ar",
+        "BUILD_KIND": "starexec",
         "BINARY_PATH": "mergesat/build/release/bin/mergesat",
         "BINARY_NAME": "mergesat"
     },
@@ -332,7 +330,8 @@
         "BUILD_KIND": "command",
         "BUILD_COMMAND": "cmake -S . -B build -DCMAKE_BUILD_TYPE=Release && cmake --build build -- -j2",
         "BINARY_PATH": "bin/slime",
-        "BINARY_NAME": "slime"
+        "BINARY_NAME": "slime",
+        "RDEPENDS": "libopenmpi3"
     },
     "slime-sc-2022-beta": {
         "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2022-competition/SLIME.SC-2022.zip",
@@ -340,7 +339,8 @@
         "BUILD_KIND": "command",
         "BUILD_COMMAND": "cmake -S . -B build -DCMAKE_BUILD_TYPE=Release && cmake --build build -- -j2",
         "BINARY_PATH": "bin/slime",
-        "BINARY_NAME": "slime"
+        "BINARY_NAME": "slime",
+        "RDEPENDS": "libopenmpi3"
     },
     "slime-sc-2022-gamma": {
         "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2022-competition/SLIME.SC-2022.zip",
@@ -348,6 +348,7 @@
         "BUILD_KIND": "command",
         "BUILD_COMMAND": "cmake -S . -B build -DCMAKE_BUILD_TYPE=Release && cmake --build build -- -j2",
         "BINARY_PATH": "bin/slime",
-        "BINARY_NAME": "slime"
+        "BINARY_NAME": "slime",
+        "RDEPENDS": "libopenmpi3"
     }
 }

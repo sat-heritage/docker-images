@@ -207,7 +207,8 @@
             "-certified-output=FILEPROOF",
             "-model",
             "FILECNF"
-        ]
+        ],
+        "comment": "Built with the bundled pFactory recompiled from source. A statistics line in simp/Main.cc divides by the number of clauses left after preprocessing, which crashes (SIGFPE) on formulas fully solved by preprocessing; the build guards that division, search is unchanged."
     },
     "hcad-v1": {
         "status": "ok",

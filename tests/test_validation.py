@@ -75,8 +75,21 @@ class ProofTests(unittest.TestCase):
         validate_drup_proof(TESTS / "simple-unsat.cnf", self._proof(proof))
 
     def test_proof_without_empty_clause_is_rejected(self):
+        cnf = self._cnf("p cnf 2 4\n1 2 0\n1 -2 0\n-1 2 0\n-1 -2 0\n")
         with self.assertRaisesRegex(ValidationError, "empty clause"):
-            validate_drup_proof(TESTS / "simple-unsat.cnf", self._proof(b"1 0\n"))
+            validate_drup_proof(Path(cnf), self._proof(b"d 1 2 0\n"))
+
+    def test_implicit_empty_clause_is_accepted(self):
+        # MergeSat ends its proofs with the last units and no explicit
+        # empty clause; unit propagation refutes the final clause set.
+        cnf = self._cnf("p cnf 2 4\n1 2 0\n1 -2 0\n-1 2 0\n-1 -2 0\n")
+        validate_drup_proof(Path(cnf), self._proof(b"1 0\n"))
+
+    def test_signed_binary_literals(self):
+        # IsaSAT encodes -8 as the signed code 2 * -8 = 0xFFFFFFF0.
+        cnf = self._cnf("p cnf 8 2\n8 0\n-8 0\n")
+        proof = b"a\xf0\xff\xff\xff\x0f\x00a\x00"
+        validate_drup_proof(Path(cnf), self._proof(proof))
 
     def _cnf(self, text):
         with tempfile.NamedTemporaryFile("w", suffix=".cnf", delete=False) as tmp:

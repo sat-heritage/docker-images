@@ -16,7 +16,7 @@ RUN set -eu; \
           "deb http://snapshot.debian.org/archive/debian/${APT_SNAPSHOT} ${APT_CODENAME} main" \
           "deb http://snapshot.debian.org/archive/debian-security/${APT_SNAPSHOT} ${APT_CODENAME}-security main" \
           > /etc/apt/sources.list; \
-        printf '%s\n' 'Acquire::Check-Valid-Until "false";' > /etc/apt/apt.conf.d/99snapshot; \
+        printf '%s\n' 'Acquire::Check-Valid-Until "false";' 'Acquire::Retries "5";' > /etc/apt/apt.conf.d/99snapshot; \
     fi; \
     apt-get update --fix-missing; \
     apt-get install -y --no-install-recommends \

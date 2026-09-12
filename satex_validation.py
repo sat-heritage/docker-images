@@ -178,6 +178,10 @@ def _binary_literal(data: bytes, offset: int) -> tuple[int, int]:
             raise ValidationError("oversized binary proof literal")
     if value == 0:
         return 0, offset
+    if value >= 1 << 31:
+        # Some solvers (IsaSAT) write the literal code as a signed 32-bit
+        # integer; decode it the way drat-trim does with its int arithmetic.
+        value -= 1 << 32
     variable = value >> 1
     return (-variable if value & 1 else variable), offset
 
@@ -321,5 +325,7 @@ def validate_drup_proof(cnf_path: str | Path, proof_path: str | Path) -> None:
             derived_empty = True
             break
 
-    if not derived_empty:
+    if not derived_empty and not _unit_conflict(clauses, ()):
+        # Like drat-trim, accept a proof whose final clause set is refuted by
+        # unit propagation even if the empty clause is not written explicitly.
         raise ValidationError("proof does not derive the empty clause")
