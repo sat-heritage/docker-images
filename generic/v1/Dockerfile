@@ -32,6 +32,29 @@ ARG PLATFORM
 #
 FROM debian:stretch-slim as unpack
 
+# Debian releases used by historical solvers have moved to archive.debian.org.
+RUN set -eu; \
+    for list in /etc/apt/sources.list /etc/apt/sources.list.d/*.list; do \
+        if [ -f "$list" ]; then \
+            sed \
+                -e 's|https\?://deb.debian.org/debian-security|http://archive.debian.org/debian-security|g' \
+                -e 's|https\?://security.debian.org/debian-security|http://archive.debian.org/debian-security|g' \
+                -e 's|https\?://security.debian.org|http://archive.debian.org/debian-security|g' \
+                -e 's|https\?://deb.debian.org/debian|http://archive.debian.org/debian|g' \
+                -e 's|https\?://ftp.debian.org/debian|http://archive.debian.org/debian|g' \
+                -e 's|https\?://httpredir.debian.org/debian|http://archive.debian.org/debian|g' \
+                -e '/-updates[[:space:]]/d' \
+                "$list" > "$list.archive"; \
+            mv "$list.archive" "$list"; \
+        fi; \
+    done; \
+    mkdir -p /etc/apt/apt.conf.d; \
+    printf '%s\n' 'Acquire::Check-Valid-Until "false";' > /etc/apt/apt.conf.d/99archive; \
+    if ! grep -Eq '^VERSION_ID="?([9]|[1-9][0-9])"?$' /etc/os-release 2>/dev/null; then \
+        printf '%s\n' 'Acquire::AllowInsecureRepositories "true";' \
+            'APT::Get::AllowUnauthenticated "true";' > /etc/apt/apt.conf.d/99archive-legacy; \
+    fi
+
 RUN apt-get update --fix-missing && \
     apt-get install -y --no-install-recommends \
         ca-certificates\
@@ -67,6 +90,29 @@ RUN ASSET="$(ls /assets/*)" && set -ex && \
 #
 FROM ${BUILDER_BASE}
 ENV LANG=C.UTF-8 LC_ALL=C.UTF-8
+
+# The builder may use another archived Debian release.
+RUN set -eu; \
+    for list in /etc/apt/sources.list /etc/apt/sources.list.d/*.list; do \
+        if [ -f "$list" ]; then \
+            sed \
+                -e 's|https\?://deb.debian.org/debian-security|http://archive.debian.org/debian-security|g' \
+                -e 's|https\?://security.debian.org/debian-security|http://archive.debian.org/debian-security|g' \
+                -e 's|https\?://security.debian.org|http://archive.debian.org/debian-security|g' \
+                -e 's|https\?://deb.debian.org/debian|http://archive.debian.org/debian|g' \
+                -e 's|https\?://ftp.debian.org/debian|http://archive.debian.org/debian|g' \
+                -e 's|https\?://httpredir.debian.org/debian|http://archive.debian.org/debian|g' \
+                -e '/-updates[[:space:]]/d' \
+                "$list" > "$list.archive"; \
+            mv "$list.archive" "$list"; \
+        fi; \
+    done; \
+    mkdir -p /etc/apt/apt.conf.d; \
+    printf '%s\n' 'Acquire::Check-Valid-Until "false";' > /etc/apt/apt.conf.d/99archive; \
+    if ! grep -Eq '^VERSION_ID="?([9]|[1-9][0-9])"?$' /etc/os-release 2>/dev/null; then \
+        printf '%s\n' 'Acquire::AllowInsecureRepositories "true";' \
+            'APT::Get::AllowUnauthenticated "true";' > /etc/apt/apt.conf.d/99archive-legacy; \
+    fi
 
 RUN apt-get update --fix-missing &&\
     apt-get -y install zip gcc g++ cmake make patch curl zlib1g-dev
@@ -110,4 +156,3 @@ RUN set -ex && mkdir /dist && cd "./`find -maxdepth 1 -mindepth 1 -type d|sort|g
     else find -type f -maxdepth 1 -name '*.ini' -exec mv -v {} /dist/{} \;; \
         if find -perm /100 -type f -maxdepth 1 -exec mv -v {} /dist/{} \;; then : ; \
         else find -perm +100 -type f -maxdepth 1 -exec mv -v {} /dist/{} \;; fi; fi
-
