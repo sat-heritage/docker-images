@@ -1436,8 +1436,8 @@ def main(redirected=False):
                 help="Print one concise status line for each validation stage")
         p.add_argument("--file", "-f", default="aim-200-1_6-yes1-1.cnf",
                 help=".cnf test file (should also exists with .gz)")
-        p.add_argument("--unsat-file", default="php-4-3.cnf",
-                help="UNSAT .cnf test file (default: php-4-3.cnf)")
+        p.add_argument("--unsat-file", default="php-5-4.cnf",
+                help="UNSAT .cnf test file (default: php-5-4.cnf)")
         p.set_defaults(func=test_images, timeout=10, fail_if_timeout=True)
 
         p = subparsers.add_parser("push",

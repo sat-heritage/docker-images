@@ -621,7 +621,7 @@
         ]
     },
     "kissat-pre": {
-        "status": "ok",
+        "status": "unstable",
         "name": "kissat_pre",
         "version": "1.0.3",
         "authors": "Zhihan Chen, Xindi Zhang, Shaowei Cai, Pinyan Lu",
@@ -638,7 +638,8 @@
             "--default",
             "FILECNF",
             "FILEPROOF"
-        ]
+        ],
+        "status_detail": "exits with code 1 instead of 20 when the formula is refuted by its preprocessing (the s UNSATISFIABLE line is correct); search results use the standard codes"
     },
     "kissat-relaxed": {
         "status": "ok",
@@ -822,7 +823,7 @@
         ]
     },
     "lstech-maple": {
-        "status": "ok",
+        "status": "unstable",
         "name": "LSTech_Maple",
         "authors": "Zhihan Chen, Xindi Zhang, Shaowei Cai, Pinyan Lu",
         "call": "./lstech_maple",
@@ -837,7 +838,8 @@
             "FILECNF",
             "-drup-file=FILEPROOF"
         ],
-        "comment": "Unlike the other Maple-based entries, this binary hangs on gzip-compressed input, so satex decompresses it first."
+        "comment": "Unlike the other Maple-based entries, this binary hangs on gzip-compressed input, so satex decompresses it first.",
+        "status_detail": "on some formulas (e.g. aim-200-1_6-yes1-1) the model line is corrupted by a debug message: 'v c wrong resolution num'"
     },
     "maplelcmdistchrbt-dl-v3": {
         "status": "ok",
@@ -1006,7 +1008,8 @@
         "argsproof": [
             "FILECNF",
             "FILEPROOF"
-        ]
+        ],
+        "comment": "Built with the submitted build_unix.sh: the sequential, statically linked variant that matches the binary shipped in the archive (the CMake recipe builds the MPI cloud variant)."
     },
     "slime-sc-2022-alpha": {
         "status": "ok",
@@ -1026,7 +1029,7 @@
             "-invert-polarity",
             "FILEPROOF"
         ],
-        "comment": "configuration of the SLIME SC-2022 submission"
+        "comment": "Built with the submitted build_unix.sh: the sequential, statically linked variant that matches the binary shipped in the archive (the CMake recipe builds the MPI cloud variant)."
     },
     "slime-sc-2022-beta": {
         "status": "ok",
@@ -1046,7 +1049,7 @@
             "-no-use-distance",
             "FILEPROOF"
         ],
-        "comment": "configuration of the SLIME SC-2022 submission"
+        "comment": "Built with the submitted build_unix.sh: the sequential, statically linked variant that matches the binary shipped in the archive (the CMake recipe builds the MPI cloud variant)."
     },
     "slime-sc-2022-gamma": {
         "status": "ok",
@@ -1068,6 +1071,6 @@
             "-invert-polarity",
             "FILEPROOF"
         ],
-        "comment": "configuration of the SLIME SC-2022 submission"
+        "comment": "Built with the submitted build_unix.sh: the sequential, statically linked variant that matches the binary shipped in the archive (the CMake recipe builds the MPI cloud variant)."
     }
 }

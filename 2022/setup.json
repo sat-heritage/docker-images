@@ -277,12 +277,10 @@
     },
     "slime-sc-2022": {
         "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2022-competition/SLIME.SC-2022.zip",
-        "BUILD_DEPENDS": "libopenmpi-dev",
-        "BUILD_KIND": "command",
-        "BUILD_COMMAND": "cmake -S . -B build -DCMAKE_BUILD_TYPE=Release && cmake --build build -- -j2",
+        "BUILD_KIND": "script",
         "BINARY_PATH": "bin/slime",
         "BINARY_NAME": "slime",
-        "RDEPENDS": "libopenmpi3 openmpi-bin"
+        "BUILD_SCRIPT": "build_unix.sh"
     },
     "hkis-psids": {
         "BUILD_KIND": "starexec",
@@ -319,29 +317,23 @@
     },
     "slime-sc-2022-alpha": {
         "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2022-competition/SLIME.SC-2022.zip",
-        "BUILD_DEPENDS": "libopenmpi-dev",
-        "BUILD_KIND": "command",
-        "BUILD_COMMAND": "cmake -S . -B build -DCMAKE_BUILD_TYPE=Release && cmake --build build -- -j2",
+        "BUILD_KIND": "script",
         "BINARY_PATH": "bin/slime",
         "BINARY_NAME": "slime",
-        "RDEPENDS": "libopenmpi3 openmpi-bin"
+        "BUILD_SCRIPT": "build_unix.sh"
     },
     "slime-sc-2022-beta": {
         "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2022-competition/SLIME.SC-2022.zip",
-        "BUILD_DEPENDS": "libopenmpi-dev",
-        "BUILD_KIND": "command",
-        "BUILD_COMMAND": "cmake -S . -B build -DCMAKE_BUILD_TYPE=Release && cmake --build build -- -j2",
+        "BUILD_KIND": "script",
         "BINARY_PATH": "bin/slime",
         "BINARY_NAME": "slime",
-        "RDEPENDS": "libopenmpi3 openmpi-bin"
+        "BUILD_SCRIPT": "build_unix.sh"
     },
     "slime-sc-2022-gamma": {
         "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2022-competition/SLIME.SC-2022.zip",
-        "BUILD_DEPENDS": "libopenmpi-dev",
-        "BUILD_KIND": "command",
-        "BUILD_COMMAND": "cmake -S . -B build -DCMAKE_BUILD_TYPE=Release && cmake --build build -- -j2",
+        "BUILD_KIND": "script",
         "BINARY_PATH": "bin/slime",
         "BINARY_NAME": "slime",
-        "RDEPENDS": "libopenmpi3 openmpi-bin"
+        "BUILD_SCRIPT": "build_unix.sh"
     }
 }
