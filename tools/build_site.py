@@ -379,6 +379,7 @@ def overview_page(solvers: list[dict]) -> str:
     longest = max(author_years.items(), key=lambda kv: (len(kv[1]), kv[0])) if author_years else ("", set())
     biggest_year = max(per_year, key=lambda r: sum(r[1].values())) if per_year else ("", Counter())
     compiles = sum(1 for s in solvers if s["verdict"] in ("built", "runs", "verified"))
+    tested = sum(1 for s in solvers if s["verdict"] != "unknown")
     oldest = min((s for s in solvers if s["set"].isdigit()), key=lambda s: int(s["set"]), default=None)
     facts = [
         (f"{biggest_year[0]}", f"busiest year, {sum(biggest_year[1].values())} images"),
@@ -394,8 +395,9 @@ def overview_page(solvers: list[dict]) -> str:
 <a class="btn" href="catalogue.html">Browse the catalogue →</a></div>
 <div class="stats">
 <div class="stat"><div class="n">{len(solvers)}</div><div class="l">solver images</div></div>
-<div class="stat"><div class="n">{compiles}</div><div class="l">compile from source today</div></div>
-<div class="stat"><div class="n">{verified}</div><div class="l">verified today (build, SAT, UNSAT, proof)</div></div>
+<div class="stat"><div class="n">{tested}</div><div class="l">run through the test suite so far</div></div>
+<div class="stat"><div class="n">{compiles}</div><div class="l">of them compile from source today</div></div>
+<div class="stat"><div class="n">{verified}</div><div class="l">of them fully verified (build, SAT, UNSAT, proof)</div></div>
 <div class="stat"><div class="n">{len(years)}</div><div class="l">competition years, {years[0]} to {years[-1]}</div></div>
 <div class="stat"><div class="n">{len(families)}</div><div class="l">solver families</div></div>
 <div class="stat"><div class="n">{len(authors)}</div><div class="l">authors</div></div>
