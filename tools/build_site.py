@@ -36,12 +36,17 @@ BUILD_KIND_LABEL = {
     "auto": "auto-detected",
 }
 VERDICT_LABEL = {
-    "passed": ("Verified", "ok"),
-    "test-failed": ("Tests failed", "fail"),
-    "build-failed": ("Build failed", "fail"),
-    "not-tested": ("Built, not tested", "warn"),
+    "verified": ("Verified", "ok"),
+    "runs": ("Runs, checks failed", "warn"),
+    "built": ("Compiles", "warn"),
+    "source-available": ("Source available, build fails", "fail"),
+    "source-unavailable": ("Source unavailable", "fail"),
     "unknown": ("Not run yet", "none"),
 }
+# ordinal ladder for the per-year chart, lowest rung first (validated 5-step blue ramp)
+LADDER = ["source-unavailable", "source-available", "built", "runs", "verified"]
+LADDER_LABEL = {"source-unavailable": "source unavailable", "source-available": "source available",
+                "built": "compiles", "runs": "runs", "verified": "verified"}
 STATUS_LABEL = {
     "ok": ("builds", "ok"),
     "unstable": ("unstable", "warn"),
@@ -154,8 +159,8 @@ def collect(repo: Path) -> list[dict]:
 
 
 CSS = """
-:root { --bg:#ffffff; --bg2:#f8f9fb; --card:#ffffff; --ink:#0b0b0b; --muted:#5e6572; --line:#e5e7eb; --ok:#1a7f37; --warn:#9a6700; --fail:#cf222e; --none:#8c959f; --accent:#0b57d0; --hf:#ffd21e; --hfdark:#f59e0b; --cap:#0550ae; --capbg:#e8f1ff; --series-1:#2a78d6; --series-2:#eda100; --grid:#e5e7eb; }
-@media (prefers-color-scheme: dark) { :root { --bg:#0b0f19; --bg2:#111827; --card:#161b26; --ink:#f3f4f6; --muted:#9aa3b2; --line:#2a3140; --ok:#3fb950; --warn:#d29922; --fail:#f85149; --none:#6e7681; --accent:#7ab4ff; --cap:#9ecbff; --capbg:#12305c; --series-1:#3987e5; --series-2:#c98500; --grid:#2a3140; } }
+:root { --bg:#ffffff; --bg2:#f8f9fb; --card:#ffffff; --ink:#0b0b0b; --muted:#5e6572; --line:#e5e7eb; --ok:#1a7f37; --warn:#9a6700; --fail:#cf222e; --none:#8c959f; --accent:#0b57d0; --hf:#ffd21e; --hfdark:#f59e0b; --cap:#0550ae; --capbg:#e8f1ff; --series-1:#2a78d6; --series-2:#eda100; --grid:#e5e7eb; --l0:#86b6ef; --l1:#5598e7; --l2:#2a78d6; --l3:#1c5cab; --l4:#104281; --l-none:#d4d6da; }
+@media (prefers-color-scheme: dark) { :root { --bg:#0b0f19; --bg2:#111827; --card:#161b26; --ink:#f3f4f6; --muted:#9aa3b2; --line:#2a3140; --ok:#3fb950; --warn:#d29922; --fail:#f85149; --none:#6e7681; --accent:#7ab4ff; --cap:#9ecbff; --capbg:#12305c; --series-1:#3987e5; --series-2:#c98500; --grid:#2a3140; --l0:#9ec5f4; --l1:#6da7ec; --l2:#3987e5; --l3:#256abf; --l4:#184f95; --l-none:#3a4150; } }
 * { box-sizing: border-box; }
 body { margin:0; font: 15px/1.5 -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color:var(--ink); background:var(--bg); }
 a { color:var(--accent); text-decoration:none; } a:hover { text-decoration:underline; } a.card:hover { text-decoration:none; border-color:var(--accent); }
@@ -206,7 +211,7 @@ const data = window.SOLVERS;
 const grid = document.getElementById('grid');
 const q = document.getElementById('q');
 const fy = document.getElementById('year'), ff = document.getElementById('family'), fv = document.getElementById('verdict'), fs = document.getElementById('status');
-function badge(v) { const m = {passed:['Verified','ok'],'test-failed':['Tests failed','fail'],'build-failed':['Build failed','fail'],'not-tested':['Built, not tested','warn'],unknown:['Not run yet','none']}[v] || [v,'none']; return `<span class="badge ${m[1]}">${m[0]}</span>`; }
+function badge(v) { const m = {verified:['Verified','ok'],runs:['Runs, checks failed','warn'],built:['Compiles','warn'],'source-available':['Build fails','fail'],'source-unavailable':['Source unavailable','fail'],unknown:['Not run yet','none']}[v] || [v,'none']; return `<span class="badge ${m[1]}">${m[0]}</span>`; }
 function render() {
   const s = q.value.trim().toLowerCase();
   const fc = document.getElementById('cap');
@@ -247,7 +252,7 @@ def index_page(solvers: list[dict]) -> str:
   <input id="q" type="search" placeholder="Search a solver, an author, a year">
   <select id="year"><option value="">All years</option>{options(years)}</select>
   <select id="family"><option value="">All families</option>{options(families)}</select>
-  <select id="verdict"><option value="">Any verification</option><option value="passed">Verified</option><option value="test-failed">Tests failed</option><option value="build-failed">Build failed</option><option value="not-tested">Built, not tested</option><option value="unknown">Not run yet</option></select>
+  <select id="verdict"><option value="">Any verification</option><option value="verified">Verified</option><option value="runs">Runs, checks failed</option><option value="built">Compiles</option><option value="source-available">Build fails</option><option value="source-unavailable">Source unavailable</option><option value="unknown">Not run yet</option></select>
   <select id="status"><option value="">Any status</option><option value="ok">builds</option><option value="unstable">unstable</option><option value="fixme">not buildable</option></select>
   <select id="cap"><option value="">Any capability</option><option value="SAT">SAT (verified)</option><option value="UNSAT">UNSAT (verified)</option><option value="UNSAT+proof">UNSAT+proof (verified)</option><option value="parallel">parallel</option><option value="gzip input">gzip input</option></select>
   <span class="count" id="count"></span>
@@ -303,30 +308,34 @@ def solver_page(s: dict) -> str:
     return page(f"{s['name']} ({s['set']})", body, 1)
 
 
-def svg_stacked_years(rows: list[tuple[str, int, int]]) -> str:
-    """Vertical stacked bars per year: verified (series 1) over the rest (series 2)."""
-    w, h, left, bottom, top = 900, 260, 36, 34, 18
+def svg_stacked_years(rows: list[tuple[str, dict]]) -> str:
+    """Vertical stacked bars per year, one segment per rung of the verification ladder."""
+    w, h, left, bottom, top = 900, 280, 36, 34, 18
     n = len(rows)
     inner = w - left - 12
     step = inner / max(n, 1)
     bw = min(34, step * 0.7)
-    maxv = max((a + b for _, a, b in rows), default=1) or 1
+    maxv = max((sum(c.values()) for _, c in rows), default=1) or 1
     scale = (h - top - bottom) / maxv
-    ticks = [0, maxv // 2, maxv]
-    out = [f'<svg viewBox="0 0 {w} {h}" role="img" aria-label="Solver images per competition year">']
-    for t in ticks:
+    out = [f'<svg viewBox="0 0 {w} {h}" role="img" aria-label="Solver images per competition year and verification level">']
+    for t in (0, maxv // 2, maxv):
         y = h - bottom - t * scale
         out.append(f'<line class="grid" x1="{left}" x2="{w-12}" y1="{y:.1f}" y2="{y:.1f}"/><text class="muted" x="{left-6}" y="{y+4:.1f}" text-anchor="end">{t}</text>')
-    for i, (year, ok, rest) in enumerate(rows):
+    order = ["unknown"] + LADDER   # gray "not run yet" at the bottom, verified on top
+    colors = {"unknown": "var(--l-none)", **{k: f"var(--l{i})" for i, k in enumerate(LADDER)}}
+    for i, (year, counts) in enumerate(rows):
         x = left + i * step + (step - bw) / 2
-        y0 = h - bottom
-        hv = ok * scale; hr = rest * scale
-        title = f"{year}: {ok + rest} images, {ok} verified"
-        if rest:
-            out.append(f'<rect x="{x:.1f}" y="{y0-hr:.1f}" width="{bw:.1f}" height="{max(hr,0):.1f}" rx="3" fill="var(--series-2)"><title>{title}</title></rect>')
-        if ok:
-            out.append(f'<rect x="{x:.1f}" y="{y0-hr-hv-(2 if rest else 0):.1f}" width="{bw:.1f}" height="{max(hv,0):.1f}" rx="3" fill="var(--series-1)"><title>{title}</title></rect>')
-        out.append(f'<text x="{x+bw/2:.1f}" y="{y0-hr-hv-6:.1f}" text-anchor="middle" class="muted">{ok+rest}</text>')
+        y = h - bottom
+        total = sum(counts.values())
+        tip = f"{year}: {total} images; " + ", ".join(f"{counts.get(k, 0)} {LADDER_LABEL.get(k, 'not run yet')}" for k in order if counts.get(k))
+        for k in order:
+            v = counts.get(k, 0)
+            if not v:
+                continue
+            hv = v * scale
+            y -= hv
+            out.append(f'<rect x="{x:.1f}" y="{y:.1f}" width="{bw:.1f}" height="{max(hv-2,1):.1f}" rx="2" fill="{colors[k]}"><title>{esc(tip)}</title></rect>')
+        out.append(f'<text x="{x+bw/2:.1f}" y="{y-6:.1f}" text-anchor="middle" class="muted">{total}</text>')
         out.append(f'<text x="{x+bw/2:.1f}" y="{h-bottom+16}" text-anchor="middle" class="muted">{year}</text>')
     out.append("</svg>")
     return "".join(out)
@@ -351,8 +360,7 @@ def svg_hbars(rows: list[tuple[str, int]], label: str) -> str:
 def overview_page(solvers: list[dict]) -> str:
     from collections import Counter
     years = sorted({s["set"] for s in solvers if s["set"].isdigit()}, key=int)
-    per_year = [(y, sum(1 for s in solvers if s["set"] == y and s["verdict"] == "passed"),
-                 sum(1 for s in solvers if s["set"] == y and s["verdict"] != "passed")) for y in years]
+    per_year = [(y, Counter(s["verdict"] for s in solvers if s["set"] == y)) for y in years]
     authors = Counter()
     author_years = {}
     for s in solvers:
@@ -360,16 +368,17 @@ def overview_page(solvers: list[dict]) -> str:
             authors[a] += 1
             author_years.setdefault(a, set()).add(s["set"])
     families = Counter(s["family"] for s in solvers)
-    verified = sum(1 for s in solvers if s["verdict"] == "passed")
+    verified = sum(1 for s in solvers if s["verdict"] == "verified")
     proofs = sum(1 for s in solvers if "UNSAT+proof" in s["capabilities"])
     top_authors = authors.most_common(12)
     top_families = [(f, c) for f, c in families.most_common(11) if f != "other"][:10]
     other_count = families.get("other", 0)
     longest = max(author_years.items(), key=lambda kv: (len(kv[1]), kv[0])) if author_years else ("", set())
-    biggest_year = max(per_year, key=lambda r: r[1] + r[2]) if per_year else ("", 0, 0)
+    biggest_year = max(per_year, key=lambda r: sum(r[1].values())) if per_year else ("", Counter())
+    compiles = sum(1 for s in solvers if s["verdict"] in ("built", "runs", "verified"))
     oldest = min((s for s in solvers if s["set"].isdigit()), key=lambda s: int(s["set"]), default=None)
     facts = [
-        (f"{biggest_year[0]}", f"busiest year, {biggest_year[1] + biggest_year[2]} images"),
+        (f"{biggest_year[0]}", f"busiest year, {sum(biggest_year[1].values())} images"),
         (longest[0], f"present in {len(longest[1])} competition years, from {min(longest[1])} to {max(longest[1])}" if longest[1] else ""),
         (f"{proofs} images", "produce an UNSAT proof that the test suite verified"),
         (f"{len(authors)} authors", f"credited across {len(years)} competition years"),
@@ -381,14 +390,15 @@ def overview_page(solvers: list[dict]) -> str:
 <a class="btn" href="catalogue.html">Browse the catalogue →</a></div>
 <div class="stats">
 <div class="stat"><div class="n">{len(solvers)}</div><div class="l">solver images</div></div>
+<div class="stat"><div class="n">{compiles}</div><div class="l">compile from source today</div></div>
 <div class="stat"><div class="n">{verified}</div><div class="l">verified today (build, SAT, UNSAT, proof)</div></div>
 <div class="stat"><div class="n">{len(years)}</div><div class="l">competition years, {years[0]} to {years[-1]}</div></div>
 <div class="stat"><div class="n">{len(families)}</div><div class="l">solver families</div></div>
 <div class="stat"><div class="n">{len(authors)}</div><div class="l">authors</div></div>
 </div>
-<div class="fig"><h2>Solver images per competition year</h2><div class="sub">Verified images pass the whole test suite; the rest are built but not verified yet, unstable, or not buildable.</div>
+<div class="fig"><h2>Solver images per competition year</h2><div class="sub">Each image sits on the highest rung it reached in its last run: source unavailable, source available but build fails, compiles, runs but a check fails, verified (build, SAT model, UNSAT and proof all pass). Gray: never run through the test suite yet.</div>
 {svg_stacked_years(per_year)}
-<div class="legend2"><span><i class="sw" style="background:var(--series-1)"></i>verified</span><span><i class="sw" style="background:var(--series-2)"></i>not verified yet</span></div></div>
+<div class="legend2"><span><i class="sw" style="background:var(--l-none)"></i>not run yet</span>{''.join(f'<span><i class="sw" style="background:var(--l{i})"></i>{LADDER_LABEL[k]}</span>' for i, k in enumerate(LADDER))}</div></div>
 <div class="two" style="margin-top:14px">
 <div class="fig"><h2>Most credited authors</h2><div class="sub">Number of solver images an author is credited on, all years together.</div>{svg_hbars(top_authors, "Most credited authors")}</div>
 <div class="fig"><h2>Solver families</h2><div class="sub">Detected from the solver name and its executable; {other_count} images belong to no listed family.</div>{svg_hbars(top_families, "Solver families")}</div>

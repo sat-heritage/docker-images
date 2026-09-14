@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-14T11:08:32Z",
+  "generated": "2026-09-14T11:27:38Z",
   "images": {
     "amsat:2023": {
       "build": {
@@ -34,8 +34,8 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-14T07:52:50Z",
-      "run": "20260914T075250Z",
+      "date": "2026-09-14T09:50:13Z",
+      "run": "20260914T095013Z",
       "tests": {
         "image-remove": {
           "status": "ok"
@@ -85,7 +85,7 @@
           "status": "ok"
         }
       },
-      "verdict": "passed"
+      "verdict": "verified"
     },
     "asat:2000": {
       "build": {
@@ -122,7 +122,7 @@
       },
       "date": "2026-09-12T15:07:56Z",
       "run": "20260912T150756Z",
-      "verdict": "not-tested"
+      "verdict": "built"
     },
     "breakid-kissat:2023": {
       "build": {
@@ -157,8 +157,8 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-14T08:50:55Z",
-      "run": "20260914T085055Z",
+      "date": "2026-09-14T09:50:13Z",
+      "run": "20260914T095013Z",
       "tests": {
         "image-remove": {
           "status": "ok"
@@ -201,7 +201,7 @@
           "status": "ok"
         }
       },
-      "verdict": "passed"
+      "verdict": "verified"
     },
     "cadical-dvdl-v1:2022": {
       "build": {
@@ -287,7 +287,7 @@
           "status": "ok"
         }
       },
-      "verdict": "passed"
+      "verdict": "verified"
     },
     "cadical-dvdl-v2:2022": {
       "build": {
@@ -373,7 +373,7 @@
           "status": "ok"
         }
       },
-      "verdict": "passed"
+      "verdict": "verified"
     },
     "cadical-esa:2023": {
       "build": {
@@ -408,8 +408,8 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-14T07:52:50Z",
-      "run": "20260914T075250Z",
+      "date": "2026-09-14T09:50:13Z",
+      "run": "20260914T095013Z",
       "tests": {
         "image-remove": {
           "status": "ok"
@@ -459,7 +459,7 @@
           "status": "ok"
         }
       },
-      "verdict": "passed"
+      "verdict": "verified"
     },
     "cadical-hack-gb:2022": {
       "build": {
@@ -545,7 +545,7 @@
           "status": "ok"
         }
       },
-      "verdict": "passed"
+      "verdict": "verified"
     },
     "cadical-hywalk:2022": {
       "build": {
@@ -631,7 +631,7 @@
           "status": "ok"
         }
       },
-      "verdict": "passed"
+      "verdict": "verified"
     },
     "cadical-rel-1.5.3-scavel:2023": {
       "build": {
@@ -666,8 +666,8 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-14T07:52:50Z",
-      "run": "20260914T075250Z",
+      "date": "2026-09-14T09:50:13Z",
+      "run": "20260914T095013Z",
       "tests": {
         "image-remove": {
           "status": "ok"
@@ -717,7 +717,7 @@
           "status": "ok"
         }
       },
-      "verdict": "passed"
+      "verdict": "verified"
     },
     "cadical-rel-scavel:2022": {
       "build": {
@@ -803,7 +803,7 @@
           "status": "ok"
         }
       },
-      "verdict": "passed"
+      "verdict": "verified"
     },
     "cadical-rel-scavel:2023": {
       "build": {
@@ -838,8 +838,8 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-14T07:52:50Z",
-      "run": "20260914T075250Z",
+      "date": "2026-09-14T09:50:13Z",
+      "run": "20260914T095013Z",
       "tests": {
         "image-remove": {
           "status": "ok"
@@ -889,7 +889,7 @@
           "status": "ok"
         }
       },
-      "verdict": "passed"
+      "verdict": "verified"
     },
     "cadical-reorder:2022": {
       "build": {
@@ -975,7 +975,7 @@
           "status": "ok"
         }
       },
-      "verdict": "passed"
+      "verdict": "verified"
     },
     "cadical-vivinst:2023": {
       "build": {
@@ -1010,8 +1010,8 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-14T07:52:50Z",
-      "run": "20260914T075250Z",
+      "date": "2026-09-14T09:50:13Z",
+      "run": "20260914T095013Z",
       "tests": {
         "image-remove": {
           "status": "ok"
@@ -1061,7 +1061,7 @@
           "status": "ok"
         }
       },
-      "verdict": "passed"
+      "verdict": "verified"
     },
     "cadical-watchsat-lto:2022": {
       "build": {
@@ -1147,7 +1147,7 @@
           "status": "ok"
         }
       },
-      "verdict": "passed"
+      "verdict": "verified"
     },
     "cadical:2019": {
       "build": {
@@ -1173,7 +1173,7 @@
       },
       "date": "2026-09-12T07:42:38Z",
       "run": "20260912T074238Z",
-      "verdict": "build-failed"
+      "verdict": "source-available"
     },
     "csat:2000": {
       "build": {
@@ -1208,7 +1208,7 @@
       },
       "date": "2026-09-12T15:07:56Z",
       "run": "20260912T150756Z",
-      "verdict": "not-tested"
+      "verdict": "built"
     },
     "dr:2000": {
       "build": {
@@ -1245,7 +1245,7 @@
       },
       "date": "2026-09-12T15:07:56Z",
       "run": "20260912T150756Z",
-      "verdict": "not-tested"
+      "verdict": "built"
     },
     "ekissat-mab-db-v1:2022": {
       "build": {
@@ -1331,7 +1331,7 @@
           "status": "ok"
         }
       },
-      "verdict": "passed"
+      "verdict": "verified"
     },
     "ekissat-mab-db-v2:2022": {
       "build": {
@@ -1417,7 +1417,7 @@
           "status": "ok"
         }
       },
-      "verdict": "passed"
+      "verdict": "verified"
     },
     "ekissat-mab-gb-db:2022": {
       "build": {
@@ -1503,7 +1503,7 @@
           "status": "ok"
         }
       },
-      "verdict": "passed"
+      "verdict": "verified"
     },
     "eqsatz:2000": {
       "build": {
@@ -1538,7 +1538,7 @@
       },
       "date": "2026-09-12T15:07:56Z",
       "run": "20260912T150756Z",
-      "verdict": "not-tested"
+      "verdict": "built"
     },
     "glucose-reboot:2022": {
       "build": {
@@ -1624,7 +1624,7 @@
           "status": "ok"
         }
       },
-      "verdict": "passed"
+      "verdict": "verified"
     },
     "glucose:2011": {
       "build": {
@@ -1638,7 +1638,7 @@
       },
       "date": "2026-09-12T15:05:02Z",
       "run": "20260912T150502Z",
-      "verdict": "build-failed"
+      "verdict": "source-unavailable"
     },
     "glucose:2016": {
       "build": {
@@ -1675,7 +1675,7 @@
       },
       "date": "2026-09-12T07:44:54Z",
       "run": "20260912T074454Z",
-      "verdict": "not-tested"
+      "verdict": "built"
     },
     "hcad-v1:2022": {
       "build": {
@@ -1761,7 +1761,7 @@
           "status": "ok"
         }
       },
-      "verdict": "passed"
+      "verdict": "verified"
     },
     "hcad-v2:2022": {
       "build": {
@@ -1847,7 +1847,7 @@
           "status": "ok"
         }
       },
-      "verdict": "passed"
+      "verdict": "verified"
     },
     "heerhugo:2000": {
       "build": {
@@ -1882,7 +1882,7 @@
       },
       "date": "2026-09-12T15:07:56Z",
       "run": "20260912T150756Z",
-      "verdict": "not-tested"
+      "verdict": "built"
     },
     "hkis-psids:2022": {
       "build": {
@@ -1968,7 +1968,7 @@
           "status": "ok"
         }
       },
-      "verdict": "passed"
+      "verdict": "verified"
     },
     "hkis-psids:2023": {
       "build": {
@@ -2003,8 +2003,8 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-14T08:52:30Z",
-      "run": "20260914T085230Z",
+      "date": "2026-09-14T09:50:13Z",
+      "run": "20260914T095013Z",
       "tests": {
         "image-remove": {
           "status": "ok"
@@ -2054,7 +2054,7 @@
           "status": "ok"
         }
       },
-      "verdict": "passed"
+      "verdict": "verified"
     },
     "hkis-sat-psids:2023": {
       "build": {
@@ -2089,8 +2089,8 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-14T08:53:34Z",
-      "run": "20260914T085334Z",
+      "date": "2026-09-14T09:50:13Z",
+      "run": "20260914T095013Z",
       "tests": {
         "image-remove": {
           "status": "ok"
@@ -2140,7 +2140,7 @@
           "status": "ok"
         }
       },
-      "verdict": "passed"
+      "verdict": "verified"
     },
     "hkis-sat:2022": {
       "build": {
@@ -2226,7 +2226,7 @@
           "status": "ok"
         }
       },
-      "verdict": "passed"
+      "verdict": "verified"
     },
     "hkis-unsat:2022": {
       "build": {
@@ -2312,7 +2312,7 @@
           "status": "ok"
         }
       },
-      "verdict": "passed"
+      "verdict": "verified"
     },
     "hkis-unsat:2023": {
       "build": {
@@ -2347,8 +2347,8 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-14T08:54:41Z",
-      "run": "20260914T085441Z",
+      "date": "2026-09-14T09:50:13Z",
+      "run": "20260914T095013Z",
       "tests": {
         "image-remove": {
           "status": "ok"
@@ -2398,7 +2398,7 @@
           "status": "ok"
         }
       },
-      "verdict": "passed"
+      "verdict": "verified"
     },
     "hkissatinc-unsat:2023": {
       "build": {
@@ -2433,8 +2433,8 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-14T08:55:56Z",
-      "run": "20260914T085556Z",
+      "date": "2026-09-14T09:50:13Z",
+      "run": "20260914T095013Z",
       "tests": {
         "image-remove": {
           "status": "ok"
@@ -2484,7 +2484,7 @@
           "status": "ok"
         }
       },
-      "verdict": "passed"
+      "verdict": "verified"
     },
     "isasat:2022": {
       "build": {
@@ -2570,7 +2570,7 @@
           "status": "ok"
         }
       },
-      "verdict": "passed"
+      "verdict": "verified"
     },
     "isasat:2023": {
       "build": {
@@ -2605,8 +2605,8 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-14T07:52:50Z",
-      "run": "20260914T075250Z",
+      "date": "2026-09-14T09:50:13Z",
+      "run": "20260914T095013Z",
       "tests": {
         "image-remove": {
           "status": "ok"
@@ -2656,7 +2656,7 @@
           "status": "ok"
         }
       },
-      "verdict": "passed"
+      "verdict": "verified"
     },
     "kissat-3.1.0:2023": {
       "build": {
@@ -2691,8 +2691,8 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-14T07:52:50Z",
-      "run": "20260914T075250Z",
+      "date": "2026-09-14T09:50:13Z",
+      "run": "20260914T095013Z",
       "tests": {
         "image-remove": {
           "status": "ok"
@@ -2742,7 +2742,7 @@
           "status": "ok"
         }
       },
-      "verdict": "passed"
+      "verdict": "verified"
     },
     "kissat-adaptive-restart:2022": {
       "build": {
@@ -2828,7 +2828,7 @@
           "status": "ok"
         }
       },
-      "verdict": "passed"
+      "verdict": "verified"
     },
     "kissat-cfexp:2022": {
       "build": {
@@ -2914,7 +2914,7 @@
           "status": "ok"
         }
       },
-      "verdict": "passed"
+      "verdict": "verified"
     },
     "kissat-els-v1:2022": {
       "build": {
@@ -3000,7 +3000,7 @@
           "status": "ok"
         }
       },
-      "verdict": "passed"
+      "verdict": "verified"
     },
     "kissat-els-v2:2022": {
       "build": {
@@ -3086,7 +3086,7 @@
           "status": "ok"
         }
       },
-      "verdict": "passed"
+      "verdict": "verified"
     },
     "kissat-els-v3:2022": {
       "build": {
@@ -3172,7 +3172,7 @@
           "status": "ok"
         }
       },
-      "verdict": "passed"
+      "verdict": "verified"
     },
     "kissat-els-v4:2022": {
       "build": {
@@ -3258,7 +3258,7 @@
           "status": "ok"
         }
       },
-      "verdict": "passed"
+      "verdict": "verified"
     },
     "kissat-hywalk-exp-gb:2023": {
       "build": {
@@ -3293,8 +3293,8 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-14T07:52:50Z",
-      "run": "20260914T075250Z",
+      "date": "2026-09-14T09:50:13Z",
+      "run": "20260914T095013Z",
       "tests": {
         "image-remove": {
           "status": "ok"
@@ -3344,7 +3344,7 @@
           "status": "ok"
         }
       },
-      "verdict": "passed"
+      "verdict": "verified"
     },
     "kissat-hywalk-exp:2023": {
       "build": {
@@ -3379,8 +3379,8 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-14T07:52:50Z",
-      "run": "20260914T075250Z",
+      "date": "2026-09-14T09:50:13Z",
+      "run": "20260914T095013Z",
       "tests": {
         "image-remove": {
           "status": "ok"
@@ -3430,7 +3430,7 @@
           "status": "ok"
         }
       },
-      "verdict": "passed"
+      "verdict": "verified"
     },
     "kissat-hywalk-gb:2023": {
       "build": {
@@ -3465,8 +3465,8 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-14T07:52:50Z",
-      "run": "20260914T075250Z",
+      "date": "2026-09-14T09:50:13Z",
+      "run": "20260914T095013Z",
       "tests": {
         "image-remove": {
           "status": "ok"
@@ -3516,7 +3516,7 @@
           "status": "ok"
         }
       },
-      "verdict": "passed"
+      "verdict": "verified"
     },
     "kissat-inc-esa:2023": {
       "build": {
@@ -3551,8 +3551,8 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-14T07:52:50Z",
-      "run": "20260914T075250Z",
+      "date": "2026-09-14T09:50:13Z",
+      "run": "20260914T095013Z",
       "tests": {
         "image-remove": {
           "status": "ok"
@@ -3602,7 +3602,7 @@
           "status": "ok"
         }
       },
-      "verdict": "passed"
+      "verdict": "verified"
     },
     "kissat-inc:2022": {
       "build": {
@@ -3688,7 +3688,7 @@
           "status": "ok"
         }
       },
-      "verdict": "passed"
+      "verdict": "verified"
     },
     "kissat-incsp:2023": {
       "build": {
@@ -3723,8 +3723,8 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-14T07:52:50Z",
-      "run": "20260914T075250Z",
+      "date": "2026-09-14T09:50:13Z",
+      "run": "20260914T095013Z",
       "tests": {
         "image-remove": {
           "status": "ok"
@@ -3774,7 +3774,7 @@
           "status": "ok"
         }
       },
-      "verdict": "passed"
+      "verdict": "verified"
     },
     "kissat-mab-binary:2023": {
       "build": {
@@ -3809,8 +3809,8 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-14T07:52:50Z",
-      "run": "20260914T075250Z",
+      "date": "2026-09-14T09:50:13Z",
+      "run": "20260914T095013Z",
       "tests": {
         "image-remove": {
           "status": "ok"
@@ -3860,7 +3860,7 @@
           "status": "ok"
         }
       },
-      "verdict": "passed"
+      "verdict": "verified"
     },
     "kissat-mab-conflict-plus:2023": {
       "build": {
@@ -3895,8 +3895,8 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-14T07:52:50Z",
-      "run": "20260914T075250Z",
+      "date": "2026-09-14T09:50:13Z",
+      "run": "20260914T095013Z",
       "tests": {
         "image-remove": {
           "status": "ok"
@@ -3946,7 +3946,7 @@
           "status": "ok"
         }
       },
-      "verdict": "passed"
+      "verdict": "verified"
     },
     "kissat-mab-conflict:2023": {
       "build": {
@@ -3981,8 +3981,8 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-14T07:52:50Z",
-      "run": "20260914T075250Z",
+      "date": "2026-09-14T09:50:13Z",
+      "run": "20260914T095013Z",
       "tests": {
         "image-remove": {
           "status": "ok"
@@ -4032,7 +4032,7 @@
           "status": "ok"
         }
       },
-      "verdict": "passed"
+      "verdict": "verified"
     },
     "kissat-mab-deepwalk-plus:2023": {
       "build": {
@@ -4067,8 +4067,8 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-14T07:52:50Z",
-      "run": "20260914T075250Z",
+      "date": "2026-09-14T09:50:13Z",
+      "run": "20260914T095013Z",
       "tests": {
         "image-remove": {
           "status": "ok"
@@ -4118,7 +4118,7 @@
           "status": "ok"
         }
       },
-      "verdict": "passed"
+      "verdict": "verified"
     },
     "kissat-mab-esa:2022": {
       "build": {
@@ -4204,7 +4204,7 @@
           "status": "ok"
         }
       },
-      "verdict": "passed"
+      "verdict": "verified"
     },
     "kissat-mab-esa:2023": {
       "build": {
@@ -4239,8 +4239,8 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-14T07:52:50Z",
-      "run": "20260914T075250Z",
+      "date": "2026-09-14T09:50:13Z",
+      "run": "20260914T095013Z",
       "tests": {
         "image-remove": {
           "status": "ok"
@@ -4290,7 +4290,7 @@
           "status": "ok"
         }
       },
-      "verdict": "passed"
+      "verdict": "verified"
     },
     "kissat-mab-gb:2022": {
       "build": {
@@ -4376,7 +4376,7 @@
           "status": "ok"
         }
       },
-      "verdict": "passed"
+      "verdict": "verified"
     },
     "kissat-mab-hywalk:2022": {
       "build": {
@@ -4462,7 +4462,7 @@
           "status": "ok"
         }
       },
-      "verdict": "passed"
+      "verdict": "verified"
     },
     "kissat-mab-moss:2022": {
       "build": {
@@ -4548,7 +4548,7 @@
           "status": "ok"
         }
       },
-      "verdict": "passed"
+      "verdict": "verified"
     },
     "kissat-mab-prop-nosym-nopre:2023": {
       "build": {
@@ -4641,7 +4641,7 @@
           "status": "ok"
         }
       },
-      "verdict": "test-failed"
+      "verdict": "runs"
     },
     "kissat-mab-prop-nosym:2023": {
       "build": {
@@ -4676,8 +4676,8 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-14T09:35:31Z",
-      "run": "20260914T093531Z",
+      "date": "2026-09-14T09:50:13Z",
+      "run": "20260914T095013Z",
       "tests": {
         "image-remove": {
           "status": "ok"
@@ -4720,7 +4720,7 @@
           "status": "ok"
         }
       },
-      "verdict": "passed"
+      "verdict": "verified"
     },
     "kissat-mab-prop-pr-nosym:2023": {
       "build": {
@@ -4755,8 +4755,8 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-14T09:36:40Z",
-      "run": "20260914T093640Z",
+      "date": "2026-09-14T09:50:13Z",
+      "run": "20260914T095013Z",
       "tests": {
         "image-remove": {
           "status": "ok"
@@ -4799,7 +4799,7 @@
           "status": "ok"
         }
       },
-      "verdict": "passed"
+      "verdict": "verified"
     },
     "kissat-mab-prop:2023": {
       "build": {
@@ -4834,8 +4834,8 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-14T09:34:18Z",
-      "run": "20260914T093418Z",
+      "date": "2026-09-14T09:50:13Z",
+      "run": "20260914T095013Z",
       "tests": {
         "image-remove": {
           "status": "ok"
@@ -4878,7 +4878,7 @@
           "status": "ok"
         }
       },
-      "verdict": "passed"
+      "verdict": "verified"
     },
     "kissat-mab-rephases:2023": {
       "build": {
@@ -4913,8 +4913,8 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-14T07:52:50Z",
-      "run": "20260914T075250Z",
+      "date": "2026-09-14T09:50:13Z",
+      "run": "20260914T095013Z",
       "tests": {
         "image-remove": {
           "status": "ok"
@@ -4964,7 +4964,7 @@
           "status": "ok"
         }
       },
-      "verdict": "passed"
+      "verdict": "verified"
     },
     "kissat-mab-rephasing:2022": {
       "build": {
@@ -5050,7 +5050,7 @@
           "status": "ok"
         }
       },
-      "verdict": "passed"
+      "verdict": "verified"
     },
     "kissat-mab-scavel:2022": {
       "build": {
@@ -5136,7 +5136,7 @@
           "status": "ok"
         }
       },
-      "verdict": "passed"
+      "verdict": "verified"
     },
     "kissat-mab-ucb:2022": {
       "build": {
@@ -5222,7 +5222,7 @@
           "status": "ok"
         }
       },
-      "verdict": "passed"
+      "verdict": "verified"
     },
     "kissat-pre:2022": {
       "build": {
@@ -5309,7 +5309,7 @@
           "status": "ok"
         }
       },
-      "verdict": "test-failed"
+      "verdict": "runs"
     },
     "kissat-relaxed:2022": {
       "build": {
@@ -5395,7 +5395,7 @@
           "status": "ok"
         }
       },
-      "verdict": "passed"
+      "verdict": "verified"
     },
     "kissat-sc2022-bulky:2022": {
       "build": {
@@ -5481,7 +5481,7 @@
           "status": "ok"
         }
       },
-      "verdict": "passed"
+      "verdict": "verified"
     },
     "kissat-sc2022-hyper:2022": {
       "build": {
@@ -5567,7 +5567,7 @@
           "status": "ok"
         }
       },
-      "verdict": "passed"
+      "verdict": "verified"
     },
     "kissat-sc2022-light:2022": {
       "build": {
@@ -5653,7 +5653,7 @@
           "status": "ok"
         }
       },
-      "verdict": "passed"
+      "verdict": "verified"
     },
     "kissat-watchsat-lto:2022": {
       "build": {
@@ -5739,7 +5739,7 @@
           "status": "ok"
         }
       },
-      "verdict": "passed"
+      "verdict": "verified"
     },
     "lstech-cadical:2022": {
       "build": {
@@ -5825,7 +5825,7 @@
           "status": "ok"
         }
       },
-      "verdict": "passed"
+      "verdict": "verified"
     },
     "lstech-kissat:2022": {
       "build": {
@@ -5911,7 +5911,7 @@
           "status": "ok"
         }
       },
-      "verdict": "passed"
+      "verdict": "verified"
     },
     "lstech-maple-bandsat:2022": {
       "build": {
@@ -5997,7 +5997,7 @@
           "status": "ok"
         }
       },
-      "verdict": "passed"
+      "verdict": "verified"
     },
     "lstech-maple-fps:2022": {
       "build": {
@@ -6083,7 +6083,7 @@
           "status": "ok"
         }
       },
-      "verdict": "passed"
+      "verdict": "verified"
     },
     "lstech-maple-hywalk:2022": {
       "build": {
@@ -6169,7 +6169,7 @@
           "status": "ok"
         }
       },
-      "verdict": "passed"
+      "verdict": "verified"
     },
     "lstech-maple:2022": {
       "build": {
@@ -6261,7 +6261,7 @@
           "status": "ok"
         }
       },
-      "verdict": "test-failed"
+      "verdict": "runs"
     },
     "maplecadical-lbd-990-275:2023": {
       "build": {
@@ -6296,8 +6296,8 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-14T09:39:00Z",
-      "run": "20260914T093900Z",
+      "date": "2026-09-14T09:50:13Z",
+      "run": "20260914T095013Z",
       "tests": {
         "image-remove": {
           "status": "ok"
@@ -6347,7 +6347,7 @@
           "status": "ok"
         }
       },
-      "verdict": "passed"
+      "verdict": "verified"
     },
     "maplecadical-lbd-990-500:2023": {
       "build": {
@@ -6382,8 +6382,8 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-14T09:41:31Z",
-      "run": "20260914T094131Z",
+      "date": "2026-09-14T09:50:13Z",
+      "run": "20260914T095013Z",
       "tests": {
         "image-remove": {
           "status": "ok"
@@ -6433,7 +6433,7 @@
           "status": "ok"
         }
       },
-      "verdict": "passed"
+      "verdict": "verified"
     },
     "maplecadical-ppd-500-500:2023": {
       "build": {
@@ -6468,8 +6468,8 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-14T09:44:02Z",
-      "run": "20260914T094402Z",
+      "date": "2026-09-14T09:50:13Z",
+      "run": "20260914T095013Z",
       "tests": {
         "image-remove": {
           "status": "ok"
@@ -6519,7 +6519,7 @@
           "status": "ok"
         }
       },
-      "verdict": "passed"
+      "verdict": "verified"
     },
     "maplecadical-ppd-950-950:2023": {
       "build": {
@@ -6554,8 +6554,8 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-14T09:46:56Z",
-      "run": "20260914T094656Z",
+      "date": "2026-09-14T09:50:13Z",
+      "run": "20260914T095013Z",
       "tests": {
         "image-remove": {
           "status": "ok"
@@ -6605,7 +6605,7 @@
           "status": "ok"
         }
       },
-      "verdict": "passed"
+      "verdict": "verified"
     },
     "maplelcmdistchrbt-dl-v3:2022": {
       "build": {
@@ -6691,7 +6691,7 @@
           "status": "ok"
         }
       },
-      "verdict": "passed"
+      "verdict": "verified"
     },
     "mergesat-4.0-rc1:2022": {
       "build": {
@@ -6777,7 +6777,7 @@
           "status": "ok"
         }
       },
-      "verdict": "passed"
+      "verdict": "verified"
     },
     "mergesat-4.0-rc2:2022": {
       "build": {
@@ -6863,7 +6863,7 @@
           "status": "ok"
         }
       },
-      "verdict": "passed"
+      "verdict": "verified"
     },
     "mergesat-4.0-rc3:2022": {
       "build": {
@@ -6949,7 +6949,7 @@
           "status": "ok"
         }
       },
-      "verdict": "passed"
+      "verdict": "verified"
     },
     "mergesat-bve-gates:2023": {
       "build": {
@@ -6984,8 +6984,8 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-14T07:52:50Z",
-      "run": "20260914T075250Z",
+      "date": "2026-09-14T09:50:13Z",
+      "run": "20260914T095013Z",
       "tests": {
         "image-remove": {
           "status": "ok"
@@ -7035,7 +7035,7 @@
           "status": "ok"
         }
       },
-      "verdict": "passed"
+      "verdict": "verified"
     },
     "mergesat-bve-semgates:2023": {
       "build": {
@@ -7070,8 +7070,8 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-14T07:52:50Z",
-      "run": "20260914T075250Z",
+      "date": "2026-09-14T09:50:13Z",
+      "run": "20260914T095013Z",
       "tests": {
         "image-remove": {
           "status": "ok"
@@ -7121,7 +7121,7 @@
           "status": "ok"
         }
       },
-      "verdict": "passed"
+      "verdict": "verified"
     },
     "mergesat-thread1:2023": {
       "build": {
@@ -7156,8 +7156,8 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-14T07:52:50Z",
-      "run": "20260914T075250Z",
+      "date": "2026-09-14T09:50:13Z",
+      "run": "20260914T095013Z",
       "tests": {
         "image-remove": {
           "status": "ok"
@@ -7207,7 +7207,7 @@
           "status": "ok"
         }
       },
-      "verdict": "passed"
+      "verdict": "verified"
     },
     "mergesat:2023": {
       "build": {
@@ -7242,8 +7242,8 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-14T07:52:50Z",
-      "run": "20260914T075250Z",
+      "date": "2026-09-14T09:50:13Z",
+      "run": "20260914T095013Z",
       "tests": {
         "image-remove": {
           "status": "ok"
@@ -7293,7 +7293,7 @@
           "status": "ok"
         }
       },
-      "verdict": "passed"
+      "verdict": "verified"
     },
     "minisat-static:2005": {
       "build": {
@@ -7328,7 +7328,7 @@
       },
       "date": "2026-09-12T15:02:48Z",
       "run": "20260912T150248Z",
-      "verdict": "not-tested"
+      "verdict": "built"
     },
     "minisat-xorengine:2023": {
       "build": {
@@ -7363,8 +7363,8 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-14T07:52:50Z",
-      "run": "20260914T075250Z",
+      "date": "2026-09-14T09:50:13Z",
+      "run": "20260914T095013Z",
       "tests": {
         "image-remove": {
           "status": "ok"
@@ -7407,7 +7407,7 @@
           "status": "ok"
         }
       },
-      "verdict": "passed"
+      "verdict": "verified"
     },
     "modoc-2.0:2000": {
       "build": {
@@ -7442,7 +7442,7 @@
       },
       "date": "2026-09-12T15:07:56Z",
       "run": "20260912T150756Z",
-      "verdict": "not-tested"
+      "verdict": "built"
     },
     "modoc:2000": {
       "build": {
@@ -7477,7 +7477,7 @@
       },
       "date": "2026-09-12T15:07:56Z",
       "run": "20260912T150756Z",
-      "verdict": "not-tested"
+      "verdict": "built"
     },
     "prelearn-kissat-tern:2023": {
       "build": {
@@ -7512,8 +7512,8 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-14T09:32:13Z",
-      "run": "20260914T093213Z",
+      "date": "2026-09-14T09:50:13Z",
+      "run": "20260914T095013Z",
       "tests": {
         "image-remove": {
           "status": "ok"
@@ -7550,7 +7550,7 @@
           "status": "ok"
         }
       },
-      "verdict": "passed"
+      "verdict": "verified"
     },
     "prelearn-kissat:2023": {
       "build": {
@@ -7585,8 +7585,8 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-14T09:04:29Z",
-      "run": "20260914T090429Z",
+      "date": "2026-09-14T09:50:13Z",
+      "run": "20260914T095013Z",
       "tests": {
         "image-remove": {
           "status": "ok"
@@ -7623,7 +7623,7 @@
           "status": "ok"
         }
       },
-      "verdict": "passed"
+      "verdict": "verified"
     },
     "reencode-kissat-pair:2023": {
       "build": {
@@ -7658,8 +7658,8 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-14T09:08:15Z",
-      "run": "20260914T090815Z",
+      "date": "2026-09-14T09:50:13Z",
+      "run": "20260914T095013Z",
       "tests": {
         "image-remove": {
           "status": "ok"
@@ -7705,7 +7705,7 @@
           "status": "ok"
         }
       },
-      "verdict": "passed"
+      "verdict": "verified"
     },
     "reencode-kissat:2023": {
       "build": {
@@ -7740,8 +7740,8 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-14T09:06:59Z",
-      "run": "20260914T090659Z",
+      "date": "2026-09-14T09:50:13Z",
+      "run": "20260914T095013Z",
       "tests": {
         "image-remove": {
           "status": "ok"
@@ -7787,7 +7787,7 @@
           "status": "ok"
         }
       },
-      "verdict": "passed"
+      "verdict": "verified"
     },
     "sbva-cadical:2023": {
       "build": {
@@ -7822,8 +7822,8 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-14T09:09:34Z",
-      "run": "20260914T090934Z",
+      "date": "2026-09-14T09:50:13Z",
+      "run": "20260914T095013Z",
       "tests": {
         "image-remove": {
           "status": "ok"
@@ -7865,7 +7865,7 @@
           "status": "ok"
         }
       },
-      "verdict": "passed"
+      "verdict": "verified"
     },
     "sbva-kissat:2023": {
       "build": {
@@ -7900,8 +7900,8 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-14T09:11:30Z",
-      "run": "20260914T091130Z",
+      "date": "2026-09-14T09:50:13Z",
+      "run": "20260914T095013Z",
       "tests": {
         "image-remove": {
           "status": "ok"
@@ -7943,7 +7943,7 @@
           "status": "ok"
         }
       },
-      "verdict": "passed"
+      "verdict": "verified"
     },
     "seqfrost-ere-all:2022": {
       "build": {
@@ -8021,7 +8021,7 @@
           "status": "ok"
         }
       },
-      "verdict": "passed"
+      "verdict": "verified"
     },
     "seqfrost-ere-all:2023": {
       "build": {
@@ -8056,8 +8056,8 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-14T07:52:50Z",
-      "run": "20260914T075250Z",
+      "date": "2026-09-14T09:50:13Z",
+      "run": "20260914T095013Z",
       "tests": {
         "image-remove": {
           "status": "ok"
@@ -8099,7 +8099,7 @@
           "status": "ok"
         }
       },
-      "verdict": "passed"
+      "verdict": "verified"
     },
     "seqfrost-noextend:2022": {
       "build": {
@@ -8177,7 +8177,7 @@
           "status": "ok"
         }
       },
-      "verdict": "passed"
+      "verdict": "verified"
     },
     "seqfrost-noextend:2023": {
       "build": {
@@ -8212,8 +8212,8 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-14T07:52:50Z",
-      "run": "20260914T075250Z",
+      "date": "2026-09-14T09:50:13Z",
+      "run": "20260914T095013Z",
       "tests": {
         "image-remove": {
           "status": "ok"
@@ -8255,7 +8255,7 @@
           "status": "ok"
         }
       },
-      "verdict": "passed"
+      "verdict": "verified"
     },
     "seqfrost:2022": {
       "build": {
@@ -8333,7 +8333,7 @@
           "status": "ok"
         }
       },
-      "verdict": "passed"
+      "verdict": "verified"
     },
     "seqfrost:2023": {
       "build": {
@@ -8368,8 +8368,8 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-14T07:52:50Z",
-      "run": "20260914T075250Z",
+      "date": "2026-09-14T09:50:13Z",
+      "run": "20260914T095013Z",
       "tests": {
         "image-remove": {
           "status": "ok"
@@ -8411,7 +8411,7 @@
           "status": "ok"
         }
       },
-      "verdict": "passed"
+      "verdict": "verified"
     },
     "slime-sc-2022-alpha:2022": {
       "build": {
@@ -8497,7 +8497,7 @@
           "status": "ok"
         }
       },
-      "verdict": "passed"
+      "verdict": "verified"
     },
     "slime-sc-2022-beta:2022": {
       "build": {
@@ -8583,7 +8583,7 @@
           "status": "ok"
         }
       },
-      "verdict": "passed"
+      "verdict": "verified"
     },
     "slime-sc-2022-gamma:2022": {
       "build": {
@@ -8669,7 +8669,7 @@
           "status": "ok"
         }
       },
-      "verdict": "passed"
+      "verdict": "verified"
     },
     "slime-sc-2022:2022": {
       "build": {
@@ -8755,7 +8755,7 @@
           "status": "ok"
         }
       },
-      "verdict": "passed"
+      "verdict": "verified"
     },
     "tabularasat:2023": {
       "build": {
@@ -8790,8 +8790,8 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-14T09:30:55Z",
-      "run": "20260914T093055Z",
+      "date": "2026-09-14T09:50:13Z",
+      "run": "20260914T095013Z",
       "tests": {
         "image-remove": {
           "status": "ok"
@@ -8841,7 +8841,7 @@
           "status": "ok"
         }
       },
-      "verdict": "passed"
+      "verdict": "verified"
     }
   }
 }

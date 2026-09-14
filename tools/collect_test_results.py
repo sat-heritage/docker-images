@@ -9,7 +9,7 @@ resulting verdict.  Older runs whose test events were only printed to the
 console can be imported from the console log with ``--from-log``.
 
 The output (``data/test-results.json`` by default) is meant to be committed,
-so that the website and the catalogue badges reflect verified results.
+so that the website and the catalogue badges reflect verified results.\nVerdicts form a ladder: source-unavailable, source-available, built, runs, verified.
 """
 
 from __future__ import annotations
@@ -133,15 +133,21 @@ def import_console_log(path: Path, runs: dict[str, dict[str, dict]]) -> int:
 
 
 def verdict(record: dict) -> str:
+    """Highest rung reached: source-unavailable < source-available < built < runs < verified."""
     stages = record.get(BUILD_STAGES, {})
     checks = record.get(TEST_CHECKS, {})
-    if any(v["status"] == "fail" for v in stages.values()):
-        return "build-failed"
+    failed = [k for k, v in stages.items() if v["status"] == "fail"]
+    if any(k in ("source-download", "source-extract") for k in failed):
+        return "source-unavailable"
+    if failed:
+        return "source-available"      # sources fetched, compilation or assembly failed
     if not checks:
-        return "not-tested"
+        return "built"                 # image assembled, tests not run
+    if checks.get("launch", {}).get("status") == "fail":
+        return "built"
     if any(v["status"] == "fail" for v in checks.values()):
-        return "test-failed"
-    return "passed"
+        return "runs"                  # launches, but some check failed
+    return "verified"
 
 
 def main(argv: list[str] | None = None) -> int:
