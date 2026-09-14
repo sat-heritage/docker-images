@@ -83,6 +83,21 @@ class CompetitionArchiveTests(unittest.TestCase):
                 archiver.SKIP_UNSAFE_LINKS = False
                 archiver.SKIPPED_LINKS.clear()
 
+    def test_strip_any_single_prefix(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            path = root / "bundle.tar"
+            with tarfile.open(path, "w") as archive:
+                for name in ("author/solver-x/src/main.c", "author/solver-y/src/main.c"):
+                    info = tarfile.TarInfo(name); info.size = 1
+                    archive.addfile(info, io.BytesIO(b"\n"))
+            previous = archiver.STRIP_PREFIX
+            archiver.STRIP_PREFIX = "*"
+            try:
+                self.assertEqual(archiver.SolverArchive(path).roots(), ["solver-x", "solver-y"])
+            finally:
+                archiver.STRIP_PREFIX = previous
+
     def test_discovers_only_top_level_solver_directories(self):
         with tempfile.TemporaryDirectory() as directory:
             archive = archiver.SolverArchive(self.make_zip(Path(directory)))

@@ -69,6 +69,10 @@ def normalized_member_name(name: str) -> str:
     if not name or path.is_absolute() or any(part in {"", ".."} for part in path.parts):
         raise ArchiveError(f"unsafe archive member: {name!r}")
     name = path.as_posix().rstrip("/")
+    if STRIP_PREFIX == "*":
+        # one enclosing directory of any name (2026: <author>/<solver>/...)
+        parts = name.split("/", 1)
+        return parts[1] if len(parts) == 2 else "__outside_prefix__"
     if STRIP_PREFIX:
         prefix = STRIP_PREFIX.rstrip("/")
         if name == prefix or name.startswith(prefix + "/"):
@@ -575,7 +579,8 @@ def parser() -> argparse.ArgumentParser:
         default="",
         metavar="DIR/",
         help="directory inside the archive that contains the solver directories, "
-        "for example Sequential/solvers/ (default: the archive root)",
+        "for example Sequential/solvers/ (default: the archive root); '*/' strips one "
+        "enclosing directory of any name, for distributions grouped by submitter",
     )
     result.add_argument(
         "--skip-unsafe-links",
