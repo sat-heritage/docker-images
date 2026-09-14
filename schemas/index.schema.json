@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sat-heritage.github.io/docker-images/schemas/index.schema.json",
+  "title": "SAT Heritage registry index",
+  "type": "array",
+  "items": {
+    "oneOf": [
+      { "type": "integer", "minimum": 1900 },
+      { "type": "string", "pattern": "^[a-z0-9][a-z0-9._-]*$" }
+    ]
+  },
+  "uniqueItems": true
+}

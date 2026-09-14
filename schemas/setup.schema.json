@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sat-heritage.github.io/docker-images/schemas/setup.schema.json",
+  "title": "SAT Heritage build setup",
+  "type": "object",
+  "required": ["base_version", "base_from", "builder"],
+  "properties": {
+    "base_version": { "type": "string", "minLength": 1 },
+    "base_from": { "type": "string", "minLength": 1 },
+    "builder": { "type": "string", "minLength": 1 },
+    "builder_base": { "type": "string", "minLength": 1 },
+    "download_url": { "type": "string", "minLength": 1 },
+    "image_name": { "type": "string", "minLength": 1 },
+    "BUILD_DEPENDS": { "type": "string" },
+    "BUILD_KIND": { "type": "string" },
+    "BUILD_SUBDIR": { "type": "string" },
+    "BUILD_SCRIPT": { "type": "string" },
+    "BUILD_ARGS": { "type": "string" },
+    "BUILD_COMMAND": { "type": "string" },
+    "BUILD_ENV": { "type": "string" },
+    "CONFIGURE_ARGS": { "type": "string" },
+    "MAKE_ARGS": { "type": "string" },
+    "BINARY_PATH": { "type": "string" },
+    "BINARY_NAME": { "type": "string" },
+    "DIST_PATHS": { "type": "string" },
+    "RDEPENDS": { "type": "string" },
+    "APT_SNAPSHOT": {
+      "type": "string",
+      "pattern": "^[0-9]{8}T[0-9]{6}Z$"
+    },
+    "APT_CODENAME": { "type": "string", "pattern": "^[a-z]+$" }
+  },
+  "additionalProperties": {
+    "type": "object",
+    "additionalProperties": { "type": ["string", "number", "boolean"] }
+  }
+}

@@ -544,7 +544,8 @@
         ]
     },
     "slime": {
-        "status": "fixme: zip is malformed",
+        "status": "fixme",
+        "status_detail": "fixme: zip is malformed",
         "name": "SLIME",
         "call": "./slime",
         "tracks": [
@@ -656,7 +657,8 @@
         ]
     },
     "cadical-trail" : {
-        "status": "FIXME: miss sources."
+        "status": "fixme",
+        "status_detail": "FIXME: miss sources."
     },
     "cryptominisat-ccnr-lsids": {
         "status": "ok",

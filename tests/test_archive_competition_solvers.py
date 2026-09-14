@@ -1,0 +1,176 @@
+import hashlib
+import io
+import importlib.util
+import json
+import stat
+import tarfile
+import tempfile
+import unittest
+import zipfile
+from pathlib import Path
+
+
+SCRIPT = Path(__file__).parents[1] / "tools" / "archive_competition_solvers.py"
+SPEC = importlib.util.spec_from_file_location("archive_competition_solvers", SCRIPT)
+assert SPEC and SPEC.loader
+archiver = importlib.util.module_from_spec(SPEC)
+SPEC.loader.exec_module(archiver)
+
+
+class CompetitionArchiveTests(unittest.TestCase):
+    def make_zip(self, directory: Path) -> Path:
+        path = directory / "competition.zip"
+        with zipfile.ZipFile(path, "w") as archive:
+            executable = zipfile.ZipInfo("Solver-A/bin/solve")
+            executable.external_attr = (stat.S_IFREG | 0o755) << 16
+            archive.writestr(executable, b"#!/bin/sh\n")
+            archive.writestr("Solver-A/README", b"solver A\n")
+            archive.writestr("Solver-B/main.c", b"int main(void) { return 0; }\n")
+            archive.writestr("README.txt", b"competition metadata\n")
+        return path
+
+    def test_strip_prefix_exposes_nested_solver_directories(self):
+        # The 2023 distribution stores solvers under Sequential/solvers/.
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            path = root / "Sequential.tar"
+            with tarfile.open(path, "w") as archive:
+                for name, data in [
+                    ("Sequential/starexec_description.txt", b"SAT Competition 2023"),
+                    ("Sequential/solvers/Solver-A/bin/solve", b"#!/bin/sh\n"),
+                    ("Sequential/solvers/Solver B/main.c", b"int main(void) { return 0; }\n"),
+                ]:
+                    info = tarfile.TarInfo(name)
+                    info.size = len(data)
+                    archive.addfile(info, io.BytesIO(data))
+            previous = archiver.STRIP_PREFIX
+            archiver.STRIP_PREFIX = "Sequential/solvers"
+            try:
+                archive = archiver.SolverArchive(path)
+                self.assertEqual(archive.roots(), ["Solver B", "Solver-A"])
+                output = root / "Solver-A.tar.xz"
+                archive.write_solver("Solver-A", output, "tar.xz")
+                with tarfile.open(output) as result:
+                    self.assertEqual(
+                        sorted(member.name for member in result.getmembers()),
+                        ["Solver-A", "Solver-A/bin/solve"],
+                    )
+            finally:
+                archiver.STRIP_PREFIX = previous
+
+    def test_unsafe_links_are_rejected_or_skipped(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            path = root / "competition.tar"
+            with tarfile.open(path, "w") as archive:
+                data = b"int main(void) { return 0; }\n"
+                info = tarfile.TarInfo("Solver-A/main.c"); info.size = len(data)
+                archive.addfile(info, io.BytesIO(data))
+                link = tarfile.TarInfo("Solver-A/makefile"); link.type = tarfile.SYMTYPE
+                link.linkname = "/home/someone/Solver-A/makefile"
+                archive.addfile(link)
+            archive = archiver.SolverArchive(path)
+            with self.assertRaisesRegex(archiver.ArchiveError, "absolute link"):
+                archive.write_solver("Solver-A", root / "a.tar.xz", "tar.xz")
+            archiver.SKIP_UNSAFE_LINKS = True
+            archiver.SKIPPED_LINKS.clear()
+            try:
+                archive.write_solver("Solver-A", root / "b.tar.xz", "tar.xz")
+                with tarfile.open(root / "b.tar.xz") as result:
+                    self.assertEqual(sorted(m.name for m in result.getmembers()), ["Solver-A", "Solver-A/main.c"])
+                self.assertEqual(archiver.SKIPPED_LINKS, [{"member": "Solver-A/makefile", "target": "/home/someone/Solver-A/makefile"}])
+            finally:
+                archiver.SKIP_UNSAFE_LINKS = False
+                archiver.SKIPPED_LINKS.clear()
+
+    def test_strip_any_single_prefix(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            path = root / "bundle.tar"
+            with tarfile.open(path, "w") as archive:
+                for name in ("author/solver-x/src/main.c", "author/solver-y/src/main.c"):
+                    info = tarfile.TarInfo(name); info.size = 1
+                    archive.addfile(info, io.BytesIO(b"\n"))
+            previous = archiver.STRIP_PREFIX
+            archiver.STRIP_PREFIX = "*"
+            try:
+                self.assertEqual(archiver.SolverArchive(path).roots(), ["solver-x", "solver-y"])
+            finally:
+                archiver.STRIP_PREFIX = previous
+
+    def test_discovers_only_top_level_solver_directories(self):
+        with tempfile.TemporaryDirectory() as directory:
+            archive = archiver.SolverArchive(self.make_zip(Path(directory)))
+            self.assertEqual(archive.roots(), ["Solver-A", "Solver-B"])
+
+    def test_packages_selected_solver_and_preserves_executable_mode(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            source = self.make_zip(root)
+            output = root / "output"
+            assets, manifest = archiver.mirror(
+                "2022", [str(source)], output, {"Solver-A"}, {}
+            )
+            self.assertEqual([path.name for path in assets], ["Solver-A.zip"])
+            self.assertEqual(manifest["assets"][0]["solver"], "Solver-A")
+            self.assertEqual(manifest["assets"][0]["archive_format"], "zip")
+            with zipfile.ZipFile(assets[0]) as archive:
+                names = archive.namelist()
+                self.assertEqual(
+                    names, ["Solver-A/", "Solver-A/README", "Solver-A/bin/solve"]
+                )
+                mode = archive.getinfo("Solver-A/bin/solve").external_attr >> 16
+                self.assertEqual(stat.S_IMODE(mode), 0o755)
+
+    def test_explicit_tar_xz_output(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            source = self.make_zip(root)
+            assets, manifest = archiver.mirror(
+                "2022", [str(source)], root / "output", {"Solver-B"}, {}, "tar.xz"
+            )
+            self.assertEqual(assets[0].name, "Solver-B.tar.xz")
+            self.assertEqual(manifest["assets"][0]["archive_format"], "tar.xz")
+            with tarfile.open(assets[0], "r:xz") as archive:
+                self.assertIn("Solver-B/main.c", archive.getnames())
+
+    def test_output_is_deterministic(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            source = self.make_zip(root)
+            first, _ = archiver.mirror("2022", [str(source)], root / "one", set(), {})
+            second, _ = archiver.mirror("2022", [str(source)], root / "two", set(), {})
+            first_hashes = [hashlib.sha256(path.read_bytes()).hexdigest() for path in first]
+            second_hashes = [hashlib.sha256(path.read_bytes()).hexdigest() for path in second]
+            self.assertEqual(first_hashes, second_hashes)
+
+    def test_rejects_unknown_solver(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            with self.assertRaisesRegex(archiver.ArchiveError, "unknown solver"):
+                archiver.mirror(
+                    "2022", [str(self.make_zip(root))], root / "output", {"Missing"}, {}
+                )
+
+    def test_dry_run_writes_manifest_without_uploading(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            output = root / "output"
+            status = archiver.main(
+                [
+                    "2022",
+                    "--archive",
+                    str(self.make_zip(root)),
+                    "--solver",
+                    "Solver-B",
+                    "--output-dir",
+                    str(output),
+                ]
+            )
+            self.assertEqual(status, 0)
+            data = json.loads((output / "manifest.json").read_text(encoding="utf-8"))
+            self.assertEqual(data["assets"][0]["asset"], "Solver-B.zip")
+
+
+if __name__ == "__main__":
+    unittest.main()

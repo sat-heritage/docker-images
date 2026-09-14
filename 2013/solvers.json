@@ -19,7 +19,8 @@
         "tracks": [
             "application"
         ],
-        "status": "FIXME build fails",
+        "status": "fixme",
+        "status_detail": "FIXME build fails",
         "args": [
             "./algport.py",
             "--tmpdir",
@@ -37,7 +38,8 @@
         "tracks": [
             "application"
         ],
-        "status": "FIXME does not compile",
+        "status": "fixme",
+        "status_detail": "FIXME does not compile",
         "args": [
             ".//algport.py",
             "--tmpdir",
@@ -366,7 +368,8 @@
             "application",
             "hard-combinatorial"
         ],
-        "status": "FIXME : problem when building",
+        "status": "fixme",
+        "status_detail": "FIXME : problem when building",
         "args": [
             "/tmp",
             "satUZK",
@@ -432,7 +435,8 @@
             "hard-combinatorial",
             "random"
         ],
-        "status": "FIXME does not compile",
+        "status": "fixme",
+        "status_detail": "FIXME does not compile",
         "args": [
             "FILECNF"
         ],
@@ -484,7 +488,8 @@
         "tracks": [
             "hard-combinatorial"
         ],
-        "status": "FIXME build fails",
+        "status": "fixme",
+        "status_detail": "FIXME build fails",
         "args": [
             ".//algport.py",
             "--tmpdir",
@@ -517,7 +522,8 @@
         "tracks": [
             "hard-combinatorial-cert-unsat"
         ],
-        "status": "FIXME non-standard returncode",
+        "status": "fixme",
+        "status_detail": "FIXME non-standard returncode",
         "args": [
             "FILECNF"
         ],
@@ -625,7 +631,8 @@
             "hard-combinatorial",
             "random"
         ],
-        "status": "FIXME needs INTEL compiler (icc)",
+        "status": "fixme",
+        "status_detail": "FIXME needs INTEL compiler (icc)",
         "args": [
             "FILECNF",
             "-seed",
@@ -662,7 +669,8 @@
             "hard-combinatorial",
             "random"
         ],
-        "status": "FIXME needs INTEL compiler (icc)",
+        "status": "fixme",
+        "status_detail": "FIXME needs INTEL compiler (icc)",
         "args": [
             "FILECNF",
             "-s",
@@ -696,7 +704,8 @@
         "tracks": [
             "hard-combinatorial-sat"
         ],
-        "status": "FIXME",
+        "status": "fixme",
+        "status_detail": "FIXME",
         "args": [
             "FILECNF",
             "-seed",
@@ -756,7 +765,8 @@
         "tracks": [
             "hard-combinatorial-sat"
         ],
-        "status": "FIXME",
+        "status": "fixme",
+        "status_detail": "FIXME",
         "args": [
             "--verb",
             "0",
@@ -803,7 +813,8 @@
             "hard-combinatorial-cert-unsat",
             "application-cert-unsat"
         ],
-        "status": "FIXME",
+        "status": "fixme",
+        "status_detail": "FIXME",
         "args": [
             "FILECNF"
         ],
@@ -917,7 +928,8 @@
         "tracks": [
             "random-sat"
         ],
-        "status": "FIXME does not compile",
+        "status": "fixme",
+        "status_detail": "FIXME does not compile",
         "args": [
             "FILECNF",
             "-seed",
@@ -963,7 +975,8 @@
         "tracks": [
             "random"
         ],
-        "status": "FIXME",
+        "status": "fixme",
+        "status_detail": "FIXME",
         "args": [
             ".//algport.py",
             "--tmpdir",
@@ -1045,7 +1058,8 @@
         "tracks": [
             "random-sat"
         ],
-        "status": "FIXME needs intel compiler",
+        "status": "fixme",
+        "status_detail": "FIXME needs intel compiler",
         "args": [
             "FILECNF",
             "RANDOMSEED"
@@ -1216,7 +1230,8 @@
         "tracks": [
             "parallel"
         ],
-        "status": "FIXME : problem when launching",
+        "status": "fixme",
+        "status_detail": "FIXME : problem when launching",
         "args": [
             ".//solver.sh",
             "FILECNF"
@@ -1259,7 +1274,8 @@
         "tracks": [
             "parallel"
         ],
-        "status": "FIXME",
+        "status": "fixme",
+        "status_detail": "FIXME",
         "args": [
             "-Xms12g",
             "-Xmx12g",
@@ -1278,7 +1294,8 @@
         "tracks": [
             "parallel"
         ],
-        "status": "FIXME (cdefs)",
+        "status": "fixme",
+        "status_detail": "FIXME (cdefs)",
         "args": [
             ".//runSatX10.py",
             "--x10ppconfig=SC2013.ppconfig",
@@ -1298,7 +1315,8 @@
         "tracks": [
             "parallel"
         ],
-        "status": "FIXME does not compile",
+        "status": "fixme",
+        "status_detail": "FIXME does not compile",
         "args": [
             "--threads=4",
             "FILECNF"
@@ -1313,7 +1331,8 @@
         "tracks": [
             "parallel"
         ],
-        "status": "FIXME cnf parse error (see https://github.com/sat-heritage/docker-images/issues/26)",
+        "status": "fixme",
+        "status_detail": "FIXME cnf parse error (see https://github.com/sat-heritage/docker-images/issues/26)",
         "args": [
             "FILECNF"
         ],

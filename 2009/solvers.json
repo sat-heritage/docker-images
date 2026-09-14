@@ -34,7 +34,8 @@
         ],
         "call": "./CirCUs",
         "gz": false,
-        "status": "FIXME misses libl for flex"
+        "status": "fixme",
+        "status_detail": "FIXME misses libl for flex"
     },
     "clasp": {
         "name": "clasp",
@@ -264,7 +265,8 @@
         ],
         "call": "IUT_BMB_SAT",
         "gz": false,
-        "status": "FIXME compilation"
+        "status": "fixme",
+        "status_detail": "FIXME compilation"
     },
     "kw": {
         "name": "kw",
@@ -381,7 +383,8 @@
         ],
         "call": "SatELiteGTI",
         "gz": false,
-        "status": "FIXME build and install (minisat)"
+        "status": "fixme",
+        "status_detail": "FIXME build and install (minisat)"
     },
     "morsat": {
         "name": "MoRsat",
@@ -450,7 +453,8 @@
         ],
         "call": "./rsat.sh",
         "gz": false,
-        "status": "FIXME compilation error"
+        "status": "fixme",
+        "status_detail": "FIXME compilation error"
     },
     "sapperlot-base": {
         "name": "SApperloT-base",
@@ -462,7 +466,8 @@
         ],
         "call": "./SApperloT-base",
         "gz": false,
-        "status": "FIXME compilation error (g++ version?)"
+        "status": "fixme",
+        "status_detail": "FIXME compilation error (g++ version?)"
     },
     "sapperlot-hrp": {
         "name": "SApperloT-hrp",
@@ -474,7 +479,8 @@
         ],
         "call": "./SApperloT-hrp",
         "gz": false,
-        "status": "FIXME compilation error (g++ version?)"
+        "status": "fixme",
+        "status_detail": "FIXME compilation error (g++ version?)"
     },
     "sat4j-core": {
         "name": "sat4j-core",

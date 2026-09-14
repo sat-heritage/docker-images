@@ -187,7 +187,7 @@
     ]
   },
   "maple-lcmdistchronobt-dl-v2.1": {
-    "status" : "ok",
+    "status": "ok",
     "name": "MapleLCMDistChronoBT-DL-v2.1",
     "call": "./MapleLCMDistChrBt-DL-v2.1",
     "gz": true,
@@ -200,7 +200,7 @@
     ]
   },
   "maple-lcmdistchronobt-dl-v2.2": {
-    "status" : "ok",
+    "status": "ok",
     "name": "MapleLCMDistChronoBT-DL-v2.2",
     "call": "./MapleLCMDistChrBt-DL-v2.2",
     "gz": true,
@@ -452,7 +452,7 @@
     ]
   },
   "slime": {
-    "status" : "ok",
+    "status": "ok",
     "name": "SLIME",
     "call": "./slime_static",
     "gz": true,
@@ -465,7 +465,7 @@
     ]
   },
   "sparrowtomergesat": {
-    "status" : "ok",
+    "status": "ok",
     "name": "SparrowToMergeSAT",
     "call": "./Sparrow2MergeSAT.sh",
     "gz": true,
@@ -483,7 +483,7 @@
     ]
   },
   "topk3.2_glucose3.0": {
-    "status" : "ok",
+    "status": "ok",
     "name": "Topk3.2_Glucose3.0",
     "call": "./topkLC-glucose",
     "gz": true,
@@ -498,7 +498,7 @@
     ]
   },
     "topk3_glucose3.0": {
-    "status" : "ok",
+    "status": "ok",
     "name": "Topk3_Glucose3.0",
     "call": "./topkLC-glucose",
     "gz": true,
@@ -513,7 +513,7 @@
     ]
   },
   "topk6.2_glucose3.0": {
-    "status" : "ok",
+    "status": "ok",
     "name": "Topk6.2_Glucose3.0",
     "call": "./topkLC-glucose",
     "gz": true,
@@ -528,7 +528,7 @@
     ]
   },
   "topk6_glucose3.0": {
-    "status" : "ok",
+    "status": "ok",
     "name": "Topk6_Glucose3.0",
     "call": "./topkLC-glucose",
     "gz": true,
@@ -543,7 +543,7 @@
     ]
   },
   "zib_glucose": {
-    "status" : "ok",
+    "status": "ok",
     "name": "ZIB_Glucose",
     "call": "./glucose_static",
     "gz": true,
@@ -560,7 +560,8 @@
     ]
   },
   "cmsatv56-walksat-chronobt": {
-    "status" : "FIXME no native gz, include cryptominisat5",
+    "status": "fixme",
+    "status_detail": "FIXME no native gz, include cryptominisat5",
     "name": "cmsatv56-walksat-chronobt",
     "call": "./cryptominisat5_simple",
     "gz": false,
@@ -577,7 +578,7 @@
     ]
   },
   "cmsatv56-walksat": {
-    "status" : "ok",
+    "status": "ok",
     "name": "cmsatv56-walksat",
     "call": "./cryptominisat5_simple",
     "gz": false,
@@ -594,7 +595,7 @@
     ]
   },
   "cmsatv56-yalsat-chronobt": {
-    "status" : "ok",
+    "status": "ok",
     "name": "cmsatv56-yalsat-chronobt",
     "call": "./cryptominisat5_simple",
     "gz": false,
@@ -611,7 +612,7 @@
     ]
   },
   "cmsatv56-yalsat": {
-    "status" : "ok",
+    "status": "ok",
     "name": "cmsatv56-yalsat",
     "call": "./cryptominisat5_simple",
     "gz": false,
@@ -686,7 +687,7 @@
     ]
   },
   "glucose3.0": {
-    "status" : "ok",
+    "status": "ok",
     "name": "glucose3.0",
     "call": "./glucose_static",
     "gz": true,
@@ -701,7 +702,7 @@
     ]
   },
   "glucose_421_del": {
-    "status" : "ok",
+    "status": "ok",
     "name": "glucose_421_del",
     "call": "./glucose_del",
     "gz": true,
@@ -717,7 +718,7 @@
     ]
   },
   "glucose_btl": {
-    "status" : "ok",
+    "status": "ok",
     "name": "glucose_BTL",
     "call": "./glucose_lbdbtl",
     "gz": true,
@@ -733,7 +734,7 @@
     ]
   },
   "optsat": {
-    "status" : "ok",
+    "status": "ok",
     "name": "optsat",
     "call": "./optsat",
     "gz": true,
@@ -747,7 +748,8 @@
     ]
   },
   "smallsat": {
-    "status" : "FIXME: Floating point exception",
+    "status": "fixme",
+    "status_detail": "FIXME: Floating point exception",
     "name": "smallsat",
     "call": "./smallsat",
     "gz": true,

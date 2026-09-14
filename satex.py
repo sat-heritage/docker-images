@@ -4,8 +4,8 @@
 # MIT License
 
 import argparse
-import cgi
 import fnmatch
+import itertools
 import json
 import glob
 import os
@@ -20,15 +20,174 @@ import tarfile
 import tempfile
 import textwrap
 import time
-from urllib.error import HTTPError
-from urllib.request import urlopen
+from urllib.error import HTTPError, URLError
+from urllib.parse import unquote, urlparse
+from urllib.request import Request, urlopen
+
+from satex_validation import (
+    SATISFIABLE,
+    UNSATISFIABLE,
+    ValidationError,
+    read_dimacs,
+    validate_drup_proof,
+    validate_model,
+    validate_solver_result,
+    validate_solver_run,
+)
 
 __version__ = "1.2.1-dev"
 
 DOCKER_NS = "satex"
 REGISTRY_URL = "https://github.com/sat-heritage/docker-images/releases/download/list/list.tgz"
+NETWORK_TIMEOUT = 30
+HOST_TIMEOUT_GRACE = 2
+
+BUILDER_STAGES = {
+    "generic/2000": [
+        ("build-environment", "buildenv"),
+        ("source-extract", "source"),
+        ("compile", "builder"),
+    ],
+    "generic/v1": [
+        ("source-extract", "unpack"),
+        ("build-environment", "buildenv"),
+        ("compile", "builder"),
+    ],
+    "generic/starexec": [
+        ("build-environment", "buildenv"),
+        ("source-extract", "source"),
+        ("compile", "builder"),
+    ],
+    "generic/starexec-v2": [
+        ("build-environment", "buildenv"),
+        ("source-extract", "source"),
+        ("compile", "builder"),
+    ],
+    "generic/binary-v1": [("source-extract", "source")],
+    "generic/binary-tar": [("source-extract", "source")],
+}
+
+DIST_STAGES = {
+    "v1": [
+        ("runtime-dependencies", "runtime"),
+        ("image-assemble", "image"),
+    ],
+}
 
 on_linux = platform.system() == "Linux"
+
+
+def brace_expand(s):
+    """Perform the limited brace-and-comma expansion used by source URLs."""
+    def getitem(value, depth=0):
+        out = [""]
+        while value:
+            c = value[0]
+            if depth and (c == ',' or c == '}'):
+                return out, value
+            if c == '{':
+                group = getgroup(value[1:], depth + 1)
+                if group:
+                    out, value = [a + b for a in out for b in group[0]], group[1]
+                    continue
+            if c == '\\' and len(value) > 1:
+                value, c = value[1:], c + value[1]
+            out, value = [a + c for a in out], value[1:]
+        return out, value
+
+    def getgroup(value, depth):
+        out, comma = [], False
+        while value:
+            group, value = getitem(value, depth)
+            if not value:
+                break
+            out += group
+            if value[0] == '}':
+                if comma:
+                    return out, value[1:]
+                return ['{' + a + '}' for a in out], value[1:]
+            if value[0] == ',':
+                comma, value = True, value[1:]
+        return None
+
+    return getitem(s)[0]
+
+
+def base_cache_tag(base_version, base_from=None, apt_snapshot=None):
+    """Build a short Docker tag for a possibly digest-pinned base image."""
+    tag = base_version
+    if base_from:
+        from_image, separator, from_digest = base_from.partition("@")
+        from_tag = from_image.replace("/", "_").replace(":", "-")
+        if separator:
+            from_tag += "-" + from_digest.rsplit(":", 1)[-1][:12]
+        tag += f"-{from_tag}"
+    if apt_snapshot:
+        tag += f"-snapshot-{apt_snapshot[:8]}"
+    return tag
+
+
+class BuildReporter:
+    def __init__(self, args):
+        self.terse = getattr(args, "terse", False)
+        self.status_file = getattr(args, "status_file", None)
+        if self.status_file:
+            status_path = Path(self.status_file)
+            status_path.parent.mkdir(parents=True, exist_ok=True)
+            status_path.write_text("", encoding="utf-8")
+
+    def report(self, status, image, stage, detail=""):
+        detail = str(detail).replace("\n", " ").strip()
+        event = {
+            "image": image,
+            "stage": stage,
+            "status": status,
+        }
+        if detail:
+            event["detail"] = detail
+        if self.status_file:
+            with open(self.status_file, "a", encoding="utf-8") as fp:
+                json.dump(event, fp, sort_keys=True)
+                fp.write("\n")
+        if self.terse:
+            suffix = f" ({detail})" if detail else ""
+            print(f"{status:<4} {image:<35} {stage}{suffix}", flush=True)
+
+
+def source_urls(image):
+    template = image.setup.get("download_url")
+    if not isinstance(template, str) or not template:
+        return []
+    return brace_expand(template.format(**image.vars))
+
+
+def probe_source_url(url, opener=urlopen):
+    parsed = urlparse(url)
+    if parsed.scheme not in {"http", "https", "ftp"}:
+        if not os.path.isfile(url):
+            raise FileNotFoundError(url)
+        return
+    request = Request(
+        url,
+        headers={
+            "Range": "bytes=0-0",
+            "User-Agent": f"satex/{__version__}",
+        },
+    )
+    with opener(request, timeout=NETWORK_TIMEOUT):
+        pass
+
+
+def source_error_detail(exc):
+    if isinstance(exc, HTTPError):
+        return f"HTTP {exc.code}"
+    if isinstance(exc, URLError):
+        return str(exc.reason)
+    if isinstance(exc, TimeoutError):
+        return "timeout"
+    if isinstance(exc, FileNotFoundError):
+        return "local file not found"
+    return str(exc)
 
 def color(s, color, mode=1):
     return f"\033[{mode};{color}m{s}\033[0m"
@@ -91,9 +250,9 @@ def refresh_cache(args, force=False):
     if force or not is_cache_valid(args):
         os.makedirs(cache_dir, exist_ok=True)
         info(f"fetching {REGISTRY_URL}")
-        with urlopen(REGISTRY_URL) as orig, \
+        with urlopen(REGISTRY_URL, timeout=NETWORK_TIMEOUT) as orig, \
                 open(cache_file, "wb") as dest:
-            dest.write(orig.read())
+            shutil.copyfileobj(orig, dest, length=1024 * 1024)
 
 def get_registry(args):
     if IN_REPOSITORY:
@@ -114,9 +273,15 @@ def make_name(reg, cfg, entry, solver):
 def is_no_pattern(spec):
     return not set(spec).intersection("?[*")
 
-re_image_name = re.compile("[a-zA-Z0-9\-_\.]+:[a-zA-Z0-9\-_\.]+")
+re_image_name = re.compile(r"[a-z0-9][a-z0-9._-]*:[A-Za-z0-9_][A-Za-z0-9_.-]*")
 def valid_name(name):
-    return re_image_name.match(name)
+    return re_image_name.fullmatch(name) is not None
+
+def normalize_status(status):
+    status = status.lower()
+    if status in {"ok", "unstable", "fixme"}:
+        return status
+    return "unstable"
 
 class Repository(object):
     def __init__(self, args):
@@ -136,20 +301,23 @@ class Repository(object):
         for entry in self.registry:
             for solver in self.registry[entry]:
                 name = make_name(self.registry, self.setup, entry, solver)
-                if not valid_name(name):
-                    error(f"invalid image name: '{name}'")
                 if hasattr(args, "pattern") and \
                         not fnmatch.fnmatch(name, args.pattern):
                     continue
-                status = self.registry[entry][solver].get("status", "unknown")
+                status = normalize_status(
+                    self.registry[entry][solver].get("status", "unknown")
+                )
                 if status == "ok":
                     if not select_stable:
                         continue
-                elif status.startswith("FIXME"):
+                elif status == "fixme":
                     if not select_fixme:
                         continue
                 elif not select_unstable:
                     continue
+
+                if not valid_name(name):
+                    error(f"invalid image name: '{name}'")
 
                 tracks = self.registry[entry][solver].get("tracks", [])
                 if select_tracks and not select_tracks.intersection(tracks):
@@ -176,7 +344,7 @@ class ImageManager(object):
         return self.registry.get("name", self.name)
     @property
     def status(self):
-        return self.registry.get("status", "unknown")
+        return normalize_status(self.registry.get("status", "unknown"))
 
 
 def get_list(args):
@@ -242,7 +410,7 @@ def print_info(args):
         line_width = key_width + 70
         if image.status == "ok":
             color = 32
-        elif image.status.startswith("FIXME"):
+        elif image.status == "fixme":
             color = 31
         else:
             color = 33
@@ -272,9 +440,11 @@ def check_cmd(argv):
     DEVNULL = subprocess.DEVNULL if hasattr(subprocess, "DEVNULL") \
                 else open(os.devnull, 'w')
     try:
-        subprocess.call(argv, stdout=DEVNULL, stderr=DEVNULL, close_fds=True)
-        return True
-    except:
+        result = subprocess.run(
+            argv, stdout=DEVNULL, stderr=DEVNULL, close_fds=True, check=False
+        )
+        return result.returncode == 0
+    except OSError:
         return False
 
 def check_sudo():
@@ -311,12 +481,38 @@ within the 'Docker quickstart Terminal'.""")
     #    error("Error: cannot connect to Docker. Make sure it is running.")
     return docker_argv
 
+def run_docker_process(cmd, run_args, timeout, docker_argv, container_id):
+    """Run Docker with a host-side deadline for legacy images.
+
+    Older published images do not enforce the TIMEOUT environment variable.
+    Killing the Docker client alone would leave their container running, so an
+    expired host deadline also explicitly kills the named container.
+    """
+    try:
+        return subprocess.run(cmd, timeout=timeout, **run_args)
+    except subprocess.TimeoutExpired as exc:
+        subprocess.run(
+            docker_argv + ["kill", container_id],
+            stdout=subprocess.DEVNULL,
+            stderr=subprocess.DEVNULL,
+            check=False,
+        )
+        output = exc.stdout or ""
+        if isinstance(output, bytes):
+            output = output.decode("utf-8", errors="replace")
+        return subprocess.CompletedProcess(cmd, 124, stdout=output)
+
 def prepare_image(args, docker_argv, image):
     if args.pull or\
             not subprocess.check_output(docker_argv + ["images", "-q", image]):
         cmd = docker_argv + ["pull", image]
-        info(" ".join(cmd))
-        subprocess.check_call(cmd)
+        quiet = getattr(args, "quiet", False) or getattr(args, "terse", False)
+        if not quiet:
+            info(" ".join(cmd))
+        run_args = {}
+        if quiet:
+            run_args = {"stdout": subprocess.DEVNULL, "stderr": subprocess.DEVNULL}
+        subprocess.check_call(cmd, **run_args)
 
 def easy_volume(v):
     if ":" in v:
@@ -331,13 +527,16 @@ def get_docker_volumes(args):
     return [easy_volume(opt).split(":") for opt in opts]
 
 _docker_opts = []
-def docker_runs(args, images, docker_args=(), image_args=()):
+_container_counter = itertools.count(1)
+def docker_runs(args, images, docker_args=(), image_args=(), capture_output=False):
     docker_argv = check_docker()
-    container_id = f"satex{os.getpid()}"
+    # One name per invocation: after a timeout the previous container may
+    # still be waiting for removal, and Docker refuses to reuse its name.
+    container_id = f"satex{os.getpid()}-{next(_container_counter)}"
     argv = ["run", "--name", container_id, "--rm"]
     if hasattr(args, "timeout"):
         argv += ["-e", f"TIMEOUT={args.timeout}"]
-    quiet = hasattr(args, "quiet") and args.quiet
+    quiet = getattr(args, "quiet", False) or getattr(args, "terse", False)
     for opt in _docker_opts:
         if getattr(args, opt) is not None:
             val = getattr(args, opt)
@@ -352,7 +551,13 @@ def docker_runs(args, images, docker_args=(), image_args=()):
     image_argv = ["--mode", args.mode] if hasattr(args, "mode") and args.mode else []
     image_argv += list(image_args)
     run_args = {}
-    if quiet:
+    if capture_output:
+        run_args["stdout"] = subprocess.PIPE
+        run_args["stderr"] = subprocess.STDOUT
+        run_args["text"] = True
+        run_args["encoding"] = "utf-8"
+        run_args["errors"] = "replace"
+    elif quiet:
         run_args["stdout"] = subprocess.DEVNULL
         run_args["stderr"] = subprocess.DEVNULL
     global stop
@@ -368,24 +573,36 @@ def docker_runs(args, images, docker_args=(), image_args=()):
                 global stop
                 stop = True
                 warn("Killing solver...")
-                argv = docker_argv + ["kill", container_id]
-                subprocess.run(argv, stdout=subprocess.DEVNULL)
+                subprocess.run(
+                    docker_argv + ["kill", container_id],
+                    stdout=subprocess.DEVNULL,
+                    stderr=subprocess.DEVNULL,
+                    check=False,
+                )
             signal.signal(signal.SIGINT, killer)
             info(" ".join(cmd)) if not quiet else None
-            ret = subprocess.run(cmd, **run_args).returncode
+            host_timeout = None
+            if hasattr(args, "timeout") and args.timeout > 0:
+                host_timeout = args.timeout + HOST_TIMEOUT_GRACE
+            result = run_docker_process(
+                cmd, run_args, host_timeout, docker_argv, container_id
+            )
+            ret = result.returncode
             signal.signal(signal.SIGINT, signal.SIG_DFL)
             if stop:
                 sys.exit(1)
             if ret == 124:
-                if args.fail_if_timeout:
+                if args.fail_if_timeout and not capture_output:
                     raise subprocess.TimeoutExpired(image, args.timeout)
                 elif not quiet:
                     warn(f"{image} timeout")
             else:
-                if not (ret == 0 or 10 <= ret <= 20):
+                if not capture_output and ret not in {0, 10, 20}:
                     if not quiet:
                         error(f"Solver failed with return code {ret}")
     if not args.pretend:
+        if capture_output:
+            return ret, result.stdout
         return ret
 
 def run_images(args):
@@ -444,6 +661,27 @@ def run_shell(args):
     assert args.image in images, "Unknown image"
     docker_runs(args, [args.image], ("-it", "--entrypoint", "bash"))
 
+def safe_tar_members(tar, output_dir):
+    """Yield only regular archive entries that remain below output_dir."""
+    root = Path(output_dir).resolve()
+    for member in tar:
+        target = (root / member.name).resolve()
+        try:
+            target.relative_to(root)
+        except ValueError as exc:
+            raise tarfile.FilterError(
+                f"archive member escapes destination: {member.name}"
+            ) from exc
+        if member.isdev() or member.isfifo():
+            raise tarfile.FilterError(
+                f"archive contains special file: {member.name}"
+            )
+        if member.issym() or member.islnk():
+            raise tarfile.FilterError(
+                f"archive contains unsupported link: {member.name}"
+            )
+        yield member
+
 def extract(args):
     images = get_list(args)
     docker_argv = check_docker()
@@ -464,7 +702,15 @@ def extract(args):
         with subprocess.Popen(argv, stdout=subprocess.PIPE,
                 stderr=sys.stderr) as p:
             with tarfile.open(mode="r|", fileobj=p.stdout) as t:
-                t.extractall(args.output_dir)
+                if hasattr(tarfile, "data_filter"):
+                    t.extractall(args.output_dir, filter="data")
+                else:
+                    t.extractall(
+                        args.output_dir,
+                        members=safe_tar_members(t, args.output_dir),
+                    )
+            if p.wait() != 0:
+                raise subprocess.CalledProcessError(p.returncode, argv)
         os.rename(os.path.join(args.output_dir, "solvers"), dest_dir)
 
 #
@@ -476,36 +722,80 @@ def extract(args):
 
 FROM_UPTODATE = set()
 
+def diagnostic_subprocess_args(args):
+    if getattr(args, "terse", False):
+        return {"stdout": sys.stderr, "stderr": sys.stderr}
+    return {}
+
+
 def docker_uptodate_image(args, docker_argv, image):
     if image not in FROM_UPTODATE:
         argv = docker_argv + ["pull", image]
         info(" ".join(argv))
-        subprocess.check_call(argv)
+        subprocess.check_call(argv, **diagnostic_subprocess_args(args))
         FROM_UPTODATE.add(image)
 
-def docker_build(args, docker_argv, tag, root, build_args={}, Dockerfile=None):
+
+def dockerfile_base_images(root, Dockerfile=None):
+    images = []
+    aliases = set()
     with open(Dockerfile or os.path.join(root, "Dockerfile")) as fp:
-        FROMs = [l.split()[1] for l in fp.readlines() \
-                    if l.startswith("FROM") and "{" not in l]
-        for f in FROMs:
-            docker_uptodate_image(args, docker_argv, f)
+        for line in fp:
+            if not line.startswith("FROM"):
+                continue
+            fields = line.split()
+            image = fields[1]
+            if "{" not in image and image not in aliases:
+                images.append(image)
+            if len(fields) >= 4 and fields[-2].lower() == "as":
+                aliases.add(fields[-1])
+    return images
+
+
+def docker_prepare_base_images(args, docker_argv, root, Dockerfile=None):
+    for image in dockerfile_base_images(root, Dockerfile):
+        docker_uptodate_image(args, docker_argv, image)
+
+
+def docker_build(
+    args,
+    docker_argv,
+    tag,
+    root,
+    build_args=None,
+    Dockerfile=None,
+    target=None,
+):
+    build_args = build_args or {}
+    docker_prepare_base_images(args, docker_argv, root, Dockerfile)
     argv = docker_argv + ["build", "-t", tag, root]
     if args.no_cache:
         argv += ["--no-cache"]
     if Dockerfile:
         argv += ["-f", Dockerfile]
+    if target:
+        argv += ["--target", target]
     for k,v in build_args.items():
         argv += ["--build-arg", f"{k}={v}"]
     info(" ".join(argv))
-    subprocess.check_call(argv)
+    subprocess.check_call(argv, **diagnostic_subprocess_args(args))
 
 def build_images(args):
-    docker_argv = check_docker()
     repo = Repository(args)
+    reporter = BuildReporter(args)
+
+    try:
+        docker_argv = check_docker()
+    except SystemExit:
+        for name in repo.images:
+            reporter.report("fail", name, "docker-engine", "unavailable")
+        raise
+    for name in repo.images:
+        reporter.report("ok", name, "docker-engine")
 
     bases_uptodate = set()
 
-    only_dist_opts = ["RDEPENDS"]
+    only_dist_opts = ["RDEPENDS", "APT_SNAPSHOT", "APT_CODENAME"]
     hide_opts = [
         "base_version",
         "base_from",
@@ -517,6 +807,26 @@ def build_images(args):
     for name in repo.images:
         image = ImageManager(name, repo)
         setup = image.setup
+        stage_image_tags = []
+
+        def failure_detail(exc):
+            if isinstance(
+                exc,
+                (HTTPError, URLError, TimeoutError, FileNotFoundError),
+            ):
+                return source_error_detail(exc)
+            if isinstance(exc, subprocess.CalledProcessError):
+                return f"exit {exc.returncode}"
+            return str(exc) or exc.__class__.__name__
+
+        def run_stage(stage, action, detail=""):
+            reporter.report("run", image.name, stage, detail)
+            try:
+                action()
+            except Exception as exc:
+                reporter.report("fail", image.name, stage, failure_detail(exc))
+                raise
+            reporter.report("ok", image.name, stage)
 
         root = str(image.entry)
 
@@ -530,51 +840,167 @@ def build_images(args):
         builder_Dockerfile = os.path.join(builder_path, "Dockerfile")
         builder_target = f"{DOCKER_NS}/builder-{image.name}"
 
-        if "builder_base" in setup:
-            build_args["BUILDER_BASE"] = setup["builder_base"]
-            docker_uptodate_image(args, docker_argv, setup["builder_base"])
-
-        docker_build(args, docker_argv, builder_target, root,
-                build_args=build_args, Dockerfile=builder_Dockerfile)
-
-        base_version = setup["base_version"]
-        base_root = os.path.join("base", base_version)
-        base_from = setup.get("base_from")
-        base_args = {}
-        base_tag = base_version
-        if base_from:
-            base_args["BASE"] = base_from
-            from_tag = base_from.replace("/","_").replace(":","-")
-            base_tag = f"{base_version}-{from_tag}"
-        base_target = f"{DOCKER_NS}/base:{base_tag}"
-        if base_target not in bases_uptodate:
-            docker_build(args, docker_argv, base_target, base_root, base_args)
-            bases_uptodate.add(base_target)
-
-        dist_version = setup.get("dist_version", "v1")
-        dist_Dockerfile = f"generic/dist-{dist_version}/Dockerfile"
-        dist_args = {
-            "BASE": base_target,
-            "BUILDER_BASE": builder_target,
-            "IMAGE_NAME": image.name,
-            "SOLVER": build_args["SOLVER"],
-            "SOLVER_NAME": build_args["SOLVER_NAME"],
-        }
-        for k in only_dist_opts:
-            if k in setup:
-                dist_args[k] = setup[k]
-
-        fd, dbjson = tempfile.mkstemp(".json", "file", root)
         try:
-            fp = os.fdopen(fd, "w")
-            json.dump({image.solver: image.registry}, fp)
-            fp.close()
-            dist_args["dbjson"] = os.path.basename(dbjson)
+            urls = source_urls(image)
+            if urls:
+                def probe_sources():
+                    for url in urls:
+                        probe_source_url(url)
+                run_stage("source-download", probe_sources)
+            else:
+                reporter.report("skip", image.name, "source-download", "no URL")
 
-            docker_build(args, docker_argv, f"{DOCKER_NS}/{image.name}",
-                    root, dist_args, Dockerfile=dist_Dockerfile)
+            if "builder_base" in setup:
+                build_args["BUILDER_BASE"] = setup["builder_base"]
+
+            def prepare_builder_images():
+                if "builder_base" in setup:
+                    docker_uptodate_image(
+                        args, docker_argv, setup["builder_base"]
+                    )
+                docker_prepare_base_images(
+                    args, docker_argv, root, builder_Dockerfile
+                )
+
+            run_stage("builder-base-image", prepare_builder_images)
+
+            builder_stages = BUILDER_STAGES.get(setup["builder"])
+            if builder_stages:
+                for index, (stage, target) in enumerate(builder_stages):
+                    last_stage = index == len(builder_stages) - 1
+                    stage_tag = builder_target if last_stage else (
+                        f"{DOCKER_NS}/stage-{stage}-{image.name}"
+                    )
+                    if not last_stage:
+                        stage_image_tags.append(stage_tag)
+                    run_stage(
+                        stage,
+                        lambda stage_tag=stage_tag, target=target: docker_build(
+                            args,
+                            docker_argv,
+                            stage_tag,
+                            root,
+                            build_args=build_args,
+                            Dockerfile=builder_Dockerfile,
+                            target=target,
+                        ),
+                    )
+                if not any(stage == "compile" for stage, _ in builder_stages):
+                    reporter.report(
+                        "skip", image.name, "compile", "binary distribution"
+                    )
+            else:
+                run_stage(
+                    "builder-build",
+                    lambda: docker_build(
+                        args,
+                        docker_argv,
+                        builder_target,
+                        root,
+                        build_args=build_args,
+                        Dockerfile=builder_Dockerfile,
+                    ),
+                    "custom builder",
+                )
+
+            base_version = setup["base_version"]
+            base_root = os.path.join("base", base_version)
+            base_from = setup.get("base_from")
+            base_args = {}
+            if base_from:
+                base_args["BASE"] = base_from
+            apt_snapshot = setup.get("APT_SNAPSHOT")
+            if apt_snapshot:
+                base_args["APT_SNAPSHOT"] = apt_snapshot
+                base_args["APT_CODENAME"] = setup["APT_CODENAME"]
+            base_tag = base_cache_tag(base_version, base_from, apt_snapshot)
+            base_target = f"{DOCKER_NS}/base:{base_tag}"
+            if base_target not in bases_uptodate:
+                def prepare_runtime_images():
+                    if base_from:
+                        docker_uptodate_image(args, docker_argv, base_from)
+                    docker_prepare_base_images(args, docker_argv, base_root)
+
+                run_stage("runtime-base-image", prepare_runtime_images)
+                run_stage(
+                    "runtime-base",
+                    lambda: docker_build(
+                        args,
+                        docker_argv,
+                        base_target,
+                        base_root,
+                        base_args,
+                    ),
+                )
+                bases_uptodate.add(base_target)
+            else:
+                reporter.report(
+                    "skip", image.name, "runtime-base", "already built"
+                )
+
+            dist_version = setup.get("dist_version", "v1")
+            dist_Dockerfile = f"generic/dist-{dist_version}/Dockerfile"
+            dist_args = {
+                "BASE": base_target,
+                "BUILDER_BASE": builder_target,
+                "IMAGE_NAME": image.name,
+                "SOLVER": build_args["SOLVER"],
+                "SOLVER_NAME": build_args["SOLVER_NAME"],
+            }
+            for k in only_dist_opts:
+                if k in setup:
+                    dist_args[k] = setup[k]
+
+            fd, dbjson = tempfile.mkstemp(".json", "file", root)
+            try:
+                fp = os.fdopen(fd, "w")
+                json.dump({image.solver: image.registry}, fp)
+                fp.close()
+                dist_args["dbjson"] = os.path.basename(dbjson)
+
+                dist_stages = DIST_STAGES.get(dist_version)
+                if dist_stages:
+                    for index, (stage, target) in enumerate(dist_stages):
+                        last_stage = index == len(dist_stages) - 1
+                        stage_tag = f"{DOCKER_NS}/{image.name}" if last_stage else (
+                            f"{DOCKER_NS}/stage-{stage}-{image.name}"
+                        )
+                        if not last_stage:
+                            stage_image_tags.append(stage_tag)
+                        run_stage(
+                            stage,
+                            lambda stage_tag=stage_tag, target=target: docker_build(
+                                args,
+                                docker_argv,
+                                stage_tag,
+                                root,
+                                dist_args,
+                                Dockerfile=dist_Dockerfile,
+                                target=target,
+                            ),
+                        )
+                else:
+                    run_stage(
+                        "image-assemble",
+                        lambda: docker_build(
+                            args,
+                            docker_argv,
+                            f"{DOCKER_NS}/{image.name}",
+                            root,
+                            dist_args,
+                            Dockerfile=dist_Dockerfile,
+                        ),
+                    )
+            finally:
+                os.unlink(dbjson)
         finally:
-            os.unlink(dbjson)
+            for stage_tag in stage_image_tags:
+                subprocess.run(
+                    docker_argv + ["image", "rm", "-f", stage_tag],
+                    stdout=subprocess.DEVNULL,
+                    stderr=subprocess.DEVNULL,
+                    check=False,
+                )
 
 
 _retstr = {
@@ -584,47 +1010,183 @@ _retstr = {
 }
 
 def test_images(args):
-    docker_args = ["-v", f"{os.path.abspath('tests')}:/data"]
+    with tempfile.TemporaryDirectory(prefix="satex-tests-") as workspace:
+        return test_images_in_workspace(args, Path(workspace))
 
-    info(f"Testing with CNF {os.path.abspath('tests')}/{args.file}")
+def test_images_in_workspace(args, tests_dir):
+    source_tests_dir = Path("tests").resolve()
+    filenames = [args.file, f"{args.file}.gz", args.unsat_file]
+    for filename in filenames:
+        source = source_tests_dir / filename
+        if not source.is_file():
+            error(f"missing test instance: {source}")
+        shutil.copy2(source, tests_dir / filename)
 
-    if args.timeout > 600:
-        args.timeout = 10
+    docker_args = ["-v", f"{tests_dir}:/data"]
+    sat_path = tests_dir / args.file
+    sat_gz_path = tests_dir / f"{args.file}.gz"
+    unsat_path = tests_dir / args.unsat_file
 
-    def call(test_name, image, image_args):
-        print(test_name, end="...", flush=True)
-        ret = docker_runs(args, [image.name], docker_args=docker_args,
-                    image_args=image_args)
+    if not args.terse:
+        info(f"Testing SAT with {sat_path}")
+        info(f"Testing UNSAT with {unsat_path}")
+
+    def report(status, image, test_name, detail=""):
+        suffix = f" ({detail})" if detail else ""
+        print(f"{status:<4} {image.name} {test_name}{suffix}", flush=True)
+
+    def dump_output(image, test_name, output):
+        # In terse mode the solver output is captured; keep it on stderr so
+        # that a failure remains diagnosable from the test log.
+        if not output:
+            return
+        print(f"==== {image.name} {test_name}: solver output ====", file=sys.stderr)
+        print(output, end="" if output.endswith("\n") else "\n", file=sys.stderr, flush=True)
+
+    def call(
+        test_name,
+        image,
+        image_args,
+        cnf_path,
+        expected_status,
+        report_launch=False,
+    ):
+        if not args.terse:
+            print(test_name, end="...", flush=True)
+        ret, output = docker_runs(
+            args,
+            [image.name],
+            docker_args=docker_args,
+            image_args=image_args,
+            capture_output=True,
+        )
         msg = _retstr.get(ret, ret)
-        if ret == 124 or ret == 0 or 10 <= ret <= 20:
+        if args.terse:
+            launched = ret not in {125, 126, 127}
+            if report_launch:
+                report(
+                    "ok" if launched else "fail",
+                    image,
+                    "launch",
+                    "" if launched else msg,
+                )
+            if not launched:
+                dump_output(image, test_name, output)
+                report("skip", image, f"{test_name}-termination", "launch failed")
+                report("skip", image, f"{test_name}-result", "launch failed")
+                if expected_status == SATISFIABLE:
+                    report("skip", image, f"{test_name}-model", "launch failed")
+                return False
+
+            terminated = ret != 124
+            report(
+                "ok" if terminated else "fail",
+                image,
+                f"{test_name}-termination",
+                msg,
+            )
+            if not terminated:
+                dump_output(image, test_name, output)
+                report("skip", image, f"{test_name}-result", "timeout")
+                if expected_status == SATISFIABLE:
+                    report("skip", image, f"{test_name}-model", "timeout")
+                return False
+
+            try:
+                model = validate_solver_result(expected_status, ret, output)
+            except (ValidationError, ValueError) as exc:
+                report("fail", image, f"{test_name}-result", str(exc))
+                dump_output(image, test_name, output)
+                if expected_status == SATISFIABLE:
+                    report("skip", image, f"{test_name}-model", "invalid result")
+                return False
+
+            report("ok", image, f"{test_name}-result", msg)
+            if expected_status == SATISFIABLE:
+                try:
+                    variables, clauses = read_dimacs(cnf_path)
+                    validate_model(variables, clauses, model)
+                except (OSError, ValidationError, ValueError) as exc:
+                    report("fail", image, f"{test_name}-model", str(exc))
+                    dump_output(image, test_name, output)
+                    return False
+                report("ok", image, f"{test_name}-model")
+            return True
+
+        try:
+            validate_solver_run(cnf_path, expected_status, ret, output)
+        except (OSError, ValidationError, ValueError) as exc:
+            print(red("fail"), f"({msg}: {exc})")
+            if output and not args.quiet:
+                print(output, end="" if output.endswith("\n") else "\n")
+            return False
+        else:
             print(green("ok"), f"({msg})")
             return True
-        else:
-            print(red("fail"), f"({msg})")
-            return False
 
     def test_cnf(image):
-        image_args = [args.file]
-        return call("cnf", image, image_args)
+        return call(
+            "sat", image, [args.file], sat_path, SATISFIABLE, report_launch=True
+        )
+
     def test_gz(image):
-        image_args = [f"{args.file}.gz"]
-        return call("gz", image, image_args)
+        return call(
+            "sat-gzip",
+            image,
+            [f"{args.file}.gz"],
+            sat_gz_path,
+            SATISFIABLE,
+        )
+
+    def test_unsat(image):
+        return call("unsat", image, [args.unsat_file], unsat_path, UNSATISFIABLE)
+
     def test_proof(image):
-        if not "argsproof" in image.registry:
+        if "argsproof" not in image.registry:
+            if args.terse:
+                report("skip", image, "unsat-proof", "unsupported")
             return True
-        image_args = [args.file, "proof.tmp"]
-        return call("proof", image, image_args)
+        proof_path = tests_dir / "proof.tmp"
+        proof_path.unlink(missing_ok=True)
+        try:
+            if not call(
+                "unsat-proof-run",
+                image,
+                [args.unsat_file, proof_path.name],
+                unsat_path,
+                UNSATISFIABLE,
+            ):
+                return False
+            if not args.terse:
+                print("proof-check", end="...", flush=True)
+            validate_drup_proof(unsat_path, proof_path)
+            if args.terse:
+                report("ok", image, "unsat-proof")
+            else:
+                print(green("ok"))
+            return True
+        except (OSError, ValidationError, ValueError) as exc:
+            if args.terse:
+                report("fail", image, "unsat-proof", str(exc))
+            else:
+                print(red("fail"), f"({exc})")
+            return False
+        finally:
+            proof_path.unlink(missing_ok=True)
+
     def test_modes(image):
         ok = True
         for mode in [k for k in image.registry if k.startswith("args")]:
             mode = mode[4:]
             if not mode or mode == "proof":
                 continue
-            image_args = ["--mode", mode[4:], "aim-200-1_6-yes1-1.cnf.gz", "proof.tmp"]
-            ok = call(mode, image, image_args) and ok
+            image_args = ["--mode", mode, f"{args.file}.gz"]
+            ok = call(
+                f"mode-{mode}", image, image_args, sat_gz_path, SATISFIABLE
+            ) and ok
         return ok
 
-    tests = [test_cnf, test_gz, test_proof, test_modes]
+    tests = [test_cnf, test_gz, test_unsat, test_proof, test_modes]
 
     failures = []
 
@@ -632,14 +1194,21 @@ def test_images(args):
     docker_argv = check_docker()
     for name in repo.images:
         prepare_image(args, docker_argv, f"{DOCKER_NS}/{name}")
+    base_timeout = args.timeout
     for name in repo.images:
         image = ImageManager(name, repo)
-        info(f"Testing {image.name}")
+        if not args.terse:
+            info(f"Testing {image.name}")
+        # A solver whose preprocessing is slow even on tiny inputs can ask
+        # for a longer timeout in its registry entry.
+        args.timeout = max(base_timeout, int(image.registry.get("test_timeout", 0)))
         fails = [test.__name__[5:] for test in tests if not test(image)]
         if fails:
             failures.append((image, fails))
 
-    if not failures:
+    if args.terse:
+        pass
+    elif not failures:
         print(green("Bravo :-)"))
     else:
         print(red("Failed tests:"))
@@ -690,41 +1259,6 @@ def dependencies(args):
             prepare_image(args, docker_argv, image)
 
 def download_src(args):
-    def brace_expand(s):
-        """
-        Bash-like brace+comma expansion
-        Source: https://rosettacode.org/wiki/Brace_expansion
-        """
-        def getitem(s, depth=0):
-            out = [""]
-            while s:
-                c = s[0]
-                if depth and (c == ',' or c == '}'):
-                    return out,s
-                if c == '{':
-                    x = getgroup(s[1:], depth+1)
-                    if x:
-                        out,s = [a+b for a in out for b in x[0]], x[1]
-                        continue
-                if c == '\\' and len(s) > 1:
-                    s, c = s[1:], c + s[1]
-                out, s = [a+c for a in out], s[1:]
-            return out,s
-
-        def getgroup(s, depth):
-            out, comma = [], False
-            while s:
-                g,s = getitem(s, depth)
-                if not s: break
-                out += g
-                if s[0] == '}':
-                    if comma: return out, s[1:]
-                    return ['{' + a + '}' for a in out], s[1:]
-                if s[0] == ',':
-                    comma,s = True, s[1:]
-            return None
-        return getitem(s)[0]
-
     os.makedirs(args.output_dir, exist_ok=True)
     repo = Repository(args)
     for name in repo.images:
@@ -736,14 +1270,13 @@ def download_src(args):
             if args.subdir_entry:
                 os.makedirs(os.path.join(args.output_dir, str(image.entry)), exist_ok=True)
             try:
-                with urlopen(src_url) as fp:
-                    if "Content-Disposition" in fp.headers:
-                        _, params = cgi.parse_header(fp.headers["Content-Disposition"])
-                        filename = params['filename']
-                    else:
-                        filename = os.path.basename(src_url)
-                        if "?" in filename:
-                            filename = filename.split("?")[0]
+                with urlopen(src_url, timeout=NETWORK_TIMEOUT) as fp:
+                    filename = fp.headers.get_filename()
+                    if not filename:
+                        filename = unquote(os.path.basename(urlparse(src_url).path))
+                    filename = os.path.basename(filename)
+                    if not filename or filename in {".", ".."}:
+                        raise ValueError("download URL does not provide a safe filename")
 
                     if args.subdir_entry:
                         filename = os.path.join(str(image.entry), filename)
@@ -752,7 +1285,7 @@ def download_src(args):
                         error(f"{image.name}: {filename} already exists. Use --overwrite option to overwrite it")
                     print(f"{image.name}: downloading to {filename}...", end="", flush=True)
                     with open(filename, "wb") as dest:
-                        dest.write(fp.read())
+                        shutil.copyfileobj(fp, dest, length=1024 * 1024)
                     print(green("ok"))
                     if "zenodo.org" in src_url:
                         time.sleep(0.5)
@@ -893,15 +1426,23 @@ def main(redirected=False):
                 parents=[spec_parser, status_parser, tracks_parser])
         p.add_argument("--no-cache", action="store_true",
                 help="docker build option")
+        p.add_argument("--terse", action="store_true",
+                help="Print one concise status line for each build stage")
+        p.add_argument("--status-file",
+                help="Write build stage events as JSON Lines")
         p.set_defaults(func=build_images)
 
         p = subparsers.add_parser("test",
                 help=f"Test {DOCKER_NS} Docker images",
                 parents=[spec_parser, status_parser, run_parser, tracks_parser, docker_parser])
         p.add_argument("--quiet", "-q", action="store_true")
+        p.add_argument("--terse", action="store_true",
+                help="Print one concise status line for each validation stage")
         p.add_argument("--file", "-f", default="aim-200-1_6-yes1-1.cnf",
                 help=".cnf test file (should also exists with .gz)")
-        p.set_defaults(func=test_images)
+        p.add_argument("--unsat-file", default="php-5-4.cnf",
+                help="UNSAT .cnf test file (default: php-5-4.cnf)")
+        p.set_defaults(func=test_images, timeout=10, fail_if_timeout=True)
 
         p = subparsers.add_parser("push",
                 help=f"Push {DOCKER_NS} Docker images",

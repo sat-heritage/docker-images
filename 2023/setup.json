@@ -1,0 +1,297 @@
+{
+    "base_version": "v1",
+    "base_from": "debian:bookworm-20230703-slim@sha256:9bd077d2f77c754f4f7f5ee9e6ded9ff1dff92c6dce877754da21b917c122c77",
+    "builder": "generic/starexec-v2",
+    "builder_base": "debian:bookworm-20230703-slim@sha256:9bd077d2f77c754f4f7f5ee9e6ded9ff1dff92c6dce877754da21b917c122c77",
+    "APT_SNAPSHOT": "20230703T000000Z",
+    "APT_CODENAME": "bookworm",
+    "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2023-competition/{SOLVER_NAME}.tar.xz",
+    "amsat": {
+        "BUILD_KIND": "command",
+        "BUILD_COMMAND": "cd sources && rm -f */*.o */*.or */*.od simp/glucose_static && make -C simp r",
+        "BINARY_PATH": "sources/simp/glucose_release",
+        "BINARY_NAME": "amsat"
+    },
+    "breakid-kissat": {
+        "BUILD_DEPENDS": "libboost-dev libgmp-dev",
+        "BUILD_KIND": "command",
+        "BUILD_COMMAND": "make -C breakid/src && cd kissat3-pb2 && rm -rf build && sh ./configure && make && cd .. && install -m 0755 breakid/src/BreakID bin/BreakID && install -m 0755 kissat3-pb2/build/kissat bin/kissat",
+        "DIST_PATHS": "bin"
+    },
+    "cadical-esa": {
+        "BUILD_KIND": "command",
+        "BUILD_COMMAND": "rm -rf build && sh ./configure --competition && make",
+        "BINARY_PATH": "build/cadical",
+        "BINARY_NAME": "cadical"
+    },
+    "cadical-rel-1.5.3-scavel": {
+        "BUILD_KIND": "command",
+        "BUILD_COMMAND": "rm -rf build && sh ./configure --competition && make",
+        "BINARY_PATH": "build/cadical",
+        "BINARY_NAME": "cadical"
+    },
+    "cadical-rel-scavel": {
+        "BUILD_KIND": "command",
+        "BUILD_COMMAND": "rm -rf build && sh ./configure --competition && make",
+        "BINARY_PATH": "build/cadical",
+        "BINARY_NAME": "cadical"
+    },
+    "cadical-vivinst": {
+        "BUILD_KIND": "command",
+        "BUILD_COMMAND": "rm -rf build/cadical && cd build && bash ./build.sh",
+        "BINARY_PATH": "build/cadical/build/cadical",
+        "BINARY_NAME": "cadical"
+    },
+    "hkis-psids": {
+        "BUILD_KIND": "command",
+        "BUILD_COMMAND": "rm -rf build && sh ./configure && make",
+        "BINARY_PATH": "build/kissat",
+        "BINARY_NAME": "kissat"
+    },
+    "hkis-sat-psids": {
+        "BUILD_KIND": "command",
+        "BUILD_COMMAND": "rm -rf build && sh ./configure && make",
+        "BINARY_PATH": "build/kissat",
+        "BINARY_NAME": "kissat"
+    },
+    "hkis-unsat": {
+        "BUILD_KIND": "command",
+        "BUILD_COMMAND": "rm -rf build && sh ./configure && make",
+        "BINARY_PATH": "build/kissat",
+        "BINARY_NAME": "kissat"
+    },
+    "hkissatinc-unsat": {
+        "BUILD_KIND": "command",
+        "BUILD_COMMAND": "rm -rf build && sh ./configure && make",
+        "BINARY_PATH": "build/kissat",
+        "BINARY_NAME": "kissat"
+    },
+    "isasat": {
+        "BUILD_DEPENDS": "clang llvm-14-dev",
+        "BUILD_KIND": "command",
+        "BUILD_COMMAND": "rm -rf build/isasat && cd build && tar xf ../archives/isasat* && mv isasat* isasat && sed -i 's/-Omtune=native -Omarch=native/-mtune=generic -march=x86-64/' isasat/src/Makefile && make -C isasat/src competition",
+        "BINARY_PATH": "build/isasat/src/isasat",
+        "BINARY_NAME": "isasat"
+    },
+    "kissat-3.1.0": {
+        "BUILD_KIND": "command",
+        "BUILD_COMMAND": "rm -rf build/kissat && cd build && bash ./build.sh",
+        "BINARY_PATH": "build/kissat/build/kissat",
+        "BINARY_NAME": "kissat"
+    },
+    "kissat-hywalk-exp": {
+        "BUILD_KIND": "command",
+        "BUILD_COMMAND": "rm -rf build/kissat && cd build && bash ./build.sh",
+        "BINARY_PATH": "build/kissat/build/kissat",
+        "BINARY_NAME": "kissat"
+    },
+    "kissat-hywalk-exp-gb": {
+        "BUILD_KIND": "command",
+        "BUILD_COMMAND": "rm -rf build/kissat && cd build && bash ./build.sh",
+        "BINARY_PATH": "build/kissat/build/kissat",
+        "BINARY_NAME": "kissat"
+    },
+    "kissat-hywalk-gb": {
+        "BUILD_KIND": "command",
+        "BUILD_COMMAND": "rm -rf build/kissat && cd build && bash ./build.sh",
+        "BINARY_PATH": "build/kissat/build/kissat",
+        "BINARY_NAME": "kissat"
+    },
+    "kissat-inc-esa": {
+        "BUILD_KIND": "command",
+        "BUILD_COMMAND": "rm -rf build && sh ./configure && make",
+        "BINARY_PATH": "build/kissat",
+        "BINARY_NAME": "kissat"
+    },
+    "kissat-incsp": {
+        "BUILD_KIND": "command",
+        "BUILD_COMMAND": "rm -rf build && sh ./configure && make",
+        "BINARY_PATH": "build/kissat",
+        "BINARY_NAME": "kissat"
+    },
+    "kissat-mab-binary": {
+        "BUILD_KIND": "command",
+        "BUILD_COMMAND": "rm -rf build && sh ./configure && make",
+        "BINARY_PATH": "build/kissat",
+        "BINARY_NAME": "kissat"
+    },
+    "kissat-mab-conflict": {
+        "BUILD_KIND": "command",
+        "BUILD_COMMAND": "rm -rf build && sh ./configure && make",
+        "BINARY_PATH": "build/kissat",
+        "BINARY_NAME": "kissat"
+    },
+    "kissat-mab-conflict-plus": {
+        "BUILD_KIND": "command",
+        "BUILD_COMMAND": "rm -rf build && sh ./configure && make",
+        "BINARY_PATH": "build/kissat",
+        "BINARY_NAME": "kissat",
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2023-competition/Kissat_MAB_Conflict%2B.tar.xz"
+    },
+    "kissat-mab-deepwalk-plus": {
+        "BUILD_KIND": "command",
+        "BUILD_COMMAND": "rm -rf build && sh ./configure && make",
+        "BINARY_PATH": "build/kissat",
+        "BINARY_NAME": "kissat",
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2023-competition/Kissat_MAB_DeepWalk%2B.tar.xz"
+    },
+    "kissat-mab-esa": {
+        "BUILD_KIND": "command",
+        "BUILD_COMMAND": "rm -rf build && sh ./configure && make",
+        "BINARY_PATH": "build/kissat",
+        "BINARY_NAME": "kissat"
+    },
+    "kissat-mab-prop": {
+        "BUILD_KIND": "command",
+        "BUILD_COMMAND": "cd sources && rm -f bliss/*.o bliss/libbliss.a && make -C bliss lib && rm -rf build && sh ./configure && make",
+        "BINARY_PATH": "sources/build/kissat",
+        "BINARY_NAME": "kissat"
+    },
+    "kissat-mab-prop-nosym": {
+        "BUILD_KIND": "command",
+        "BUILD_COMMAND": "cd sources && rm -f bliss/*.o bliss/libbliss.a && make -C bliss lib && rm -rf build && sh ./configure && make",
+        "BINARY_PATH": "sources/build/kissat",
+        "BINARY_NAME": "kissat"
+    },
+    "kissat-mab-prop-nosym-nopre": {
+        "BUILD_KIND": "command",
+        "BUILD_COMMAND": "cd sources && rm -f bliss/*.o bliss/libbliss.a && make -C bliss lib && rm -rf build && sh ./configure && make",
+        "BINARY_PATH": "sources/build/kissat",
+        "BINARY_NAME": "kissat"
+    },
+    "kissat-mab-prop-pr-nosym": {
+        "BUILD_KIND": "command",
+        "BUILD_COMMAND": "cd sources && rm -f bliss/*.o bliss/libbliss.a && make -C bliss lib && rm -rf build && sh ./configure && make",
+        "BINARY_PATH": "sources/build/kissat",
+        "BINARY_NAME": "kissat"
+    },
+    "kissat-mab-rephases": {
+        "BUILD_KIND": "command",
+        "BUILD_COMMAND": "rm -rf build && sh ./configure && make",
+        "BINARY_PATH": "build/kissat",
+        "BINARY_NAME": "kissat"
+    },
+    "maplecadical-lbd-990-275": {
+        "BUILD_DEPENDS": "libboost-dev",
+        "BUILD_KIND": "command",
+        "BUILD_COMMAND": "find . -type f \\( -name configure -o -name 'makefile*' -o -name '*.sh' -o -name VERSION \\) | xargs sed -i 's/\\r$//' && rm -rf build && sh ./configure --competition && make",
+        "BINARY_PATH": "build/cadical",
+        "BINARY_NAME": "cadical"
+    },
+    "maplecadical-lbd-990-500": {
+        "BUILD_DEPENDS": "libboost-dev",
+        "BUILD_KIND": "command",
+        "BUILD_COMMAND": "find . -type f \\( -name configure -o -name 'makefile*' -o -name '*.sh' -o -name VERSION \\) | xargs sed -i 's/\\r$//' && rm -rf build && sh ./configure --competition && make",
+        "BINARY_PATH": "build/cadical",
+        "BINARY_NAME": "cadical"
+    },
+    "maplecadical-ppd-500-500": {
+        "BUILD_DEPENDS": "libboost-dev",
+        "BUILD_KIND": "command",
+        "BUILD_COMMAND": "find . -type f \\( -name configure -o -name 'makefile*' -o -name '*.sh' -o -name VERSION \\) | xargs sed -i 's/\\r$//' && rm -rf build && sh ./configure --competition && make",
+        "BINARY_PATH": "build/cadical",
+        "BINARY_NAME": "cadical"
+    },
+    "maplecadical-ppd-950-950": {
+        "BUILD_DEPENDS": "libboost-dev",
+        "BUILD_KIND": "command",
+        "BUILD_COMMAND": "find . -type f \\( -name configure -o -name 'makefile*' -o -name '*.sh' -o -name VERSION \\) | xargs sed -i 's/\\r$//' && rm -rf build && sh ./configure --competition && make",
+        "BINARY_PATH": "build/cadical",
+        "BINARY_NAME": "cadical"
+    },
+    "mergesat": {
+        "BUILD_KIND": "command",
+        "BUILD_COMMAND": "cd mergesat && make AR=gcc-ar",
+        "BINARY_PATH": "mergesat/build/release/bin/mergesat",
+        "BINARY_NAME": "mergesat"
+    },
+    "mergesat-thread1": {
+        "BUILD_KIND": "command",
+        "BUILD_COMMAND": "cd mergesat && make AR=gcc-ar",
+        "BINARY_PATH": "mergesat/build/release/bin/mergesat",
+        "BINARY_NAME": "mergesat"
+    },
+    "mergesat-bve-gates": {
+        "BUILD_KIND": "command",
+        "BUILD_COMMAND": "cd mergesat && make AR=gcc-ar",
+        "BINARY_PATH": "mergesat/build/release/bin/mergesat",
+        "BINARY_NAME": "mergesat"
+    },
+    "mergesat-bve-semgates": {
+        "BUILD_KIND": "command",
+        "BUILD_COMMAND": "cd mergesat && make AR=gcc-ar",
+        "BINARY_PATH": "mergesat/build/release/bin/mergesat",
+        "BINARY_NAME": "mergesat"
+    },
+    "minisat-xorengine": {
+        "BUILD_KIND": "command",
+        "BUILD_COMMAND": "cd build && bash ./build.sh",
+        "BINARY_PATH": "build/minisat_xorengine/bin/minisat_pbp",
+        "BINARY_NAME": "minisat_pbp",
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2023-competition/MiniSat%2BXorEngine.tar.xz"
+    },
+    "prelearn-kissat": {
+        "BUILD_KIND": "command",
+        "BUILD_COMMAND": "rm -f sadical/*.o sadical/*.a sadical/sadical && rm -rf kissat/build && bash ./build.sh",
+        "DIST_PATHS": "bin kissat/build/kissat sadical/sadical"
+    },
+    "prelearn-kissat-tern": {
+        "BUILD_KIND": "command",
+        "BUILD_COMMAND": "rm -f sadical/*.o sadical/*.a sadical/sadical && rm -rf kissat/build && bash ./build.sh",
+        "DIST_PATHS": "bin kissat/build/kissat sadical/sadical"
+    },
+    "reencode-kissat": {
+        "RDEPENDS": "python3",
+        "BUILD_KIND": "command",
+        "BUILD_COMMAND": "rm -f pooled knf2cnf knf2cnf+ pairwise cleanup-small derivation konly cnf2knf/cnf2knf && rm -rf kissat/build && bash ./build.sh",
+        "DIST_PATHS": "bin kissat/build/kissat knf2cnf derivation cnf2knf/cnf2knf card_extractor.py process-assignment.py exutil.py bdd.py permute.py resolver.py kanalyze.py"
+    },
+    "reencode-kissat-pair": {
+        "RDEPENDS": "python3",
+        "BUILD_KIND": "command",
+        "BUILD_COMMAND": "rm -f pooled knf2cnf knf2cnf+ pairwise cleanup-small derivation konly cnf2knf/cnf2knf && rm -rf kissat/build && bash ./build.sh",
+        "DIST_PATHS": "bin kissat/build/kissat knf2cnf derivation cnf2knf/cnf2knf card_extractor.py process-assignment.py exutil.py bdd.py permute.py resolver.py kanalyze.py"
+    },
+    "sbva-cadical": {
+        "RDEPENDS": "python3",
+        "BUILD_KIND": "command",
+        "BUILD_COMMAND": "cd archives && tar xzf eigen-3.4.0.tar.gz && tar xzf kissat-3.0.0.tar.gz && tar xzf cadical-1.5.3.tar.gz && cd ../src && rm -f bva && make && cd ../archives/kissat-rel-3.0.0 && sh ./configure && make && cd ../cadical-rel-1.5.3 && sh ./configure --competition && make && cd ../.. && install -m 0755 src/bva bin/bva && install -m 0755 archives/kissat-rel-3.0.0/build/kissat bin/kissat && install -m 0755 archives/cadical-rel-1.5.3/build/cadical bin/cadical",
+        "DIST_PATHS": "bin"
+    },
+    "sbva-kissat": {
+        "RDEPENDS": "python3",
+        "BUILD_KIND": "command",
+        "BUILD_COMMAND": "cd archives && tar xzf eigen-3.4.0.tar.gz && tar xzf kissat-3.0.0.tar.gz && tar xzf cadical-1.5.3.tar.gz && cd ../src && rm -f bva && make && cd ../archives/kissat-rel-3.0.0 && sh ./configure && make && cd ../cadical-rel-1.5.3 && sh ./configure --competition && make && cd ../.. && install -m 0755 src/bva bin/bva && install -m 0755 archives/kissat-rel-3.0.0/build/kissat bin/kissat && install -m 0755 archives/cadical-rel-1.5.3/build/cadical bin/cadical",
+        "DIST_PATHS": "bin"
+    },
+    "seqfrost": {
+        "BUILD_KIND": "script",
+        "BUILD_SUBDIR": "seqfrost",
+        "BUILD_SCRIPT": "install.sh",
+        "BUILD_ARGS": "--quiet",
+        "BINARY_PATH": "seqfrost/build/seqfrost",
+        "BINARY_NAME": "seqfrost"
+    },
+    "seqfrost-ere-all": {
+        "BUILD_KIND": "script",
+        "BUILD_SUBDIR": "seqfrost",
+        "BUILD_SCRIPT": "install.sh",
+        "BUILD_ARGS": "--quiet",
+        "BINARY_PATH": "seqfrost/build/seqfrost",
+        "BINARY_NAME": "seqfrost"
+    },
+    "seqfrost-noextend": {
+        "BUILD_KIND": "script",
+        "BUILD_SUBDIR": "seqfrost",
+        "BUILD_SCRIPT": "install.sh",
+        "BUILD_ARGS": "--quiet",
+        "BINARY_PATH": "seqfrost/build/seqfrost",
+        "BINARY_NAME": "seqfrost"
+    },
+    "tabularasat": {
+        "BUILD_KIND": "command",
+        "BUILD_COMMAND": "rm -rf build/tabularasat && cd build && bash ./build.sh",
+        "BINARY_PATH": "build/tabularasat/bin/tabularasat",
+        "BINARY_NAME": "tabularasat"
+    }
+}

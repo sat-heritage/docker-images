@@ -226,7 +226,8 @@
     ]
   },
   "march-dl": {
-    "status": "FIXME segfault",
+    "status": "fixme",
+    "status_detail": "FIXME segfault",
     "name": "march-dl",
     "call": "./march-dl",
     "gz": false,
@@ -343,7 +344,8 @@
     ]
   },
   "satelitegti": {
-    "status": "FIXME ./solver35: not found",
+    "status": "fixme",
+    "status_detail": "FIXME ./solver35: not found",
     "name": "sateliteGTI",
     "call": "./SatELiteGTI",
     "gz": false,

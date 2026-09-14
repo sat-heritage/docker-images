@@ -1,4 +1,9 @@
 prune *
 exclude *
 include satex.py
+include satex_validation.py
 include setup.py
+include requirements-dev.txt
+recursive-include schemas *.json
+recursive-include tools *.py
+recursive-include tests *.cnf *.gz *.py

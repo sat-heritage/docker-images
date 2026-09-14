@@ -1,7 +1,7 @@
 {
     "bfs-glucose": {
 	      "tracks" : ["application", "crafted"],
-        "status":"ok",
+        "status": "ok",
         "args": [
             "FILECNF"
         ],
@@ -13,7 +13,7 @@
     },
     "bfs-glucose_mem_16_70": {
 	      "tracks" : ["application", "crafted"],
-        "status":"ok",
+        "status": "ok",
         "args": [
             "FILECNF"
         ],
@@ -25,7 +25,7 @@
     },
     "bfs-glucose_mem_32_70": {
 	      "tracks" : ["application", "crafted"],
-        "status":"ok",
+        "status": "ok",
         "args": [
             "FILECNF"
         ],
@@ -37,7 +37,7 @@
     },
     "bfs-glucose_mem_8_85": {
 	      "tracks" : ["application", "crafted"],
-        "status":"ok",
+        "status": "ok",
         "args": [
             "FILECNF"
         ],
@@ -49,7 +49,7 @@
     },
     "ccanr_glucose": {
 	      "tracks" : ["application", "crafted"],
-        "status":"ok",
+        "status": "ok",
         "args": [
             "FILECNF",
             "RANDOMSEED",
@@ -63,7 +63,8 @@
     },
     "cryptominisat-4.1-st": {
 	      "tracks" : ["application", "crafted"],
-        "status":"FIXME problem when building",
+        "status": "fixme",
+        "status_detail": "FIXME problem when building",
         "args": [
             "FILECNF"
         ],
@@ -79,7 +80,8 @@
     },
     "cryptominisat-v41-tuned-st": {
 	      "tracks" : ["application", "crafted"],
-        "status":"FIXME problem when building",
+        "status": "fixme",
+        "status_detail": "FIXME problem when building",
         "args": [
             "FILECNF"
         ],
@@ -95,7 +97,7 @@
     },
     "glucose": {
 	      "tracks" : ["application", "crafted"],
-        "status":"ok",
+        "status": "ok",
         "args": [
             "FILECNF"
         ],
@@ -107,7 +109,7 @@
     },
     "glue_lgl_split": {
 	      "tracks" : ["application", "crafted"],
-        "status":"ok",
+        "status": "ok",
         "args": [
             "FILECNF"
         ],
@@ -119,7 +121,7 @@
     },
     "glueminisat": {
 	      "tracks" : ["application", "crafted"],
-        "status":"ok",
+        "status": "ok",
         "args": [
             "FILECNF"
         ],
@@ -150,7 +152,7 @@
     },
     "lingeling_druplig": {
 	      "tracks" : ["application", "crafted"],
-        "status":"ok",
+        "status": "ok",
         "args": [
             "-v",
             "--druplig",
@@ -164,7 +166,7 @@
     },
     "lingeling_no_agile": {
 	      "tracks" : ["application", "crafted"],
-        "status":"ok",
+        "status": "ok",
         "args": [
             "-v",
             "--no-agile",
@@ -178,7 +180,7 @@
     },
     "minisat_blbd": {
 	      "tracks" : ["application", "crafted"],
-        "status":"ok",
+        "status": "ok",
         "args": [
             "FILECNF"
         ],
@@ -194,7 +196,7 @@
     },
     "minisat_hack_1430ed": {
 	      "tracks" : ["application", "crafted"],
-        "status":"ok",
+        "status": "ok",
         "args": [
             "FILECNF"
         ],
@@ -210,7 +212,7 @@
     },
     "minisat_hack_999ed": {
 	      "tracks" : ["application", "crafted"],
-        "status":"ok",
+        "status": "ok",
         "args": [
             "FILECNF"
         ],
@@ -226,7 +228,7 @@
     },
     "nigma": {
 	      "tracks" : ["application", "crafted"],
-        "status":"ok",
+        "status": "ok",
         "args": [
             "FILECNF",
             "--display-assignments-if-sat",
@@ -254,7 +256,7 @@
     },
     "ntusat": {
 	      "tracks" : ["application", "crafted"],
-        "status":"ok",
+        "status": "ok",
         "args": [
             "FILECNF"
         ],
@@ -266,7 +268,7 @@
     },
     "ntusatbreak": {
 	      "tracks" : ["application", "crafted"],
-        "status":"ok",
+        "status": "ok",
         "args": [
             "FILECNF",
             "/tmp"
@@ -279,7 +281,7 @@
     },
     "riss": {
 	      "tracks" : ["application", "crafted"],
-        "status":"ok",
+        "status": "ok",
         "args": [
             "FILECNF",
             "/tmp"
@@ -297,7 +299,7 @@
     },
     "riss_1": {
 	      "tracks" : ["application", "crafted"],
-        "status":"ok",
+        "status": "ok",
         "args": [
             "FILECNF",
             "/tmp"
@@ -315,7 +317,7 @@
     },
     "riss_2": {
 	      "tracks" : ["application", "crafted"],
-        "status":"ok",
+        "status": "ok",
         "args": [
             "FILECNF",
             "/tmp"
@@ -328,7 +330,7 @@
     },
     "rokk": {
 	      "tracks" : ["application", "crafted"],
-        "status":"ok",
+        "status": "ok",
         "args": [
             "FILECNF",
             "/tmp"
@@ -341,7 +343,7 @@
     },
     "rokk_sat": {
 	      "tracks" : ["application", "crafted"],
-        "status":"ok",
+        "status": "ok",
         "args": [
             "FILECNF"
         ],
@@ -353,7 +355,7 @@
     },
     "rseq2014": {
 	      "tracks" : ["application", "crafted"],
-        "status":"ok",
+        "status": "ok",
         "args": [
             "FILECNF",
             "-s",
@@ -368,7 +370,7 @@
     },
     "sattime2014r": {
 	      "tracks" : ["application", "crafted", "random"],
-        "status":"ok",
+        "status": "ok",
         "args": [
             "FILECNF",
             "-seed",
@@ -382,7 +384,8 @@
     },
     "satuzk": {
 	      "tracks" : ["application", "crafted"],
-        "status":"FIXME problem when building",
+        "status": "fixme",
+        "status_detail": "FIXME problem when building",
         "args": [
             "/tmp",
             "satUZK-seq",
@@ -400,7 +403,7 @@
     },
     "sgseq": {
 	      "tracks" : ["application", "crafted", "random"],
-        "status":"ok",
+        "status": "ok",
         "args": [
             "FILECNF",
             "-s",
@@ -414,7 +417,7 @@
     },
     "sparrowtoriss": {
 	      "tracks" : ["application", "crafted"],
-        "status":"ok",
+        "status": "ok",
         "args": [
             "FILECNF",
             "RANDOMSEED",
@@ -435,7 +438,7 @@
     },
     "swdia5by": {
 	      "tracks" : ["application", "crafted"],
-        "status":"ok",
+        "status": "ok",
         "args": [
             "FILECNF"
         ],
@@ -451,7 +454,7 @@
     },
     "swdia5by_1": {
 	      "tracks" : ["application", "crafted"],
-        "status":"ok",
+        "status": "ok",
         "args": [
             "-lbd-cut=4",
             "-core-learnt-hard-limit=1000000",
@@ -470,7 +473,7 @@
     },
     "cbpenelope": {
         "tracks" : ["parallel"],
-        "status" : "ok",
+        "status": "ok",
         "args": [
             "-config=./configuration.ini",
             "FILECNF"
@@ -483,7 +486,8 @@
     },
     "cryptominisat-4.1-mt": {
         "tracks" : ["parallel"],
-        "status" : "FIXME",
+        "status": "fixme",
+        "status_detail": "FIXME",
         "args": [
             "--threads=MAXNBTHREAD",
             "FILECNF"
@@ -496,7 +500,7 @@
     },
     "syrup": {
         "tracks" : ["parallel"],
-        "status" : "ok",
+        "status": "ok",
         "args": [
             "FILECNF"
         ],
@@ -508,7 +512,7 @@
     },
     "paracirminisat": {
         "tracks" : ["parallel"],
-        "status" : "ok",
+        "status": "ok",
         "args": [
             "-thread-num=MAXNBTHREAD",
             "FILECNF"
@@ -521,7 +525,7 @@
     },
     "penelope": {
         "tracks" : ["parallel"],
-        "status" : "ok",
+        "status": "ok",
         "args": [
             "FILECNF"
         ],
@@ -533,7 +537,7 @@
     },
     "plingeling": {
         "tracks" : ["parallel"],
-        "status" : "ok",
+        "status": "ok",
         "args": [
             "-v",
             "FILECNF"
@@ -546,7 +550,7 @@
     },
     "pmcsat": {
         "tracks" : ["parallel"],
-        "status" : "ok",
+        "status": "ok",
         "args": [
             "FILECNF"
         ],
@@ -558,7 +562,8 @@
     },
     "satuzkp": {
         "tracks" : ["parallel"],
-        "status" : "FIXME",
+        "status": "fixme",
+        "status_detail": "FIXME",
         "args": [
             "/tmp",
             "satUZK-par",
@@ -572,7 +577,8 @@
     },
     "satuzkpl": {
         "tracks" : ["parallel"],
-        "status" : "FIXME",
+        "status": "fixme",
+        "status_detail": "FIXME",
         "args": [
             "/tmp",
             "satUZK-par",
@@ -586,7 +592,7 @@
     },
     "treengeling": {
         "tracks" : ["parallel"],
-        "status" : "ok",
+        "status": "ok",
         "args": [
             "FILECNF"
         ],
@@ -597,7 +603,7 @@
         "name": "Treengeling"
     },
     "gluesplit_clasp": {
-        "status" : "ok",
+        "status": "ok",
         "tracks" : ["crafted"],
         "args": [
             "FILECNF"
@@ -609,7 +615,7 @@
         "name": "glueSplit_clasp"
     },
     "balancedz": {
-        "status" : "ok",
+        "status": "ok",
         "tracks" : ["random", "crafted-sat"],
         "args": [
             "FILECNF",
@@ -623,7 +629,7 @@
         "name": "BalancedZ"
     },
     "cca2014": {
-        "status" : "ok",
+        "status": "ok",
         "tracks" : ["random", "crafted-sat"],
         "args": [
             "FILECNF",
@@ -636,7 +642,7 @@
         "name": "CCA2014"
     },
     "ccgscore": {
-        "status" : "ok",
+        "status": "ok",
         "tracks" : ["random"],
         "args": [
             "FILECNF"
@@ -648,7 +654,7 @@
         "name": "CCgscore"
     },
     "csccsat2014": {
-        "status" : "ok",
+        "status": "ok",
         "tracks" : ["random"],
         "args": [
             "FILECNF",
@@ -661,7 +667,7 @@
         "name": "CSCCSat2014"
     },
     "dimetheus": {
-        "status" : "ok",
+        "status": "ok",
         "tracks" : ["random"],
         "args": [
             "-formula",
@@ -678,7 +684,7 @@
         "name": "dimetheus"
     },
     "ncca": {
-        "status" : "ok",
+        "status": "ok",
         "tracks" : ["random"],
         "args": [
             "FILECNF",
@@ -692,7 +698,7 @@
         "name": "Ncca+"
     },
     "probsat": {
-        "status" : "ok",
+        "status": "ok",
         "tracks" : ["random", "crafted-sat"],
         "args": [
             "-a",
@@ -706,7 +712,7 @@
         "name": "probSAT"
     },
     "yalsat": {
-        "status" : "ok",
+        "status": "ok",
         "tracks" : ["random", "crafted-sat"],
         "args": [
             "-v",
@@ -720,7 +726,8 @@
         "name": "YalSAT"
     },
     "pprobsat": {
-        "status" : "FIXME https://github.com/sat-heritage/docker-images/issues/29",
+        "status": "fixme",
+        "status_detail": "FIXME https://github.com/sat-heritage/docker-images/issues/29",
         "tracks" : ["parallel-random"],
         "args": [
             ".//pprobSAT.py",

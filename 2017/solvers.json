@@ -33,7 +33,8 @@
     },
     "candyrsili": {
         "tracks": ["main"],
-	      "status": "FIXME problem when building",
+	      "status": "fixme",
+	      "status_detail": "FIXME problem when building",
         "name": "CandyRSILi",
         "call": "./candy",
         "gz": true,
@@ -47,7 +48,8 @@
     },
     "candyrsilv": {
         "tracks": ["main"],
-	      "status": "FIXME problem when building",
+	      "status": "fixme",
+	      "status_detail": "FIXME problem when building",
         "name": "CandyRSILv",
         "call": "./candy",
         "gz": true,
@@ -222,7 +224,8 @@
     },
     "bs_glucose": {
         "tracks": ["main"],
-	      "status": "FIXME problem when runnning",
+	      "status": "fixme",
+	      "status_detail": "FIXME problem when runnning",
         "name": "bs_glucose",
         "call": "./bs_glucose1",
         "gz": true,
@@ -332,7 +335,8 @@
     },
     "satuzk-seq": {
         "tracks": ["main"],
-	      "status": "FIXME: only binary",
+	      "status": "fixme",
+	      "status_detail": "FIXME: only binary",
         "name": "satUZK-seq",
         "call": "./satuzk-seq",
         "gz": true,
@@ -394,7 +398,8 @@
     },
     "score2sat" : {
         "tracks": ["random"],
-	      "status": "FIXME build",
+	      "status": "fixme",
+	      "status_detail": "FIXME build",
         "name": "Score2SAT",
         "call": "./score2sat",
         "gz": true,
@@ -414,7 +419,8 @@
     },
     "abcdsat_parallel" : {
         "tracks": ["parallel"],
-	      "status": "FIXME - segmentation fault https://github.com/sat-heritage/docker-images/issues/32",
+	      "status": "fixme",
+	      "status_detail": "FIXME - segmentation fault https://github.com/sat-heritage/docker-images/issues/32",
         "name": "abcdsat_parallel",
         "call": "./abcdsat_p",
         "gz": true,
@@ -444,7 +450,8 @@
     },
     "ddc-submit" : {
         "tracks": ["parallel"],
-	      "status": "FIXME build",
+	      "status": "fixme",
+	      "status_detail": "FIXME build",
         "name": "ddc-submit",
         "call": "./yalsat",
         "gz": true,
@@ -474,7 +481,8 @@
     },
     "scalope" : {
         "tracks": ["parallel"],
-	      "status": "FIXME",
+	      "status": "fixme",
+	      "status_detail": "FIXME",
         "name": "scalope",
         "call": "./scalope",
         "gz": true,

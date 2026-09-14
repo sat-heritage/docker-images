@@ -179,7 +179,8 @@
     ]
   },
   "qingting": {
-    "status": "FIXME problem when running",
+    "status": "fixme",
+    "status_detail": "FIXME problem when running",
     "name": "QingTing",
     "call": "./QingTing",
     "gz": false,

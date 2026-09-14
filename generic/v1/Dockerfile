@@ -32,6 +32,29 @@ ARG PLATFORM
 #
 FROM debian:stretch-slim as unpack
 
+# Debian releases used by historical solvers have moved to archive.debian.org.
+RUN set -eu; \
+    for list in /etc/apt/sources.list /etc/apt/sources.list.d/*.list; do \
+        if [ -f "$list" ]; then \
+            sed \
+                -e 's|https\?://deb.debian.org/debian-security|http://archive.debian.org/debian-security|g' \
+                -e 's|https\?://security.debian.org/debian-security|http://archive.debian.org/debian-security|g' \
+                -e 's|https\?://security.debian.org|http://archive.debian.org/debian-security|g' \
+                -e 's|https\?://deb.debian.org/debian|http://archive.debian.org/debian|g' \
+                -e 's|https\?://ftp.debian.org/debian|http://archive.debian.org/debian|g' \
+                -e 's|https\?://httpredir.debian.org/debian|http://archive.debian.org/debian|g' \
+                -e '/-updates[[:space:]]/d' \
+                "$list" > "$list.archive"; \
+            mv "$list.archive" "$list"; \
+        fi; \
+    done; \
+    mkdir -p /etc/apt/apt.conf.d; \
+    printf '%s\n' 'Acquire::Check-Valid-Until "false";' > /etc/apt/apt.conf.d/99archive; \
+    if ! grep -Eq '^VERSION_ID="?([9]|[1-9][0-9])"?$' /etc/os-release 2>/dev/null; then \
+        printf '%s\n' 'Acquire::AllowInsecureRepositories "true";' \
+            'APT::Get::AllowUnauthenticated "true";' > /etc/apt/apt.conf.d/99archive-legacy; \
+    fi
+
 RUN apt-get update --fix-missing && \
     apt-get install -y --no-install-recommends \
         ca-certificates\
@@ -65,8 +88,44 @@ RUN ASSET="$(ls /assets/*)" && set -ex && \
 # This part takes care about compiling the solver
 # and installing binaries in /dist
 #
-FROM ${BUILDER_BASE}
+FROM ${BUILDER_BASE} AS buildenv
 ENV LANG=C.UTF-8 LC_ALL=C.UTF-8
+
+# A dated snapshot keeps recent competition toolchains historically accurate.
+# Without APT_SNAPSHOT, retain the archive fallback used by older entries.
+ARG APT_SNAPSHOT
+ARG APT_CODENAME
+RUN set -eu; \
+    mkdir -p /etc/apt/apt.conf.d; \
+    if [ -n "${APT_SNAPSHOT:-}" ]; then \
+        : "${APT_CODENAME:?APT_CODENAME is required with APT_SNAPSHOT}"; \
+        rm -f /etc/apt/sources.list.d/*.list /etc/apt/sources.list.d/*.sources; \
+        printf '%s\n' \
+            "deb http://snapshot.debian.org/archive/debian/${APT_SNAPSHOT} ${APT_CODENAME} main" \
+            "deb http://snapshot.debian.org/archive/debian-security/${APT_SNAPSHOT} ${APT_CODENAME}-security main" \
+            > /etc/apt/sources.list; \
+        printf '%s\n' 'Acquire::Check-Valid-Until "false";' 'Acquire::Retries "5";' > /etc/apt/apt.conf.d/99snapshot; \
+    else \
+        for list in /etc/apt/sources.list /etc/apt/sources.list.d/*.list; do \
+            if [ -f "$list" ]; then \
+                sed \
+                    -e 's|https\?://deb.debian.org/debian-security|http://archive.debian.org/debian-security|g' \
+                    -e 's|https\?://security.debian.org/debian-security|http://archive.debian.org/debian-security|g' \
+                    -e 's|https\?://security.debian.org|http://archive.debian.org/debian-security|g' \
+                    -e 's|https\?://deb.debian.org/debian|http://archive.debian.org/debian|g' \
+                    -e 's|https\?://ftp.debian.org/debian|http://archive.debian.org/debian|g' \
+                    -e 's|https\?://httpredir.debian.org/debian|http://archive.debian.org/debian|g' \
+                    -e '/-updates[[:space:]]/d' \
+                    "$list" > "$list.archive"; \
+                mv "$list.archive" "$list"; \
+            fi; \
+        done; \
+        printf '%s\n' 'Acquire::Check-Valid-Until "false";' > /etc/apt/apt.conf.d/99archive; \
+        if ! grep -Eq '^VERSION_ID="?([9]|[1-9][0-9])"?$' /etc/os-release 2>/dev/null; then \
+            printf '%s\n' 'Acquire::AllowInsecureRepositories "true";' \
+                'APT::Get::AllowUnauthenticated "true";' > /etc/apt/apt.conf.d/99archive-legacy; \
+        fi; \
+    fi
 
 RUN apt-get update --fix-missing &&\
     apt-get -y install zip gcc g++ cmake make patch curl zlib1g-dev
@@ -74,6 +133,8 @@ RUN apt-get update --fix-missing &&\
 ARG BUILD_DEPENDS
 RUN if test "${BUILD_DEPENDS}"; then \
     apt-get install -y --no-install-recommends ${BUILD_DEPENDS} || apt-get install -y ${BUILD_DEPENDS}; fi
+
+FROM buildenv AS builder
 
 COPY --from=unpack /src /src
 
@@ -110,4 +171,3 @@ RUN set -ex && mkdir /dist && cd "./`find -maxdepth 1 -mindepth 1 -type d|sort|g
     else find -type f -maxdepth 1 -name '*.ini' -exec mv -v {} /dist/{} \;; \
         if find -perm /100 -type f -maxdepth 1 -exec mv -v {} /dist/{} \;; then : ; \
         else find -perm +100 -type f -maxdepth 1 -exec mv -v {} /dist/{} \;; fi; fi
-

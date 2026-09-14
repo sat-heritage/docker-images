@@ -19,6 +19,33 @@ that have been released so far**.
 
 Thanks to our tool, building (or running) a solver from its source (or from its binary) can be done in one line.
 
+## Build policy
+
+Since the SAT Competition 2022 entries, every image is **rebuilt from the
+competition sources**. Competition distributions usually ship a precompiled
+binary next to the sources; it is never installed in the image unless the
+`comment` field of the solver entry says so (for example when no source is
+available). The recipe installs the artefact produced by the build, so a
+failed build cannot silently fall back to the submitter's binary.
+
+The build runs the scripts submitted to StarExec whenever they exist
+(`starexec_build`, `build/build.sh`, `install.sh`, ...) unchanged, as an
+unprivileged user like StarExec does. When a script cannot run in our images
+(for example because it relies on Red Hat Software Collections), its steps are
+transcribed in `setup.json` and the deviation is documented in the solver's
+`comment`.
+
+Builds do **not** use CentOS, the operating system of StarExec: they run in a
+Debian release of the competition year, pinned by image digest and by a dated
+snapshot of the Debian package archive (`APT_SNAPSHOT`), so that the compiler
+and libraries are those available at competition time and the build is
+reproducible. Solver images run on the same Debian base.
+
+Entries of 2021 and earlier predate this policy: their recipes were written by
+hand with the `generic/v1` builder, whose heuristics may install binaries
+shipped in the archive (`binary/` or `bin/` directories), and a few sets use
+the `generic/binary-*` builders for binary-only releases.
+
 ## Usage
 
 Requirements:
@@ -31,7 +58,7 @@ docker run --rm -v $PWD:/data satex/<tool>:<year> <DIMACS> [<PROOF>]
 ## `satex` Python script
 
 Requirements:
-* [Python](https://www.python.org/) ≥3.6
+* [Python](https://www.python.org/) 3.10–3.14
 * [Docker](https://docker.com)
 
 ```
@@ -101,6 +128,25 @@ satex test '*:2018'
 satex push '*:2018'
 ```
 
+`satex test` runs a SAT instance (plain and gzip-compressed), an UNSAT
+instance, and, when supported by the image, an UNSAT proof check.  A timeout,
+an invalid return code, a contradictory status, an invalid SAT model, or an
+invalid proof makes the command fail.
+Tests run in a temporary workspace, so files created by legacy solvers do not
+pollute the repository.
+
+Validate the registry metadata and run the Python regression tests with:
+
+```
+pip install -r requirements-dev.txt
+python tools/validate_metadata.py
+python -m unittest discover -s tests -v
+```
+
+The JSON schemas are stored in `schemas/`.  Solver statuses are restricted to
+`ok`, `unknown`, `unstable`, and `fixme`; legacy details are kept in
+`status_detail`.
+
 ## Persistent storage for sources and binaries
 
 Consider using [Zenodo](https://zenodo.org) for storing your software, as it provides persistent and versioned URLs.
@@ -128,6 +174,7 @@ and values are JSON objects with the following keys:
 | args | string list | arguments to the executable for simple solving. See below for allowed keywords. |
 | argsproof | string list | arguments to the executable for solving with proof output. See below for allowed keywords |
 | gz | boolean | If true, the solver supports natively gzipped input files.  If false, an input file ending with `.gz` will be first decompressed by the wrapper script. |
+| test_timeout | Minimum timeout in seconds used by `satex test` for this solver, for submissions whose preprocessing is slow even on tiny inputs (the command-line `--timeout` still applies when larger) |
 
 
 The following keywords are allowed in `args` and `argsproof`:
@@ -136,6 +183,7 @@ The following keywords are allowed in `args` and `argsproof`:
 | --- | --- |
 | FILECNF | Replaced by the absolute path (within the Docker container) to the input DIMACS file.<br>Whenever the input file ends with `.gz` and `gz` is `False`, the input file is unzipped as `/tmp/gunzipped.cnf` |
 | FILEPROOF | Replaced by the absolute path (within the Docker container) to the output file for proof |
+| PROOFDIR | Replaced by a temporary directory; after the run, `proof.out` in that directory is moved to the `FILEPROOF` path. This is the StarExec convention for run scripts that take an output directory as second argument |
 | MAXNBTHREAD | Replaced by the `MAXNBTHREAD` environment variable; `1` by default.<br>Example: `satex run asolver:ayear my.cnf -e MAXNBTHREAD=8` |
 | MEMLIMIT | Replaced by the `MEMLIMIT` environment variable; `1024` by default. |
 | RANDOMSEED | Replaced by the `RANDOMSEED` environment variable; `1234567` by default. |
@@ -190,6 +238,20 @@ being a JSON object with a subset of the following keys.
 | download_url | Python format string for downloading the solver source/binary |
 | BUILD_DEPENDS | Additional packages to install for compiling the solver.<br>Used by `generic/v1` builder |
 | RDEPENDS | Additional packages to install for running the executable.<br>Used by `generic/dist-v1` assembler |
+| APT_SNAPSHOT | Timestamp (`YYYYMMDDThhmmssZ`) of the [snapshot.debian.org](https://snapshot.debian.org) archive used for installing packages, so that recent entries are compiled with the toolchain available at competition time. Requires `APT_CODENAME`.<br>Used by `base/v1`, `generic/v1`, `generic/dist-v1` and `generic/starexec-v2` |
+| APT_CODENAME | Debian codename (for example `bullseye`) matching `APT_SNAPSHOT` |
+| BUILD_KIND | Build method for the `generic/starexec-v2` builder: `auto` (default, detected from the archive), `starexec` (`starexec_build`), `build-subdir` (`build/build.sh`), `script` (`BUILD_SCRIPT`), `configure` (`./configure` then `make`), `make` or `command` (`BUILD_COMMAND`) |
+| BUILD_SUBDIR | Directory, relative to the root of the submission archive, where the build is run.<br>Default: `.` |
+| BUILD_SCRIPT, BUILD_ARGS, CONFIGURE_ARGS, MAKE_ARGS, BUILD_COMMAND | Parameters of the corresponding `BUILD_KIND` |
+| BUILD_ENV | Shell variable assignments exported before running the build, for example `CC="gcc -fcommon"` to compile code written for pre-GCC 10 compilers with the submitted script unchanged; the builder exports `MAKEFLAGS=-j8` by default, use `MAKEFLAGS=` here to build serially |
+| BINARY_PATH | Path, relative to the root of the submission archive, of the executable produced by the build. It is installed in `/dist`, so the precompiled binaries shipped in competition archives are never used.<br>Required by `generic/starexec-v2` |
+| BINARY_NAME | Name of the installed executable.<br>Default: basename of `BINARY_PATH` |
+| DIST_PATHS | Space-separated paths, relative to the root of the submission archive, copied into `/dist` with their relative layout, for submissions whose run script drives several programs (for example `bin kissat/build/kissat`). May replace `BINARY_PATH`.<br>Used by `generic/starexec-v2` |
+
+The `generic/starexec-v2` builder is intended for StarExec submissions of
+recent competitions (2022 onwards): one ZIP archive per solver, whose top-level
+directory is the solver name, and per-solver build parameters declared in
+`setup.json` instead of fixture scripts.
 
 Python format strings can use the following variables:
 * `SOLVER`: solver identifier (keys in `solvers.json`)
@@ -223,4 +285,3 @@ The Docker images are for academic and educational use only.
 
 The `satex` (`satex.py`) program is distributed under the MIT license. Please see the
 [LICENSE](LICENSE) file for more details.
-
