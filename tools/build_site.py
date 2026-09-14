@@ -193,6 +193,11 @@ main { max-width:1200px; margin:0 auto; padding:20px 24px 60px; }
 .toolbar input, .toolbar select { font:inherit; padding:8px 10px; border:1px solid var(--line); border-radius:8px; background:var(--card); color:var(--ink); }
 .toolbar input { flex:1 1 260px; } .count { color:var(--muted); margin-left:auto; }
 .grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 1fr)); gap:14px; }
+section.year { display:grid; grid-template-columns:64px 1fr; gap:0 10px; padding:18px 0 10px; border-top:2px solid var(--line); }
+section.year:first-child { border-top:0; padding-top:4px; }
+.year-label { position:relative; } .year-label span { position:sticky; top:16px; display:block; writing-mode:vertical-rl; transform:rotate(180deg); font-weight:700; font-size:22px; color:var(--ink); letter-spacing:.04em; line-height:1; padding:2px 0; border-left:3px solid var(--hf); }
+.year-label small { position:sticky; top:130px; display:block; color:var(--muted); font-size:12px; margin-top:8px; writing-mode:vertical-rl; transform:rotate(180deg); }
+@media (max-width:640px) { section.year { grid-template-columns:1fr; } .year-label span, .year-label small { writing-mode:horizontal-tb; transform:none; border-left:0; border-bottom:3px solid var(--hf); display:inline-block; margin-right:10px; } }
 .card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:14px 16px; display:flex; flex-direction:column; gap:6px; }
 .card h3 { margin:0; font-size:16px; } .card .meta { color:var(--muted); font-size:13px; }
 .tags { display:flex; flex-wrap:wrap; gap:6px; margin-top:4px; }
@@ -225,14 +230,16 @@ function render() {
   const fc = document.getElementById('cap');
   const rows = data.filter(d => (!fy.value || d.set === fy.value) && (!ff.value || d.family === ff.value) && (!fv.value || d.verdict === fv.value) && (!fs.value || d.status === fs.value) && (!fc.value || d.capabilities.includes(fc.value)) && (!s || (d.name + ' ' + d.key + ' ' + d.authors + ' ' + d.set).toLowerCase().includes(s)));
   document.getElementById('count').textContent = rows.length + ' / ' + data.length + ' images';
-  grid.innerHTML = rows.map(d => `<a class="card" href="${d.set}/${d.key}.html">
+  const years = [...new Set(rows.map(d => d.set))].sort((a, b) => (isNaN(a) - isNaN(b)) || (b - a) || a.localeCompare(b));
+  grid.innerHTML = years.map(y => `<section class="year"><div class="year-label"><span>${y}</span><small>${rows.filter(d => d.set === y).length}</small></div><div class="grid">` + rows.filter(d => d.set === y).map(card).join('') + `</div></section>`).join('');
+}
+function card(d) { return `<a class="card" href="${d.set}/${d.key}.html">
     <h3>${d.name}</h3>
     <div class="meta">${d.set} · ${d.authors || 'authors not recorded'}</div>
     <div class="tagrow"><span class="lbl">solver</span><span class="tag id">${d.family}</span>${d.version ? `<span class="tag id">v${d.version}</span>` : ''}${d.tracks.map(t => `<span class="tag id">${t}</span>`).join('')}</div>
     <div class="tagrow"><span class="lbl">can do</span>${d.capabilities.map(c => `<span class="tag cap">${c}</span>`).join('')}</div>
     <div class="tagrow"><span class="lbl">status</span>${badge(d.verdict)}<span class="badge ${ {ok:'ok',unstable:'warn',fixme:'fail'}[d.status] || 'none'}">${ {ok:'builds',unstable:'unstable',fixme:'not buildable'}[d.status] || d.status}</span></div>
-  </a>`).join('');
-}
+  </a>`; }
 [q, fy, ff, fv, fs, document.getElementById('cap')].forEach(e => e.addEventListener('input', render));
 render();
 """
@@ -266,7 +273,7 @@ def index_page(solvers: list[dict]) -> str:
   <span class="count" id="count"></span>
 </div>
 <div class="legend"><span>◌ dashed: what the solver is</span><span>▪ blue: what it can do, as verified by the test suite</span><span>● filled: whether it builds and passes the tests today</span></div>
-<div class="grid" id="grid"></div>
+<div id="grid"></div>
 <script>window.SOLVERS = {json.dumps([{k: s[k] for k in ("image", "key", "set", "name", "authors", "status", "family", "verdict", "capabilities", "version", "tracks")} for s in solvers])};</script>
 <script>{JS}</script>
 """
