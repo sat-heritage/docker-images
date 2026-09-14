@@ -20,7 +20,7 @@ RUN set -eu; \
     fi; \
     apt-get update --fix-missing; \
     apt-get install -y --no-install-recommends \
-      bash ca-certificates cmake curl g++ gcc make patch unzip xz-utils zlib1g-dev; \
+      bash ca-certificates cmake curl g++ gcc git make patch unzip xz-utils zlib1g-dev; \
     rm -rf /var/lib/apt/lists/*
 
 ARG BUILD_DEPENDS

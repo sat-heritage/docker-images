@@ -1,0 +1,586 @@
+{
+    "ae-kissat2025-bump": {
+        "status": "ok",
+        "name": "AE_kissat2025_bump",
+        "version": "4.0.2",
+        "authors": "Hang Ding, Mao Luo, Chu-Min Li, Shunwei Li, Runyao Chen, Caiquan Xiong, Xinyun Wu",
+        "call": "./kissat",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF"
+        ],
+        "tracks": [
+            "main"
+        ]
+    },
+    "ae-kissat2025-mab": {
+        "status": "ok",
+        "name": "AE_kissat2025_MAB",
+        "version": "4.0.2",
+        "authors": "Hang Ding, Mao Luo, Chu-Min Li, Shunwei Li, Runyao Chen, Caiquan Xiong, Xinyun Wu",
+        "call": "./kissat",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF"
+        ],
+        "tracks": [
+            "main"
+        ]
+    },
+    "ae-kissat2025-rescale": {
+        "status": "ok",
+        "name": "AE_kissat2025_rescale",
+        "version": "4.0.2",
+        "authors": "Hang Ding, Mao Luo, Chu-Min Li, Shunwei Li, Runyao Chen, Caiquan Xiong, Xinyun Wu",
+        "call": "./kissat",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF"
+        ],
+        "tracks": [
+            "main"
+        ]
+    },
+    "cadical-sc2025": {
+        "status": "ok",
+        "name": "cadical-sc2025",
+        "version": "sc2025",
+        "authors": "Armin Biere, Tobias Faller, Mathias Fleury, Nils Froleyks, Florian Pollitt",
+        "call": "./cadical",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF"
+        ],
+        "tracks": [
+            "main"
+        ],
+        "comment": "No build or run script in the submission; built with ./configure --competition && make as documented."
+    },
+    "dynamiccadical": {
+        "status": "ok",
+        "name": "Dynamiccadical",
+        "version": "2.1.3",
+        "authors": "Junjie Xu",
+        "call": "./dynamiccadical",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF"
+        ],
+        "tracks": [
+            "main"
+        ]
+    },
+    "hcad-psbva": {
+        "status": "ok",
+        "name": "hCaD-psbva",
+        "version": "1.9.5",
+        "authors": "Rodrigue Konan Tchinda, Clémentin Tayou Djamegni",
+        "call": "python3",
+        "gz": false,
+        "args": [
+            "wrapper.py",
+            "--input",
+            "FILECNF",
+            "--output",
+            "PROOFDIR",
+            "--bva",
+            "./bva",
+            "--t1",
+            "200",
+            "--t2",
+            "400",
+            "--solver",
+            "./cadical",
+            "--solverargs",
+            "psids=1",
+            "target=2",
+            "walk=false",
+            "chrono=true"
+        ],
+        "argsproof": [
+            "wrapper.py",
+            "--input",
+            "FILECNF",
+            "--output",
+            "PROOFDIR",
+            "--bva",
+            "./bva",
+            "--t1",
+            "200",
+            "--t2",
+            "400",
+            "--solver",
+            "./cadical",
+            "--solverargs",
+            "psids=1",
+            "target=2",
+            "walk=false",
+            "chrono=true"
+        ],
+        "tracks": [
+            "main"
+        ],
+        "comment": "Structured BVA preprocessing (bva) followed by the solver, driven by the submitted wrapper.py; the proof concatenates the BVA derivation and the solver's DRAT proof."
+    },
+    "hcad-sbva": {
+        "status": "ok",
+        "name": "hCaD-sbva",
+        "version": "1.9.5",
+        "authors": "Rodrigue Konan Tchinda, Clémentin Tayou Djamegni",
+        "call": "python3",
+        "gz": false,
+        "args": [
+            "wrapper.py",
+            "--input",
+            "FILECNF",
+            "--output",
+            "PROOFDIR",
+            "--bva",
+            "./bva",
+            "--t1",
+            "200",
+            "--t2",
+            "400",
+            "--solver",
+            "./cadical",
+            "--solverargs",
+            "target=0",
+            "walk=false"
+        ],
+        "argsproof": [
+            "wrapper.py",
+            "--input",
+            "FILECNF",
+            "--output",
+            "PROOFDIR",
+            "--bva",
+            "./bva",
+            "--t1",
+            "200",
+            "--t2",
+            "400",
+            "--solver",
+            "./cadical",
+            "--solverargs",
+            "target=0",
+            "walk=false"
+        ],
+        "tracks": [
+            "main"
+        ],
+        "comment": "Structured BVA preprocessing (bva) followed by the solver, driven by the submitted wrapper.py; the proof concatenates the BVA derivation and the solver's DRAT proof."
+    },
+    "hkis2-psids": {
+        "status": "ok",
+        "name": "hKis2-psids",
+        "version": "sc2024",
+        "authors": "Rodrigue Konan Tchinda, Clémentin Tayou Djamegni",
+        "call": "./kissat",
+        "gz": true,
+        "args": [
+            "--psids=true",
+            "--target=1",
+            "--walkinitially=true",
+            "--chrono=true",
+            "FILECNF"
+        ],
+        "argsproof": [
+            "--psids=true",
+            "--target=1",
+            "--walkinitially=true",
+            "--chrono=true",
+            "FILECNF",
+            "FILEPROOF"
+        ],
+        "tracks": [
+            "main"
+        ]
+    },
+    "hkis-sbva": {
+        "status": "ok",
+        "name": "hKis-sbva",
+        "version": "3.1.1",
+        "authors": "Rodrigue Konan Tchinda, Clémentin Tayou Djamegni",
+        "call": "python3",
+        "gz": false,
+        "args": [
+            "wrapper.py",
+            "--input",
+            "FILECNF",
+            "--output",
+            "PROOFDIR",
+            "--bva",
+            "./bva",
+            "--t1",
+            "200",
+            "--t2",
+            "400",
+            "--solver",
+            "./kissat",
+            "--solverargs",
+            "target=1",
+            "walkinitially=true",
+            "chrono=true"
+        ],
+        "argsproof": [
+            "wrapper.py",
+            "--input",
+            "FILECNF",
+            "--output",
+            "PROOFDIR",
+            "--bva",
+            "./bva",
+            "--t1",
+            "200",
+            "--t2",
+            "400",
+            "--solver",
+            "./kissat",
+            "--solverargs",
+            "target=1",
+            "walkinitially=true",
+            "chrono=true"
+        ],
+        "tracks": [
+            "main"
+        ],
+        "comment": "Structured BVA preprocessing (bva) followed by the solver, driven by the submitted wrapper.py; the proof concatenates the BVA derivation and the solver's DRAT proof."
+    },
+    "kissat-corephase-coreward": {
+        "status": "ok",
+        "name": "Kissat_CoRephase_CoReward",
+        "version": "2.0.1",
+        "authors": "Shuang Chen, Jianmin Zhang, Jinjin Liu, Yan Sun, Tiejun Li",
+        "call": "./kissat",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF"
+        ],
+        "tracks": [
+            "main"
+        ],
+        "comment": "No build or run script in the submission; built with ./configure --competition && make as documented in its README."
+    },
+    "kissat-cure": {
+        "status": "ok",
+        "name": "Kissat-CURE",
+        "version": "4.0.2",
+        "authors": "Yalun Cai, Mengxia Tao, Kezhi Li, Jiaying Zhu, Zhengyuan Shi, Qiang Xu",
+        "call": "./kissat",
+        "gz": true,
+        "args": [
+            "--coldrestart=1",
+            "--coldrestartfc=1",
+            "--coldrestartfo=0",
+            "--coldrestartfp=0",
+            "FILECNF",
+            "--no-binary"
+        ],
+        "argsproof": [
+            "--coldrestart=1",
+            "--coldrestartfc=1",
+            "--coldrestartfo=0",
+            "--coldrestartfp=0",
+            "FILECNF",
+            "FILEPROOF",
+            "--no-binary"
+        ],
+        "tracks": [
+            "main"
+        ]
+    },
+    "kissat-mab-corephase": {
+        "status": "ok",
+        "name": "Kissat_MAB_CoRephase",
+        "version": "2.0.1",
+        "authors": "Shuang Chen, Jianmin Zhang, Jinjin Liu, Yan Sun, Tiejun Li",
+        "call": "./kissat",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF"
+        ],
+        "tracks": [
+            "main"
+        ],
+        "comment": "No build or run script in the submission; built with ./configure --competition && make as documented in its README."
+    },
+    "kissat-pred": {
+        "status": "ok",
+        "name": "kissat-pred",
+        "version": "4.0.1",
+        "authors": "Chuan Luo, Zhenwei Yang, Shaoke Cui, Chunming Hu",
+        "call": "./kissat",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF"
+        ],
+        "tracks": [
+            "main"
+        ]
+    },
+    "kissat-pred-aggressive": {
+        "status": "ok",
+        "name": "kissat-pred-aggressive",
+        "version": "4.0.1",
+        "authors": "Chuan Luo, Zhenwei Yang, Shaoke Cui, Chunming Hu",
+        "call": "./kissat",
+        "gz": true,
+        "args": [
+            "--aggressive",
+            "FILECNF"
+        ],
+        "argsproof": [
+            "--aggressive",
+            "FILECNF",
+            "FILEPROOF"
+        ],
+        "tracks": [
+            "main"
+        ]
+    },
+    "kissat-public": {
+        "status": "ok",
+        "name": "kissat-public",
+        "version": "4.0.2",
+        "authors": "Armin Biere, Tobias Faller, Mathias Fleury, Nils Froleyks, Florian Pollitt",
+        "call": "./kissat",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF"
+        ],
+        "tracks": [
+            "main"
+        ],
+        "comment": "Public Kissat release entered as a reference; no build or run script in the submission."
+    },
+    "kissat-sc2025": {
+        "status": "ok",
+        "name": "kissat-sc2025",
+        "version": "sc2025",
+        "authors": "Armin Biere, Tobias Faller, Mathias Fleury, Nils Froleyks, Florian Pollitt",
+        "call": "./kissat",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF"
+        ],
+        "tracks": [
+            "main"
+        ],
+        "comment": "No build or run script in the submission; built with ./configure --competition && make as documented."
+    },
+    "kissat-scavel2025": {
+        "status": "ok",
+        "name": "kissat_scavel2025",
+        "version": "sc2024",
+        "authors": "Zhihui Li, Guanfeng Wu, Li Chen, Shuwei Chen, Yang Xu",
+        "call": "./kissat",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF"
+        ],
+        "tracks": [
+            "main"
+        ]
+    },
+    "kissat-scavel-rs": {
+        "status": "ok",
+        "name": "kissat_scavel_rs",
+        "version": "4.0.1",
+        "authors": "Zhihui Li, Guanfeng Wu, Li Chen, Shuwei Chen, Yang Xu",
+        "call": "./kissat",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF"
+        ],
+        "tracks": [
+            "main"
+        ]
+    },
+    "satsuma-kissat-sc": {
+        "status": "ok",
+        "name": "satsuma-kissat-sc",
+        "version": "4.0.2",
+        "authors": "Markus Anders, Bart Bogaerts, Benjamin Bogø, Arthur Gontier, Wietze Koops, Jakob Nordström, Andy Oertel",
+        "call": "bash",
+        "gz": false,
+        "args": [
+            "run.sh",
+            "FILECNF"
+        ],
+        "tracks": [
+            "main"
+        ],
+        "comment": "Satsuma symmetry breaking followed by a Kissat hack, driven by the submitted run.sh; the proof is VeriPB (pseudo-Boolean), which satex cannot check, so no argsproof."
+    },
+    "ulc-cadical-alignable-independent-ulc": {
+        "status": "ok",
+        "name": "ulc-cadical-cadical-alignable-independent-ulc",
+        "version": "2.1.0",
+        "authors": "Joseph E. Reeves, Aeacus Sheng",
+        "call": "./cadical",
+        "gz": true,
+        "args": [
+            "FILECNF",
+            "--orderencode",
+            "--orderencodetype=1",
+            "--orderencodealigntype=2",
+            "--no-binary"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF",
+            "--orderencode",
+            "--orderencodetype=1",
+            "--orderencodealigntype=2",
+            "--no-binary"
+        ],
+        "tracks": [
+            "main"
+        ]
+    },
+    "ulc-cadical-alignable-ulc": {
+        "status": "ok",
+        "name": "ulc-cadical-cadical-alignable-ulc",
+        "version": "2.1.0",
+        "authors": "Joseph E. Reeves, Aeacus Sheng",
+        "call": "./cadical",
+        "gz": true,
+        "args": [
+            "FILECNF",
+            "--orderencode",
+            "--orderencodetype=1",
+            "--orderencodealigntype=1",
+            "--no-binary"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF",
+            "--orderencode",
+            "--orderencodetype=1",
+            "--orderencodealigntype=1",
+            "--no-binary"
+        ],
+        "tracks": [
+            "main"
+        ]
+    },
+    "ulc-cadical-alignable-ulc-order": {
+        "status": "ok",
+        "name": "ulc-cadical-cadical-alignable-ulc-order",
+        "version": "2.1.0",
+        "authors": "Joseph E. Reeves, Aeacus Sheng",
+        "call": "./cadical",
+        "gz": true,
+        "args": [
+            "FILECNF",
+            "--orderencode",
+            "--orderencodeelim=1",
+            "--orderencodetype=1",
+            "--orderencodealigntype=1",
+            "--no-binary"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF",
+            "--orderencode",
+            "--orderencodeelim=1",
+            "--orderencodetype=1",
+            "--orderencodealigntype=1",
+            "--no-binary"
+        ],
+        "tracks": [
+            "main"
+        ]
+    },
+    "ulc-cadical-xlc": {
+        "status": "ok",
+        "name": "ulc-cadical-cadical-xlc",
+        "version": "2.1.0",
+        "authors": "Joseph E. Reeves, Aeacus Sheng",
+        "call": "./cadical",
+        "gz": true,
+        "args": [
+            "FILECNF",
+            "--orderencode",
+            "--orderencodetype=3",
+            "--no-binary"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF",
+            "--orderencode",
+            "--orderencodetype=3",
+            "--no-binary"
+        ],
+        "tracks": [
+            "main"
+        ]
+    },
+    "vsa": {
+        "status": "ok",
+        "name": "vsa",
+        "version": "sc2024",
+        "authors": "Shuolin Li, Jialu Zhang",
+        "call": "./kissat",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF"
+        ],
+        "tracks": [
+            "main"
+        ],
+        "comment": "Competition name: Kissat_VSA."
+    }
+}
