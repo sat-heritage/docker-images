@@ -1,0 +1,106 @@
+{
+    "base_version": "v1",
+    "base_from": "debian:bookworm-20240701-slim@sha256:f528891ab1aa484bf7233dbcc84f3c806c3e427571d75510a9d74bb5ec535b33",
+    "builder": "generic/starexec-v2",
+    "builder_base": "debian:bookworm-20240701-slim@sha256:f528891ab1aa484bf7233dbcc84f3c806c3e427571d75510a9d74bb5ec535b33",
+    "APT_SNAPSHOT": "20240701T000000Z",
+    "APT_CODENAME": "bookworm",
+    "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2024-competition/{SOLVER_NAME}.zip",
+    "amsat": {
+        "BUILD_KIND": "starexec",
+        "BINARY_PATH": "sources/simp/glucose_static",
+        "BINARY_NAME": "glucose_static"
+    },
+    "amsat-rgc": {
+        "BUILD_KIND": "starexec",
+        "BINARY_PATH": "sources/simp/glucose_static",
+        "BINARY_NAME": "glucose_static"
+    },
+    "breakid-kissat": {
+        "BUILD_DEPENDS": "libboost-dev libgmp-dev",
+        "BUILD_KIND": "command",
+        "BUILD_COMMAND": "make -C breakid/src && install -m 0755 breakid/src/BreakID bin/BreakID && bash ./starexec_build",
+        "DIST_PATHS": "bin"
+    },
+    "cadical": {
+        "BUILD_KIND": "starexec",
+        "BINARY_PATH": "build/cadical/build/cadical",
+        "BINARY_NAME": "cadical"
+    },
+    "cadical-scavel-01": {
+        "BUILD_KIND": "starexec",
+        "BINARY_PATH": "build/cadical",
+        "BINARY_NAME": "cadical"
+    },
+    "cadical-scavel-02": {
+        "BUILD_KIND": "starexec",
+        "BINARY_PATH": "build/cadical",
+        "BINARY_NAME": "cadical"
+    },
+    "cadical-esa": {
+        "BUILD_KIND": "starexec",
+        "BINARY_PATH": "build/cadical",
+        "BINARY_NAME": "cadical"
+    },
+    "hcad-bva": {
+        "RDEPENDS": "python3",
+        "BUILD_KIND": "starexec",
+        "DIST_PATHS": "bin"
+    },
+    "hcad-pbva": {
+        "RDEPENDS": "python3",
+        "BUILD_KIND": "starexec",
+        "DIST_PATHS": "bin"
+    },
+    "hkis-bva": {
+        "RDEPENDS": "python3",
+        "BUILD_KIND": "starexec",
+        "DIST_PATHS": "bin"
+    },
+    "hkis-pbva": {
+        "RDEPENDS": "python3",
+        "BUILD_KIND": "starexec",
+        "DIST_PATHS": "bin"
+    },
+    "isasat": {
+        "BUILD_DEPENDS": "clang llvm-14-dev",
+        "BUILD_KIND": "command",
+        "BUILD_COMMAND": "cd build && tar xf ../archives/isasat* && mv isasat* isasat && sed -i 's/-Omtune=native -Omarch=native/-mtune=generic -march=x86-64/' isasat/src/Makefile && make -C isasat/src competition",
+        "BINARY_PATH": "build/isasat/src/isasat",
+        "BINARY_NAME": "isasat"
+    },
+    "kissat-sc2024": {
+        "BUILD_KIND": "starexec",
+        "BINARY_PATH": "build/kissat/build/kissat",
+        "BINARY_NAME": "kissat"
+    },
+    "kissat-mab-dc": {
+        "BUILD_KIND": "starexec",
+        "BINARY_PATH": "kissat_mab_dc/build/kissat",
+        "BINARY_NAME": "kissat"
+    },
+    "kissat-mab-binary": {
+        "BUILD_KIND": "command",
+        "BUILD_COMMAND": "sh ./configure --competition --test -static && make all",
+        "BINARY_PATH": "build/kissat",
+        "BINARY_NAME": "kissat"
+    },
+    "kissat-mab-esa": {
+        "BUILD_KIND": "command",
+        "BUILD_COMMAND": "sh ./configure --competition --test -static && make all",
+        "BINARY_PATH": "build/kissat",
+        "BINARY_NAME": "kissat"
+    },
+    "sbva-scavel-01": {
+        "RDEPENDS": "python3",
+        "BUILD_KIND": "command",
+        "BUILD_COMMAND": "rm -f src/bva bin/bva && make -C src && install -m 0755 src/bva bin/bva && bash ./starexec_build",
+        "DIST_PATHS": "bin"
+    },
+    "sbva-scavel-02": {
+        "RDEPENDS": "python3",
+        "BUILD_KIND": "command",
+        "BUILD_COMMAND": "rm -f src/bva bin/bva && make -C src && install -m 0755 src/bva bin/bva && bash ./starexec_build",
+        "DIST_PATHS": "bin"
+    }
+}
