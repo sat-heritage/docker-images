@@ -147,7 +147,7 @@ def collect(repo: Path) -> list[dict]:
                 "status_detail": entry.get("status_detail", ""),
                 "comment": entry.get("comment") or entry.get("comments", ""),
                 "tracks": entry.get("tracks", []),
-                "awards": sorted(awards_by_image.get(image, []), key=lambda a: (a["rank"], a["track"], a["category"])),
+                "awards": sorted(awards_by_image.get(image, []), key=lambda a: (a["rank"], a.get("category", "overall") != "overall", a["track"], a["category"])),
                 "call": entry.get("call", ""),
                 "args": entry.get("args", []),
                 "proof": "argsproof" in entry,
