@@ -305,7 +305,7 @@ def solver_page(s: dict) -> str:
 {('<div class="section"><h2>Status</h2><p>' + esc(s['status_detail']) + '</p></div>') if s['status_detail'] else ''}
 {('<div class="section"><h2>Notes</h2><p>' + esc(s['comment']) + '</p></div>') if s['comment'] else ''}
 <div class="section pull"><h2>Pull it from Docker and run it</h2><pre class="cmd" data-copy>docker pull {DOCKER_NS}/{esc(s['image'])}
-{esc(run_cmd)}</pre><p class="muted-inline">No build needed: the image is published on <a href="https://hub.docker.com/r/{DOCKER_NS}/{esc(s['key'])}">Docker Hub</a>. Mount the directory that holds your instance on <code>/data</code>; the proof file is optional{'' if s['proof'] else ' and not produced by this solver'}.</p>
+{esc(run_cmd)}</pre><p class="muted-inline">No build needed: the image is published on <a href="https://hub.docker.com/r/{DOCKER_NS}/{esc(s['key'])}">Docker Hub</a>. Mount the directory that holds your instance on <code>/data</code>; the proof file is optional{'' if s['proof'] else ' and not produced by this solver'}. Its full provenance is kept: the archived sources, the pinned build environment and the recipe are all listed below, and <code>satex build {esc(s['image'])}</code> rebuilds the same image on your own machine if you would rather not trust ours (slower, same solver).</p>
 {('<p><a class="btn" href="' + esc(s['download_url']) + '">Download the sources</a> <span class="muted-inline">' + esc(s['download_url'].rsplit('/', 1)[-1]) + ', the competition submission as archived by SAT Heritage, to build it yourself with the recipe below.</span></p>') if s['download_url'] else ''}<dl>
 <dt>Image</dt><dd><code>{DOCKER_NS}/{esc(s['image'])}</code></dd>
 <dt>Command</dt><dd><code>{esc(s['call'])} {esc(' '.join(map(str, s['args'])))}</code></dd>
@@ -416,7 +416,8 @@ def overview_page(solvers: list[dict]) -> str:
 <div class="pitch"><div class="pitch-head">No compiler, no dependencies: pull it from Docker and run it.</div>
 <pre class="cmd" data-copy>docker pull satex/kissat-sc2024:2024
 docker run --rm -v $PWD:/data satex/kissat-sc2024:2024 instance.cnf proof.out</pre>
-<div class="pitch-foot">Every solver is an image on <a href="https://hub.docker.com/u/satex">Docker Hub</a>, named <code>satex/&lt;solver&gt;:&lt;year&gt;</code>. Give it a DIMACS file, and a proof file if you want one. The <a href="{REPO_URL}#satex-python-script">satex</a> script (<code>pip install satex</code>) lists, runs and extracts them in one line.</div></div></div>
+<div class="pitch-foot">Every solver is an image on <a href="https://hub.docker.com/u/satex">Docker Hub</a>, named <code>satex/&lt;solver&gt;:&lt;year&gt;</code>. Give it a DIMACS file, and a proof file if you want one. The <a href="{REPO_URL}#satex-python-script">satex</a> script (<code>pip install satex</code>) lists, runs and extracts them in one line.</div>
+<div class="pitch-foot"><b>Don't trust, verify.</b> Nothing is hidden: each image carries the full provenance of its build, the archived competition sources, the exact build environment (a Debian image pinned by digest and a dated package snapshot) and the recipe, all versioned in the repository and shown on every solver page. If you would rather not trust our images, <code>satex build &lt;solver&gt;:&lt;year&gt;</code> rebuilds them on your machine from the same sources with the same recipe. It takes longer, but you get the same solver.</div></div></div>
 <div class="stats">
 <div class="stat"><div class="n">{len(solvers)}</div><div class="l">solver images</div></div>
 <div class="stat"><div class="n">{tested}</div><div class="l">run through the test suite so far</div></div>
