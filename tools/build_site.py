@@ -257,7 +257,7 @@ def page(title: str, body: str, depth: int, active: str = "") -> str:
 <title>{esc(title)} · SAT Heritage</title><link rel="stylesheet" href="{root}style.css"></head>
 <body><header><a class="logo" href="{root}index.html" style="color:inherit"><span class="dot"></span>SAT Heritage</a>
 <nav><a href="{root}index.html"{' class="active"' if active == 'overview' else ''}>Overview</a><a href="{root}catalogue.html"{' class="active"' if active == 'catalogue' else ''}>Catalogue</a><a href="{REPO_URL}">GitHub</a></nav>
-<p>Docker images of SAT solvers, rebuilt from the competition sources and verified.</p></header>
+<p>Docker images of SAT solvers, from the first competitions to Knuth's programs, rebuilt from their sources and verified.</p></header>
 <div class="warning"><b>September 14, 2026 — large update in progress.</b> The images of the 2022 to 2026 competitions are being rebuilt from their sources and pushed to Docker Hub in batches over the coming days. If <code>docker pull</code> tells you that an image does not exist yet, build it yourself in the meantime with <code>satex build &lt;solver&gt;:&lt;year&gt;</code> (<code>pip install satex</code>), from the same sources and recipe.</div>
 <main>{body}</main>
 <script>document.querySelectorAll('pre.cmd[data-copy]').forEach(p => {{ const b = document.createElement('button'); b.textContent = 'Copy'; b.addEventListener('click', () => {{ navigator.clipboard.writeText(p.innerText.replace(/Copy$/, '').trim()); b.textContent = 'Copied'; setTimeout(() => b.textContent = 'Copy', 1500); }}); p.appendChild(b); }});</script>
@@ -411,8 +411,8 @@ def overview_page(solvers: list[dict]) -> str:
     ]
     body = f"""
 <div class="hero"><div class="byline">A project by <b>{esc(AUTHORS)}</b> · tool paper: <a href="{PAPER_URL}">{esc(PAPER_TITLE)}</a>, {PAPER_VENUE} (<a href="{PAPER_ARXIV}">arXiv</a>)</div>
-<h1>Every SAT competition solver, one <code>docker run</code> away.</h1>
-<p>SAT Heritage rebuilds the solvers submitted to the SAT competitions from their original sources, in a build environment of their year, and verifies that each image still answers correctly. Browse the catalogue, or pull an image and run it on your instance.</p>
+<h1>Thirty years of SAT solvers, one <code>docker run</code> away.</h1>
+<p>SAT Heritage archives and rebuilds SAT solvers from their original sources, in a build environment of their time, and verifies that each image still answers correctly: every solver submitted to the SAT competitions since 2002, but also historical releases and programs that never entered a competition, such as Donald Knuth's SAT solvers from <em>The Art of Computer Programming</em>. Browse the catalogue, or pull an image and run it on your instance.</p>
 <p class="notice">Generated with the help of Claude Fable 5.1: the metadata and results shown here are reported with caution and may contain errors.</p>
 <a class="btn" href="catalogue.html">Browse the catalogue →</a>
 <div class="pitch"><div class="pitch-head">No compiler, no dependencies: pull it from Docker and run it.</div>
