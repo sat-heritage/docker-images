@@ -161,6 +161,7 @@ while IFS= read -r image; do
     build_log="$log_dir/$safe_name-build.log"
     build_status="$log_dir/$safe_name-build.jsonl"
     test_log="$log_dir/$safe_name-test.log"
+    test_status="$log_dir/$safe_name-test.jsonl"
 
     build_ok=true
     if [[ "$build_sources" == true ]]; then
@@ -178,7 +179,7 @@ while IFS= read -r image; do
 
     test_ok=false
     if [[ "$build_ok" == true ]]; then
-        if python3 satex.py test --terse "$image" 2>"$test_log"; then
+        if python3 satex.py test --terse --status-file "$test_status" "$image" 2>"$test_log"; then
             test_ok=true
         else
             report "fail" "$image" "test-suite" "$test_log"

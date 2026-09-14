@@ -29,7 +29,7 @@ for Docker availability, source download and extraction, build environment,
 compilation, image assembly, launch, termination, SAT model, UNSAT result, and
 UNSAT proof. Build events are also stored as JSON Lines in
 `<solver>-build.jsonl`, so audit tooling can distinguish an unavailable source
-from a compiler or Docker image failure without parsing human-oriented logs.
+from a compiler or Docker image failure without parsing human-oriented logs. Test checks are stored the same way in `<solver>-test.jsonl`.
 
 ### `validate_metadata.py`
 
