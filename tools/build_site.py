@@ -19,6 +19,11 @@ from pathlib import Path
 
 DOCKER_NS = "satex"
 REPO_URL = "https://github.com/sat-heritage/docker-images"
+AUTHORS = "Gilles Audemard, Loïc Paulevé and Laurent Simon"
+PAPER_TITLE = "SAT Heritage: a community-driven effort for archiving, building and running more than thousand SAT solvers"
+PAPER_VENUE = "SAT 2020"
+PAPER_URL = "https://doi.org/10.1007/978-3-030-51825-7_8"
+PAPER_ARXIV = "https://arxiv.org/abs/2006.01503"
 COMPETITION_URL = {
     2022: "https://satcompetition.github.io/2022/",
     2023: "https://satcompetition.github.io/2023/",
@@ -168,7 +173,8 @@ header { padding:16px 24px; border-bottom:1px solid var(--line); background:var(
 header .logo { display:flex; align-items:center; gap:10px; font-weight:700; font-size:20px; } header .logo span.dot { width:26px; height:26px; border-radius:8px; background:var(--hf); display:inline-block; }
 header nav a { margin-right:16px; color:var(--ink); font-weight:500; } header nav a.active { border-bottom:2px solid var(--hf); }
 header p { margin:0; color:var(--muted); margin-left:auto; }
-.hero { padding:36px 0 8px; } .hero h1 { font-size:34px; margin:0 0 6px; } .hero p { color:var(--muted); font-size:17px; margin:0 0 18px; max-width:760px; }
+.hero { padding:28px 0 8px; } .hero .byline { color:var(--muted); font-size:14px; margin-bottom:10px; } .hero .byline b { color:var(--ink); font-weight:600; }
+footer .credits { display:block; margin-bottom:6px; } .hero h1 { font-size:34px; margin:0 0 6px; } .hero p { color:var(--muted); font-size:17px; margin:0 0 18px; max-width:760px; }
 .stats { display:grid; grid-template-columns:repeat(auto-fit, minmax(150px, 1fr)); gap:12px; margin:8px 0 22px; }
 .stat { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:14px 16px; }
 .stat .n { font-size:28px; font-weight:700; } .stat .l { color:var(--muted); font-size:13px; }
@@ -241,7 +247,7 @@ def page(title: str, body: str, depth: int, active: str = "") -> str:
 <nav><a href="{root}index.html"{' class="active"' if active == 'overview' else ''}>Overview</a><a href="{root}catalogue.html"{' class="active"' if active == 'catalogue' else ''}>Catalogue</a><a href="{REPO_URL}">GitHub</a></nav>
 <p>Docker images of SAT solvers, rebuilt from the competition sources and verified.</p></header>
 <main>{body}</main>
-<footer>Generated from the <a href="{REPO_URL}">sat-heritage/docker-images</a> repository. This site, its generator and the solver metadata it presents were produced with the help of Claude Fable 5.1 (Anthropic): the descriptions, verification results and figures may contain errors and should be checked against the repository and the original competition material before being relied upon.</footer></body></html>
+<footer><span class="credits">SAT Heritage is a project by {esc(AUTHORS)} · <a href="{PAPER_URL}">{esc(PAPER_TITLE)}</a> ({PAPER_VENUE}, <a href="{PAPER_ARXIV}">arXiv</a>)</span><br>Generated from the <a href="{REPO_URL}">sat-heritage/docker-images</a> repository. This site, its generator and the solver metadata it presents were produced with the help of Claude Fable 5.1 (Anthropic): the descriptions, verification results and figures may contain errors and should be checked against the repository and the original competition material before being relied upon.</footer></body></html>
 """
 
 
@@ -389,7 +395,8 @@ def overview_page(solvers: list[dict]) -> str:
         (oldest["set"] if oldest else "", f"first competition in the archive ({sum(1 for s in solvers if s['set'] == (oldest['set'] if oldest else '')) } images)"),
     ]
     body = f"""
-<div class="hero"><h1>Every SAT competition solver, one <code>docker run</code> away.</h1>
+<div class="hero"><div class="byline">A project by <b>{esc(AUTHORS)}</b> · tool paper: <a href="{PAPER_URL}">{esc(PAPER_TITLE)}</a>, {PAPER_VENUE} (<a href="{PAPER_ARXIV}">arXiv</a>)</div>
+<h1>Every SAT competition solver, one <code>docker run</code> away.</h1>
 <p>SAT Heritage rebuilds the solvers submitted to the SAT competitions from their original sources, in a build environment of their year, and verifies that each image still answers correctly. Browse the catalogue, or pull an image and run it on your instance.</p>
 <p class="notice">Generated with the help of Claude Fable 5.1: the metadata and results shown here are reported with caution and may contain errors.</p>
 <a class="btn" href="catalogue.html">Browse the catalogue →</a></div>
