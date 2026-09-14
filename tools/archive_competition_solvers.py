@@ -89,16 +89,30 @@ def member_root(name: str) -> str | None:
     return parts[0]
 
 
-def validate_link(member_name: str, link_name: str) -> None:
+# Symbolic links pointing outside the solver directory (typically absolute
+# paths of the submitter's machine, dead in the distribution) that were
+# dropped from the assets, when --skip-unsafe-links is given.
+SKIP_UNSAFE_LINKS = False
+SKIPPED_LINKS: list[dict[str, str]] = []
+
+
+def validate_link(member_name: str, link_name: str) -> bool:
+    """Return True when the link is kept; raise, or return False when skipped."""
     if not link_name:
         raise ArchiveError(f"empty link target in {member_name!r}")
     link_name = link_name.replace("\\", "/")
-    if PurePosixPath(link_name).is_absolute():
-        raise ArchiveError(f"absolute link target in {member_name!r}: {link_name!r}")
     root = PurePosixPath(member_name).parts[0]
     resolved = posixpath.normpath(posixpath.join(posixpath.dirname(member_name), link_name))
-    if resolved != root and not resolved.startswith(root + "/"):
-        raise ArchiveError(f"link escapes solver directory: {member_name!r} -> {link_name!r}")
+    unsafe = PurePosixPath(link_name).is_absolute() or (resolved != root and not resolved.startswith(root + "/"))
+    if not unsafe:
+        return True
+    if SKIP_UNSAFE_LINKS:
+        SKIPPED_LINKS.append({"member": member_name, "target": link_name})
+        print(f"[WARN] dropped link outside the solver directory: {member_name} -> {link_name}")
+        return False
+    if PurePosixPath(link_name).is_absolute():
+        raise ArchiveError(f"absolute link target in {member_name!r}: {link_name!r} (use --skip-unsafe-links)")
+    raise ArchiveError(f"link escapes solver directory: {member_name!r} -> {link_name!r} (use --skip-unsafe-links)")
 
 
 class SolverArchive:
@@ -178,8 +192,8 @@ class SolverArchive:
                 if not name.startswith(solver + "/"):
                     continue
                 mode = member.external_attr >> 16
-                if stat.S_ISLNK(mode):
-                    validate_link(name, source.read(member).decode("utf-8"))
+                if stat.S_ISLNK(mode) and not validate_link(name, source.read(member).decode("utf-8")):
+                    continue
                 info = copy.copy(member)
                 info.filename = name + ("/" if member.is_dir() else "")
                 output.writestr(info, source.read(member))
@@ -207,7 +221,8 @@ class SolverArchive:
                     output.addfile(info)
                 elif stat.S_ISLNK(mode):
                     target = source.read(member).decode("utf-8")
-                    validate_link(name, target)
+                    if not validate_link(name, target):
+                        continue
                     info.type = tarfile.SYMTYPE
                     info.mode = stat.S_IMODE(mode) or 0o777
                     info.linkname = target
@@ -238,7 +253,8 @@ class SolverArchive:
                 info.uid = info.gid = 0
                 info.uname = info.gname = ""
                 if info.issym():
-                    validate_link(name, info.linkname)
+                    if not validate_link(name, info.linkname):
+                        continue
                 elif info.islnk():
                     target = normalized_member_name(info.linkname)
                     if target != solver and not target.startswith(solver + "/"):
@@ -480,6 +496,8 @@ def mirror(
         "sources": source_records,
         "assets": asset_records,
     }
+    if SKIPPED_LINKS:
+        manifest["skipped_links"] = list(SKIPPED_LINKS)
     manifest_path = output_dir / "manifest.json"
     manifest_path.write_text(json.dumps(manifest, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     return assets, manifest
@@ -559,6 +577,12 @@ def parser() -> argparse.ArgumentParser:
         help="directory inside the archive that contains the solver directories, "
         "for example Sequential/solvers/ (default: the archive root)",
     )
+    result.add_argument(
+        "--skip-unsafe-links",
+        action="store_true",
+        help="drop symbolic links pointing outside their solver directory instead of failing; "
+        "they are listed under skipped_links in the manifest",
+    )
     result.add_argument("--output-dir", type=Path, help="default: dist/competition-sources/YEAR")
     result.add_argument(
         "--format",
@@ -586,8 +610,9 @@ def parser() -> argparse.ArgumentParser:
 
 def main(arguments: list[str] | None = None) -> int:
     args = parser().parse_args(arguments)
-    global STRIP_PREFIX
+    global STRIP_PREFIX, SKIP_UNSAFE_LINKS
     STRIP_PREFIX = args.strip_prefix.strip("/")
+    SKIP_UNSAFE_LINKS = args.skip_unsafe_links
     try:
         renames = parse_renames(args.rename)
         selected = set(args.solver)

@@ -58,6 +58,31 @@ class CompetitionArchiveTests(unittest.TestCase):
             finally:
                 archiver.STRIP_PREFIX = previous
 
+    def test_unsafe_links_are_rejected_or_skipped(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            path = root / "competition.tar"
+            with tarfile.open(path, "w") as archive:
+                data = b"int main(void) { return 0; }\n"
+                info = tarfile.TarInfo("Solver-A/main.c"); info.size = len(data)
+                archive.addfile(info, io.BytesIO(data))
+                link = tarfile.TarInfo("Solver-A/makefile"); link.type = tarfile.SYMTYPE
+                link.linkname = "/home/someone/Solver-A/makefile"
+                archive.addfile(link)
+            archive = archiver.SolverArchive(path)
+            with self.assertRaisesRegex(archiver.ArchiveError, "absolute link"):
+                archive.write_solver("Solver-A", root / "a.tar.xz", "tar.xz")
+            archiver.SKIP_UNSAFE_LINKS = True
+            archiver.SKIPPED_LINKS.clear()
+            try:
+                archive.write_solver("Solver-A", root / "b.tar.xz", "tar.xz")
+                with tarfile.open(root / "b.tar.xz") as result:
+                    self.assertEqual(sorted(m.name for m in result.getmembers()), ["Solver-A", "Solver-A/main.c"])
+                self.assertEqual(archiver.SKIPPED_LINKS, [{"member": "Solver-A/makefile", "target": "/home/someone/Solver-A/makefile"}])
+            finally:
+                archiver.SKIP_UNSAFE_LINKS = False
+                archiver.SKIPPED_LINKS.clear()
+
     def test_discovers_only_top_level_solver_directories(self):
         with tempfile.TemporaryDirectory() as directory:
             archive = archiver.SolverArchive(self.make_zip(Path(directory)))
