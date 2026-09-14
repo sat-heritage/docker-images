@@ -42,7 +42,7 @@ VERDICT_LABEL = {
     "unknown": ("Not run yet", "none"),
 }
 STATUS_LABEL = {
-    "ok": ("ok", "ok"),
+    "ok": ("builds", "ok"),
     "unstable": ("unstable", "warn"),
     "fixme": ("not buildable", "fail"),
     "unknown": ("unknown", "none"),
@@ -101,7 +101,25 @@ def collect(repo: Path) -> list[dict]:
             block = dict(setup)
             block.update(setup.get(key, {}) if isinstance(setup.get(key), dict) else {})
             result = results.get(image, {})
+            args_text = " ".join(map(str, entry.get("args", [])))
+            checks = result.get("tests", {})
+            capabilities = []
+            if checks.get("sat-model", {}).get("status") == "ok":
+                capabilities.append("SAT")
+            if checks.get("unsat-result", {}).get("status") == "ok":
+                capabilities.append("UNSAT")
+            if checks.get("unsat-proof", {}).get("status") == "ok":
+                capabilities.append("UNSAT+proof")
+            elif "argsproof" in entry and not checks:
+                capabilities.append("proof (declared)")
+            if not checks and "argsproof" not in entry:
+                capabilities.append("SAT/UNSAT (declared)")
+            if "parallel" in [t.lower() for t in entry.get("tracks", [])] or "MAXNBTHREAD" in args_text:
+                capabilities.append("parallel")
+            if entry.get("gz"):
+                capabilities.append("gzip input")
             solvers.append({
+                "capabilities": capabilities,
                 "image": image,
                 "key": key,
                 "set": str(entry_set),
@@ -134,11 +152,11 @@ def collect(repo: Path) -> list[dict]:
 
 
 CSS = """
-:root { --bg:#f7f7f8; --card:#fff; --ink:#1f2328; --muted:#656d76; --line:#d0d7de; --ok:#1a7f37; --warn:#9a6700; --fail:#cf222e; --none:#8c959f; --accent:#0969da; }
-@media (prefers-color-scheme: dark) { :root { --bg:#0d1117; --card:#161b22; --ink:#e6edf3; --muted:#8b949e; --line:#30363d; --ok:#3fb950; --warn:#d29922; --fail:#f85149; --none:#6e7681; --accent:#58a6ff; } }
+:root { --bg:#f7f7f8; --card:#fff; --ink:#1f2328; --muted:#656d76; --line:#d0d7de; --ok:#1a7f37; --warn:#9a6700; --fail:#cf222e; --none:#8c959f; --accent:#0969da; --cap:#0550ae; --capbg:#ddf4ff; }
+@media (prefers-color-scheme: dark) { :root { --bg:#0d1117; --card:#161b22; --ink:#e6edf3; --muted:#8b949e; --line:#30363d; --ok:#3fb950; --warn:#d29922; --fail:#f85149; --none:#6e7681; --accent:#58a6ff; --cap:#79c0ff; --capbg:#0c2d6b; } }
 * { box-sizing: border-box; }
 body { margin:0; font: 15px/1.5 -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color:var(--ink); background:var(--bg); }
-a { color:var(--accent); text-decoration:none; } a:hover { text-decoration:underline; }
+a { color:var(--accent); text-decoration:none; } a:hover { text-decoration:underline; } a.card:hover { text-decoration:none; border-color:var(--accent); }
 header { padding:28px 24px 12px; border-bottom:1px solid var(--line); background:var(--card); }
 header h1 { margin:0 0 4px; font-size:24px; } header p { margin:0; color:var(--muted); }
 main { max-width:1200px; margin:0 auto; padding:20px 24px 60px; }
@@ -150,6 +168,11 @@ main { max-width:1200px; margin:0 auto; padding:20px 24px 60px; }
 .card h3 { margin:0; font-size:16px; } .card .meta { color:var(--muted); font-size:13px; }
 .tags { display:flex; flex-wrap:wrap; gap:6px; margin-top:4px; }
 .tag { font-size:12px; padding:2px 8px; border-radius:999px; border:1px solid var(--line); color:var(--muted); background:transparent; }
+.tag.id { border-style:dashed; }
+.tag.cap { border-color:transparent; background:var(--capbg); color:var(--cap); }
+.tagrow { display:flex; flex-wrap:wrap; gap:6px; align-items:center; }
+.tagrow .lbl { font-size:11px; text-transform:uppercase; letter-spacing:.04em; color:var(--muted); width:64px; }
+.legend { color:var(--muted); font-size:13px; display:flex; gap:14px; flex-wrap:wrap; margin:-6px 0 14px; }
 .badge { font-size:12px; padding:2px 8px; border-radius:999px; color:#fff; }
 .badge.ok { background:var(--ok);} .badge.warn { background:var(--warn);} .badge.fail { background:var(--fail);} .badge.none { background:var(--none);}
 .page h1 { margin-bottom:0; } .page .sub { color:var(--muted); margin-top:2px; }
@@ -170,15 +193,18 @@ const fy = document.getElementById('year'), ff = document.getElementById('family
 function badge(v) { const m = {passed:['Verified','ok'],'test-failed':['Tests failed','fail'],'build-failed':['Build failed','fail'],'not-tested':['Built, not tested','warn'],unknown:['Not run yet','none']}[v] || [v,'none']; return `<span class="badge ${m[1]}">${m[0]}</span>`; }
 function render() {
   const s = q.value.trim().toLowerCase();
-  const rows = data.filter(d => (!fy.value || d.set === fy.value) && (!ff.value || d.family === ff.value) && (!fv.value || d.verdict === fv.value) && (!fs.value || d.status === fs.value) && (!s || (d.name + ' ' + d.key + ' ' + d.authors + ' ' + d.set).toLowerCase().includes(s)));
+  const fc = document.getElementById('cap');
+  const rows = data.filter(d => (!fy.value || d.set === fy.value) && (!ff.value || d.family === ff.value) && (!fv.value || d.verdict === fv.value) && (!fs.value || d.status === fs.value) && (!fc.value || d.capabilities.includes(fc.value)) && (!s || (d.name + ' ' + d.key + ' ' + d.authors + ' ' + d.set).toLowerCase().includes(s)));
   document.getElementById('count').textContent = rows.length + ' / ' + data.length + ' images';
   grid.innerHTML = rows.map(d => `<a class="card" href="${d.set}/${d.key}.html">
     <h3>${d.name}</h3>
     <div class="meta">${d.set} · ${d.authors || 'authors not recorded'}</div>
-    <div class="tags">${badge(d.verdict)}<span class="tag">${d.status}</span><span class="tag">${d.family}</span>${d.proof ? '<span class="tag">proof</span>' : ''}<span class="tag">${d.recipe}</span></div>
+    <div class="tagrow"><span class="lbl">solver</span><span class="tag id">${d.family}</span>${d.version ? `<span class="tag id">v${d.version}</span>` : ''}${d.tracks.map(t => `<span class="tag id">${t}</span>`).join('')}</div>
+    <div class="tagrow"><span class="lbl">can do</span>${d.capabilities.map(c => `<span class="tag cap">${c}</span>`).join('')}</div>
+    <div class="tagrow"><span class="lbl">status</span>${badge(d.verdict)}<span class="badge ${ {ok:'ok',unstable:'warn',fixme:'fail'}[d.status] || 'none'}">${ {ok:'builds',unstable:'unstable',fixme:'not buildable'}[d.status] || d.status}</span></div>
   </a>`).join('');
 }
-[q, fy, ff, fv, fs].forEach(e => e.addEventListener('input', render));
+[q, fy, ff, fv, fs, document.getElementById('cap')].forEach(e => e.addEventListener('input', render));
 render();
 """
 
@@ -204,11 +230,13 @@ def index_page(solvers: list[dict]) -> str:
   <select id="year"><option value="">All years</option>{options(years)}</select>
   <select id="family"><option value="">All families</option>{options(families)}</select>
   <select id="verdict"><option value="">Any verification</option><option value="passed">Verified</option><option value="test-failed">Tests failed</option><option value="build-failed">Build failed</option><option value="not-tested">Built, not tested</option><option value="unknown">Not run yet</option></select>
-  <select id="status"><option value="">Any status</option><option value="ok">ok</option><option value="unstable">unstable</option><option value="fixme">not buildable</option></select>
+  <select id="status"><option value="">Any status</option><option value="ok">builds</option><option value="unstable">unstable</option><option value="fixme">not buildable</option></select>
+  <select id="cap"><option value="">Any capability</option><option value="SAT">SAT (verified)</option><option value="UNSAT">UNSAT (verified)</option><option value="UNSAT+proof">UNSAT+proof (verified)</option><option value="parallel">parallel</option><option value="gzip input">gzip input</option></select>
   <span class="count" id="count"></span>
 </div>
+<div class="legend"><span>◌ dashed: what the solver is</span><span>▪ blue: what it can do, as verified by the test suite</span><span>● filled: whether it builds and passes the tests today</span></div>
 <div class="grid" id="grid"></div>
-<script>window.SOLVERS = {json.dumps([{k: s[k] for k in ("image", "key", "set", "name", "authors", "status", "family", "verdict", "proof", "recipe")} for s in solvers])};</script>
+<script>window.SOLVERS = {json.dumps([{k: s[k] for k in ("image", "key", "set", "name", "authors", "status", "family", "verdict", "capabilities", "version", "tracks")} for s in solvers])};</script>
 <script>{JS}</script>
 """
     return page("Catalogue", body, 0)
@@ -228,7 +256,9 @@ def solver_page(s: dict) -> str:
     body = f"""
 <div class="crumbs"><a href="../index.html">Catalogue</a> › {esc(s['set'])}</div>
 <div class="page"><h1>{esc(s['name'])}</h1><div class="sub">{esc(s['authors'] or 'authors not recorded')}{(' · version ' + esc(s['version'])) if s['version'] else ''}</div>
-<div class="tags" style="margin-top:8px"><span class="badge {vcls}">{vlabel}</span><span class="badge {scls}">{slabel}</span><span class="tag">{esc(s['family'])}</span>{'<span class="tag">DRAT proof</span>' if s['proof'] else ''}<span class="tag">{esc(', '.join(s['tracks']) or 'no track')}</span></div></div>
+<div class="tagrow" style="margin-top:10px"><span class="lbl">solver</span><span class="tag id">{esc(s['family'])}</span>{('<span class="tag id">v' + esc(s['version']) + '</span>') if s['version'] else ''}{''.join('<span class="tag id">' + esc(t) + '</span>' for t in s['tracks'])}</div>
+<div class="tagrow" style="margin-top:6px"><span class="lbl">can do</span>{''.join('<span class="tag cap">' + esc(c) + '</span>' for c in s['capabilities']) or '<span class="tag cap">not verified yet</span>'}</div>
+<div class="tagrow" style="margin-top:6px"><span class="lbl">status</span><span class="badge {vcls}">{vlabel}</span><span class="badge {scls}">{slabel}</span></div></div>
 {('<div class="section"><h2>Status</h2><p>' + esc(s['status_detail']) + '</p></div>') if s['status_detail'] else ''}
 {('<div class="section"><h2>Notes</h2><p>' + esc(s['comment']) + '</p></div>') if s['comment'] else ''}
 <div class="section"><h2>Run it</h2><pre>{esc(run_cmd)}</pre><dl>
