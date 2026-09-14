@@ -19,6 +19,33 @@ that have been released so far**.
 
 Thanks to our tool, building (or running) a solver from its source (or from its binary) can be done in one line.
 
+## Build policy
+
+Since the SAT Competition 2022 entries, every image is **rebuilt from the
+competition sources**. Competition distributions usually ship a precompiled
+binary next to the sources; it is never installed in the image unless the
+`comment` field of the solver entry says so (for example when no source is
+available). The recipe installs the artefact produced by the build, so a
+failed build cannot silently fall back to the submitter's binary.
+
+The build runs the scripts submitted to StarExec whenever they exist
+(`starexec_build`, `build/build.sh`, `install.sh`, ...) unchanged, as an
+unprivileged user like StarExec does. When a script cannot run in our images
+(for example because it relies on Red Hat Software Collections), its steps are
+transcribed in `setup.json` and the deviation is documented in the solver's
+`comment`.
+
+Builds do **not** use CentOS, the operating system of StarExec: they run in a
+Debian release of the competition year, pinned by image digest and by a dated
+snapshot of the Debian package archive (`APT_SNAPSHOT`), so that the compiler
+and libraries are those available at competition time and the build is
+reproducible. Solver images run on the same Debian base.
+
+Entries of 2021 and earlier predate this policy: their recipes were written by
+hand with the `generic/v1` builder, whose heuristics may install binaries
+shipped in the archive (`binary/` or `bin/` directories), and a few sets use
+the `generic/binary-*` builders for binary-only releases.
+
 ## Usage
 
 Requirements:
@@ -147,6 +174,7 @@ and values are JSON objects with the following keys:
 | args | string list | arguments to the executable for simple solving. See below for allowed keywords. |
 | argsproof | string list | arguments to the executable for solving with proof output. See below for allowed keywords |
 | gz | boolean | If true, the solver supports natively gzipped input files.  If false, an input file ending with `.gz` will be first decompressed by the wrapper script. |
+| test_timeout | Minimum timeout in seconds used by `satex test` for this solver, for submissions whose preprocessing is slow even on tiny inputs (the command-line `--timeout` still applies when larger) |
 
 
 The following keywords are allowed in `args` and `argsproof`:
