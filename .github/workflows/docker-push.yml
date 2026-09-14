@@ -4,23 +4,29 @@ on:
         branches:
             - master
 
+env:
+    MAX_IMAGES: 40
+
 jobs:
     docker-push:
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/setup-python@v2
-            - uses: actions/checkout@v2
+            - uses: actions/setup-python@v5
+              with:
+                  python-version: "3.12"
+            - uses: actions/checkout@v4
               with:
                   ref: ${{ github.event.before }}
             - run: python satex.py list > list.old
-            - uses: actions/checkout@v2
+            - uses: actions/checkout@v4
               with:
                   ref: ${{ github.event.after }}
                   clean: false
             - run: python satex.py list > list.new
             - name: diff
               run: |
-                python -c "new=set(open('list.new').read().splitlines());old=set(open('list.old').read().splitlines());print(' '.join(new.difference(old)),end='')" > list.diff
+                # at most MAX_IMAGES new images per run; docker-sync publishes the rest
+                python -c "new=set(open('list.new').read().splitlines());old=set(open('list.old').read().splitlines());print(' '.join(sorted(new.difference(old))[:${MAX_IMAGES}]),end='')" > list.diff
                 echo HAS_CHANGES=`test -s list.diff && echo 1 || echo 0` >> $GITHUB_ENV
             - name:  build
               if: env.HAS_CHANGES == 1
