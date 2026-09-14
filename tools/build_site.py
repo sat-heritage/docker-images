@@ -104,6 +104,8 @@ def collect(repo: Path) -> list[dict]:
     awards_file = repo / "data" / "awards.json"
     awards = load_json(awards_file).get("awards", []) if awards_file.is_file() else []
     awards_by_image = {}
+    global MISSING_PODIUMS
+    MISSING_PODIUMS = [a for a in awards if not a.get("solver")]
     for a in awards:
         if a.get("solver"):
             awards_by_image.setdefault(f"{a['solver']}:{a['year']}", []).append(a)
@@ -325,7 +327,7 @@ def page(title: str, body: str, depth: int, active: str = "") -> str:
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{esc(title)} · SAT Heritage</title><link rel="stylesheet" href="{root}style.css"></head>
 <body><header><a class="logo" href="{root}index.html" style="color:inherit"><span class="dot"></span>SAT Heritage</a>
-<nav><a href="{root}index.html"{' class="active"' if active == 'overview' else ''}>Overview</a><a href="{root}catalogue.html"{' class="active"' if active == 'catalogue' else ''}>Catalogue</a><a href="{root}leaderboards.html"{' class="active"' if active == 'leaderboards' else ''}>Leaderboards</a><a href="{REPO_URL}">GitHub</a></nav>
+<nav><a href="{root}index.html"{' class="active"' if active == 'overview' else ''}>Overview</a><a href="{root}catalogue.html"{' class="active"' if active == 'catalogue' else ''}>Catalogue</a><a href="{root}leaderboards.html"{' class="active"' if active == 'leaderboards' else ''}>Leaderboards</a><a href="{root}missing.html"{' class="active"' if active == 'missing' else ''}>Missing solvers</a><a href="{REPO_URL}">GitHub</a></nav>
 <p>Docker images of SAT solvers, from the first competitions to Knuth's programs, rebuilt from their sources and verified.</p></header>
 <div class="warning"><b>September 14, 2026 — large update in progress.</b> The images of the 2022 to 2026 competitions are being rebuilt from their sources and pushed to Docker Hub in batches over the coming days. If <code>docker pull</code> tells you that an image does not exist yet, build it yourself in the meantime with <code>satex build &lt;solver&gt;:&lt;year&gt;</code> (<code>pip install satex</code>), from the same sources and recipe.</div>
 <main>{body}</main>
@@ -558,6 +560,47 @@ docker run --rm -v $PWD:/data satex/kissat-sc2024:2024 instance.cnf proof.out</p
     return page("Overview", body, 0, "overview")
 
 
+MISSING_PODIUMS: list[dict] = []
+NO_SOURCE = re.compile(r"(no|miss(es|ing)?|without|lost) (the )?sources?|binary[- ]only|only (a )?binary|precompiled only|sources? (are )?(unavailable|missing|not available)", re.I)
+
+
+def source_problem(s: dict) -> str:
+    """Why an image has no usable source, or '' when it has one."""
+    if s["verdict"] == "source-unavailable":
+        return "the archived source could not be downloaded in the last test run"
+    if not s["download_url"]:
+        return "no source archive is referenced for this entry"
+    text = f"{s['status_detail']} {s['comment']}"
+    m = NO_SOURCE.search(text)
+    if m:
+        return text.strip()
+    return ""
+
+
+def missing_page(solvers: list[dict]) -> str:
+    """Solvers whose sources are missing: images without a usable source, and podiums whose solver is absent from the archive."""
+    no_source = [(s, source_problem(s)) for s in solvers]
+    no_source = [(s, why) for s, why in no_source if why]
+    no_source.sort(key=lambda t: (t[0]["set"], t[0]["name"].lower()))
+    rows1 = "".join(
+        f'<tr><td><a href="{s["set"]}/{s["key"]}.html">{esc(s["name"])}</a></td><td>{esc(s["set"])}</td><td class="who">{esc(s["authors"] or "authors not recorded")}</td><td>{esc(why)}</td></tr>'
+        for s, why in no_source)
+    podiums = sorted(MISSING_PODIUMS, key=lambda a: (-a["year"], a["track"], a["category"], a["rank"]))
+    rows2 = "".join(
+        f'<tr><td>{esc(a.get("competition_name") or "?")}</td><td>{a["year"]}</td><td><span class="tag award r{min(a["rank"], 3)}">{esc(award_label(a))}</span></td>'
+        f'<td class="who">{esc(a.get("note", ""))}{" " if a.get("note") else ""}<a href="{esc(a.get("source", "#"))}">source</a></td></tr>'
+        for a in podiums)
+    body = f"""
+<div class="page"><h1>Missing solvers</h1><div class="sub">What the archive lacks, and where you can help. SAT Heritage only keeps solvers it can rebuild from source: for the entries below the source is lost, was never published, or is a binary only. If you have a copy, or know where one survives, open an issue or a pull request on <a href="{REPO_URL}">GitHub</a>; <a href="{REPO_URL}/blob/master/SOURCES.md">SOURCES.md</a> lists where every year's archives are hosted.</div></div>
+<div class="fig"><h2>Images without a usable source ({len(no_source)})</h2><div class="sub">Entries of the catalogue whose source archive is missing, binary-only, or could not be fetched in the last test run. The list grows as the test suite reaches the older years.</div>
+<div class="lb"><table><thead><tr><th>Solver</th><th>Year</th><th>Authors</th><th>Problem</th></tr></thead><tbody>{rows1 or '<tr><td colspan="4">none known</td></tr>'}</tbody></table></div></div>
+<div class="fig" style="margin-top:14px"><h2>Award-winning solvers absent from the archive ({len(podiums)})</h2><div class="sub">Podium places announced by the competition organizers whose solver has no image here: the entry was never archived, or the archive holds a different variant and the mapping is unresolved. Contributions welcome, from the sources themselves to a pointer to the right variant.</div>
+<div class="lb"><table><thead><tr><th>Competition name</th><th>Year</th><th>Podium</th><th>Notes</th></tr></thead><tbody>{rows2 or '<tr><td colspan="4">none</td></tr>'}</tbody></table></div></div>
+<script>{LB_JS}</script>
+"""
+    return page("Missing solvers", body, 0, "missing")
+
+
 LB_JS = """
 const tabs = document.querySelectorAll('.tabs button'), panes = document.querySelectorAll('.pane');
 function showTab(name) { tabs.forEach(b => b.classList.toggle('active', b.dataset.tab === name)); panes.forEach(p => p.hidden = p.id !== name); history.replaceState(null, '', '#' + name); }
@@ -664,6 +707,7 @@ def build(repo: Path, output: Path) -> int:
     (output / "index.html").write_text(overview_page(solvers), encoding="utf-8")
     (output / "catalogue.html").write_text(index_page(solvers), encoding="utf-8")
     (output / "leaderboards.html").write_text(leaderboard_page(solvers), encoding="utf-8")
+    (output / "missing.html").write_text(missing_page(solvers), encoding="utf-8")
     (output / ".nojekyll").write_text("", encoding="utf-8")
     for s in solvers:
         set_dir = output / s["set"]
