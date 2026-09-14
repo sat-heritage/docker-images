@@ -13,6 +13,7 @@ from __future__ import annotations
 import argparse
 import html
 import json
+import re
 import shutil
 from pathlib import Path
 
@@ -153,13 +154,27 @@ def collect(repo: Path) -> list[dict]:
 
 
 CSS = """
-:root { --bg:#f7f7f8; --card:#fff; --ink:#1f2328; --muted:#656d76; --line:#d0d7de; --ok:#1a7f37; --warn:#9a6700; --fail:#cf222e; --none:#8c959f; --accent:#0969da; --cap:#0550ae; --capbg:#ddf4ff; }
-@media (prefers-color-scheme: dark) { :root { --bg:#0d1117; --card:#161b22; --ink:#e6edf3; --muted:#8b949e; --line:#30363d; --ok:#3fb950; --warn:#d29922; --fail:#f85149; --none:#6e7681; --accent:#58a6ff; --cap:#79c0ff; --capbg:#0c2d6b; } }
+:root { --bg:#ffffff; --bg2:#f8f9fb; --card:#ffffff; --ink:#0b0b0b; --muted:#5e6572; --line:#e5e7eb; --ok:#1a7f37; --warn:#9a6700; --fail:#cf222e; --none:#8c959f; --accent:#0b57d0; --hf:#ffd21e; --hfdark:#f59e0b; --cap:#0550ae; --capbg:#e8f1ff; --series-1:#2a78d6; --series-2:#eda100; --grid:#e5e7eb; }
+@media (prefers-color-scheme: dark) { :root { --bg:#0b0f19; --bg2:#111827; --card:#161b26; --ink:#f3f4f6; --muted:#9aa3b2; --line:#2a3140; --ok:#3fb950; --warn:#d29922; --fail:#f85149; --none:#6e7681; --accent:#7ab4ff; --cap:#9ecbff; --capbg:#12305c; --series-1:#3987e5; --series-2:#c98500; --grid:#2a3140; } }
 * { box-sizing: border-box; }
 body { margin:0; font: 15px/1.5 -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color:var(--ink); background:var(--bg); }
 a { color:var(--accent); text-decoration:none; } a:hover { text-decoration:underline; } a.card:hover { text-decoration:none; border-color:var(--accent); }
-header { padding:28px 24px 12px; border-bottom:1px solid var(--line); background:var(--card); }
-header h1 { margin:0 0 4px; font-size:24px; } header p { margin:0; color:var(--muted); }
+header { padding:16px 24px; border-bottom:1px solid var(--line); background:var(--card); display:flex; align-items:center; gap:18px; flex-wrap:wrap; }
+header .logo { display:flex; align-items:center; gap:10px; font-weight:700; font-size:20px; } header .logo span.dot { width:26px; height:26px; border-radius:8px; background:var(--hf); display:inline-block; }
+header nav a { margin-right:16px; color:var(--ink); font-weight:500; } header nav a.active { border-bottom:2px solid var(--hf); }
+header p { margin:0; color:var(--muted); margin-left:auto; }
+.hero { padding:36px 0 8px; } .hero h1 { font-size:34px; margin:0 0 6px; } .hero p { color:var(--muted); font-size:17px; margin:0 0 18px; max-width:760px; }
+.stats { display:grid; grid-template-columns:repeat(auto-fit, minmax(150px, 1fr)); gap:12px; margin:8px 0 22px; }
+.stat { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:14px 16px; }
+.stat .n { font-size:28px; font-weight:700; } .stat .l { color:var(--muted); font-size:13px; }
+.two { display:grid; grid-template-columns:repeat(auto-fit, minmax(340px, 1fr)); gap:14px; }
+.fig { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:14px 16px; }
+.fig h2 { margin:0 0 2px; font-size:16px; } .fig .sub { color:var(--muted); font-size:13px; margin-bottom:8px; }
+.fig svg { width:100%; height:auto; display:block; } .fig text { fill:var(--ink); font-size:12px; } .fig text.muted { fill:var(--muted); } .fig line.grid { stroke:var(--grid); }
+.legend2 { display:flex; gap:14px; font-size:13px; color:var(--muted); margin-top:6px; } .sw { display:inline-block; width:12px; height:12px; border-radius:3px; vertical-align:-1px; margin-right:5px; }
+.facts { display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:12px; }
+.fact { background:var(--bg2); border-radius:12px; padding:12px 14px; } .fact b { display:block; } .fact span { color:var(--muted); font-size:13px; }
+.btn { display:inline-block; background:var(--hf); color:#0b0b0b; padding:10px 16px; border-radius:10px; font-weight:600; } .btn:hover { text-decoration:none; filter:brightness(.95); }
 main { max-width:1200px; margin:0 auto; padding:20px 24px 60px; }
 .toolbar { display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin:8px 0 18px; }
 .toolbar input, .toolbar select { font:inherit; padding:8px 10px; border:1px solid var(--line); border-radius:8px; background:var(--card); color:var(--ink); }
@@ -210,12 +225,14 @@ render();
 """
 
 
-def page(title: str, body: str, depth: int) -> str:
+def page(title: str, body: str, depth: int, active: str = "") -> str:
     root = "../" * depth
     return f"""<!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{esc(title)} · SAT Heritage</title><link rel="stylesheet" href="{root}style.css"></head>
-<body><header><h1><a href="{root}index.html" style="color:inherit">SAT Heritage</a></h1><p>Docker images of SAT solvers, rebuilt from the competition sources and verified.</p></header>
+<body><header><a class="logo" href="{root}index.html" style="color:inherit"><span class="dot"></span>SAT Heritage</a>
+<nav><a href="{root}index.html"{' class="active"' if active == 'overview' else ''}>Overview</a><a href="{root}catalogue.html"{' class="active"' if active == 'catalogue' else ''}>Catalogue</a><a href="{REPO_URL}">GitHub</a></nav>
+<p>Docker images of SAT solvers, rebuilt from the competition sources and verified.</p></header>
 <main>{body}</main>
 <footer>Generated from the <a href="{REPO_URL}">sat-heritage/docker-images</a> repository.</footer></body></html>
 """
@@ -240,7 +257,7 @@ def index_page(solvers: list[dict]) -> str:
 <script>window.SOLVERS = {json.dumps([{k: s[k] for k in ("image", "key", "set", "name", "authors", "status", "family", "verdict", "capabilities", "version", "tracks")} for s in solvers])};</script>
 <script>{JS}</script>
 """
-    return page("Catalogue", body, 0)
+    return page("Catalogue", body, 0, "catalogue")
 
 
 def solver_page(s: dict) -> str:
@@ -255,7 +272,7 @@ def solver_page(s: dict) -> str:
         for k, v in s["build_stages"].items())
     run_cmd = f"docker run --rm -v $PWD:/data {DOCKER_NS}/{s['image']} instance.cnf" + (" proof.out" if s["proof"] else "")
     body = f"""
-<div class="crumbs"><a href="../index.html">Catalogue</a> › {esc(s['set'])}</div>
+<div class="crumbs"><a href="../catalogue.html">Catalogue</a> › {esc(s['set'])}</div>
 <div class="page"><h1>{esc(s['name'])}</h1><div class="sub">{esc(s['authors'] or 'authors not recorded')}{(' · version ' + esc(s['version'])) if s['version'] else ''}</div>
 <div class="tagrow" style="margin-top:10px"><span class="lbl">solver</span><span class="tag id">{esc(s['family'])}</span>{('<span class="tag id">v' + esc(s['version']) + '</span>') if s['version'] else ''}{''.join('<span class="tag id">' + esc(t) + '</span>' for t in s['tracks'])}</div>
 <div class="tagrow" style="margin-top:6px"><span class="lbl">can do</span>{''.join('<span class="tag cap">' + esc(c) + '</span>' for c in s['capabilities']) or '<span class="tag cap">not verified yet</span>'}</div>
@@ -286,13 +303,109 @@ def solver_page(s: dict) -> str:
     return page(f"{s['name']} ({s['set']})", body, 1)
 
 
+def svg_stacked_years(rows: list[tuple[str, int, int]]) -> str:
+    """Vertical stacked bars per year: verified (series 1) over the rest (series 2)."""
+    w, h, left, bottom, top = 900, 260, 36, 34, 18
+    n = len(rows)
+    inner = w - left - 12
+    step = inner / max(n, 1)
+    bw = min(34, step * 0.7)
+    maxv = max((a + b for _, a, b in rows), default=1) or 1
+    scale = (h - top - bottom) / maxv
+    ticks = [0, maxv // 2, maxv]
+    out = [f'<svg viewBox="0 0 {w} {h}" role="img" aria-label="Solver images per competition year">']
+    for t in ticks:
+        y = h - bottom - t * scale
+        out.append(f'<line class="grid" x1="{left}" x2="{w-12}" y1="{y:.1f}" y2="{y:.1f}"/><text class="muted" x="{left-6}" y="{y+4:.1f}" text-anchor="end">{t}</text>')
+    for i, (year, ok, rest) in enumerate(rows):
+        x = left + i * step + (step - bw) / 2
+        y0 = h - bottom
+        hv = ok * scale; hr = rest * scale
+        title = f"{year}: {ok + rest} images, {ok} verified"
+        if rest:
+            out.append(f'<rect x="{x:.1f}" y="{y0-hr:.1f}" width="{bw:.1f}" height="{max(hr,0):.1f}" rx="3" fill="var(--series-2)"><title>{title}</title></rect>')
+        if ok:
+            out.append(f'<rect x="{x:.1f}" y="{y0-hr-hv-(2 if rest else 0):.1f}" width="{bw:.1f}" height="{max(hv,0):.1f}" rx="3" fill="var(--series-1)"><title>{title}</title></rect>')
+        out.append(f'<text x="{x+bw/2:.1f}" y="{y0-hr-hv-6:.1f}" text-anchor="middle" class="muted">{ok+rest}</text>')
+        out.append(f'<text x="{x+bw/2:.1f}" y="{h-bottom+16}" text-anchor="middle" class="muted">{year}</text>')
+    out.append("</svg>")
+    return "".join(out)
+
+
+def svg_hbars(rows: list[tuple[str, int]], label: str) -> str:
+    """Horizontal single-series bars with direct value labels (sized for a half-width figure)."""
+    w, rowh, left = 480, 22, 190
+    h = rowh * len(rows) + 8
+    maxv = max((v for _, v in rows), default=1) or 1
+    scale = (w - left - 40) / maxv
+    out = [f'<svg viewBox="0 0 {w} {h}" role="img" aria-label="{esc(label)}">']
+    for i, (name, v) in enumerate(rows):
+        y = i * rowh + 4
+        out.append(f'<text x="{left-10}" y="{y+15}" text-anchor="end">{esc(name[:30])}</text>')
+        out.append(f'<rect x="{left}" y="{y+3}" width="{v*scale:.1f}" height="{rowh-8}" rx="3" fill="var(--series-1)"><title>{esc(name)}: {v}</title></rect>')
+        out.append(f'<text x="{left+v*scale+8:.1f}" y="{y+15}" class="muted">{v}</text>')
+    out.append("</svg>")
+    return "".join(out)
+
+
+def overview_page(solvers: list[dict]) -> str:
+    from collections import Counter
+    years = sorted({s["set"] for s in solvers if s["set"].isdigit()}, key=int)
+    per_year = [(y, sum(1 for s in solvers if s["set"] == y and s["verdict"] == "passed"),
+                 sum(1 for s in solvers if s["set"] == y and s["verdict"] != "passed")) for y in years]
+    authors = Counter()
+    author_years = {}
+    for s in solvers:
+        for a in [a.strip() for a in re.split(r",|\band\b|&", s["authors"]) if a.strip()]:
+            authors[a] += 1
+            author_years.setdefault(a, set()).add(s["set"])
+    families = Counter(s["family"] for s in solvers)
+    verified = sum(1 for s in solvers if s["verdict"] == "passed")
+    proofs = sum(1 for s in solvers if "UNSAT+proof" in s["capabilities"])
+    top_authors = authors.most_common(12)
+    top_families = [(f, c) for f, c in families.most_common(11) if f != "other"][:10]
+    other_count = families.get("other", 0)
+    longest = max(author_years.items(), key=lambda kv: (len(kv[1]), kv[0])) if author_years else ("", set())
+    biggest_year = max(per_year, key=lambda r: r[1] + r[2]) if per_year else ("", 0, 0)
+    oldest = min((s for s in solvers if s["set"].isdigit()), key=lambda s: int(s["set"]), default=None)
+    facts = [
+        (f"{biggest_year[0]}", f"busiest year, {biggest_year[1] + biggest_year[2]} images"),
+        (longest[0], f"present in {len(longest[1])} competition years, from {min(longest[1])} to {max(longest[1])}" if longest[1] else ""),
+        (f"{proofs} images", "produce an UNSAT proof that the test suite verified"),
+        (f"{len(authors)} authors", f"credited across {len(years)} competition years"),
+        (oldest["set"] if oldest else "", f"first competition in the archive ({sum(1 for s in solvers if s['set'] == (oldest['set'] if oldest else '')) } images)"),
+    ]
+    body = f"""
+<div class="hero"><h1>Every SAT competition solver, one <code>docker run</code> away.</h1>
+<p>SAT Heritage rebuilds the solvers submitted to the SAT competitions from their original sources, in a build environment of their year, and verifies that each image still answers correctly. Browse the catalogue, or pull an image and run it on your instance.</p>
+<a class="btn" href="catalogue.html">Browse the catalogue →</a></div>
+<div class="stats">
+<div class="stat"><div class="n">{len(solvers)}</div><div class="l">solver images</div></div>
+<div class="stat"><div class="n">{verified}</div><div class="l">verified today (build, SAT, UNSAT, proof)</div></div>
+<div class="stat"><div class="n">{len(years)}</div><div class="l">competition years, {years[0]} to {years[-1]}</div></div>
+<div class="stat"><div class="n">{len(families)}</div><div class="l">solver families</div></div>
+<div class="stat"><div class="n">{len(authors)}</div><div class="l">authors</div></div>
+</div>
+<div class="fig"><h2>Solver images per competition year</h2><div class="sub">Verified images pass the whole test suite; the rest are built but not verified yet, unstable, or not buildable.</div>
+{svg_stacked_years(per_year)}
+<div class="legend2"><span><i class="sw" style="background:var(--series-1)"></i>verified</span><span><i class="sw" style="background:var(--series-2)"></i>not verified yet</span></div></div>
+<div class="two" style="margin-top:14px">
+<div class="fig"><h2>Most credited authors</h2><div class="sub">Number of solver images an author is credited on, all years together.</div>{svg_hbars(top_authors, "Most credited authors")}</div>
+<div class="fig"><h2>Solver families</h2><div class="sub">Detected from the solver name and its executable; {other_count} images belong to no listed family.</div>{svg_hbars(top_families, "Solver families")}</div>
+</div>
+<div class="fig" style="margin-top:14px"><h2>Did you know?</h2><div class="facts">{''.join(f'<div class="fact"><b>{esc(a)}</b><span>{esc(b)}</span></div>' for a, b in facts if a)}</div></div>
+"""
+    return page("Overview", body, 0, "overview")
+
+
 def build(repo: Path, output: Path) -> int:
     solvers = collect(repo)
     if output.exists():
         shutil.rmtree(output)
     output.mkdir(parents=True)
     (output / "style.css").write_text(CSS, encoding="utf-8")
-    (output / "index.html").write_text(index_page(solvers), encoding="utf-8")
+    (output / "index.html").write_text(overview_page(solvers), encoding="utf-8")
+    (output / "catalogue.html").write_text(index_page(solvers), encoding="utf-8")
     (output / ".nojekyll").write_text("", encoding="utf-8")
     for s in solvers:
         set_dir = output / s["set"]
