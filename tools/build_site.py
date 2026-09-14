@@ -482,7 +482,7 @@ def podium_section(solvers: list[dict]) -> str:
             body += f'<details><summary>{len(rest)} more podium place{"s" if len(rest) > 1 else ""}</summary>{"".join(line(a, s) for a, s in rest)}</details>'
         blocks.append(f'<div class="yr"><h3>{year} <small>{tracks} track{"s" if tracks > 1 else ""}</small></h3>{body}</div>')
     first = min(by_year)
-    return (f'<div class="fig" style="margin-top:14px"><h2>Award-winning solvers</h2><div class="sub">Winners of every track and category as announced by the competition organizers, {first} to {max(by_year)}, with the rest of each podium folded. Ties share a rank; only podiums whose solver has an image here are listed, see <a href="{REPO_URL}/blob/webpage/data/awards.json">data/awards.json</a> for the sources.</div>'
+    return (f'<div class="fig" style="margin-top:14px"><h2>Award-winning solvers</h2><div class="sub">Winners of every track and category as announced by the competition organizers, {first} to {max(by_year)}, with the rest of each podium folded. Ties share a rank; only podiums whose solver has an image here are listed, see <a href="{REPO_URL}/blob/webpage/data/awards.json">data/awards.json</a> for the sources. This summary is an extraction from the database and involves choices and interpretations that may still change (some solver names are not clarified yet); any help is welcome, send a pull request.</div>'
             f'<div class="podium">{"".join(blocks)}</div></div>')
 
 
@@ -538,8 +538,8 @@ docker run --rm -v $PWD:/data satex/kissat-sc2024:2024 instance.cnf proof.out</p
 {svg_stacked_years(per_year)}
 <div class="legend2"><span><i class="sw" style="background:var(--l-none)"></i>not run yet</span>{''.join(f'<span><i class="sw" style="background:var(--l{i})"></i>{LADDER_LABEL[k]}</span>' for i, k in enumerate(LADDER))}</div></div>
 <div class="two" style="margin-top:14px">
-<div class="fig"><h2>Most credited authors</h2><div class="sub">Number of solver images an author is credited on, all years together.</div>{svg_hbars(top_authors, "Most credited authors")}</div>
-<div class="fig"><h2>Solver families</h2><div class="sub">Detected from the solver name and its executable; {other_count} images belong to no listed family.</div>{svg_hbars(top_families, "Solver families")}</div>
+<div class="fig"><h2>Most credited authors</h2><div class="sub">Number of solver images an author is credited on, all years together. Author lists are still being cleaned up, from submitter names to full credits: if you do not find yourself, send a pull request.</div>{svg_hbars(top_authors, "Most credited authors")}</div>
+<div class="fig"><h2>Solver families</h2><div class="sub">Detected from the solver name and its executable; {other_count} images belong to no listed family. Work in progress: a misplaced or missing family is one pull request away.</div>{svg_hbars(top_families, "Solver families")}</div>
 </div>
 {podium_section(solvers)}
 <div class="fig" style="margin-top:14px"><h2>Did you know?</h2><div class="facts">{''.join(f'<div class="fact"><b>{esc(a)}</b><span>{esc(b)}</span></div>' for a, b in facts if a)}</div></div>
