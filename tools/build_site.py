@@ -185,6 +185,14 @@ CSS = """
 .podium .yr div{font-size:13px;margin:3px 0}
 .podium .yr small{color:var(--muted)}
 .podium details{margin-top:6px} .podium summary{cursor:pointer;color:var(--accent);font-size:13px}
+.links{display:flex;gap:8px;flex-wrap:wrap;margin:4px 0 10px} .btn.small{padding:6px 12px;font-size:13px}
+.tabs{display:flex;gap:6px;margin:10px 0 14px} .tabs button{font:inherit;padding:8px 14px;border:1px solid var(--line);border-radius:999px;background:var(--card);color:var(--ink);cursor:pointer}
+.tabs button.active{background:var(--hf);border-color:var(--hfdark);color:#1a1a19;font-weight:600}
+.lb{overflow-x:auto} .lb table{font-size:14px} .lb th{cursor:pointer;user-select:none;white-space:nowrap;color:var(--muted);font-weight:600;position:sticky;top:0;background:var(--card)}
+.lb th.sorted-desc::after{content:" ▾"} .lb th.sorted-asc::after{content:" ▴"} .lb td.num,.lb th.num{text-align:right;font-variant-numeric:tabular-nums}
+.lb td.rank{color:var(--muted);width:2.5em} .lb tr.top1 td.rank{color:#7a5a00;font-weight:700} .lb tr.top2 td.rank{color:#4a5361;font-weight:700} .lb tr.top3 td.rank{color:#7a4a1e;font-weight:700}
+.lb .medal{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:5px;vertical-align:middle} .medal.g{background:#e8c65a} .medal.s{background:#c3cad4} .medal.b{background:#dcb08c}
+.lb .who{color:var(--muted);font-size:13px}
 :root { --bg:#ffffff; --bg2:#f8f9fb; --card:#ffffff; --ink:#0b0b0b; --muted:#5e6572; --line:#e5e7eb; --ok:#1a7f37; --warn:#9a6700; --fail:#cf222e; --none:#8c959f; --accent:#0b57d0; --hf:#ffd21e; --hfdark:#f59e0b; --cap:#0550ae; --capbg:#e8f1ff; --series-1:#2a78d6; --series-2:#eda100; --grid:#e5e7eb; --warnbg:#fff8dc; --l0:#4a3aa7; --l1:#eb6834; --l2:#2a78d6; --l3:#eda100; --l4:#1baf7a; --l-none:#d4d6da; }
 @media (prefers-color-scheme: dark) { :root { --bg:#0b0f19; --bg2:#111827; --card:#161b26; --ink:#f3f4f6; --muted:#9aa3b2; --line:#2a3140; --ok:#3fb950; --warn:#d29922; --fail:#f85149; --none:#6e7681; --accent:#7ab4ff; --cap:#9ecbff; --capbg:#12305c; --series-1:#3987e5; --series-2:#c98500; --grid:#2a3140; --warnbg:#3a2f0b; --l0:#9085e9; --l1:#d95926; --l2:#3987e5; --l3:#c98500; --l4:#199e70; --l-none:#3a4150; } }
 * { box-sizing: border-box; }
@@ -274,6 +282,8 @@ function card(d) { return `<a class="card" href="${d.set}/${d.key}.html">
     <div class="tagrow"><span class="lbl">status</span>${badge(d.verdict)}<span class="badge ${ {ok:'ok',unstable:'warn',fixme:'fail'}[d.status] || 'none'}">${ {ok:'builds',unstable:'unstable',fixme:'not buildable'}[d.status] || d.status}</span></div>
   </a>`; }
 [q, fy, ff, fv, fs, document.getElementById('cap'), document.getElementById('award')].forEach(e => e.addEventListener('input', render));
+const params = new URLSearchParams(location.search);
+for (const id of ['q', 'year', 'family', 'verdict', 'status', 'cap', 'award']) { const v = params.get(id); if (v) { const el = document.getElementById(id); if (el) el.value = v; } }
 render();
 """
 
@@ -315,7 +325,7 @@ def page(title: str, body: str, depth: int, active: str = "") -> str:
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{esc(title)} · SAT Heritage</title><link rel="stylesheet" href="{root}style.css"></head>
 <body><header><a class="logo" href="{root}index.html" style="color:inherit"><span class="dot"></span>SAT Heritage</a>
-<nav><a href="{root}index.html"{' class="active"' if active == 'overview' else ''}>Overview</a><a href="{root}catalogue.html"{' class="active"' if active == 'catalogue' else ''}>Catalogue</a><a href="{REPO_URL}">GitHub</a></nav>
+<nav><a href="{root}index.html"{' class="active"' if active == 'overview' else ''}>Overview</a><a href="{root}catalogue.html"{' class="active"' if active == 'catalogue' else ''}>Catalogue</a><a href="{root}leaderboards.html"{' class="active"' if active == 'leaderboards' else ''}>Leaderboards</a><a href="{REPO_URL}">GitHub</a></nav>
 <p>Docker images of SAT solvers, from the first competitions to Knuth's programs, rebuilt from their sources and verified.</p></header>
 <div class="warning"><b>September 14, 2026 — large update in progress.</b> The images of the 2022 to 2026 competitions are being rebuilt from their sources and pushed to Docker Hub in batches over the coming days. If <code>docker pull</code> tells you that an image does not exist yet, build it yourself in the meantime with <code>satex build &lt;solver&gt;:&lt;year&gt;</code> (<code>pip install satex</code>), from the same sources and recipe.</div>
 <main>{body}</main>
@@ -483,6 +493,7 @@ def podium_section(solvers: list[dict]) -> str:
         blocks.append(f'<div class="yr"><h3>{year} <small>{tracks} track{"s" if tracks > 1 else ""}</small></h3>{body}</div>')
     first = min(by_year)
     return (f'<div class="fig" style="margin-top:14px"><h2>Award-winning solvers</h2><div class="sub">Winners of every track and category as announced by the competition organizers, {first} to {max(by_year)}, with the rest of each podium folded. Ties share a rank; only podiums whose solver has an image here are listed, see <a href="{REPO_URL}/blob/webpage/data/awards.json">data/awards.json</a> for the sources. This summary is an extraction from the database and involves choices and interpretations that may still change (some solver names are not clarified yet); any help is welcome, send a pull request.</div>'
+            f'<div class="links"><a class="btn small" href="catalogue.html?award=winner">Winners in the catalogue →</a> <a class="btn small" href="catalogue.html?award=awarded">Every awarded solver →</a> <a class="btn small" href="leaderboards.html">Leaderboards →</a></div>'
             f'<div class="podium">{"".join(blocks)}</div></div>')
 
 
@@ -547,6 +558,103 @@ docker run --rm -v $PWD:/data satex/kissat-sc2024:2024 instance.cnf proof.out</p
     return page("Overview", body, 0, "overview")
 
 
+LB_JS = """
+const tabs = document.querySelectorAll('.tabs button'), panes = document.querySelectorAll('.pane');
+function showTab(name) { tabs.forEach(b => b.classList.toggle('active', b.dataset.tab === name)); panes.forEach(p => p.hidden = p.id !== name); history.replaceState(null, '', '#' + name); }
+tabs.forEach(b => b.addEventListener('click', () => showTab(b.dataset.tab)));
+showTab(location.hash === '#authors' ? 'authors' : 'solvers');
+document.querySelectorAll('.lb table').forEach(table => {
+  const tbody = table.tBodies[0];
+  table.querySelectorAll('th').forEach((th, i) => th.addEventListener('click', () => {
+    const num = th.classList.contains('num'), desc = !th.classList.contains('sorted-desc');
+    table.querySelectorAll('th').forEach(h => h.classList.remove('sorted-desc', 'sorted-asc'));
+    th.classList.add(desc ? 'sorted-desc' : 'sorted-asc');
+    const rows = [...tbody.rows];
+    rows.sort((a, b) => { const x = a.cells[i].dataset.v ?? a.cells[i].textContent.trim(), y = b.cells[i].dataset.v ?? b.cells[i].textContent.trim();
+      const c = num ? (parseFloat(x) || 0) - (parseFloat(y) || 0) : x.localeCompare(y, undefined, {numeric: true, sensitivity: 'base'}); return desc ? -c : c; });
+    rows.forEach(r => tbody.appendChild(r));
+  }));
+  const search = table.parentElement.querySelector('input[type=search]');
+  if (search) search.addEventListener('input', () => { const s = search.value.trim().toLowerCase(); [...tbody.rows].forEach(r => r.hidden = !!s && !r.textContent.toLowerCase().includes(s)); });
+});
+"""
+
+POINTS = {1: 3, 2: 2, 3: 1}
+
+
+def author_names(text: str) -> list[str]:
+    """Individual author names from a credit line; submitter placeholders are dropped."""
+    if not text or text.lower().startswith("submitted by"):
+        return []
+    text = re.sub(r"\(.*?\)", "", text)
+    names = [a.strip(" .") for a in re.split(r",|\band\b|&|;", text)]
+    return [a for a in names if a and "co-author" not in a.lower() and "et al" not in a.lower() and len(a) > 2]
+
+
+def leaderboard_page(solvers: list[dict]) -> str:
+    """Solvers and authors ranked by competition medals (3 points per gold, 2 per silver, 1 per bronze)."""
+    def medals(awards):
+        g = sum(1 for a in awards if a["rank"] == 1); sv = sum(1 for a in awards if a["rank"] == 2); b = sum(1 for a in awards if a["rank"] == 3)
+        return g, sv, b, 3 * g + 2 * sv + b
+    rows = []
+    for s in solvers:
+        if not s["awards"]:
+            continue
+        g, sv, b, pts = medals(s["awards"])
+        rows.append((pts, g, sv, b, s))
+    rows.sort(key=lambda r: (-r[0], -r[1], -r[2], -r[3], r[4]["set"], r[4]["name"].lower()))
+    vlab = lambda s: VERDICT_LABEL.get(s["verdict"], (s["verdict"], "none"))
+    solver_rows = "".join(
+        f'<tr class="top{i + 1 if i < 3 else 0}"><td class="rank" data-v="{i + 1}">{i + 1}</td>'
+        f'<td><a href="{s["set"]}/{s["key"]}.html">{esc(s["name"])}</a> <span class="tag id">{esc(s["family"])}</span></td>'
+        f'<td data-v="{esc(s["set"])}">{esc(s["set"])}</td><td class="who">{esc(s["authors"] or "authors not recorded")}</td>'
+        f'<td class="num" data-v="{g}">{g}</td><td class="num" data-v="{sv}">{sv}</td><td class="num" data-v="{b}">{b}</td><td class="num" data-v="{pts}"><b>{pts}</b></td>'
+        f'<td class="num" data-v="{len({a["track"] for a in s["awards"]})}">{len({a["track"] for a in s["awards"]})}</td>'
+        f'<td data-v="{esc(s["verdict"])}"><span class="badge {vlab(s)[1]}">{esc(vlab(s)[0])}</span></td></tr>'
+        for i, (pts, g, sv, b, s) in enumerate(rows))
+    authors = {}
+    for s in solvers:
+        for a in author_names(s["authors"]):
+            d = authors.setdefault(a, {"images": 0, "years": set(), "awards": [], "awarded": set(), "best": None})
+            d["images"] += 1
+            d["years"].add(s["set"])
+            if s["awards"]:
+                d["awards"] += s["awards"]
+                d["awarded"].add(s["image"])
+                pts = medals(s["awards"])[3]
+                if d["best"] is None or pts > d["best"][0]:
+                    d["best"] = (pts, s)
+    arows = []
+    for name, d in authors.items():
+        if not d["awards"]:
+            continue
+        g, sv, b, pts = medals(d["awards"])
+        arows.append((pts, g, sv, b, name, d))
+    arows.sort(key=lambda r: (-r[0], -r[1], -r[2], -r[3], r[4].lower()))
+    def years_text(ys):
+        ys = sorted(y for y in ys if y.isdigit())
+        return f"{ys[0]}–{ys[-1]}" if len(ys) > 1 else (ys[0] if ys else "")
+    author_rows = "".join(
+        f'<tr class="top{i + 1 if i < 3 else 0}"><td class="rank" data-v="{i + 1}">{i + 1}</td>'
+        f'<td><a href="catalogue.html?q={esc(name)}">{esc(name)}</a></td>'
+        f'<td class="num" data-v="{g}">{g}</td><td class="num" data-v="{sv}">{sv}</td><td class="num" data-v="{b}">{b}</td><td class="num" data-v="{pts}"><b>{pts}</b></td>'
+        f'<td class="num" data-v="{len(d["awarded"])}">{len(d["awarded"])}</td><td class="num" data-v="{d["images"]}">{d["images"]}</td>'
+        f'<td data-v="{esc(years_text(d["years"]))}">{esc(years_text(d["years"]))}</td>'
+        f'<td><a href="{d["best"][1]["set"]}/{d["best"][1]["key"]}.html">{esc(d["best"][1]["name"])}</a> <span class="who">{esc(d["best"][1]["set"])}</span></td></tr>'
+        for i, (pts, g, sv, b, name, d) in enumerate(arows))
+    head_medals = '<th class="num"><span class="medal g"></span>Gold</th><th class="num"><span class="medal s"></span>Silver</th><th class="num"><span class="medal b"></span>Bronze</th><th class="num">Points</th>'
+    body = f"""
+<div class="page"><h1>Leaderboards</h1><div class="sub">Solvers and authors ranked by competition medals: 3 points per gold, 2 per silver, 1 per bronze, every track and category counted, as recorded in <a href="{REPO_URL}/blob/webpage/data/awards.json">data/awards.json</a>. Only solvers with an image here are counted, so this is a view of the archive, not the official history; podiums and credits are still being clarified, corrections welcome by pull request. Click a column to sort.</div></div>
+<div class="tabs"><button data-tab="solvers">Solvers ({len(rows)})</button><button data-tab="authors">Authors ({len(arows)})</button></div>
+<section id="solvers" class="pane fig"><div class="toolbar">{ctl("search", '<input type="search" placeholder="Filter solvers, authors, years">')}</div><div class="lb"><table>
+<thead><tr><th class="num">#</th><th>Solver</th><th>Year</th><th>Authors</th>{head_medals}<th class="num">Tracks</th><th>Status</th></tr></thead><tbody>{solver_rows}</tbody></table></div></section>
+<section id="authors" class="pane fig" hidden><div class="toolbar">{ctl("search", '<input type="search" placeholder="Filter authors">')}</div><div class="lb"><table>
+<thead><tr><th class="num">#</th><th>Author</th>{head_medals}<th class="num">Awarded solvers</th><th class="num">Images</th><th>Years</th><th>Best solver</th></tr></thead><tbody>{author_rows}</tbody></table></div></section>
+<script>{LB_JS}</script>
+"""
+    return page("Leaderboards", body, 0, "leaderboards")
+
+
 def build(repo: Path, output: Path) -> int:
     solvers = collect(repo)
     if output.exists():
@@ -555,6 +663,7 @@ def build(repo: Path, output: Path) -> int:
     (output / "style.css").write_text(CSS, encoding="utf-8")
     (output / "index.html").write_text(overview_page(solvers), encoding="utf-8")
     (output / "catalogue.html").write_text(index_page(solvers), encoding="utf-8")
+    (output / "leaderboards.html").write_text(leaderboard_page(solvers), encoding="utf-8")
     (output / ".nojekyll").write_text("", encoding="utf-8")
     for s in solvers:
         set_dir = output / s["set"]
