@@ -179,6 +179,7 @@ header p { margin:0; color:var(--muted); margin-left:auto; }
 .legend2 { display:flex; gap:14px; font-size:13px; color:var(--muted); margin-top:6px; } .sw { display:inline-block; width:12px; height:12px; border-radius:3px; vertical-align:-1px; margin-right:5px; }
 .facts { display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:12px; }
 .fact { background:var(--bg2); border-radius:12px; padding:12px 14px; } .fact b { display:block; } .fact span { color:var(--muted); font-size:13px; }
+.notice { font-size:14px !important; color:var(--muted); border-left:3px solid var(--hf); padding-left:10px; }
 .btn { display:inline-block; background:var(--hf); color:#0b0b0b; padding:10px 16px; border-radius:10px; font-weight:600; } .btn:hover { text-decoration:none; filter:brightness(.95); }
 main { max-width:1200px; margin:0 auto; padding:20px 24px 60px; }
 .toolbar { display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin:8px 0 18px; }
@@ -203,7 +204,7 @@ dl { display:grid; grid-template-columns:max-content 1fr; gap:6px 16px; margin:0
 pre { background:var(--bg); border:1px solid var(--line); border-radius:8px; padding:10px 12px; overflow-x:auto; font-size:13px; }
 table { border-collapse:collapse; width:100%; font-size:14px; } td, th { text-align:left; padding:4px 8px; border-bottom:1px solid var(--line); }
 .crumbs { color:var(--muted); font-size:14px; margin-bottom:8px; }
-footer { color:var(--muted); font-size:13px; text-align:center; padding:20px; }
+footer { color:var(--muted); font-size:13px; text-align:center; padding:20px 24px 28px; max-width:900px; margin:0 auto; line-height:1.5; }
 """
 
 JS = """
@@ -239,7 +240,7 @@ def page(title: str, body: str, depth: int, active: str = "") -> str:
 <nav><a href="{root}index.html"{' class="active"' if active == 'overview' else ''}>Overview</a><a href="{root}catalogue.html"{' class="active"' if active == 'catalogue' else ''}>Catalogue</a><a href="{REPO_URL}">GitHub</a></nav>
 <p>Docker images of SAT solvers, rebuilt from the competition sources and verified.</p></header>
 <main>{body}</main>
-<footer>Generated from the <a href="{REPO_URL}">sat-heritage/docker-images</a> repository.</footer></body></html>
+<footer>Generated from the <a href="{REPO_URL}">sat-heritage/docker-images</a> repository. This site, its generator and the solver metadata it presents were produced with the help of Claude Fable 5.1 (Anthropic): the descriptions, verification results and figures may contain errors and should be checked against the repository and the original competition material before being relied upon.</footer></body></html>
 """
 
 
@@ -387,6 +388,7 @@ def overview_page(solvers: list[dict]) -> str:
     body = f"""
 <div class="hero"><h1>Every SAT competition solver, one <code>docker run</code> away.</h1>
 <p>SAT Heritage rebuilds the solvers submitted to the SAT competitions from their original sources, in a build environment of their year, and verifies that each image still answers correctly. Browse the catalogue, or pull an image and run it on your instance.</p>
+<p class="notice">Generated with the help of Claude Fable 5.1: the metadata and results shown here are reported with caution and may contain errors.</p>
 <a class="btn" href="catalogue.html">Browse the catalogue →</a></div>
 <div class="stats">
 <div class="stat"><div class="n">{len(solvers)}</div><div class="l">solver images</div></div>
