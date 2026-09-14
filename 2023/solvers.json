@@ -1,0 +1,991 @@
+{
+    "amsat": {
+        "status": "ok",
+        "name": "AMSAT_",
+        "authors": "Shuolin Li, Chu-Min Li, Mao Luo, Jordi Coll, Mohamed Sami Cherif, Djamal Habet, Felip Manyà",
+        "call": "./amsat",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "-drup-file=FILEPROOF"
+        ],
+        "tracks": [
+            "main"
+        ],
+        "comment": "The submission ships sources only (Maple_LCM based, no run script); the call follows its usage line. Competition name: AMSAT."
+    },
+    "breakid-kissat": {
+        "status": "ok",
+        "name": "BreakID-kissat",
+        "version": "3.0.0",
+        "authors": "Bart Bogaerts, Jakob Nordström, Andy Oertel, Çağrı Uluç Yıldırımoğlu",
+        "call": "bash",
+        "gz": false,
+        "args": [
+            "starexec_run_low.sh",
+            "FILECNF",
+            "PROOFDIR"
+        ],
+        "tracks": [
+            "main"
+        ],
+        "path": "BreakID-kissat/bin",
+        "comment": "BreakID pipes the symmetry-broken formula into a Kissat writing VeriPB proofs, which satex cannot check; no argsproof."
+    },
+    "cadical-esa": {
+        "status": "ok",
+        "name": "Cadical_ESA",
+        "version": "1.5.3",
+        "authors": "Shuolin Li, Chu-Min Li, Mao Luo, Jordi Coll, Mohamed Sami Cherif, Djamal Habet, Felip Manyà",
+        "call": "./cadical",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF"
+        ],
+        "tracks": [
+            "main"
+        ]
+    },
+    "cadical-rel-1.5.3-scavel": {
+        "status": "ok",
+        "name": "Cadical_rel_1.5.3.Scavel",
+        "version": "1.5.3",
+        "authors": "Zhihui Li, Guanfeng Wu, Yang Xu, Keming Wang, Zhiguo Long, Zhibin Yu",
+        "call": "./cadical",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF"
+        ],
+        "tracks": [
+            "main"
+        ]
+    },
+    "cadical-rel-scavel": {
+        "status": "ok",
+        "name": "Cadical_rel_Scavel",
+        "version": "1.4.1",
+        "authors": "Zhihui Li, Guanfeng Wu, Yang Xu, Keming Wang, Zhiguo Long, Zhibin Yu",
+        "call": "./cadical",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF"
+        ],
+        "tracks": [
+            "main"
+        ]
+    },
+    "cadical-vivinst": {
+        "status": "ok",
+        "name": "CaDiCaL_vivinst",
+        "version": "1.5.2",
+        "authors": "Armin Biere, Mathias Fleury, Florian Pollitt",
+        "call": "./cadical",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF"
+        ],
+        "tracks": [
+            "main"
+        ]
+    },
+    "hkis-psids": {
+        "status": "ok",
+        "name": "hKis",
+        "version": "1.0.3",
+        "authors": "Rodrigue Konan Tchinda, Clémentin Tayou Djamegni",
+        "call": "./kissat",
+        "gz": true,
+        "args": [
+            "--unsat",
+            "--psids=true",
+            "FILECNF"
+        ],
+        "argsproof": [
+            "--unsat",
+            "--psids=true",
+            "FILECNF",
+            "FILEPROOF"
+        ],
+        "tracks": [
+            "main"
+        ],
+        "comment": "Competition name: hKis-psids."
+    },
+    "hkis-sat-psids": {
+        "status": "ok",
+        "name": "hKis",
+        "version": "1.0.3",
+        "authors": "Rodrigue Konan Tchinda, Clémentin Tayou Djamegni",
+        "call": "./kissat",
+        "gz": true,
+        "args": [
+            "--sat",
+            "--phase=false",
+            "--psids=true",
+            "FILECNF"
+        ],
+        "argsproof": [
+            "--sat",
+            "--phase=false",
+            "--psids=true",
+            "FILECNF",
+            "FILEPROOF"
+        ],
+        "tracks": [
+            "main"
+        ],
+        "comment": "Competition name: hKis SAT-psids."
+    },
+    "hkis-unsat": {
+        "status": "ok",
+        "name": "hKis",
+        "version": "1.0.3",
+        "authors": "Rodrigue Konan Tchinda, Clémentin Tayou Djamegni",
+        "call": "./kissat",
+        "gz": true,
+        "args": [
+            "--target=1",
+            "--walkinitially=true",
+            "--chrono=true",
+            "FILECNF"
+        ],
+        "argsproof": [
+            "--target=1",
+            "--walkinitially=true",
+            "--chrono=true",
+            "FILECNF",
+            "FILEPROOF"
+        ],
+        "tracks": [
+            "main"
+        ],
+        "comment": "Competition name: hKis UNSAT."
+    },
+    "hkissatinc-unsat": {
+        "status": "ok",
+        "name": "hKissatInc",
+        "version": "1.0.3",
+        "authors": "Rodrigue Konan Tchinda, Clémentin Tayou Djamegni",
+        "call": "./kissat",
+        "gz": true,
+        "args": [
+            "--unsat",
+            "FILECNF"
+        ],
+        "argsproof": [
+            "--unsat",
+            "FILECNF",
+            "FILEPROOF"
+        ],
+        "tracks": [
+            "main"
+        ],
+        "comment": "Competition name: hKissatInc UNSAT."
+    },
+    "isasat": {
+        "status": "ok",
+        "name": "IsaSAT",
+        "version": "sc2023",
+        "authors": "Armin Biere, Mathias Fleury, Florian Pollitt",
+        "call": "./isasat",
+        "gz": false,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF"
+        ],
+        "tracks": [
+            "main"
+        ],
+        "comment": "The submitted build/build.sh relies on Red Hat's scl llvm-toolset-7.0; its steps are transcribed with clang, -march=native replaced by a generic x86-64 target."
+    },
+    "kissat-3.1.0": {
+        "status": "ok",
+        "name": "kissat-3.1.0",
+        "version": "3.1.0",
+        "authors": "Armin Biere, Mathias Fleury, Florian Pollitt",
+        "call": "./kissat",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF"
+        ],
+        "tracks": [
+            "main"
+        ],
+        "comment": "Competition name: Kissat-3.1.0."
+    },
+    "kissat-hywalk-exp": {
+        "status": "ok",
+        "name": "kissat-hywalk-exp",
+        "version": "1.0.3",
+        "authors": "Md Solimul Chowdhury",
+        "call": "./kissat",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF"
+        ],
+        "tracks": [
+            "main"
+        ],
+        "comment": "Competition name: Kissat-hywalk-exp."
+    },
+    "kissat-hywalk-exp-gb": {
+        "status": "ok",
+        "name": "kissat-hywalk-exp-gb",
+        "version": "1.0.3",
+        "authors": "Md Solimul Chowdhury",
+        "call": "./kissat",
+        "gz": true,
+        "args": [
+            "--default",
+            "FILECNF"
+        ],
+        "argsproof": [
+            "--default",
+            "FILECNF",
+            "FILEPROOF"
+        ],
+        "tracks": [
+            "main"
+        ],
+        "comment": "Competition name: Kissat-hywalk-exp-gb."
+    },
+    "kissat-hywalk-gb": {
+        "status": "ok",
+        "name": "kissat-hywalk-gb",
+        "version": "1.0.3",
+        "authors": "Md Solimul Chowdhury",
+        "call": "./kissat",
+        "gz": true,
+        "args": [
+            "--default",
+            "FILECNF"
+        ],
+        "argsproof": [
+            "--default",
+            "FILECNF",
+            "FILEPROOF"
+        ],
+        "tracks": [
+            "main"
+        ],
+        "comment": "Competition name: Kissat-hywalk-gb."
+    },
+    "kissat-inc-esa": {
+        "status": "ok",
+        "name": "Kissat_Inc_ESA",
+        "version": "1.0.3",
+        "authors": "Shuolin Li, Chu-Min Li, Mao Luo, Jordi Coll, Mohamed Sami Cherif, Djamal Habet, Felip Manyà",
+        "call": "./kissat",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF"
+        ],
+        "tracks": [
+            "main"
+        ],
+        "comment": "Competition name: KissatInc-ESA."
+    },
+    "kissat-incsp": {
+        "status": "ok",
+        "name": "kissat_incsp",
+        "version": "1.0.0",
+        "authors": "Karthikeya Namoju, Kalind Karia, Supratik Chakraborty, Biswabandan Panda",
+        "call": "./kissat",
+        "gz": true,
+        "args": [
+            "--default",
+            "FILECNF"
+        ],
+        "argsproof": [
+            "--default",
+            "FILECNF",
+            "FILEPROOF"
+        ],
+        "tracks": [
+            "main"
+        ],
+        "comment": "Competition name: Kissat-incsp."
+    },
+    "kissat-mab-binary": {
+        "status": "ok",
+        "name": "Kissat_MAB_Binary",
+        "version": "1.0.3",
+        "authors": "Shuolin Li, Chu-Min Li, Mao Luo, Jordi Coll, Mohamed Sami Cherif, Djamal Habet, Felip Manyà",
+        "call": "./kissat",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF"
+        ],
+        "tracks": [
+            "main"
+        ],
+        "comment": "Competition name: KissatMab-Binary."
+    },
+    "kissat-mab-conflict": {
+        "status": "ok",
+        "name": "Kissat_MAB_Conflict",
+        "version": "1.0.3",
+        "authors": "Jiongzhi Zheng, Mingming Jin, Kun He, Zhuo Chen, Jinghui Xue",
+        "call": "./kissat",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF"
+        ],
+        "tracks": [
+            "main"
+        ],
+        "comment": "Competition name: KissatMab-Conflict."
+    },
+    "kissat-mab-conflict-plus": {
+        "status": "ok",
+        "name": "Kissat_MAB_Conflict+",
+        "version": "1.0.3",
+        "authors": "Jiongzhi Zheng, Mingming Jin, Kun He, Zhuo Chen, Jinghui Xue",
+        "call": "./kissat",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF"
+        ],
+        "tracks": [
+            "main"
+        ],
+        "comment": "Competition name: KissatMab-Conflict+."
+    },
+    "kissat-mab-deepwalk-plus": {
+        "status": "ok",
+        "name": "Kissat_MAB_DeepWalk+",
+        "version": "1.0.3",
+        "authors": "Jiongzhi Zheng, Mingming Jin, Kun He, Zhuo Chen, Jinghui Xue",
+        "call": "./kissat",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF"
+        ],
+        "tracks": [
+            "main"
+        ],
+        "comment": "Competition name: KissatMab-DeepWalk+."
+    },
+    "kissat-mab-esa": {
+        "status": "ok",
+        "name": "Kissat_MAB_ESA",
+        "version": "1.0.3",
+        "authors": "Shuolin Li, Chu-Min Li, Mao Luo, Jordi Coll, Mohamed Sami Cherif, Djamal Habet, Felip Manyà",
+        "call": "./kissat",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF"
+        ],
+        "tracks": [
+            "main"
+        ],
+        "comment": "Competition name: KissatMab-ESA."
+    },
+    "kissat-mab-prop": {
+        "status": "ok",
+        "name": "Kissat_MAB_prop",
+        "version": "1.0.3",
+        "authors": "Yu Gao",
+        "call": "./kissat",
+        "gz": false,
+        "args": [
+            "FILECNF",
+            "--binary=true",
+            "--walkstrategy=0",
+            "--symmetry=true"
+        ],
+        "tracks": [
+            "main"
+        ],
+        "comment": "The proof mixes propagation-redundant (PR) and symmetry clauses that a DRAT checker cannot verify, so no argsproof; the solver crashes on gzip input, which satex decompresses first. Competition name: KissatMabProp."
+    },
+    "kissat-mab-prop-nosym": {
+        "status": "ok",
+        "name": "Kissat_MAB_prop",
+        "version": "1.0.3",
+        "authors": "Yu Gao",
+        "call": "./kissat",
+        "gz": false,
+        "args": [
+            "FILECNF",
+            "--binary=true",
+            "--walkstrategy=0",
+            "--symmetry=false"
+        ],
+        "tracks": [
+            "main"
+        ],
+        "comment": "The proof mixes propagation-redundant (PR) and symmetry clauses that a DRAT checker cannot verify, so no argsproof; the solver crashes on gzip input, which satex decompresses first. Competition name: KissatMabProp Nosym."
+    },
+    "kissat-mab-prop-nosym-nopre": {
+        "status": "unstable",
+        "name": "Kissat_MAB_prop",
+        "version": "1.0.3",
+        "authors": "Yu Gao",
+        "call": "./kissat",
+        "gz": false,
+        "args": [
+            "FILECNF",
+            "--binary=true",
+            "--walkstrategy=0",
+            "--symmetry=false",
+            "--pr=false"
+        ],
+        "tracks": [
+            "main"
+        ],
+        "status_detail": "answers UNSATISFIABLE on the satisfiable smoke instance aim-200-1_6-yes1-1 (configuration not listed in the competition results)",
+        "comment": "The proof mixes propagation-redundant (PR) and symmetry clauses that a DRAT checker cannot verify, so no argsproof; the solver crashes on gzip input, which satex decompresses first. Competition name: KissatMabProp Nosym NoPre."
+    },
+    "kissat-mab-prop-pr-nosym": {
+        "status": "ok",
+        "name": "Kissat_MAB_prop_pr",
+        "version": "1.0.3",
+        "authors": "Yu Gao",
+        "call": "./kissat",
+        "gz": false,
+        "args": [
+            "FILECNF",
+            "--binary=true",
+            "--walkstrategy=0",
+            "--symmetry=false"
+        ],
+        "tracks": [
+            "main"
+        ],
+        "comment": "The proof mixes propagation-redundant (PR) and symmetry clauses that a DRAT checker cannot verify, so no argsproof; the solver crashes on gzip input, which satex decompresses first. Competition name: KissatMabProp PrNosym."
+    },
+    "kissat-mab-rephases": {
+        "status": "ok",
+        "name": "Kissat_MAB_Rephases",
+        "version": "1.0.3",
+        "authors": "Jiongzhi Zheng, Mingming Jin, Kun He, Zhuo Chen, Jinghui Xue",
+        "call": "./kissat",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF"
+        ],
+        "tracks": [
+            "main"
+        ],
+        "comment": "Competition name: KissatMab-Rephases."
+    },
+    "maplecadical-lbd-990-275": {
+        "status": "ok",
+        "name": "MapleCaDiCaL_LBD",
+        "version": "1.5.3",
+        "authors": "Jonathan Chung, Sam Buss, Vijay Ganesh",
+        "call": "./cadical",
+        "gz": true,
+        "args": [
+            "--bcprlbetadecay=990",
+            "--bcprlscoredecay=275",
+            "FILECNF"
+        ],
+        "argsproof": [
+            "--bcprlbetadecay=990",
+            "--bcprlscoredecay=275",
+            "FILECNF",
+            "FILEPROOF"
+        ],
+        "tracks": [
+            "main"
+        ],
+        "comment": "Competition name: MapleCadical LBD-990-275."
+    },
+    "maplecadical-lbd-990-500": {
+        "status": "ok",
+        "name": "MapleCaDiCaL_LBD",
+        "version": "1.5.3",
+        "authors": "Jonathan Chung, Sam Buss, Vijay Ganesh",
+        "call": "./cadical",
+        "gz": true,
+        "args": [
+            "--bcprlbetadecay=990",
+            "--bcprlscoredecay=500",
+            "FILECNF"
+        ],
+        "argsproof": [
+            "--bcprlbetadecay=990",
+            "--bcprlscoredecay=500",
+            "FILECNF",
+            "FILEPROOF"
+        ],
+        "tracks": [
+            "main"
+        ],
+        "comment": "Competition name: MapleCadical LBD-990-500."
+    },
+    "maplecadical-ppd-500-500": {
+        "status": "ok",
+        "name": "MapleCaDiCaL_PPD",
+        "version": "1.5.3",
+        "authors": "Jonathan Chung, Sam Buss, Vijay Ganesh",
+        "call": "./cadical",
+        "gz": true,
+        "args": [
+            "--bcprlbetadecay=500",
+            "--bcprlscoredecay=500",
+            "FILECNF"
+        ],
+        "argsproof": [
+            "--bcprlbetadecay=500",
+            "--bcprlscoredecay=500",
+            "FILECNF",
+            "FILEPROOF"
+        ],
+        "tracks": [
+            "main"
+        ],
+        "comment": "Competition name: MapleCadical PPD-500-500."
+    },
+    "maplecadical-ppd-950-950": {
+        "status": "ok",
+        "name": "MapleCaDiCaL_PPD",
+        "version": "1.5.3",
+        "authors": "Jonathan Chung, Sam Buss, Vijay Ganesh",
+        "call": "./cadical",
+        "gz": true,
+        "args": [
+            "--bcprlbetadecay=950",
+            "--bcprlscoredecay=950",
+            "FILECNF"
+        ],
+        "argsproof": [
+            "--bcprlbetadecay=950",
+            "--bcprlscoredecay=950",
+            "FILECNF",
+            "FILEPROOF"
+        ],
+        "tracks": [
+            "main"
+        ],
+        "comment": "Competition name: MapleCadical PPD-950-950."
+    },
+    "mergesat": {
+        "status": "ok",
+        "name": "MergeSat",
+        "version": "4.0",
+        "authors": "Norbert Manthey",
+        "call": "./mergesat",
+        "gz": true,
+        "args": [
+            "FILECNF",
+            "-verb=0"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "-verb=0",
+            "-drup-file=FILEPROOF"
+        ],
+        "tracks": [
+            "main"
+        ]
+    },
+    "mergesat-thread1": {
+        "status": "ok",
+        "name": "MergeSat",
+        "version": "4.0",
+        "authors": "Norbert Manthey",
+        "call": "./mergesat",
+        "gz": true,
+        "args": [
+            "FILECNF",
+            "-cores=1",
+            "-verb=0"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "-cores=1",
+            "-verb=0",
+            "-drup-file=FILEPROOF"
+        ],
+        "tracks": [
+            "main"
+        ],
+        "comment": "Competition name: MergeSat thread1."
+    },
+    "mergesat-bve-gates": {
+        "status": "ok",
+        "name": "MergeSat",
+        "version": "4.0",
+        "authors": "Norbert Manthey",
+        "call": "./mergesat",
+        "gz": true,
+        "args": [
+            "FILECNF",
+            "-cores=1",
+            "-bve-gates",
+            "-verb=0"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "-cores=1",
+            "-bve-gates",
+            "-verb=0",
+            "-drup-file=FILEPROOF"
+        ],
+        "tracks": [
+            "main"
+        ],
+        "comment": "Competition name: MergeSatBVE-gates."
+    },
+    "mergesat-bve-semgates": {
+        "status": "ok",
+        "name": "MergeSat",
+        "version": "4.0",
+        "authors": "Norbert Manthey",
+        "call": "./mergesat",
+        "gz": true,
+        "args": [
+            "FILECNF",
+            "-cores=1",
+            "-bve-gates",
+            "-bve-sem-gates",
+            "-verb=0"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "-cores=1",
+            "-bve-gates",
+            "-bve-sem-gates",
+            "-verb=0",
+            "-drup-file=FILEPROOF"
+        ],
+        "tracks": [
+            "main"
+        ],
+        "comment": "Competition name: MergeSatBVE-semgates."
+    },
+    "minisat-xorengine": {
+        "status": "ok",
+        "name": "MiniSat+XorEngine",
+        "authors": "",
+        "call": "./minisat_pbp",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "tracks": [
+            "main"
+        ],
+        "comment": "MiniSat with an XOR engine for parity reasoning; its -proof-file output is a VeriPB proof that satex cannot check, so no argsproof. Competition name: MinisatXor."
+    },
+    "prelearn-kissat": {
+        "status": "ok",
+        "name": "PReLearn-kissat",
+        "version": "3.0.0",
+        "authors": "Joseph E. Reeves, Randal E. Bryant",
+        "call": "bash",
+        "gz": false,
+        "args": [
+            "starexec_run_PReLearn-kissat.sh",
+            "FILECNF",
+            "PROOFDIR"
+        ],
+        "tracks": [
+            "main"
+        ],
+        "path": "PReLearn-kissat/bin",
+        "comment": "Preprocessor pipeline; the proof combines PR clauses (DPR) with DRAT, which satex cannot check, so no argsproof. Competition name: PReLearn-Kissat."
+    },
+    "prelearn-kissat-tern": {
+        "status": "ok",
+        "name": "PReLearn-kissat",
+        "version": "3.0.0",
+        "authors": "Joseph E. Reeves, Randal E. Bryant",
+        "call": "bash",
+        "gz": false,
+        "args": [
+            "starexec_run_PReLearn-tern-kissat.sh",
+            "FILECNF",
+            "PROOFDIR"
+        ],
+        "tracks": [
+            "main"
+        ],
+        "path": "PReLearn-kissat/bin",
+        "test_timeout": 120,
+        "comment": "Preprocessor pipeline; the proof combines PR clauses (DPR) with DRAT, which satex cannot check, so no argsproof. The sadical preprocessing runs about 30 s even on tiny inputs. Competition name: PReLearn-Kissat-tern."
+    },
+    "reencode-kissat": {
+        "status": "ok",
+        "name": "ReEncode-kissat",
+        "version": "3.0.0",
+        "authors": "Joseph E. Reeves, Randal E. Bryant",
+        "call": "bash",
+        "gz": false,
+        "args": [
+            "starexec_run_ReEncode-kissat.sh",
+            "FILECNF",
+            "PROOFDIR"
+        ],
+        "argsproof": [
+            "starexec_run_ReEncode-kissat.sh",
+            "FILECNF",
+            "PROOFDIR"
+        ],
+        "tracks": [
+            "main"
+        ],
+        "path": "ReEncode-kissat/bin",
+        "comment": "Competition name: ReEncode-Kissat."
+    },
+    "reencode-kissat-pair": {
+        "status": "ok",
+        "name": "ReEncode-kissat",
+        "version": "3.0.0",
+        "authors": "Joseph E. Reeves, Randal E. Bryant",
+        "call": "bash",
+        "gz": false,
+        "args": [
+            "starexec_run_ReEncode-pair-kissat.sh",
+            "FILECNF",
+            "PROOFDIR"
+        ],
+        "argsproof": [
+            "starexec_run_ReEncode-pair-kissat.sh",
+            "FILECNF",
+            "PROOFDIR"
+        ],
+        "tracks": [
+            "main"
+        ],
+        "path": "ReEncode-kissat/bin",
+        "comment": "Competition name: ReEncode-Kissat-pair."
+    },
+    "sbva-cadical": {
+        "status": "ok",
+        "name": "SBVA",
+        "authors": "Andrew Haberlandt, Harrison Green",
+        "call": "python3",
+        "gz": false,
+        "args": [
+            "wrapper.py",
+            "--input",
+            "FILECNF",
+            "--output",
+            "PROOFDIR",
+            "--bva",
+            "./bva",
+            "--t1",
+            "200",
+            "--t2",
+            "400",
+            "--solver",
+            "./cadical"
+        ],
+        "argsproof": [
+            "wrapper.py",
+            "--input",
+            "FILECNF",
+            "--output",
+            "PROOFDIR",
+            "--bva",
+            "./bva",
+            "--t1",
+            "200",
+            "--t2",
+            "400",
+            "--solver",
+            "./cadical"
+        ],
+        "tracks": [
+            "main"
+        ],
+        "path": "SBVA/bin",
+        "comment": "Competition name: SBVA Cadical."
+    },
+    "sbva-kissat": {
+        "status": "ok",
+        "name": "SBVA",
+        "authors": "Andrew Haberlandt, Harrison Green",
+        "call": "python3",
+        "gz": false,
+        "args": [
+            "wrapper.py",
+            "--input",
+            "FILECNF",
+            "--output",
+            "PROOFDIR",
+            "--bva",
+            "./bva",
+            "--t1",
+            "200",
+            "--t2",
+            "400",
+            "--solver",
+            "./kissat"
+        ],
+        "argsproof": [
+            "wrapper.py",
+            "--input",
+            "FILECNF",
+            "--output",
+            "PROOFDIR",
+            "--bva",
+            "./bva",
+            "--t1",
+            "200",
+            "--t2",
+            "400",
+            "--solver",
+            "./kissat"
+        ],
+        "tracks": [
+            "main"
+        ],
+        "path": "SBVA/bin",
+        "comment": "Competition name: SBVA Kissat."
+    },
+    "seqfrost": {
+        "status": "ok",
+        "name": "SeqFROST",
+        "version": "1.0.2",
+        "authors": "Muhammad Osama, Anton Wijs",
+        "call": "./seqfrost",
+        "gz": false,
+        "args": [
+            "FILECNF",
+            "-competition"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "-competition",
+            "--proofout=FILEPROOF"
+        ],
+        "tracks": [
+            "main"
+        ]
+    },
+    "seqfrost-ere-all": {
+        "status": "ok",
+        "name": "SeqFROST-ERE-All",
+        "version": "1.0.2",
+        "authors": "Muhammad Osama, Anton Wijs",
+        "call": "./seqfrost",
+        "gz": false,
+        "args": [
+            "FILECNF",
+            "-competition",
+            "--redundancyextend=2"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "-competition",
+            "--proofout=FILEPROOF",
+            "--redundancyextend=2"
+        ],
+        "tracks": [
+            "main"
+        ]
+    },
+    "seqfrost-noextend": {
+        "status": "ok",
+        "name": "SeqFROST-NoExtend",
+        "version": "1.0.2",
+        "authors": "Muhammad Osama, Anton Wijs",
+        "call": "./seqfrost",
+        "gz": false,
+        "args": [
+            "FILECNF",
+            "-competition",
+            "--redundancyextend=0"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "-competition",
+            "--proofout=FILEPROOF",
+            "--redundancyextend=0"
+        ],
+        "tracks": [
+            "main"
+        ]
+    },
+    "tabularasat": {
+        "status": "ok",
+        "name": "tabularasat-1.0.0",
+        "version": "1.0.0",
+        "authors": "Armin Biere, Mathias Fleury, Florian Pollitt",
+        "call": "./tabularasat",
+        "gz": false,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF"
+        ],
+        "tracks": [
+            "main"
+        ],
+        "comment": "Competition name: TabularaSAT."
+    },
+    "sat4j-default": {
+        "status": "fixme",
+        "name": "Sat4j default",
+        "authors": "Daniel Le Berre",
+        "tracks": [
+            "main"
+        ],
+        "comment": "Binary-only submission (org.sat4j.core.jar, 2013); no source to build."
+    }
+}

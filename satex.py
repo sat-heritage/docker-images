@@ -1207,10 +1207,14 @@ def test_images_in_workspace(args, tests_dir):
     docker_argv = check_docker()
     for name in repo.images:
         prepare_image(args, docker_argv, f"{DOCKER_NS}/{name}")
+    base_timeout = args.timeout
     for name in repo.images:
         image = ImageManager(name, repo)
         if not args.terse:
             info(f"Testing {image.name}")
+        # A solver whose preprocessing is slow even on tiny inputs can ask
+        # for a longer timeout in its registry entry.
+        args.timeout = max(base_timeout, int(image.registry.get("test_timeout", 0)))
         fails = [test.__name__[5:] for test in tests if not test(image)]
         if fails:
             failures.append((image, fails))

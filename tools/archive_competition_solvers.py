@@ -250,6 +250,27 @@ class SolverArchive:
         return count
 
 
+def uncompressed_copy(path: Path) -> Path:
+    """Return a plain (uncompressed) copy of a compressed TAR archive.
+
+    Extracting members of a .tar.xz one by one re-decompresses the stream from
+    its start for every member, which makes per-solver packaging quadratic.
+    A plain TAR supports seeking, so it is written once and used instead.
+    """
+    if zipfile.is_zipfile(path) or not tarfile.is_tarfile(path):
+        return path
+    with path.open("rb") as stream:
+        magic = stream.read(6)
+    if magic[:2] not in {b"\x1f\x8b", b"BZ"} and magic != b"\xfd7zXZ\x00":
+        return path
+    plain = path.with_name(path.name + ".plain.tar")
+    with tarfile.open(path, "r:*") as source, tarfile.open(plain, "w", format=tarfile.PAX_FORMAT) as output:
+        for member in source:
+            contents = source.extractfile(member) if member.isfile() else None
+            output.addfile(member, contents)
+    return plain
+
+
 def download_source(source: str, destination: Path) -> dict[str, object]:
     parsed = urllib.parse.urlparse(source)
     destination.parent.mkdir(parents=True, exist_ok=True)
@@ -319,11 +340,13 @@ class GitHubRelease:
         return result
 
     def create_release(
-        self, tag: str, name: str, body: str, target: str | None
+        self, tag: str, name: str, body: str, target: str | None, prerelease: bool = False
     ) -> dict[str, object]:
         payload: dict[str, object] = {"tag_name": tag, "name": name, "body": body}
         if target:
             payload["target_commitish"] = target
+        if prerelease:
+            payload["prerelease"] = True
         result = self._request(
             "POST",
             f"{API_ROOT}/repos/{self.repository}/releases",
@@ -405,6 +428,7 @@ def mirror(
         for number, source in enumerate(sources, start=1):
             source_path = Path(temp_dir) / f"source-{number}"
             record = download_source(source, source_path)
+            source_path = uncompressed_copy(source_path)
             if STRIP_PREFIX:
                 record["strip_prefix"] = STRIP_PREFIX
             archive = SolverArchive(source_path)
@@ -470,6 +494,7 @@ def publish(
     target: str | None,
     replace: bool,
     token: str,
+    prerelease: bool = False,
 ) -> None:
     github = GitHubRelease(repository, token)
     release = github.release(tag)
@@ -479,7 +504,7 @@ def publish(
             for record in manifest["sources"]  # type: ignore[index]
         )
         body = f"Mirror of the official SAT Competition {manifest['competition']} solver sources.\n\n{source_lines}"
-        release = github.create_release(tag, release_name, body, target)
+        release = github.create_release(tag, release_name, body, target, prerelease)
         print(f"[OK] release created: {tag}")
     release_id = int(release["id"])
     existing = {str(asset["name"]): asset for asset in github.assets(release_id)}
@@ -547,6 +572,11 @@ def parser() -> argparse.ArgumentParser:
     result.add_argument("--target", help="target branch or commit when creating the release")
     result.add_argument("--upload", action="store_true", help="create/update the GitHub release")
     result.add_argument(
+        "--prerelease",
+        action="store_true",
+        help="mark the release as a pre-release when it is created",
+    )
+    result.add_argument(
         "--replace",
         action="store_true",
         help="replace an existing asset only when its checksum differs",
@@ -588,6 +618,7 @@ def main(arguments: list[str] | None = None) -> int:
             args.target,
             args.replace,
             token,
+            args.prerelease,
         )
         return 0
     except (ArchiveError, GitHubError, OSError, urllib.error.URLError) as error:
