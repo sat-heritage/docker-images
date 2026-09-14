@@ -1,0 +1,152 @@
+{
+    "base_version": "v1",
+    "base_from": "debian:bookworm-20250630-slim@sha256:6ac2c08566499cc2415926653cf2ed7c3aedac445675a013cc09469c9e118fdd",
+    "builder": "generic/starexec-v2",
+    "builder_base": "debian:bookworm-20250630-slim@sha256:6ac2c08566499cc2415926653cf2ed7c3aedac445675a013cc09469c9e118fdd",
+    "APT_SNAPSHOT": "20250701T000000Z",
+    "APT_CODENAME": "bookworm",
+    "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2025-competition/{SOLVER_NAME}.tar.xz",
+    "ae-kissat2025-bump": {
+        "BUILD_KIND": "command",
+        "BUILD_COMMAND": "bash ./build.sh",
+        "BINARY_PATH": "build/kissat",
+        "BINARY_NAME": "kissat"
+    },
+    "ae-kissat2025-mab": {
+        "BUILD_KIND": "command",
+        "BUILD_COMMAND": "bash ./build.sh",
+        "BINARY_PATH": "build/kissat",
+        "BINARY_NAME": "kissat"
+    },
+    "ae-kissat2025-rescale": {
+        "BUILD_KIND": "command",
+        "BUILD_COMMAND": "bash ./build.sh",
+        "BINARY_PATH": "build/kissat",
+        "BINARY_NAME": "kissat"
+    },
+    "cadical-sc2025": {
+        "BUILD_KIND": "command",
+        "BUILD_COMMAND": "rm -rf build && sh ./configure --competition && make",
+        "BINARY_PATH": "build/cadical",
+        "BINARY_NAME": "cadical"
+    },
+    "dynamiccadical": {
+        "BUILD_KIND": "command",
+        "BUILD_COMMAND": "bash ./build.sh",
+        "BINARY_PATH": "build/cadical",
+        "BINARY_NAME": "dynamiccadical"
+    },
+    "hcad-psbva": {
+        "RDEPENDS": "python3",
+        "BUILD_KIND": "command",
+        "BUILD_COMMAND": "rm -f bva cadical kissat && bash ./build.sh",
+        "DIST_PATHS": "wrapper.py bva cadical"
+    },
+    "hcad-sbva": {
+        "RDEPENDS": "python3",
+        "BUILD_KIND": "command",
+        "BUILD_COMMAND": "rm -f bva cadical kissat && bash ./build.sh",
+        "DIST_PATHS": "wrapper.py bva cadical"
+    },
+    "hkis2-psids": {
+        "BUILD_KIND": "command",
+        "BUILD_COMMAND": "bash ./build.sh",
+        "BINARY_PATH": "kissat-sc2024/build/kissat",
+        "BINARY_NAME": "kissat"
+    },
+    "hkis-sbva": {
+        "RDEPENDS": "python3",
+        "BUILD_KIND": "command",
+        "BUILD_COMMAND": "rm -f bva cadical kissat && bash ./build.sh",
+        "DIST_PATHS": "wrapper.py bva kissat"
+    },
+    "kissat-corephase-coreward": {
+        "BUILD_KIND": "command",
+        "BUILD_COMMAND": "rm -rf build && sh ./configure --competition && make",
+        "BINARY_PATH": "build/kissat",
+        "BINARY_NAME": "kissat"
+    },
+    "kissat-cure": {
+        "BUILD_KIND": "command",
+        "BUILD_COMMAND": "bash ./build.sh",
+        "BINARY_PATH": "build/kissat",
+        "BINARY_NAME": "kissat"
+    },
+    "kissat-mab-corephase": {
+        "BUILD_KIND": "command",
+        "BUILD_COMMAND": "rm -rf build && sh ./configure --competition && make",
+        "BINARY_PATH": "build/kissat",
+        "BINARY_NAME": "kissat"
+    },
+    "kissat-pred": {
+        "BUILD_KIND": "command",
+        "BUILD_COMMAND": "bash ./build.sh",
+        "BINARY_PATH": "build/kissat/build/kissat",
+        "BINARY_NAME": "kissat"
+    },
+    "kissat-pred-aggressive": {
+        "BUILD_KIND": "command",
+        "BUILD_COMMAND": "bash ./build.sh",
+        "BINARY_PATH": "build/kissat/build/kissat",
+        "BINARY_NAME": "kissat"
+    },
+    "kissat-public": {
+        "BUILD_KIND": "command",
+        "BUILD_COMMAND": "rm -rf build && sh ./configure --competition && make",
+        "BINARY_PATH": "build/kissat",
+        "BINARY_NAME": "kissat"
+    },
+    "kissat-sc2025": {
+        "BUILD_KIND": "command",
+        "BUILD_COMMAND": "rm -rf build && sh ./configure --competition && make",
+        "BINARY_PATH": "build/kissat",
+        "BINARY_NAME": "kissat"
+    },
+    "kissat-scavel2025": {
+        "BUILD_KIND": "command",
+        "BUILD_COMMAND": "bash ./build.sh",
+        "BINARY_PATH": "build/kissat",
+        "BINARY_NAME": "kissat"
+    },
+    "kissat-scavel-rs": {
+        "BUILD_KIND": "command",
+        "BUILD_COMMAND": "bash ./build.sh",
+        "BINARY_PATH": "build/kissat",
+        "BINARY_NAME": "kissat"
+    },
+    "satsuma-kissat-sc": {
+        "BUILD_KIND": "command",
+        "BUILD_COMMAND": "rm -f satsuma kissat && bash ./build.sh",
+        "DIST_PATHS": "run.sh satsuma kissat"
+    },
+    "ulc-cadical-alignable-independent-ulc": {
+        "BUILD_KIND": "command",
+        "BUILD_COMMAND": "bash ./build.sh",
+        "BINARY_PATH": "cadical/build/cadical",
+        "BINARY_NAME": "cadical"
+    },
+    "ulc-cadical-alignable-ulc": {
+        "BUILD_KIND": "command",
+        "BUILD_COMMAND": "bash ./build.sh",
+        "BINARY_PATH": "cadical/build/cadical",
+        "BINARY_NAME": "cadical"
+    },
+    "ulc-cadical-alignable-ulc-order": {
+        "BUILD_KIND": "command",
+        "BUILD_COMMAND": "bash ./build.sh",
+        "BINARY_PATH": "cadical/build/cadical",
+        "BINARY_NAME": "cadical"
+    },
+    "ulc-cadical-xlc": {
+        "BUILD_KIND": "command",
+        "BUILD_COMMAND": "bash ./build.sh",
+        "BINARY_PATH": "cadical/build/cadical",
+        "BINARY_NAME": "cadical"
+    },
+    "vsa": {
+        "BUILD_KIND": "command",
+        "BUILD_COMMAND": "bash ./build.sh",
+        "BINARY_PATH": "archive/kissat/build/kissat",
+        "BINARY_NAME": "kissat"
+    }
+}
