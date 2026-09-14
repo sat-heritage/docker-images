@@ -20,4 +20,5 @@ Sources of the SAT solvers
 | 2021 | https://github.com/sat-heritage/docker-images/releases/tag/2021-competition | https://satcompetition.github.io/2021/ |
 | 2022 | https://github.com/sat-heritage/docker-images/releases/tag/2022-competition | https://satcompetition.github.io/2022/ |
 | 2023 | https://github.com/sat-heritage/docker-images/releases/tag/2023-competition | https://satcompetition.github.io/2023/ |
+| 2024 | https://github.com/sat-heritage/docker-images/releases/tag/2024-competition | https://satcompetition.github.io/2024/ |
 | knuth | https://www-cs-faculty.stanford.edu/~knuth/programs.html | Archived at https://web.archive.org/web/20211128174728/https://www-cs-faculty.stanford.edu/~knuth/programs.html |

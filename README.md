@@ -243,7 +243,7 @@ being a JSON object with a subset of the following keys.
 | BUILD_KIND | Build method for the `generic/starexec-v2` builder: `auto` (default, detected from the archive), `starexec` (`starexec_build`), `build-subdir` (`build/build.sh`), `script` (`BUILD_SCRIPT`), `configure` (`./configure` then `make`), `make` or `command` (`BUILD_COMMAND`) |
 | BUILD_SUBDIR | Directory, relative to the root of the submission archive, where the build is run.<br>Default: `.` |
 | BUILD_SCRIPT, BUILD_ARGS, CONFIGURE_ARGS, MAKE_ARGS, BUILD_COMMAND | Parameters of the corresponding `BUILD_KIND` |
-| BUILD_ENV | Shell variable assignments exported before running the build, for example `CC="gcc -fcommon"` to compile code written for pre-GCC 10 compilers with the submitted script unchanged |
+| BUILD_ENV | Shell variable assignments exported before running the build, for example `CC="gcc -fcommon"` to compile code written for pre-GCC 10 compilers with the submitted script unchanged; the builder exports `MAKEFLAGS=-j8` by default, use `MAKEFLAGS=` here to build serially |
 | BINARY_PATH | Path, relative to the root of the submission archive, of the executable produced by the build. It is installed in `/dist`, so the precompiled binaries shipped in competition archives are never used.<br>Required by `generic/starexec-v2` |
 | BINARY_NAME | Name of the installed executable.<br>Default: basename of `BINARY_PATH` |
 | DIST_PATHS | Space-separated paths, relative to the root of the submission archive, copied into `/dist` with their relative layout, for submissions whose run script drives several programs (for example `bin kissat/build/kissat`). May replace `BINARY_PATH`.<br>Used by `generic/starexec-v2` |

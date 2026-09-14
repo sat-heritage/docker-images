@@ -1,0 +1,509 @@
+{
+    "amsat": {
+        "status": "ok",
+        "name": "AMSAT",
+        "authors": "Shuolin Li, Chu-Min Li, Mao Luo, Jordi Coll, Mohamed Sami Cherif, Djamal Habet, Felip Manyà",
+        "call": "./glucose_static",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "-drup-file=FILEPROOF"
+        ],
+        "tracks": [
+            "main"
+        ]
+    },
+    "amsat-rgc": {
+        "status": "ok",
+        "name": "AMSAT_RGC",
+        "authors": "Shuolin Li, Chu-Min Li, Mao Luo, Jordi Coll, Mohamed Sami Cherif, Djamal Habet, Felip Manyà",
+        "call": "./glucose_static",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "-drup-file=FILEPROOF"
+        ],
+        "tracks": [
+            "main"
+        ]
+    },
+    "breakid-kissat": {
+        "status": "ok",
+        "name": "BreakID-Kissat",
+        "version": "3.1.1",
+        "authors": "Bart Bogaerts, Jakob Nordström, Andy Oertel, Dieter Vandesande",
+        "call": "bash",
+        "gz": false,
+        "args": [
+            "starexec_run_default",
+            "FILECNF",
+            "PROOFDIR"
+        ],
+        "tracks": [
+            "main"
+        ],
+        "path": "BreakID-Kissat/bin",
+        "comment": "The submitted starexec_build only builds Kissat and keeps a precompiled BreakID; BreakID is rebuilt from breakid/src first. The proof is VeriPB, which satex cannot check, so no argsproof."
+    },
+    "cadical": {
+        "status": "ok",
+        "name": "CaDiCaL",
+        "version": "sc2024",
+        "authors": "Armin Biere, Tobias Faller, Katalin Fazekas, Mathias Fleury, Nils Froleyks, Florian Pollitt",
+        "call": "./cadical",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF"
+        ],
+        "tracks": [
+            "main"
+        ]
+    },
+    "cadical-scavel-01": {
+        "status": "ok",
+        "name": "cadical-scavel-01",
+        "version": "1.9.4",
+        "authors": "Zhihui Li, Guanfeng Wu, Shuwei Chen, Yang Xu",
+        "call": "./cadical",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF"
+        ],
+        "tracks": [
+            "main"
+        ],
+        "comment": "Not listed in the published main track results."
+    },
+    "cadical-scavel-02": {
+        "status": "ok",
+        "name": "cadical-scavel-02",
+        "version": "1.9.4",
+        "authors": "Zhihui Li, Guanfeng Wu, Shuwei Chen, Yang Xu",
+        "call": "./cadical",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF"
+        ],
+        "tracks": [
+            "main"
+        ],
+        "comment": "Not listed in the published main track results."
+    },
+    "cadical-esa": {
+        "status": "ok",
+        "name": "Cadical_ESA",
+        "version": "1.9.4",
+        "authors": "Shuolin Li, Chu-Min Li, Mao Luo, Jordi Coll, Mohamed Sami Cherif, Djamal Habet, Felip Manyà",
+        "call": "./cadical",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF"
+        ],
+        "tracks": [
+            "main"
+        ]
+    },
+    "hcad-bva": {
+        "status": "ok",
+        "name": "hCaD",
+        "version": "1.9.5",
+        "authors": "Rodrigue Konan Tchinda, Clémentin Tayou Djamegni",
+        "call": "python3",
+        "gz": false,
+        "args": [
+            "wrapper.py",
+            "--input",
+            "FILECNF",
+            "--output",
+            "PROOFDIR",
+            "--bva",
+            "./bva",
+            "--t1",
+            "200",
+            "--t2",
+            "400",
+            "--solver",
+            "./cadical",
+            "--solverargs",
+            "target=0",
+            "walk=false"
+        ],
+        "argsproof": [
+            "wrapper.py",
+            "--input",
+            "FILECNF",
+            "--output",
+            "PROOFDIR",
+            "--bva",
+            "./bva",
+            "--t1",
+            "200",
+            "--t2",
+            "400",
+            "--solver",
+            "./cadical",
+            "--solverargs",
+            "target=0",
+            "walk=false"
+        ],
+        "tracks": [
+            "main"
+        ],
+        "path": "hCaD/bin",
+        "comment": "Structured BVA preprocessing (bva) followed by the solver, driven by the submitted wrapper.py; the proof concatenates the BVA derivation and the solver's DRAT proof. Competition name: hCaD-bva."
+    },
+    "hcad-pbva": {
+        "status": "ok",
+        "name": "hCaD",
+        "version": "1.9.5",
+        "authors": "Rodrigue Konan Tchinda, Clémentin Tayou Djamegni",
+        "call": "python3",
+        "gz": false,
+        "args": [
+            "wrapper.py",
+            "--input",
+            "FILECNF",
+            "--output",
+            "PROOFDIR",
+            "--bva",
+            "./bva",
+            "--t1",
+            "200",
+            "--t2",
+            "400",
+            "--solver",
+            "./cadical",
+            "--solverargs",
+            "psids=1",
+            "target=2",
+            "walk=false",
+            "chrono=true"
+        ],
+        "argsproof": [
+            "wrapper.py",
+            "--input",
+            "FILECNF",
+            "--output",
+            "PROOFDIR",
+            "--bva",
+            "./bva",
+            "--t1",
+            "200",
+            "--t2",
+            "400",
+            "--solver",
+            "./cadical",
+            "--solverargs",
+            "psids=1",
+            "target=2",
+            "walk=false",
+            "chrono=true"
+        ],
+        "tracks": [
+            "main"
+        ],
+        "path": "hCaD/bin",
+        "comment": "Structured BVA preprocessing (bva) followed by the solver, driven by the submitted wrapper.py; the proof concatenates the BVA derivation and the solver's DRAT proof. Competition name: hCaD-pbva."
+    },
+    "hkis-bva": {
+        "status": "ok",
+        "name": "hKis",
+        "version": "3.1.1",
+        "authors": "Rodrigue Konan Tchinda, Clémentin Tayou Djamegni",
+        "call": "python3",
+        "gz": false,
+        "args": [
+            "wrapper.py",
+            "--input",
+            "FILECNF",
+            "--output",
+            "PROOFDIR",
+            "--bva",
+            "./bva",
+            "--t1",
+            "200",
+            "--t2",
+            "400",
+            "--solver",
+            "./kissat",
+            "--solverargs",
+            "target=1",
+            "walkinitially=true",
+            "chrono=true"
+        ],
+        "argsproof": [
+            "wrapper.py",
+            "--input",
+            "FILECNF",
+            "--output",
+            "PROOFDIR",
+            "--bva",
+            "./bva",
+            "--t1",
+            "200",
+            "--t2",
+            "400",
+            "--solver",
+            "./kissat",
+            "--solverargs",
+            "target=1",
+            "walkinitially=true",
+            "chrono=true"
+        ],
+        "tracks": [
+            "main"
+        ],
+        "path": "hKis/bin",
+        "comment": "Structured BVA preprocessing (bva) followed by the solver, driven by the submitted wrapper.py; the proof concatenates the BVA derivation and the solver's DRAT proof. Competition name: hKis-bva."
+    },
+    "hkis-pbva": {
+        "status": "ok",
+        "name": "hKis",
+        "version": "3.1.1",
+        "authors": "Rodrigue Konan Tchinda, Clémentin Tayou Djamegni",
+        "call": "python3",
+        "gz": false,
+        "args": [
+            "wrapper.py",
+            "--input",
+            "FILECNF",
+            "--output",
+            "PROOFDIR",
+            "--bva",
+            "./bva",
+            "--t1",
+            "200",
+            "--t2",
+            "400",
+            "--solver",
+            "./kissat",
+            "--solverargs",
+            "unsat",
+            "psids=true"
+        ],
+        "argsproof": [
+            "wrapper.py",
+            "--input",
+            "FILECNF",
+            "--output",
+            "PROOFDIR",
+            "--bva",
+            "./bva",
+            "--t1",
+            "200",
+            "--t2",
+            "400",
+            "--solver",
+            "./kissat",
+            "--solverargs",
+            "unsat",
+            "psids=true"
+        ],
+        "tracks": [
+            "main"
+        ],
+        "path": "hKis/bin",
+        "comment": "Structured BVA preprocessing (bva) followed by the solver, driven by the submitted wrapper.py; the proof concatenates the BVA derivation and the solver's DRAT proof. Competition name: hKis-pbva."
+    },
+    "isasat": {
+        "status": "ok",
+        "name": "IsaSAT",
+        "version": "sc2024",
+        "authors": "Armin Biere, Tobias Faller, Katalin Fazekas, Mathias Fleury, Nils Froleyks, Florian Pollitt",
+        "call": "./isasat",
+        "gz": false,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF"
+        ],
+        "tracks": [
+            "main"
+        ],
+        "comment": "The submitted build/build.sh relies on Red Hat's scl llvm-toolset-7.0; its steps are transcribed with clang, -march=native replaced by a generic x86-64 target."
+    },
+    "kissat-sc2024": {
+        "status": "ok",
+        "name": "kissat-sc2024",
+        "version": "sc2024",
+        "authors": "Armin Biere, Tobias Faller, Katalin Fazekas, Mathias Fleury, Nils Froleyks, Florian Pollitt",
+        "call": "./kissat",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF"
+        ],
+        "tracks": [
+            "main"
+        ]
+    },
+    "kissat-mab-dc": {
+        "status": "ok",
+        "name": "Kissat_MAB-DC",
+        "version": "1.0.3",
+        "authors": "Jinjin Liu, Jianmin Zhang, Yan Sun",
+        "call": "./kissat",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF"
+        ],
+        "tracks": [
+            "main"
+        ]
+    },
+    "kissat-mab-binary": {
+        "status": "ok",
+        "name": "Kissat_MAB_Binary",
+        "version": "1.0.3",
+        "authors": "Shuolin Li, Chu-Min Li, Mao Luo, Jordi Coll, Mohamed Sami Cherif, Djamal Habet, Felip Manyà",
+        "call": "./kissat",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF"
+        ],
+        "tracks": [
+            "main"
+        ],
+        "comment": "Built with the configure and make steps of the submitted starexec_build; its test-suite step (tissat) cannot run because the archive ships a stripped test/ directory."
+    },
+    "kissat-mab-esa": {
+        "status": "ok",
+        "name": "Kissat_MAB_ESA",
+        "version": "1.0.3",
+        "authors": "Shuolin Li, Chu-Min Li, Mao Luo, Jordi Coll, Mohamed Sami Cherif, Djamal Habet, Felip Manyà",
+        "call": "./kissat",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF"
+        ],
+        "tracks": [
+            "main"
+        ],
+        "comment": "Built with the configure and make steps of the submitted starexec_build; its test-suite step (tissat) cannot run because the archive ships a stripped test/ directory."
+    },
+    "sbva-scavel-01": {
+        "status": "ok",
+        "name": "SBVA-scavel-01",
+        "version": "1.9.4",
+        "authors": "Zhihui Li, Guanfeng Wu, Shuwei Chen, Yang Xu",
+        "call": "python3",
+        "gz": false,
+        "args": [
+            "wrapper.py",
+            "--input",
+            "FILECNF",
+            "--output",
+            "PROOFDIR",
+            "--bva",
+            "./bva",
+            "--t1",
+            "200",
+            "--t2",
+            "400",
+            "--solver",
+            "./cadical"
+        ],
+        "argsproof": [
+            "wrapper.py",
+            "--input",
+            "FILECNF",
+            "--output",
+            "PROOFDIR",
+            "--bva",
+            "./bva",
+            "--t1",
+            "200",
+            "--t2",
+            "400",
+            "--solver",
+            "./cadical"
+        ],
+        "tracks": [
+            "main"
+        ],
+        "path": "SBVA-scavel-01/bin",
+        "comment": "Structured BVA preprocessing (bva) followed by the solver, driven by the submitted wrapper.py; the proof concatenates the BVA derivation and the solver's DRAT proof. The submitted starexec_build keeps a precompiled bva; it is rebuilt from src first. Not listed in the published main track results."
+    },
+    "sbva-scavel-02": {
+        "status": "ok",
+        "name": "SBVA-scavel-02",
+        "version": "1.9.4",
+        "authors": "Zhihui Li, Guanfeng Wu, Shuwei Chen, Yang Xu",
+        "call": "python3",
+        "gz": false,
+        "args": [
+            "wrapper.py",
+            "--input",
+            "FILECNF",
+            "--output",
+            "PROOFDIR",
+            "--bva",
+            "./bva",
+            "--t1",
+            "200",
+            "--t2",
+            "400",
+            "--solver",
+            "./cadical"
+        ],
+        "argsproof": [
+            "wrapper.py",
+            "--input",
+            "FILECNF",
+            "--output",
+            "PROOFDIR",
+            "--bva",
+            "./bva",
+            "--t1",
+            "200",
+            "--t2",
+            "400",
+            "--solver",
+            "./cadical"
+        ],
+        "tracks": [
+            "main"
+        ],
+        "path": "SBVA-scavel-02/bin",
+        "comment": "Structured BVA preprocessing (bva) followed by the solver, driven by the submitted wrapper.py; the proof concatenates the BVA derivation and the solver's DRAT proof. The submitted starexec_build keeps a precompiled bva; it is rebuilt from src first. Not listed in the published main track results."
+    }
+}

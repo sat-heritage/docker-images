@@ -49,6 +49,8 @@ FROM source AS builder
 RUN useradd --create-home --shell /bin/bash builder && \
     mkdir -p /dist && chown -R builder:builder /src /dist
 USER builder
+# Parallel make by default; a recipe can override it with BUILD_ENV=MAKEFLAGS=
+ENV MAKEFLAGS=-j8
 ARG SOLVER_NAME
 ARG BUILD_KIND=auto
 ARG BUILD_SUBDIR=.
