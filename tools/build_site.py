@@ -114,7 +114,8 @@ def collect(repo: Path) -> list[dict]:
                 capabilities.append("proof (declared)")
             if not checks and "argsproof" not in entry:
                 capabilities.append("SAT/UNSAT (declared)")
-            if "parallel" in [t.lower() for t in entry.get("tracks", [])] or "MAXNBTHREAD" in args_text:
+            # "parallel" means the competition's parallel track, not a multi-threaded default
+            if "parallel" in [t.lower() for t in entry.get("tracks", [])]:
                 capabilities.append("parallel")
             if entry.get("gz"):
                 capabilities.append("gzip input")
