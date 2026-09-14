@@ -248,8 +248,8 @@ const fy = document.getElementById('year'), ff = document.getElementById('family
 function badge(v) { const m = {verified:['Verified','ok'],runs:['Runs, checks failed','warn'],built:['Compiles','warn'],'source-available':['Build fails','fail'],'source-unavailable':['Source unavailable','fail'],unknown:['Not run yet','none']}[v] || [v,'none']; return `<span class="badge ${m[1]}">${m[0]}</span>`; }
 function render() {
   const s = q.value.trim().toLowerCase();
-  const fc = document.getElementById('cap');
-  const rows = data.filter(d => (!fy.value || d.set === fy.value) && (!ff.value || d.family === ff.value) && (!fv.value || d.verdict === fv.value) && (!fs.value || d.status === fs.value) && (!fc.value || d.capabilities.includes(fc.value)) && (!s || (d.name + ' ' + d.key + ' ' + d.authors + ' ' + d.set).toLowerCase().includes(s)));
+  const fc = document.getElementById('cap'), fa = document.getElementById('award');
+  const rows = data.filter(d => (!fa.value || (fa.value === 'winner' ? d.awards.some(a => a.rank === 1) : d.awards.length > 0)) && (!fy.value || d.set === fy.value) && (!ff.value || d.family === ff.value) && (!fv.value || d.verdict === fv.value) && (!fs.value || d.status === fs.value) && (!fc.value || d.capabilities.includes(fc.value)) && (!s || (d.name + ' ' + d.key + ' ' + d.authors + ' ' + d.set).toLowerCase().includes(s)));
   document.getElementById('count').textContent = rows.length + ' / ' + data.length + ' images';
   const years = [...new Set(rows.map(d => d.set))].sort((a, b) => (isNaN(a) - isNaN(b)) || (b - a) || a.localeCompare(b));
   grid.innerHTML = years.map(y => `<section class="year"><div class="year-label"><span>${y}</span><small>${rows.filter(d => d.set === y).length}</small></div><div class="grid">` + rows.filter(d => d.set === y).map(card).join('') + `</div></section>`).join('');
@@ -261,7 +261,7 @@ function card(d) { return `<a class="card" href="${d.set}/${d.key}.html">
     <div class="tagrow"><span class="lbl">can do</span>${d.capabilities.map(c => `<span class="tag cap">${c}</span>`).join('')}</div>
     <div class="tagrow"><span class="lbl">status</span>${badge(d.verdict)}<span class="badge ${ {ok:'ok',unstable:'warn',fixme:'fail'}[d.status] || 'none'}">${ {ok:'builds',unstable:'unstable',fixme:'not buildable'}[d.status] || d.status}</span></div>
   </a>`; }
-[q, fy, ff, fv, fs, document.getElementById('cap')].forEach(e => e.addEventListener('input', render));
+[q, fy, ff, fv, fs, document.getElementById('cap'), document.getElementById('award')].forEach(e => e.addEventListener('input', render));
 render();
 """
 
@@ -307,6 +307,7 @@ def index_page(solvers: list[dict]) -> str:
   <select id="verdict"><option value="">Any verification</option><option value="verified">Verified</option><option value="runs">Runs, checks failed</option><option value="built">Compiles</option><option value="source-available">Build fails</option><option value="source-unavailable">Source unavailable</option><option value="unknown">Not run yet</option></select>
   <select id="status"><option value="">Any status</option><option value="ok">builds</option><option value="unstable">unstable</option><option value="fixme">not buildable</option></select>
   <select id="cap"><option value="">Any capability</option><option value="SAT">SAT (verified)</option><option value="UNSAT">UNSAT (verified)</option><option value="UNSAT+proof">UNSAT+proof (verified)</option><option value="parallel">parallel</option><option value="gzip input">gzip input</option></select>
+  <select id="award"><option value="">Any award status</option><option value="awarded">Awarded (any podium)</option><option value="winner">Winners (1st only)</option></select>
   <span class="count" id="count"></span>
 </div>
 <div class="legend"><span>◌ dashed: what the solver is</span><span>▪ blue: what it can do, as verified by the test suite</span><span>● filled: whether it builds and passes the tests today</span></div>
