@@ -1,4 +1,5 @@
 import hashlib
+import io
 import importlib.util
 import json
 import stat
@@ -27,6 +28,35 @@ class CompetitionArchiveTests(unittest.TestCase):
             archive.writestr("Solver-B/main.c", b"int main(void) { return 0; }\n")
             archive.writestr("README.txt", b"competition metadata\n")
         return path
+
+    def test_strip_prefix_exposes_nested_solver_directories(self):
+        # The 2023 distribution stores solvers under Sequential/solvers/.
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            path = root / "Sequential.tar"
+            with tarfile.open(path, "w") as archive:
+                for name, data in [
+                    ("Sequential/starexec_description.txt", b"SAT Competition 2023"),
+                    ("Sequential/solvers/Solver-A/bin/solve", b"#!/bin/sh\n"),
+                    ("Sequential/solvers/Solver B/main.c", b"int main(void) { return 0; }\n"),
+                ]:
+                    info = tarfile.TarInfo(name)
+                    info.size = len(data)
+                    archive.addfile(info, io.BytesIO(data))
+            previous = archiver.STRIP_PREFIX
+            archiver.STRIP_PREFIX = "Sequential/solvers"
+            try:
+                archive = archiver.SolverArchive(path)
+                self.assertEqual(archive.roots(), ["Solver B", "Solver-A"])
+                output = root / "Solver-A.tar.xz"
+                archive.write_solver("Solver-A", output, "tar.xz")
+                with tarfile.open(output) as result:
+                    self.assertEqual(
+                        sorted(member.name for member in result.getmembers()),
+                        ["Solver-A", "Solver-A/bin/solve"],
+                    )
+            finally:
+                archiver.STRIP_PREFIX = previous
 
     def test_discovers_only_top_level_solver_directories(self):
         with tempfile.TemporaryDirectory() as directory:

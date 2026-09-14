@@ -33,7 +33,10 @@ from typing import BinaryIO, Iterable
 API_ROOT = "https://api.github.com"
 UPLOAD_ROOT = "https://uploads.github.com"
 DEFAULT_REPOSITORY = "sat-heritage/docker-images"
-IGNORED_ROOTS = {"__MACOSX"}
+IGNORED_ROOTS = {"__MACOSX", "__outside_prefix__"}
+# Path prefix under which the solver directories live inside the competition
+# archive (for example ``Sequential/solvers/`` in the 2023 distribution).
+STRIP_PREFIX = ""
 
 
 class ArchiveError(RuntimeError):
@@ -65,7 +68,17 @@ def normalized_member_name(name: str) -> str:
     path = PurePosixPath(name)
     if not name or path.is_absolute() or any(part in {"", ".."} for part in path.parts):
         raise ArchiveError(f"unsafe archive member: {name!r}")
-    return path.as_posix().rstrip("/")
+    name = path.as_posix().rstrip("/")
+    if STRIP_PREFIX:
+        prefix = STRIP_PREFIX.rstrip("/")
+        if name == prefix or name.startswith(prefix + "/"):
+            name = name[len(prefix) + 1:]
+            if not name:
+                return "__outside_prefix__"
+        else:
+            # members outside the prefix (the enclosing directories) are ignored
+            return "__outside_prefix__/" + name
+    return name
 
 
 def member_root(name: str) -> str | None:
@@ -392,6 +405,8 @@ def mirror(
         for number, source in enumerate(sources, start=1):
             source_path = Path(temp_dir) / f"source-{number}"
             record = download_source(source, source_path)
+            if STRIP_PREFIX:
+                record["strip_prefix"] = STRIP_PREFIX
             archive = SolverArchive(source_path)
             roots = archive.roots()
             record["solvers"] = roots
@@ -512,6 +527,13 @@ def parser() -> argparse.ArgumentParser:
         metavar="SOURCE=ASSET",
         help="rename an output asset while preserving the source directory",
     )
+    result.add_argument(
+        "--strip-prefix",
+        default="",
+        metavar="DIR/",
+        help="directory inside the archive that contains the solver directories, "
+        "for example Sequential/solvers/ (default: the archive root)",
+    )
     result.add_argument("--output-dir", type=Path, help="default: dist/competition-sources/YEAR")
     result.add_argument(
         "--format",
@@ -534,6 +556,8 @@ def parser() -> argparse.ArgumentParser:
 
 def main(arguments: list[str] | None = None) -> int:
     args = parser().parse_args(arguments)
+    global STRIP_PREFIX
+    STRIP_PREFIX = args.strip_prefix.strip("/")
     try:
         renames = parse_renames(args.rename)
         selected = set(args.solver)

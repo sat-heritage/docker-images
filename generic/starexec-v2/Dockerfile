@@ -32,10 +32,16 @@ RUN if [ -n "${BUILD_DEPENDS:-}" ]; then \
 
 FROM buildenv AS source
 ARG download_url
+# Release assets are ZIP files for ZIP competition distributions and tar.xz
+# files otherwise; both unpack to /src/<solver name>/.
 RUN mkdir -p /src && \
-    curl --fail --location --retry 3 --output /tmp/submission.zip "${download_url}" && \
-    unzip -q /tmp/submission.zip -d /src && \
-    rm /tmp/submission.zip
+    curl --fail --location --retry 3 --output /tmp/submission "${download_url}" && \
+    if unzip -tq /tmp/submission >/dev/null 2>&1; then \
+        unzip -q /tmp/submission -d /src; \
+    else \
+        tar -xf /tmp/submission -C /src; \
+    fi && \
+    rm /tmp/submission
 
 FROM source AS builder
 # Build as an unprivileged user, like StarExec does: some submitted build
@@ -54,6 +60,7 @@ ARG BUILD_COMMAND=
 ARG BUILD_ENV=
 ARG BINARY_PATH
 ARG BINARY_NAME
+ARG DIST_PATHS=
 
 WORKDIR /src
 
@@ -83,8 +90,15 @@ RUN set -eu; \
       command) bash -ec "$BUILD_COMMAND" ;; \
       *) echo "unsupported BUILD_KIND: $kind" >&2; exit 1 ;; \
     esac; \
-    test -n "$BINARY_PATH"; \
-    test -f "$root/$BINARY_PATH"; \
     mkdir -p /dist; \
-    install -m 0755 "$root/$BINARY_PATH" "/dist/${BINARY_NAME:-$(basename "$BINARY_PATH")}"; \
-    test -x "/dist/${BINARY_NAME:-$(basename "$BINARY_PATH")}" 
+    if [ -n "$BINARY_PATH" ]; then \
+        test -f "$root/$BINARY_PATH"; \
+        install -m 0755 "$root/$BINARY_PATH" "/dist/${BINARY_NAME:-$(basename "$BINARY_PATH")}"; \
+        test -x "/dist/${BINARY_NAME:-$(basename "$BINARY_PATH")}"; \
+    fi; \
+    for path in $DIST_PATHS; do \
+        test -e "$root/$path"; \
+        mkdir -p "/dist/$(dirname "$path")"; \
+        cp -a "$root/$path" "/dist/$path"; \
+    done; \
+    test -n "$BINARY_PATH$DIST_PATHS"

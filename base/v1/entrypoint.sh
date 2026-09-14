@@ -79,14 +79,32 @@ mycall() {
             FILECNF=/tmp/gunzipped.cnf
         fi
     fi
+    # StarExec convention: the run script receives an output directory as
+    # second argument and writes its proof to <directory>/proof.out.
+    PROOFDIR=""
+    if [[ " ${args[*]} " == *" PROOFDIR "* ]]; then
+        PROOFDIR="$(mktemp -d /tmp/proofdir.XXXXXX)"
+    fi
     for (( i=0; i<${#args[@]}; ++i )); do
         a="${args[$i]/FILECNF/$FILECNF}"
         a="${a/RANDOMSEED/$RANDOMSEED}"
         a="${a/MAXNBTHREAD/$MAXNBTHREAD}"
         a="${a/MEMLIMIT/$MEMLIMIT}"
         a="${a/TIMEOUT/$TIMEOUT}"
+        a="${a/PROOFDIR/$PROOFDIR}"
         args[$i]="${a/FILEPROOF/$FILEPROOF}"
     done
+    if [ -n "${PROOFDIR}" ]; then
+        set +e
+        call_solver "${args[@]}"
+        ret=$?
+        set -e
+        if [ -n "${FILEPROOF}" ] && [ -f "${PROOFDIR}/proof.out" ]; then
+            mv -f "${PROOFDIR}/proof.out" "${FILEPROOF}"
+        fi
+        rm -rf "${PROOFDIR}"
+        return $ret
+    fi
     call_solver "${args[@]}"
 }
 

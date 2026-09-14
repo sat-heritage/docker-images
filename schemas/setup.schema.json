@@ -22,6 +22,7 @@
     "MAKE_ARGS": { "type": "string" },
     "BINARY_PATH": { "type": "string" },
     "BINARY_NAME": { "type": "string" },
+    "DIST_PATHS": { "type": "string" },
     "RDEPENDS": { "type": "string" },
     "APT_SNAPSHOT": {
       "type": "string",

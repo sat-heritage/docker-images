@@ -155,6 +155,7 @@ The following keywords are allowed in `args` and `argsproof`:
 | --- | --- |
 | FILECNF | Replaced by the absolute path (within the Docker container) to the input DIMACS file.<br>Whenever the input file ends with `.gz` and `gz` is `False`, the input file is unzipped as `/tmp/gunzipped.cnf` |
 | FILEPROOF | Replaced by the absolute path (within the Docker container) to the output file for proof |
+| PROOFDIR | Replaced by a temporary directory; after the run, `proof.out` in that directory is moved to the `FILEPROOF` path. This is the StarExec convention for run scripts that take an output directory as second argument |
 | MAXNBTHREAD | Replaced by the `MAXNBTHREAD` environment variable; `1` by default.<br>Example: `satex run asolver:ayear my.cnf -e MAXNBTHREAD=8` |
 | MEMLIMIT | Replaced by the `MEMLIMIT` environment variable; `1024` by default. |
 | RANDOMSEED | Replaced by the `RANDOMSEED` environment variable; `1234567` by default. |
@@ -217,6 +218,7 @@ being a JSON object with a subset of the following keys.
 | BUILD_ENV | Shell variable assignments exported before running the build, for example `CC="gcc -fcommon"` to compile code written for pre-GCC 10 compilers with the submitted script unchanged |
 | BINARY_PATH | Path, relative to the root of the submission archive, of the executable produced by the build. It is installed in `/dist`, so the precompiled binaries shipped in competition archives are never used.<br>Required by `generic/starexec-v2` |
 | BINARY_NAME | Name of the installed executable.<br>Default: basename of `BINARY_PATH` |
+| DIST_PATHS | Space-separated paths, relative to the root of the submission archive, copied into `/dist` with their relative layout, for submissions whose run script drives several programs (for example `bin kissat/build/kissat`). May replace `BINARY_PATH`.<br>Used by `generic/starexec-v2` |
 
 The `generic/starexec-v2` builder is intended for StarExec submissions of
 recent competitions (2022 onwards): one ZIP archive per solver, whose top-level
