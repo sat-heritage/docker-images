@@ -210,9 +210,16 @@ footer .credits { display:block; margin-bottom:6px; } .hero h1 { font-size:34px;
 pre.cmd { position:relative; padding-right:70px; } pre.cmd button { position:absolute; top:8px; right:8px; font:inherit; font-size:12px; padding:3px 9px; border-radius:6px; border:1px solid var(--line); background:var(--card); color:var(--ink); cursor:pointer; }
 .btn { display:inline-block; background:var(--hf); color:#0b0b0b; padding:10px 16px; border-radius:10px; font-weight:600; } .btn:hover { text-decoration:none; filter:brightness(.95); }
 main { max-width:1200px; margin:0 auto; padding:20px 24px 60px; }
-.toolbar { display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin:8px 0 18px; }
-.toolbar input, .toolbar select { font:inherit; padding:8px 10px; border:1px solid var(--line); border-radius:8px; background:var(--card); color:var(--ink); }
-.toolbar input { flex:1 1 260px; } .count { color:var(--muted); margin-left:auto; }
+.toolbar { display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin:8px 0 18px; padding:12px 14px; background:var(--bg2); border:1px solid var(--line); border-radius:14px; }
+.ctl { display:inline-flex; align-items:center; gap:8px; padding:0 12px; border:1px solid var(--line); border-radius:999px; background:var(--card); color:var(--ink); box-shadow:0 1px 2px rgba(0,0,0,.04); transition:border-color .15s, box-shadow .15s; }
+.ctl:hover { border-color:var(--hfdark); } .ctl:focus-within { border-color:var(--accent); box-shadow:0 0 0 3px color-mix(in srgb, var(--accent) 20%, transparent); }
+.ctl svg { width:16px; height:16px; flex:none; stroke:var(--muted); fill:none; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
+.ctl:focus-within svg { stroke:var(--accent); }
+.ctl input, .ctl select { font:inherit; padding:9px 0; border:0; background:transparent; color:var(--ink); outline:none; min-width:0; }
+.ctl select { padding-right:4px; cursor:pointer; } .ctl.search { flex:1 1 260px; } .ctl.search input { width:100%; }
+.ctl.award:has(option:checked:not([value=""])) { border-color:#e8c65a; background:#fff8dc; } .ctl.award:has(option:checked:not([value=""])) svg { stroke:#7a5a00; }
+.count { color:var(--muted); margin-left:auto; font-size:14px; white-space:nowrap; }
+@media (prefers-color-scheme: dark) { .ctl.award:has(option:checked:not([value=""])) { background:#3a2f0a; } }
 .grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 1fr)); gap:14px; }
 section.year { display:grid; grid-template-columns:64px 1fr; gap:0 10px; padding:18px 0 10px; border-top:2px solid var(--line); }
 section.year:first-child { border-top:0; padding-top:4px; }
@@ -295,19 +302,36 @@ def page(title: str, body: str, depth: int, active: str = "") -> str:
 """
 
 
+ICON = {
+    "search": '<circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/>',
+    "year": '<rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/>',
+    "family": '<path d="M6 3v12"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/>',
+    "verdict": '<path d="M22 11.1V12a10 10 0 1 1-5.9-9.1"/><path d="m9 11 3 3L22 4"/>',
+    "status": '<path d="M12 2 4 5v6c0 5.5 3.8 10.7 8 12 4.2-1.3 8-6.5 8-12V5z"/>',
+    "cap": '<path d="M13 2 3 14h9l-1 8 10-12h-9z"/>',
+    "award": '<path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/>',
+}
+
+
+def ctl(kind: str, control: str, extra_class: str = "") -> str:
+    """A toolbar control (input or select) with its icon."""
+    cls = f"ctl {kind} {extra_class}".strip()
+    return f'<label class="{cls}"><svg viewBox="0 0 24 24" aria-hidden="true">{ICON[kind]}</svg>{control}</label>'
+
+
 def index_page(solvers: list[dict]) -> str:
     years = sorted({s["set"] for s in solvers}, key=lambda y: (not y.isdigit(), -int(y) if y.isdigit() else 0))
     families = sorted({s["family"] for s in solvers})
     options = lambda values: "".join(f'<option value="{esc(v)}">{esc(v)}</option>' for v in values)
     body = f"""
 <div class="toolbar">
-  <input id="q" type="search" placeholder="Search a solver, an author, a year">
-  <select id="year"><option value="">All years</option>{options(years)}</select>
-  <select id="family"><option value="">All families</option>{options(families)}</select>
-  <select id="verdict"><option value="">Any verification</option><option value="verified">Verified</option><option value="runs">Runs, checks failed</option><option value="built">Compiles</option><option value="source-available">Build fails</option><option value="source-unavailable">Source unavailable</option><option value="unknown">Not run yet</option></select>
-  <select id="status"><option value="">Any status</option><option value="ok">builds</option><option value="unstable">unstable</option><option value="fixme">not buildable</option></select>
-  <select id="cap"><option value="">Any capability</option><option value="SAT">SAT (verified)</option><option value="UNSAT">UNSAT (verified)</option><option value="UNSAT+proof">UNSAT+proof (verified)</option><option value="parallel">parallel</option><option value="gzip input">gzip input</option></select>
-  <select id="award"><option value="">Any award status</option><option value="awarded">Awarded (any podium)</option><option value="winner">Winners (1st only)</option></select>
+  {ctl("search", '<input id="q" type="search" placeholder="Search a solver, an author, a year">')}
+  {ctl("year", f'<select id="year"><option value="">All years</option>{options(years)}</select>')}
+  {ctl("family", f'<select id="family"><option value="">All families</option>{options(families)}</select>')}
+  {ctl("verdict", '<select id="verdict"><option value="">Any verification</option><option value="verified">Verified</option><option value="runs">Runs, checks failed</option><option value="built">Compiles</option><option value="source-available">Build fails</option><option value="source-unavailable">Source unavailable</option><option value="unknown">Not run yet</option></select>')}
+  {ctl("status", '<select id="status"><option value="">Any status</option><option value="ok">builds</option><option value="unstable">unstable</option><option value="fixme">not buildable</option></select>')}
+  {ctl("cap", '<select id="cap"><option value="">Any capability</option><option value="SAT">SAT (verified)</option><option value="UNSAT">UNSAT (verified)</option><option value="UNSAT+proof">UNSAT+proof (verified)</option><option value="parallel">parallel</option><option value="gzip input">gzip input</option></select>')}
+  {ctl("award", '<select id="award"><option value="">Any award</option><option value="awarded">Awarded (any podium)</option><option value="winner">Winners (1st only)</option></select>')}
   <span class="count" id="count"></span>
 </div>
 <div class="legend"><span>◌ dashed: what the solver is</span><span>▪ blue: what it can do, as verified by the test suite</span><span>● filled: whether it builds and passes the tests today</span></div>
