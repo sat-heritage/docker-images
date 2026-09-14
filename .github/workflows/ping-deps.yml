@@ -10,9 +10,13 @@ jobs:
     ping-deps:
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/setup-python@v2
+            - uses: actions/setup-python@v5
+
+              with:
+
+                  python-version: "3.12"
             - run: pip install requests
-            - uses: actions/checkout@v2
+            - uses: actions/checkout@v4
               with:
                   ref: master
             - run: python satex.py image-deps --pull
