@@ -7,6 +7,9 @@
 [![Docker Hub](https://badgen.net/badge/DockerHub/satex/blue?icon=docker)](https://hub.docker.com/u/satex)
 [![Zenodo](https://badgen.net/badge/Zenodo/satex/5cb85c)](https://zenodo.org/communities/satex)
 [![Gitter](https://badges.gitter.im/sat-heritage/community.svg)](https://gitter.im/sat-heritage/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+[![Website](https://badgen.net/badge/website/sat-heritage.github.io/ffd21e)](https://sat-heritage.github.io/docker-images/)
+[![Python tests](https://github.com/sat-heritage/docker-images/actions/workflows/python-tests.yml/badge.svg?branch=master)](https://github.com/sat-heritage/docker-images/actions/workflows/python-tests.yml)
+[![Image sync](https://github.com/sat-heritage/docker-images/actions/workflows/docker-sync.yml/badge.svg)](https://github.com/sat-heritage/docker-images/actions/workflows/docker-sync.yml)
 
 ## Principles
 
