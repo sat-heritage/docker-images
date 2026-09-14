@@ -187,6 +187,10 @@ footer .credits { display:block; margin-bottom:6px; } .hero h1 { font-size:34px;
 .fact { background:var(--bg2); border-radius:12px; padding:12px 14px; } .fact b { display:block; } .fact span { color:var(--muted); font-size:13px; }
 .notice { font-size:14px !important; color:var(--muted); border-left:3px solid var(--hf); padding-left:10px; }
 .muted-inline { color:var(--muted); font-size:13px; }
+.pitch { margin:22px 0 6px; background:var(--card); border:1px solid var(--line); border-left:4px solid var(--hf); border-radius:12px; padding:14px 18px; max-width:860px; }
+.pitch-head { font-weight:700; font-size:17px; margin-bottom:8px; } .pitch-foot { color:var(--muted); font-size:13px; margin-top:8px; }
+.section.pull { border-left:4px solid var(--hf); }
+pre.cmd { position:relative; padding-right:70px; } pre.cmd button { position:absolute; top:8px; right:8px; font:inherit; font-size:12px; padding:3px 9px; border-radius:6px; border:1px solid var(--line); background:var(--card); color:var(--ink); cursor:pointer; }
 .btn { display:inline-block; background:var(--hf); color:#0b0b0b; padding:10px 16px; border-radius:10px; font-weight:600; } .btn:hover { text-decoration:none; filter:brightness(.95); }
 main { max-width:1200px; margin:0 auto; padding:20px 24px 60px; }
 .toolbar { display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin:8px 0 18px; }
@@ -254,6 +258,7 @@ def page(title: str, body: str, depth: int, active: str = "") -> str:
 <nav><a href="{root}index.html"{' class="active"' if active == 'overview' else ''}>Overview</a><a href="{root}catalogue.html"{' class="active"' if active == 'catalogue' else ''}>Catalogue</a><a href="{REPO_URL}">GitHub</a></nav>
 <p>Docker images of SAT solvers, rebuilt from the competition sources and verified.</p></header>
 <main>{body}</main>
+<script>document.querySelectorAll('pre.cmd[data-copy]').forEach(p => {{ const b = document.createElement('button'); b.textContent = 'Copy'; b.addEventListener('click', () => {{ navigator.clipboard.writeText(p.innerText.replace(/Copy$/, '').trim()); b.textContent = 'Copied'; setTimeout(() => b.textContent = 'Copy', 1500); }}); p.appendChild(b); }});</script>
 <footer><span class="credits">SAT Heritage is a project by {esc(AUTHORS)} · <a href="{PAPER_URL}">{esc(PAPER_TITLE)}</a> ({PAPER_VENUE}, <a href="{PAPER_ARXIV}">arXiv</a>)</span><br>Generated from the <a href="{REPO_URL}">sat-heritage/docker-images</a> repository. This site, its generator and the solver metadata it presents were produced with the help of Claude Fable 5.1 (Anthropic): the descriptions, verification results and figures may contain errors and should be checked against the repository and the original competition material before being relied upon.</footer></body></html>
 """
 
@@ -299,7 +304,8 @@ def solver_page(s: dict) -> str:
 <div class="tagrow" style="margin-top:6px"><span class="lbl">status</span><span class="badge {vcls}">{vlabel}</span><span class="badge {scls}">{slabel}</span></div></div>
 {('<div class="section"><h2>Status</h2><p>' + esc(s['status_detail']) + '</p></div>') if s['status_detail'] else ''}
 {('<div class="section"><h2>Notes</h2><p>' + esc(s['comment']) + '</p></div>') if s['comment'] else ''}
-<div class="section"><h2>Run it</h2><pre>{esc(run_cmd)}</pre>
+<div class="section pull"><h2>Pull it from Docker and run it</h2><pre class="cmd" data-copy>docker pull {DOCKER_NS}/{esc(s['image'])}
+{esc(run_cmd)}</pre><p class="muted-inline">No build needed: the image is published on <a href="https://hub.docker.com/r/{DOCKER_NS}/{esc(s['key'])}">Docker Hub</a>. Mount the directory that holds your instance on <code>/data</code>; the proof file is optional{'' if s['proof'] else ' and not produced by this solver'}.</p>
 {('<p><a class="btn" href="' + esc(s['download_url']) + '">Download the sources</a> <span class="muted-inline">' + esc(s['download_url'].rsplit('/', 1)[-1]) + ', the competition submission as archived by SAT Heritage, to build it yourself with the recipe below.</span></p>') if s['download_url'] else ''}<dl>
 <dt>Image</dt><dd><code>{DOCKER_NS}/{esc(s['image'])}</code></dd>
 <dt>Command</dt><dd><code>{esc(s['call'])} {esc(' '.join(map(str, s['args'])))}</code></dd>
@@ -406,7 +412,11 @@ def overview_page(solvers: list[dict]) -> str:
 <h1>Every SAT competition solver, one <code>docker run</code> away.</h1>
 <p>SAT Heritage rebuilds the solvers submitted to the SAT competitions from their original sources, in a build environment of their year, and verifies that each image still answers correctly. Browse the catalogue, or pull an image and run it on your instance.</p>
 <p class="notice">Generated with the help of Claude Fable 5.1: the metadata and results shown here are reported with caution and may contain errors.</p>
-<a class="btn" href="catalogue.html">Browse the catalogue →</a></div>
+<a class="btn" href="catalogue.html">Browse the catalogue →</a>
+<div class="pitch"><div class="pitch-head">No compiler, no dependencies: pull it from Docker and run it.</div>
+<pre class="cmd" data-copy>docker pull satex/kissat-sc2024:2024
+docker run --rm -v $PWD:/data satex/kissat-sc2024:2024 instance.cnf proof.out</pre>
+<div class="pitch-foot">Every solver is an image on <a href="https://hub.docker.com/u/satex">Docker Hub</a>, named <code>satex/&lt;solver&gt;:&lt;year&gt;</code>. Give it a DIMACS file, and a proof file if you want one. The <a href="{REPO_URL}#satex-python-script">satex</a> script (<code>pip install satex</code>) lists, runs and extracts them in one line.</div></div></div>
 <div class="stats">
 <div class="stat"><div class="n">{len(solvers)}</div><div class="l">solver images</div></div>
 <div class="stat"><div class="n">{tested}</div><div class="l">run through the test suite so far</div></div>
