@@ -99,6 +99,11 @@ def collect(repo: Path) -> list[dict]:
     results_file = repo / "data" / "test-results.json"
     if results_file.is_file():
         results = load_json(results_file).get("images", {})
+    awards_file = repo / "data" / "awards.json"
+    awards = load_json(awards_file).get("awards", []) if awards_file.is_file() else []
+    awards_by_image = {}
+    for a in awards:
+        awards_by_image.setdefault(f"{a['solver']}:{a['year']}", []).append(a)
     solvers = []
     for entry_set in index:
         set_dir = repo / str(entry_set)
@@ -142,6 +147,7 @@ def collect(repo: Path) -> list[dict]:
                 "status_detail": entry.get("status_detail", ""),
                 "comment": entry.get("comment") or entry.get("comments", ""),
                 "tracks": entry.get("tracks", []),
+                "awards": sorted(awards_by_image.get(image, []), key=lambda a: (a["rank"], a["track"], a["category"])),
                 "call": entry.get("call", ""),
                 "args": entry.get("args", []),
                 "proof": "argsproof" in entry,
@@ -164,6 +170,16 @@ def collect(repo: Path) -> list[dict]:
 
 
 CSS = """
+.tag.award{border:1px solid transparent;font-weight:600}
+.tag.award.r1{background:#fff3c4;color:#7a5a00;border-color:#e8c65a}
+.tag.award.r2{background:#eceff3;color:#4a5361;border-color:#c3cad4}
+.tag.award.r3{background:#f6e3d3;color:#7a4a1e;border-color:#dcb08c}
+.tag.award::before{content:"★ ";opacity:.8}
+.podium{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px;margin-top:10px}
+.podium .yr{border:1px solid var(--border);border-radius:10px;padding:10px 12px;background:var(--surface)}
+.podium .yr h3{margin:0 0 6px;font-size:15px}
+.podium .yr div{font-size:13px;margin:3px 0}
+.podium .yr small{color:var(--muted)}
 :root { --bg:#ffffff; --bg2:#f8f9fb; --card:#ffffff; --ink:#0b0b0b; --muted:#5e6572; --line:#e5e7eb; --ok:#1a7f37; --warn:#9a6700; --fail:#cf222e; --none:#8c959f; --accent:#0b57d0; --hf:#ffd21e; --hfdark:#f59e0b; --cap:#0550ae; --capbg:#e8f1ff; --series-1:#2a78d6; --series-2:#eda100; --grid:#e5e7eb; --warnbg:#fff8dc; --l0:#86b6ef; --l1:#5598e7; --l2:#2a78d6; --l3:#1c5cab; --l4:#104281; --l-none:#d4d6da; }
 @media (prefers-color-scheme: dark) { :root { --bg:#0b0f19; --bg2:#111827; --card:#161b26; --ink:#f3f4f6; --muted:#9aa3b2; --line:#2a3140; --ok:#3fb950; --warn:#d29922; --fail:#f85149; --none:#6e7681; --accent:#7ab4ff; --cap:#9ecbff; --capbg:#12305c; --series-1:#3987e5; --series-2:#c98500; --grid:#2a3140; --warnbg:#3a2f0b; --l0:#9ec5f4; --l1:#6da7ec; --l2:#3987e5; --l3:#256abf; --l4:#184f95; --l-none:#3a4150; } }
 * { box-sizing: border-box; }
@@ -241,13 +257,27 @@ function render() {
 function card(d) { return `<a class="card" href="${d.set}/${d.key}.html">
     <h3>${d.name}</h3>
     <div class="meta">${d.set} · ${d.authors || 'authors not recorded'}</div>
-    <div class="tagrow"><span class="lbl">solver</span><span class="tag id">${d.family}</span>${d.version ? `<span class="tag id">v${d.version}</span>` : ''}${d.tracks.map(t => `<span class="tag id">${t}</span>`).join('')}</div>
+    <div class="tagrow"><span class="lbl">solver</span><span class="tag id">${d.family}</span>${d.version ? `<span class="tag id">v${d.version}</span>` : ''}${d.tracks.map(t => `<span class="tag id">${t}</span>`).join('')}${d.awards.map(a => `<span class="tag award r${Math.min(a.rank, 3)}">${a.label}</span>`).join('')}</div>
     <div class="tagrow"><span class="lbl">can do</span>${d.capabilities.map(c => `<span class="tag cap">${c}</span>`).join('')}</div>
     <div class="tagrow"><span class="lbl">status</span>${badge(d.verdict)}<span class="badge ${ {ok:'ok',unstable:'warn',fixme:'fail'}[d.status] || 'none'}">${ {ok:'builds',unstable:'unstable',fixme:'not buildable'}[d.status] || d.status}</span></div>
   </a>`; }
 [q, fy, ff, fv, fs, document.getElementById('cap')].forEach(e => e.addEventListener('input', render));
 render();
 """
+
+
+RANK_LABEL = {1: "1st", 2: "2nd", 3: "3rd"}
+
+
+def award_label(a: dict) -> str:
+    """'1st · main track 2024', '2nd UNSAT · main track 2025', 'winner · AI subtrack 2026'."""
+    rank = RANK_LABEL.get(a["rank"], f"{a['rank']}th")
+    category = "" if a.get("category", "overall") == "overall" else " " + a["category"]
+    return f"{rank}{category} · {a['track']} {a['year']}"
+
+
+def award_tags(awards: list[dict]) -> str:
+    return "".join(f'<span class="tag award r{min(a["rank"], 3)}" title="{esc(a.get("note", ""))}">{esc(award_label(a))}</span>' for a in awards)
 
 
 def page(title: str, body: str, depth: int, active: str = "") -> str:
@@ -281,7 +311,7 @@ def index_page(solvers: list[dict]) -> str:
 </div>
 <div class="legend"><span>◌ dashed: what the solver is</span><span>▪ blue: what it can do, as verified by the test suite</span><span>● filled: whether it builds and passes the tests today</span></div>
 <div id="grid"></div>
-<script>window.SOLVERS = {json.dumps([{k: s[k] for k in ("image", "key", "set", "name", "authors", "status", "family", "verdict", "capabilities", "version", "tracks")} for s in solvers])};</script>
+<script>window.SOLVERS = {json.dumps([dict({k: s[k] for k in ("image", "key", "set", "name", "authors", "status", "family", "verdict", "capabilities", "version", "tracks")}, awards=[{"rank": a["rank"], "label": award_label(a)} for a in s["awards"]]) for s in solvers])};</script>
 <script>{JS}</script>
 """
     return page("Catalogue", body, 0, "catalogue")
@@ -301,7 +331,7 @@ def solver_page(s: dict) -> str:
     body = f"""
 <div class="crumbs"><a href="../catalogue.html">Catalogue</a> › {esc(s['set'])}</div>
 <div class="page"><h1>{esc(s['name'])}</h1><div class="sub">{esc(s['authors'] or 'authors not recorded')}{(' · version ' + esc(s['version'])) if s['version'] else ''}</div>
-<div class="tagrow" style="margin-top:10px"><span class="lbl">solver</span><span class="tag id">{esc(s['family'])}</span>{('<span class="tag id">v' + esc(s['version']) + '</span>') if s['version'] else ''}{''.join('<span class="tag id">' + esc(t) + '</span>' for t in s['tracks'])}</div>
+<div class="tagrow" style="margin-top:10px"><span class="lbl">solver</span><span class="tag id">{esc(s['family'])}</span>{('<span class="tag id">v' + esc(s['version']) + '</span>') if s['version'] else ''}{''.join('<span class="tag id">' + esc(t) + '</span>' for t in s['tracks'])}{award_tags(s['awards'])}</div>
 <div class="tagrow" style="margin-top:6px"><span class="lbl">can do</span>{''.join('<span class="tag cap">' + esc(c) + '</span>' for c in s['capabilities']) or '<span class="tag cap">not verified yet</span>'}</div>
 <div class="tagrow" style="margin-top:6px"><span class="lbl">status</span><span class="badge {vcls}">{vlabel}</span><span class="badge {scls}">{slabel}</span></div></div>
 {('<div class="section"><h2>Status</h2><p>' + esc(s['status_detail']) + '</p></div>') if s['status_detail'] else ''}
@@ -381,6 +411,24 @@ def svg_hbars(rows: list[tuple[str, int]], label: str) -> str:
     return "".join(out)
 
 
+def podium_section(solvers: list[dict]) -> str:
+    """Award-winning solvers per year, from data/awards.json (sequential tracks only)."""
+    by_year = {}
+    for s in solvers:
+        for a in s["awards"]:
+            by_year.setdefault(a["year"], []).append((a, s))
+    if not by_year:
+        return ""
+    blocks = []
+    for year in sorted(by_year, reverse=True):
+        rows = sorted(by_year[year], key=lambda t: (t[0]["track"] != "main track", t[0]["track"], t[0].get("category", "overall") != "overall", t[0].get("category", ""), t[0]["rank"]))
+        lines = "".join(f'<div><span class="tag award r{min(a["rank"], 3)}">{esc(award_label(a).split(" · ")[0])}</span> <a href="{s["set"]}/{s["key"]}.html">{esc(s["name"])}</a> <small>{esc(a["track"])}{("" if a.get("category", "overall") == "overall" else ", " + esc(a["category"]))}</small></div>' for a, s in rows)
+        blocks.append(f'<div class="yr"><h3>{year}</h3>{lines}</div>')
+    first = min(by_year)
+    return (f'<div class="fig" style="margin-top:14px"><h2>Award-winning solvers</h2><div class="sub">Podiums of the sequential tracks as announced by the competition organizers, {first} to {max(by_year)} for now; earlier years will be added. Ties share a rank.</div>'
+            f'<div class="podium">{"".join(blocks)}</div></div>')
+
+
 def overview_page(solvers: list[dict]) -> str:
     from collections import Counter
     years = sorted({s["set"] for s in solvers if s["set"].isdigit()}, key=int)
@@ -436,6 +484,7 @@ docker run --rm -v $PWD:/data satex/kissat-sc2024:2024 instance.cnf proof.out</p
 <div class="fig"><h2>Most credited authors</h2><div class="sub">Number of solver images an author is credited on, all years together.</div>{svg_hbars(top_authors, "Most credited authors")}</div>
 <div class="fig"><h2>Solver families</h2><div class="sub">Detected from the solver name and its executable; {other_count} images belong to no listed family.</div>{svg_hbars(top_families, "Solver families")}</div>
 </div>
+{podium_section(solvers)}
 <div class="fig" style="margin-top:14px"><h2>Did you know?</h2><div class="facts">{''.join(f'<div class="fact"><b>{esc(a)}</b><span>{esc(b)}</span></div>' for a, b in facts if a)}</div></div>
 """
     return page("Overview", body, 0, "overview")

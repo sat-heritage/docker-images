@@ -1,0 +1,506 @@
+{
+ "description": "Podiums announced by the SAT Competition organizers (slides and results pages), restricted to the sequential tracks whose solvers are in this repository. Ties share a rank. Contributions welcome for the years before 2022.",
+ "awards": [
+  {
+   "year": 2022,
+   "solver": "kissat-sc2022-bulky",
+   "track": "anniversary track",
+   "category": "SAT",
+   "rank": 1,
+   "source": "https://satcompetition.github.io/2022/slides/satcomp22slides.pdf"
+  },
+  {
+   "year": 2022,
+   "solver": "kissat-mab-ucb",
+   "track": "anniversary track",
+   "category": "SAT",
+   "rank": 2,
+   "source": "https://satcompetition.github.io/2022/slides/satcomp22slides.pdf"
+  },
+  {
+   "year": 2022,
+   "solver": "ekissat-mab-gb-db",
+   "track": "anniversary track",
+   "category": "SAT",
+   "rank": 3,
+   "source": "https://satcompetition.github.io/2022/slides/satcomp22slides.pdf"
+  },
+  {
+   "year": 2022,
+   "solver": "hkis-unsat",
+   "track": "anniversary track",
+   "category": "UNSAT",
+   "rank": 1,
+   "source": "https://satcompetition.github.io/2022/slides/satcomp22slides.pdf"
+  },
+  {
+   "year": 2022,
+   "solver": "kissat-mab-esa",
+   "track": "anniversary track",
+   "category": "UNSAT",
+   "rank": 2,
+   "source": "https://satcompetition.github.io/2022/slides/satcomp22slides.pdf"
+  },
+  {
+   "year": 2022,
+   "solver": "kissat-sc2022-bulky",
+   "track": "anniversary track",
+   "category": "UNSAT",
+   "rank": 3,
+   "source": "https://satcompetition.github.io/2022/slides/satcomp22slides.pdf"
+  },
+  {
+   "year": 2022,
+   "solver": "kissat-mab-esa",
+   "track": "anniversary track",
+   "category": "overall",
+   "rank": 1,
+   "source": "https://satcompetition.github.io/2022/slides/satcomp22slides.pdf"
+  },
+  {
+   "year": 2022,
+   "solver": "kissat-sc2022-bulky",
+   "track": "anniversary track",
+   "category": "overall",
+   "rank": 2,
+   "source": "https://satcompetition.github.io/2022/slides/satcomp22slides.pdf"
+  },
+  {
+   "year": 2022,
+   "solver": "ekissat-mab-gb-db",
+   "track": "anniversary track",
+   "category": "overall",
+   "rank": 3,
+   "source": "https://satcompetition.github.io/2022/slides/satcomp22slides.pdf"
+  },
+  {
+   "year": 2022,
+   "solver": "seqfrost-ere-all",
+   "track": "main track",
+   "category": "SAT",
+   "rank": 1,
+   "source": "https://satcompetition.github.io/2022/slides/satcomp22slides.pdf"
+  },
+  {
+   "year": 2022,
+   "solver": "seqfrost-noextend",
+   "track": "main track",
+   "category": "SAT",
+   "rank": 1,
+   "source": "https://satcompetition.github.io/2022/slides/satcomp22slides.pdf"
+  },
+  {
+   "year": 2022,
+   "solver": "kissat-inc",
+   "track": "main track",
+   "category": "SAT",
+   "rank": 2,
+   "source": "https://satcompetition.github.io/2022/slides/satcomp22slides.pdf"
+  },
+  {
+   "year": 2022,
+   "solver": "kissat-mab-hywalk",
+   "track": "main track",
+   "category": "SAT",
+   "rank": 3,
+   "source": "https://satcompetition.github.io/2022/slides/satcomp22slides.pdf"
+  },
+  {
+   "year": 2022,
+   "solver": "hkis-psids",
+   "track": "main track",
+   "category": "UNSAT",
+   "rank": 1,
+   "source": "https://satcompetition.github.io/2022/slides/satcomp22slides.pdf"
+  },
+  {
+   "year": 2022,
+   "solver": "hkis-unsat",
+   "track": "main track",
+   "category": "UNSAT",
+   "rank": 1,
+   "source": "https://satcompetition.github.io/2022/slides/satcomp22slides.pdf"
+  },
+  {
+   "year": 2022,
+   "solver": "kissat-sc2022-bulky",
+   "track": "main track",
+   "category": "UNSAT",
+   "rank": 2,
+   "source": "https://satcompetition.github.io/2022/slides/satcomp22slides.pdf"
+  },
+  {
+   "year": 2022,
+   "solver": "kissat-mab-ucb",
+   "track": "main track",
+   "category": "UNSAT",
+   "rank": 3,
+   "source": "https://satcompetition.github.io/2022/slides/satcomp22slides.pdf"
+  },
+  {
+   "year": 2022,
+   "solver": "kissat-mab-hywalk",
+   "track": "main track",
+   "category": "overall",
+   "rank": 1,
+   "source": "https://satcompetition.github.io/2022/slides/satcomp22slides.pdf"
+  },
+  {
+   "year": 2022,
+   "solver": "kissat-inc",
+   "track": "main track",
+   "category": "overall",
+   "rank": 2,
+   "source": "https://satcompetition.github.io/2022/slides/satcomp22slides.pdf"
+  },
+  {
+   "year": 2022,
+   "solver": "kissat-pre",
+   "track": "main track",
+   "category": "overall",
+   "rank": 2,
+   "source": "https://satcompetition.github.io/2022/slides/satcomp22slides.pdf"
+  },
+  {
+   "year": 2022,
+   "solver": "ekissat-mab-db-v1",
+   "track": "main track",
+   "category": "overall",
+   "rank": 3,
+   "source": "https://satcompetition.github.io/2022/slides/satcomp22slides.pdf"
+  },
+  {
+   "year": 2022,
+   "solver": "kissat-pre",
+   "track": "no-limits track",
+   "category": "overall",
+   "rank": 1,
+   "source": "https://satcompetition.github.io/2022/results.html",
+   "note": "Ranking of the results page; the organizers announced no podium for this track"
+  },
+  {
+   "year": 2022,
+   "solver": "kissat-inc",
+   "track": "no-limits track",
+   "category": "overall",
+   "rank": 2,
+   "source": "https://satcompetition.github.io/2022/results.html",
+   "note": "Ranking of the results page; the organizers announced no podium for this track"
+  },
+  {
+   "year": 2022,
+   "solver": "kissat-mab-hywalk",
+   "track": "no-limits track",
+   "category": "overall",
+   "rank": 3,
+   "source": "https://satcompetition.github.io/2022/results.html",
+   "note": "Ranking of the results page; the organizers announced no podium for this track"
+  },
+  {
+   "year": 2023,
+   "solver": "cadical-vivinst",
+   "track": "CaDiCaL hack track",
+   "category": "overall",
+   "rank": 1,
+   "source": "https://satcompetition.github.io/2023/downloads/satcomp23slides.pdf"
+  },
+  {
+   "year": 2023,
+   "solver": "sbva-cadical",
+   "track": "main track",
+   "category": "SAT",
+   "rank": 1,
+   "source": "https://satcompetition.github.io/2023/downloads/satcomp23slides.pdf"
+  },
+  {
+   "year": 2023,
+   "solver": "cadical-rel-1.5.3-scavel",
+   "track": "main track",
+   "category": "SAT",
+   "rank": 2,
+   "source": "https://satcompetition.github.io/2023/downloads/satcomp23slides.pdf",
+   "note": "Announced as CaDiCaL-Scavel; attributed to the CaDiCaL 1.5.3 variant, the one listed in the 2023 results"
+  },
+  {
+   "year": 2023,
+   "solver": "cadical-vivinst",
+   "track": "main track",
+   "category": "SAT",
+   "rank": 3,
+   "source": "https://satcompetition.github.io/2023/downloads/satcomp23slides.pdf"
+  },
+  {
+   "year": 2023,
+   "solver": "kissat-mab-prop",
+   "track": "main track",
+   "category": "UNSAT",
+   "rank": 1,
+   "source": "https://satcompetition.github.io/2023/downloads/satcomp23slides.pdf"
+  },
+  {
+   "year": 2023,
+   "solver": "sbva-cadical",
+   "track": "main track",
+   "category": "UNSAT",
+   "rank": 2,
+   "source": "https://satcompetition.github.io/2023/downloads/satcomp23slides.pdf"
+  },
+  {
+   "year": 2023,
+   "solver": "prelearn-kissat",
+   "track": "main track",
+   "category": "UNSAT",
+   "rank": 3,
+   "source": "https://satcompetition.github.io/2023/downloads/satcomp23slides.pdf"
+  },
+  {
+   "year": 2023,
+   "solver": "sbva-cadical",
+   "track": "main track",
+   "category": "overall",
+   "rank": 1,
+   "source": "https://satcompetition.github.io/2023/downloads/satcomp23slides.pdf"
+  },
+  {
+   "year": 2023,
+   "solver": "kissat-mab-prop-pr-nosym",
+   "track": "main track",
+   "category": "overall",
+   "rank": 2,
+   "source": "https://satcompetition.github.io/2023/downloads/satcomp23slides.pdf",
+   "note": "Announced as Kissat-MAB-prop*, the best of its variants"
+  },
+  {
+   "year": 2023,
+   "solver": "maplecadical-ppd-500-500",
+   "track": "main track",
+   "category": "overall",
+   "rank": 3,
+   "source": "https://satcompetition.github.io/2023/downloads/satcomp23slides.pdf"
+  },
+  {
+   "year": 2024,
+   "solver": "kissat-sc2024",
+   "track": "main track",
+   "category": "SAT",
+   "rank": 1,
+   "source": "https://satcompetition.github.io/2024/downloads/satcomp24slides.pdf"
+  },
+  {
+   "year": 2024,
+   "solver": "breakid-kissat",
+   "track": "main track",
+   "category": "SAT",
+   "rank": 2,
+   "source": "https://satcompetition.github.io/2024/downloads/satcomp24slides.pdf"
+  },
+  {
+   "year": 2024,
+   "solver": "hkis-bva",
+   "track": "main track",
+   "category": "SAT",
+   "rank": 3,
+   "source": "https://satcompetition.github.io/2024/downloads/satcomp24slides.pdf"
+  },
+  {
+   "year": 2024,
+   "solver": "kissat-sc2024",
+   "track": "main track",
+   "category": "UNSAT",
+   "rank": 1,
+   "source": "https://satcompetition.github.io/2024/downloads/satcomp24slides.pdf"
+  },
+  {
+   "year": 2024,
+   "solver": "hcad-bva",
+   "track": "main track",
+   "category": "UNSAT",
+   "rank": 2,
+   "source": "https://satcompetition.github.io/2024/downloads/satcomp24slides.pdf"
+  },
+  {
+   "year": 2024,
+   "solver": "kissat-mab-dc",
+   "track": "main track",
+   "category": "UNSAT",
+   "rank": 3,
+   "source": "https://satcompetition.github.io/2024/downloads/satcomp24slides.pdf"
+  },
+  {
+   "year": 2024,
+   "solver": "kissat-sc2024",
+   "track": "main track",
+   "category": "overall",
+   "rank": 1,
+   "source": "https://satcompetition.github.io/2024/downloads/satcomp24slides.pdf"
+  },
+  {
+   "year": 2024,
+   "solver": "kissat-mab-dc",
+   "track": "main track",
+   "category": "overall",
+   "rank": 2,
+   "source": "https://satcompetition.github.io/2024/downloads/satcomp24slides.pdf"
+  },
+  {
+   "year": 2024,
+   "solver": "hkis-bva",
+   "track": "main track",
+   "category": "overall",
+   "rank": 3,
+   "source": "https://satcompetition.github.io/2024/downloads/satcomp24slides.pdf"
+  },
+  {
+   "year": 2025,
+   "solver": "ae-kissat2025-mab",
+   "track": "main track",
+   "category": "SAT",
+   "rank": 1,
+   "source": "https://satcompetition.github.io/2025/satcomp25slides.pdf"
+  },
+  {
+   "year": 2025,
+   "solver": "kissat-public",
+   "track": "main track",
+   "category": "SAT",
+   "rank": 2,
+   "source": "https://satcompetition.github.io/2025/satcomp25slides.pdf"
+  },
+  {
+   "year": 2025,
+   "solver": "kissat-cure",
+   "track": "main track",
+   "category": "SAT",
+   "rank": 3,
+   "source": "https://satcompetition.github.io/2025/satcomp25slides.pdf"
+  },
+  {
+   "year": 2025,
+   "solver": "cadical-sc2025",
+   "track": "main track",
+   "category": "UNSAT",
+   "rank": 1,
+   "source": "https://satcompetition.github.io/2025/satcomp25slides.pdf"
+  },
+  {
+   "year": 2025,
+   "solver": "vsa",
+   "track": "main track",
+   "category": "UNSAT",
+   "rank": 2,
+   "source": "https://satcompetition.github.io/2025/satcomp25slides.pdf"
+  },
+  {
+   "year": 2025,
+   "solver": "ae-kissat2025-bump",
+   "track": "main track",
+   "category": "UNSAT",
+   "rank": 3,
+   "source": "https://satcompetition.github.io/2025/satcomp25slides.pdf"
+  },
+  {
+   "year": 2025,
+   "solver": "ae-kissat2025-mab",
+   "track": "main track",
+   "category": "overall",
+   "rank": 1,
+   "source": "https://satcompetition.github.io/2025/satcomp25slides.pdf"
+  },
+  {
+   "year": 2025,
+   "solver": "kissat-public",
+   "track": "main track",
+   "category": "overall",
+   "rank": 2,
+   "source": "https://satcompetition.github.io/2025/satcomp25slides.pdf"
+  },
+  {
+   "year": 2025,
+   "solver": "vsa",
+   "track": "main track",
+   "category": "overall",
+   "rank": 3,
+   "source": "https://satcompetition.github.io/2025/satcomp25slides.pdf"
+  },
+  {
+   "year": 2026,
+   "solver": "lymphosat",
+   "track": "AI generated / AI tuned subtrack",
+   "category": "SAT",
+   "rank": 1,
+   "source": "https://satcompetition.github.io/2026/downloads/satcomp26slides.pdf"
+  },
+  {
+   "year": 2026,
+   "solver": "satsuma-iter-ae-kissat-mab",
+   "track": "main track",
+   "category": "SAT",
+   "rank": 1,
+   "source": "https://satcompetition.github.io/2026/downloads/satcomp26slides.pdf"
+  },
+  {
+   "year": 2026,
+   "solver": "kissat-mab-hypre",
+   "track": "main track",
+   "category": "SAT",
+   "rank": 2,
+   "source": "https://satcompetition.github.io/2026/downloads/satcomp26slides.pdf"
+  },
+  {
+   "year": 2026,
+   "solver": "kissat-ae-hucb",
+   "track": "main track",
+   "category": "SAT",
+   "rank": 3,
+   "source": "https://satcompetition.github.io/2026/downloads/satcomp26slides.pdf"
+  },
+  {
+   "year": 2026,
+   "solver": "satsuma-iter-kissat",
+   "track": "main track",
+   "category": "UNSAT",
+   "rank": 1,
+   "source": "https://satcompetition.github.io/2026/downloads/satcomp26slides.pdf"
+  },
+  {
+   "year": 2026,
+   "solver": "kissat-mab-hypre-v2",
+   "track": "main track",
+   "category": "UNSAT",
+   "rank": 2,
+   "source": "https://satcompetition.github.io/2026/downloads/satcomp26slides.pdf"
+  },
+  {
+   "year": 2026,
+   "solver": "kissat-eda-3",
+   "track": "main track",
+   "category": "UNSAT",
+   "rank": 3,
+   "source": "https://satcompetition.github.io/2026/downloads/satcomp26slides.pdf"
+  },
+  {
+   "year": 2026,
+   "solver": "satsuma-iter-kissat",
+   "track": "main track",
+   "category": "overall",
+   "rank": 1,
+   "source": "https://satcompetition.github.io/2026/downloads/satcomp26slides.pdf"
+  },
+  {
+   "year": 2026,
+   "solver": "kissat-mab-hypre",
+   "track": "main track",
+   "category": "overall",
+   "rank": 2,
+   "source": "https://satcompetition.github.io/2026/downloads/satcomp26slides.pdf"
+  },
+  {
+   "year": 2026,
+   "solver": "kissat-eda-2",
+   "track": "main track",
+   "category": "overall",
+   "rank": 3,
+   "source": "https://satcompetition.github.io/2026/downloads/satcomp26slides.pdf"
+  }
+ ]
+}
