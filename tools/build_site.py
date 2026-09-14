@@ -164,8 +164,8 @@ def collect(repo: Path) -> list[dict]:
 
 
 CSS = """
-:root { --bg:#ffffff; --bg2:#f8f9fb; --card:#ffffff; --ink:#0b0b0b; --muted:#5e6572; --line:#e5e7eb; --ok:#1a7f37; --warn:#9a6700; --fail:#cf222e; --none:#8c959f; --accent:#0b57d0; --hf:#ffd21e; --hfdark:#f59e0b; --cap:#0550ae; --capbg:#e8f1ff; --series-1:#2a78d6; --series-2:#eda100; --grid:#e5e7eb; --l0:#86b6ef; --l1:#5598e7; --l2:#2a78d6; --l3:#1c5cab; --l4:#104281; --l-none:#d4d6da; }
-@media (prefers-color-scheme: dark) { :root { --bg:#0b0f19; --bg2:#111827; --card:#161b26; --ink:#f3f4f6; --muted:#9aa3b2; --line:#2a3140; --ok:#3fb950; --warn:#d29922; --fail:#f85149; --none:#6e7681; --accent:#7ab4ff; --cap:#9ecbff; --capbg:#12305c; --series-1:#3987e5; --series-2:#c98500; --grid:#2a3140; --l0:#9ec5f4; --l1:#6da7ec; --l2:#3987e5; --l3:#256abf; --l4:#184f95; --l-none:#3a4150; } }
+:root { --bg:#ffffff; --bg2:#f8f9fb; --card:#ffffff; --ink:#0b0b0b; --muted:#5e6572; --line:#e5e7eb; --ok:#1a7f37; --warn:#9a6700; --fail:#cf222e; --none:#8c959f; --accent:#0b57d0; --hf:#ffd21e; --hfdark:#f59e0b; --cap:#0550ae; --capbg:#e8f1ff; --series-1:#2a78d6; --series-2:#eda100; --grid:#e5e7eb; --warnbg:#fff8dc; --l0:#86b6ef; --l1:#5598e7; --l2:#2a78d6; --l3:#1c5cab; --l4:#104281; --l-none:#d4d6da; }
+@media (prefers-color-scheme: dark) { :root { --bg:#0b0f19; --bg2:#111827; --card:#161b26; --ink:#f3f4f6; --muted:#9aa3b2; --line:#2a3140; --ok:#3fb950; --warn:#d29922; --fail:#f85149; --none:#6e7681; --accent:#7ab4ff; --cap:#9ecbff; --capbg:#12305c; --series-1:#3987e5; --series-2:#c98500; --grid:#2a3140; --warnbg:#3a2f0b; --l0:#9ec5f4; --l1:#6da7ec; --l2:#3987e5; --l3:#256abf; --l4:#184f95; --l-none:#3a4150; } }
 * { box-sizing: border-box; }
 body { margin:0; font: 15px/1.5 -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color:var(--ink); background:var(--bg); }
 a { color:var(--accent); text-decoration:none; } a:hover { text-decoration:underline; } a.card:hover { text-decoration:none; border-color:var(--accent); }
@@ -173,6 +173,7 @@ header { padding:16px 24px; border-bottom:1px solid var(--line); background:var(
 header .logo { display:flex; align-items:center; gap:10px; font-weight:700; font-size:20px; } header .logo span.dot { width:26px; height:26px; border-radius:8px; background:var(--hf); display:inline-block; }
 header nav a { margin-right:16px; color:var(--ink); font-weight:500; } header nav a.active { border-bottom:2px solid var(--hf); }
 header p { margin:0; color:var(--muted); margin-left:auto; }
+.warning { max-width:1200px; margin:16px auto 0; padding:12px 18px; border:1px solid var(--hfdark); border-left:6px solid var(--hf); background:var(--warnbg); border-radius:10px; font-size:15px; line-height:1.5; }
 .hero { padding:28px 0 8px; } .hero .byline { color:var(--muted); font-size:14px; margin-bottom:10px; } .hero .byline b { color:var(--ink); font-weight:600; }
 footer .credits { display:block; margin-bottom:6px; } .hero h1 { font-size:34px; margin:0 0 6px; } .hero p { color:var(--muted); font-size:17px; margin:0 0 18px; max-width:760px; }
 .stats { display:grid; grid-template-columns:repeat(auto-fit, minmax(150px, 1fr)); gap:12px; margin:8px 0 22px; }
@@ -257,6 +258,7 @@ def page(title: str, body: str, depth: int, active: str = "") -> str:
 <body><header><a class="logo" href="{root}index.html" style="color:inherit"><span class="dot"></span>SAT Heritage</a>
 <nav><a href="{root}index.html"{' class="active"' if active == 'overview' else ''}>Overview</a><a href="{root}catalogue.html"{' class="active"' if active == 'catalogue' else ''}>Catalogue</a><a href="{REPO_URL}">GitHub</a></nav>
 <p>Docker images of SAT solvers, rebuilt from the competition sources and verified.</p></header>
+<div class="warning"><b>September 14, 2026 — large update in progress.</b> The images of the 2022 to 2026 competitions are being rebuilt from their sources and pushed to Docker Hub in batches over the coming days. If <code>docker pull</code> tells you that an image does not exist yet, build it yourself in the meantime with <code>satex build &lt;solver&gt;:&lt;year&gt;</code> (<code>pip install satex</code>), from the same sources and recipe.</div>
 <main>{body}</main>
 <script>document.querySelectorAll('pre.cmd[data-copy]').forEach(p => {{ const b = document.createElement('button'); b.textContent = 'Copy'; b.addEventListener('click', () => {{ navigator.clipboard.writeText(p.innerText.replace(/Copy$/, '').trim()); b.textContent = 'Copied'; setTimeout(() => b.textContent = 'Copy', 1500); }}); p.appendChild(b); }});</script>
 <footer><span class="credits">SAT Heritage is a project by {esc(AUTHORS)} · <a href="{PAPER_URL}">{esc(PAPER_TITLE)}</a> ({PAPER_VENUE}, <a href="{PAPER_ARXIV}">arXiv</a>)</span><br>Generated from the <a href="{REPO_URL}">sat-heritage/docker-images</a> repository. This site, its generator and the solver metadata it presents were produced with the help of Claude Fable 5.1 (Anthropic): the descriptions, verification results and figures may contain errors and should be checked against the repository and the original competition material before being relied upon.</footer></body></html>
