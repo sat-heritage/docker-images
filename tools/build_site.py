@@ -175,6 +175,7 @@ CSS = """
 .tag.award.r2{background:#eceff3;color:#4a5361;border-color:#c3cad4}
 .tag.award.r3{background:#f6e3d3;color:#7a4a1e;border-color:#dcb08c}
 .tag.award::before{content:"★ ";opacity:.8}
+.tag.award.more{background:var(--bg2);color:var(--muted);border-color:var(--line)} .tag.award.more::before{content:"✦ "}
 .podium{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px;margin-top:10px}
 .podium .yr{border:1px solid var(--border);border-radius:10px;padding:10px 12px;background:var(--surface)}
 .podium .yr h3{margin:0 0 6px;font-size:15px}
@@ -264,7 +265,7 @@ function render() {
 function card(d) { return `<a class="card" href="${d.set}/${d.key}.html">
     <h3>${d.name}</h3>
     <div class="meta">${d.set} · ${d.authors || 'authors not recorded'}</div>
-    <div class="tagrow"><span class="lbl">solver</span><span class="tag id">${d.family}</span>${d.version ? `<span class="tag id">v${d.version}</span>` : ''}${d.tracks.map(t => `<span class="tag id">${t}</span>`).join('')}${d.awards.map(a => `<span class="tag award r${Math.min(a.rank, 3)}">${a.label}</span>`).join('')}</div>
+    <div class="tagrow"><span class="lbl">solver</span><span class="tag id">${d.family}</span>${d.version ? `<span class="tag id">v${d.version}</span>` : ''}${d.tracks.map(t => `<span class="tag id">${t}</span>`).join('')}${d.awards.slice(0, d.more ? 2 : 3).map(a => `<span class="tag award r${Math.min(a.rank, 3)}">${a.label}</span>`).join('')}${d.more ? `<span class="tag award more">${d.more}</span>` : ''}</div>
     <div class="tagrow"><span class="lbl">can do</span>${d.capabilities.map(c => `<span class="tag cap">${c}</span>`).join('')}</div>
     <div class="tagrow"><span class="lbl">status</span>${badge(d.verdict)}<span class="badge ${ {ok:'ok',unstable:'warn',fixme:'fail'}[d.status] || 'none'}">${ {ok:'builds',unstable:'unstable',fixme:'not buildable'}[d.status] || d.status}</span></div>
   </a>`; }
@@ -283,8 +284,25 @@ def award_label(a: dict) -> str:
     return f"{rank}{category} · {a['track']} {a['year']}"
 
 
+MAX_AWARD_TAGS = 2
+
+
+def award_summary(awards: list[dict]) -> tuple[list[dict], str]:
+    """The podiums shown as tags (best ones first), and the label of the aggregate badge for the rest."""
+    shown = awards[:MAX_AWARD_TAGS] if len(awards) > MAX_AWARD_TAGS else awards
+    rest = awards[len(shown):]
+    if not rest:
+        return shown, ""
+    wins = sum(1 for a in rest if a["rank"] == 1)
+    return shown, f"+{len(rest)} more podium{'s' if len(rest) > 1 else ''}" + (f" ({wins} win{'s' if wins > 1 else ''})" if wins else "")
+
+
 def award_tags(awards: list[dict]) -> str:
-    return "".join(f'<span class="tag award r{min(a["rank"], 3)}" title="{esc(a.get("note", ""))}">{esc(award_label(a))}</span>' for a in awards)
+    shown, more = award_summary(awards)
+    tags = "".join(f'<span class="tag award r{min(a["rank"], 3)}" title="{esc(a.get("note", ""))}">{esc(award_label(a))}</span>' for a in shown)
+    if more:
+        tags += f'<span class="tag award more" title="{esc("; ".join(award_label(a) for a in awards[len(shown):]))}">{esc(more)}</span>'
+    return tags
 
 
 def page(title: str, body: str, depth: int, active: str = "") -> str:
@@ -336,7 +354,7 @@ def index_page(solvers: list[dict]) -> str:
 </div>
 <div class="legend"><span>◌ dashed: what the solver is</span><span>▪ blue: what it can do, as verified by the test suite</span><span>● filled: whether it builds and passes the tests today</span></div>
 <div id="grid"></div>
-<script>window.SOLVERS = {json.dumps([dict({k: s[k] for k in ("image", "key", "set", "name", "authors", "status", "family", "verdict", "capabilities", "version", "tracks")}, awards=[{"rank": a["rank"], "label": award_label(a)} for a in s["awards"]]) for s in solvers])};</script>
+<script>window.SOLVERS = {json.dumps([dict({k: s[k] for k in ("image", "key", "set", "name", "authors", "status", "family", "verdict", "capabilities", "version", "tracks")}, awards=[{"rank": a["rank"], "label": award_label(a)} for a in s["awards"]], more=award_summary(s["awards"])[1]) for s in solvers])};</script>
 <script>{JS}</script>
 """
     return page("Catalogue", body, 0, "catalogue")
@@ -359,6 +377,7 @@ def solver_page(s: dict) -> str:
 <div class="tagrow" style="margin-top:10px"><span class="lbl">solver</span><span class="tag id">{esc(s['family'])}</span>{('<span class="tag id">v' + esc(s['version']) + '</span>') if s['version'] else ''}{''.join('<span class="tag id">' + esc(t) + '</span>' for t in s['tracks'])}{award_tags(s['awards'])}</div>
 <div class="tagrow" style="margin-top:6px"><span class="lbl">can do</span>{''.join('<span class="tag cap">' + esc(c) + '</span>' for c in s['capabilities']) or '<span class="tag cap">not verified yet</span>'}</div>
 <div class="tagrow" style="margin-top:6px"><span class="lbl">status</span><span class="badge {vcls}">{vlabel}</span><span class="badge {scls}">{slabel}</span></div></div>
+{('<div class="section"><h2>Awards</h2><ul>' + ''.join('<li><span class="tag award r' + str(min(a['rank'], 3)) + '">' + esc(award_label(a)) + '</span>' + (' <span class="muted-inline">' + esc(a['note']) + '</span>' if a.get('note') else '') + ' <a class="muted-inline" href="' + esc(a['source']) + '">source</a></li>' for a in s['awards']) + '</ul></div>') if s['awards'] else ''}
 {('<div class="section"><h2>Status</h2><p>' + esc(s['status_detail']) + '</p></div>') if s['status_detail'] else ''}
 {('<div class="section"><h2>Notes</h2><p>' + esc(s['comment']) + '</p></div>') if s['comment'] else ''}
 <div class="section pull"><h2>Pull it from Docker and run it</h2><pre class="cmd" data-copy>docker pull {DOCKER_NS}/{esc(s['image'])}
