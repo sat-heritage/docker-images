@@ -1,6 +1,8 @@
 name: Update list
 
-on: [push]
+on:
+  push:
+    branches: [master]
 
 jobs:
   build:
