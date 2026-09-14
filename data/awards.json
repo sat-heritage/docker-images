@@ -1,6 +1,3132 @@
 {
- "description": "Podiums announced by the SAT Competition organizers (slides and results pages), restricted to the sequential tracks whose solvers are in this repository. Ties share a rank. Contributions welcome for the years before 2022.",
+ "description": "Podiums announced by the SAT Competition and SAT Race organizers (results pages, slides and reports), restricted to the tracks whose solvers are in this repository. Ties share a rank. When the organizers list several entries of one team in a medal cell, only the best-scoring one is recorded and the others are named in its note. Entries with a null solver are podiums whose solver is not in the repository set of that year. Corrections welcome.",
  "awards": [
+  {
+   "year": 2002,
+   "solver": "berkmin",
+   "competition_name": "BerkMin",
+   "track": "handmade track",
+   "category": "SAT",
+   "rank": 1,
+   "source": "https://web.archive.org/web/2004/http://www.satcompetition.org/2002/SAT2002news.html",
+   "note": "award: best performance of a solver on satisfiable handmade benchmarks (winner only)"
+  },
+  {
+   "year": 2002,
+   "solver": "zchaff",
+   "competition_name": "zChaff",
+   "track": "handmade track",
+   "category": "SAT+UNSAT",
+   "rank": 1,
+   "source": "https://web.archive.org/web/2004/http://www.satcompetition.org/2002/SAT2002news.html",
+   "note": "award: best performance of a complete solver on handmade benchmarks (winner only)"
+  },
+  {
+   "year": 2002,
+   "solver": "limmat",
+   "competition_name": "Limmat",
+   "track": "industrial track",
+   "category": "SAT",
+   "rank": 1,
+   "source": "https://web.archive.org/web/2004/http://www.satcompetition.org/2002/SAT2002news.html",
+   "note": "award: best performance of a solver on satisfiable industrial benchmarks (winner only)"
+  },
+  {
+   "year": 2002,
+   "solver": "zchaff",
+   "competition_name": "zChaff",
+   "track": "industrial track",
+   "category": "SAT+UNSAT",
+   "rank": 1,
+   "source": "https://web.archive.org/web/2004/http://www.satcompetition.org/2002/SAT2002news.html",
+   "note": "award: best performance of a complete solver on industrial benchmarks (winner only)"
+  },
+  {
+   "year": 2002,
+   "solver": "oksolver",
+   "competition_name": "OKsolver",
+   "track": "random track",
+   "category": "SAT",
+   "rank": 1,
+   "source": "https://web.archive.org/web/2004/http://www.satcompetition.org/2002/SAT2002news.html",
+   "note": "award: best performance of a solver on satisfiable random benchmarks (winner only)"
+  },
+  {
+   "year": 2002,
+   "solver": "oksolver",
+   "competition_name": "OKsolver",
+   "track": "random track",
+   "category": "SAT+UNSAT",
+   "rank": 1,
+   "source": "https://web.archive.org/web/2004/http://www.satcompetition.org/2002/SAT2002news.html",
+   "note": "award: best performance of a complete solver on random benchmarks (winner only)"
+  },
+  {
+   "year": 2003,
+   "solver": "satzoo1",
+   "competition_name": "Satzoo (satzoo1)",
+   "track": "handmade track",
+   "category": "SAT",
+   "rank": 1,
+   "source": "https://web.archive.org/web/2005/http://www.satcompetition.org/2003/results.html",
+   "note": "best solver on satisfiable handmade benchmarks; the award slides name the awarded variant satzoo1"
+  },
+  {
+   "year": 2003,
+   "solver": "satzoo1",
+   "competition_name": "Satzoo (satzoo1)",
+   "track": "handmade track",
+   "category": "SAT+UNSAT",
+   "rank": 1,
+   "source": "https://web.archive.org/web/2005/http://www.satcompetition.org/2003/results.html",
+   "note": "best complete solver on handmade benchmarks; the award slides (https://web.archive.org/web/2005id_/http://www.lri.fr/~simon/contest03/daniel/sat2003.ppt) name the awarded variant satzoo1"
+  },
+  {
+   "year": 2003,
+   "solver": "forklift",
+   "competition_name": "Forklift",
+   "track": "industrial track",
+   "category": "SAT",
+   "rank": 1,
+   "source": "https://web.archive.org/web/2005/http://www.satcompetition.org/2003/results.html",
+   "note": "best solver on satisfiable industrial benchmarks (winner only)"
+  },
+  {
+   "year": 2003,
+   "solver": "forklift",
+   "competition_name": "Forklift",
+   "track": "industrial track",
+   "category": "SAT+UNSAT",
+   "rank": 1,
+   "source": "https://web.archive.org/web/2005/http://www.satcompetition.org/2003/results.html",
+   "note": "best complete solver on industrial benchmarks (winner only)"
+  },
+  {
+   "year": 2003,
+   "solver": "unitwalk",
+   "competition_name": "UnitWalk",
+   "track": "random track",
+   "category": "SAT",
+   "rank": 1,
+   "source": "https://web.archive.org/web/2005/http://www.satcompetition.org/2003/results.html",
+   "note": "best solver on satisfiable random benchmarks (winner only)"
+  },
+  {
+   "year": 2003,
+   "solver": "kcnfs",
+   "competition_name": "kcnfs",
+   "track": "random track",
+   "category": "SAT+UNSAT",
+   "rank": 1,
+   "source": "https://web.archive.org/web/2005/http://www.satcompetition.org/2003/results.html",
+   "note": "best complete solver on random benchmarks (winner only)"
+  },
+  {
+   "year": 2004,
+   "solver": "march-eq-100",
+   "competition_name": "March-eq",
+   "track": "crafted track",
+   "category": "SAT+UNSAT",
+   "rank": 1,
+   "source": "https://web.archive.org/web/2005/http://www.lri.fr/~simon/contest04/results/",
+   "note": "official name 'March-eq'; the second-stage crafted tables list the entry as march-eq-100, so it is mapped to march-eq-100 rather than march-eq-010 (uncertain mapping)"
+  },
+  {
+   "year": 2004,
+   "solver": "march-eq-100",
+   "competition_name": "March-eq",
+   "track": "crafted track",
+   "category": "UNSAT",
+   "rank": 1,
+   "source": "https://web.archive.org/web/2005/http://www.lri.fr/~simon/contest04/results/",
+   "note": "official name 'March-eq'; the second-stage crafted tables list the entry as march-eq-100, so it is mapped to march-eq-100 rather than march-eq-010 (uncertain mapping)"
+  },
+  {
+   "year": 2004,
+   "solver": "jerusat1.3",
+   "competition_name": "Jerusat 1.3",
+   "track": "industrial track",
+   "category": "SAT",
+   "rank": 1,
+   "source": "https://web.archive.org/web/2005/http://www.lri.fr/~simon/contest04/results/",
+   "note": "winner only"
+  },
+  {
+   "year": 2004,
+   "solver": "zchaff-rand",
+   "competition_name": "zChaff 2004",
+   "track": "industrial track",
+   "category": "SAT+UNSAT",
+   "rank": 1,
+   "source": "https://web.archive.org/web/2005/http://www.lri.fr/~simon/contest04/results/",
+   "note": "official name 'zChaff 2004' (Zhaohui Fu, Yogesh Mahajan); the second-stage industrial tables of the official results page list the entry as zchaff_rand, so the awarded binary is mapped to zchaff-rand rather than zchaff (uncertain mapping); Forklift ran hors concours"
+  },
+  {
+   "year": 2004,
+   "solver": "zchaff-rand",
+   "competition_name": "zChaff 2004",
+   "track": "industrial track",
+   "category": "UNSAT",
+   "rank": 1,
+   "source": "https://web.archive.org/web/2005/http://www.lri.fr/~simon/contest04/results/",
+   "note": "official name 'zChaff 2004' (Zhaohui Fu, Yogesh Mahajan); the second-stage industrial tables of the official results page list the entry as zchaff_rand, so the awarded binary is mapped to zchaff-rand rather than zchaff (uncertain mapping); Forklift ran hors concours"
+  },
+  {
+   "year": 2004,
+   "solver": "adaptnovelty",
+   "competition_name": "Adaptnovelty",
+   "track": "random track",
+   "category": "SAT",
+   "rank": 1,
+   "source": "https://web.archive.org/web/2005/http://www.lri.fr/~simon/contest04/results/",
+   "note": "winner only"
+  },
+  {
+   "year": 2004,
+   "solver": "adaptnovelty",
+   "competition_name": "Adaptnovelty",
+   "track": "random track",
+   "category": "SAT+UNSAT",
+   "rank": 1,
+   "source": "https://web.archive.org/web/2005/http://www.lri.fr/~simon/contest04/results/",
+   "note": "winner only"
+  },
+  {
+   "year": 2005,
+   "solver": "vallst",
+   "competition_name": "Vallst",
+   "track": "crafted track",
+   "category": "SAT",
+   "rank": 1,
+   "source": "https://satisfiability.org/competition/2005/presentation-last.pdf"
+  },
+  {
+   "year": 2005,
+   "solver": "march-dl",
+   "competition_name": "march-dl",
+   "track": "crafted track",
+   "category": "SAT",
+   "rank": 2,
+   "source": "https://satisfiability.org/competition/2005/presentation-last.pdf"
+  },
+  {
+   "year": 2005,
+   "solver": "hsat.1",
+   "competition_name": "hsat.1",
+   "track": "crafted track",
+   "category": "SAT",
+   "rank": 3,
+   "source": "https://satisfiability.org/competition/2005/presentation-last.pdf",
+   "note": "slides write 'hsat-1' / 'Hsat1'; the second-stage solver list names it hsat.1"
+  },
+  {
+   "year": 2005,
+   "solver": "vallst",
+   "competition_name": "Vallst",
+   "track": "crafted track",
+   "category": "SAT+UNSAT",
+   "rank": 1,
+   "source": "https://satisfiability.org/competition/2005/presentation-last.pdf"
+  },
+  {
+   "year": 2005,
+   "solver": "satelitegti",
+   "competition_name": "SatELiteGTI",
+   "track": "crafted track",
+   "category": "SAT+UNSAT",
+   "rank": 2,
+   "source": "https://satisfiability.org/competition/2005/presentation-last.pdf"
+  },
+  {
+   "year": 2005,
+   "solver": "march-dl",
+   "competition_name": "march-dl",
+   "track": "crafted track",
+   "category": "SAT+UNSAT",
+   "rank": 3,
+   "source": "https://satisfiability.org/competition/2005/presentation-last.pdf"
+  },
+  {
+   "year": 2005,
+   "solver": "satelitegti",
+   "competition_name": "SatELiteGTI",
+   "track": "crafted track",
+   "category": "UNSAT",
+   "rank": 1,
+   "source": "https://satisfiability.org/competition/2005/presentation-last.pdf"
+  },
+  {
+   "year": 2005,
+   "solver": "minisat-static",
+   "competition_name": "MiniSAT 1.13",
+   "track": "crafted track",
+   "category": "UNSAT",
+   "rank": 2,
+   "source": "https://satisfiability.org/competition/2005/presentation-last.pdf"
+  },
+  {
+   "year": 2005,
+   "solver": "march-dl",
+   "competition_name": "march-dl",
+   "track": "crafted track",
+   "category": "UNSAT",
+   "rank": 3,
+   "source": "https://satisfiability.org/competition/2005/presentation-last.pdf",
+   "note": "tie for bronze with Vallst"
+  },
+  {
+   "year": 2005,
+   "solver": "vallst",
+   "competition_name": "Vallst",
+   "track": "crafted track",
+   "category": "UNSAT",
+   "rank": 3,
+   "source": "https://satisfiability.org/competition/2005/presentation-last.pdf",
+   "note": "tie for bronze with march-dl"
+  },
+  {
+   "year": 2005,
+   "solver": "satelitegti",
+   "competition_name": "SatELiteGTI",
+   "track": "industrial track",
+   "category": "SAT",
+   "rank": 1,
+   "source": "https://satisfiability.org/competition/2005/presentation-last.pdf"
+  },
+  {
+   "year": 2005,
+   "solver": "minisat-static",
+   "competition_name": "MiniSAT 1.13",
+   "track": "industrial track",
+   "category": "SAT",
+   "rank": 2,
+   "source": "https://satisfiability.org/competition/2005/presentation-last.pdf"
+  },
+  {
+   "year": 2005,
+   "solver": "haifasat",
+   "competition_name": "HaifaSat",
+   "track": "industrial track",
+   "category": "SAT",
+   "rank": 3,
+   "source": "https://satisfiability.org/competition/2005/presentation-last.pdf",
+   "note": "tie for bronze with Jerusat 1.31 B"
+  },
+  {
+   "year": 2005,
+   "solver": "jerusat1.31-b",
+   "competition_name": "Jerusat 1.31 B",
+   "track": "industrial track",
+   "category": "SAT",
+   "rank": 3,
+   "source": "https://satisfiability.org/competition/2005/presentation-last.pdf",
+   "note": "tie for bronze with HaifaSat"
+  },
+  {
+   "year": 2005,
+   "solver": "satelitegti",
+   "competition_name": "SatELiteGTI",
+   "track": "industrial track",
+   "category": "SAT+UNSAT",
+   "rank": 1,
+   "source": "https://satisfiability.org/competition/2005/presentation-last.pdf"
+  },
+  {
+   "year": 2005,
+   "solver": "minisat-static",
+   "competition_name": "MiniSAT 1.13",
+   "track": "industrial track",
+   "category": "SAT+UNSAT",
+   "rank": 2,
+   "source": "https://satisfiability.org/competition/2005/presentation-last.pdf"
+  },
+  {
+   "year": 2005,
+   "solver": "haifasat",
+   "competition_name": "HaifaSat",
+   "track": "industrial track",
+   "category": "SAT+UNSAT",
+   "rank": 3,
+   "source": "https://satisfiability.org/competition/2005/presentation-last.pdf",
+   "note": "tie for bronze with zChaff_rand"
+  },
+  {
+   "year": 2005,
+   "solver": "zchaff-rand",
+   "competition_name": "zChaff_rand",
+   "track": "industrial track",
+   "category": "SAT+UNSAT",
+   "rank": 3,
+   "source": "https://satisfiability.org/competition/2005/presentation-last.pdf",
+   "note": "tie for bronze with HaifaSat"
+  },
+  {
+   "year": 2005,
+   "solver": "satelitegti",
+   "competition_name": "SatELiteGTI",
+   "track": "industrial track",
+   "category": "UNSAT",
+   "rank": 1,
+   "source": "https://satisfiability.org/competition/2005/presentation-last.pdf"
+  },
+  {
+   "year": 2005,
+   "solver": "zchaff-rand",
+   "competition_name": "zChaff_rand",
+   "track": "industrial track",
+   "category": "UNSAT",
+   "rank": 2,
+   "source": "https://satisfiability.org/competition/2005/presentation-last.pdf"
+  },
+  {
+   "year": 2005,
+   "solver": "haifasat",
+   "competition_name": "HaifaSat",
+   "track": "industrial track",
+   "category": "UNSAT",
+   "rank": 3,
+   "source": "https://satisfiability.org/competition/2005/presentation-last.pdf"
+  },
+  {
+   "year": 2005,
+   "solver": "ranov",
+   "competition_name": "ranov",
+   "track": "random track",
+   "category": "SAT",
+   "rank": 1,
+   "source": "https://satisfiability.org/competition/2005/presentation-last.pdf"
+  },
+  {
+   "year": 2005,
+   "solver": "g2wsat",
+   "competition_name": "g2wsat",
+   "track": "random track",
+   "category": "SAT",
+   "rank": 2,
+   "source": "https://satisfiability.org/competition/2005/presentation-last.pdf"
+  },
+  {
+   "year": 2005,
+   "solver": "vw",
+   "competition_name": "VW",
+   "track": "random track",
+   "category": "SAT",
+   "rank": 3,
+   "source": "https://satisfiability.org/competition/2005/presentation-last.pdf"
+  },
+  {
+   "year": 2005,
+   "solver": "kcnfs-2004",
+   "competition_name": "kcnfs-2004",
+   "track": "random track",
+   "category": "SAT+UNSAT",
+   "rank": 1,
+   "source": "https://satisfiability.org/competition/2005/presentation-last.pdf"
+  },
+  {
+   "year": 2005,
+   "solver": "march-dl",
+   "competition_name": "march-dl",
+   "track": "random track",
+   "category": "SAT+UNSAT",
+   "rank": 2,
+   "source": "https://satisfiability.org/competition/2005/presentation-last.pdf"
+  },
+  {
+   "year": 2005,
+   "solver": "dew-satz-1a",
+   "competition_name": "Dew_Satz_1a",
+   "track": "random track",
+   "category": "SAT+UNSAT",
+   "rank": 3,
+   "source": "https://satisfiability.org/competition/2005/presentation-last.pdf"
+  },
+  {
+   "year": 2005,
+   "solver": "kcnfs-2004",
+   "competition_name": "kcnfs-2004",
+   "track": "random track",
+   "category": "UNSAT",
+   "rank": 1,
+   "source": "https://satisfiability.org/competition/2005/presentation-last.pdf"
+  },
+  {
+   "year": 2005,
+   "solver": "march-dl",
+   "competition_name": "march-dl",
+   "track": "random track",
+   "category": "UNSAT",
+   "rank": 2,
+   "source": "https://satisfiability.org/competition/2005/presentation-last.pdf"
+  },
+  {
+   "year": 2005,
+   "solver": "dew-satz-1a",
+   "competition_name": "Dew_Satz_1a",
+   "track": "random track",
+   "category": "UNSAT",
+   "rank": 3,
+   "source": "https://satisfiability.org/competition/2005/presentation-last.pdf"
+  },
+  {
+   "year": 2007,
+   "solver": "march_ks",
+   "competition_name": "March-KS 2007-02-08",
+   "track": "crafted track",
+   "category": "SAT",
+   "rank": 1,
+   "source": "https://web.archive.org/web/2009id_/http://sat07.ecs.soton.ac.uk/slides/sat07-sat-competition.pdf"
+  },
+  {
+   "year": 2007,
+   "solver": "satzilla-crafted",
+   "competition_name": "SATzilla CRAFTED",
+   "track": "crafted track",
+   "category": "SAT",
+   "rank": 2,
+   "source": "https://web.archive.org/web/2009id_/http://sat07.ecs.soton.ac.uk/slides/sat07-sat-competition.pdf"
+  },
+  {
+   "year": 2007,
+   "solver": "minisat-sat_2007",
+   "competition_name": "minisat SAT-2007",
+   "track": "crafted track",
+   "category": "SAT",
+   "rank": 3,
+   "source": "https://web.archive.org/web/2009id_/http://sat07.ecs.soton.ac.uk/slides/sat07-sat-competition.pdf"
+  },
+  {
+   "year": 2007,
+   "solver": "satzilla-crafted",
+   "competition_name": "SATzilla CRAFTED",
+   "track": "crafted track",
+   "category": "SAT+UNSAT",
+   "rank": 1,
+   "source": "https://web.archive.org/web/2009id_/http://sat07.ecs.soton.ac.uk/slides/sat07-sat-competition.pdf"
+  },
+  {
+   "year": 2007,
+   "solver": "minisat-sat_2007",
+   "competition_name": "minisat SAT-2007",
+   "track": "crafted track",
+   "category": "SAT+UNSAT",
+   "rank": 2,
+   "source": "https://web.archive.org/web/2009id_/http://sat07.ecs.soton.ac.uk/slides/sat07-sat-competition.pdf"
+  },
+  {
+   "year": 2007,
+   "solver": "mxc",
+   "competition_name": "MXC 2007-02-08",
+   "track": "crafted track",
+   "category": "SAT+UNSAT",
+   "rank": 3,
+   "source": "https://web.archive.org/web/2009id_/http://sat07.ecs.soton.ac.uk/slides/sat07-sat-competition.pdf"
+  },
+  {
+   "year": 2007,
+   "solver": "satzilla-crafted",
+   "competition_name": "SATzilla CRAFTED",
+   "track": "crafted track",
+   "category": "UNSAT",
+   "rank": 1,
+   "source": "https://web.archive.org/web/2009id_/http://sat07.ecs.soton.ac.uk/slides/sat07-sat-competition.pdf"
+  },
+  {
+   "year": 2007,
+   "solver": "tts",
+   "competition_name": "TTS 4.0",
+   "track": "crafted track",
+   "category": "UNSAT",
+   "rank": 2,
+   "source": "https://web.archive.org/web/2009id_/http://sat07.ecs.soton.ac.uk/slides/sat07-sat-competition.pdf"
+  },
+  {
+   "year": 2007,
+   "solver": "minisat-sat_2007",
+   "competition_name": "minisat SAT-2007",
+   "track": "crafted track",
+   "category": "UNSAT",
+   "rank": 3,
+   "source": "https://web.archive.org/web/2009id_/http://sat07.ecs.soton.ac.uk/slides/sat07-sat-competition.pdf"
+  },
+  {
+   "year": 2007,
+   "solver": "picosat",
+   "competition_name": "picosat 535",
+   "track": "industrial track",
+   "category": "SAT",
+   "rank": 1,
+   "source": "https://web.archive.org/web/2009id_/http://sat07.ecs.soton.ac.uk/slides/sat07-sat-competition.pdf"
+  },
+  {
+   "year": 2007,
+   "solver": "rsat",
+   "competition_name": "Rsat 2007-02-08",
+   "track": "industrial track",
+   "category": "SAT",
+   "rank": 2,
+   "source": "https://web.archive.org/web/2009id_/http://sat07.ecs.soton.ac.uk/slides/sat07-sat-competition.pdf"
+  },
+  {
+   "year": 2007,
+   "solver": "minisat-sat_2007",
+   "competition_name": "minisat SAT-2007",
+   "track": "industrial track",
+   "category": "SAT",
+   "rank": 3,
+   "source": "https://web.archive.org/web/2009id_/http://sat07.ecs.soton.ac.uk/slides/sat07-sat-competition.pdf"
+  },
+  {
+   "year": 2007,
+   "solver": "rsat",
+   "competition_name": "Rsat 2007-02-08",
+   "track": "industrial track",
+   "category": "SAT+UNSAT",
+   "rank": 1,
+   "source": "https://web.archive.org/web/2009id_/http://sat07.ecs.soton.ac.uk/slides/sat07-sat-competition.pdf"
+  },
+  {
+   "year": 2007,
+   "solver": "picosat",
+   "competition_name": "picosat 535",
+   "track": "industrial track",
+   "category": "SAT+UNSAT",
+   "rank": 2,
+   "source": "https://web.archive.org/web/2009id_/http://sat07.ecs.soton.ac.uk/slides/sat07-sat-competition.pdf"
+  },
+  {
+   "year": 2007,
+   "solver": "minisat-sat_2007",
+   "competition_name": "minisat SAT-2007",
+   "track": "industrial track",
+   "category": "SAT+UNSAT",
+   "rank": 3,
+   "source": "https://web.archive.org/web/2009id_/http://sat07.ecs.soton.ac.uk/slides/sat07-sat-competition.pdf"
+  },
+  {
+   "year": 2007,
+   "solver": "rsat",
+   "competition_name": "Rsat 2007-02-08",
+   "track": "industrial track",
+   "category": "UNSAT",
+   "rank": 1,
+   "source": "https://web.archive.org/web/2009id_/http://sat07.ecs.soton.ac.uk/slides/sat07-sat-competition.pdf"
+  },
+  {
+   "year": 2007,
+   "solver": "minisat-sat_2007",
+   "competition_name": "minisat SAT-2007",
+   "track": "industrial track",
+   "category": "UNSAT",
+   "rank": 2,
+   "source": "https://web.archive.org/web/2009id_/http://sat07.ecs.soton.ac.uk/slides/sat07-sat-competition.pdf"
+  },
+  {
+   "year": 2007,
+   "solver": "tinisatelite",
+   "competition_name": "TiniSatELite 2007-02-08",
+   "track": "industrial track",
+   "category": "UNSAT",
+   "rank": 3,
+   "source": "https://web.archive.org/web/2009id_/http://sat07.ecs.soton.ac.uk/slides/sat07-sat-competition.pdf"
+  },
+  {
+   "year": 2007,
+   "solver": "gnovelty-plus",
+   "competition_name": "gnovelty+ 2007-02-08",
+   "track": "random track",
+   "category": "SAT",
+   "rank": 1,
+   "source": "https://web.archive.org/web/2009id_/http://sat07.ecs.soton.ac.uk/slides/sat07-sat-competition.pdf"
+  },
+  {
+   "year": 2007,
+   "solver": "adaptg2wsat0",
+   "competition_name": "adaptg2wsat0 2007-02-08",
+   "track": "random track",
+   "category": "SAT",
+   "rank": 2,
+   "source": "https://web.archive.org/web/2009id_/http://sat07.ecs.soton.ac.uk/slides/sat07-sat-competition.pdf"
+  },
+  {
+   "year": 2007,
+   "solver": "adaptg2wsat-plus",
+   "competition_name": "adaptg2wsat+ 2007-02-08",
+   "track": "random track",
+   "category": "SAT",
+   "rank": 3,
+   "source": "https://web.archive.org/web/2009id_/http://sat07.ecs.soton.ac.uk/slides/sat07-sat-competition.pdf"
+  },
+  {
+   "year": 2007,
+   "solver": "satzilla-random",
+   "competition_name": "SATzilla RANDOM",
+   "track": "random track",
+   "category": "SAT+UNSAT",
+   "rank": 1,
+   "source": "https://web.archive.org/web/2009id_/http://sat07.ecs.soton.ac.uk/slides/sat07-sat-competition.pdf"
+  },
+  {
+   "year": 2007,
+   "solver": "march_ks",
+   "competition_name": "March-KS 2007-02-08",
+   "track": "random track",
+   "category": "SAT+UNSAT",
+   "rank": 2,
+   "source": "https://web.archive.org/web/2009id_/http://sat07.ecs.soton.ac.uk/slides/sat07-sat-competition.pdf"
+  },
+  {
+   "year": 2007,
+   "solver": "kcnfs-2004",
+   "competition_name": "KCNFS 2004",
+   "track": "random track",
+   "category": "SAT+UNSAT",
+   "rank": 3,
+   "source": "https://web.archive.org/web/2009id_/http://sat07.ecs.soton.ac.uk/slides/sat07-sat-competition.pdf"
+  },
+  {
+   "year": 2007,
+   "solver": "march_ks",
+   "competition_name": "March-KS 2007-02-08",
+   "track": "random track",
+   "category": "UNSAT",
+   "rank": 1,
+   "source": "https://web.archive.org/web/2009id_/http://sat07.ecs.soton.ac.uk/slides/sat07-sat-competition.pdf"
+  },
+  {
+   "year": 2007,
+   "solver": "kcnfs-2004",
+   "competition_name": "KCNFS 2004",
+   "track": "random track",
+   "category": "UNSAT",
+   "rank": 2,
+   "source": "https://web.archive.org/web/2009id_/http://sat07.ecs.soton.ac.uk/slides/sat07-sat-competition.pdf"
+  },
+  {
+   "year": 2007,
+   "solver": "satzilla-random",
+   "competition_name": "SATzilla RANDOM",
+   "track": "random track",
+   "category": "UNSAT",
+   "rank": 3,
+   "source": "https://web.archive.org/web/2009id_/http://sat07.ecs.soton.ac.uk/slides/sat07-sat-competition.pdf"
+  },
+  {
+   "year": 2009,
+   "solver": "satzilla2009_i",
+   "competition_name": "SATzilla2009_I",
+   "track": "application track",
+   "category": "SAT",
+   "rank": 1,
+   "source": "https://web.archive.org/web/2011id_/http://www.satcompetition.org/2009/sat09comp-slides.pdf"
+  },
+  {
+   "year": 2009,
+   "solver": "precosat",
+   "competition_name": "precosat 236",
+   "track": "application track",
+   "category": "SAT",
+   "rank": 2,
+   "source": "https://web.archive.org/web/2011id_/http://www.satcompetition.org/2009/sat09comp-slides.pdf"
+  },
+  {
+   "year": 2009,
+   "solver": "mxc",
+   "competition_name": "MXC 2009-03-10",
+   "track": "application track",
+   "category": "SAT",
+   "rank": 3,
+   "source": "https://web.archive.org/web/2011id_/http://www.satcompetition.org/2009/sat09comp-slides.pdf"
+  },
+  {
+   "year": 2009,
+   "solver": "precosat",
+   "competition_name": "precosat 236",
+   "track": "application track",
+   "category": "SAT+UNSAT",
+   "rank": 1,
+   "source": "https://web.archive.org/web/2011id_/http://www.satcompetition.org/2009/sat09comp-slides.pdf"
+  },
+  {
+   "year": 2009,
+   "solver": "glucose",
+   "competition_name": "glucose 1.0",
+   "track": "application track",
+   "category": "SAT+UNSAT",
+   "rank": 2,
+   "source": "https://web.archive.org/web/2011id_/http://www.satcompetition.org/2009/sat09comp-slides.pdf"
+  },
+  {
+   "year": 2009,
+   "solver": null,
+   "competition_name": "LySAT i",
+   "track": "application track",
+   "category": "SAT+UNSAT",
+   "rank": 3,
+   "source": "https://web.archive.org/web/2011id_/http://www.satcompetition.org/2009/sat09comp-slides.pdf",
+   "note": "awarded entry is LySAT i (industrial version, 2009-03-20); the repository only holds LySAT c (crafted version), so no mapping"
+  },
+  {
+   "year": 2009,
+   "solver": "glucose",
+   "competition_name": "glucose 1.0",
+   "track": "application track",
+   "category": "UNSAT",
+   "rank": 1,
+   "source": "https://web.archive.org/web/2011id_/http://www.satcompetition.org/2009/sat09comp-slides.pdf"
+  },
+  {
+   "year": 2009,
+   "solver": "precosat",
+   "competition_name": "precosat 236",
+   "track": "application track",
+   "category": "UNSAT",
+   "rank": 2,
+   "source": "https://web.archive.org/web/2011id_/http://www.satcompetition.org/2009/sat09comp-slides.pdf"
+  },
+  {
+   "year": 2009,
+   "solver": null,
+   "competition_name": "LySAT i",
+   "track": "application track",
+   "category": "UNSAT",
+   "rank": 3,
+   "source": "https://web.archive.org/web/2011id_/http://www.satcompetition.org/2009/sat09comp-slides.pdf",
+   "note": "awarded entry is LySAT i (industrial version, 2009-03-20); the repository only holds LySAT c (crafted version), so no mapping"
+  },
+  {
+   "year": 2009,
+   "solver": "clasp",
+   "competition_name": "clasp 1.2.0-SAT09-32",
+   "track": "crafted track",
+   "category": "SAT",
+   "rank": 1,
+   "source": "https://web.archive.org/web/2011id_/http://www.satcompetition.org/2009/sat09comp-slides.pdf"
+  },
+  {
+   "year": 2009,
+   "solver": "sapperlot-base",
+   "competition_name": "SApperloT base",
+   "track": "crafted track",
+   "category": "SAT",
+   "rank": 2,
+   "source": "https://web.archive.org/web/2011id_/http://www.satcompetition.org/2009/sat09comp-slides.pdf",
+   "note": "second-stage crafted SAT ranking names the 'base' variant"
+  },
+  {
+   "year": 2009,
+   "solver": "mxc",
+   "competition_name": "MXC 2009-03-10",
+   "track": "crafted track",
+   "category": "SAT",
+   "rank": 3,
+   "source": "https://web.archive.org/web/2011id_/http://www.satcompetition.org/2009/sat09comp-slides.pdf"
+  },
+  {
+   "year": 2009,
+   "solver": "clasp",
+   "competition_name": "clasp 1.2.0-SAT09-32",
+   "track": "crafted track",
+   "category": "SAT+UNSAT",
+   "rank": 1,
+   "source": "https://web.archive.org/web/2011id_/http://www.satcompetition.org/2009/sat09comp-slides.pdf"
+  },
+  {
+   "year": 2009,
+   "solver": "satzilla2009_c",
+   "competition_name": "SATzilla2009_C",
+   "track": "crafted track",
+   "category": "SAT+UNSAT",
+   "rank": 2,
+   "source": "https://web.archive.org/web/2011id_/http://www.satcompetition.org/2009/sat09comp-slides.pdf"
+  },
+  {
+   "year": 2009,
+   "solver": "iut_bmb_sat",
+   "competition_name": "IUT_BMB_SAT 1.0",
+   "track": "crafted track",
+   "category": "SAT+UNSAT",
+   "rank": 3,
+   "source": "https://web.archive.org/web/2011id_/http://www.satcompetition.org/2009/sat09comp-slides.pdf"
+  },
+  {
+   "year": 2009,
+   "solver": "satzilla2009_c",
+   "competition_name": "SATzilla2009_C",
+   "track": "crafted track",
+   "category": "UNSAT",
+   "rank": 1,
+   "source": "https://web.archive.org/web/2011id_/http://www.satcompetition.org/2009/sat09comp-slides.pdf"
+  },
+  {
+   "year": 2009,
+   "solver": "clasp",
+   "competition_name": "clasp 1.2.0-SAT09-32",
+   "track": "crafted track",
+   "category": "UNSAT",
+   "rank": 2,
+   "source": "https://web.archive.org/web/2011id_/http://www.satcompetition.org/2009/sat09comp-slides.pdf"
+  },
+  {
+   "year": 2009,
+   "solver": "iut_bmb_sat",
+   "competition_name": "IUT_BMB_SAT 1.0",
+   "track": "crafted track",
+   "category": "UNSAT",
+   "rank": 3,
+   "source": "https://web.archive.org/web/2011id_/http://www.satcompetition.org/2009/sat09comp-slides.pdf"
+  },
+  {
+   "year": 2009,
+   "solver": "minisat_09z",
+   "competition_name": "MiniSAT 09z",
+   "track": "minisat hack track",
+   "category": "overall",
+   "rank": 1,
+   "source": "https://web.archive.org/web/2011id_/http://www.satcompetition.org/2009/sat09comp-slides.pdf",
+   "note": "special prize: best Minisat hack solver"
+  },
+  {
+   "year": 2009,
+   "solver": "manysat_1.1-aimd_1",
+   "competition_name": "ManySAT 1.1",
+   "track": "parallel track",
+   "category": "application",
+   "rank": 1,
+   "source": "https://web.archive.org/web/2011id_/http://www.satcompetition.org/2009/sat09comp-slides.pdf",
+   "note": "special prize: best parallel SAT solver for application benchmarks; three ManySAT variants (aimd 0/1/2) ran in the multithread track; mapped to aimd 1 because that variant entered the second stage and was reused as the SAT09 reference solver in 2011 (uncertain mapping)"
+  },
+  {
+   "year": 2009,
+   "solver": "gnovelty-plus-t",
+   "competition_name": "gNovelty+-T",
+   "track": "parallel track",
+   "category": "random",
+   "rank": 1,
+   "source": "https://web.archive.org/web/2011id_/http://www.satcompetition.org/2009/sat09comp-slides.pdf",
+   "note": "special prize: best parallel solver for random benchmarks"
+  },
+  {
+   "year": 2009,
+   "solver": "tnm",
+   "competition_name": "TNM",
+   "track": "random track",
+   "category": "SAT",
+   "rank": 1,
+   "source": "https://web.archive.org/web/2011id_/http://www.satcompetition.org/2009/sat09comp-slides.pdf"
+  },
+  {
+   "year": 2009,
+   "solver": "gnovelty-plus2",
+   "competition_name": "gNovelty+2",
+   "track": "random track",
+   "category": "SAT",
+   "rank": 2,
+   "source": "https://web.archive.org/web/2011id_/http://www.satcompetition.org/2009/sat09comp-slides.pdf"
+  },
+  {
+   "year": 2009,
+   "solver": "adaptg2wsat-plus-plus",
+   "competition_name": "adaptg2wsat2009++",
+   "track": "random track",
+   "category": "SAT",
+   "rank": 3,
+   "source": "https://web.archive.org/web/2011id_/http://www.satcompetition.org/2009/sat09comp-slides.pdf",
+   "note": "tie for bronze with hybridGM3"
+  },
+  {
+   "year": 2009,
+   "solver": "hybridgm3",
+   "competition_name": "hybridGM3",
+   "track": "random track",
+   "category": "SAT",
+   "rank": 3,
+   "source": "https://web.archive.org/web/2011id_/http://www.satcompetition.org/2009/sat09comp-slides.pdf",
+   "note": "tie for bronze with adaptg2wsat2009++"
+  },
+  {
+   "year": 2009,
+   "solver": "satzilla2009_r",
+   "competition_name": "SATzilla2009_R",
+   "track": "random track",
+   "category": "SAT+UNSAT",
+   "rank": 1,
+   "source": "https://web.archive.org/web/2011id_/http://www.satcompetition.org/2009/sat09comp-slides.pdf"
+  },
+  {
+   "year": 2009,
+   "solver": "march_hi",
+   "competition_name": "march_hi",
+   "track": "random track",
+   "category": "SAT+UNSAT",
+   "rank": 2,
+   "source": "https://web.archive.org/web/2011id_/http://www.satcompetition.org/2009/sat09comp-slides.pdf",
+   "note": "no bronze awarded"
+  },
+  {
+   "year": 2009,
+   "solver": "march_hi",
+   "competition_name": "march_hi",
+   "track": "random track",
+   "category": "UNSAT",
+   "rank": 1,
+   "source": "https://web.archive.org/web/2011id_/http://www.satcompetition.org/2009/sat09comp-slides.pdf"
+  },
+  {
+   "year": 2009,
+   "solver": "satzilla2009_r",
+   "competition_name": "SATzilla2009_R",
+   "track": "random track",
+   "category": "UNSAT",
+   "rank": 2,
+   "source": "https://web.archive.org/web/2011id_/http://www.satcompetition.org/2009/sat09comp-slides.pdf",
+   "note": "no bronze awarded"
+  },
+  {
+   "year": 2011,
+   "solver": "minisat_hack:_contrasat",
+   "competition_name": "contrasat (minisat hack)",
+   "track": "application track",
+   "category": "SAT",
+   "rank": 1,
+   "source": "https://web.archive.org/web/2012id_/http://www.cril.univ-artois.fr/SAT11/phase2.pdf"
+  },
+  {
+   "year": 2011,
+   "solver": "minisat_hack:_cir_minisat-2011-05-13_simp",
+   "competition_name": "cir_minisat (minisat hack)",
+   "track": "application track",
+   "category": "SAT",
+   "rank": 2,
+   "source": "https://web.archive.org/web/2012id_/http://www.cril.univ-artois.fr/SAT11/phase2.pdf",
+   "note": "phase-2 ranking names 'cirminisat'; only the 2011-05-13 (simp) version of cir_minisat entered phase 2 (the 2011-03-02 version was replaced)"
+  },
+  {
+   "year": 2011,
+   "solver": "mphasesat64",
+   "competition_name": "MPhaseSAT64",
+   "track": "application track",
+   "category": "SAT",
+   "rank": 3,
+   "source": "https://web.archive.org/web/2012id_/http://www.cril.univ-artois.fr/SAT11/phase2.pdf"
+  },
+  {
+   "year": 2011,
+   "solver": "glucose",
+   "competition_name": "glucose 2",
+   "track": "application track",
+   "category": "SAT+UNSAT",
+   "rank": 1,
+   "source": "https://web.archive.org/web/2012id_/http://www.cril.univ-artois.fr/SAT11/phase2.pdf"
+  },
+  {
+   "year": 2011,
+   "solver": "glueminisat",
+   "competition_name": "glueminisat 2.2.5",
+   "track": "application track",
+   "category": "SAT+UNSAT",
+   "rank": 2,
+   "source": "https://web.archive.org/web/2012id_/http://www.cril.univ-artois.fr/SAT11/phase2.pdf"
+  },
+  {
+   "year": 2011,
+   "solver": "lingeling",
+   "competition_name": "Lingeling 587f",
+   "track": "application track",
+   "category": "SAT+UNSAT",
+   "rank": 3,
+   "source": "https://web.archive.org/web/2012id_/http://www.cril.univ-artois.fr/SAT11/phase2.pdf"
+  },
+  {
+   "year": 2011,
+   "solver": "glueminisat",
+   "competition_name": "glueminisat 2.2.5",
+   "track": "application track",
+   "category": "UNSAT",
+   "rank": 1,
+   "source": "https://web.archive.org/web/2012id_/http://www.cril.univ-artois.fr/SAT11/phase2.pdf"
+  },
+  {
+   "year": 2011,
+   "solver": "glucose",
+   "competition_name": "glucose 2",
+   "track": "application track",
+   "category": "UNSAT",
+   "rank": 2,
+   "source": "https://web.archive.org/web/2012id_/http://www.cril.univ-artois.fr/SAT11/phase2.pdf"
+  },
+  {
+   "year": 2011,
+   "solver": "qutersat",
+   "competition_name": "QuteRSat",
+   "track": "application track",
+   "category": "UNSAT",
+   "rank": 3,
+   "source": "https://web.archive.org/web/2012id_/http://www.cril.univ-artois.fr/SAT11/phase2.pdf"
+  },
+  {
+   "year": 2011,
+   "solver": "ppfolio-par",
+   "competition_name": "ppfolio par",
+   "track": "application track (wall-clock time)",
+   "category": "SAT",
+   "rank": 1,
+   "source": "https://web.archive.org/web/2012id_/http://www.cril.univ-artois.fr/SAT11/phase2.pdf",
+   "note": "wall-clock time ranking (parallel and sequential solvers together)"
+  },
+  {
+   "year": 2011,
+   "solver": "plingeling",
+   "competition_name": "Plingeling 587f",
+   "track": "application track (wall-clock time)",
+   "category": "SAT",
+   "rank": 2,
+   "source": "https://web.archive.org/web/2012id_/http://www.cril.univ-artois.fr/SAT11/phase2.pdf",
+   "note": "wall-clock time ranking (parallel and sequential solvers together)"
+  },
+  {
+   "year": 2011,
+   "solver": "minisat_hack:_contrasat",
+   "competition_name": "contrasat (minisat hack)",
+   "track": "application track (wall-clock time)",
+   "category": "SAT",
+   "rank": 3,
+   "source": "https://web.archive.org/web/2012id_/http://www.cril.univ-artois.fr/SAT11/phase2.pdf",
+   "note": "wall-clock time ranking (parallel and sequential solvers together)"
+  },
+  {
+   "year": 2011,
+   "solver": "plingeling",
+   "competition_name": "Plingeling 587f",
+   "track": "application track (wall-clock time)",
+   "category": "SAT+UNSAT",
+   "rank": 1,
+   "source": "https://web.archive.org/web/2012id_/http://www.cril.univ-artois.fr/SAT11/phase2.pdf",
+   "note": "wall-clock time ranking (parallel and sequential solvers together)"
+  },
+  {
+   "year": 2011,
+   "solver": "cryptominisat-strange-night-2-mt",
+   "competition_name": "CryptoMiniSat Strange-Night-2-mt",
+   "track": "application track (wall-clock time)",
+   "category": "SAT+UNSAT",
+   "rank": 2,
+   "source": "https://web.archive.org/web/2012id_/http://www.cril.univ-artois.fr/SAT11/phase2.pdf",
+   "note": "wall-clock time ranking (parallel and sequential solvers together); phase-2 ranking names 'cryptoms //'; the parallel CryptoMiniSat entry that ran in phase 2 is Strange-Night-2-mt (fixed)"
+  },
+  {
+   "year": 2011,
+   "solver": "ppfolio-par",
+   "competition_name": "ppfolio par",
+   "track": "application track (wall-clock time)",
+   "category": "SAT+UNSAT",
+   "rank": 3,
+   "source": "https://web.archive.org/web/2012id_/http://www.cril.univ-artois.fr/SAT11/phase2.pdf",
+   "note": "wall-clock time ranking (parallel and sequential solvers together)"
+  },
+  {
+   "year": 2011,
+   "solver": "cryptominisat-strange-night-2-mt",
+   "competition_name": "CryptoMiniSat Strange-Night-2-mt",
+   "track": "application track (wall-clock time)",
+   "category": "UNSAT",
+   "rank": 1,
+   "source": "https://web.archive.org/web/2012id_/http://www.cril.univ-artois.fr/SAT11/phase2.pdf",
+   "note": "wall-clock time ranking (parallel and sequential solvers together); phase-2 ranking names 'cryptoms //'; the parallel CryptoMiniSat entry that ran in phase 2 is Strange-Night-2-mt (fixed)"
+  },
+  {
+   "year": 2011,
+   "solver": "glueminisat",
+   "competition_name": "glueminisat 2.2.5",
+   "track": "application track (wall-clock time)",
+   "category": "UNSAT",
+   "rank": 2,
+   "source": "https://web.archive.org/web/2012id_/http://www.cril.univ-artois.fr/SAT11/phase2.pdf",
+   "note": "wall-clock time ranking (parallel and sequential solvers together)"
+  },
+  {
+   "year": 2011,
+   "solver": "plingeling",
+   "competition_name": "Plingeling 587f",
+   "track": "application track (wall-clock time)",
+   "category": "UNSAT",
+   "rank": 3,
+   "source": "https://web.archive.org/web/2012id_/http://www.cril.univ-artois.fr/SAT11/phase2.pdf",
+   "note": "wall-clock time ranking (parallel and sequential solvers together)"
+  },
+  {
+   "year": 2011,
+   "solver": "ppfolio-par",
+   "competition_name": "ppfolio par",
+   "track": "crafted track",
+   "category": "SAT",
+   "rank": 1,
+   "source": "https://web.archive.org/web/2012id_/http://www.cril.univ-artois.fr/SAT11/phase2.pdf"
+  },
+  {
+   "year": 2011,
+   "solver": "ppfolio-seq",
+   "competition_name": "ppfolio seq",
+   "track": "crafted track",
+   "category": "SAT",
+   "rank": 2,
+   "source": "https://web.archive.org/web/2012id_/http://www.cril.univ-artois.fr/SAT11/phase2.pdf"
+  },
+  {
+   "year": 2011,
+   "solver": null,
+   "competition_name": "3S (coach)",
+   "track": "crafted track",
+   "category": "SAT",
+   "rank": 3,
+   "source": "https://web.archive.org/web/2012id_/http://www.cril.univ-artois.fr/SAT11/phase2.pdf",
+   "note": "3S (coach) is not part of the repository 2011 set"
+  },
+  {
+   "year": 2011,
+   "solver": null,
+   "competition_name": "3S (coach)",
+   "track": "crafted track",
+   "category": "SAT+UNSAT",
+   "rank": 1,
+   "source": "https://web.archive.org/web/2012id_/http://www.cril.univ-artois.fr/SAT11/phase2.pdf",
+   "note": "3S (coach) is not part of the repository 2011 set"
+  },
+  {
+   "year": 2011,
+   "solver": "ppfolio-par",
+   "competition_name": "ppfolio par",
+   "track": "crafted track",
+   "category": "SAT+UNSAT",
+   "rank": 2,
+   "source": "https://web.archive.org/web/2012id_/http://www.cril.univ-artois.fr/SAT11/phase2.pdf"
+  },
+  {
+   "year": 2011,
+   "solver": "ppfolio-seq",
+   "competition_name": "ppfolio seq",
+   "track": "crafted track",
+   "category": "SAT+UNSAT",
+   "rank": 3,
+   "source": "https://web.archive.org/web/2012id_/http://www.cril.univ-artois.fr/SAT11/phase2.pdf"
+  },
+  {
+   "year": 2011,
+   "solver": "clasp-2.0-r4092-crafted",
+   "competition_name": "clasp 2.0-R4092-crafted",
+   "track": "crafted track",
+   "category": "UNSAT",
+   "rank": 1,
+   "source": "https://web.archive.org/web/2012id_/http://www.cril.univ-artois.fr/SAT11/phase2.pdf"
+  },
+  {
+   "year": 2011,
+   "solver": null,
+   "competition_name": "3S (coach)",
+   "track": "crafted track",
+   "category": "UNSAT",
+   "rank": 2,
+   "source": "https://web.archive.org/web/2012id_/http://www.cril.univ-artois.fr/SAT11/phase2.pdf",
+   "note": "3S (coach) is not part of the repository 2011 set"
+  },
+  {
+   "year": 2011,
+   "solver": "glucose",
+   "competition_name": "glucose 2",
+   "track": "crafted track",
+   "category": "UNSAT",
+   "rank": 3,
+   "source": "https://web.archive.org/web/2012id_/http://www.cril.univ-artois.fr/SAT11/phase2.pdf"
+  },
+  {
+   "year": 2011,
+   "solver": "ppfolio-par",
+   "competition_name": "ppfolio par",
+   "track": "crafted track (wall-clock time)",
+   "category": "SAT",
+   "rank": 1,
+   "source": "https://web.archive.org/web/2012id_/http://www.cril.univ-artois.fr/SAT11/phase2.pdf",
+   "note": "wall-clock time ranking (parallel and sequential solvers together)"
+  },
+  {
+   "year": 2011,
+   "solver": "ppfolio-seq",
+   "competition_name": "ppfolio seq",
+   "track": "crafted track (wall-clock time)",
+   "category": "SAT",
+   "rank": 2,
+   "source": "https://web.archive.org/web/2012id_/http://www.cril.univ-artois.fr/SAT11/phase2.pdf",
+   "note": "wall-clock time ranking (parallel and sequential solvers together)"
+  },
+  {
+   "year": 2011,
+   "solver": null,
+   "competition_name": "3S (coach)",
+   "track": "crafted track (wall-clock time)",
+   "category": "SAT",
+   "rank": 3,
+   "source": "https://web.archive.org/web/2012id_/http://www.cril.univ-artois.fr/SAT11/phase2.pdf",
+   "note": "wall-clock time ranking (parallel and sequential solvers together); 3S (coach) is not part of the repository 2011 set"
+  },
+  {
+   "year": 2011,
+   "solver": "ppfolio-par",
+   "competition_name": "ppfolio par",
+   "track": "crafted track (wall-clock time)",
+   "category": "SAT+UNSAT",
+   "rank": 1,
+   "source": "https://web.archive.org/web/2012id_/http://www.cril.univ-artois.fr/SAT11/phase2.pdf",
+   "note": "wall-clock time ranking (parallel and sequential solvers together)"
+  },
+  {
+   "year": 2011,
+   "solver": "claspmt",
+   "competition_name": "claspmt 2.0-R4095-patched",
+   "track": "crafted track (wall-clock time)",
+   "category": "SAT+UNSAT",
+   "rank": 2,
+   "source": "https://web.archive.org/web/2012id_/http://www.cril.univ-artois.fr/SAT11/phase2.pdf",
+   "note": "wall-clock time ranking (parallel and sequential solvers together)"
+  },
+  {
+   "year": 2011,
+   "solver": null,
+   "competition_name": "3S (coach)",
+   "track": "crafted track (wall-clock time)",
+   "category": "SAT+UNSAT",
+   "rank": 3,
+   "source": "https://web.archive.org/web/2012id_/http://www.cril.univ-artois.fr/SAT11/phase2.pdf",
+   "note": "wall-clock time ranking (parallel and sequential solvers together); 3S (coach) is not part of the repository 2011 set"
+  },
+  {
+   "year": 2011,
+   "solver": "claspmt",
+   "competition_name": "claspmt 2.0-R4095-patched",
+   "track": "crafted track (wall-clock time)",
+   "category": "UNSAT",
+   "rank": 1,
+   "source": "https://web.archive.org/web/2012id_/http://www.cril.univ-artois.fr/SAT11/phase2.pdf",
+   "note": "wall-clock time ranking (parallel and sequential solvers together)"
+  },
+  {
+   "year": 2011,
+   "solver": "clasp-2.0-r4092-crafted",
+   "competition_name": "clasp 2.0-R4092-crafted",
+   "track": "crafted track (wall-clock time)",
+   "category": "UNSAT",
+   "rank": 2,
+   "source": "https://web.archive.org/web/2012id_/http://www.cril.univ-artois.fr/SAT11/phase2.pdf",
+   "note": "wall-clock time ranking (parallel and sequential solvers together)"
+  },
+  {
+   "year": 2011,
+   "solver": "ppfolio-par",
+   "competition_name": "ppfolio par",
+   "track": "crafted track (wall-clock time)",
+   "category": "UNSAT",
+   "rank": 3,
+   "source": "https://web.archive.org/web/2012id_/http://www.cril.univ-artois.fr/SAT11/phase2.pdf",
+   "note": "wall-clock time ranking (parallel and sequential solvers together)"
+  },
+  {
+   "year": 2011,
+   "solver": "minisat_hack:_cir_minisat-2011-05-13_simp",
+   "competition_name": "CirMinisat hack",
+   "track": "minisat hack track",
+   "category": "overall",
+   "rank": 1,
+   "source": "https://www.satcompetition.org/",
+   "note": "special prize: best Minisat hack; phase-2 ranking names 'cirminisat'; only the 2011-05-13 (simp) version of cir_minisat entered phase 2 (the 2011-03-02 version was replaced)"
+  },
+  {
+   "year": 2011,
+   "solver": "sparrow2011",
+   "competition_name": "sparrow2011",
+   "track": "random track",
+   "category": "SAT",
+   "rank": 1,
+   "source": "https://web.archive.org/web/2012id_/http://www.cril.univ-artois.fr/SAT11/phase2.pdf"
+  },
+  {
+   "year": 2011,
+   "solver": "sattime2011",
+   "competition_name": "sattime2011",
+   "track": "random track",
+   "category": "SAT",
+   "rank": 2,
+   "source": "https://web.archive.org/web/2012id_/http://www.cril.univ-artois.fr/SAT11/phase2.pdf"
+  },
+  {
+   "year": 2011,
+   "solver": "eagleup",
+   "competition_name": "EagleUP",
+   "track": "random track",
+   "category": "SAT",
+   "rank": 3,
+   "source": "https://web.archive.org/web/2012id_/http://www.cril.univ-artois.fr/SAT11/phase2.pdf"
+  },
+  {
+   "year": 2011,
+   "solver": null,
+   "competition_name": "3S (coach)",
+   "track": "random track",
+   "category": "SAT+UNSAT",
+   "rank": 1,
+   "source": "https://web.archive.org/web/2012id_/http://www.cril.univ-artois.fr/SAT11/phase2.pdf",
+   "note": "3S (coach) is not part of the repository 2011 set"
+  },
+  {
+   "year": 2011,
+   "solver": "ppfolio-par",
+   "competition_name": "ppfolio par",
+   "track": "random track",
+   "category": "SAT+UNSAT",
+   "rank": 2,
+   "source": "https://web.archive.org/web/2012id_/http://www.cril.univ-artois.fr/SAT11/phase2.pdf"
+  },
+  {
+   "year": 2011,
+   "solver": "ppfolio-seq",
+   "competition_name": "ppfolio seq",
+   "track": "random track",
+   "category": "SAT+UNSAT",
+   "rank": 3,
+   "source": "https://web.archive.org/web/2012id_/http://www.cril.univ-artois.fr/SAT11/phase2.pdf"
+  },
+  {
+   "year": 2011,
+   "solver": "march_rw",
+   "competition_name": "march_rw",
+   "track": "random track",
+   "category": "UNSAT",
+   "rank": 1,
+   "source": "https://web.archive.org/web/2012id_/http://www.cril.univ-artois.fr/SAT11/phase2.pdf"
+  },
+  {
+   "year": 2011,
+   "solver": "mphasesat_m",
+   "competition_name": "MPhaseSAT_M",
+   "track": "random track",
+   "category": "UNSAT",
+   "rank": 2,
+   "source": "https://web.archive.org/web/2012id_/http://www.cril.univ-artois.fr/SAT11/phase2.pdf"
+  },
+  {
+   "year": 2011,
+   "solver": "ppfolio-par",
+   "competition_name": "ppfolio par",
+   "track": "random track",
+   "category": "UNSAT",
+   "rank": 3,
+   "source": "https://web.archive.org/web/2012id_/http://www.cril.univ-artois.fr/SAT11/phase2.pdf"
+  },
+  {
+   "year": 2011,
+   "solver": "sparrow2011",
+   "competition_name": "sparrow2011",
+   "track": "random track (wall-clock time)",
+   "category": "SAT",
+   "rank": 1,
+   "source": "https://web.archive.org/web/2012id_/http://www.cril.univ-artois.fr/SAT11/phase2.pdf",
+   "note": "wall-clock time ranking (parallel and sequential solvers together)"
+  },
+  {
+   "year": 2011,
+   "solver": "csls-pnorm-8cores",
+   "competition_name": "csls pnorm-8cores",
+   "track": "random track (wall-clock time)",
+   "category": "SAT",
+   "rank": 2,
+   "source": "https://web.archive.org/web/2012id_/http://www.cril.univ-artois.fr/SAT11/phase2.pdf",
+   "note": "wall-clock time ranking (parallel and sequential solvers together); phase-2 ranking names 'csls'; only csls pnorm-8cores entered phase 2"
+  },
+  {
+   "year": 2011,
+   "solver": "sattime2011",
+   "competition_name": "sattime2011",
+   "track": "random track (wall-clock time)",
+   "category": "SAT",
+   "rank": 3,
+   "source": "https://web.archive.org/web/2012id_/http://www.cril.univ-artois.fr/SAT11/phase2.pdf",
+   "note": "wall-clock time ranking (parallel and sequential solvers together)"
+  },
+  {
+   "year": 2011,
+   "solver": "ppfolio-par",
+   "competition_name": "ppfolio par",
+   "track": "random track (wall-clock time)",
+   "category": "SAT+UNSAT",
+   "rank": 1,
+   "source": "https://web.archive.org/web/2012id_/http://www.cril.univ-artois.fr/SAT11/phase2.pdf",
+   "note": "wall-clock time ranking (parallel and sequential solvers together)"
+  },
+  {
+   "year": 2011,
+   "solver": null,
+   "competition_name": "3S (coach)",
+   "track": "random track (wall-clock time)",
+   "category": "SAT+UNSAT",
+   "rank": 2,
+   "source": "https://web.archive.org/web/2012id_/http://www.cril.univ-artois.fr/SAT11/phase2.pdf",
+   "note": "wall-clock time ranking (parallel and sequential solvers together); 3S (coach) is not part of the repository 2011 set"
+  },
+  {
+   "year": 2011,
+   "solver": "ppfolio-seq",
+   "competition_name": "ppfolio seq",
+   "track": "random track (wall-clock time)",
+   "category": "SAT+UNSAT",
+   "rank": 3,
+   "source": "https://web.archive.org/web/2012id_/http://www.cril.univ-artois.fr/SAT11/phase2.pdf",
+   "note": "wall-clock time ranking (parallel and sequential solvers together)"
+  },
+  {
+   "year": 2011,
+   "solver": "march_rw",
+   "competition_name": "march_rw",
+   "track": "random track (wall-clock time)",
+   "category": "UNSAT",
+   "rank": 1,
+   "source": "https://web.archive.org/web/2012id_/http://www.cril.univ-artois.fr/SAT11/phase2.pdf",
+   "note": "wall-clock time ranking (parallel and sequential solvers together)"
+  },
+  {
+   "year": 2011,
+   "solver": "ppfolio-par",
+   "competition_name": "ppfolio par",
+   "track": "random track (wall-clock time)",
+   "category": "UNSAT",
+   "rank": 2,
+   "source": "https://web.archive.org/web/2012id_/http://www.cril.univ-artois.fr/SAT11/phase2.pdf",
+   "note": "wall-clock time ranking (parallel and sequential solvers together)"
+  },
+  {
+   "year": 2011,
+   "solver": "mphasesat_m",
+   "competition_name": "MPhaseSAT_M",
+   "track": "random track (wall-clock time)",
+   "category": "UNSAT",
+   "rank": 3,
+   "source": "https://web.archive.org/web/2012id_/http://www.cril.univ-artois.fr/SAT11/phase2.pdf",
+   "note": "wall-clock time ranking (parallel and sequential solvers together)"
+  },
+  {
+   "year": 2013,
+   "solver": "lingeling_aqw",
+   "competition_name": "Lingeling aqw",
+   "track": "application track",
+   "category": "SAT",
+   "rank": 1,
+   "source": "https://web.archive.org/web/2015/http://www.satcompetition.org/2013/results.shtml"
+  },
+  {
+   "year": 2013,
+   "solver": "zenn",
+   "competition_name": "ZENN 0.1.0",
+   "track": "application track",
+   "category": "SAT",
+   "rank": 2,
+   "source": "https://web.archive.org/web/2015/http://www.satcompetition.org/2013/results.shtml"
+  },
+  {
+   "year": 2013,
+   "solver": "satuzk",
+   "competition_name": "satUZK 48",
+   "track": "application track",
+   "category": "SAT",
+   "rank": 3,
+   "source": "https://web.archive.org/web/2015/http://www.satcompetition.org/2013/results.shtml"
+  },
+  {
+   "year": 2013,
+   "solver": "lingeling_aqw",
+   "competition_name": "Lingeling aqw",
+   "track": "application track",
+   "category": "SAT+UNSAT",
+   "rank": 1,
+   "source": "https://web.archive.org/web/2015/http://www.satcompetition.org/2013/results.shtml"
+  },
+  {
+   "year": 2013,
+   "solver": "lingeling_587f",
+   "competition_name": "Lingeling 587f",
+   "track": "application track",
+   "category": "SAT+UNSAT",
+   "rank": 2,
+   "source": "https://web.archive.org/web/2015/http://www.satcompetition.org/2013/results.shtml"
+  },
+  {
+   "year": 2013,
+   "solver": "zenn",
+   "competition_name": "ZENN 0.1.0",
+   "track": "application track",
+   "category": "SAT+UNSAT",
+   "rank": 3,
+   "source": "https://web.archive.org/web/2015/http://www.satcompetition.org/2013/results.shtml"
+  },
+  {
+   "year": 2013,
+   "solver": "glucose-drup",
+   "competition_name": "glucose 2.3 (certified unsat)",
+   "track": "application track",
+   "category": "certified UNSAT",
+   "rank": 1,
+   "source": "https://web.archive.org/web/2015/http://www.satcompetition.org/2013/results.shtml"
+  },
+  {
+   "year": 2013,
+   "solver": "glueminisat-cert-unsat",
+   "competition_name": "glueminisat-cert-unsat 2.2.7j",
+   "track": "application track",
+   "category": "certified UNSAT",
+   "rank": 2,
+   "source": "https://web.archive.org/web/2015/http://www.satcompetition.org/2013/results.shtml"
+  },
+  {
+   "year": 2013,
+   "solver": "riss3g-cert",
+   "competition_name": "Riss3g cert",
+   "track": "application track",
+   "category": "certified UNSAT",
+   "rank": 3,
+   "source": "https://web.archive.org/web/2015/http://www.satcompetition.org/2013/results.shtml"
+  },
+  {
+   "year": 2013,
+   "solver": "glucose",
+   "competition_name": "glucose 2.3",
+   "track": "hard-combinatorial track",
+   "category": "SAT",
+   "rank": 1,
+   "source": "https://web.archive.org/web/2015/http://www.satcompetition.org/2013/results.shtml"
+  },
+  {
+   "year": 2013,
+   "solver": "gluebit_clasp",
+   "competition_name": "gluebit_clasp 1.0",
+   "track": "hard-combinatorial track",
+   "category": "SAT",
+   "rank": 2,
+   "source": "https://web.archive.org/web/2015/http://www.satcompetition.org/2013/results.shtml"
+  },
+  {
+   "year": 2013,
+   "solver": "breakidglucose",
+   "competition_name": "BreakIDGlucose 1",
+   "track": "hard-combinatorial track",
+   "category": "SAT",
+   "rank": 3,
+   "source": "https://web.archive.org/web/2015/http://www.satcompetition.org/2013/results.shtml"
+  },
+  {
+   "year": 2013,
+   "solver": "breakidglucose",
+   "competition_name": "BreakIDGlucose 1",
+   "track": "hard-combinatorial track",
+   "category": "SAT+UNSAT",
+   "rank": 1,
+   "source": "https://web.archive.org/web/2015/http://www.satcompetition.org/2013/results.shtml"
+  },
+  {
+   "year": 2013,
+   "solver": "gluebit_clasp",
+   "competition_name": "gluebit_clasp 1.0",
+   "track": "hard-combinatorial track",
+   "category": "SAT+UNSAT",
+   "rank": 2,
+   "source": "https://web.archive.org/web/2015/http://www.satcompetition.org/2013/results.shtml"
+  },
+  {
+   "year": 2013,
+   "solver": "glucose",
+   "competition_name": "glucose 2.3",
+   "track": "hard-combinatorial track",
+   "category": "SAT+UNSAT",
+   "rank": 3,
+   "source": "https://web.archive.org/web/2015/http://www.satcompetition.org/2013/results.shtml"
+  },
+  {
+   "year": 2013,
+   "solver": "riss3g-cert",
+   "competition_name": "Riss3g cert",
+   "track": "hard-combinatorial track",
+   "category": "certified UNSAT",
+   "rank": 1,
+   "source": "https://web.archive.org/web/2015/http://www.satcompetition.org/2013/results.shtml"
+  },
+  {
+   "year": 2013,
+   "solver": "glucose-drup",
+   "competition_name": "glucose 2.3 (certified unsat)",
+   "track": "hard-combinatorial track",
+   "category": "certified UNSAT",
+   "rank": 2,
+   "source": "https://web.archive.org/web/2015/http://www.satcompetition.org/2013/results.shtml"
+  },
+  {
+   "year": 2013,
+   "solver": "forl-drup",
+   "competition_name": "forl drup-nocachestamp",
+   "track": "hard-combinatorial track",
+   "category": "certified UNSAT",
+   "rank": 3,
+   "source": "https://web.archive.org/web/2015/http://www.satcompetition.org/2013/results.shtml",
+   "note": "forl ran as 'drup' and 'drup-nocachestamp'; the repository has a single forl-drup entry (uncertain mapping)"
+  },
+  {
+   "year": 2013,
+   "solver": "sinnminisat",
+   "competition_name": "SINNminisat 1.0.0",
+   "track": "minisat hack track",
+   "category": "application SAT+UNSAT",
+   "rank": 1,
+   "source": "https://web.archive.org/web/2015/http://www.satcompetition.org/2013/results.shtml"
+  },
+  {
+   "year": 2013,
+   "solver": "minisat_bit",
+   "competition_name": "minisat_bit 1.0",
+   "track": "minisat hack track",
+   "category": "application SAT+UNSAT",
+   "rank": 2,
+   "source": "https://web.archive.org/web/2015/http://www.satcompetition.org/2013/results.shtml"
+  },
+  {
+   "year": 2013,
+   "solver": "minigolf_prefetch",
+   "competition_name": "MiniGolf prefetch",
+   "track": "minisat hack track",
+   "category": "application SAT+UNSAT",
+   "rank": 3,
+   "source": "https://web.archive.org/web/2015/http://www.satcompetition.org/2013/results.shtml"
+  },
+  {
+   "year": 2013,
+   "solver": null,
+   "competition_name": "CSHCpar8",
+   "track": "open track",
+   "category": "overall",
+   "rank": 1,
+   "source": "https://web.archive.org/web/2015/http://www.satcompetition.org/2013/results.shtml",
+   "note": "not in the repository 2013 set"
+  },
+  {
+   "year": 2013,
+   "solver": null,
+   "competition_name": "MIPSat",
+   "track": "open track",
+   "category": "overall",
+   "rank": 2,
+   "source": "https://web.archive.org/web/2015/http://www.satcompetition.org/2013/results.shtml",
+   "note": "open-track (mixed benchmarks) configuration; not mapped to the application-track mipsat entry"
+  },
+  {
+   "year": 2013,
+   "solver": null,
+   "competition_name": "GlucoRed+March r531",
+   "track": "open track",
+   "category": "overall",
+   "rank": 3,
+   "source": "https://web.archive.org/web/2015/http://www.satcompetition.org/2013/results.shtml",
+   "note": "open-track combination; not the same entry as glucored"
+  },
+  {
+   "year": 2013,
+   "solver": "plingeling",
+   "competition_name": "Plingeling aqw",
+   "track": "parallel track",
+   "category": "application SAT+UNSAT",
+   "rank": 1,
+   "source": "https://web.archive.org/web/2015/http://www.satcompetition.org/2013/results.shtml"
+  },
+  {
+   "year": 2013,
+   "solver": "treengeling",
+   "competition_name": "Treengeling aqw",
+   "track": "parallel track",
+   "category": "application SAT+UNSAT",
+   "rank": 2,
+   "source": "https://web.archive.org/web/2015/http://www.satcompetition.org/2013/results.shtml"
+  },
+  {
+   "year": 2013,
+   "solver": "penelope",
+   "competition_name": "PeneLoPe 2013",
+   "track": "parallel track",
+   "category": "application SAT+UNSAT",
+   "rank": 3,
+   "source": "https://web.archive.org/web/2015/http://www.satcompetition.org/2013/results.shtml"
+  },
+  {
+   "year": 2013,
+   "solver": "treengeling",
+   "competition_name": "Treengeling aqw",
+   "track": "parallel track",
+   "category": "hard-combinatorial SAT+UNSAT",
+   "rank": 1,
+   "source": "https://web.archive.org/web/2015/http://www.satcompetition.org/2013/results.shtml"
+  },
+  {
+   "year": 2013,
+   "solver": "plingeling",
+   "competition_name": "Plingeling aqw",
+   "track": "parallel track",
+   "category": "hard-combinatorial SAT+UNSAT",
+   "rank": 2,
+   "source": "https://web.archive.org/web/2015/http://www.satcompetition.org/2013/results.shtml"
+  },
+  {
+   "year": 2013,
+   "solver": "pmcsat",
+   "competition_name": "pmcSAT 1.0",
+   "track": "parallel track",
+   "category": "hard-combinatorial SAT+UNSAT",
+   "rank": 3,
+   "source": "https://web.archive.org/web/2015/http://www.satcompetition.org/2013/results.shtml"
+  },
+  {
+   "year": 2013,
+   "solver": "probsat",
+   "competition_name": "probSAT SC13",
+   "track": "random track",
+   "category": "SAT",
+   "rank": 1,
+   "source": "https://web.archive.org/web/2015/http://www.satcompetition.org/2013/results.shtml"
+  },
+  {
+   "year": 2013,
+   "solver": "sattime2013",
+   "competition_name": "sattime2013 2013",
+   "track": "random track",
+   "category": "SAT",
+   "rank": 2,
+   "source": "https://web.archive.org/web/2015/http://www.satcompetition.org/2013/results.shtml"
+  },
+  {
+   "year": 2013,
+   "solver": "ncca-plus",
+   "competition_name": "Ncca+ V 1.0",
+   "track": "random track",
+   "category": "SAT",
+   "rank": 3,
+   "source": "https://web.archive.org/web/2015/http://www.satcompetition.org/2013/results.shtml"
+  },
+  {
+   "year": 2013,
+   "solver": "cshcrandmc",
+   "competition_name": "CSHCrandMC",
+   "track": "random track",
+   "category": "SAT+UNSAT",
+   "rank": 1,
+   "source": "https://web.archive.org/web/2015/http://www.satcompetition.org/2013/results.shtml"
+  },
+  {
+   "year": 2013,
+   "solver": null,
+   "competition_name": "MIPSat random sat_unsat",
+   "track": "random track",
+   "category": "SAT+UNSAT",
+   "rank": 2,
+   "source": "https://web.archive.org/web/2015/http://www.satcompetition.org/2013/results.shtml",
+   "note": "the repository only holds the application and hard-combinatorial MIPSat configurations"
+  },
+  {
+   "year": 2013,
+   "solver": "march_vflip",
+   "competition_name": "march_vflip 1.0",
+   "track": "random track",
+   "category": "SAT+UNSAT",
+   "rank": 3,
+   "source": "https://web.archive.org/web/2015/http://www.satcompetition.org/2013/results.shtml"
+  },
+  {
+   "year": 2014,
+   "solver": "minisat_blbd",
+   "competition_name": "minisat_blbd",
+   "track": "application track",
+   "category": "SAT",
+   "rank": 1,
+   "source": "https://web.archive.org/web/2016/http://www.satcompetition.org/2014/results.shtml"
+  },
+  {
+   "year": 2014,
+   "solver": null,
+   "competition_name": "Riss BlackBox",
+   "track": "application track",
+   "category": "SAT",
+   "rank": 2,
+   "source": "https://web.archive.org/web/2016/http://www.satcompetition.org/2014/results.shtml",
+   "note": "the repository holds three entries named Riss (riss, riss_1, riss_2); the 'BlackBox' configuration cannot be identified; no mapping"
+  },
+  {
+   "year": 2014,
+   "solver": null,
+   "competition_name": "SWDiA5BY",
+   "track": "application track",
+   "category": "SAT",
+   "rank": 3,
+   "source": "https://web.archive.org/web/2016/http://www.satcompetition.org/2014/results.shtml",
+   "note": "the repository holds two entries named SWDiA5BY (swdia5by, swdia5by_1) and the results do not say which one; no mapping"
+  },
+  {
+   "year": 2014,
+   "solver": "lingeling",
+   "competition_name": "Lingeling",
+   "track": "application track",
+   "category": "SAT+UNSAT",
+   "rank": 1,
+   "source": "https://web.archive.org/web/2016/http://www.satcompetition.org/2014/results.shtml"
+  },
+  {
+   "year": 2014,
+   "solver": null,
+   "competition_name": "SWDiA5BY",
+   "track": "application track",
+   "category": "SAT+UNSAT",
+   "rank": 2,
+   "source": "https://web.archive.org/web/2016/http://www.satcompetition.org/2014/results.shtml",
+   "note": "the repository holds two entries named SWDiA5BY (swdia5by, swdia5by_1) and the results do not say which one; no mapping"
+  },
+  {
+   "year": 2014,
+   "solver": null,
+   "competition_name": "Riss BlackBox",
+   "track": "application track",
+   "category": "SAT+UNSAT",
+   "rank": 3,
+   "source": "https://web.archive.org/web/2016/http://www.satcompetition.org/2014/results.shtml",
+   "note": "the repository holds three entries named Riss (riss, riss_1, riss_2); the 'BlackBox' configuration cannot be identified; no mapping"
+  },
+  {
+   "year": 2014,
+   "solver": "lingeling_druplig",
+   "competition_name": "Lingeling (druplig)",
+   "track": "application track",
+   "category": "certified UNSAT",
+   "rank": 1,
+   "source": "https://web.archive.org/web/2016/http://www.satcompetition.org/2014/results.shtml"
+  },
+  {
+   "year": 2014,
+   "solver": "glucose_certified_unsat",
+   "competition_name": "glucose",
+   "track": "application track",
+   "category": "certified UNSAT",
+   "rank": 2,
+   "source": "https://web.archive.org/web/2016/http://www.satcompetition.org/2014/results.shtml",
+   "note": "certified-UNSAT run of glucose; mapped to the repository entry 'glucose (certified unsat)'"
+  },
+  {
+   "year": 2014,
+   "solver": null,
+   "competition_name": "SWDiA5BY",
+   "track": "application track",
+   "category": "certified UNSAT",
+   "rank": 3,
+   "source": "https://web.archive.org/web/2016/http://www.satcompetition.org/2014/results.shtml",
+   "note": "the repository holds two entries named SWDiA5BY (swdia5by, swdia5by_1) and the results do not say which one; no mapping"
+  },
+  {
+   "year": 2014,
+   "solver": "sparrowtoriss",
+   "competition_name": "SparrowToRiss",
+   "track": "hard-combinatorial track",
+   "category": "SAT",
+   "rank": 1,
+   "source": "https://web.archive.org/web/2016/http://www.satcompetition.org/2014/results.shtml"
+  },
+  {
+   "year": 2014,
+   "solver": "ccanr_glucose",
+   "competition_name": "CCAnr+glucose",
+   "track": "hard-combinatorial track",
+   "category": "SAT",
+   "rank": 2,
+   "source": "https://web.archive.org/web/2016/http://www.satcompetition.org/2014/results.shtml"
+  },
+  {
+   "year": 2014,
+   "solver": "sgseq",
+   "competition_name": "SGSeq",
+   "track": "hard-combinatorial track",
+   "category": "SAT",
+   "rank": 3,
+   "source": "https://web.archive.org/web/2016/http://www.satcompetition.org/2014/results.shtml"
+  },
+  {
+   "year": 2014,
+   "solver": "gluesplit_clasp",
+   "competition_name": "glueSplit_clasp",
+   "track": "hard-combinatorial track",
+   "category": "SAT+UNSAT",
+   "rank": 1,
+   "source": "https://web.archive.org/web/2016/http://www.satcompetition.org/2014/results.shtml"
+  },
+  {
+   "year": 2014,
+   "solver": "lingeling",
+   "competition_name": "Lingeling",
+   "track": "hard-combinatorial track",
+   "category": "SAT+UNSAT",
+   "rank": 2,
+   "source": "https://web.archive.org/web/2016/http://www.satcompetition.org/2014/results.shtml"
+  },
+  {
+   "year": 2014,
+   "solver": "sparrowtoriss",
+   "competition_name": "SparrowToRiss",
+   "track": "hard-combinatorial track",
+   "category": "SAT+UNSAT",
+   "rank": 3,
+   "source": "https://web.archive.org/web/2016/http://www.satcompetition.org/2014/results.shtml"
+  },
+  {
+   "year": 2014,
+   "solver": null,
+   "competition_name": "Riss BlackBox",
+   "track": "hard-combinatorial track",
+   "category": "certified UNSAT",
+   "rank": 1,
+   "source": "https://web.archive.org/web/2016/http://www.satcompetition.org/2014/results.shtml",
+   "note": "the repository holds three entries named Riss (riss, riss_1, riss_2); the 'BlackBox' configuration cannot be identified; no mapping"
+  },
+  {
+   "year": 2014,
+   "solver": "lingeling_druplig",
+   "competition_name": "Lingeling (druplig)",
+   "track": "hard-combinatorial track",
+   "category": "certified UNSAT",
+   "rank": 2,
+   "source": "https://web.archive.org/web/2016/http://www.satcompetition.org/2014/results.shtml"
+  },
+  {
+   "year": 2014,
+   "solver": "glucose_certified_unsat",
+   "competition_name": "glucose",
+   "track": "hard-combinatorial track",
+   "category": "certified UNSAT",
+   "rank": 3,
+   "source": "https://web.archive.org/web/2016/http://www.satcompetition.org/2014/results.shtml",
+   "note": "certified-UNSAT run of glucose; mapped to the repository entry 'glucose (certified unsat)'"
+  },
+  {
+   "year": 2014,
+   "solver": "minisat_hack_999ed",
+   "competition_name": "MiniSat_HACK_999ED",
+   "track": "minisat hack track",
+   "category": "application SAT+UNSAT",
+   "rank": 1,
+   "source": "https://web.archive.org/web/2016/http://www.satcompetition.org/2014/results.shtml"
+  },
+  {
+   "year": 2014,
+   "solver": "minisat_blbd",
+   "competition_name": "minisat_blbd",
+   "track": "minisat hack track",
+   "category": "application SAT+UNSAT",
+   "rank": 2,
+   "source": "https://web.archive.org/web/2016/http://www.satcompetition.org/2014/results.shtml"
+  },
+  {
+   "year": 2014,
+   "solver": null,
+   "competition_name": "ROKKminisat",
+   "track": "minisat hack track",
+   "category": "application SAT+UNSAT",
+   "rank": 3,
+   "source": "https://web.archive.org/web/2016/http://www.satcompetition.org/2014/results.shtml",
+   "note": "the repository has ROKK and ROKK(sat) but no entry named ROKKminisat; no mapping"
+  },
+  {
+   "year": 2014,
+   "solver": "plingeling",
+   "competition_name": "Plingeling",
+   "track": "parallel track",
+   "category": "application SAT+UNSAT",
+   "rank": 1,
+   "source": "https://web.archive.org/web/2016/http://www.satcompetition.org/2014/results.shtml"
+  },
+  {
+   "year": 2014,
+   "solver": "penelope",
+   "competition_name": "PeneLoPe",
+   "track": "parallel track",
+   "category": "application SAT+UNSAT",
+   "rank": 2,
+   "source": "https://web.archive.org/web/2016/http://www.satcompetition.org/2014/results.shtml"
+  },
+  {
+   "year": 2014,
+   "solver": "treengeling",
+   "competition_name": "Treengeling",
+   "track": "parallel track",
+   "category": "application SAT+UNSAT",
+   "rank": 3,
+   "source": "https://web.archive.org/web/2016/http://www.satcompetition.org/2014/results.shtml"
+  },
+  {
+   "year": 2014,
+   "solver": "treengeling",
+   "competition_name": "Treengeling",
+   "track": "parallel track",
+   "category": "hard-combinatorial SAT+UNSAT",
+   "rank": 1,
+   "source": "https://web.archive.org/web/2016/http://www.satcompetition.org/2014/results.shtml"
+  },
+  {
+   "year": 2014,
+   "solver": "plingeling",
+   "competition_name": "Plingeling",
+   "track": "parallel track",
+   "category": "hard-combinatorial SAT+UNSAT",
+   "rank": 2,
+   "source": "https://web.archive.org/web/2016/http://www.satcompetition.org/2014/results.shtml"
+  },
+  {
+   "year": 2014,
+   "solver": "pmcsat",
+   "competition_name": "pmcSAT 2.0",
+   "track": "parallel track",
+   "category": "hard-combinatorial SAT+UNSAT",
+   "rank": 3,
+   "source": "https://web.archive.org/web/2016/http://www.satcompetition.org/2014/results.shtml"
+  },
+  {
+   "year": 2014,
+   "solver": "pprobsat",
+   "competition_name": "pprobSAT",
+   "track": "parallel track",
+   "category": "random SAT",
+   "rank": 1,
+   "source": "https://web.archive.org/web/2016/http://www.satcompetition.org/2014/results.shtml"
+  },
+  {
+   "year": 2014,
+   "solver": "plingeling",
+   "competition_name": "Plingeling",
+   "track": "parallel track",
+   "category": "random SAT",
+   "rank": 2,
+   "source": "https://web.archive.org/web/2016/http://www.satcompetition.org/2014/results.shtml"
+  },
+  {
+   "year": 2014,
+   "solver": "csccsat2014",
+   "competition_name": "CSCCSat2014",
+   "track": "parallel track",
+   "category": "random SAT",
+   "rank": 3,
+   "source": "https://web.archive.org/web/2016/http://www.satcompetition.org/2014/results.shtml",
+   "note": "the sequential CSCCSat2014 entry also ran in the parallel random track"
+  },
+  {
+   "year": 2014,
+   "solver": "dimetheus",
+   "competition_name": "Dimetheus",
+   "track": "random track",
+   "category": "SAT",
+   "rank": 1,
+   "source": "https://web.archive.org/web/2016/http://www.satcompetition.org/2014/results.shtml"
+  },
+  {
+   "year": 2014,
+   "solver": "balancedz",
+   "competition_name": "BalancedZ",
+   "track": "random track",
+   "category": "SAT",
+   "rank": 2,
+   "source": "https://web.archive.org/web/2016/http://www.satcompetition.org/2014/results.shtml"
+  },
+  {
+   "year": 2014,
+   "solver": "csccsat2014",
+   "competition_name": "CSCCSat2014",
+   "track": "random track",
+   "category": "SAT",
+   "rank": 3,
+   "source": "https://web.archive.org/web/2016/http://www.satcompetition.org/2014/results.shtml"
+  },
+  {
+   "year": 2016,
+   "solver": "riss6",
+   "competition_name": "Riss",
+   "track": "agile track",
+   "category": "SAT+UNSAT",
+   "rank": 1,
+   "source": "https://web.archive.org/web/2018id_/https://baldur.iti.kit.edu/sat-competition-2016/satcomp16slides.pdf",
+   "note": "agile-track entry Riss6 (default)"
+  },
+  {
+   "year": 2016,
+   "solver": "tb_glucose",
+   "competition_name": "TB Glucose",
+   "track": "agile track",
+   "category": "SAT+UNSAT",
+   "rank": 2,
+   "source": "https://web.archive.org/web/2018id_/https://baldur.iti.kit.edu/sat-competition-2016/satcomp16slides.pdf",
+   "note": "agile-track binary tb_glucose_agile; mapped to the tb_glucose submission (uncertain mapping)"
+  },
+  {
+   "year": 2016,
+   "solver": "chbr_glucose",
+   "competition_name": "CHBR Glucose",
+   "track": "agile track",
+   "category": "SAT+UNSAT",
+   "rank": 3,
+   "source": "https://web.archive.org/web/2018id_/https://baldur.iti.kit.edu/sat-competition-2016/satcomp16slides.pdf",
+   "note": "agile-track binary CHBR_glucose_agile; mapped to the CHBR_glucose submission (uncertain mapping)"
+  },
+  {
+   "year": 2016,
+   "solver": null,
+   "competition_name": "CryptoMiniSat",
+   "track": "incremental track",
+   "category": "overall",
+   "rank": 1,
+   "source": "https://web.archive.org/web/2018id_/https://baldur.iti.kit.edu/sat-competition-2016/satcomp16slides.pdf",
+   "note": "IPASIR library entry (cryptominisat4); not in the repository set"
+  },
+  {
+   "year": 2016,
+   "solver": null,
+   "competition_name": "Glucose",
+   "track": "incremental track",
+   "category": "overall",
+   "rank": 2,
+   "source": "https://web.archive.org/web/2018id_/https://baldur.iti.kit.edu/sat-competition-2016/satcomp16slides.pdf",
+   "note": "IPASIR library entry (glucose4); not in the repository set"
+  },
+  {
+   "year": 2016,
+   "solver": null,
+   "competition_name": "Riss",
+   "track": "incremental track",
+   "category": "overall",
+   "rank": 3,
+   "source": "https://web.archive.org/web/2018id_/https://baldur.iti.kit.edu/sat-competition-2016/satcomp16slides.pdf",
+   "note": "IPASIR library entry (riss_521/riss_600); not in the repository set"
+  },
+  {
+   "year": 2016,
+   "solver": "maple-comsps",
+   "competition_name": "MapleCOMSPS",
+   "track": "main track",
+   "category": "SAT+UNSAT",
+   "rank": 1,
+   "source": "https://web.archive.org/web/2018id_/https://baldur.iti.kit.edu/sat-competition-2016/satcomp16slides.pdf",
+   "note": "results page entry MapleCOMSPS_DRUP (seq_LRB_VSIDS_drup)"
+  },
+  {
+   "year": 2016,
+   "solver": "riss6",
+   "competition_name": "Riss",
+   "track": "main track",
+   "category": "SAT+UNSAT",
+   "rank": 2,
+   "source": "https://web.archive.org/web/2018id_/https://baldur.iti.kit.edu/sat-competition-2016/satcomp16slides.pdf",
+   "note": "results page entry Riss6 (noPP_DRAT)"
+  },
+  {
+   "year": 2016,
+   "solver": "lingeling",
+   "competition_name": "Lingeling",
+   "track": "main track",
+   "category": "SAT+UNSAT",
+   "rank": 3,
+   "source": "https://web.archive.org/web/2018id_/https://baldur.iti.kit.edu/sat-competition-2016/satcomp16slides.pdf",
+   "note": "results page entry 'Lingeling bbc main'"
+  },
+  {
+   "year": 2016,
+   "solver": "maple-comsps",
+   "competition_name": "MapleCOMSPS",
+   "track": "main track",
+   "category": "best application benchmark solver",
+   "rank": 1,
+   "source": "https://web.archive.org/web/2018id_/https://baldur.iti.kit.edu/sat-competition-2016/satcomp16slides.pdf",
+   "note": "special prize of the main track"
+  },
+  {
+   "year": 2016,
+   "solver": "tc_glucose",
+   "competition_name": "TC Glucose",
+   "track": "main track",
+   "category": "best crafted benchmark solver",
+   "rank": 1,
+   "source": "https://web.archive.org/web/2018id_/https://baldur.iti.kit.edu/sat-competition-2016/satcomp16slides.pdf",
+   "note": "special prize of the main track"
+  },
+  {
+   "year": 2016,
+   "solver": "glucose_hack_kiel",
+   "competition_name": "Kiel (glucose_hack_kiel_newScript)",
+   "track": "main track",
+   "category": "best glucose hack",
+   "rank": 1,
+   "source": "https://web.archive.org/web/2018id_/https://baldur.iti.kit.edu/sat-competition-2016/satcomp16slides.pdf",
+   "note": "special prize of the main track"
+  },
+  {
+   "year": 2016,
+   "solver": null,
+   "competition_name": "BreakIDCOMiniSatPS",
+   "track": "no-limits track",
+   "category": "SAT+UNSAT",
+   "rank": 1,
+   "source": "https://web.archive.org/web/2018id_/https://baldur.iti.kit.edu/sat-competition-2016/satcomp16slides.pdf",
+   "note": "not in the repository 2016 set"
+  },
+  {
+   "year": 2016,
+   "solver": null,
+   "competition_name": "Lingeling",
+   "track": "no-limits track",
+   "category": "SAT+UNSAT",
+   "rank": 2,
+   "source": "https://web.archive.org/web/2018id_/https://baldur.iti.kit.edu/sat-competition-2016/satcomp16slides.pdf",
+   "note": "no-limit entry 'Lingeling bbc notrace' differs from the main-track build Lingelingbbcmain; no mapping"
+  },
+  {
+   "year": 2016,
+   "solver": null,
+   "competition_name": "abcdSAT",
+   "track": "no-limits track",
+   "category": "SAT+UNSAT",
+   "rank": 3,
+   "source": "https://web.archive.org/web/2018id_/https://baldur.iti.kit.edu/sat-competition-2016/satcomp16slides.pdf",
+   "note": "no-limit entry abcdSAT_lim differs from the main-track abcdSAT_drup; no mapping"
+  },
+  {
+   "year": 2016,
+   "solver": "treengeling",
+   "competition_name": "Treengeling",
+   "track": "parallel track",
+   "category": "SAT+UNSAT",
+   "rank": 1,
+   "source": "https://web.archive.org/web/2018id_/https://baldur.iti.kit.edu/sat-competition-2016/satcomp16slides.pdf"
+  },
+  {
+   "year": 2016,
+   "solver": "plingeling",
+   "competition_name": "Plingeling",
+   "track": "parallel track",
+   "category": "SAT+UNSAT",
+   "rank": 2,
+   "source": "https://web.archive.org/web/2018id_/https://baldur.iti.kit.edu/sat-competition-2016/satcomp16slides.pdf"
+  },
+  {
+   "year": 2016,
+   "solver": "cmsat5_run_parallel",
+   "competition_name": "CryptoMiniSat",
+   "track": "parallel track",
+   "category": "SAT+UNSAT",
+   "rank": 3,
+   "source": "https://web.archive.org/web/2018id_/https://baldur.iti.kit.edu/sat-competition-2016/satcomp16slides.pdf",
+   "note": "results page entry cmsat5_run_parallel"
+  },
+  {
+   "year": 2016,
+   "solver": "dimetheus",
+   "competition_name": "Dimetheus",
+   "track": "random track",
+   "category": "SAT",
+   "rank": 1,
+   "source": "https://web.archive.org/web/2018id_/https://baldur.iti.kit.edu/sat-competition-2016/satcomp16slides.pdf"
+  },
+  {
+   "year": 2016,
+   "solver": "csccsat",
+   "competition_name": "CSCCSat",
+   "track": "random track",
+   "category": "SAT",
+   "rank": 2,
+   "source": "https://web.archive.org/web/2018id_/https://baldur.iti.kit.edu/sat-competition-2016/satcomp16slides.pdf"
+  },
+  {
+   "year": 2016,
+   "solver": "dccalm",
+   "competition_name": "DCCAlm",
+   "track": "random track",
+   "category": "SAT",
+   "rank": 3,
+   "source": "https://web.archive.org/web/2018id_/https://baldur.iti.kit.edu/sat-competition-2016/satcomp16slides.pdf"
+  },
+  {
+   "year": 2017,
+   "solver": null,
+   "competition_name": "CaDiCaL Agile",
+   "track": "agile track",
+   "category": "SAT+UNSAT",
+   "rank": 1,
+   "source": "https://web.archive.org/web/2019id_/https://baldur.iti.kit.edu/sat-competition-2017/downloads/satcomp17slides.pdf",
+   "note": "agile-track binary cadical-agile (no proof output); the repository holds the main-track proof builds cadical-sc17-agile-proof / cadical-sc17-proof, so no mapping; the organizers list the team's other entries in the same medal cell: CaDiCaL NoProof"
+  },
+  {
+   "year": 2017,
+   "solver": "glu_vc",
+   "competition_name": "Glu_VC",
+   "track": "agile track",
+   "category": "SAT+UNSAT",
+   "rank": 2,
+   "source": "https://web.archive.org/web/2019id_/https://baldur.iti.kit.edu/sat-competition-2017/downloads/satcomp17slides.pdf"
+  },
+  {
+   "year": 2017,
+   "solver": "glucose-4.1",
+   "competition_name": "Glucose 4.1",
+   "track": "agile track",
+   "category": "SAT+UNSAT",
+   "rank": 3,
+   "source": "https://web.archive.org/web/2019id_/https://baldur.iti.kit.edu/sat-competition-2017/downloads/satcomp17slides.pdf"
+  },
+  {
+   "year": 2017,
+   "solver": null,
+   "competition_name": "AbcdSAT",
+   "track": "incremental track",
+   "category": "overall",
+   "rank": 1,
+   "source": "https://web.archive.org/web/2019id_/https://baldur.iti.kit.edu/sat-competition-2017/downloads/satcomp17slides.pdf",
+   "note": "IPASIR library entry; not in the repository set"
+  },
+  {
+   "year": 2017,
+   "solver": null,
+   "competition_name": "Glucose",
+   "track": "incremental track",
+   "category": "overall",
+   "rank": 2,
+   "source": "https://web.archive.org/web/2019id_/https://baldur.iti.kit.edu/sat-competition-2017/downloads/satcomp17slides.pdf",
+   "note": "tie for second place with Riss; IPASIR library entry, not in the repository set"
+  },
+  {
+   "year": 2017,
+   "solver": null,
+   "competition_name": "Riss",
+   "track": "incremental track",
+   "category": "overall",
+   "rank": 2,
+   "source": "https://web.archive.org/web/2019id_/https://baldur.iti.kit.edu/sat-competition-2017/downloads/satcomp17slides.pdf",
+   "note": "tie for second place with Glucose; IPASIR library entry, not in the repository set"
+  },
+  {
+   "year": 2017,
+   "solver": "maple_lcm_dist",
+   "competition_name": "Maple_LCM_Dist",
+   "track": "main track",
+   "category": "SAT+UNSAT",
+   "rank": 1,
+   "source": "https://web.archive.org/web/2019id_/https://baldur.iti.kit.edu/sat-competition-2017/downloads/satcomp17slides.pdf",
+   "note": "the organizers list the team's other entries in the same medal cell: Maple_LCM, MapleLRB_LCMoccRestart, MapleLRB_LCM"
+  },
+  {
+   "year": 2017,
+   "solver": "maplecomsps_lrb_vsids_2_drup",
+   "competition_name": "MapleCOMSPS_LRB_VSIDS_2",
+   "track": "main track",
+   "category": "SAT+UNSAT",
+   "rank": 2,
+   "source": "https://web.archive.org/web/2019id_/https://baldur.iti.kit.edu/sat-competition-2017/downloads/satcomp17slides.pdf",
+   "note": "the organizers list the team's other entries in the same medal cell: MapleCOMSPS_LRB_VSIDS"
+  },
+  {
+   "year": 2017,
+   "solver": "cominisatps_pulsar_drup",
+   "competition_name": "COMiniSatPS_Pulsar",
+   "track": "main track",
+   "category": "SAT+UNSAT",
+   "rank": 3,
+   "source": "https://web.archive.org/web/2019id_/https://baldur.iti.kit.edu/sat-competition-2017/downloads/satcomp17slides.pdf"
+  },
+  {
+   "year": 2017,
+   "solver": null,
+   "competition_name": "COMiniSatPS Pulsar",
+   "track": "no-limits track",
+   "category": "SAT+UNSAT",
+   "rank": 1,
+   "source": "https://web.archive.org/web/2019id_/https://baldur.iti.kit.edu/sat-competition-2017/downloads/satcomp17slides.pdf",
+   "note": "no-limits entry COMiniSatPS_Pulsar_no_drup; the repository holds the proof-producing main-track build, so no mapping"
+  },
+  {
+   "year": 2017,
+   "solver": null,
+   "competition_name": "MapleCOMSPS LRB VSIDS 2",
+   "track": "no-limits track",
+   "category": "SAT+UNSAT",
+   "rank": 2,
+   "source": "https://web.archive.org/web/2019id_/https://baldur.iti.kit.edu/sat-competition-2017/downloads/satcomp17slides.pdf",
+   "note": "no-limits entry MapleCOMSPS_LRB_VSIDS_2_no_drup; the repository holds the proof-producing main-track build, so no mapping; the organizers list the team's other entries in the same medal cell: MapleCOMSPS LRB VSIDS"
+  },
+  {
+   "year": 2017,
+   "solver": null,
+   "competition_name": "CaDiCaL NoProof",
+   "track": "no-limits track",
+   "category": "SAT+UNSAT",
+   "rank": 3,
+   "source": "https://web.archive.org/web/2019id_/https://baldur.iti.kit.edu/sat-competition-2017/downloads/satcomp17slides.pdf",
+   "note": "no-limits entry cadical-sc17-noproof; not in the repository set"
+  },
+  {
+   "year": 2017,
+   "solver": "syrup",
+   "competition_name": "Syrup24",
+   "track": "parallel track",
+   "category": "SAT+UNSAT",
+   "rank": 1,
+   "source": "https://web.archive.org/web/2019id_/https://baldur.iti.kit.edu/sat-competition-2017/downloads/satcomp17slides.pdf",
+   "note": "the organizers list the team's other entries in the same medal cell: Syrup48"
+  },
+  {
+   "year": 2017,
+   "solver": "plingeling",
+   "competition_name": "Plingeling",
+   "track": "parallel track",
+   "category": "SAT+UNSAT",
+   "rank": 2,
+   "source": "https://web.archive.org/web/2019id_/https://baldur.iti.kit.edu/sat-competition-2017/downloads/satcomp17slides.pdf"
+  },
+  {
+   "year": 2017,
+   "solver": "painless",
+   "competition_name": "Painless MapleCOMSPS",
+   "track": "parallel track",
+   "category": "SAT+UNSAT",
+   "rank": 3,
+   "source": "https://web.archive.org/web/2019id_/https://baldur.iti.kit.edu/sat-competition-2017/downloads/satcomp17slides.pdf"
+  },
+  {
+   "year": 2017,
+   "solver": "yalsat",
+   "competition_name": "YalSAT",
+   "track": "random track",
+   "category": "SAT",
+   "rank": 1,
+   "source": "https://web.archive.org/web/2019id_/https://baldur.iti.kit.edu/sat-competition-2017/downloads/satcomp17slides.pdf"
+  },
+  {
+   "year": 2017,
+   "solver": "tch_glucose3",
+   "competition_name": "tch_glucose3",
+   "track": "random track",
+   "category": "SAT",
+   "rank": 2,
+   "source": "https://web.archive.org/web/2019id_/https://baldur.iti.kit.edu/sat-competition-2017/downloads/satcomp17slides.pdf"
+  },
+  {
+   "year": 2017,
+   "solver": "score2sat",
+   "competition_name": "Score2SAT",
+   "track": "random track",
+   "category": "SAT",
+   "rank": 3,
+   "source": "https://web.archive.org/web/2019id_/https://baldur.iti.kit.edu/sat-competition-2017/downloads/satcomp17slides.pdf"
+  },
+  {
+   "year": 2018,
+   "solver": "ghackcomsps_drup",
+   "competition_name": "GHackCOMSPS",
+   "track": "glucose hack track",
+   "category": "SAT+UNSAT",
+   "rank": 1,
+   "source": "https://web.archive.org/web/2019id_/http://sat2018.forsyte.tuwien.ac.at/downloads/satcomp18slides.pdf"
+  },
+  {
+   "year": 2018,
+   "solver": "inidglucose",
+   "competition_name": "inIDGlucose",
+   "track": "glucose hack track",
+   "category": "SAT+UNSAT",
+   "rank": 2,
+   "source": "https://web.archive.org/web/2019id_/http://sat2018.forsyte.tuwien.ac.at/downloads/satcomp18slides.pdf"
+  },
+  {
+   "year": 2018,
+   "solver": "glu_mix",
+   "competition_name": "glu_mix",
+   "track": "glucose hack track",
+   "category": "SAT+UNSAT",
+   "rank": 3,
+   "source": "https://web.archive.org/web/2019id_/http://sat2018.forsyte.tuwien.ac.at/downloads/satcomp18slides.pdf"
+  },
+  {
+   "year": 2018,
+   "solver": "maple-lcm-distchronobt",
+   "competition_name": "Maple_LCM_Dist_ChronoBT",
+   "track": "main track",
+   "category": "SAT",
+   "rank": 1,
+   "source": "https://web.archive.org/web/2019id_/http://sat2018.forsyte.tuwien.ac.at/downloads/satcomp18slides.pdf"
+  },
+  {
+   "year": 2018,
+   "solver": "maple-lcm-scavel",
+   "competition_name": "Maple_LCM_Scavel",
+   "track": "main track",
+   "category": "SAT",
+   "rank": 2,
+   "source": "https://web.archive.org/web/2019id_/http://sat2018.forsyte.tuwien.ac.at/downloads/satcomp18slides.pdf",
+   "note": "results page entry Maple_LCM_Scavel_fix2 (organizer-fixed build)"
+  },
+  {
+   "year": 2018,
+   "solver": "cms55-main-all4fixed",
+   "competition_name": "CryptoMiniSat 5.5",
+   "track": "main track",
+   "category": "SAT",
+   "rank": 3,
+   "source": "https://web.archive.org/web/2019id_/http://sat2018.forsyte.tuwien.ac.at/downloads/satcomp18slides.pdf",
+   "note": "results page entry cms55-main-all4fixed (otherconf)"
+  },
+  {
+   "year": 2018,
+   "solver": "maple-lcm-distchronobt",
+   "competition_name": "Maple_LCM_Dist_ChronoBT",
+   "track": "main track",
+   "category": "SAT+UNSAT",
+   "rank": 1,
+   "source": "https://web.archive.org/web/2019id_/http://sat2018.forsyte.tuwien.ac.at/downloads/satcomp18slides.pdf"
+  },
+  {
+   "year": 2018,
+   "solver": "maple-lcm-scavel",
+   "competition_name": "Maple_LCM_Scavel",
+   "track": "main track",
+   "category": "SAT+UNSAT",
+   "rank": 2,
+   "source": "https://web.archive.org/web/2019id_/http://sat2018.forsyte.tuwien.ac.at/downloads/satcomp18slides.pdf",
+   "note": "results page entry Maple_LCM_Scavel_fix2 (organizer-fixed build)"
+  },
+  {
+   "year": 2018,
+   "solver": "maple-cm",
+   "competition_name": "Maple_CM",
+   "track": "main track",
+   "category": "SAT+UNSAT",
+   "rank": 3,
+   "source": "https://web.archive.org/web/2019id_/http://sat2018.forsyte.tuwien.ac.at/downloads/satcomp18slides.pdf"
+  },
+  {
+   "year": 2018,
+   "solver": "cadical",
+   "competition_name": "CaDiCaL",
+   "track": "main track",
+   "category": "UNSAT",
+   "rank": 1,
+   "source": "https://web.archive.org/web/2019id_/http://sat2018.forsyte.tuwien.ac.at/downloads/satcomp18slides.pdf"
+  },
+  {
+   "year": 2018,
+   "solver": "maple_lcm_m1",
+   "competition_name": "Maple_LCM_M1",
+   "track": "main track",
+   "category": "UNSAT",
+   "rank": 2,
+   "source": "https://web.archive.org/web/2019id_/http://sat2018.forsyte.tuwien.ac.at/downloads/satcomp18slides.pdf"
+  },
+  {
+   "year": 2018,
+   "solver": "maple-cm",
+   "competition_name": "Maple_CM",
+   "track": "main track",
+   "category": "UNSAT",
+   "rank": 3,
+   "source": "https://web.archive.org/web/2019id_/http://sat2018.forsyte.tuwien.ac.at/downloads/satcomp18slides.pdf"
+  },
+  {
+   "year": 2018,
+   "solver": null,
+   "competition_name": "ReasonLS",
+   "track": "no-limits track",
+   "category": "SAT+UNSAT",
+   "rank": 1,
+   "source": "https://web.archive.org/web/2019id_/http://sat2018.forsyte.tuwien.ac.at/downloads/satcomp18slides.pdf",
+   "note": "no-limits track: top-3 announced by the organizers but no awards given; not in the repository set"
+  },
+  {
+   "year": 2018,
+   "solver": "maple-cm",
+   "competition_name": "Maple_CM",
+   "track": "no-limits track",
+   "category": "SAT+UNSAT",
+   "rank": 2,
+   "source": "https://web.archive.org/web/2019id_/http://sat2018.forsyte.tuwien.ac.at/downloads/satcomp18slides.pdf",
+   "note": "no-limits track: top-3 announced by the organizers but no awards given; same Maple_CM default build as in the main track"
+  },
+  {
+   "year": 2018,
+   "solver": null,
+   "competition_name": "CryptoMiniSat 5.5 V20",
+   "track": "no-limits track",
+   "category": "SAT+UNSAT",
+   "rank": 3,
+   "source": "https://web.archive.org/web/2019id_/http://sat2018.forsyte.tuwien.ac.at/downloads/satcomp18slides.pdf",
+   "note": "no-limits track: top-3 announced by the organizers but no awards given; entry cms55-nolimits-otherconf-v20, not in the repository set"
+  },
+  {
+   "year": 2018,
+   "solver": "plingeling",
+   "competition_name": "Plingeling",
+   "track": "parallel track",
+   "category": "SAT",
+   "rank": 1,
+   "source": "https://web.archive.org/web/2019id_/http://sat2018.forsyte.tuwien.ac.at/downloads/satcomp18slides.pdf"
+  },
+  {
+   "year": 2018,
+   "solver": "painless-mcomsps",
+   "competition_name": "Painless",
+   "track": "parallel track",
+   "category": "SAT",
+   "rank": 2,
+   "source": "https://web.archive.org/web/2019id_/http://sat2018.forsyte.tuwien.ac.at/downloads/satcomp18slides.pdf"
+  },
+  {
+   "year": 2018,
+   "solver": "cmsat55_run_parallel",
+   "competition_name": "CryptoMiniSat 5.5",
+   "track": "parallel track",
+   "category": "SAT",
+   "rank": 3,
+   "source": "https://web.archive.org/web/2019id_/http://sat2018.forsyte.tuwien.ac.at/downloads/satcomp18slides.pdf",
+   "note": "results page entry cms55-parallel (12core)"
+  },
+  {
+   "year": 2018,
+   "solver": "painless-mcomsps",
+   "competition_name": "Painless",
+   "track": "parallel track",
+   "category": "SAT+UNSAT",
+   "rank": 1,
+   "source": "https://web.archive.org/web/2019id_/http://sat2018.forsyte.tuwien.ac.at/downloads/satcomp18slides.pdf"
+  },
+  {
+   "year": 2018,
+   "solver": "plingeling",
+   "competition_name": "Plingeling",
+   "track": "parallel track",
+   "category": "SAT+UNSAT",
+   "rank": 2,
+   "source": "https://web.archive.org/web/2019id_/http://sat2018.forsyte.tuwien.ac.at/downloads/satcomp18slides.pdf"
+  },
+  {
+   "year": 2018,
+   "solver": "abcd_para18",
+   "competition_name": "abcdSAT",
+   "track": "parallel track",
+   "category": "SAT+UNSAT",
+   "rank": 3,
+   "source": "https://web.archive.org/web/2019id_/http://sat2018.forsyte.tuwien.ac.at/downloads/satcomp18slides.pdf"
+  },
+  {
+   "year": 2018,
+   "solver": "painless-mcomsps",
+   "competition_name": "Painless",
+   "track": "parallel track",
+   "category": "UNSAT",
+   "rank": 1,
+   "source": "https://web.archive.org/web/2019id_/http://sat2018.forsyte.tuwien.ac.at/downloads/satcomp18slides.pdf"
+  },
+  {
+   "year": 2018,
+   "solver": "plingeling",
+   "competition_name": "Plingeling",
+   "track": "parallel track",
+   "category": "UNSAT",
+   "rank": 2,
+   "source": "https://web.archive.org/web/2019id_/http://sat2018.forsyte.tuwien.ac.at/downloads/satcomp18slides.pdf"
+  },
+  {
+   "year": 2018,
+   "solver": "abcd_para18",
+   "competition_name": "abcdSAT",
+   "track": "parallel track",
+   "category": "UNSAT",
+   "rank": 3,
+   "source": "https://web.archive.org/web/2019id_/http://sat2018.forsyte.tuwien.ac.at/downloads/satcomp18slides.pdf"
+  },
+  {
+   "year": 2018,
+   "solver": "sparrow2riss-2018",
+   "competition_name": "Sparrow2Riss",
+   "track": "random track",
+   "category": "SAT",
+   "rank": 1,
+   "source": "https://web.archive.org/web/2019id_/http://sat2018.forsyte.tuwien.ac.at/downloads/satcomp18slides.pdf",
+   "note": "random-track run used the NOLIMIT configuration of Sparrow2Riss-2018"
+  },
+  {
+   "year": 2018,
+   "solver": "gluhack",
+   "competition_name": "gluHack",
+   "track": "random track",
+   "category": "SAT",
+   "rank": 2,
+   "source": "https://web.archive.org/web/2019id_/http://sat2018.forsyte.tuwien.ac.at/downloads/satcomp18slides.pdf"
+  },
+  {
+   "year": 2018,
+   "solver": "glucose-3.0_padc_10",
+   "competition_name": "glucose-3.0_PADC_10",
+   "track": "random track",
+   "category": "SAT",
+   "rank": 3,
+   "source": "https://web.archive.org/web/2019id_/http://sat2018.forsyte.tuwien.ac.at/downloads/satcomp18slides.pdf",
+   "note": "random-track run used the NoDRUP build of glucose-3.0_PADC_10"
+  },
+  {
+   "year": 2019,
+   "solver": "cadical",
+   "competition_name": "CaDiCaL (sat)",
+   "track": "main track",
+   "category": "SAT",
+   "rank": 1,
+   "source": "http://sat-race-2019.ciirc.cvut.cz/downloads/satrace19slides.pdf",
+   "note": "the 'sat' configuration of the single CaDiCaL submission; the organizers list the team's other entries in the same medal cell: CaDiCaL (default)"
+  },
+  {
+   "year": 2019,
+   "solver": "maple-lcmdistchronobt-dl-v2.1",
+   "competition_name": "MapleLCMDistChronoBT-DL-v2.1",
+   "track": "main track",
+   "category": "SAT",
+   "rank": 2,
+   "source": "http://sat-race-2019.ciirc.cvut.cz/downloads/satrace19slides.pdf",
+   "note": "the organizers list the team's other entries in the same medal cell: MapleLCMDistChronoBT-DL-v2.2, MapleLCMDiscChronoBT-DL-v3"
+  },
+  {
+   "year": 2019,
+   "solver": "smallsat",
+   "competition_name": "smallsat",
+   "track": "main track",
+   "category": "SAT",
+   "rank": 3,
+   "source": "http://sat-race-2019.ciirc.cvut.cz/downloads/satrace19slides.pdf"
+  },
+  {
+   "year": 2019,
+   "solver": "maple-lcmdiscchronobt-dl-v3",
+   "competition_name": "MapleLCMDiscChronoBT-DL-v3",
+   "track": "main track",
+   "category": "SAT+UNSAT",
+   "rank": 1,
+   "source": "http://sat-race-2019.ciirc.cvut.cz/downloads/satrace19slides.pdf",
+   "note": "slides spell it 'MapleLCMDistChronoBT-DL v3'; the results page entry is MapleLCMDiscChronoBT-DL-v3; the organizers list the team's other entries in the same medal cell: MapleLCMDistChronoBT-DL-v2.2, MapleLCMDistChronoBT-DL-v2.1"
+  },
+  {
+   "year": 2019,
+   "solver": "cadical",
+   "competition_name": "CaDiCaL (default)",
+   "track": "main track",
+   "category": "SAT+UNSAT",
+   "rank": 2,
+   "source": "http://sat-race-2019.ciirc.cvut.cz/downloads/satrace19slides.pdf"
+  },
+  {
+   "year": 2019,
+   "solver": "maple-lcmdistcbtcorefirst",
+   "competition_name": "MapleLCMdistCBTcoreFirst",
+   "track": "main track",
+   "category": "SAT+UNSAT",
+   "rank": 3,
+   "source": "http://sat-race-2019.ciirc.cvut.cz/downloads/satrace19slides.pdf"
+  },
+  {
+   "year": 2019,
+   "solver": "maple-lcmdiscchronobt-dl-v3",
+   "competition_name": "MapleLCMDiscChronoBT-DL-v3",
+   "track": "main track",
+   "category": "UNSAT",
+   "rank": 1,
+   "source": "http://sat-race-2019.ciirc.cvut.cz/downloads/satrace19slides.pdf"
+  },
+  {
+   "year": 2019,
+   "solver": "expmaple_cm_gcbumponlylrb",
+   "competition_name": "expMaple_CM_GCBumpOnlyLRB",
+   "track": "main track",
+   "category": "UNSAT",
+   "rank": 2,
+   "source": "http://sat-race-2019.ciirc.cvut.cz/downloads/satrace19slides.pdf"
+  },
+  {
+   "year": 2019,
+   "solver": "psids_maplelcmdistchronobt",
+   "competition_name": "PSIDS_MapleLCMDistChronoBT",
+   "track": "main track",
+   "category": "UNSAT",
+   "rank": 3,
+   "source": "http://sat-race-2019.ciirc.cvut.cz/downloads/satrace19slides.pdf"
+  },
+  {
+   "year": 2020,
+   "solver": null,
+   "competition_name": "Cryptominisat5",
+   "track": "incremental track",
+   "category": "overall",
+   "rank": 1,
+   "source": "https://satcompetition.github.io/2020/downloads/satcomp20slides.pdf",
+   "note": "IPASIR library track winner; not in the repository set"
+  },
+  {
+   "year": 2020,
+   "solver": "relaxed_lcmdcbdl_newtech",
+   "competition_name": "Relaxed_LCMDCBDL_newTech",
+   "track": "main track",
+   "category": "SAT",
+   "rank": 1,
+   "source": "https://satcompetition.github.io/2020/downloads/satcomp20slides.pdf"
+  },
+  {
+   "year": 2020,
+   "solver": "kissat-sc2020-sat",
+   "competition_name": "Kissat-sc2020-sat",
+   "track": "main track",
+   "category": "SAT",
+   "rank": 2,
+   "source": "https://satcompetition.github.io/2020/downloads/satcomp20slides.pdf"
+  },
+  {
+   "year": 2020,
+   "solver": "cryptominisat-ccnr-lsids",
+   "competition_name": "cryptominisat-ccnr-lsids",
+   "track": "main track",
+   "category": "SAT",
+   "rank": 3,
+   "source": "https://satcompetition.github.io/2020/downloads/satcomp20slides.pdf",
+   "note": "the organizers list the team's other entries in the same medal cell: cryptominisat-ccnr"
+  },
+  {
+   "year": 2020,
+   "solver": "kissat-sc2020-sat",
+   "competition_name": "Kissat-sc2020-sat",
+   "track": "main track",
+   "category": "SAT+UNSAT",
+   "rank": 1,
+   "source": "https://satcompetition.github.io/2020/downloads/satcomp20slides.pdf",
+   "note": "the organizers list the team's other entries in the same medal cell: Kissat-sc2020-default"
+  },
+  {
+   "year": 2020,
+   "solver": "relaxed_lcmdcbdl_newtech",
+   "competition_name": "Relaxed_LCMDCBDL_newTech",
+   "track": "main track",
+   "category": "SAT+UNSAT",
+   "rank": 2,
+   "source": "https://satcompetition.github.io/2020/downloads/satcomp20slides.pdf"
+  },
+  {
+   "year": 2020,
+   "solver": "cryptominisat-ccnr-lsids",
+   "competition_name": "cryptominisat-ccnr-lsids",
+   "track": "main track",
+   "category": "SAT+UNSAT",
+   "rank": 3,
+   "source": "https://satcompetition.github.io/2020/downloads/satcomp20slides.pdf",
+   "note": "the organizers list the team's other entries in the same medal cell: cryptominisat-ccnr"
+  },
+  {
+   "year": 2020,
+   "solver": "kissat-sc2020-unsat",
+   "competition_name": "Kissat-sc2020-unsat",
+   "track": "main track",
+   "category": "UNSAT",
+   "rank": 1,
+   "source": "https://satcompetition.github.io/2020/downloads/satcomp20slides.pdf",
+   "note": "the organizers list the team's other entries in the same medal cell: Kissat-sc2020-default, Kissat-sc2020-sat"
+  },
+  {
+   "year": 2020,
+   "solver": "cadical-trail",
+   "competition_name": "cadical-trail",
+   "track": "main track",
+   "category": "UNSAT",
+   "rank": 2,
+   "source": "https://satcompetition.github.io/2020/downloads/satcomp20slides.pdf"
+  },
+  {
+   "year": 2020,
+   "solver": "maplelcmdistchronobt-f2trc-s",
+   "competition_name": "MapleLCMDistChronoBT-f2trc-s",
+   "track": "main track",
+   "category": "UNSAT",
+   "rank": 3,
+   "source": "https://satcompetition.github.io/2020/downloads/satcomp20slides.pdf"
+  },
+  {
+   "year": 2020,
+   "solver": "cadical-alluip-trail",
+   "competition_name": "cadical-alluip-trail",
+   "track": "planning track",
+   "category": "SAT+UNSAT",
+   "rank": 1,
+   "source": "https://satcompetition.github.io/2020/downloads/satcomp20slides.pdf",
+   "note": "the organizers list the team's other entries in the same medal cell: cadical-alluip"
+  },
+  {
+   "year": 2020,
+   "solver": "cryptominisat-ccnr-lsids",
+   "competition_name": "cryptominisat-ccnr-lsids",
+   "track": "planning track",
+   "category": "SAT+UNSAT",
+   "rank": 2,
+   "source": "https://satcompetition.github.io/2020/downloads/satcomp20slides.pdf",
+   "note": "the organizers list the team's other entries in the same medal cell: cryptominisat-ccnr"
+  },
+  {
+   "year": 2020,
+   "solver": "kissat-sc2020-unsat",
+   "competition_name": "Kissat-sc2020-unsat",
+   "track": "planning track",
+   "category": "SAT+UNSAT",
+   "rank": 3,
+   "source": "https://satcompetition.github.io/2020/downloads/satcomp20slides.pdf"
+  },
+  {
+   "year": 2021,
+   "solver": null,
+   "competition_name": "CaDiCaL_watch_sat",
+   "track": "cadical hack track",
+   "category": "SAT+UNSAT",
+   "rank": 1,
+   "source": "https://satcompetition.github.io/2021/slides/ISC2021-fixed.pdf",
+   "note": "winner of the CaDiCaL hack track; not in the repository set"
+  },
+  {
+   "year": 2021,
+   "solver": "slime",
+   "competition_name": "SLIME_no_hess_no_rnd",
+   "track": "crypto track",
+   "category": "SAT+UNSAT",
+   "rank": 1,
+   "source": "https://satcompetition.github.io/2021/slides/ISC2021-fixed.pdf",
+   "note": "configuration 'no_hess_no_rnd' of the single SLIME submission (application track: cryptography)"
+  },
+  {
+   "year": 2021,
+   "solver": "relaxed_lcmdcmdl_scavel01",
+   "competition_name": "Relaxed_LCMDCBDL_SCAVEL01",
+   "track": "crypto track",
+   "category": "SAT+UNSAT",
+   "rank": 2,
+   "source": "https://satcompetition.github.io/2021/slides/ISC2021-fixed.pdf",
+   "note": "application track: cryptography"
+  },
+  {
+   "year": 2021,
+   "solver": "relaxed_lcftp_v2",
+   "competition_name": "Relaxed_LCFTP_V2",
+   "track": "crypto track",
+   "category": "SAT+UNSAT",
+   "rank": 3,
+   "source": "https://satcompetition.github.io/2021/slides/ISC2021-fixed.pdf",
+   "note": "application track: cryptography"
+  },
+  {
+   "year": 2021,
+   "solver": "cadical-rp",
+   "competition_name": "CaDiCaL_rp",
+   "track": "crypto track",
+   "category": "best CaDiCaL hack",
+   "rank": 1,
+   "source": "https://satcompetition.github.io/2021/slides/ISC2021-fixed.pdf",
+   "note": "honorable mention: best CaDiCaL hack on the crypto track"
+  },
+  {
+   "year": 2021,
+   "solver": "kissat-mab",
+   "competition_name": "Kissat_MAB",
+   "track": "main track",
+   "category": "SAT",
+   "rank": 1,
+   "source": "https://satcompetition.github.io/2021/slides/ISC2021-fixed.pdf"
+  },
+  {
+   "year": 2021,
+   "solver": "lstech_maple",
+   "competition_name": "lstech_maple",
+   "track": "main track",
+   "category": "SAT",
+   "rank": 2,
+   "source": "https://satcompetition.github.io/2021/slides/ISC2021-fixed.pdf"
+  },
+  {
+   "year": 2021,
+   "solver": "kissat_gb",
+   "competition_name": "kissat_gb",
+   "track": "main track",
+   "category": "SAT",
+   "rank": 3,
+   "source": "https://satcompetition.github.io/2021/slides/ISC2021-fixed.pdf"
+  },
+  {
+   "year": 2021,
+   "solver": "kissat-mab",
+   "competition_name": "Kissat_MAB",
+   "track": "main track",
+   "category": "SAT+UNSAT",
+   "rank": 1,
+   "source": "https://satcompetition.github.io/2021/slides/ISC2021-fixed.pdf"
+  },
+  {
+   "year": 2021,
+   "solver": "kissat-sc2021",
+   "competition_name": "Kissat_sc2021_sweep",
+   "track": "main track",
+   "category": "SAT+UNSAT",
+   "rank": 2,
+   "source": "https://satcompetition.github.io/2021/slides/ISC2021-fixed.pdf",
+   "note": "configuration 'sweep' of the single kissat-sc2021 submission"
+  },
+  {
+   "year": 2021,
+   "solver": "kissat_gb",
+   "competition_name": "kissat_gb",
+   "track": "main track",
+   "category": "SAT+UNSAT",
+   "rank": 3,
+   "source": "https://satcompetition.github.io/2021/slides/ISC2021-fixed.pdf"
+  },
+  {
+   "year": 2021,
+   "solver": "hkis",
+   "competition_name": "hKis_unsat",
+   "track": "main track",
+   "category": "UNSAT",
+   "rank": 1,
+   "source": "https://satcompetition.github.io/2021/slides/ISC2021-fixed.pdf",
+   "note": "configuration 'unsat' of the single hKiS submission"
+  },
+  {
+   "year": 2021,
+   "solver": "kissat_bonus",
+   "competition_name": "kissat_bonus",
+   "track": "main track",
+   "category": "UNSAT",
+   "rank": 2,
+   "source": "https://satcompetition.github.io/2021/slides/ISC2021-fixed.pdf"
+  },
+  {
+   "year": 2021,
+   "solver": "kissat-sc2021",
+   "competition_name": "Kissat_sc2021_sweep",
+   "track": "main track",
+   "category": "UNSAT",
+   "rank": 3,
+   "source": "https://satcompetition.github.io/2021/slides/ISC2021-fixed.pdf",
+   "note": "configuration 'sweep' of the single kissat-sc2021 submission"
+  },
+  {
+   "year": 2021,
+   "solver": "cadical-pripro",
+   "competition_name": "CaDiCaL_PriPro",
+   "track": "main track",
+   "category": "special innovation prize",
+   "rank": 1,
+   "source": "https://satcompetition.github.io/2021/slides/ISC2021-fixed.pdf",
+   "note": "special innovation prize (best contribution to the smallest winning k-portfolio)"
+  },
   {
    "year": 2022,
    "solver": "kissat-sc2022-bulky",

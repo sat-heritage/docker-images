@@ -103,7 +103,8 @@ def collect(repo: Path) -> list[dict]:
     awards = load_json(awards_file).get("awards", []) if awards_file.is_file() else []
     awards_by_image = {}
     for a in awards:
-        awards_by_image.setdefault(f"{a['solver']}:{a['year']}", []).append(a)
+        if a.get("solver"):
+            awards_by_image.setdefault(f"{a['solver']}:{a['year']}", []).append(a)
     solvers = []
     for entry_set in index:
         set_dir = repo / str(entry_set)
@@ -181,6 +182,7 @@ CSS = """
 .podium .yr h3{margin:0 0 6px;font-size:15px}
 .podium .yr div{font-size:13px;margin:3px 0}
 .podium .yr small{color:var(--muted)}
+.podium details{margin-top:6px} .podium summary{cursor:pointer;color:var(--accent);font-size:13px}
 :root { --bg:#ffffff; --bg2:#f8f9fb; --card:#ffffff; --ink:#0b0b0b; --muted:#5e6572; --line:#e5e7eb; --ok:#1a7f37; --warn:#9a6700; --fail:#cf222e; --none:#8c959f; --accent:#0b57d0; --hf:#ffd21e; --hfdark:#f59e0b; --cap:#0550ae; --capbg:#e8f1ff; --series-1:#2a78d6; --series-2:#eda100; --grid:#e5e7eb; --warnbg:#fff8dc; --l0:#86b6ef; --l1:#5598e7; --l2:#2a78d6; --l3:#1c5cab; --l4:#104281; --l-none:#d4d6da; }
 @media (prefers-color-scheme: dark) { :root { --bg:#0b0f19; --bg2:#111827; --card:#161b26; --ink:#f3f4f6; --muted:#9aa3b2; --line:#2a3140; --ok:#3fb950; --warn:#d29922; --fail:#f85149; --none:#6e7681; --accent:#7ab4ff; --cap:#9ecbff; --capbg:#12305c; --series-1:#3987e5; --series-2:#c98500; --grid:#2a3140; --warnbg:#3a2f0b; --l0:#9ec5f4; --l1:#6da7ec; --l2:#3987e5; --l3:#256abf; --l4:#184f95; --l-none:#3a4150; } }
 * { box-sizing: border-box; }
@@ -463,13 +465,22 @@ def podium_section(solvers: list[dict]) -> str:
             by_year.setdefault(a["year"], []).append((a, s))
     if not by_year:
         return ""
+    def line(a, s):
+        return (f'<div><span class="tag award r{min(a["rank"], 3)}">{esc(award_label(a).split(" · ")[0])}</span> '
+                f'<a href="{s["set"]}/{s["key"]}.html">{esc(s["name"])}</a> <small>{esc(a["track"])}'
+                f'{("" if a.get("category", "overall") == "overall" else ", " + esc(a["category"]))}</small></div>')
     blocks = []
     for year in sorted(by_year, reverse=True):
-        rows = sorted(by_year[year], key=lambda t: (t[0]["track"] != "main track", t[0]["track"], t[0].get("category", "overall") != "overall", t[0].get("category", ""), t[0]["rank"]))
-        lines = "".join(f'<div><span class="tag award r{min(a["rank"], 3)}">{esc(award_label(a).split(" · ")[0])}</span> <a href="{s["set"]}/{s["key"]}.html">{esc(s["name"])}</a> <small>{esc(a["track"])}{("" if a.get("category", "overall") == "overall" else ", " + esc(a["category"]))}</small></div>' for a, s in rows)
-        blocks.append(f'<div class="yr"><h3>{year}</h3>{lines}</div>')
+        rows = sorted(by_year[year], key=lambda t: (t[0]["track"] not in ("main track", "application track", "industrial track"), t[0]["track"], t[0].get("category", "overall") not in ("overall", "SAT+UNSAT"), t[0].get("category", ""), t[0]["rank"]))
+        winners = [(a, s) for a, s in rows if a["rank"] == 1]
+        rest = [(a, s) for a, s in rows if a["rank"] != 1]
+        tracks = len({a["track"] for a, _ in rows})
+        body = "".join(line(a, s) for a, s in winners)
+        if rest:
+            body += f'<details><summary>{len(rest)} more podium place{"s" if len(rest) > 1 else ""}</summary>{"".join(line(a, s) for a, s in rest)}</details>'
+        blocks.append(f'<div class="yr"><h3>{year} <small>{tracks} track{"s" if tracks > 1 else ""}</small></h3>{body}</div>')
     first = min(by_year)
-    return (f'<div class="fig" style="margin-top:14px"><h2>Award-winning solvers</h2><div class="sub">Podiums of the sequential tracks as announced by the competition organizers, {first} to {max(by_year)} for now; earlier years will be added. Ties share a rank.</div>'
+    return (f'<div class="fig" style="margin-top:14px"><h2>Award-winning solvers</h2><div class="sub">Winners of every track and category as announced by the competition organizers, {first} to {max(by_year)}, with the rest of each podium folded. Ties share a rank; only podiums whose solver has an image here are listed, see <a href="{REPO_URL}/blob/webpage/data/awards.json">data/awards.json</a> for the sources.</div>'
             f'<div class="podium">{"".join(blocks)}</div></div>')
 
 
