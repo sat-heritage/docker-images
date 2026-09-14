@@ -69,7 +69,7 @@ GH_TOKEN=... python3 tools/archive_competition_solvers.py 2022 \
   --upload
 ```
 
-On subsequent runs, an identical existing asset is skipped. A differing asset
+Add `--prerelease` to create the release as a pre-release. On subsequent runs, an identical existing asset is skipped. A differing asset
 is never overwritten unless `--replace` is also given. Use repeated `--archive`
 options for multiple official track archives, repeated `--solver` options to
 select several entries, and `--rename SOURCE=ASSET` when a filesystem-friendly

@@ -17,6 +17,7 @@
       "comment": { "type": "string" },
       "comments": { "type": "string" },
       "gz": { "type": "boolean" },
+      "test_timeout": { "type": "integer", "minimum": 1 },
       "tracks": {
         "type": "array",
         "items": { "type": "string", "minLength": 1 },
