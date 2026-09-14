@@ -1031,9 +1031,22 @@ def test_images_in_workspace(args, tests_dir):
         info(f"Testing SAT with {sat_path}")
         info(f"Testing UNSAT with {unsat_path}")
 
+    status_file = getattr(args, "status_file", None)
+    if status_file:
+        status_path = Path(status_file)
+        status_path.parent.mkdir(parents=True, exist_ok=True)
+        status_path.write_text("", encoding="utf-8")
+
     def report(status, image, test_name, detail=""):
         suffix = f" ({detail})" if detail else ""
         print(f"{status:<4} {image.name} {test_name}{suffix}", flush=True)
+        if status_file:
+            event = {"image": image.name, "check": test_name, "status": status}
+            if detail:
+                event["detail"] = str(detail).replace("\n", " ").strip()
+            with open(status_file, "a", encoding="utf-8") as fp:
+                json.dump(event, fp, sort_keys=True)
+                fp.write("\n")
 
     def dump_output(image, test_name, output):
         # In terse mode the solver output is captured; keep it on stderr so
@@ -1434,6 +1447,8 @@ def main(redirected=False):
         p.add_argument("--quiet", "-q", action="store_true")
         p.add_argument("--terse", action="store_true",
                 help="Print one concise status line for each validation stage")
+        p.add_argument("--status-file",
+                help="Append one JSON object per validation check to this file")
         p.add_argument("--file", "-f", default="aim-200-1_6-yes1-1.cnf",
                 help=".cnf test file (should also exists with .gz)")
         p.add_argument("--unsat-file", default="php-5-4.cnf",
