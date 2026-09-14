@@ -49,6 +49,8 @@ VERDICT_LABEL = {
     "unknown": ("Not run yet", "none"),
 }
 # ordinal ladder for the per-year chart, lowest rung first (validated 5-step blue ramp)
+# Ladder colors (--l0..--l4): violet, orange, blue, amber, aqua; an ordered multi-hue set validated
+# for colorblind separation and lightness in both themes (adjacent pairs, with the 2px gaps and the legend).
 LADDER = ["source-unavailable", "source-available", "built", "runs", "verified"]
 LADDER_LABEL = {"source-unavailable": "source unavailable", "source-available": "source available",
                 "built": "compiles", "runs": "runs", "verified": "verified"}
@@ -183,8 +185,8 @@ CSS = """
 .podium .yr div{font-size:13px;margin:3px 0}
 .podium .yr small{color:var(--muted)}
 .podium details{margin-top:6px} .podium summary{cursor:pointer;color:var(--accent);font-size:13px}
-:root { --bg:#ffffff; --bg2:#f8f9fb; --card:#ffffff; --ink:#0b0b0b; --muted:#5e6572; --line:#e5e7eb; --ok:#1a7f37; --warn:#9a6700; --fail:#cf222e; --none:#8c959f; --accent:#0b57d0; --hf:#ffd21e; --hfdark:#f59e0b; --cap:#0550ae; --capbg:#e8f1ff; --series-1:#2a78d6; --series-2:#eda100; --grid:#e5e7eb; --warnbg:#fff8dc; --l0:#86b6ef; --l1:#5598e7; --l2:#2a78d6; --l3:#1c5cab; --l4:#104281; --l-none:#d4d6da; }
-@media (prefers-color-scheme: dark) { :root { --bg:#0b0f19; --bg2:#111827; --card:#161b26; --ink:#f3f4f6; --muted:#9aa3b2; --line:#2a3140; --ok:#3fb950; --warn:#d29922; --fail:#f85149; --none:#6e7681; --accent:#7ab4ff; --cap:#9ecbff; --capbg:#12305c; --series-1:#3987e5; --series-2:#c98500; --grid:#2a3140; --warnbg:#3a2f0b; --l0:#9ec5f4; --l1:#6da7ec; --l2:#3987e5; --l3:#256abf; --l4:#184f95; --l-none:#3a4150; } }
+:root { --bg:#ffffff; --bg2:#f8f9fb; --card:#ffffff; --ink:#0b0b0b; --muted:#5e6572; --line:#e5e7eb; --ok:#1a7f37; --warn:#9a6700; --fail:#cf222e; --none:#8c959f; --accent:#0b57d0; --hf:#ffd21e; --hfdark:#f59e0b; --cap:#0550ae; --capbg:#e8f1ff; --series-1:#2a78d6; --series-2:#eda100; --grid:#e5e7eb; --warnbg:#fff8dc; --l0:#4a3aa7; --l1:#eb6834; --l2:#2a78d6; --l3:#eda100; --l4:#1baf7a; --l-none:#d4d6da; }
+@media (prefers-color-scheme: dark) { :root { --bg:#0b0f19; --bg2:#111827; --card:#161b26; --ink:#f3f4f6; --muted:#9aa3b2; --line:#2a3140; --ok:#3fb950; --warn:#d29922; --fail:#f85149; --none:#6e7681; --accent:#7ab4ff; --cap:#9ecbff; --capbg:#12305c; --series-1:#3987e5; --series-2:#c98500; --grid:#2a3140; --warnbg:#3a2f0b; --l0:#9085e9; --l1:#d95926; --l2:#3987e5; --l3:#c98500; --l4:#199e70; --l-none:#3a4150; } }
 * { box-sizing: border-box; }
 body { margin:0; font: 15px/1.5 -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color:var(--ink); background:var(--bg); }
 a { color:var(--accent); text-decoration:none; } a:hover { text-decoration:underline; } a.card:hover { text-decoration:none; border-color:var(--accent); }
