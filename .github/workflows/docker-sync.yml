@@ -3,8 +3,17 @@ name: docker-sync
 on:
   repository_dispatch:
       types: [sync]
+  workflow_dispatch:
+      inputs:
+          count:
+              description: "Maximum number of missing images to build and push"
+              default: "40"
+              required: false
   schedule:
     - cron: "45 23 * * */2"
+
+env:
+    COUNT: ${{ github.event.inputs.count || '24' }}
 
 jobs:
     docker-sync:
@@ -27,7 +36,7 @@ jobs:
             - name: diff
               run: |
                 wc -l list.*
-                python -c "new=set(open('list.local').read().splitlines());old=set(open('list.docker').read().splitlines());print('\n'.join(list(new.difference(old))))" |shuf|head -n 24 > list.diff
+                python -c "new=set(open('list.local').read().splitlines());old=set(open('list.docker').read().splitlines());print('\n'.join(list(new.difference(old))))" |shuf|head -n "${COUNT}" > list.diff
                 cat list.diff
                 echo HAS_CHANGES=`test -s list.diff && echo 1 || echo 0` >> $GITHUB_ENV
             - name:  build
