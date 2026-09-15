@@ -573,6 +573,30 @@ def svg_hbars(rows: list[tuple[str, int]], label: str) -> str:
     return "".join(out)
 
 
+def usage_figures(solvers: list[dict]) -> str:
+    """Two bar charts: most pulled Docker Hub repositories and most downloaded source archives."""
+    if not STATS_GENERATED:
+        return ""
+    by_key = {}
+    for s in solvers:
+        if s["pulls"] is not None:
+            by_key[s["key"]] = s["pulls"]
+    top_pulled = sorted(by_key.items(), key=lambda kv: (-kv[1], kv[0]))[:10]
+    by_asset = {}
+    for s in solvers:
+        if s["downloads"] is not None and s["download_url"]:
+            asset = urllib.parse.unquote(s["download_url"].rsplit("/", 1)[-1])
+            by_asset.setdefault(asset, (s["downloads"], f'{s["name"]} ({s["set"]})'))
+    top_dl = sorted(((label, count) for count, label in by_asset.values()), key=lambda t: (-t[1], t[0]))[:10]
+    if not top_pulled and not top_dl:
+        return ""
+    note = " Our own builds and verification runs are counted."
+    left = (f'<div class="fig"><h2>Most pulled solvers</h2><div class="sub">Docker Hub pulls per repository, all years of a solver together, read on {esc(STATS_GENERATED[:10])}.'
+            f'{"" if STATS_COMPLETE else " Only the first 100 repositories could be read."}{note} <a href="leaderboards.html#pulled">Full list →</a></div>{svg_hbars(top_pulled, "Most pulled solvers")}</div>') if top_pulled else ""
+    right = (f'<div class="fig"><h2>Most downloaded sources</h2><div class="sub">Downloads of the source archives from the GitHub releases, read on {esc(STATS_GENERATED[:10])}.{note}</div>{svg_hbars(top_dl, "Most downloaded sources")}</div>') if top_dl else ""
+    return f'<div class="two" style="margin-top:14px">{left}{right}</div>'
+
+
 def podium_section(solvers: list[dict]) -> str:
     """Award-winning solvers per year, from data/awards.json (sequential tracks only)."""
     by_year = {}
@@ -660,6 +684,7 @@ docker run --rm -v $PWD:/data satex/kissat-sc2024:2024 instance.cnf proof.out</p
 <div class="fig"><h2>Solver families</h2><div class="sub">Detected from the solver name and its executable; {other_count} images belong to no listed family. Work in progress: a misplaced or missing family is one pull request away.</div>{svg_hbars(top_families, "Solver families")}</div>
 </div>
 {podium_section(solvers)}
+{usage_figures(solvers)}
 <div class="fig" style="margin-top:14px"><h2>Did you know?</h2><div class="facts">{''.join(f'<div class="fact"><b>{esc(a)}</b><span>{esc(b)}</span></div>' for a, b in facts if a)}</div></div>
 """
     return page("Overview", body, 0, "overview")
