@@ -984,7 +984,7 @@
   },
   {
    "year": 2011,
-   "solver": "minisat_hack:_contrasat",
+   "solver": "minisat-hack-contrasat",
    "competition_name": "contrasat (minisat hack)",
    "track": "application track",
    "category": "SAT",
@@ -993,7 +993,7 @@
   },
   {
    "year": 2011,
-   "solver": "minisat_hack:_cir_minisat-2011-05-13_simp",
+   "solver": "minisat-hack-cir-minisat-2011-05-13-simp",
    "competition_name": "cir_minisat (minisat hack)",
    "track": "application track",
    "category": "SAT",
@@ -1086,7 +1086,7 @@
   },
   {
    "year": 2011,
-   "solver": "minisat_hack:_contrasat",
+   "solver": "minisat-hack-contrasat",
    "competition_name": "contrasat (minisat hack)",
    "track": "application track (wall-clock time)",
    "category": "SAT",
@@ -1330,7 +1330,7 @@
   },
   {
    "year": 2011,
-   "solver": "minisat_hack:_cir_minisat-2011-05-13_simp",
+   "solver": "minisat-hack-cir-minisat-2011-05-13-simp",
    "competition_name": "CirMinisat hack",
    "track": "minisat hack track",
    "category": "overall",

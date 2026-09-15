@@ -1015,7 +1015,10 @@ def test_images(args):
 
 def test_images_in_workspace(args, tests_dir):
     source_tests_dir = Path("tests").resolve()
-    filenames = [args.file, f"{args.file}.gz", args.unsat_file]
+    # incomplete solvers (local search) are tested on an easy satisfiable
+    # instance and skip the UNSAT checks, which they cannot pass
+    easy_file = "quinn.cnf"
+    filenames = [args.file, f"{args.file}.gz", args.unsat_file, easy_file, f"{easy_file}.gz"]
     for filename in filenames:
         source = source_tests_dir / filename
         if not source.is_file():
@@ -1137,24 +1140,32 @@ def test_images_in_workspace(args, tests_dir):
             print(green("ok"), f"({msg})")
             return True
 
+    def incomplete(image):
+        return bool(image.registry.get("incomplete"))
+
+    def sat_file(image):
+        return easy_file if incomplete(image) else args.file
+
     def test_cnf(image):
-        return call(
-            "sat", image, [args.file], sat_path, SATISFIABLE, report_launch=True
-        )
+        f = sat_file(image)
+        return call("sat", image, [f], tests_dir / f, SATISFIABLE, report_launch=True)
 
     def test_gz(image):
-        return call(
-            "sat-gzip",
-            image,
-            [f"{args.file}.gz"],
-            sat_gz_path,
-            SATISFIABLE,
-        )
+        f = sat_file(image)
+        return call("sat-gzip", image, [f"{f}.gz"], tests_dir / f"{f}.gz", SATISFIABLE)
 
     def test_unsat(image):
+        if incomplete(image):
+            if args.terse:
+                report("skip", image, "unsat-result", "incomplete solver")
+            return True
         return call("unsat", image, [args.unsat_file], unsat_path, UNSATISFIABLE)
 
     def test_proof(image):
+        if incomplete(image):
+            if args.terse:
+                report("skip", image, "unsat-proof", "incomplete solver")
+            return True
         if "argsproof" not in image.registry:
             if args.terse:
                 report("skip", image, "unsat-proof", "unsupported")
@@ -1193,9 +1204,10 @@ def test_images_in_workspace(args, tests_dir):
             mode = mode[4:]
             if not mode or mode == "proof":
                 continue
-            image_args = ["--mode", mode, f"{args.file}.gz"]
+            f = sat_file(image)
+            image_args = ["--mode", mode, f"{f}.gz"]
             ok = call(
-                f"mode-{mode}", image, image_args, sat_gz_path, SATISFIABLE
+                f"mode-{mode}", image, image_args, tests_dir / f"{f}.gz", SATISFIABLE
             ) and ok
         return ok
 

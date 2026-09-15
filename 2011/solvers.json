@@ -14,10 +14,11 @@
         ],
         "call": "adaptg2wsat2011",
         "gz": false,
-        "status": "ok"
+        "status": "ok",
+        "incomplete": true
     },
     "black_hole_sat": {
-        "name": "Black Hole SAT",
+        "name": "Black-Hole-SAT",
         "version": "2011-03-08",
         "authors": "Markus Iser",
         "tracks": [
@@ -30,7 +31,8 @@
         ],
         "call": "saturn",
         "gz": false,
-        "status": "ok"
+        "status": "ok",
+        "comment": "Competition name: Black Hole SAT."
     },
     "borg-sat-11.03.02-par-industrial": {
         "name": "borg-sat",
@@ -48,11 +50,14 @@
             "-budget",
             "TIMEOUT",
             "-cores",
-            "NBCORE"
+            "MAXNBTHREAD"
         ],
         "call": "python",
         "gz": false,
-        "status": "unknown"
+        "status": "fixme",
+        "license": "BSD-3-Clause AND GPL-3.0 AND MIT",
+        "license_source": "licence file borg-sat-11.03.02c/solvers/run-1.4/LICENSE, borg-sat-11.03.02c/solvers/lingeling-276-6264d55-100731/COPYING, borg-sat-11.03.02c/cargo/LICENSE",
+        "status_detail": "Portfolio in Python needing a locally built Python 2.6 with numpy 1.5, scipy 0.9 and scikits.learn 0.6 (per its README), plus CryptoMiniSat 2.9, glucosER and march_hi rebuilt by the organizers compile script; recipe not written yet."
     },
     "borg-sat-11.03.02-par-random": {
         "name": "borg-sat",
@@ -70,11 +75,14 @@
             "-budget",
             "TIMEOUT",
             "-cores",
-            "NBCORE"
+            "MAXNBTHREAD"
         ],
         "call": "python",
         "gz": false,
-        "status": "unknown"
+        "status": "fixme",
+        "license": "BSD-3-Clause AND GPL-3.0 AND MIT",
+        "license_source": "licence file borg-sat-11.03.02c/solvers/run-1.4/LICENSE, borg-sat-11.03.02c/solvers/lingeling-276-6264d55-100731/COPYING, borg-sat-11.03.02c/cargo/LICENSE",
+        "status_detail": "Portfolio in Python needing a locally built Python 2.6 with numpy 1.5, scipy 0.9 and scikits.learn 0.6 (per its README), plus CryptoMiniSat 2.9, glucosER and march_hi rebuilt by the organizers compile script; recipe not written yet."
     },
     "borg-sat-11.03.02-seq-industrial": {
         "name": "borg-sat",
@@ -94,7 +102,10 @@
         ],
         "call": "python",
         "gz": false,
-        "status": "unknown"
+        "status": "fixme",
+        "license": "BSD-3-Clause AND GPL-3.0 AND MIT",
+        "license_source": "licence file borg-sat-11.03.02c/solvers/run-1.4/LICENSE, borg-sat-11.03.02c/solvers/lingeling-276-6264d55-100731/COPYING, borg-sat-11.03.02c/cargo/LICENSE",
+        "status_detail": "Portfolio in Python needing a locally built Python 2.6 with numpy 1.5, scipy 0.9 and scikits.learn 0.6 (per its README), plus CryptoMiniSat 2.9, glucosER and march_hi rebuilt by the organizers compile script; recipe not written yet."
     },
     "borg-sat-11.03.02-seq-random": {
         "name": "borg-sat",
@@ -114,7 +125,10 @@
         ],
         "call": "python",
         "gz": false,
-        "status": "unknown"
+        "status": "fixme",
+        "license": "BSD-3-Clause AND GPL-3.0 AND MIT",
+        "license_source": "licence file borg-sat-11.03.02c/solvers/run-1.4/LICENSE, borg-sat-11.03.02c/solvers/lingeling-276-6264d55-100731/COPYING, borg-sat-11.03.02c/cargo/LICENSE",
+        "status_detail": "Portfolio in Python needing a locally built Python 2.6 with numpy 1.5, scipy 0.9 and scikits.learn 0.6 (per its README), plus CryptoMiniSat 2.9, glucosER and march_hi rebuilt by the organizers compile script; recipe not written yet."
     },
     "clasp-2.0-r4092-crafted": {
         "name": "clasp",
@@ -136,7 +150,9 @@
         ],
         "call": "./clasp",
         "gz": false,
-        "status": "fixme"
+        "status": "ok",
+        "license": "GPL-2.0",
+        "license_source": "licence file clasp-2.0-R4092/COPYING"
     },
     "clasp-2.0-r4092-indust": {
         "name": "clasp",
@@ -160,7 +176,9 @@
         ],
         "call": "./clasp",
         "gz": false,
-        "status": "fixme"
+        "status": "ok",
+        "license": "GPL-2.0",
+        "license_source": "licence file clasp-2.0-R4092/COPYING"
     },
     "claspmt": {
         "name": "claspmt",
@@ -171,7 +189,7 @@
             "crafted"
         ],
         "args": [
-            "-tNBCORE",
+            "-tMAXNBTHREAD",
             "-p",
             "./sat11-port.txt",
             "--distribute=all,2",
@@ -179,7 +197,8 @@
         ],
         "call": "./claspmt",
         "gz": false,
-        "status": "fixme"
+        "status": "fixme",
+        "status_detail": "configure.sh --with-mt does not find the Intel TBB library on Debian squeeze (/usr/lib/libtbb.so), which the organizers took from a private tools64 directory; needs TBB built from source or a newer builder image."
     },
     "cryptominisat-strange-night-1-mt": {
         "name": "CryptoMiniSat",
@@ -191,12 +210,14 @@
             "random"
         ],
         "args": [
-            "--threads=NBCORE",
+            "--threads=MAXNBTHREAD",
             "FILECNF"
         ],
         "call": "./strangenight1-mt",
         "gz": false,
-        "status": "unknown"
+        "status": "ok",
+        "license": "GPL-3.0 AND MIT",
+        "license_source": "licence file cryptominisat-cryptominisat/LICENSE-GPL, cryptominisat-cryptominisat/LICENSE-MIT"
     },
     "cryptominisat-strange-night-1-st": {
         "name": "CryptoMiniSat",
@@ -212,7 +233,9 @@
         ],
         "call": "./strangenight1-st",
         "gz": false,
-        "status": "unknown"
+        "status": "ok",
+        "license": "GPL-3.0 AND MIT",
+        "license_source": "licence file cryptominisat-cryptominisat/LICENSE-GPL, cryptominisat-cryptominisat/LICENSE-MIT"
     },
     "cryptominisat-strange-night-2-mt": {
         "name": "CryptoMiniSat",
@@ -224,12 +247,14 @@
             "random"
         ],
         "args": [
-            "--threads=NBCORE",
+            "--threads=MAXNBTHREAD",
             "FILECNF"
         ],
         "call": "./strangenight2-mt",
         "gz": false,
-        "status": "unknown"
+        "status": "ok",
+        "license": "GPL-3.0 AND MIT",
+        "license_source": "licence file cryptominisat-cryptominisat/LICENSE-GPL, cryptominisat-cryptominisat/LICENSE-MIT"
     },
     "cryptominisat-strange-night2-st": {
         "name": "CryptoMiniSat",
@@ -245,7 +270,9 @@
         ],
         "call": "./strangenight2-st",
         "gz": false,
-        "status": "unknown"
+        "status": "ok",
+        "license": "GPL-3.0 AND MIT",
+        "license_source": "licence file cryptominisat-cryptominisat/LICENSE-GPL, cryptominisat-cryptominisat/LICENSE-MIT"
     },
     "cryptominisat-techdemo-alpha-mt": {
         "name": "CryptoMiniSat",
@@ -257,12 +284,14 @@
             "random"
         ],
         "args": [
-            "--threads=NBCORE",
+            "--threads=MAXNBTHREAD",
             "FILECNF"
         ],
         "call": "./techdemo",
         "gz": false,
-        "status": "unknown"
+        "status": "ok",
+        "license": "GPL-3.0 AND MIT",
+        "license_source": "licence file cryptominisat-cryptominisat/LICENSE-GPL, cryptominisat-cryptominisat/LICENSE-MIT"
     },
     "cryptominisat-techdemo-alpha-st": {
         "name": "CryptoMiniSat",
@@ -279,7 +308,9 @@
         ],
         "call": "./techdemo",
         "gz": false,
-        "status": "unknown"
+        "status": "ok",
+        "license": "GPL-3.0 AND MIT",
+        "license_source": "licence file cryptominisat-cryptominisat/LICENSE-GPL, cryptominisat-cryptominisat/LICENSE-MIT"
     },
     "csls-pnorm-8cores": {
         "name": "csls",
@@ -292,12 +323,15 @@
             "-maxcores",
             "8",
             "FILECNF",
-            "NBCORE",
+            "MAXNBTHREAD",
             "RANDOMSEED"
         ],
         "call": "./csls-pnorm",
         "gz": false,
-        "status": "unknown"
+        "status": "ok",
+        "license": "MIT",
+        "license_source": "licence file CSLS/legal.txt",
+        "incomplete": true
     },
     "csls-prob-4cores": {
         "name": "csls",
@@ -310,12 +344,15 @@
             "-maxcores",
             "4",
             "FILECNF",
-            "NBCORE",
+            "MAXNBTHREAD",
             "RANDOMSEED"
         ],
         "call": "./csls-prob",
         "gz": false,
-        "status": "unknown"
+        "status": "ok",
+        "license": "MIT",
+        "license_source": "licence file CSLS/legal.txt",
+        "incomplete": true
     },
     "csls-prob-8cores": {
         "name": "csls",
@@ -328,12 +365,15 @@
             "-maxcores",
             "8",
             "FILECNF",
-            "NBCORE",
+            "MAXNBTHREAD",
             "RANDOMSEED"
         ],
         "call": "./csls-prob",
         "gz": false,
-        "status": "unknown"
+        "status": "ok",
+        "license": "MIT",
+        "license_source": "licence file CSLS/legal.txt",
+        "incomplete": true
     },
     "eagleup": {
         "name": "EagleUP",
@@ -348,7 +388,8 @@
         ],
         "call": "./EagleUP",
         "gz": false,
-        "status": "unknown"
+        "status": "ok",
+        "incomplete": true
     },
     "ebglucose": {
         "name": "EBGlucose",
@@ -360,9 +401,11 @@
         "args": [
             "FILECNF"
         ],
-        "call": "DIR/ebglucose.sh",
+        "call": "./ebglucose.sh",
         "gz": false,
-        "status": "unknown"
+        "status": "ok",
+        "license": "MIT",
+        "license_source": "licence header of ebglucose-1.0/sources/glucose/mtl/Queue.h"
     },
     "glucose": {
         "name": "glucose",
@@ -377,7 +420,9 @@
         ],
         "call": "glucose.sh",
         "gz": false,
-        "status": "unknown"
+        "status": "ok",
+        "license": "MIT",
+        "license_source": "licence file glucose_2.0/LICENSE"
     },
     "glueminisat": {
         "name": "glueminisat",
@@ -392,7 +437,9 @@
         ],
         "call": "glueminisat",
         "gz": false,
-        "status": "unknown"
+        "status": "ok",
+        "license": "MIT",
+        "license_source": "licence file glueminisat-2.2.5/LICENSE"
     },
     "jminisat": {
         "name": "jMiniSat",
@@ -409,7 +456,8 @@
         ],
         "call": "./jMiniSat",
         "gz": false,
-        "status": "unknown"
+        "status": "fixme",
+        "status_detail": "Sources unavailable: not in the organizers' export."
     },
     "kw": {
         "name": "kw",
@@ -424,7 +472,8 @@
         ],
         "call": "kw",
         "gz": false,
-        "status": "unknown"
+        "status": "fixme",
+        "status_detail": "Sources unavailable: not in the organizers' export."
     },
     "lingeling": {
         "name": "Lingeling",
@@ -439,7 +488,9 @@
         ],
         "call": "lingeling",
         "gz": false,
-        "status": "unknown"
+        "status": "ok",
+        "license": "GPL-3.0",
+        "license_source": "licence file lingeling-587f-4882048-110513/COPYING"
     },
     "march_rw": {
         "name": "march_rw",
@@ -455,10 +506,12 @@
         ],
         "call": "./march_rw",
         "gz": false,
-        "status": "unknown"
+        "status": "ok",
+        "license": "GPL-2.0",
+        "license_source": "licence header of /home/marijn/march_rw/preselect.h"
     },
-    "minisat_hack:_cir_minisat-2011-03-02": {
-        "name": "minisat hack: cir_minisat",
+    "minisat-hack-cir-minisat-2011-03-02": {
+        "name": "minisat-hack-cir_minisat",
         "version": "2011-03-02",
         "authors": "Tomohiro Sonobe",
         "tracks": [
@@ -469,10 +522,13 @@
         ],
         "call": "./cir_minisat",
         "gz": false,
-        "status": "unknown"
+        "status": "ok",
+        "license": "MIT",
+        "license_source": "licence file cir_minisat/LICENSE",
+        "comment": "Competition name: minisat hack: cir_minisat."
     },
-    "minisat_hack:_cir_minisat-2011-05-13_simp": {
-        "name": "minisat hack: cir_minisat",
+    "minisat-hack-cir-minisat-2011-05-13-simp": {
+        "name": "minisat-hack-cir_minisat",
         "version": "2011-05-13 (simp)",
         "authors": "Tomohiro Sonobe",
         "tracks": [
@@ -483,10 +539,13 @@
         ],
         "call": "./cir_minisat",
         "gz": false,
-        "status": "unknown"
+        "status": "ok",
+        "license": "MIT",
+        "license_source": "licence file cir_minisat_resubmit/LICENSE",
+        "comment": "Competition name: minisat hack: cir_minisat."
     },
-    "minisat_hack:_contrasat": {
-        "name": "minisat hack: contrasat",
+    "minisat-hack-contrasat": {
+        "name": "minisat-hack-contrasat",
         "version": "2011-03-02",
         "authors": "Allen Van Gelder",
         "tracks": [
@@ -497,10 +556,13 @@
         ],
         "call": "contrasat_release",
         "gz": false,
-        "status": "unknown"
+        "status": "ok",
+        "license": "MIT",
+        "license_source": "licence file Minisat-2.2.0-hack/LICENSE",
+        "comment": "Competition name: minisat hack: contrasat."
     },
-    "minisat_hack:_ebminisat": {
-        "name": "minisat hack: EBMiniSAT",
+    "minisat-hack-ebminisat": {
+        "name": "minisat-hack-EBMiniSAT",
         "version": "2011-03-02",
         "authors": "Bryan Matsuo",
         "tracks": [
@@ -510,12 +572,15 @@
             "FILECNF",
             "-verb=0"
         ],
-        "call": "DIR/ebminisat_release",
+        "call": "./ebminisat_release",
         "gz": false,
-        "status": "unknown"
+        "status": "ok",
+        "license": "MIT",
+        "license_source": "licence file ebminisat/LICENSE",
+        "comment": "Competition name: minisat hack: EBMiniSAT."
     },
-    "minisat_hack:_lr_gl_noshr": {
-        "name": "minisat hack: LR_GL_NOSHR",
+    "minisat-hack-lr-gl-noshr": {
+        "name": "minisat-hack-LR_GL_NOSHR",
         "version": "2011-03-02",
         "authors": "Vadim Ryvchin",
         "tracks": [
@@ -529,10 +594,13 @@
         ],
         "call": "./lr_gl_shr",
         "gz": false,
-        "status": "unknown"
+        "status": "ok",
+        "license": "MIT",
+        "license_source": "licence header of minisat_LR_GL_SHR/core/Dimacs.h",
+        "comment": "Competition name: minisat hack: LR_GL_NOSHR."
     },
-    "minisat_hack:_lr_gl_shr": {
-        "name": "minisat hack: LR_GL_SHR",
+    "minisat-hack-lr-gl-shr": {
+        "name": "minisat-hack-LR_GL_SHR",
         "version": "2011-03-02",
         "authors": "Vadim Ryvchin",
         "tracks": [
@@ -545,10 +613,13 @@
         ],
         "call": "./lr_gl_shr",
         "gz": false,
-        "status": "unknown"
+        "status": "ok",
+        "license": "MIT",
+        "license_source": "licence header of minisat_LR_GL_SHR/core/Dimacs.h",
+        "comment": "Competition name: minisat hack: LR_GL_SHR."
     },
-    "minisat_hack:_lr_nogl_noshr": {
-        "name": "minisat hack: LR_NOGL_NOSHR",
+    "minisat-hack-lr-nogl-noshr": {
+        "name": "minisat-hack-LR_NOGL_NOSHR",
         "version": "2011-03-02",
         "authors": "Vadim Ryvchin",
         "tracks": [
@@ -563,10 +634,13 @@
         ],
         "call": "./lr_gl_shr",
         "gz": false,
-        "status": "unknown"
+        "status": "ok",
+        "license": "MIT",
+        "license_source": "licence header of minisat_LR_GL_SHR/core/Dimacs.h",
+        "comment": "Competition name: minisat hack: LR_NOGL_NOSHR."
     },
-    "minisat_hack:_minisat": {
-        "name": "minisat hack: MiniSAT",
+    "minisat-hack-minisat": {
+        "name": "minisat-hack-MiniSAT",
         "version": "2.2.0-agile-26",
         "authors": "Armin Biere",
         "tracks": [
@@ -577,10 +651,13 @@
         ],
         "call": "minisat",
         "gz": false,
-        "status": "unknown"
+        "status": "ok",
+        "license": "MIT",
+        "license_source": "licence file minisat-2.2.0-agile-26/LICENSE",
+        "comment": "Competition name: minisat hack: MiniSAT."
     },
-    "minisat_hack:_minisat_psm": {
-        "name": "minisat hack: minisat_psm",
+    "minisat-hack-minisat-psm": {
+        "name": "minisat-hack-minisat_psm",
         "version": "2011-04-01",
         "authors": "Jean-Marie Lagniez",
         "tracks": [
@@ -591,10 +668,13 @@
         ],
         "call": "./esg_static.sh",
         "gz": false,
-        "status": "unknown"
+        "status": "ok",
+        "license": "MIT",
+        "license_source": "licence file minisatPsmDyn/LICENSE",
+        "comment": "Competition name: minisat hack: minisat_psm."
     },
-    "minisat_hack_reference:_minisat": {
-        "name": "minisat hack reference: minisat",
+    "minisat-hack-reference-minisat": {
+        "name": "minisat-hack-reference-minisat",
         "version": "2.2.0",
         "authors": "Niklas Sorensson",
         "tracks": [
@@ -605,7 +685,10 @@
         ],
         "call": "minisat_release",
         "gz": false,
-        "status": "unknown"
+        "status": "ok",
+        "license": "MIT",
+        "license_source": "licence file minisat/LICENSE",
+        "comment": "Competition name: minisat hack reference: minisat."
     },
     "mphasesat": {
         "name": "MPhaseSAT",
@@ -621,7 +704,9 @@
         ],
         "call": "MPhaseSAT",
         "gz": false,
-        "status": "unknown"
+        "status": "ok",
+        "license": "BSD-2-Clause",
+        "license_source": "licence header of MPhaseSAT/MersenneTwister.h"
     },
     "mphasesat64": {
         "name": "MPhaseSAT64",
@@ -637,7 +722,9 @@
         ],
         "call": "MPhaseSAT64",
         "gz": false,
-        "status": "unknown"
+        "status": "ok",
+        "license": "BSD-2-Clause",
+        "license_source": "licence header of MPhaseSAT64/MersenneTwister.h"
     },
     "mphasesat_m": {
         "name": "MPhaseSAT_M",
@@ -653,7 +740,9 @@
         ],
         "call": "MPhaseSAT_M",
         "gz": false,
-        "status": "unknown"
+        "status": "ok",
+        "license": "BSD-2-Clause AND GPL-2.0",
+        "license_source": "licence header of MPhaseSAT_M/MersenneTwister.h, MPhaseSAT_M/march_doublelook.cpp"
     },
     "multiflip": {
         "name": "MultiFlip",
@@ -667,7 +756,10 @@
         ],
         "call": "MultiFlip",
         "gz": false,
-        "status": "unknown"
+        "status": "ok",
+        "license": "BSD-2-Clause",
+        "license_source": "licence header of MultiFlip/MersenneTwister.h",
+        "incomplete": true
     },
     "picosat": {
         "name": "PicoSAT",
@@ -682,7 +774,9 @@
         ],
         "call": "picosat",
         "gz": false,
-        "status": "unknown"
+        "status": "ok",
+        "license": "MIT",
+        "license_source": "licence file picosat-941/LICENSE"
     },
     "plingeling": {
         "name": "Plingeling",
@@ -694,12 +788,14 @@
         ],
         "args": [
             "-t",
-            "NBCORE",
+            "MAXNBTHREAD",
             "FILECNF"
         ],
         "call": "plingeling",
         "gz": false,
-        "status": "unknown"
+        "status": "ok",
+        "license": "GPL-3.0",
+        "license_source": "licence file lingeling-587f-4882048-110513/COPYING"
     },
     "ppfolio-par": {
         "name": "ppfolio",
@@ -715,7 +811,8 @@
         ],
         "call": "ppfolio",
         "gz": false,
-        "status": "unknown"
+        "status": "fixme",
+        "status_detail": "ppfolio is a naive portfolio launching other solvers that are not part of its archive (pico-portfolio); the image only holds the launcher, which answers nothing. Needs the component solvers and their expected layout."
     },
     "ppfolio-seq": {
         "name": "ppfolio",
@@ -732,7 +829,8 @@
         ],
         "call": "ppfolio",
         "gz": false,
-        "status": "unknown"
+        "status": "fixme",
+        "status_detail": "ppfolio is a naive portfolio launching other solvers that are not part of its archive (pico-portfolio); the image only holds the launcher, which answers nothing. Needs the component solvers and their expected layout."
     },
     "priss-1.0": {
         "name": "priss",
@@ -743,16 +841,18 @@
             "crafted"
         ],
         "args": [
-            "DIR",
+            ".",
             "FILECNF",
             "RANDOMSEED",
             "TIMEOUT",
             "MEMLIMIT",
-            "NBCORE"
+            "MAXNBTHREAD"
         ],
-        "call": "DIR/priss.sh",
+        "call": "./priss.sh",
         "gz": false,
-        "status": "unknown"
+        "status": "ok",
+        "license": "GPL-2.0",
+        "license_source": "licence file COPYING"
     },
     "priss-auto": {
         "name": "priss",
@@ -763,16 +863,18 @@
             "crafted"
         ],
         "args": [
-            "DIR",
+            ".",
             "FILECNF",
             "RANDOMSEED",
             "TIMEOUT",
             "MEMLIMIT",
-            "NBCORE"
+            "MAXNBTHREAD"
         ],
-        "call": "DIR/prissAuto.sh",
+        "call": "./prissAuto.sh",
         "gz": false,
-        "status": "unknown"
+        "status": "ok",
+        "license": "GPL-2.0",
+        "license_source": "licence file COPYING"
     },
     "priss-up": {
         "name": "priss",
@@ -783,16 +885,18 @@
             "crafted"
         ],
         "args": [
-            "DIR",
+            ".",
             "FILECNF",
             "RANDOMSEED",
             "TIMEOUT",
             "MEMLIMIT",
-            "NBCORE"
+            "MAXNBTHREAD"
         ],
-        "call": "DIR/prissup.sh",
+        "call": "./prissup.sh",
         "gz": false,
-        "status": "unknown"
+        "status": "ok",
+        "license": "GPL-2.0",
+        "license_source": "licence file COPYING"
     },
     "qutersat": {
         "name": "QuteRSat",
@@ -809,7 +913,10 @@
         ],
         "call": "qutersat_release",
         "gz": false,
-        "status": "unknown"
+        "status": "fixme",
+        "license": "BSD-3-Clause AND GPL-3.0 AND MIT",
+        "license_source": "licence file QuteRSat/LICENSE-BSD-GOOGLE, QuteRSat/LICENSE-GPL, QuteRSat/LICENSE-MIT",
+        "status_detail": "The link step of qutersat_release fails on Debian squeeze (after replacing -ltermcap by -lncurses, ld still returns 1); the submission bundles CryptoMiniSat and tcmalloc, a closer look at its Makefile is needed."
     },
     "rcl": {
         "name": "rcl",
@@ -824,7 +931,7 @@
         ],
         "call": "./esg_static.sh",
         "gz": false,
-        "status": "unknown"
+        "status": "ok"
     },
     "restartsat-a75": {
         "name": "RestartSAT",
@@ -842,7 +949,9 @@
         ],
         "call": "./RestartSAT",
         "gz": false,
-        "status": "unknown"
+        "status": "ok",
+        "license": "MIT",
+        "license_source": "licence file minisat-hacked/LICENSE"
     },
     "restartsat-b95": {
         "name": "RestartSAT",
@@ -860,7 +969,9 @@
         ],
         "call": "./RestartSAT",
         "gz": false,
-        "status": "unknown"
+        "status": "ok",
+        "license": "MIT",
+        "license_source": "licence file minisat-hacked/LICENSE"
     },
     "riss-1.0": {
         "name": "riss",
@@ -871,16 +982,18 @@
             "crafted"
         ],
         "args": [
-            "DIR",
+            ".",
             "FILECNF",
             "RANDOMSEED",
             "TIMEOUT",
             "MEMLIMIT",
-            "NBCORE"
+            "MAXNBTHREAD"
         ],
-        "call": "DIR/riss.sh",
+        "call": "./riss.sh",
         "gz": false,
-        "status": "unknown"
+        "status": "ok",
+        "license": "GPL-2.0",
+        "license_source": "licence file COPYING"
     },
     "riss-auto": {
         "name": "riss",
@@ -891,16 +1004,18 @@
             "crafted"
         ],
         "args": [
-            "DIR",
+            ".",
             "FILECNF",
             "RANDOMSEED",
             "TIMEOUT",
             "MEMLIMIT",
-            "NBCORE"
+            "MAXNBTHREAD"
         ],
-        "call": "DIR/rissAuto.sh",
+        "call": "./rissAuto.sh",
         "gz": false,
-        "status": "unknown"
+        "status": "ok",
+        "license": "GPL-2.0",
+        "license_source": "licence file COPYING"
     },
     "riss-auto_1200_s_timeout": {
         "name": "riss",
@@ -911,16 +1026,18 @@
             "crafted"
         ],
         "args": [
-            "DIR",
+            ".",
             "FILECNF",
             "RANDOMSEED",
             "TIMEOUT",
             "MEMLIMIT",
-            "NBCORE"
+            "MAXNBTHREAD"
         ],
-        "call": "DIR/rissAuto.sh",
+        "call": "./rissAuto.sh",
         "gz": false,
-        "status": "unknown"
+        "status": "ok",
+        "license": "GPL-2.0",
+        "license_source": "licence file COPYING"
     },
     "riss-exp": {
         "name": "riss",
@@ -931,16 +1048,19 @@
             "crafted"
         ],
         "args": [
-            "DIR",
+            ".",
             "FILECNF",
             "RANDOMSEED",
             "TIMEOUT",
             "MEMLIMIT",
-            "NBCORE"
+            "MAXNBTHREAD"
         ],
-        "call": "DIR/rissExp.sh",
+        "call": "./rissExp.sh",
         "gz": false,
-        "status": "unknown"
+        "status": "fixme",
+        "license": "GPL-2.0",
+        "license_source": "licence file COPYING",
+        "status_detail": "The rissExp target of the riss Makefile (riss with -DBLOCKING_LIT) does not build on Debian squeeze while riss and priss do; rissExp.sh needs that binary."
     },
     "sapperlot": {
         "name": "SApperloT",
@@ -955,7 +1075,7 @@
         ],
         "call": "SApperloT",
         "gz": false,
-        "status": "unknown"
+        "status": "ok"
     },
     "sapperlot2010": {
         "name": "SApperloT2010",
@@ -970,7 +1090,7 @@
         ],
         "call": "SApperloT2010",
         "gz": false,
-        "status": "unknown"
+        "status": "ok"
     },
     "sartagnan": {
         "name": "SArTagnan",
@@ -982,14 +1102,14 @@
         ],
         "args": [
             "FILECNF",
-            "-threads=NBCORE"
+            "-threads=MAXNBTHREAD"
         ],
         "call": "SArTagnan",
         "gz": false,
-        "status": "unknown"
+        "status": "ok"
     },
-    "sat07_reference_solver:_minisat": {
-        "name": "SAT07 reference solver: minisat",
+    "sat07-reference-minisat": {
+        "name": "SAT07-reference-solver-minisat",
         "version": "SAT 2007",
         "authors": "Niklas Sorensson and Niklas Een",
         "tracks": [
@@ -1000,10 +1120,12 @@
         ],
         "call": "./minisat_noassertions",
         "gz": false,
-        "status": "unknown"
+        "status": "fixme",
+        "status_detail": "Sources unavailable: reference solver of 2007, not in the export; see the 2007-src release.",
+        "comment": "Competition name: SAT07 reference solver: minisat."
     },
-    "sat09_reference_solver:_clasp": {
-        "name": "SAT09 reference solver: clasp",
+    "sat09-reference-clasp": {
+        "name": "SAT09-reference-solver-clasp",
         "version": "1.2.0-SAT09-32",
         "authors": "Benjamin Kaufmann",
         "tracks": [
@@ -1018,10 +1140,13 @@
         ],
         "call": "./clasp",
         "gz": false,
-        "status": "unknown"
+        "status": "ok",
+        "license": "GPL-2.0",
+        "license_source": "licence file clasp-1.2.0-SAT09/clasp/COPYING",
+        "comment": "Competition name: SAT09 reference solver: clasp."
     },
-    "sat09_reference_solver:glucose": {
-        "name": "SAT09 reference solver:glucose",
+    "sat09-reference-glucose": {
+        "name": "SAT09-reference-solver-glucose",
         "version": "1.0",
         "authors": "Gilles Audemard and Laurent Simon",
         "tracks": [
@@ -1032,10 +1157,13 @@
         ],
         "call": "glucose.sh",
         "gz": false,
-        "status": "unknown"
+        "status": "ok",
+        "license": "MIT",
+        "license_source": "licence header of glucose_1.0/sources/glucose/core/BoundedQueue.h",
+        "comment": "Competition name: SAT09 reference solver:glucose."
     },
-    "sat09_reference_solver:_gnovelty-plus2": {
-        "name": "SAT09 reference solver: gnovelty+2",
+    "sat09-reference-gnovelty-plus2": {
+        "name": "SAT09-reference-solver-gnovelty+2",
         "version": "2009-03-22",
         "authors": "Duc-Nghia Pham and Charles Gretton",
         "tracks": [
@@ -1047,12 +1175,14 @@
         ],
         "call": "./gnovelty+2",
         "gz": false,
-        "status": "unknown"
+        "status": "ok",
+        "incomplete": true,
+        "comment": "Competition name: SAT09 reference solver: gnovelty+2."
     },
-    "sat09_reference_solver:lysat": {
-        "name": "SAT09 reference solver:LySAT",
+    "sat09-reference-lysat": {
+        "name": "SAT09-reference-solver-LySAT",
         "version": "i/2009-03-20",
-        "authors": "Youssef Hamadi, Sa\u00efd Jabbour, Lakhdar Sa\u00efs",
+        "authors": "Youssef Hamadi, Saïd Jabbour, Lakhdar Saïs",
         "tracks": [
             "application"
         ],
@@ -1060,14 +1190,18 @@
             "FILECNF",
             "i"
         ],
-        "call": "lysat.sh",
+        "call": "minisat_static",
         "gz": false,
-        "status": "unknown"
+        "status": "fixme",
+        "license": "MIT",
+        "license_source": "licence file BLOCKED_SUBMITION/license",
+        "comment": "Competition name: SAT09 reference solver:LySAT.",
+        "status_detail": "Does not compile with the gcc of Debian lenny or squeeze (template type error in SimpSolver.C, vec<Bclause> versus Clause*); the 2009 sources may need the compiler of that year."
     },
-    "sat09_reference_solver:_manysat_1.1": {
-        "name": "SAT09 reference solver: ManySAT 1.1",
+    "sat09-reference-manysat-1.1": {
+        "name": "SAT09-reference-solver-ManySAT-1.1",
         "version": "aimd 1/2009-03-20",
-        "authors": "Youssef Hamadi, Sa\u00efd Jabbour, Lakhdar Sa\u00efs",
+        "authors": "Youssef Hamadi, Saïd Jabbour, Lakhdar Saïs",
         "tracks": [
             "application"
         ],
@@ -1078,10 +1212,13 @@
         ],
         "call": "manysat.sh",
         "gz": false,
-        "status": "unknown"
+        "status": "ok",
+        "license": "MIT",
+        "license_source": "licence file BLOCKED/LICENSE",
+        "comment": "Competition name: SAT09 reference solver: ManySAT 1.1."
     },
-    "sat09_reference_solver:_march_hi": {
-        "name": "SAT09 reference solver: march_hi",
+    "sat09-reference-march-hi": {
+        "name": "SAT09-reference-solver-march_hi",
         "version": "hi",
         "authors": "Marijn Heule",
         "tracks": [
@@ -1092,10 +1229,13 @@
         ],
         "call": "./march_hi",
         "gz": false,
-        "status": "unknown"
+        "status": "ok",
+        "license": "GPL-2.0",
+        "license_source": "licence header of march_hi/bitslook.c",
+        "comment": "Competition name: SAT09 reference solver: march_hi."
     },
-    "sat09_reference_solver:precosat": {
-        "name": "SAT09 reference solver:precosat",
+    "sat09-reference-precosat": {
+        "name": "SAT09-reference-solver-precosat",
         "version": "236",
         "authors": "Armin Biere",
         "tracks": [
@@ -1106,10 +1246,12 @@
         ],
         "call": "./precosat",
         "gz": false,
-        "status": "unknown"
+        "status": "ok",
+        "license_source": "unrecognized licence file precosat-236-3e7a3f8-090322/LICENSE",
+        "comment": "Competition name: SAT09 reference solver:precosat."
     },
-    "sat09_reference_solver:_satzilla2009_c": {
-        "name": "SAT09 reference solver: SATzilla2009_C",
+    "sat09-reference-satzilla2009-c": {
+        "name": "SAT09-reference-solver-SATzilla2009_C",
         "version": "2009-03-22",
         "authors": "Lin Xu, Frank Hutter, Holger H. Hoos and Kevin Leyton-Brown",
         "tracks": [
@@ -1120,10 +1262,12 @@
         ],
         "call": "./SATzilla2009_C",
         "gz": false,
-        "status": "unknown"
+        "status": "fixme",
+        "status_detail": "Sources unavailable: reference solver of 2009; only SATzilla2009F is in the 2009-src release.",
+        "comment": "Competition name: SAT09 reference solver: SATzilla2009_C."
     },
-    "sat09_reference_solver:_satzilla2009_r": {
-        "name": "SAT09 reference solver: SATzilla2009_R",
+    "sat09-reference-satzilla2009-r": {
+        "name": "SAT09-reference-solver-SATzilla2009_R",
         "version": "2009-03-22",
         "authors": "Lin Xu, Frank Hutter, Holger H. Hoos and Kevin Leyton-Brown",
         "tracks": [
@@ -1134,10 +1278,12 @@
         ],
         "call": "./SATzilla2009_R",
         "gz": false,
-        "status": "unknown"
+        "status": "fixme",
+        "status_detail": "Sources unavailable: reference solver of 2009; only SATzilla2009F is in the 2009-src release.",
+        "comment": "Competition name: SAT09 reference solver: SATzilla2009_R."
     },
-    "sat09_reference_solver:_tnm": {
-        "name": "SAT09 reference solver: TNM",
+    "sat09-reference-tnm": {
+        "name": "SAT09-reference-solver-TNM",
         "version": "2009-03-22",
         "authors": "Wanxia Wei and Chu Min Li",
         "tracks": [
@@ -1149,10 +1295,12 @@
         ],
         "call": "./TNM",
         "gz": false,
-        "status": "unknown"
+        "status": "ok",
+        "incomplete": true,
+        "comment": "Competition name: SAT09 reference solver: TNM."
     },
     "sat4j_core": {
-        "name": "SAT4J core",
+        "name": "SAT4J-core",
         "version": "2.3.0 SNAPSHOT 2011-02-06",
         "authors": "Daniel Le Berre",
         "tracks": [
@@ -1171,7 +1319,8 @@
         ],
         "call": "java",
         "gz": false,
-        "status": "unknown"
+        "status": "ok",
+        "comment": "Competition name: SAT4J core."
     },
     "sathys": {
         "name": "sathys",
@@ -1188,7 +1337,7 @@
         ],
         "call": "./esg_static.sh",
         "gz": false,
-        "status": "unknown"
+        "status": "ok"
     },
     "sat_intersec_01": {
         "name": "SAT_Intersec_01",
@@ -1206,10 +1355,11 @@
         ],
         "call": "java",
         "gz": false,
-        "status": "unknown"
+        "status": "fixme",
+        "status_detail": "Sources unavailable: not in the organizers' export."
     },
     "satisfiability_solver_selector-2011-03-18": {
-        "name": "Satisfiability Solver Selector",
+        "name": "Satisfiability-Solver-Selector",
         "version": "2011-03-18",
         "authors": "Meinolf Sellmann",
         "tracks": [
@@ -1227,10 +1377,14 @@
         ],
         "call": "python",
         "gz": false,
-        "status": "unknown"
+        "status": "fixme",
+        "license": "GPL-3.0 AND MIT",
+        "license_source": "licence file 3S-1.0/SourceCode/COACH/DATASTRUCTURES/license.txt, 3S-1.0/SourceCode/Solvers/minisat/LICENSE",
+        "status_detail": "Portfolio 3S (IBM licence, research use): the organizers compile script rebuilds its component solvers in 32-bit mode, precosat 570 and SatELite included; recipe not written yet.",
+        "comment": "Competition name: Satisfiability Solver Selector."
     },
     "satisfiability_solver_selector-2011-03-18_1200_s_timeout": {
-        "name": "Satisfiability Solver Selector",
+        "name": "Satisfiability-Solver-Selector",
         "version": "2011-03-18 (1200 s timeout)",
         "authors": "Meinolf Sellmann",
         "tracks": [
@@ -1248,7 +1402,11 @@
         ],
         "call": "python",
         "gz": false,
-        "status": "unknown"
+        "status": "fixme",
+        "license": "GPL-3.0 AND MIT",
+        "license_source": "licence file 3S-1.0/SourceCode/COACH/DATASTRUCTURES/license.txt, 3S-1.0/SourceCode/Solvers/minisat/LICENSE",
+        "status_detail": "Portfolio 3S (IBM licence, research use): the organizers compile script rebuilds its component solvers in 32-bit mode, precosat 570 and SatELite included; recipe not written yet.",
+        "comment": "Competition name: Satisfiability Solver Selector."
     },
     "sattime": {
         "name": "sattime",
@@ -1265,7 +1423,8 @@
         ],
         "call": "sattime",
         "gz": false,
-        "status": "unknown"
+        "status": "ok",
+        "incomplete": true
     },
     "sattime-plus": {
         "name": "sattime+",
@@ -1282,7 +1441,8 @@
         ],
         "call": "sattime+",
         "gz": false,
-        "status": "unknown"
+        "status": "ok",
+        "incomplete": true
     },
     "sattime2011": {
         "name": "sattime2011",
@@ -1299,7 +1459,8 @@
         ],
         "call": "sattime2011",
         "gz": false,
-        "status": "unknown"
+        "status": "ok",
+        "incomplete": true
     },
     "shortsattime-plus": {
         "name": "shortsattime+",
@@ -1316,7 +1477,8 @@
         ],
         "call": "shortsattime+",
         "gz": false,
-        "status": "unknown"
+        "status": "ok",
+        "incomplete": true
     },
     "shortsattime2011": {
         "name": "shortsattime2011",
@@ -1333,7 +1495,8 @@
         ],
         "call": "shortsattime2011",
         "gz": false,
-        "status": "unknown"
+        "status": "ok",
+        "incomplete": true
     },
     "sol": {
         "name": "Sol",
@@ -1350,7 +1513,8 @@
         ],
         "call": "mono",
         "gz": false,
-        "status": "unknown"
+        "status": "fixme",
+        "status_detail": "C# solver run with mono, distributed as a 7z archive; recipe not written yet."
     },
     "sparrow2011": {
         "name": "sparrow2011",
@@ -1365,7 +1529,10 @@
         ],
         "call": "sparrow2011",
         "gz": false,
-        "status": "unknown"
+        "status": "ok",
+        "license": "MIT",
+        "license_source": "licence file sparrow2011/legal.txt",
+        "incomplete": true
     },
     "structure-0.1": {
         "name": "STRUCTure",
@@ -1378,14 +1545,17 @@
         ],
         "args": [
             "15000",
-            "NBCORE",
+            "MAXNBTHREAD",
             "/tmp",
             "DIR",
             "FILECNF"
         ],
         "call": "run",
         "gz": false,
-        "status": "unknown"
+        "status": "fixme",
+        "license": "MIT",
+        "license_source": "licence file brtzsnr-structure-3832ec0/LICENSE.txt",
+        "status_detail": "Java solver built with Maven and Ant against Constellation 0.7 and trove 2.1 (organizers compile-structure script); Maven needs the 2011 plugin repositories, recipe not written yet."
     },
     "structure-0.1_hbr2": {
         "name": "STRUCTure",
@@ -1398,7 +1568,7 @@
         ],
         "args": [
             "15000",
-            "NBCORE",
+            "MAXNBTHREAD",
             "/tmp",
             "DIR",
             "FILECNF",
@@ -1407,7 +1577,10 @@
         ],
         "call": "run",
         "gz": false,
-        "status": "unknown"
+        "status": "fixme",
+        "license": "MIT",
+        "license_source": "licence file brtzsnr-structure-3832ec0/LICENSE.txt",
+        "status_detail": "Java solver built with Maven and Ant against Constellation 0.7 and trove 2.1 (organizers compile-structure script); Maven needs the 2011 plugin repositories, recipe not written yet."
     },
     "synit_sat": {
         "name": "synit_sat",
@@ -1424,7 +1597,9 @@
         ],
         "call": "./synit_sat",
         "gz": false,
-        "status": "unknown"
+        "status": "ok",
+        "license": "BSD-3-Clause AND GPL-3.0 AND MIT",
+        "license_source": "licence file synit_sat/LICENSE-BSD-GOOGLE, synit_sat/LICENSE-GPL, synit_sat/LICENSE-MIT"
     },
     "tts": {
         "name": "tts",
@@ -1436,9 +1611,9 @@
         "args": [
             "FILECNF"
         ],
-        "call": "DIR/tts-5-4",
+        "call": "./tts-5-4",
         "gz": false,
-        "status": "unknown"
+        "status": "ok"
     },
     "ttsth": {
         "name": "ttsth",
@@ -1449,17 +1624,17 @@
         ],
         "args": [
             "-num-threads",
-            "NBCORE",
+            "MAXNBTHREAD",
             "FILECNF"
         ],
-        "call": "DIR/ttsth-5-4",
+        "call": "./ttsth-5-4",
         "gz": false,
-        "status": "unknown"
+        "status": "ok"
     },
     "umsat": {
         "name": "UmSat",
         "version": "2011-05-12",
-        "authors": "Daniel Andr\u00e9n",
+        "authors": "Daniel Andrén",
         "tracks": [
             "application",
             "crafted"
@@ -1469,6 +1644,6 @@
         ],
         "call": "umsat",
         "gz": false,
-        "status": "unknown"
+        "status": "ok"
     }
 }

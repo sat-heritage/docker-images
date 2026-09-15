@@ -1,0 +1,2 @@
+set -ex
+cp -v /src/cryptominisat-cryptominisat/Solver/cryptominisat /dist/strangenight1-mt

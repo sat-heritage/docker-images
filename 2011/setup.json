@@ -1,5 +1,5 @@
 {
-    "base_version":"pre-jessie",
+    "base_version": "pre-jessie",
     "base_from": "debian/eol:squeeze-slim",
     "builder": "generic/v1",
     "builder_base": "debian/eol:squeeze",
@@ -8,261 +8,327 @@
     },
     "black_hole_sat": {
         "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/BlackHoleSAT4.tar.gz",
-        "BUILD_DEPENDS" : "libtbb-dev"
+        "BUILD_DEPENDS": "libtbb-dev"
     },
     "borg-sat-11.03.02-par-industrial": {
-        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/borg-sat-11.03.02c.tar.gz",
+        "EXTRA_ASSETS": "cryptominisat-2.9.0.tar.gz glucoser-1.0.tar.gz march_hi.zip sat11-20-silverthorn-fixed.compile"
     },
     "borg-sat-11.03.02-par-random": {
-        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/borg-sat-11.03.02c.tar.gz",
+        "EXTRA_ASSETS": "cryptominisat-2.9.0.tar.gz glucoser-1.0.tar.gz march_hi.zip sat11-20-silverthorn-fixed.compile"
     },
     "borg-sat-11.03.02-seq-industrial": {
-        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/borg-sat-11.03.02c.tar.gz",
+        "EXTRA_ASSETS": "cryptominisat-2.9.0.tar.gz glucoser-1.0.tar.gz march_hi.zip sat11-20-silverthorn-fixed.compile"
     },
     "borg-sat-11.03.02-seq-random": {
-        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/borg-sat-11.03.02c.tar.gz",
+        "EXTRA_ASSETS": "cryptominisat-2.9.0.tar.gz glucoser-1.0.tar.gz march_hi.zip sat11-20-silverthorn-fixed.compile"
     },
     "clasp-2.0-r4092-crafted": {
-        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/claspmt-2.0-R4095-patched.tar.gz"
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/clasp-2.0-R4092.tar.gz",
+        "EXTRA_ASSETS": "sat11-37-kaufmann.compile"
     },
     "clasp-2.0-r4092-indust": {
-        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/clasp-2.0-R4092.tar.gz",
+        "EXTRA_ASSETS": "sat11-37-kaufmann.compile"
     },
     "claspmt": {
-        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/claspmt-2.0-R4095-patched.tar.gz",
+        "EXTRA_ASSETS": "sat11-37-kaufmann-fixed.compile"
     },
     "cryptominisat-strange-night-1-mt": {
-        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/cryptominisat-cryptominisat-strange-night1-mt.tar.gz",
+        "EXTRA_ASSETS": "sat11-60-soos.compile cryptoms-profile-diff-sn1.patch",
+        "BUILD_DEPENDS": "autoconf automake libtool",
+        "RDEPENDS": "libgomp1"
     },
     "cryptominisat-strange-night-1-st": {
-        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/cryptominisat-cryptominisat-strange-night1-st.tar.gz",
+        "EXTRA_ASSETS": "sat11-60-soos.compile cryptoms-profile-diff-sn1.patch",
+        "BUILD_DEPENDS": "autoconf automake libtool",
+        "RDEPENDS": "libgomp1"
     },
     "cryptominisat-strange-night-2-mt": {
-        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/cryptominisat-cryptominisat-strange-night2-mt.tar.gz",
+        "EXTRA_ASSETS": "sat11-60-soos.compile cryptoms-profile-diff-sn2.patch",
+        "BUILD_DEPENDS": "autoconf automake libtool",
+        "RDEPENDS": "libgomp1"
     },
     "cryptominisat-strange-night2-st": {
-        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/cryptominisat-cryptominisat-strange-night2-st.tar.gz",
+        "EXTRA_ASSETS": "sat11-60-soos.compile cryptoms-profile-diff-sn2.patch",
+        "BUILD_DEPENDS": "autoconf automake libtool",
+        "RDEPENDS": "libgomp1"
     },
     "cryptominisat-techdemo-alpha-mt": {
-        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/cryptominisat-cryptominisat-cryptoms-techdemo.tar.gz",
+        "EXTRA_ASSETS": "sat11-60-soos.compile",
+        "BUILD_DEPENDS": "autoconf automake libtool",
+        "RDEPENDS": "libgomp1"
     },
     "cryptominisat-techdemo-alpha-st": {
-        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/cryptominisat-cryptominisat-cryptoms-techdemo.tar.gz",
+        "EXTRA_ASSETS": "sat11-60-soos.compile",
+        "BUILD_DEPENDS": "autoconf automake libtool",
+        "RDEPENDS": "libgomp1"
     },
     "csls-pnorm-8cores": {
-        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/CSLS.zip",
+        "RDEPENDS": "libgomp1"
     },
     "csls-prob-4cores": {
-        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/CSLS.zip",
+        "RDEPENDS": "libgomp1"
     },
     "csls-prob-8cores": {
-        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/CSLS.zip",
+        "RDEPENDS": "libgomp1"
     },
     "eagleup": {
-        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/eagleup.1.565.350.tar.gz",
+        "BUILD_DEPENDS": "gcc-multilib g++-multilib libc6-dev-i386"
     },
     "ebglucose": {
-        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/ebglucose-1.0.tar.gz",
+        "BUILD_DEPENDS": "gcc-multilib g++-multilib libc6-dev-i386 lib32z1-dev"
     },
     "glucose": {
-        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/glucose2.tgz",
+        "BUILD_DEPENDS": "gcc-multilib g++-multilib libc6-dev-i386"
     },
     "glueminisat": {
-        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/glueminisat-2.2.5.tar.gz"
     },
-    "jminisat": {
-        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
-    },
-    "kw": {
-        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
-    },
+    "jminisat": {},
+    "kw": {},
     "lingeling": {
-        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/lingeling-587f-4882048-110513.tar.gz",
+        "EXTRA_ASSETS": "sat11-22-biere-fixed.compile"
     },
     "march_rw": {
-        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/march_rw.tar.gz"
     },
-    "minisat_hack:_cir_minisat-2011-03-02": {
-        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+    "minisat-hack-cir-minisat-2011-03-02": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/cir_minisat.zip",
+        "EXTRA_ASSETS": "minisat.patch-minisat"
     },
-    "minisat_hack:_cir_minisat-2011-05-13_(simp)": {
-        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+    "minisat-hack-contrasat": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/Contrasat.tar.gz"
     },
-    "minisat_hack:_contrasat": {
-        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+    "minisat-hack-ebminisat": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/ebminisat.tar.gz"
     },
-    "minisat_hack:_ebminisat": {
-        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+    "minisat-hack-lr-gl-noshr": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/minisat_LR_GL_SHR.zip",
+        "EXTRA_ASSETS": "sat11-62-ryvchin.build.sh"
     },
-    "minisat_hack:_lr_gl_noshr": {
-        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+    "minisat-hack-lr-gl-shr": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/minisat_LR_GL_SHR.zip",
+        "EXTRA_ASSETS": "sat11-62-ryvchin.build.sh"
     },
-    "minisat_hack:_lr_gl_shr": {
-        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+    "minisat-hack-lr-nogl-noshr": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/minisat_LR_GL_SHR.zip",
+        "EXTRA_ASSETS": "sat11-62-ryvchin.build.sh"
     },
-    "minisat_hack:_lr_nogl_noshr": {
-        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+    "minisat-hack-minisat": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/minisat-2.2.0-agile-26.zip",
+        "EXTRA_ASSETS": "minisat.patch-minisat"
     },
-    "minisat_hack:_minisat": {
-        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+    "minisat-hack-minisat-psm": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/minisatPsmDyn.tar.gz",
+        "BUILD_DEPENDS": "gcc-multilib g++-multilib libc6-dev-i386 lib32z1-dev"
     },
-    "minisat_hack:_minisat_psm": {
-        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
-    },
-    "minisat_hack_reference:_minisat": {
-        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+    "minisat-hack-reference-minisat": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/minisat-2.2.0.tar.gz",
+        "EXTRA_ASSETS": "minisat.patch-minisat"
     },
     "mphasesat": {
-        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/MPhaseSAT.zip",
+        "BUILD_DEPENDS": "gcc-multilib g++-multilib libc6-dev-i386"
     },
     "mphasesat64": {
-        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/MPhaseSAT64.zip",
+        "BUILD_DEPENDS": "gcc-multilib g++-multilib libc6-dev-i386"
     },
     "mphasesat_m": {
-        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/MPhaseSAT_M.zip",
+        "BUILD_DEPENDS": "gcc-multilib g++-multilib libc6-dev-i386"
     },
     "multiflip": {
-        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/MultiFlip.zip",
+        "BUILD_DEPENDS": "gcc-multilib g++-multilib libc6-dev-i386"
     },
     "picosat": {
-        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/picosat-941.tar.gz",
+        "BUILD_DEPENDS": "gcc-multilib g++-multilib libc6-dev-i386"
     },
     "plingeling": {
-        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/lingeling-587f-4882048-110513.tar.gz",
+        "EXTRA_ASSETS": "sat11-22-biere-fixed.compile"
     },
     "ppfolio-par": {
-        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/ppfolio-src.tar",
+        "BUILD_DEPENDS": "libboost-program-options-dev",
+        "base_from": "debian/eol:squeeze-slim",
+        "RDEPENDS": "libboost-program-options1.42.0"
     },
     "ppfolio-seq": {
-        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/ppfolio-src.tar",
+        "BUILD_DEPENDS": "libboost-program-options-dev",
+        "base_from": "debian/eol:squeeze-slim",
+        "RDEPENDS": "libboost-program-options1.42.0"
     },
     "priss-1.0": {
-        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/riss.tar.gz"
     },
     "priss-auto": {
-        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/riss.tar.gz"
     },
     "priss-up": {
-        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/riss.tar.gz"
     },
     "qutersat": {
-        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/QuteRSat.tar.gz",
+        "RDEPENDS": "libgomp1",
+        "BUILD_DEPENDS": "libncurses5-dev"
     },
     "rcl": {
-        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/rclSolver.tar.gz",
+        "EXTRA_ASSETS": "sat11-55-lagniez.compile"
     },
     "restartsat-a75": {
-        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/RestartSAT.tar.bz2"
     },
     "restartsat-b95": {
-        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/RestartSAT.tar.bz2"
     },
     "riss-1.0": {
-        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/riss.tar.gz"
     },
     "riss-auto": {
-        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/riss.tar.gz"
     },
     "riss-auto_(1200_s_timeout)": {
         "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
     },
     "riss-exp": {
-        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/riss.tar.gz"
     },
     "sapperlot": {
-        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/SApperloT.tgz"
     },
     "sapperlot2010": {
-        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/SApperloT2010.tgz"
     },
     "sartagnan": {
-        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/SArTagnan.tgz"
     },
-    "sat07_reference_solver:_minisat": {
-        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+    "sat07-reference-minisat": {},
+    "sat09-reference-clasp": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2009-src/clasp.zip"
     },
-    "sat09_reference_solver:_clasp": {
-        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+    "sat09-reference-glucose": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2009-src/glucose.zip",
+        "BUILD_DEPENDS": "gcc-multilib g++-multilib libc6-dev-i386 lib32z1-dev"
     },
-    "sat09_reference_solver:glucose": {
-        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+    "sat09-reference-gnovelty-plus2": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2009-src/gnovelty+2.zip",
+        "BUILD_DEPENDS": "libboost-dev"
     },
-    "sat09_reference_solver:_gnovelty-plus2": {
-        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+    "sat09-reference-lysat": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2009-src/LySATi.zip",
+        "builder_base": "debian/eol:lenny-slim"
     },
-    "sat09_reference_solver:lysat": {
-        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+    "sat09-reference-manysat-1.1": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2009-src/ManySAT-1.1.zip"
     },
-    "sat09_reference_solver:_manysat_1.1": {
-        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+    "sat09-reference-march-hi": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2009-src/march_hi.zip"
     },
-    "sat09_reference_solver:_march_hi": {
-        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+    "sat09-reference-precosat": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2009-src/precosat.zip",
+        "BUILD_DEPENDS": "gcc-multilib g++-multilib libc6-dev-i386"
     },
-    "sat09_reference_solver:precosat": {
-        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
-    },
-    "sat09_reference_solver:_satzilla2009_c": {
-        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
-    },
-    "sat09_reference_solver:_satzilla2009_r": {
-        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
-    },
-    "sat09_reference_solver:_tnm": {
-        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+    "sat09-reference-satzilla2009-c": {},
+    "sat09-reference-satzilla2009-r": {},
+    "sat09-reference-tnm": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2009-src/TNM.zip",
+        "BUILD_DEPENDS": "gcc-multilib g++-multilib libc6-dev-i386"
     },
     "sat4j_core": {
-        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/sat4j-core-v20110206.zip",
+        "EXTRA_ASSETS": "sat11-12-leberre.build.sh sat11-12-leberre.build.xml",
+        "BUILD_DEPENDS": "openjdk-6-jdk ant unzip",
+        "RDEPENDS": "openjdk-6-jre-headless"
     },
     "sathys": {
-        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/sathys.tar.gz",
+        "EXTRA_ASSETS": "sat11-55-lagniez.compile"
     },
-    "sat_intersec_01": {
-        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
-    },
+    "sat_intersec_01": {},
     "satisfiability_solver_selector-2011-03-18": {
-        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/3S-1.0.tgz",
+        "EXTRA_ASSETS": "precosat-570-239dbbe-100801.tar.gz satelite.patch sat11-66-sellmann.timerun sat11-66-sellmann.compile"
     },
     "satisfiability_solver_selector-2011-03-18_(1200_s_timeout)": {
         "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
     },
     "sattime": {
-        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/sattimefold.tar.gz"
     },
     "sattime-plus": {
-        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/sattime+fold.tar.gz"
     },
     "sattime2011": {
-        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/sattime2011fold.tar.gz"
     },
     "shortsattime-plus": {
-        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/shortsattime+fold.tar.gz"
     },
     "shortsattime2011": {
-        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/shortsattime2011fold.tar.gz"
     },
     "sol": {
-        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/sol_main.7z"
     },
     "sparrow2011": {
-        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/sparrow2011.tar.gz"
     },
     "structure-0.1": {
-        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/brtzsnr-structure-sc11-0-g3832ec0.zip",
+        "EXTRA_ASSETS": "constellation.zip sc11.tar.gz trove-2.1.0.tar.gz sat11-34-mosoi.compile-structure"
     },
     "structure-0.1_(hbr=2)": {
         "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
     },
     "synit_sat": {
-        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/synit_sat.tar.gz",
+        "RDEPENDS": "libgomp1"
     },
     "tts": {
-        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/tts-5-4.tgz"
     },
     "ttsth": {
-        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/tts-5-4.tgz"
     },
     "umsat": {
-        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/{SOLVER_NAME}.tar.gz"
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/UmSat.tar.gz",
+        "BUILD_DEPENDS": "libboost-dev"
+    },
+    "minisat-hack-cir-minisat-2011-05-13-simp": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/cir_minisat_resubmit.zip"
+    },
+    "riss-auto_1200_s_timeout": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/riss.tar.gz"
+    },
+    "satisfiability_solver_selector-2011-03-18_1200_s_timeout": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/3S-1.0.tgz",
+        "EXTRA_ASSETS": "precosat-570-239dbbe-100801.tar.gz satelite.patch sat11-66-sellmann.timerun sat11-66-sellmann.compile"
+    },
+    "structure-0.1_hbr2": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/brtzsnr-structure-sc11-0-g3832ec0.zip",
+        "EXTRA_ASSETS": "constellation.zip sc11.tar.gz trove-2.1.0.tar.gz sat11-34-mosoi.compile-structure"
     }
 }
