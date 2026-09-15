@@ -179,6 +179,7 @@ and values are JSON objects with the following keys:
 | argsproof | string list | arguments to the executable for solving with proof output. See below for allowed keywords |
 | gz | boolean | If true, the solver supports natively gzipped input files.  If false, an input file ending with `.gz` will be first decompressed by the wrapper script. |
 | test_timeout | Minimum timeout in seconds used by `satex test` for this solver, for submissions whose preprocessing is slow even on tiny inputs (the command-line `--timeout` still applies when larger) |
+| incomplete | boolean | true for incomplete solvers (local search, portfolios without complete solver): `satex test` runs them on an easy satisfiable instance and skips the UNSAT checks, which they cannot pass |
 | license | string | SPDX identifier(s) of the licence the solver is distributed under, several joined with ` AND ` (for example `MIT`, `GPL-3.0`). Filled by `tools/detect_licenses.py` from the licence files and source headers of the archive; correct or complete it by hand when you know better |
 | license_source | string | where the licence was read: a licence file or source header of the archive, a paper, the authors |
 
