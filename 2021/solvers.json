@@ -13,7 +13,9 @@
     "argsproof": [
       "FILECNF",
       "FILEPROOF"
-    ]
+    ],
+    "license": "MIT",
+    "license_source": "licence file cadical-hack-gb/LICENSE"
   },
   "cadical-less-up": {
     "status": "ok",
@@ -29,7 +31,9 @@
     "argsproof": [
       "FILECNF",
       "FILEPROOF"
-    ]
+    ],
+    "license": "MIT",
+    "license_source": "licence file cadical-1.4.0-c09aa31-less-UP/LICENSE"
   },
   "cadical-pripro": {
     "status": "ok",
@@ -45,7 +49,9 @@
     "argsproof": [
       "FILECNF",
       "FILEPROOF"
-    ]
+    ],
+    "license": "MIT",
+    "license_source": "licence file cadical-PriPro-fcb9e72-SAT2021_submission_cadical_pripro/LICENSE"
   },
   "cadical-pripro_no_bin": {
     "status": "ok",
@@ -61,7 +67,9 @@
     "argsproof": [
       "FILECNF",
       "FILEPROOF"
-    ]
+    ],
+    "license": "MIT",
+    "license_source": "licence file cadical-PriPro_no_bin-fcb9e72-SAT2021_submission_cadical_pripro_no_bin/LICENSE"
   },
   "cadical-rp": {
     "status": "ok",
@@ -77,7 +85,9 @@
     "argsproof": [
       "FILECNF",
       "FILEPROOF"
-    ]
+    ],
+    "license": "MIT",
+    "license_source": "licence file cadical-1.4.0-a22cc53-rand_rephase/LICENSE"
   },
   "cadical-sc2021": {
     "status": "ok",
@@ -93,7 +103,9 @@
     "argsproof": [
       "FILECNF",
       "FILEPROOF"
-    ]
+    ],
+    "license": "MIT",
+    "license_source": "licence file cadical-sc2021-be1e981/LICENSE"
   },
   "cadical_scavel01": {
     "status": "ok",
@@ -109,7 +121,9 @@
     "argsproof": [
       "FILECNF",
       "FILEPROOF"
-    ]
+    ],
+    "license": "MIT",
+    "license_source": "licence file LICENSE"
   },
   "cadical_scavel02": {
     "status": "ok",
@@ -125,7 +139,10 @@
     "argsproof": [
       "FILECNF",
       "FILEPROOF"
-    ]
+    ],
+    "test_timeout": 120,
+    "license": "MIT",
+    "license_source": "licence file LICENSE"
   },
   "cleanmaple": {
     "status": "ok",
@@ -141,7 +158,9 @@
     "argsproof": [
       "FILECNF",
       "-drup-file=FILEPROOF"
-    ]
+    ],
+    "license": "MIT",
+    "license_source": "licence file LICENSE"
   },
   "cleanmaple_pripro": {
     "status": "ok",
@@ -157,10 +176,12 @@
     "argsproof": [
       "FILECNF",
       "-drup-file=FILEPROOF"
-    ]
+    ],
+    "license": "MIT",
+    "license_source": "licence file LICENSE"
   },
   "cms_expv_gbl": {
-    "status": "unstable",
+    "status": "fixme",
     "name": "cms_expV_gbL",
     "call": "./cleanmaple",
     "tracks": [
@@ -173,7 +194,10 @@
     "argsproof": [
       "FILECNF",
       "-drup-file=FILEPROOF"
-    ]
+    ],
+    "status_detail": "No build recipe: the archive holds the sources of a CryptoMiniSat variant (cms/), BreakID and m4ri without a build script, and the old generic builder installs nothing; the call of the entry (./cleanmaple) does not match either. Needs a CMake recipe for the three components.",
+    "license": "GPL-2.0",
+    "license_source": "licence file m4ri-20200125/COPYING"
   },
   "hcad": {
     "status": "ok",
@@ -189,9 +213,11 @@
     "argsproof": [
       "FILECNF",
       "FILEPROOF"
-    ]
+    ],
+    "license": "MIT",
+    "license_source": "licence file LICENSE"
   },
-    "hkis": {
+  "hkis": {
     "status": "ok",
     "name": "hKiS",
     "call": "./kissat",
@@ -205,9 +231,11 @@
     "argsproof": [
       "FILECNF",
       "FILEPROOF"
-    ]
+    ],
+    "license": "MIT",
+    "license_source": "licence file LICENSE"
   },
-    "kissat-mab": {
+  "kissat-mab": {
     "status": "ok",
     "name": "kissat-MAB",
     "call": "./kissat",
@@ -221,9 +249,11 @@
     "argsproof": [
       "FILECNF",
       "FILEPROOF"
-    ]
+    ],
+    "license": "MIT",
+    "license_source": "licence file kissat-1.0.3-79d8d8f2/LICENSE"
   },
-    "kissat-sat_crvr_gb": {
+  "kissat-sat_crvr_gb": {
     "status": "ok",
     "name": "kissat-sat_crvr_gb",
     "call": "./kissat",
@@ -237,9 +267,11 @@
     "argsproof": [
       "FILECNF",
       "FILEPROOF"
-    ]
+    ],
+    "license": "MIT",
+    "license_source": "licence file kissat-sat_crvr_gb/LICENSE"
   },
-    "kissat-sc2021": {
+  "kissat-sc2021": {
     "status": "ok",
     "name": "kissat-sc2021",
     "call": "./kissat",
@@ -253,9 +285,11 @@
     "argsproof": [
       "FILECNF",
       "FILEPROOF"
-    ]
+    ],
+    "license": "MIT",
+    "license_source": "licence file kissat-sc2021-98f47764/LICENSE"
   },
-    "kissat_bonus": {
+  "kissat_bonus": {
     "status": "ok",
     "name": "kissat_bonus",
     "call": "./kissat",
@@ -269,9 +303,11 @@
     "argsproof": [
       "FILECNF",
       "FILEPROOF"
-    ]
+    ],
+    "license": "MIT",
+    "license_source": "licence file LICENSE"
   },
-    "kissat_cf": {
+  "kissat_cf": {
     "status": "ok",
     "name": "kissat_cf",
     "call": "./kissat",
@@ -285,9 +321,11 @@
     "argsproof": [
       "FILECNF",
       "FILEPROOF"
-    ]
+    ],
+    "license": "MIT",
+    "license_source": "licence file LICENSE"
   },
-    "kissat_gb": {
+  "kissat_gb": {
     "status": "ok",
     "name": "kissat_gb",
     "call": "./kissat",
@@ -301,7 +339,9 @@
     "argsproof": [
       "FILECNF",
       "FILEPROOF"
-    ]
+    ],
+    "license": "MIT",
+    "license_source": "licence file kissat_gb/LICENSE"
   },
   "lstech_maple": {
     "status": "ok",
@@ -317,10 +357,12 @@
     "argsproof": [
       "FILECNF",
       "-drup-file=FILEPROOF"
-    ]
+    ],
+    "license": "MIT",
+    "license_source": "licence file sources/LICENSE"
   },
   "maplessv": {
-    "status": "unstable",
+    "status": "fixme",
     "name": "mapleSSV",
     "call": "./glucose",
     "tracks": [
@@ -333,7 +375,10 @@
     "argsproof": [
       "FILECNF",
       "-drup-file=FILEPROOF"
-    ]
+    ],
+    "status_detail": "No build recipe: the archive holds glucose-based sources with precompiled objects and a prebuilt glucose_static, a mini-init-lib and an m4ri tarball, without a top-level build script; the old generic builder finds nothing to build. Needs a Makefile-based recipe that rebuilds the solver and links mini-init-lib and m4ri instead of the shipped binary.",
+    "license": "MIT",
+    "license_source": "licence file sources/LICENSE"
   },
   "maple_mbdr_bjl7_local": {
     "status": "ok",
@@ -349,7 +394,9 @@
     "argsproof": [
       "FILECNF",
       "-drup-file=FILEPROOF"
-    ]
+    ],
+    "license": "MIT",
+    "license_source": "licence file sources/LICENSE"
   },
   "maple_mbdr_cent_perm_10k": {
     "status": "ok",
@@ -365,7 +412,9 @@
     "argsproof": [
       "FILECNF",
       "-drup-file=FILEPROOF"
-    ]
+    ],
+    "license": "MIT",
+    "license_source": "licence file sources/LICENSE"
   },
   "maple_mbdr_cent_perm_75k": {
     "status": "ok",
@@ -381,7 +430,9 @@
     "argsproof": [
       "FILECNF",
       "-drup-file=FILEPROOF"
-    ]
+    ],
+    "license": "MIT",
+    "license_source": "licence file sources/LICENSE"
   },
   "maple_simp21": {
     "status": "ok",
@@ -397,7 +448,9 @@
     "argsproof": [
       "FILECNF",
       "-drup-file=FILEPROOF"
-    ]
+    ],
+    "license": "MIT",
+    "license_source": "licence header of Maple_simp/core/Main.cc"
   },
   "optsat_m21": {
     "status": "ok",
@@ -414,7 +467,9 @@
       "FILECNF",
       "-certified",
       "-certified-output=FILEPROOF"
-    ]
+    ],
+    "license": "MIT",
+    "license_source": "licence header of optsat/core/SolverTypes.h"
   },
   "optsat_r21": {
     "status": "ok",
@@ -431,7 +486,9 @@
       "FILECNF",
       "-certified",
       "-certified-output=FILEPROOF"
-    ]
+    ],
+    "license": "MIT",
+    "license_source": "licence header of optsat/mtl/XAlloc.h"
   },
   "parafrost-nomdm-sc2021": {
     "status": "ok",
@@ -442,12 +499,20 @@
     ],
     "gz": false,
     "args": [
-      "FILECNF"
+      "FILECNF",
+      "-model",
+      "-modelprint"
     ],
     "argsproof": [
       "FILECNF",
+      "-model",
+      "-modelprint",
+      "-proof",
+      "-proofnonbinary",
       "--proofout=FILEPROOF"
-    ]
+    ],
+    "license": "GPL-3.0",
+    "license_source": "licence file LICENSE"
   },
   "parafrost-sc2021": {
     "status": "ok",
@@ -458,12 +523,20 @@
     ],
     "gz": false,
     "args": [
-      "FILECNF"
+      "FILECNF",
+      "-model",
+      "-modelprint"
     ],
     "argsproof": [
       "FILECNF",
+      "-model",
+      "-modelprint",
+      "-proof",
+      "-proofnonbinary",
       "--proofout=FILEPROOF"
-    ]
+    ],
+    "license": "GPL-3.0",
+    "license_source": "licence file LICENSE"
   },
   "relaxed_lcftp": {
     "status": "ok",
@@ -479,7 +552,9 @@
     "argsproof": [
       "FILECNF",
       "-drup-file=FILEPROOF"
-    ]
+    ],
+    "license": "MIT",
+    "license_source": "licence header of sources/utils/System.cc"
   },
   "relaxed_lcftp_v2": {
     "status": "ok",
@@ -495,7 +570,9 @@
     "argsproof": [
       "FILECNF",
       "-drup-file=FILEPROOF"
-    ]
+    ],
+    "license": "MIT",
+    "license_source": "licence header of sources/utils/System.cc"
   },
   "relaxed_lcftp_v3": {
     "status": "ok",
@@ -511,7 +588,9 @@
     "argsproof": [
       "FILECNF",
       "-drup-file=FILEPROOF"
-    ]
+    ],
+    "license": "MIT",
+    "license_source": "licence header of sources/utils/System.cc"
   },
   "relaxed_lcmdcmdl_blb": {
     "status": "ok",
@@ -527,7 +606,9 @@
     "argsproof": [
       "FILECNF",
       "-drup-file=FILEPROOF"
-    ]
+    ],
+    "license": "MIT",
+    "license_source": "licence file sources/LICENSE"
   },
   "relaxed_lcmdcmdl_scavel01": {
     "status": "ok",
@@ -543,7 +624,9 @@
     "argsproof": [
       "FILECNF",
       "-drup-file=FILEPROOF"
-    ]
+    ],
+    "license": "MIT",
+    "license_source": "licence file sources/LICENSE"
   },
   "relaxed_lcmdcmdl_scavel02": {
     "status": "ok",
@@ -559,7 +642,10 @@
     "argsproof": [
       "FILECNF",
       "-drup-file=FILEPROOF"
-    ]
+    ],
+    "test_timeout": 120,
+    "license": "MIT",
+    "license_source": "licence file sources/LICENSE"
   },
   "slime": {
     "status": "ok",
@@ -575,6 +661,8 @@
     "argsproof": [
       "FILECNF",
       "FILEPROOF"
-    ]
+    ],
+    "license": "MIT",
+    "license_source": "licence file LICENSE"
   }
 }
