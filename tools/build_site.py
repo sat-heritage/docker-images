@@ -101,6 +101,11 @@ def collect(repo: Path) -> list[dict]:
     results_file = repo / "data" / "test-results.json"
     if results_file.is_file():
         results = load_json(results_file).get("images", {})
+    hub_file = repo / "data" / "dockerhub.json"
+    hub = load_json(hub_file) if hub_file.is_file() else {}
+    published = set(hub.get("images", []))
+    global HUB_GENERATED
+    HUB_GENERATED = hub.get("generated", "")
     awards_file = repo / "data" / "awards.json"
     awards = load_json(awards_file).get("awards", []) if awards_file.is_file() else []
     awards_by_image = {}
@@ -166,6 +171,7 @@ def collect(repo: Path) -> list[dict]:
                 "build_depends": block.get("BUILD_DEPENDS", ""),
                 "rdepends": block.get("RDEPENDS", ""),
                 "download_url": (block.get("download_url", "") or "").replace("{SOLVER_NAME}", entry.get("name", key)),
+                "published": (f"{DOCKER_NS}/{image}" in published) if published else None,
                 "verdict": result.get("verdict", "unknown"),
                 "tested": result.get("date", ""),
                 "build_stages": result.get("build", {}),
@@ -187,6 +193,9 @@ CSS = """
 .podium .yr div{font-size:13px;margin:3px 0}
 .podium .yr small{color:var(--muted)}
 .podium details{margin-top:6px} .podium summary{cursor:pointer;color:var(--accent);font-size:13px}
+.badge.hub{background:#2496ed;color:#fff;border-color:#1d7fcc;display:inline-flex;align-items:center;gap:5px;text-decoration:none} a.badge.hub:hover{background:#1d7fcc;text-decoration:none}
+.badge.hub.off{background:var(--bg2);color:var(--muted);border-color:var(--line)}
+.badge.hub svg.docker{width:14px;height:14px;fill:currentColor;flex:none}
 .links{display:flex;gap:8px;flex-wrap:wrap;margin:4px 0 10px} .btn.small{padding:6px 12px;font-size:13px}
 .tabs{display:flex;gap:6px;margin:10px 0 14px} .tabs button{font:inherit;padding:8px 14px;border:1px solid var(--line);border-radius:999px;background:var(--card);color:var(--ink);cursor:pointer}
 .tabs button.active{background:var(--hf);border-color:var(--hfdark);color:#1a1a19;font-weight:600}
@@ -270,8 +279,8 @@ const fy = document.getElementById('year'), ff = document.getElementById('family
 function badge(v) { const m = {verified:['Verified','ok'],runs:['Runs, checks failed','warn'],built:['Compiles','warn'],'source-available':['Build fails','fail'],'source-unavailable':['Source unavailable','fail'],unknown:['Not run yet','none']}[v] || [v,'none']; return `<span class="badge ${m[1]}">${m[0]}</span>`; }
 function render() {
   const s = q.value.trim().toLowerCase();
-  const fc = document.getElementById('cap'), fa = document.getElementById('award');
-  const rows = data.filter(d => (!fa.value || (fa.value === 'winner' ? d.awards.some(a => a.rank === 1) : d.awards.length > 0)) && (!fy.value || d.set === fy.value) && (!ff.value || d.family === ff.value) && (!fv.value || d.verdict === fv.value) && (!fs.value || d.status === fs.value) && (!fc.value || d.capabilities.includes(fc.value)) && (!s || (d.name + ' ' + d.key + ' ' + d.authors + ' ' + d.set).toLowerCase().includes(s)));
+  const fc = document.getElementById('cap'), fa = document.getElementById('award'), fh = document.getElementById('hub');
+  const rows = data.filter(d => (!fh || !fh.value || (fh.value === 'yes') === !!d.published) && (!fa.value || (fa.value === 'winner' ? d.awards.some(a => a.rank === 1) : d.awards.length > 0)) && (!fy.value || d.set === fy.value) && (!ff.value || d.family === ff.value) && (!fv.value || d.verdict === fv.value) && (!fs.value || d.status === fs.value) && (!fc.value || d.capabilities.includes(fc.value)) && (!s || (d.name + ' ' + d.key + ' ' + d.authors + ' ' + d.set).toLowerCase().includes(s)));
   document.getElementById('count').textContent = rows.length + ' / ' + data.length + ' images';
   const years = [...new Set(rows.map(d => d.set))].sort((a, b) => (isNaN(a) - isNaN(b)) || (b - a) || a.localeCompare(b));
   grid.innerHTML = years.map(y => `<section class="year"><div class="year-label"><span>${y}</span><small>${rows.filter(d => d.set === y).length}</small></div><div class="grid">` + rows.filter(d => d.set === y).map(card).join('') + `</div></section>`).join('');
@@ -281,11 +290,11 @@ function card(d) { return `<a class="card" href="${d.set}/${d.key}.html">
     <div class="meta">${d.set} · ${d.authors || 'authors not recorded'}</div>
     <div class="tagrow"><span class="lbl">solver</span><span class="tag id">${d.family}</span>${d.version ? `<span class="tag id">v${d.version}</span>` : ''}${d.tracks.map(t => `<span class="tag id">${t}</span>`).join('')}${d.awards.slice(0, d.more ? 2 : 3).map(a => `<span class="tag award r${Math.min(a.rank, 3)}">${a.label}</span>`).join('')}${d.more ? `<span class="tag award more">${d.more}</span>` : ''}</div>
     <div class="tagrow"><span class="lbl">can do</span>${d.capabilities.map(c => `<span class="tag cap">${c}</span>`).join('')}</div>
-    <div class="tagrow"><span class="lbl">status</span>${badge(d.verdict)}<span class="badge ${ {ok:'ok',unstable:'warn',fixme:'fail'}[d.status] || 'none'}">${ {ok:'builds',unstable:'unstable',fixme:'not buildable'}[d.status] || d.status}</span></div>
+    <div class="tagrow"><span class="lbl">status</span>${badge(d.verdict)}<span class="badge ${ {ok:'ok',unstable:'warn',fixme:'fail'}[d.status] || 'none'}">${ {ok:'builds',unstable:'unstable',fixme:'not buildable'}[d.status] || d.status}</span>${d.published === true ? HUB_YES : d.published === false ? HUB_NO : ''}</div>
   </a>`; }
-[q, fy, ff, fv, fs, document.getElementById('cap'), document.getElementById('award')].forEach(e => e.addEventListener('input', render));
+[q, fy, ff, fv, fs, document.getElementById('cap'), document.getElementById('award'), document.getElementById('hub')].filter(Boolean).forEach(e => e.addEventListener('input', render));
 const params = new URLSearchParams(location.search);
-for (const id of ['q', 'year', 'family', 'verdict', 'status', 'cap', 'award']) { const v = params.get(id); if (v) { const el = document.getElementById(id); if (el) el.value = v; } }
+for (const id of ['q', 'year', 'family', 'verdict', 'status', 'cap', 'award', 'hub']) { const v = params.get(id); if (v) { const el = document.getElementById(id); if (el) el.value = v; } }
 render();
 """
 
@@ -343,6 +352,7 @@ ICON = {
     "verdict": '<path d="M22 11.1V12a10 10 0 1 1-5.9-9.1"/><path d="m9 11 3 3L22 4"/>',
     "status": '<path d="M12 2 4 5v6c0 5.5 3.8 10.7 8 12 4.2-1.3 8-6.5 8-12V5z"/>',
     "cap": '<path d="M13 2 3 14h9l-1 8 10-12h-9z"/>',
+    "hub": '<path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5M12 22V12"/>',
     "award": '<path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/>',
 }
 
@@ -366,11 +376,13 @@ def index_page(solvers: list[dict]) -> str:
   {ctl("status", '<select id="status"><option value="">Any status</option><option value="ok">builds</option><option value="unstable">unstable</option><option value="fixme">not buildable</option></select>')}
   {ctl("cap", '<select id="cap"><option value="">Any capability</option><option value="SAT">SAT (verified)</option><option value="UNSAT">UNSAT (verified)</option><option value="UNSAT+proof">UNSAT+proof (verified)</option><option value="parallel">parallel</option><option value="gzip input">gzip input</option></select>')}
   {ctl("award", '<select id="award"><option value="">Any award</option><option value="awarded">Awarded (any podium)</option><option value="winner">Winners (1st only)</option></select>')}
+  {ctl("hub", '<select id="hub"><option value="">Docker Hub: any</option><option value="yes">Ready on Docker Hub</option><option value="no">Not on Docker Hub yet</option></select>') if HUB_GENERATED else ''}
   <span class="count" id="count"></span>
 </div>
 <div class="legend"><span>◌ dashed: what the solver is</span><span>▪ blue: what it can do, as verified by the test suite</span><span>● filled: whether it builds and passes the tests today</span></div>
 <div id="grid"></div>
-<script>window.SOLVERS = {json.dumps([dict({k: s[k] for k in ("image", "key", "set", "name", "authors", "status", "family", "verdict", "capabilities", "version", "tracks")}, awards=[{"rank": a["rank"], "label": award_label(a)} for a in s["awards"]], more=award_summary(s["awards"])[1]) for s in solvers])};</script>
+<script>window.SOLVERS = {json.dumps([dict({k: s[k] for k in ("image", "key", "set", "name", "authors", "status", "family", "verdict", "capabilities", "version", "tracks", "published")}, awards=[{"rank": a["rank"], "label": award_label(a)} for a in s["awards"]], more=award_summary(s["awards"])[1]) for s in solvers])};</script>
+<script>const HUB_YES = {json.dumps(HUB_BADGE_YES.replace('<a class="badge hub" href="{url}" title="Tags of this image on Docker Hub">', '<span class="badge hub">').replace('</a>', '</span>'))}, HUB_NO = {json.dumps(HUB_BADGE_NO)};</script>
 <script>{JS}</script>
 """
     return page("Catalogue", body, 0, "catalogue")
@@ -392,12 +404,12 @@ def solver_page(s: dict) -> str:
 <div class="page"><h1>{esc(s['name'])}</h1><div class="sub">{esc(s['authors'] or 'authors not recorded')}{(' · version ' + esc(s['version'])) if s['version'] else ''}</div>
 <div class="tagrow" style="margin-top:10px"><span class="lbl">solver</span><span class="tag id">{esc(s['family'])}</span>{('<span class="tag id">v' + esc(s['version']) + '</span>') if s['version'] else ''}{''.join('<span class="tag id">' + esc(t) + '</span>' for t in s['tracks'])}{award_tags(s['awards'])}</div>
 <div class="tagrow" style="margin-top:6px"><span class="lbl">can do</span>{''.join('<span class="tag cap">' + esc(c) + '</span>' for c in s['capabilities']) or '<span class="tag cap">not verified yet</span>'}</div>
-<div class="tagrow" style="margin-top:6px"><span class="lbl">status</span><span class="badge {vcls}">{vlabel}</span><span class="badge {scls}">{slabel}</span></div></div>
+<div class="tagrow" style="margin-top:6px"><span class="lbl">status</span><span class="badge {vcls}">{vlabel}</span><span class="badge {scls}">{slabel}</span>{hub_badge(s)}</div></div>
 {('<div class="section"><h2>Awards</h2><ul>' + ''.join('<li><span class="tag award r' + str(min(a['rank'], 3)) + '">' + esc(award_label(a)) + '</span>' + (' <span class="muted-inline">' + esc(a['note']) + '</span>' if a.get('note') else '') + ' <a class="muted-inline" href="' + esc(a['source']) + '">source</a></li>' for a in s['awards']) + '</ul></div>') if s['awards'] else ''}
 {('<div class="section"><h2>Status</h2><p>' + esc(s['status_detail']) + '</p></div>') if s['status_detail'] else ''}
 {('<div class="section"><h2>Notes</h2><p>' + esc(s['comment']) + '</p></div>') if s['comment'] else ''}
-<div class="section pull"><h2>Pull it from Docker and run it</h2><pre class="cmd" data-copy>docker pull {DOCKER_NS}/{esc(s['image'])}
-{esc(run_cmd)}</pre><p class="muted-inline">No build needed: the image is published on <a href="https://hub.docker.com/r/{DOCKER_NS}/{esc(s['key'])}">Docker Hub</a>. Mount the directory that holds your instance on <code>/data</code>; the proof file is optional{'' if s['proof'] else ' and not produced by this solver'}. Its full provenance is kept: the archived sources, the pinned build environment and the recipe are all listed below, and <code>satex build {esc(s['image'])}</code> rebuilds the same image on your own machine if you would rather not trust ours (slower, same solver).</p>
+<div class="section pull"><h2>{'Pull it from Docker and run it' if s['published'] is not False else 'Build it and run it'}</h2><pre class="cmd" data-copy>{'docker pull ' + DOCKER_NS + '/' + esc(s['image']) if s['published'] is not False else 'pip install satex && satex build ' + esc(s['image'])}
+{esc(run_cmd)}</pre><p class="muted-inline">{('No build needed: the image is published on <a href="https://hub.docker.com/r/' + DOCKER_NS + '/' + esc(s['key']) + '">Docker Hub</a>' + (' (checked ' + esc(HUB_GENERATED[:10]) + ')' if HUB_GENERATED else '') + '.') if s['published'] is not False else ('This image is not on <a href="https://hub.docker.com/u/' + DOCKER_NS + '">Docker Hub</a> yet' + (' (checked ' + esc(HUB_GENERATED[:10]) + ')' if HUB_GENERATED else '') + ': the images are pushed in batches, and some entries cannot be built. Until then, <code>satex build</code> makes it on your machine from the archived sources and the recipe below, and the run command is the same.')} Mount the directory that holds your instance on <code>/data</code>; the proof file is optional{'' if s['proof'] else ' and not produced by this solver'}. Its full provenance is kept: the archived sources, the pinned build environment and the recipe are all listed below, and <code>satex build {esc(s['image'])}</code> rebuilds the same image on your own machine if you would rather not trust ours (slower, same solver).</p>
 {('<p><a class="btn" href="' + esc(s['download_url']) + '">Download the sources</a> <span class="muted-inline">' + esc(s['download_url'].rsplit('/', 1)[-1]) + ', the competition submission as archived by SAT Heritage, to build it yourself with the recipe below.</span></p>') if s['download_url'] else ''}<dl>
 <dt>Image</dt><dd><code>{DOCKER_NS}/{esc(s['image'])}</code></dd>
 <dt>Command</dt><dd><code>{esc(s['call'])} {esc(' '.join(map(str, s['args'])))}</code></dd>
@@ -543,6 +555,7 @@ docker run --rm -v $PWD:/data satex/kissat-sc2024:2024 instance.cnf proof.out</p
 <div class="stat"><div class="n">{tested}</div><div class="l">run through the test suite so far</div></div>
 <div class="stat"><div class="n">{compiles}</div><div class="l">of them compile from source today</div></div>
 <div class="stat"><div class="n">{verified}</div><div class="l">of them fully verified (build, SAT, UNSAT, proof)</div></div>
+{('<div class="stat"><div class="n">' + str(sum(1 for s in solvers if s["published"])) + '</div><div class="l">images on Docker Hub, checked ' + esc(HUB_GENERATED[:10]) + '</div></div>') if HUB_GENERATED else ''}
 <div class="stat"><div class="n">{len(years)}</div><div class="l">competition years, {years[0]} to {years[-1]}</div></div>
 <div class="stat"><div class="n">{len(families)}</div><div class="l">solver families</div></div>
 <div class="stat"><div class="n">{len(authors)}</div><div class="l">authors</div></div>
@@ -561,6 +574,21 @@ docker run --rm -v $PWD:/data satex/kissat-sc2024:2024 instance.cnf proof.out</p
 
 
 MISSING_PODIUMS: list[dict] = []
+HUB_GENERATED = ""
+DOCKER_MARK = ('<svg class="docker" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 9h3v3H5zM9 9h3v3H9zM13 9h3v3h-3zM9 5h3v3H9zM13 5h3v3h-3zM17 9h3v3h-3z"/>'
+               '<path d="M2 13h18.3c1.2 0 2.3-.4 3.2-1.2l.5-.5-1-.5c-.9-.4-2-.5-3-.3-.2-1-.8-1.8-1.7-2.3l-.4-.2-.3.4c-.6.9-.7 2-.3 3H2v.5C2 17 5 21 10.5 21c5.2 0 8.6-2.4 10.4-6.2-3.3.6-6.3-.3-7.9-1.8H2z"/></svg>')
+HUB_BADGE_YES = f'<a class="badge hub" href="{{url}}" title="Tags of this image on Docker Hub">{DOCKER_MARK}Ready on Docker Hub</a>'
+HUB_BADGE_NO = f'<span class="badge hub off">{DOCKER_MARK}Not on Docker Hub yet</span>'
+
+
+def hub_url(key: str, tag: str) -> str:
+    return f"https://hub.docker.com/r/{DOCKER_NS}/{key}/tags?name={tag}"
+
+
+def hub_badge(s: dict) -> str:
+    if s["published"] is None:
+        return ""
+    return HUB_BADGE_YES.replace("{url}", esc(hub_url(s["key"], s["set"]))) if s["published"] else HUB_BADGE_NO
 NO_SOURCE = re.compile(r"(no|miss(es|ing)?|without|lost) (the )?sources?|binary[- ]only|only (a )?binary|precompiled only|sources? (are )?(unavailable|missing|not available)", re.I)
 
 

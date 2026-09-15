@@ -3,6 +3,12 @@ name: website
 on:
   push:
     branches: [master]
+  workflow_run:
+    # refresh the Docker Hub badges after images were pushed
+    workflows: [docker-push, docker-sync]
+    types: [completed]
+  schedule:
+    - cron: "17 4 * * 1"
   workflow_dispatch:
 
 permissions:
@@ -19,9 +25,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: master
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - name: Inventory of the catalogue images published on Docker Hub
+        run: python tools/check_dockerhub.py --output data/dockerhub.json
       - run: python tools/build_site.py --output site
       - uses: actions/upload-pages-artifact@v3
         with:
