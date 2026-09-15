@@ -1,0 +1,235 @@
+{
+    "base_version": "v1",
+    "base_from": "debian:trixie-20260623-slim@sha256:28de0877c2189802884ccd20f15ee41c203573bd87bb6b883f5f46362d24c5c2",
+    "builder": "generic/starexec-v2",
+    "builder_base": "debian:trixie-20260623-slim@sha256:28de0877c2189802884ccd20f15ee41c203573bd87bb6b883f5f46362d24c5c2",
+    "APT_SNAPSHOT": "20260623T000000Z",
+    "APT_CODENAME": "trixie",
+    "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2026-competition/{SOLVER_NAME}.tar.xz",
+    "satsuma-iter-ae-kissat-mab": {
+        "BUILD_KIND": "command",
+        "BUILD_SUBDIR": "src",
+        "BUILD_COMMAND": "grep -rl -e -march=native --include=Makefile --include=makefile --include=CMakeLists.txt . | xargs -r sed -i 's/-march=native/-march=x86-64-v2/g'; bash ./build.sh",
+        "DIST_PATHS": "src"
+    },
+    "satsuma-iter-kissat": {
+        "BUILD_KIND": "command",
+        "BUILD_SUBDIR": "src",
+        "BUILD_COMMAND": "grep -rl -e -march=native --include=Makefile --include=makefile --include=CMakeLists.txt . | xargs -r sed -i 's/-march=native/-march=x86-64-v2/g'; bash ./build.sh",
+        "DIST_PATHS": "src"
+    },
+    "cadical3": {
+        "BUILD_KIND": "command",
+        "BUILD_SUBDIR": "src",
+        "BUILD_COMMAND": "bash ./build.sh",
+        "BINARY_PATH": "src/build/cadical",
+        "BINARY_NAME": "cadical"
+    },
+    "isasat": {
+        "BUILD_DEPENDS": "clang llvm-dev",
+        "BUILD_KIND": "command",
+        "BUILD_SUBDIR": "src",
+        "BUILD_COMMAND": "sed -i 's/-Omtune=native -Omarch=native/-mtune=generic -march=x86-64/' Weidenbach_Book/IsaSAT/code/src/Makefile && bash ./build.sh",
+        "BINARY_PATH": "src/Weidenbach_Book/IsaSAT/code/src/isasat",
+        "BINARY_NAME": "isasat"
+    },
+    "kissat": {
+        "BUILD_KIND": "command",
+        "BUILD_SUBDIR": "src",
+        "BUILD_COMMAND": "bash ./build.sh",
+        "BINARY_PATH": "src/build/kissat",
+        "BINARY_NAME": "kissat"
+    },
+    "kissat-mab-eae1": {
+        "BUILD_KIND": "command",
+        "BUILD_SUBDIR": "src",
+        "BUILD_COMMAND": "bash ./build.sh",
+        "BINARY_PATH": "src/build/kissat",
+        "BINARY_NAME": "kissat"
+    },
+    "kissat-mab-eae2": {
+        "BUILD_KIND": "command",
+        "BUILD_SUBDIR": "src",
+        "BUILD_COMMAND": "bash ./build.sh",
+        "BINARY_PATH": "src/build/kissat",
+        "BINARY_NAME": "kissat"
+    },
+    "kissat-mab-eae3": {
+        "BUILD_KIND": "command",
+        "BUILD_SUBDIR": "src",
+        "BUILD_COMMAND": "bash ./build.sh",
+        "BINARY_PATH": "src/build/kissat",
+        "BINARY_NAME": "kissat"
+    },
+    "kissat-evolve": {
+        "BUILD_KIND": "command",
+        "BUILD_SUBDIR": "src",
+        "BUILD_COMMAND": "bash ./build.sh",
+        "BINARY_PATH": "src/build/kissat",
+        "BINARY_NAME": "kissat"
+    },
+    "kissat-evolve-b2": {
+        "BUILD_KIND": "command",
+        "BUILD_SUBDIR": "src",
+        "BUILD_COMMAND": "bash ./build.sh",
+        "BINARY_PATH": "src/build/kissat",
+        "BINARY_NAME": "kissat"
+    },
+    "kissat-evolve-r1": {
+        "BUILD_KIND": "command",
+        "BUILD_SUBDIR": "src",
+        "BUILD_COMMAND": "bash ./build.sh",
+        "BINARY_PATH": "src/build/kissat",
+        "BINARY_NAME": "kissat"
+    },
+    "kissat-evolve-rb": {
+        "BUILD_KIND": "command",
+        "BUILD_SUBDIR": "src",
+        "BUILD_COMMAND": "bash ./build.sh",
+        "BINARY_PATH": "src/build/kissat",
+        "BINARY_NAME": "kissat"
+    },
+    "lymphosat": {
+        "BUILD_KIND": "command",
+        "BUILD_SUBDIR": "src",
+        "BUILD_COMMAND": "export CC=\"gcc -march=x86-64-v2 -mtune=generic -fomit-frame-pointer\"; rm -rf solver/.build solver/.build-generic && bash ./generic-build.sh",
+        "DIST_PATHS": "src",
+        "BUILD_DEPENDS": "clang lld cmake python3",
+        "RDEPENDS": "python3"
+    },
+    "lymphosat-verified": {
+        "BUILD_KIND": "command",
+        "BUILD_SUBDIR": "src",
+        "BUILD_COMMAND": "export CC=\"gcc -march=x86-64-v2 -mtune=generic -fomit-frame-pointer\"; rm -rf solver/.build solver/.build-generic && bash ./generic-build.sh",
+        "DIST_PATHS": "src",
+        "BUILD_DEPENDS": "clang lld cmake python3",
+        "RDEPENDS": "python3"
+    },
+    "kissat-ae-eg": {
+        "BUILD_KIND": "command",
+        "BUILD_SUBDIR": "src",
+        "BUILD_COMMAND": "bash ./build.sh",
+        "BINARY_PATH": "src/build/kissat",
+        "BINARY_NAME": "kissat"
+    },
+    "kissat-ae-hucb": {
+        "BUILD_KIND": "command",
+        "BUILD_SUBDIR": "src",
+        "BUILD_COMMAND": "bash ./build.sh",
+        "BINARY_PATH": "src/build/kissat",
+        "BINARY_NAME": "kissat"
+    },
+    "kissat-bva": {
+        "BUILD_KIND": "command",
+        "BUILD_SUBDIR": "src",
+        "BUILD_COMMAND": "bash ./build.sh",
+        "BINARY_PATH": "src/build/kissat",
+        "BINARY_NAME": "kissat"
+    },
+    "kissat-lr-ds": {
+        "BUILD_KIND": "command",
+        "BUILD_SUBDIR": "src",
+        "BUILD_COMMAND": "bash ./build.sh",
+        "BINARY_PATH": "src/build/kissat",
+        "BINARY_NAME": "kissat"
+    },
+    "kissat-mab-da": {
+        "BUILD_KIND": "command",
+        "BUILD_SUBDIR": "src",
+        "BUILD_COMMAND": "bash ./build.sh",
+        "BINARY_PATH": "src/build/kissat",
+        "BINARY_NAME": "kissat"
+    },
+    "satsuma-lex-ae-kissat-mab": {
+        "BUILD_KIND": "command",
+        "BUILD_SUBDIR": "src",
+        "BUILD_COMMAND": "grep -rl -e -march=native --include=Makefile --include=makefile --include=CMakeLists.txt . | xargs -r sed -i 's/-march=native/-march=x86-64-v2/g'; bash ./build.sh",
+        "DIST_PATHS": "src"
+    },
+    "satsuma-lex-kissat": {
+        "BUILD_KIND": "command",
+        "BUILD_SUBDIR": "src",
+        "BUILD_COMMAND": "grep -rl -e -march=native --include=Makefile --include=makefile --include=CMakeLists.txt . | xargs -r sed -i 's/-march=native/-march=x86-64-v2/g'; bash ./build.sh",
+        "DIST_PATHS": "src"
+    },
+    "cadical-xlc-freeze": {
+        "BUILD_KIND": "command",
+        "BUILD_SUBDIR": "src",
+        "BUILD_COMMAND": "bash ./build.sh",
+        "BINARY_PATH": "src/cadical/build/cadical",
+        "BINARY_NAME": "cadical"
+    },
+    "kissat-eda-1": {
+        "BUILD_KIND": "command",
+        "BUILD_SUBDIR": "src",
+        "BUILD_COMMAND": "bash ./build.sh",
+        "BINARY_PATH": "src/build/kissat",
+        "BINARY_NAME": "kissat"
+    },
+    "kissat-eda-2": {
+        "BUILD_KIND": "command",
+        "BUILD_SUBDIR": "src",
+        "BUILD_COMMAND": "bash ./build.sh",
+        "BINARY_PATH": "src/build/kissat",
+        "BINARY_NAME": "kissat"
+    },
+    "kissat-eda-3": {
+        "BUILD_KIND": "command",
+        "BUILD_SUBDIR": "src",
+        "BUILD_COMMAND": "bash ./build.sh",
+        "BINARY_PATH": "src/build/kissat",
+        "BINARY_NAME": "kissat"
+    },
+    "kissat-eda-4": {
+        "BUILD_KIND": "command",
+        "BUILD_SUBDIR": "src",
+        "BUILD_COMMAND": "bash ./build.sh",
+        "BINARY_PATH": "src/build/kissat",
+        "BINARY_NAME": "kissat"
+    },
+    "kissat-mab-hypre": {
+        "BUILD_KIND": "command",
+        "BUILD_SUBDIR": "src",
+        "BUILD_COMMAND": "grep -rl -e -march=native --include=Makefile --include=makefile --include=CMakeLists.txt . | xargs -r sed -i 's/-march=native/-march=x86-64-v2/g'; bash ./build.sh",
+        "DIST_PATHS": "src"
+    },
+    "kissat-mab-hypre-evolve": {
+        "BUILD_KIND": "command",
+        "BUILD_SUBDIR": "src",
+        "BUILD_COMMAND": "grep -rl -e -march=native --include=Makefile --include=makefile --include=CMakeLists.txt . | xargs -r sed -i 's/-march=native/-march=x86-64-v2/g'; grep -q '<math.h>' src/bump.c || sed -i '1i #include <math.h>' src/bump.c; bash ./build.sh",
+        "DIST_PATHS": "src"
+    },
+    "kissat-mab-hypre-satlution": {
+        "BUILD_KIND": "command",
+        "BUILD_SUBDIR": "src",
+        "BUILD_COMMAND": "grep -rl -e -march=native --include=Makefile --include=makefile --include=CMakeLists.txt . | xargs -r sed -i 's/-march=native/-march=x86-64-v2/g'; bash ./build.sh",
+        "DIST_PATHS": "src"
+    },
+    "kissat-mab-hypre-v2": {
+        "BUILD_KIND": "command",
+        "BUILD_SUBDIR": "src",
+        "BUILD_COMMAND": "grep -rl -e -march=native --include=Makefile --include=makefile --include=CMakeLists.txt . | xargs -r sed -i 's/-march=native/-march=x86-64-v2/g'; bash ./build.sh",
+        "DIST_PATHS": "src"
+    },
+    "kissat-sup": {
+        "BUILD_KIND": "command",
+        "BUILD_SUBDIR": "src",
+        "BUILD_COMMAND": "bash ./build.sh",
+        "DIST_PATHS": "src",
+        "BUILD_DEPENDS": "libgmp-dev"
+    },
+    "mergesat": {
+        "BUILD_KIND": "command",
+        "BUILD_SUBDIR": "src",
+        "BUILD_COMMAND": "bash ./build.sh",
+        "BINARY_PATH": "src/kissat",
+        "BINARY_NAME": "kissat"
+    },
+    "mergesat-l": {
+        "BUILD_KIND": "command",
+        "BUILD_SUBDIR": "src",
+        "BUILD_COMMAND": "bash ./build.sh",
+        "BINARY_PATH": "src/kissat",
+        "BINARY_NAME": "kissat"
+    }
+}
