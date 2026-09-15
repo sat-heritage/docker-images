@@ -53,7 +53,9 @@
         ],
         "call": "./adaptnovelty",
         "gz": false,
-        "status": "ok"
+        "status": "ok",
+        "license": "BSD-2-Clause",
+        "license_source": "licence header of adaptnov_saps/ubcsat/mt19937ar.c"
     },
     "barcelogic": {
         "name": "Barcelogic",
@@ -76,7 +78,9 @@
         ],
         "call": "./cmusat",
         "gz": false,
-        "status": "ok"
+        "status": "ok",
+        "license": "MIT",
+        "license_source": "licence header of satcomp2007-submission-CMUSAT-revised/SimpSolver.h"
     },
     "cmusat_base": {
         "name": "CMUSAT_BASE",
@@ -87,7 +91,9 @@
         ],
         "call": "./cmusat_base",
         "gz": false,
-        "status": "ok"
+        "status": "ok",
+        "license": "MIT",
+        "license_source": "licence header of satcomp2007-submission-CMUSAT-Base/Heap.h"
     },
     "dewsatz": {
         "name": "dewSatz",
@@ -155,7 +161,9 @@
         "call": "./kcnfs-2004",
         "gz": false,
         "status": "ok",
-        "comment": "compiled with gcc-3.0 with original options except the unsupported -m32 (with more recent gcc, -O3 leads to segmentation fault)"
+        "comment": "compiled with gcc-3.0 with original options except the unsupported -m32 (with more recent gcc, -O3 leads to segmentation fault)",
+        "license_source": "licence file kcnfs-2004/COPYING",
+        "license": "GPL-2.0"
     },
     "kcnfs-2006": {
         "name": "KCNFS",
@@ -166,7 +174,8 @@
         ],
         "call": "./kcnfs-2006",
         "gz": false,
-        "status": "ok"
+        "status": "ok",
+        "license_source": "archive not available"
     },
     "kcnfs-smp": {
         "name": "KCNFS",
@@ -177,7 +186,8 @@
         ],
         "call": "./kcnfs-smp",
         "gz": false,
-        "status": "ok"
+        "status": "ok",
+        "license_source": "archive not available"
     },
     "march_ks": {
         "name": "March_KS",
@@ -188,7 +198,9 @@
         ],
         "call": "./march_ks",
         "gz": false,
-        "status": "ok"
+        "status": "ok",
+        "license": "GPL-2.0",
+        "license_source": "licence header of march_ks/translator.h"
     },
     "minimarch": {
         "name": "minimarch",
@@ -200,7 +212,9 @@
         "call": "./minimarch",
         "gz": false,
         "comment": "fixed version over 2007-02-08",
-        "status": "ok"
+        "status": "ok",
+        "license": "MIT",
+        "license_source": "licence file minimarch_fixed/LICENSE"
     },
     "minisat-sat_2007": {
         "name": "minisat",
@@ -211,7 +225,9 @@
         ],
         "call": "./minisat_static",
         "gz": false,
-        "status": "ok"
+        "status": "ok",
+        "license": "MIT",
+        "license_source": "licence file minisat-sat07/LICENSE"
     },
     "miraxt-v1": {
         "name": "MiraXT",
@@ -223,7 +239,9 @@
         "call": "./MiraXTv1",
         "gz": false,
         "status": "fixme",
-        "status_detail": "FIXME compilation"
+        "status_detail": "FIXME compilation",
+        "license": "MIT",
+        "license_source": "licence header of MiraXTv1/SimpSolver.h"
     },
     "miraxt-v2": {
         "name": "MiraXT",
@@ -235,7 +253,9 @@
         "call": "./MiraXTv2",
         "gz": false,
         "status": "fixme",
-        "status_detail": "FIXME compilation (static)"
+        "status_detail": "FIXME compilation (static)",
+        "license": "MIT",
+        "license_source": "licence header of MiraXTv2/SimpSolver.h"
     },
     "miraxt-v3": {
         "name": "MiraXT",
@@ -247,7 +267,9 @@
         "call": "./MiraXTv3",
         "gz": false,
         "status": "fixme",
-        "status_detail": "FIXME compilation (static)"
+        "status_detail": "FIXME compilation (static)",
+        "license": "MIT",
+        "license_source": "licence header of MiraXTv3/SimpSolver.h"
     },
     "mmisat": {
         "name": "Mmisat",
@@ -282,7 +304,8 @@
         "call": "./ornithorynque",
         "gz": false,
         "status": "fixme",
-        "status_detail": "FIXME no source or binary available?"
+        "status_detail": "FIXME no source or binary available?",
+        "license_source": "archive not available"
     },
     "picosat": {
         "name": "picosat",
@@ -293,7 +316,9 @@
         ],
         "call": "./picosat",
         "gz": false,
-        "status": "ok"
+        "status": "ok",
+        "license": "MIT",
+        "license_source": "licence file picosat-535/LICENSE"
     },
     "ranov": {
         "name": "ranov",
@@ -304,7 +329,9 @@
         ],
         "call": "./ranov",
         "gz": false,
-        "status": "ok"
+        "status": "ok",
+        "license": "MIT",
+        "license_source": "licence file ranov/legal.txt"
     },
     "rsat": {
         "name": "Rsat",
@@ -357,7 +384,9 @@
         "call": "java",
         "gz": false,
         "comment": "JVM PARAM CHANGED",
-        "status": "ok"
+        "status": "ok",
+        "license_source": "licence file META-INF/LICENSE.txt",
+        "license": "BSD-2-Clause"
     },
     "sat7": {
         "name": "SAT7",
@@ -368,7 +397,9 @@
         ],
         "call": "./sat7_bin",
         "gz": false,
-        "status": "ok"
+        "status": "ok",
+        "license": "GPL-2.0",
+        "license_source": "licence file sat7-0.1/COPYING"
     },
     "satzilla-crafted": {
         "name": "SATzilla",
@@ -380,7 +411,9 @@
         ],
         "call": "./SATzilla2007_C",
         "gz": false,
-        "status": "ok"
+        "status": "ok",
+        "license": "BSD-2-Clause",
+        "license_source": "licence header of SATzilla2007_RC/ubcsat/mt19937ar.c"
     },
     "satzilla-full": {
         "name": "SATzilla",
@@ -392,7 +425,9 @@
         ],
         "call": "./SATzilla2007_F",
         "gz": false,
-        "status": "ok"
+        "status": "ok",
+        "license": "BSD-2-Clause",
+        "license_source": "licence header of SATzilla2007_RC/ubcsat/mt19937ar.c"
     },
     "satzilla-random": {
         "name": "SATzilla",
@@ -404,7 +439,9 @@
         ],
         "call": "./SATzilla2007_R",
         "gz": false,
-        "status": "ok"
+        "status": "ok",
+        "license": "BSD-2-Clause",
+        "license_source": "licence header of SATzilla2007_RC/ubcsat/mt19937ar.c"
     },
     "spear": {
         "name": "Spear",

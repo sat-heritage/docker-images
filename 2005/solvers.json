@@ -322,7 +322,7 @@
     "name": "sat4j.jar",
     "call": "java",
     "gz": false,
-    "args" : [
+    "args": [
       "-Xms5g",
       "-Xmx5g",
       "-jar",
@@ -335,13 +335,15 @@
     "name": "sat4j-sat2005.jar",
     "call": "java",
     "gz": false,
-    "args" : [
+    "args": [
       "-Xms5g",
       "-Xmx5g",
       "-jar",
       "./sat4j-sat2005.jar",
       "FILECNF"
-    ]
+    ],
+    "license": "LGPL-2.1",
+    "license_source": "licence file LICENSE.txt"
   },
   "satelitegti": {
     "status": "fixme",

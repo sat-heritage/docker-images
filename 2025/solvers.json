@@ -15,7 +15,9 @@
         ],
         "tracks": [
             "main"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence file AE_kissat2025_bump/LICENSE"
     },
     "ae-kissat2025-mab": {
         "status": "ok",
@@ -33,7 +35,9 @@
         ],
         "tracks": [
             "main"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence file AE_kissat2025_MAB/LICENSE"
     },
     "ae-kissat2025-rescale": {
         "status": "ok",
@@ -51,7 +55,9 @@
         ],
         "tracks": [
             "main"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence file AE_kissat2025_rescale/LICENSE"
     },
     "cadical-sc2025": {
         "status": "ok",
@@ -70,7 +76,9 @@
         "tracks": [
             "main"
         ],
-        "comment": "No build or run script in the submission; built with ./configure --competition && make as documented."
+        "comment": "No build or run script in the submission; built with ./configure --competition && make as documented.",
+        "license": "MIT",
+        "license_source": "licence file cadical-sc2025/LICENSE"
     },
     "dynamiccadical": {
         "status": "ok",
@@ -88,7 +96,9 @@
         ],
         "tracks": [
             "main"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence file Dynamiccadical/LICENSE"
     },
     "hcad-psbva": {
         "status": "ok",
@@ -140,7 +150,9 @@
         "tracks": [
             "main"
         ],
-        "comment": "Structured BVA preprocessing (bva) followed by the solver, driven by the submitted wrapper.py; the proof concatenates the BVA derivation and the solver's DRAT proof."
+        "comment": "Structured BVA preprocessing (bva) followed by the solver, driven by the submitted wrapper.py; the proof concatenates the BVA derivation and the solver's DRAT proof.",
+        "license": "BSD-2-Clause AND BSD-3-Clause AND GPL-2.0 AND GPL-3.0 AND LGPL-2.1 AND MIT",
+        "license_source": "licence file hCaD-psbva/archives/eigen-3.4.0/COPYING.MINPACK, hCaD-psbva/archives/eigen-3.4.0/COPYING.BSD, hCaD-psbva/archives/eigen-3.4.0/bench/btl/COPYING, hCaD-psbva/archives/eigen-3.4.0/COPYING.GPL, hCaD-psbva/archives/eigen-3.4.0/COPYING.LGPL, hCaD-psbva/LICENSE"
     },
     "hcad-sbva": {
         "status": "ok",
@@ -188,7 +200,9 @@
         "tracks": [
             "main"
         ],
-        "comment": "Structured BVA preprocessing (bva) followed by the solver, driven by the submitted wrapper.py; the proof concatenates the BVA derivation and the solver's DRAT proof."
+        "comment": "Structured BVA preprocessing (bva) followed by the solver, driven by the submitted wrapper.py; the proof concatenates the BVA derivation and the solver's DRAT proof.",
+        "license": "BSD-2-Clause AND BSD-3-Clause AND GPL-2.0 AND GPL-3.0 AND LGPL-2.1 AND MIT",
+        "license_source": "licence file hCaD-sbva/archives/eigen-3.4.0/COPYING.MINPACK, hCaD-sbva/archives/eigen-3.4.0/COPYING.BSD, hCaD-sbva/archives/eigen-3.4.0/bench/btl/COPYING, hCaD-sbva/archives/eigen-3.4.0/COPYING.GPL, hCaD-sbva/archives/eigen-3.4.0/COPYING.LGPL, hCaD-sbva/LICENSE"
     },
     "hkis2-psids": {
         "status": "ok",
@@ -214,7 +228,9 @@
         ],
         "tracks": [
             "main"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence file hKis2-psids/kissat-sc2024/LICENSE"
     },
     "hkis-sbva": {
         "status": "ok",
@@ -264,7 +280,9 @@
         "tracks": [
             "main"
         ],
-        "comment": "Structured BVA preprocessing (bva) followed by the solver, driven by the submitted wrapper.py; the proof concatenates the BVA derivation and the solver's DRAT proof."
+        "comment": "Structured BVA preprocessing (bva) followed by the solver, driven by the submitted wrapper.py; the proof concatenates the BVA derivation and the solver's DRAT proof.",
+        "license": "BSD-2-Clause AND BSD-3-Clause AND GPL-2.0 AND GPL-3.0 AND LGPL-2.1 AND MIT",
+        "license_source": "licence file hKis-sbva/archives/eigen-3.4.0/COPYING.MINPACK, hKis-sbva/archives/eigen-3.4.0/COPYING.BSD, hKis-sbva/archives/eigen-3.4.0/bench/btl/COPYING, hKis-sbva/archives/eigen-3.4.0/COPYING.GPL, hKis-sbva/archives/eigen-3.4.0/COPYING.LGPL, hKis-sbva/LICENSE"
     },
     "kissat-corephase-coreward": {
         "status": "ok",
@@ -283,7 +301,9 @@
         "tracks": [
             "main"
         ],
-        "comment": "No build or run script in the submission; built with ./configure --competition && make as documented in its README."
+        "comment": "No build or run script in the submission; built with ./configure --competition && make as documented in its README.",
+        "license": "MIT",
+        "license_source": "licence file Kissat_CoRephase_CoReward/LICENSE"
     },
     "kissat-cure": {
         "status": "ok",
@@ -311,7 +331,9 @@
         ],
         "tracks": [
             "main"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence file Kissat-CURE/LICENSE"
     },
     "kissat-mab-corephase": {
         "status": "ok",
@@ -330,7 +352,9 @@
         "tracks": [
             "main"
         ],
-        "comment": "No build or run script in the submission; built with ./configure --competition && make as documented in its README."
+        "comment": "No build or run script in the submission; built with ./configure --competition && make as documented in its README.",
+        "license": "MIT",
+        "license_source": "licence file Kissat_MAB_CoRephase/LICENSE"
     },
     "kissat-pred": {
         "status": "ok",
@@ -348,7 +372,9 @@
         ],
         "tracks": [
             "main"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence file kissat-pred/build/kissat/LICENSE"
     },
     "kissat-pred-aggressive": {
         "status": "ok",
@@ -368,7 +394,9 @@
         ],
         "tracks": [
             "main"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence file kissat-pred-aggressive/build/kissat/LICENSE"
     },
     "kissat-public": {
         "status": "ok",
@@ -387,7 +415,9 @@
         "tracks": [
             "main"
         ],
-        "comment": "Public Kissat release entered as a reference; no build or run script in the submission."
+        "comment": "Public Kissat release entered as a reference; no build or run script in the submission.",
+        "license": "MIT",
+        "license_source": "licence file kissat-public/LICENSE"
     },
     "kissat-sc2025": {
         "status": "ok",
@@ -406,7 +436,9 @@
         "tracks": [
             "main"
         ],
-        "comment": "No build or run script in the submission; built with ./configure --competition && make as documented."
+        "comment": "No build or run script in the submission; built with ./configure --competition && make as documented.",
+        "license": "MIT",
+        "license_source": "licence file kissat-sc2025/LICENSE"
     },
     "kissat-scavel2025": {
         "status": "ok",
@@ -424,7 +456,9 @@
         ],
         "tracks": [
             "main"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence file kissat_scavel2025/LICENSE"
     },
     "kissat-scavel-rs": {
         "status": "ok",
@@ -442,7 +476,9 @@
         ],
         "tracks": [
             "main"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence file kissat_scavel_rs/LICENSE"
     },
     "satsuma-kissat-sc": {
         "status": "ok",
@@ -458,7 +494,9 @@
         "tracks": [
             "main"
         ],
-        "comment": "Satsuma symmetry breaking followed by a Kissat hack, driven by the submitted run.sh; the proof is VeriPB (pseudo-Boolean), which satex cannot check, so no argsproof."
+        "comment": "Satsuma symmetry breaking followed by a Kissat hack, driven by the submitted run.sh; the proof is VeriPB (pseudo-Boolean), which satex cannot check, so no argsproof.",
+        "license": "MIT",
+        "license_source": "licence file satsuma-kissat-sc/kissat-hack/LICENSE"
     },
     "ulc-cadical-alignable-independent-ulc": {
         "status": "ok",
@@ -484,7 +522,9 @@
         ],
         "tracks": [
             "main"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence file ulc-cadical-cadical-alignable-independent-ulc/LICENSE"
     },
     "ulc-cadical-alignable-ulc": {
         "status": "ok",
@@ -510,7 +550,9 @@
         ],
         "tracks": [
             "main"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence file ulc-cadical-cadical-alignable-ulc/LICENSE"
     },
     "ulc-cadical-alignable-ulc-order": {
         "status": "ok",
@@ -538,7 +580,9 @@
         ],
         "tracks": [
             "main"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence file ulc-cadical-cadical-alignable-ulc-order/LICENSE"
     },
     "ulc-cadical-xlc": {
         "status": "ok",
@@ -562,7 +606,9 @@
         ],
         "tracks": [
             "main"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence file ulc-cadical-cadical-xlc/LICENSE"
     },
     "vsa": {
         "status": "ok",
@@ -581,6 +627,8 @@
         "tracks": [
             "main"
         ],
-        "comment": "Competition name: Kissat_VSA."
+        "comment": "Competition name: Kissat_VSA.",
+        "license": "MIT",
+        "license_source": "licence file vsa/archive/kissat/LICENSE"
     }
 }

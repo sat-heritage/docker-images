@@ -50,7 +50,9 @@
         ],
         "call": "./clasp",
         "gz": false,
-        "status": "ok"
+        "status": "ok",
+        "license": "GPL-2.0",
+        "license_source": "licence file clasp-1.2.0-SAT09/clasp/COPYING"
     },
     "csat": {
         "name": "CSat",
@@ -72,7 +74,9 @@
         ],
         "call": "glucose.sh",
         "gz": false,
-        "status": "ok"
+        "status": "ok",
+        "license": "MIT",
+        "license_source": "licence header of glucose_1.0/sources/glucose/core/BoundedQueue.h"
     },
     "gnovelty-plus": {
         "name": "gnovelty+",
@@ -171,7 +175,9 @@
         ],
         "call": "./hybridGM",
         "gz": false,
-        "status": "ok"
+        "status": "ok",
+        "license": "GPL-2.0",
+        "license_source": "licence header of hybridGM/march.h"
     },
     "hybridgm3": {
         "name": "hybridGM3",
@@ -183,7 +189,9 @@
         ],
         "call": "./hybridGM3",
         "gz": false,
-        "status": "ok"
+        "status": "ok",
+        "license": "GPL-2.0",
+        "license_source": "licence header of hybridGM3/march.h"
     },
     "hybridgm7": {
         "name": "hybridGM7",
@@ -195,12 +203,14 @@
         ],
         "call": "./hybridGM7",
         "gz": false,
-        "status": "ok"
+        "status": "ok",
+        "license": "GPL-2.0",
+        "license_source": "licence header of hybridGM7/march.h"
     },
     "hydrasat": {
         "name": "HydraSAT",
         "version": "2009-03-22-Base",
-        "authors": "Christoph Baldow, Friedrich Gr\u00e4ter, Steffen H\u00f6lldobler, Norbert Manthey, Max Seelemann, Peter Steinke, Christoph Wernhard, Konrad Winkler, Erik Zenker",
+        "authors": "Christoph Baldow, Friedrich Gräter, Steffen Hölldobler, Norbert Manthey, Max Seelemann, Peter Steinke, Christoph Wernhard, Konrad Winkler, Erik Zenker",
         "args": [
             "FILECNF",
             "-rs",
@@ -211,12 +221,13 @@
         ],
         "call": "./hydrasat",
         "gz": false,
-        "status": "ok"
+        "status": "ok",
+        "license_source": "unrecognized licence file hydrasat/COPYING"
     },
     "hydrasat-flat": {
         "name": "HydraSAT-Flat",
         "version": "2009-03-22-Flat",
-        "authors": "Christoph Baldow, Friedrich Gr\u00e4ter, Steffen H\u00f6lldobler, Norbert Manthey, Max Seelemann, Peter Steinke, Christoph Wernhard, Konrad Winkler, Erik Zenker",
+        "authors": "Christoph Baldow, Friedrich Gräter, Steffen Hölldobler, Norbert Manthey, Max Seelemann, Peter Steinke, Christoph Wernhard, Konrad Winkler, Erik Zenker",
         "args": [
             "FILECNF",
             "-rs",
@@ -227,12 +238,13 @@
         ],
         "call": "./hydrasat-flat",
         "gz": false,
-        "status": "ok"
+        "status": "ok",
+        "license_source": "unrecognized licence file hydrasat-flat/COPYING"
     },
     "hydrasat-multi": {
         "name": "HydraSAT-Multi",
         "version": "2009-03-22-Multi",
-        "authors": "Christoph Baldow, Friedrich Gr\u00e4ter, Steffen H\u00f6lldobler, Norbert Manthey, Max Seelemann, Peter Steinke, Christoph Wernhard, Konrad Winkler, Erik Zenker",
+        "authors": "Christoph Baldow, Friedrich Gräter, Steffen Hölldobler, Norbert Manthey, Max Seelemann, Peter Steinke, Christoph Wernhard, Konrad Winkler, Erik Zenker",
         "args": [
             ".",
             "FILECNF",
@@ -241,7 +253,8 @@
         ],
         "call": "./hydrasat-multi.sh",
         "gz": false,
-        "status": "ok"
+        "status": "ok",
+        "license_source": "unrecognized licence file hydrasat_multi/src/hydrasat_cache2_flat_d/COPYING"
     },
     "ipaws": {
         "name": "iPAWS",
@@ -266,7 +279,9 @@
         "call": "IUT_BMB_SAT",
         "gz": false,
         "status": "fixme",
-        "status_detail": "FIXME compilation"
+        "status_detail": "FIXME compilation",
+        "license": "MIT",
+        "license_source": "licence file Source/minisat/license"
     },
     "kw": {
         "name": "kw",
@@ -282,19 +297,21 @@
     "lysat-c": {
         "name": "LySAT",
         "version": "c/2009-03-20",
-        "authors": "Youssef Hamadi, Sa\u00efd Jabbour, Lakhdar Sa\u00efs",
+        "authors": "Youssef Hamadi, Saïd Jabbour, Lakhdar Saïs",
         "args": [
             "FILECNF",
             "c"
         ],
         "call": "minisat_static",
         "gz": false,
-        "status": "ok"
+        "status": "ok",
+        "license": "MIT",
+        "license_source": "licence file minisat/LICENSE"
     },
     "manysat_1.1-aimd_0": {
         "name": "ManySAT-1.1",
         "version": "aimd 0/2009-03-20",
-        "authors": "Youssef Hamadi, Sa\u00efd Jabbour, Lakhdar Sa\u00efs",
+        "authors": "Youssef Hamadi, Saïd Jabbour, Lakhdar Saïs",
         "args": [
             "FILECNF",
             "aimd",
@@ -302,12 +319,14 @@
         ],
         "call": "manysat.sh",
         "gz": false,
-        "status": "ok"
+        "status": "ok",
+        "license": "MIT",
+        "license_source": "licence file BLOCKED/LICENSE"
     },
     "manysat_1.1-aimd_1": {
         "name": "ManySAT-1.1",
         "version": "aimd 1/2009-03-20",
-        "authors": "Youssef Hamadi, Sa\u00efd Jabbour, Lakhdar Sa\u00efs",
+        "authors": "Youssef Hamadi, Saïd Jabbour, Lakhdar Saïs",
         "args": [
             "FILECNF",
             "aimd",
@@ -315,12 +334,14 @@
         ],
         "call": "manysat.sh",
         "gz": false,
-        "status": "ok"
+        "status": "ok",
+        "license": "MIT",
+        "license_source": "licence file BLOCKED/LICENSE"
     },
     "manysat_1.1-aimd_2": {
         "name": "ManySAT-1.1",
         "version": "aimd 2/2009-03-20",
-        "authors": "Youssef Hamadi, Sa\u00efd Jabbour, Lakhdar Sa\u00efs",
+        "authors": "Youssef Hamadi, Saïd Jabbour, Lakhdar Saïs",
         "args": [
             "FILECNF",
             "aimd",
@@ -328,7 +349,9 @@
         ],
         "call": "manysat.sh",
         "gz": false,
-        "status": "ok"
+        "status": "ok",
+        "license": "MIT",
+        "license_source": "licence file BLOCKED/LICENSE"
     },
     "march_hi": {
         "name": "march_hi",
@@ -339,7 +362,9 @@
         ],
         "call": "./march_hi",
         "gz": false,
-        "status": "ok"
+        "status": "ok",
+        "license": "GPL-2.0",
+        "license_source": "licence header of march_hi/bitslook.c"
     },
     "march_nn": {
         "name": "march_nn",
@@ -350,7 +375,9 @@
         ],
         "call": "./march_nn",
         "gz": false,
-        "status": "ok"
+        "status": "ok",
+        "license": "GPL-2.0",
+        "license_source": "licence header of march_nn/bitslook.c"
     },
     "minisat": {
         "name": "MiniSat",
@@ -361,7 +388,8 @@
         ],
         "call": "./minisat",
         "gz": false,
-        "status": "ok"
+        "status": "ok",
+        "license_source": "archive not available"
     },
     "minisat_09z": {
         "name": "MiniSAT_09z",
@@ -372,7 +400,9 @@
         ],
         "call": "minisat",
         "gz": false,
-        "status": "ok"
+        "status": "ok",
+        "license": "MIT",
+        "license_source": "licence file minisat09z/LICENSE"
     },
     "minisat_cumr": {
         "name": "minisat_cumr",
@@ -384,7 +414,8 @@
         "call": "SatELiteGTI",
         "gz": false,
         "status": "fixme",
-        "status_detail": "FIXME build and install (minisat)"
+        "status_detail": "FIXME build and install (minisat)",
+        "license_source": "archive not available"
     },
     "morsat": {
         "name": "MoRsat",
@@ -407,7 +438,9 @@
         ],
         "call": "./mxc-sat09",
         "gz": false,
-        "status": "ok"
+        "status": "ok",
+        "license": "MIT",
+        "license_source": "licence header of SatElite.cpp"
     },
     "ncvwr": {
         "name": "NCVWr",
@@ -430,7 +463,9 @@
         ],
         "call": "./picosat",
         "gz": false,
-        "status": "ok"
+        "status": "ok",
+        "license": "MIT",
+        "license_source": "licence file picosat-913/LICENSE"
     },
     "precosat": {
         "name": "precosat",
@@ -441,7 +476,8 @@
         ],
         "call": "./precosat",
         "gz": false,
-        "status": "ok"
+        "status": "ok",
+        "license_source": "unrecognized licence file precosat-236-3e7a3f8-090322/LICENSE"
     },
     "rsat": {
         "name": "Rsat",
@@ -509,7 +545,9 @@
         ],
         "call": "./satake",
         "gz": false,
-        "status": "ok"
+        "status": "ok",
+        "license": "MIT",
+        "license_source": "licence file satake/COPYRIGHT"
     },
     "satzilla2009_c": {
         "name": "SATzilla2009_C",
@@ -520,7 +558,9 @@
         ],
         "call": "./SATzilla2009_C",
         "gz": false,
-        "status": "ok"
+        "status": "ok",
+        "license": "BSD-2-Clause AND MIT",
+        "license_source": "licence header of SATzilla2009/UBCSAT/src/mt19937ar.c, SATzilla2009/VARSAT/Queue.h"
     },
     "satzilla2009_i": {
         "name": "SATzilla2009_I",
@@ -531,7 +571,9 @@
         ],
         "call": "./SATzilla2009_I",
         "gz": false,
-        "status": "ok"
+        "status": "ok",
+        "license": "BSD-2-Clause AND MIT",
+        "license_source": "licence header of SATzilla2009/UBCSAT/src/mt19937ar.c, SATzilla2009/VARSAT/Queue.h"
     },
     "satzilla2009_r": {
         "name": "SATzilla2009_R",
@@ -542,7 +584,9 @@
         ],
         "call": "./SATzilla2009_R",
         "gz": false,
-        "status": "ok"
+        "status": "ok",
+        "license": "BSD-2-Clause AND MIT",
+        "license_source": "licence header of SATzilla2009/UBCSAT/src/mt19937ar.c, SATzilla2009/VARSAT/Queue.h"
     },
     "slstc": {
         "name": "slstc",
@@ -572,7 +616,9 @@
         ],
         "call": "./slstc",
         "gz": false,
-        "status": "ok"
+        "status": "ok",
+        "license": "BSD-2-Clause AND MIT",
+        "license_source": "licence header of slstc-1.0/mt19937ar.cc, slstc-1.0/solvertypes.h"
     },
     "tnm": {
         "name": "TNM",
@@ -620,7 +666,9 @@
         ],
         "call": "./varsat-crafted_static",
         "gz": false,
-        "status": "ok"
+        "status": "ok",
+        "license": "MIT",
+        "license_source": "licence file VARSAT-crafted/LICENSE"
     },
     "varsat-industrial": {
         "name": "VARSAT-industrial",
@@ -632,7 +680,9 @@
         ],
         "call": "./varsat-industrial_static",
         "gz": false,
-        "status": "ok"
+        "status": "ok",
+        "license": "MIT",
+        "license_source": "licence file VARSAT-industrial/LICENSE"
     },
     "varsat-random": {
         "name": "VARSAT-random",
@@ -644,6 +694,8 @@
         ],
         "call": "./varsat-random_static",
         "gz": false,
-        "status": "ok"
+        "status": "ok",
+        "license": "MIT",
+        "license_source": "licence file VARSAT-random/LICENSE"
     }
 }

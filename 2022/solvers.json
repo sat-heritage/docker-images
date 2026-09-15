@@ -15,7 +15,9 @@
         "argsproof": [
             "FILECNF",
             "FILEPROOF"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence file CaDiCaL_DVDL_V1/build/cadical/LICENSE"
     },
     "cadical-dvdl-v2": {
         "status": "ok",
@@ -33,7 +35,9 @@
         "argsproof": [
             "FILECNF",
             "FILEPROOF"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence file CaDiCaL_DVDL_V2/build/cadical/LICENSE"
     },
     "cadical-hack-gb": {
         "status": "ok",
@@ -51,7 +55,9 @@
         "argsproof": [
             "FILECNF",
             "FILEPROOF"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence file cadical-hack-gb/LICENSE"
     },
     "cadical-hywalk": {
         "status": "ok",
@@ -69,7 +75,9 @@
         "argsproof": [
             "FILECNF",
             "FILEPROOF"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence file CaDiCaL-HyWalk/LICENSE"
     },
     "cadical-rel-scavel": {
         "status": "ok",
@@ -87,7 +95,9 @@
         "argsproof": [
             "FILECNF",
             "FILEPROOF"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence file cadical_rel_Scavel/LICENSE"
     },
     "cadical-reorder": {
         "status": "ok",
@@ -105,7 +115,9 @@
         "argsproof": [
             "FILECNF",
             "FILEPROOF"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence file CadicalReorder/CadicalReorder/LICENSE"
     },
     "cadical-watchsat-lto": {
         "status": "ok",
@@ -143,7 +155,9 @@
             "--default",
             "FILECNF",
             "FILEPROOF"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence file ekissat-mab-db-v1/LICENSE"
     },
     "ekissat-mab-db-v2": {
         "status": "ok",
@@ -165,7 +179,9 @@
             "--default",
             "FILECNF",
             "FILEPROOF"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence file ekissat-mab-db-v2/LICENSE"
     },
     "ekissat-mab-gb-db": {
         "status": "ok",
@@ -185,7 +201,9 @@
             "--default",
             "FILECNF",
             "FILEPROOF"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence file ekissat-mab-gb-db/LICENSE"
     },
     "glucose-reboot": {
         "status": "ok",
@@ -208,7 +226,9 @@
             "-model",
             "FILECNF"
         ],
-        "comment": "Built with the bundled pFactory recompiled from source. A statistics line in simp/Main.cc divides by the number of clauses left after preprocessing, which crashes (SIGFPE) on formulas fully solved by preprocessing; the build guards that division, search is unchanged."
+        "comment": "Built with the bundled pFactory recompiled from source. A statistics line in simp/Main.cc divides by the number of clauses left after preprocessing, which crashes (SIGFPE) on formulas fully solved by preprocessing; the build guards that division, search is unchanged.",
+        "license": "GPL-3.0 AND MIT",
+        "license_source": "licence file glucose-reboot/glucose-reboot/pfactory/COPYING, glucose-reboot/glucose-reboot/LICENSE"
     },
     "hcad-v1": {
         "status": "ok",
@@ -234,7 +254,9 @@
             "--chrono=true",
             "FILECNF",
             "FILEPROOF"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence file hCaD_V1/LICENSE"
     },
     "hcad-v2": {
         "status": "ok",
@@ -256,7 +278,9 @@
             "--walk=false",
             "FILECNF",
             "FILEPROOF"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence file hCaD_V2/LICENSE"
     },
     "hkis-psids": {
         "status": "ok",
@@ -279,7 +303,9 @@
             "FILECNF",
             "FILEPROOF"
         ],
-        "comment": "configuration of the hKis submission"
+        "comment": "configuration of the hKis submission",
+        "license": "MIT",
+        "license_source": "licence file hKis/LICENSE"
     },
     "hkis-sat": {
         "status": "ok",
@@ -302,7 +328,9 @@
             "FILECNF",
             "FILEPROOF"
         ],
-        "comment": "configuration of the hKis submission"
+        "comment": "configuration of the hKis submission",
+        "license": "MIT",
+        "license_source": "licence file hKis/LICENSE"
     },
     "hkis-unsat": {
         "status": "ok",
@@ -327,7 +355,9 @@
             "FILECNF",
             "FILEPROOF"
         ],
-        "comment": "configuration of the hKis submission"
+        "comment": "configuration of the hKis submission",
+        "license": "MIT",
+        "license_source": "licence file hKis/LICENSE"
     },
     "isasat": {
         "status": "ok",
@@ -345,7 +375,9 @@
             "FILECNF",
             "FILEPROOF"
         ],
-        "comment": "The submitted build/build.sh relies on Red Hat's scl llvm-toolset-7.0; its steps (make competition with clang and LTO) are transcribed in setup.json, with -march=native replaced by a generic x86-64 target so the image runs on any host."
+        "comment": "The submitted build/build.sh relies on Red Hat's scl llvm-toolset-7.0; its steps (make competition with clang and LTO) are transcribed in setup.json, with -march=native replaced by a generic x86-64 target so the image runs on any host.",
+        "license": "MIT",
+        "license_source": "licence file IsaSAT/build/isasat/src/LICENSE"
     },
     "kissat-adaptive-restart": {
         "status": "ok",
@@ -363,7 +395,9 @@
         "argsproof": [
             "FILECNF",
             "FILEPROOF"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence file Kissat_adaptive_restart/kissat_adaptive_restart/LICENSE"
     },
     "kissat-cfexp": {
         "status": "ok",
@@ -381,7 +415,9 @@
         "argsproof": [
             "FILECNF",
             "FILEPROOF"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence file Kissat_cfexp/kissat_cfexp/LICENSE"
     },
     "kissat-els-v1": {
         "status": "ok",
@@ -401,7 +437,9 @@
             "--default",
             "FILECNF",
             "FILEPROOF"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence file kissat-els-v1/build/kissat/LICENSE"
     },
     "kissat-els-v2": {
         "status": "ok",
@@ -421,7 +459,9 @@
             "--default",
             "FILECNF",
             "FILEPROOF"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence file kissat-els-v2/build/kissat/LICENSE"
     },
     "kissat-els-v3": {
         "status": "ok",
@@ -441,7 +481,9 @@
             "--default",
             "FILECNF",
             "FILEPROOF"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence file kissat-els-v3/build/kissat/LICENSE"
     },
     "kissat-els-v4": {
         "status": "ok",
@@ -461,7 +503,9 @@
             "--default",
             "FILECNF",
             "FILEPROOF"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence file kissat-els-v4/build/kissat/LICENSE"
     },
     "kissat-inc": {
         "status": "ok",
@@ -481,7 +525,9 @@
             "--default",
             "FILECNF",
             "FILEPROOF"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence file kissat_inc/sources/LICENSE"
     },
     "kissat-mab-esa": {
         "status": "ok",
@@ -502,7 +548,9 @@
             "FILECNF",
             "FILEPROOF"
         ],
-        "comment": "Built by the submitted starexec_build. Its make test step fails because the archive does not ship test/cnf, but the script does not stop on errors and installs the compiled binary."
+        "comment": "Built by the submitted starexec_build. Its make test step fails because the archive does not ship test/cnf, but the script does not stop on errors and installs the compiled binary.",
+        "license": "MIT",
+        "license_source": "licence file Kissat_MAB_ESA/LICENSE"
     },
     "kissat-mab-gb": {
         "status": "ok",
@@ -522,7 +570,9 @@
             "--default",
             "FILECNF",
             "FILEPROOF"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence file kissat-mab-gb/LICENSE"
     },
     "kissat-mab-hywalk": {
         "status": "ok",
@@ -540,7 +590,9 @@
         "argsproof": [
             "FILECNF",
             "FILEPROOF"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence file Kissat_MAB-HyWalk/LICENSE"
     },
     "kissat-mab-moss": {
         "status": "ok",
@@ -560,7 +612,9 @@
             "--default",
             "FILECNF",
             "FILEPROOF"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence file Kissat_MAB_MOSS/build/kissat/LICENSE"
     },
     "kissat-mab-rephasing": {
         "status": "ok",
@@ -580,7 +634,9 @@
             "--mabcmagnitude=0",
             "FILECNF",
             "FILEPROOF"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence file Kissat-MAB-rephasing/kissat_mab_rephasing/LICENSE"
     },
     "kissat-mab-scavel": {
         "status": "ok",
@@ -598,7 +654,9 @@
         "argsproof": [
             "FILECNF",
             "FILEPROOF"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence file kissat-MAB_SCAVEL/LICENSE"
     },
     "kissat-mab-ucb": {
         "status": "ok",
@@ -618,7 +676,9 @@
             "--default",
             "FILECNF",
             "FILEPROOF"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence file Kissat_MAB_UCB/build/kissat/LICENSE"
     },
     "kissat-pre": {
         "status": "unstable",
@@ -639,7 +699,9 @@
             "FILECNF",
             "FILEPROOF"
         ],
-        "status_detail": "exits with code 1 instead of 20 when the formula is refuted by its preprocessing (the s UNSATISFIABLE line is correct); search results use the standard codes"
+        "status_detail": "exits with code 1 instead of 20 when the formula is refuted by its preprocessing (the s UNSATISFIABLE line is correct); search results use the standard codes",
+        "license": "MIT",
+        "license_source": "licence file kissat_pre/sources/LICENSE"
     },
     "kissat-relaxed": {
         "status": "ok",
@@ -657,7 +719,9 @@
         "argsproof": [
             "FILECNF",
             "FILEPROOF"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence file kissat_relaxed/kissat_relaxed/LICENSE"
     },
     "kissat-sc2022-bulky": {
         "status": "ok",
@@ -675,7 +739,9 @@
         "argsproof": [
             "FILECNF",
             "FILEPROOF"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence file kissat-sc2022-bulky/build/kissat/LICENSE"
     },
     "kissat-sc2022-hyper": {
         "status": "ok",
@@ -693,7 +759,9 @@
         "argsproof": [
             "FILECNF",
             "FILEPROOF"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence file kissat-sc2022-hyper/build/kissat/LICENSE"
     },
     "kissat-sc2022-light": {
         "status": "ok",
@@ -711,7 +779,9 @@
         "argsproof": [
             "FILECNF",
             "FILEPROOF"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence file kissat-sc2022-light/build/kissat/LICENSE"
     },
     "kissat-watchsat-lto": {
         "status": "ok",
@@ -749,7 +819,9 @@
         "argsproof": [
             "FILECNF",
             "FILEPROOF"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence file LSTech_CaDiCaL/build/cadical/LICENSE"
     },
     "lstech-kissat": {
         "status": "ok",
@@ -769,7 +841,9 @@
             "--default",
             "FILECNF",
             "FILEPROOF"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence file LSTech_kissat/sources/LICENSE"
     },
     "lstech-maple-bandsat": {
         "status": "ok",
@@ -786,7 +860,9 @@
         "argsproof": [
             "FILECNF",
             "-drup-file=FILEPROOF"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence file LStech-Maple-BandSAT/LICENSE"
     },
     "lstech-maple-fps": {
         "status": "ok",
@@ -803,7 +879,9 @@
         "argsproof": [
             "FILECNF",
             "-drup-file=FILEPROOF"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence file LStech-Maple-FPS/LICENSE"
     },
     "lstech-maple-hywalk": {
         "status": "ok",
@@ -820,7 +898,9 @@
         "argsproof": [
             "FILECNF",
             "-drup-file=FILEPROOF"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence file LStech-Maple-HyWalk/LICENSE"
     },
     "lstech-maple": {
         "status": "unstable",
@@ -839,7 +919,9 @@
             "-drup-file=FILEPROOF"
         ],
         "comment": "Unlike the other Maple-based entries, this binary hangs on gzip-compressed input, so satex decompresses it first.",
-        "status_detail": "on some formulas (e.g. aim-200-1_6-yes1-1) the model line is corrupted by a debug message: 'v c wrong resolution num'"
+        "status_detail": "on some formulas (e.g. aim-200-1_6-yes1-1) the model line is corrupted by a debug message: 'v c wrong resolution num'",
+        "license": "MIT",
+        "license_source": "licence file LSTech_Maple/sources/LICENSE"
     },
     "maplelcmdistchrbt-dl-v3": {
         "status": "ok",
@@ -856,7 +938,9 @@
         "argsproof": [
             "FILECNF",
             "-drup-file=FILEPROOF"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence file MapleLCMDistChrBt-DL-v3/MapleLCMDistChrBt-DL-v3/LICENSE"
     },
     "mergesat-4.0-rc1": {
         "status": "ok",
@@ -877,7 +961,9 @@
             "-verb=0",
             "-drup-file=FILEPROOF"
         ],
-        "comment": "configuration of the MergeSat 4.0-rc submission"
+        "comment": "configuration of the MergeSat 4.0-rc submission",
+        "license": "MIT",
+        "license_source": "licence file MergeSat 4.0-rc/mergesat/LICENSE"
     },
     "mergesat-4.0-rc2": {
         "status": "ok",
@@ -900,7 +986,9 @@
             "-diversify-rank=1",
             "-drup-file=FILEPROOF"
         ],
-        "comment": "configuration of the MergeSat 4.0-rc submission"
+        "comment": "configuration of the MergeSat 4.0-rc submission",
+        "license": "MIT",
+        "license_source": "licence file MergeSat 4.0-rc/mergesat/LICENSE"
     },
     "mergesat-4.0-rc3": {
         "status": "ok",
@@ -925,7 +1013,9 @@
             "-lib-math",
             "-drup-file=FILEPROOF"
         ],
-        "comment": "configuration of the MergeSat 4.0-rc submission"
+        "comment": "configuration of the MergeSat 4.0-rc submission",
+        "license": "MIT",
+        "license_source": "licence file MergeSat 4.0-rc/mergesat/LICENSE"
     },
     "seqfrost": {
         "status": "ok",
@@ -947,7 +1037,9 @@
             "-competition",
             "--proofout=FILEPROOF",
             "--redundancyextend=1"
-        ]
+        ],
+        "license": "GPL-3.0",
+        "license_source": "licence file SeqFROST/seqfrost/LICENSE"
     },
     "seqfrost-ere-all": {
         "status": "ok",
@@ -969,7 +1061,9 @@
             "-competition",
             "--proofout=FILEPROOF",
             "--redundancyextend=2"
-        ]
+        ],
+        "license": "GPL-3.0",
+        "license_source": "licence file SeqFROST-ERE-All/seqfrost/LICENSE"
     },
     "seqfrost-noextend": {
         "status": "ok",
@@ -991,7 +1085,9 @@
             "-competition",
             "--proofout=FILEPROOF",
             "--redundancyextend=0"
-        ]
+        ],
+        "license": "GPL-3.0",
+        "license_source": "licence file SeqFROST-NoExtend/seqfrost/LICENSE"
     },
     "slime-sc-2022": {
         "status": "ok",
@@ -1009,7 +1105,9 @@
             "FILECNF",
             "FILEPROOF"
         ],
-        "comment": "Built with the submitted build_unix.sh: the sequential, statically linked variant that matches the binary shipped in the archive (the CMake recipe builds the MPI cloud variant)."
+        "comment": "Built with the submitted build_unix.sh: the sequential, statically linked variant that matches the binary shipped in the archive (the CMake recipe builds the MPI cloud variant).",
+        "license": "MIT",
+        "license_source": "licence file SLIME SC-2022/LICENSE"
     },
     "slime-sc-2022-alpha": {
         "status": "ok",
@@ -1029,7 +1127,9 @@
             "-invert-polarity",
             "FILEPROOF"
         ],
-        "comment": "Built with the submitted build_unix.sh: the sequential, statically linked variant that matches the binary shipped in the archive (the CMake recipe builds the MPI cloud variant)."
+        "comment": "Built with the submitted build_unix.sh: the sequential, statically linked variant that matches the binary shipped in the archive (the CMake recipe builds the MPI cloud variant).",
+        "license": "MIT",
+        "license_source": "licence file SLIME SC-2022/LICENSE"
     },
     "slime-sc-2022-beta": {
         "status": "ok",
@@ -1049,7 +1149,9 @@
             "-no-use-distance",
             "FILEPROOF"
         ],
-        "comment": "Built with the submitted build_unix.sh: the sequential, statically linked variant that matches the binary shipped in the archive (the CMake recipe builds the MPI cloud variant)."
+        "comment": "Built with the submitted build_unix.sh: the sequential, statically linked variant that matches the binary shipped in the archive (the CMake recipe builds the MPI cloud variant).",
+        "license": "MIT",
+        "license_source": "licence file SLIME SC-2022/LICENSE"
     },
     "slime-sc-2022-gamma": {
         "status": "ok",
@@ -1071,6 +1173,8 @@
             "-invert-polarity",
             "FILEPROOF"
         ],
-        "comment": "Built with the submitted build_unix.sh: the sequential, statically linked variant that matches the binary shipped in the archive (the CMake recipe builds the MPI cloud variant)."
+        "comment": "Built with the submitted build_unix.sh: the sequential, statically linked variant that matches the binary shipped in the archive (the CMake recipe builds the MPI cloud variant).",
+        "license": "MIT",
+        "license_source": "licence file SLIME SC-2022/LICENSE"
     }
 }

@@ -13,7 +13,9 @@
         "call": "./runBreakIDGlucose.sh",
         "comments": "Launchcommand was:  ./runBreakIDGlucose.sh  <instance>   <tempdir> \nTrack was Core solvers, Sequential, Application SAT+UNSAT",
         "gz": false,
-        "name": "BreakIDGlucose"
+        "name": "BreakIDGlucose",
+        "license_source": "licence file BreakIDGlucose/license.txt",
+        "license": "GPL-3.0"
     },
     "cshcappllc": {
         "tracks": [
@@ -32,7 +34,9 @@
         "call": "python",
         "comments": "Launchcommand was: python ./algport.py --tmpdir <tempdir>  CSHCapplLC  <instance> \nTrack was Core solvers, Sequential, Application SAT+UNSAT",
         "gz": true,
-        "name": "CSHCapplLC"
+        "name": "CSHCapplLC",
+        "license_source": "licence file CSHCapplLC-src/code/solvers/cryptominisat_2011/borg-sat-11.03.02c/solvers/run-1.4/LICENSE, CSHCapplLC-src/code/utilities/Satzilla_features/satfeatures/bison-2.3/COPYING, CSHCapplLC-src/code/CSHCapplLC/DATASTRUCTURES/license.txt, CSHCapplLC-src/code/utilities/Satzilla_features/satfeatures/SAT-features-competition2012/lp_solve_4.0/LICENSE, CSHCapplLC-src/code/solvers/cryptominisat-3.1/LICENSE-LGPL, CSHCapplLC-src/code/solvers/cryptominisat_2011/borg-sat-11.03.02c/borg/LICENSE",
+        "license": "BSD-3-Clause AND GPL-2.0 AND GPL-3.0 AND LGPL-2.1 AND LGPL-3.0 AND MIT"
     },
     "cshcappllg": {
         "tracks": [
@@ -51,7 +55,9 @@
         "call": "python",
         "comments": "Launchcommand was: python .//algport.py --tmpdir <tempdir>  CSHCapplLG  <instance> \nTrack was Core solvers, Sequential, Application SAT+UNSAT",
         "gz": true,
-        "name": "CSHCapplLG"
+        "name": "CSHCapplLG",
+        "license_source": "licence file CSHCapplLG-src/code/utilities/Satzilla_features/satfeatures/bison-2.3/COPYING, CSHCapplLG-src/code/CSHCapplLG/DATASTRUCTURES/license.txt, CSHCapplLG-src/code/utilities/Satzilla_features/satfeatures/SAT-features-competition2012/lp_solve_4.0/LICENSE, CSHCapplLG-src/code/solvers/glucose_2.1/LICENSE",
+        "license": "GPL-2.0 AND GPL-3.0 AND LGPL-2.1 AND MIT"
     },
     "forl": {
         "tracks": [
@@ -68,7 +74,9 @@
         "call": "./forl-nodrup",
         "comments": "Launchcommand was:  ./forl-nodrup --verb 0  <instance> \nTrack was Core solvers, Sequential, Application SAT+UNSAT",
         "gz": true,
-        "name": "forl"
+        "name": "forl",
+        "license_source": "licence file forl-nodrup/code/m4ri-20130416/COPYING, forl-nodrup/license.txt, forl-nodrup/code/LICENSE-LGPL",
+        "license": "GPL-2.0 AND GPL-3.0 AND LGPL-3.0"
     },
     "glucored": {
         "tracks": [
@@ -85,7 +93,9 @@
         "call": "./glucored-simp_release",
         "comments": "Launchcommand was:  ././glucored-simp_release  <instance>  -rnd-seed= <seed>  -verb=0\nTrack was Core solvers, Sequential, Application SAT+UNSAT",
         "gz": true,
-        "name": "GlucoRed"
+        "name": "GlucoRed",
+        "license_source": "licence file license.txt",
+        "license": "MIT"
     },
     "glucose": {
         "tracks": [
@@ -100,7 +110,9 @@
         "call": "././glucose",
         "comments": "Launchcommand was:  ././glucose  <instance> \nTrack was Core solvers, Sequential, Application SAT+UNSAT",
         "gz": true,
-        "name": "glucose"
+        "name": "glucose",
+        "license_source": "licence file licence.txt",
+        "license": "MIT"
     },
     "glue_bit": {
         "tracks": [
@@ -115,7 +127,9 @@
         "call": "././glue_bit.sh",
         "comments": "Launchcommand was:  ././glue_bit.sh  <instance>   <tempdir> \nTrack was Core solvers, Sequential, Application SAT+UNSAT",
         "gz": true,
-        "name": "glue_bit"
+        "name": "glue_bit",
+        "license_source": "licence file glue_bit/LICENSE.txt",
+        "license": "MIT"
     },
     "gluebit_lgl": {
         "tracks": [
@@ -129,7 +143,9 @@
         "call": "././gluebit_lgl",
         "comments": "Launchcommand was:  ././gluebit_lgl  <instance> \nTrack was Core solvers, Sequential, Application SAT+UNSAT",
         "gz": false,
-        "name": "gluebit_lgl"
+        "name": "gluebit_lgl",
+        "license_source": "licence file gluebit_lgl/LICENSE.txt",
+        "license": "GPL-2.0"
     },
     "glueminisat": {
         "tracks": [
@@ -145,7 +161,9 @@
         "call": "././glueminisat-simp",
         "comments": "Launchcommand was:  ./glueminisat-simp -compe <instance> \nTrack was Core solvers, Sequential, Application SAT+UNSAT",
         "gz": true,
-        "name": "glueminisat"
+        "name": "glueminisat",
+        "license": "MIT",
+        "license_source": "licence file glueminisat-2.2.7/license.txt"
     },
     "gluh": {
         "tracks": [
@@ -161,7 +179,9 @@
         "call": "././gluH.sh",
         "comments": "Launchcommand was:  ./gluH.sh  <instance>   <tempdir> \nTrack was Core solvers, Sequential, Application SAT+UNSAT",
         "gz": true,
-        "name": "gluH"
+        "name": "gluH",
+        "license": "MIT",
+        "license_source": "licence file license.txt"
     },
     "gluh_simp": {
         "tracks": [
@@ -176,7 +196,9 @@
         "call": "././gluH_static",
         "comments": "Launchcommand was:  ./gluH_static  <instance> \nTrack was Core solvers, Sequential, Application SAT+UNSAT",
         "gz": true,
-        "name": "gluH_simp"
+        "name": "gluH_simp",
+        "license": "MIT",
+        "license_source": "licence file license.txt"
     },
     "lingeling_587f": {
         "tracks": [
@@ -191,7 +213,9 @@
         "call": "./lingeling",
         "comments": "Launchcommand was:  ./lingeling  <instance> \nTrack was Core solvers, Sequential, Application SAT+UNSAT",
         "gz": true,
-        "name": "Lingeling"
+        "name": "Lingeling",
+        "license": "GPL-3.0",
+        "license_source": "licence file license.txt"
     },
     "lingeling_aqw": {
         "tracks": [
@@ -206,7 +230,9 @@
         "call": "./lingeling",
         "comments": "Launchcommand was:  ./lingeling  <instance> \nTrack was Core solvers, Sequential, Application SAT+UNSAT",
         "gz": true,
-        "name": "Lingeling"
+        "name": "Lingeling",
+        "license": "MIT",
+        "license_source": "licence file license.txt"
     },
     "minipure": {
         "tracks": [
@@ -223,7 +249,9 @@
         "call": "././minipure",
         "comments": "Launchcommand was:  ././minipure  <instance>  -freq_pure=3\nTrack was Core solvers, Sequential, Application SAT+UNSAT",
         "gz": true,
-        "name": "minipure"
+        "name": "minipure",
+        "license": "MIT",
+        "license_source": "licence file minipure/LICENSE"
     },
     "mipsat": {
         "tracks": [
@@ -235,11 +263,13 @@
             "-tmp",
             "/tmp"
         ],
-        "authors": "Sergio N\u00fa\u00f1ez, Daniel Borrajo and Carlos Linares L\u00f3pez",
+        "authors": "Sergio Núñez, Daniel Borrajo and Carlos Linares López",
         "call": "./solve",
         "comments": "Launchcommand was:  ./solve  <instance>  -tmp <tempdir> \nTrack was Core solvers, Sequential, Application SAT+UNSAT",
         "gz": true,
-        "name": "MIPSat"
+        "name": "MIPSat",
+        "license_source": "licence file mipsat_app_both/license.txt",
+        "license": "MIT"
     },
     "nigma": {
         "tracks": [
@@ -258,7 +288,9 @@
         "call": "./nigma",
         "comments": "Launchcommand was:  ./nigma  <instance>  --verbose --display-assignments-if-sat --partial-backtracking --preprocessing-timeout 200\nTrack was Core solvers, Sequential, Application SAT+UNSAT",
         "gz": false,
-        "name": "Nigma"
+        "name": "Nigma",
+        "license_source": "licence file licence.txt",
+        "license": "MIT"
     },
     "nigma-nopb": {
         "tracks": [
@@ -276,7 +308,9 @@
         "call": "./nigma",
         "comments": "Launchcommand was:  ./nigma  <instance>  --verbose --display-assignments-if-sat --preprocessing-timeout 200\nTrack was Core solvers, Sequential, Application SAT+UNSAT",
         "gz": false,
-        "name": "Nigma-NoPB"
+        "name": "Nigma-NoPB",
+        "license_source": "licence file licence.txt",
+        "license": "MIT"
     },
     "relback": {
         "tracks": [
@@ -293,7 +327,9 @@
         "call": "././relback.sh",
         "comments": "Launchcommand was:  ././relback.sh  <instance>  -tmp <tempdir> \nTrack was Core solvers, Sequential, Application SAT+UNSAT",
         "gz": true,
-        "name": "relback"
+        "name": "relback",
+        "license_source": "licence file relback_sc13/LICENSE",
+        "license": "MIT"
     },
     "riss3g": {
         "tracks": [
@@ -308,7 +344,9 @@
         "call": "././riss3g.sh",
         "comments": "Launchcommand was:  ././riss3g.sh  <instance> \nTrack was Core solvers, Sequential, Application SAT+UNSAT",
         "gz": true,
-        "name": "Riss3g"
+        "name": "Riss3g",
+        "license_source": "licence file code/riss3g/checker/COPYING",
+        "license": "GPL-3.0"
     },
     "rseq": {
         "tracks": [
@@ -324,7 +362,9 @@
         "call": "././RSeq.sh",
         "comments": "Launchcommand was:  ././RSeq.sh  <instance>  -s <seed>   \nTrack was Core solvers, Sequential, Application SAT+UNSAT",
         "gz": false,
-        "name": "RSeq"
+        "name": "RSeq",
+        "license_source": "licence file RSeqNew/LICENSE",
+        "license": "MIT"
     },
     "sat4j": {
         "tracks": [
@@ -343,7 +383,9 @@
         "call": "java",
         "comments": "Launchcommand was: java -Xms5g -Xmx5g -jar .//sat4j2013.jar  <instance> \nTrack was Core solvers, Sequential, Application SAT+UNSAT",
         "gz": true,
-        "name": "SAT4J"
+        "name": "SAT4J",
+        "license_source": "licence file SATCOMP2013SUBMISSION/license.txt",
+        "license": "MIT"
     },
     "sattimerelbackshr": {
         "tracks": [
@@ -361,7 +403,9 @@
         "call": "././sattimeRelbackShr",
         "comments": "Launchcommand was:  ././sattimeRelbackShr  <instance>  -s <seed> \nTrack was Core solvers, Sequential, Application SAT+UNSAT",
         "gz": true,
-        "name": "sattimeRelbackShr"
+        "name": "sattimeRelbackShr",
+        "license_source": "licence file sattimeRelbackShrFinal/LICENSE",
+        "license": "MIT"
     },
     "satuzk": {
         "tracks": [
@@ -379,7 +423,8 @@
         "call": "././satUZK_wrapper",
         "comments": "Launchcommand was:  ././satUZK_wrapper  <tempdir>  satUZK  <instance> \nTrack was Core solvers, Sequential, Application SAT+UNSAT",
         "gz": true,
-        "name": "satUZK"
+        "name": "satUZK",
+        "license_source": "archive not available"
     },
     "shatterglucose": {
         "tracks": [
@@ -395,7 +440,9 @@
         "call": "./runShatterGlucose.sh",
         "comments": "Launchcommand was:  ././runShatterGlucose.sh  <instance>   <tempdir> \nTrack was Core solvers, Sequential, Application SAT+UNSAT",
         "gz": true,
-        "name": "ShatterGlucose"
+        "name": "ShatterGlucose",
+        "license_source": "licence header of ShatterGlucose/code/glucose-2.2/core/BoundedQueue.h",
+        "license": "MIT"
     },
     "solver43a": {
         "tracks": [
@@ -411,7 +458,9 @@
         "call": "././Solver43_static",
         "comments": "Launchcommand was:  ././Solver43_static  <instance> \nTrack was Core solvers, Sequential, Application SAT+UNSAT",
         "gz": true,
-        "name": "Solver43a"
+        "name": "Solver43a",
+        "license_source": "licence file Solver43/license.txt",
+        "license": "MIT"
     },
     "solver43b": {
         "tracks": [
@@ -427,7 +476,9 @@
         "call": "././Solver43_static",
         "comments": "Launchcommand was:  ././Solver43_static  <instance> \nTrack was Core solvers, Sequential, Application SAT+UNSAT",
         "gz": true,
-        "name": "Solver43b"
+        "name": "Solver43b",
+        "license_source": "licence file Solver43/license.txt",
+        "license": "MIT"
     },
     "strangenight": {
         "tracks": [
@@ -444,7 +495,9 @@
         "call": "./strangenight",
         "comments": "Launchcommand was:  ./strangenight  <instance> \nTrack was Core solvers, Sequential, Application SAT+UNSAT",
         "gz": true,
-        "name": "strangenight"
+        "name": "strangenight",
+        "license_source": "licence file strangenight/code/LICENSE-GPL, strangenight/code/LICENSE-MIT",
+        "license": "GPL-3.0 AND MIT"
     },
     "zenn": {
         "tracks": [
@@ -468,7 +521,9 @@
         "call": "././zenn",
         "comments": "Launchcommand was:  ././zenn -ms=2 -gmr -recover=0 -safe_low=2 -safe_high=60 -var_luby=2 -phase_decay -glue_decay=0.800 -sinn_decay=0.990  <instance> \nTrack was Core solvers, Sequential, Application SAT+UNSAT",
         "gz": true,
-        "name": "ZENN"
+        "name": "ZENN",
+        "license_source": "licence file ZENN_code/code/LICENSE",
+        "license": "MIT"
     },
     "clasp_vflip": {
         "tracks": [
@@ -482,7 +537,9 @@
         "call": "./clasp_vflip",
         "comments": "Launchcommand was:  ./clasp_vflip  <instance> \nTrack was Core solvers, Sequential, Hard-combinatorial SAT+UNSAT",
         "gz": false,
-        "name": "clasp_vflip"
+        "name": "clasp_vflip",
+        "license_source": "licence file clasp_vflip/LICENSE.txt",
+        "license": "GPL-2.0"
     },
     "cshccombcs": {
         "tracks": [
@@ -501,7 +558,9 @@
         "call": "python",
         "comments": "Launchcommand was: python .//algport.py --tmpdir <tempdir>  CSHCcombCS  <instance> \nTrack was Core solvers, Sequential, Hard-combinatorial SAT",
         "gz": true,
-        "name": "CSHCcombCS"
+        "name": "CSHCcombCS",
+        "license_source": "licence file CSHCcombCS-src/code/solvers/clasp/COPYING, CSHCcombCS-src/code/CSHCcombCS/DATASTRUCTURES/license.txt, CSHCcombCS-src/code/utilities/Satzilla_features/satfeatures/SAT-features-competition2012/lp_solve_4.0/LICENSE, CSHCcombCS-src/code/utilities/Satzilla_features/satfeatures/SAT-features-competition2012/VARSAT/mtl/zlib-1.2.3/contrib/dotzlib/LICENSE_1_0.txt",
+        "license": "GPL-2.0 AND GPL-3.0 AND LGPL-2.1 AND MIT"
     },
     "dk-sat11": {
         "tracks": [
@@ -516,7 +575,9 @@
         "call": ".//dk-run.sh",
         "comments": "Launchcommand was:  .//dk-run.sh  <instance> \nTrack was Core solvers, Sequential, Hard-combinatorial SAT",
         "gz": false,
-        "name": "dk-SAT11"
+        "name": "dk-SAT11",
+        "license": "MIT",
+        "license_source": "licence file license.txt"
     },
     "dk-sat11_1": {
         "tracks": [
@@ -531,7 +592,9 @@
         "call": ".//dk-run.sh",
         "comments": "Launchcommand was:  .//dk-run.sh  <instance> \nTrack was Core solvers, Sequential, Hard-combinatorial SAT",
         "gz": false,
-        "name": "dk-SAT11"
+        "name": "dk-SAT11",
+        "license_source": "licence file knuth/license.txt",
+        "license": "MIT"
     },
     "gluebit_clasp": {
         "args": [
@@ -545,7 +608,9 @@
         "call": "././gluebit_clasp",
         "comments": "Launchcommand was:  ././gluebit_clasp  <instance> \nTrack was Core solvers, Sequential, Hard-combinatorial SAT",
         "gz": false,
-        "name": "gluebit_clasp"
+        "name": "gluebit_clasp",
+        "license_source": "licence file gluebit_clasp/LICENSE.txt",
+        "license": "GPL-2.0"
     },
     "gnovelty-gca": {
         "tracks": [
@@ -561,7 +626,8 @@
         "call": "././gNovelty+GCa",
         "comments": "Launchcommand was:  ././gNovelty+GCa  <instance>   <seed> \nTrack was Core solvers, Sequential, Hard-combinatorial SAT",
         "gz": false,
-        "name": "gNovelty+GCa"
+        "name": "gNovelty+GCa",
+        "license_source": "archive not available"
     },
     "gnovelty-gcwa": {
         "tracks": [
@@ -577,7 +643,8 @@
         "call": "././gNovelty+GCwa",
         "comments": "Launchcommand was:  ././gNovelty+GCwa  <instance>   <seed> \nTrack was Core solvers, Sequential, Hard-combinatorial SAT",
         "gz": false,
-        "name": "gNovelty+GCwa"
+        "name": "gNovelty+GCwa",
+        "license_source": "archive not available"
     },
     "march_br": {
         "tracks": [
@@ -592,7 +659,9 @@
         "call": "././march_br",
         "comments": "Launchcommand was:  ././march_br  <instance> \nTrack was Core solvers, Sequential, Hard-combinatorial SAT",
         "gz": false,
-        "name": "march_br"
+        "name": "march_br",
+        "license_source": "licence file license.txt",
+        "license": "MIT"
     },
     "mipsat-hard_sat": {
         "tracks": [
@@ -604,11 +673,13 @@
             "-tmp",
             "/tmp"
         ],
-        "authors": "Sergio N\u00fa\u00f1ez, Daniel Borrajo and Carlos Linares L\u00f3pez",
+        "authors": "Sergio Núñez, Daniel Borrajo and Carlos Linares López",
         "call": "././solve",
         "comments": "Launchcommand was:  ././solve  <instance>  -tmp <tempdir> \nTrack was Core solvers, Sequential, Hard-combinatorial SAT",
         "gz": true,
-        "name": "MIPSat"
+        "name": "MIPSat",
+        "license_source": "licence header of mipsat_hard_sat/code/launcher/systools.py",
+        "license": "GPL-3.0"
     },
     "mipsat-hard_both_2": {
         "tracks": [
@@ -620,11 +691,13 @@
             "-tmp",
             "/tmp"
         ],
-        "authors": "Sergio N\u00fa\u00f1ez, Daniel Borrajo and Carlos Linares L\u00f3pez",
+        "authors": "Sergio Núñez, Daniel Borrajo and Carlos Linares López",
         "call": "././solve",
         "comments": "Launchcommand was:  ././solve  <instance>  -tmp <tempdir> \nTrack was Core solvers, Sequential, Hard-combinatorial SAT+UNSAT",
         "gz": true,
-        "name": "MIPSat"
+        "name": "MIPSat",
+        "license_source": "licence file mipsat_hard_both_2/license.txt",
+        "license": "GPL-2.0"
     },
     "sattime2013": {
         "tracks": [
@@ -644,7 +717,8 @@
         "call": "./sattime2013",
         "comments": "Launchcommand was:  ./sattime2013  <instance>  -seed <seed>  -nbsol 1\nTrack was Core solvers, Sequential, Hard-combinatorial SAT",
         "gz": true,
-        "name": "sattime2013"
+        "name": "sattime2013",
+        "license_source": "archive not available"
     },
     "sattimeclasp": {
         "tracks": [
@@ -662,7 +736,9 @@
         "call": "././SCSeq.sh",
         "comments": "Launchcommand was:  ././SCSeq.sh  <instance>  -s <seed>  2500\nTrack was Core solvers, Sequential, Hard-combinatorial SAT+UNSAT",
         "gz": false,
-        "name": "sattimeClasp"
+        "name": "sattimeClasp",
+        "license_source": "licence file sattimeClaspSeqfinal/LICENSE",
+        "license": "GPL-2.0"
     },
     "sattimerelbackseq": {
         "tracks": [
@@ -683,7 +759,9 @@
         "call": "./SRSeq.sh",
         "comments": "Launchcommand was:  ./SRSeq.sh  <instance>  -s <seed>  2500 -tmp <tempdir> \nTrack was Core solvers, Sequential, Hard-combinatorial SAT",
         "gz": true,
-        "name": "sattimeRelbackSeq"
+        "name": "sattimeRelbackSeq",
+        "license_source": "licence file sattimeRelbackShrFinal/LICENSE",
+        "license": "MIT"
     },
     "sparrowtoriss": {
         "tracks": [
@@ -698,7 +776,9 @@
         "call": "././SparrowToRiss.sh",
         "comments": "Launchcommand was:  ././SparrowToRiss.sh  <instance>  <seed>\nTrack was Core solvers, Sequential, Hard-combinatorial SAT",
         "gz": true,
-        "name": "SparrowToRiss"
+        "name": "SparrowToRiss",
+        "license": "MIT",
+        "license_source": "licence header of code/riss3g-src/mtl/XAlloc.h"
     },
     "balancedz": {
         "tracks": [
@@ -715,7 +795,9 @@
         "call": ".//BalancedZ",
         "comments": "Launchcommand was:  .//BalancedZ  <instance>  -seed <seed> \nTrack was Core solvers, Sequential, Hard-combinatorial SAT",
         "gz": true,
-        "name": "BalancedZ"
+        "name": "BalancedZ",
+        "license": "GPL-2.0",
+        "license_source": "licence file license.txt"
     },
     "ccanr": {
         "tracks": [
@@ -730,7 +812,8 @@
         "call": "././CCAnr",
         "comments": "Launchcommand was:  ././CCAnr  <instance>   <seed> \nTrack was Core solvers, Sequential, Hard-combinatorial SAT",
         "gz": false,
-        "name": "CCAnr"
+        "name": "CCAnr",
+        "license_source": "unrecognized licence file CCAnr/license.txt"
     },
     "doug_hains": {
         "tracks": [
@@ -759,7 +842,9 @@
         "call": "././Sparrow+CP3.sh",
         "comments": "Launchcommand was:  ././Sparrow+CP3.sh  <instance>  <seed>\nTrack was Core solvers, Sequential, Hard-combinatorial SAT",
         "gz": true,
-        "name": "Sparrow+CP3"
+        "name": "Sparrow+CP3",
+        "license": "MIT",
+        "license_source": "licence header of code/riss3g-src/mtl/XAlloc.h"
     },
     "forl-drup": {
         "tracks": [
@@ -776,7 +861,9 @@
         "call": "./forl-drup",
         "comments": "Launchcommand was:  ./forl-drup --verb 0  <instance> \nTrack was Core solvers, Sequential, Hard-combinatorial certified UNSAT",
         "gz": true,
-        "name": "forl"
+        "name": "forl",
+        "license": "GPL-2.0 AND GPL-3.0 AND LGPL-3.0",
+        "license_source": "licence file forl-drup/code/m4ri-20130416/COPYING, forl-drup/license.txt, forl-drup/code/LICENSE-LGPL"
     },
     "glucose-drup": {
         "tracks": [
@@ -791,7 +878,9 @@
         "call": "././glucose",
         "comments": "Launchcommand was:  ././glucose  <instance> \nTrack was Core solvers, Sequential, Hard-combinatorial certified UNSAT",
         "gz": true,
-        "name": "glucose"
+        "name": "glucose",
+        "license_source": "licence file licence.txt",
+        "license": "MIT"
     },
     "glueminisat-cert-unsat": {
         "tracks": [
@@ -806,7 +895,9 @@
         "call": "././glueminisat-cert-unsat.sh",
         "comments": "Launchcommand was:  ././glueminisat-cert-unsat.sh  <instance> \nTrack was Core solvers, Sequential, Application certified UNSAT",
         "gz": true,
-        "name": "glueminisat-cert-unsat"
+        "name": "glueminisat-cert-unsat",
+        "license": "MIT",
+        "license_source": "licence file glueminisat-2.2.7/license.txt"
     },
     "lingeling_aqw_drup": {
         "tracks": [
@@ -822,7 +913,9 @@
         "call": "./lingeling",
         "comments": "Launchcommand was:  ./lingeling  <instance> \nTrack was Core solvers, Sequential, Hard-combinatorial certified UNSAT",
         "gz": true,
-        "name": "Lingeling"
+        "name": "Lingeling",
+        "license_source": "licence file license.txt",
+        "license": "MIT"
     },
     "minisat_drup": {
         "tracks": [
@@ -833,11 +926,13 @@
         "args": [
             "FILECNF"
         ],
-        "authors": "Niklas E\u00e9n and Niklas S\u00f6rensson ",
+        "authors": "Niklas Eén and Niklas Sörensson ",
         "call": "././minisat",
         "comments": "Launchcommand was:  ././minisat  <instance> \nTrack was Core solvers, Sequential, Application certified UNSAT",
         "gz": true,
-        "name": "minisat DRUP"
+        "name": "minisat DRUP",
+        "license_source": "licence file miniEDACC/code/LICENSE",
+        "license": "MIT"
     },
     "riss3g-cert": {
         "tracks": [
@@ -853,7 +948,9 @@
         "call": "././riss3g-cert.sh",
         "comments": "Launchcommand was:  ././riss3g-cert.sh  <instance>   <tempdir> \nTrack was Core solvers, Sequential, Hard-combinatorial certified UNSAT",
         "gz": true,
-        "name": "Riss3g"
+        "name": "Riss3g",
+        "license_source": "licence file code/riss3g/checker/COPYING",
+        "license": "GPL-3.0"
     },
     "sat4j_certified": {
         "tracks": [
@@ -869,7 +966,9 @@
         "call": "././unsatproof.sh",
         "comments": "Launchcommand was:  ././unsatproof.sh  <tempdir>   <instance> \nTrack was Core solvers, Sequential, Application certified UNSAT",
         "gz": true,
-        "name": "SAT4J Certified"
+        "name": "SAT4J Certified",
+        "license_source": "licence file SATCOMP2013SUBMISSION/license.txt",
+        "license": "MIT"
     },
     "minisat_bit_u": {
         "tracks": [
@@ -883,7 +982,9 @@
         "call": "././minisat_bit_u",
         "comments": "Launchcommand was:  ././minisat_bit_u  <instance> \nTrack was Core solvers, Sequential, Application certified UNSAT",
         "gz": true,
-        "name": "minisat_bit_u"
+        "name": "minisat_bit_u",
+        "license_source": "licence file minisat_bit_u/LICENSE.txt",
+        "license": "MIT"
     },
     "nigma-drup": {
         "tracks": [
@@ -903,7 +1004,9 @@
         "call": "./nigma",
         "comments": "Launchcommand was:  ./nigma  <instance>  --verbose --display-assignments-if-sat --output-drup-if-unsat --partial-backtracking --preprocessing-timeout 200\nTrack was Core solvers, Sequential, Application certified UNSAT",
         "gz": false,
-        "name": "Nigma-DRUP"
+        "name": "Nigma-DRUP",
+        "license_source": "licence file licence.txt",
+        "license": "MIT"
     },
     "nigma-nopb-drup": {
         "tracks": [
@@ -922,7 +1025,9 @@
         "call": "./nigma",
         "comments": "Launchcommand was:  ./nigma  <instance>  --verbose --display-assignments-if-sat --output-drup-if-unsat --preprocessing-timeout 200\nTrack was Core solvers, Sequential, Application certified UNSAT",
         "gz": false,
-        "name": "Nigma-NoPB-DRUP"
+        "name": "Nigma-NoPB-DRUP",
+        "license_source": "licence file licence.txt",
+        "license": "MIT"
     },
     "balancedz_1": {
         "tracks": [
@@ -939,7 +1044,8 @@
         "call": ".//BalancedZ",
         "comments": "Launchcommand was:  .//BalancedZ  <instance>  -seed <seed> \nTrack was Core solvers, Sequential, Random SAT",
         "gz": true,
-        "name": "BalancedZ"
+        "name": "BalancedZ",
+        "license_source": "archive not available"
     },
     "cca2013": {
         "tracks": [
@@ -954,7 +1060,8 @@
         "call": ".//CCA2013",
         "comments": "Launchcommand was:  .//CCA2013  <instance>   <seed> \nTrack was Core solvers, Sequential, Random SAT",
         "gz": false,
-        "name": "CCA2013"
+        "name": "CCA2013",
+        "license_source": "archive not available"
     },
     "cscoresat2013": {
         "tracks": [
@@ -969,7 +1076,8 @@
         "call": "././CScoreSAT2013",
         "comments": "Launchcommand was:  ././CScoreSAT2013  <instance>   <seed> \nTrack was Core solvers, Sequential, Random SAT",
         "gz": true,
-        "name": "CScoreSAT2013"
+        "name": "CScoreSAT2013",
+        "license_source": "archive not available"
     },
     "cshcrandmc": {
         "tracks": [
@@ -988,7 +1096,9 @@
         "call": "python",
         "comments": "Launchcommand was: python .//algport.py --tmpdir <tempdir>  CSHCrandMC  <instance> \nTrack was Core solvers, Sequential, Random SAT",
         "gz": true,
-        "name": "CSHCrandMC"
+        "name": "CSHCrandMC",
+        "license_source": "licence file CSHCrandMC-src/code/utilities/Satzilla_features/satfeatures/bison-2.3/COPYING, CSHCrandMC-src/code/CSHCrandMC/DATASTRUCTURES/license.txt, CSHCrandMC-src/code/utilities/Satzilla_features/satfeatures/SAT-features-competition2012/lp_solve_4.0/LICENSE, CSHCrandMC-src/code/utilities/Satzilla_features/satfeatures/SAT-features-competition2012/VARSAT/mtl/zlib-1.2.3/contrib/dotzlib/LICENSE_1_0.txt",
+        "license": "GPL-2.0 AND GPL-3.0 AND LGPL-2.1 AND MIT"
     },
     "dimetheusmps": {
         "tracks": [
@@ -1007,7 +1117,9 @@
         "call": "././DimetheusMPS",
         "comments": "Launchcommand was:  ././DimetheusMPS -formula <instance>  -seed <seed>  -guide 5\nTrack was Core solvers, Sequential, Random SAT",
         "gz": false,
-        "name": "DimetheusMPS"
+        "name": "DimetheusMPS",
+        "license_source": "licence file dimetheusmps/license.txt",
+        "license": "GPL-3.0"
     },
     "frwcb2013": {
         "tracks": [
@@ -1022,7 +1134,8 @@
         "call": "././FrwCB2013",
         "comments": "Launchcommand was:  ././FrwCB2013  <instance>   <seed> \nTrack was Core solvers, Sequential, Random SAT",
         "gz": false,
-        "name": "FrwCB2013"
+        "name": "FrwCB2013",
+        "license_source": "unrecognized licence file FrwCB2013/license.txt"
     },
     "march_vflip": {
         "tracks": [
@@ -1036,7 +1149,9 @@
         "call": "././march_vflip",
         "comments": "Launchcommand was:  ././march_vflip  <instance> \nTrack was Core solvers, Sequential, Random SAT",
         "gz": false,
-        "name": "march_vflip"
+        "name": "march_vflip",
+        "license": "MIT",
+        "license_source": "licence file march_vflip/LICENSE.txt"
     },
     "ncca-plus": {
         "tracks": [
@@ -1048,11 +1163,12 @@
             "-s",
             "RANDOMSEED"
         ],
-        "authors": "Djamal Habet and Donia Toumi and Andr\u00e9 Abram\u00e9",
+        "authors": "Djamal Habet and Donia Toumi and André Abramé",
         "call": "././Ncca+",
         "comments": "Launchcommand was:  ././Ncca+  <instance>  -s <seed> \nTrack was Core solvers, Sequential, Random SAT",
         "gz": true,
-        "name": "Ncca+"
+        "name": "Ncca+",
+        "license_source": "unrecognized licence file Ncca+/LICENSE"
     },
     "probsat": {
         "tracks": [
@@ -1064,11 +1180,13 @@
             "FILECNF",
             "RANDOMSEED"
         ],
-        "authors": "Adrian Balint, Uwe Sch\u00f6ning",
+        "authors": "Adrian Balint, Uwe Schöning",
         "call": "././probSATsc13",
         "comments": "Launchcommand was:  ././probSATsc13  <instance>   <seed> \nTrack was Core solvers, Sequential, Random SAT",
         "gz": false,
-        "name": "probSAT"
+        "name": "probSAT",
+        "license_source": "licence file license.txt",
+        "license": "MIT"
     },
     "vflipnum": {
         "tracks": [
@@ -1083,7 +1201,9 @@
         "call": "././vflipnum",
         "comments": "Launchcommand was:  ././vflipnum  <instance>   <seed> \nTrack was Core solvers, Sequential, Random SAT",
         "gz": false,
-        "name": "vflipnum"
+        "name": "vflipnum",
+        "license": "MIT",
+        "license_source": "licence file vflipnum/LICENSE.txt"
     },
     "walksatlm2013": {
         "tracks": [
@@ -1098,7 +1218,8 @@
         "call": "././WalkSATlm2013",
         "comments": "Launchcommand was:  ././WalkSATlm2013  <instance>   <seed> \nTrack was Core solvers, Sequential, Random SAT",
         "gz": false,
-        "name": "WalkSATlm2013"
+        "name": "WalkSATlm2013",
+        "license_source": "unrecognized licence file WalkSATlm2013/license.txt"
     },
     "march_br-unsat": {
         "tracks": [
@@ -1112,7 +1233,9 @@
         "call": "././march_br",
         "comments": "Launchcommand was:  ././march_br  <instance> \nTrack was Core solvers, Sequential, Random certified UNSAT",
         "gz": false,
-        "name": "march_br"
+        "name": "march_br",
+        "license": "MIT",
+        "license_source": "licence file license.txt"
     },
     "minigolf": {
         "tracks": [
@@ -1126,7 +1249,9 @@
         "call": "././minigolf",
         "comments": "Launchcommand was:  ././minigolf  <instance> \nTrack was Core solvers, Sequential, MiniSAT Hack-track, Application SAT+UNSAT",
         "gz": true,
-        "name": "MiniGolf"
+        "name": "MiniGolf",
+        "license": "GPL-3.0 AND MIT",
+        "license_source": "licence file code/minisat22/checker/COPYING, code/minisat22/LICENSE"
     },
     "minigolf_prefetch": {
         "tracks": [
@@ -1141,7 +1266,9 @@
         "call": "././minigolf",
         "comments": "Launchcommand was:  ././minigolf -p <instance> \nTrack was Core solvers, Sequential, MiniSAT Hack-track, Application SAT+UNSAT",
         "gz": true,
-        "name": "MiniGolf"
+        "name": "MiniGolf",
+        "license": "GPL-3.0 AND MIT",
+        "license_source": "licence file code/minisat22/checker/COPYING, code/minisat22/LICENSE"
     },
     "minisat_bit": {
         "tracks": [
@@ -1155,7 +1282,9 @@
         "call": "././minisat_bit",
         "comments": "Launchcommand was:  ././minisat_bit  <instance> \nTrack was Core solvers, Sequential, MiniSAT Hack-track, Application SAT+UNSAT",
         "gz": true,
-        "name": "minisat_bit"
+        "name": "minisat_bit",
+        "license": "MIT",
+        "license_source": "licence file minisat_bit/LICENSE.txt"
     },
     "sinnminisat": {
         "tracks": [
@@ -1169,7 +1298,9 @@
         "call": "././sinn",
         "comments": "Launchcommand was:  ././sinn  <instance> \nTrack was Core solvers, Sequential, MiniSAT Hack-track, Application SAT+UNSAT",
         "gz": true,
-        "name": "SINNminisat"
+        "name": "SINNminisat",
+        "license_source": "licence file SINNminisatComp/code/LICENSE",
+        "license": "MIT"
     },
     "glucans": {
         "tracks": [
@@ -1192,7 +1323,9 @@
         "call": "././glucan_static",
         "comments": "Launchcommand was:  ././glucan_static  <instance>  -tmpdir= <tempdir>  -mem-lim=15000 -contrasat -nof-threads=8 -strictlbd -keep-lbd=2 -se-lim=120 -sendmore\nTrack was Core Solvers, Parallel, Application SAT+UNSAT",
         "gz": true,
-        "name": "Glucans"
+        "name": "Glucans",
+        "license_source": "licence file license.txt",
+        "license": "MIT"
     },
     "glucored-multi": {
         "tracks": [
@@ -1209,7 +1342,9 @@
         "call": "././glucored-multi_release",
         "comments": "Launchcommand was:  ././glucored-multi_release  <instance>  -rnd-seed= <seed>  -nc=1 -ns=3\nTrack was Core Solvers, Parallel, Application SAT+UNSAT",
         "gz": true,
-        "name": "GlucoRed-Multi"
+        "name": "GlucoRed-Multi",
+        "license_source": "licence file license.txt",
+        "license": "MIT"
     },
     "pcasso": {
         "tracks": [
@@ -1224,7 +1359,9 @@
         "call": "././cp3.sh",
         "comments": "Launchcommand was:  ././cp3.sh  <instance>   <tempdir> \nTrack was Core Solvers, Parallel, Application SAT+UNSAT",
         "gz": true,
-        "name": "pcasso"
+        "name": "pcasso",
+        "license_source": "licence file code/riss3g/checker/COPYING, code/pcasso/LICENSE",
+        "license": "GPL-3.0 AND MIT"
     },
     "penelope": {
         "tracks": [
@@ -1236,11 +1373,13 @@
             ".//solver.sh",
             "FILECNF"
         ],
-        "authors": "Gilles Audemard, Beno\u00eet Hoessen, Sa\u00efd Jabbour, Jean-Marie Lagniez, C\u00e9dric Piette",
+        "authors": "Gilles Audemard, Benoît Hoessen, Saïd Jabbour, Jean-Marie Lagniez, Cédric Piette",
         "call": "sh",
         "comments": "Launchcommand was: sh .//solver.sh  <instance> \nTrack was Core Solvers, Parallel, Application SAT+UNSAT",
         "gz": true,
-        "name": "PeneLoPe"
+        "name": "PeneLoPe",
+        "license_source": "licence file license.txt",
+        "license": "MIT"
     },
     "plingeling": {
         "tracks": [
@@ -1254,7 +1393,9 @@
         "call": "./plingeling",
         "comments": "Launchcommand was:  ./plingeling  <instance> \nTrack was Core Solvers, Parallel, Application SAT+UNSAT",
         "gz": true,
-        "name": "Plingeling"
+        "name": "Plingeling",
+        "license_source": "licence file license.txt",
+        "license": "MIT"
     },
     "pmcsat": {
         "tracks": [
@@ -1264,11 +1405,13 @@
         "args": [
             "FILECNF"
         ],
-        "authors": "Ricardo Marques, Lu\u00eds Guerra e Silva, Paulo Flores and Lu\u00eds Miguel Silveira",
+        "authors": "Ricardo Marques, Luís Guerra e Silva, Paulo Flores and Luís Miguel Silveira",
         "call": "././pmcsat_static",
         "comments": "Launchcommand was:  ././pmcsat_static  <instance> \nTrack was Core Solvers, Parallel, Application SAT+UNSAT",
         "gz": true,
-        "name": "pmcSAT"
+        "name": "pmcSAT",
+        "license_source": "licence file license.txt",
+        "license": "MIT"
     },
     "sat4j_parallel": {
         "tracks": [
@@ -1288,7 +1431,9 @@
         "call": "java",
         "comments": "Launchcommand was: java -Xms12g -Xmx12g -jar  .//sat4j2013.jar Parallel  <instance> \nTrack was Core Solvers, Parallel, Application SAT+UNSAT",
         "gz": true,
-        "name": "SAT4J Parallel"
+        "name": "SAT4J Parallel",
+        "license_source": "licence file SATCOMP2013SUBMISSION/license.txt",
+        "license": "MIT"
     },
     "satx10-glci": {
         "tracks": [
@@ -1309,9 +1454,11 @@
         "call": "python",
         "comments": "Launchcommand was: python .//runSatX10.py --x10ppconfig=SC2013.ppconfig --x10nplaces=8 --x10usepre --tmpdir <tempdir>   <instance> \nTrack was Core Solvers, Parallel, Application SAT+UNSAT",
         "gz": true,
-        "name": "SatX10-GLCI"
+        "name": "SatX10-GLCI",
+        "license_source": "licence file submission/code/src_others/Glucose/LICENSE",
+        "license": "MIT"
     },
-        "strangenight-mt": {
+    "strangenight-mt": {
         "tracks": [
             "parallel"
         ],
@@ -1325,7 +1472,9 @@
         "call": "./strangenight",
         "comments": "Launchcommand was:  ./strangenight --threads=4  <instance> \nTrack was Core Solvers, Parallel, Application SAT+UNSAT",
         "gz": true,
-        "name": "strangenight"
+        "name": "strangenight",
+        "license_source": "licence file strangenight/code/LICENSE-GPL, strangenight/code/LICENSE-MIT",
+        "license": "GPL-3.0 AND MIT"
     },
     "treengeling": {
         "tracks": [
@@ -1340,6 +1489,8 @@
         "call": "./treengeling",
         "comments": "Launchcommand was:  ./treengeling  <instance> \nTrack was Core Solvers, Parallel, Application SAT+UNSAT",
         "gz": true,
-        "name": "Treengeling"
+        "name": "Treengeling",
+        "license_source": "licence file license.txt",
+        "license": "MIT"
     }
 }

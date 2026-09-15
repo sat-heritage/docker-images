@@ -29,7 +29,9 @@
         "argsproof": [
             "FILECNF",
             "-drup-file=FILEPROOF"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence file DurianSat/sources/LICENSE"
     },
     "exmaplelcmdistchronobt_padc_dl": {
         "status": "ok",
@@ -59,7 +61,9 @@
             "-nbIncRedDB=5",
             "-clearType=0",
             "-drup-file=FILEPROOF"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence file ExMapleLCMDistChronoBT/LICENSE"
     },
     "exmaplelcmdistchronobt_padc_dl_ovau_exp": {
         "status": "ok",
@@ -93,7 +97,9 @@
             "-nbIncRedDB=5",
             "-clearType=0",
             "-drup-file=FILEPROOF"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence file ExMapleLCMDistChronoBT/LICENSE"
     },
     "exmaplelcmdistchronobt_padc_dl_ovau_lin": {
         "status": "ok",
@@ -127,7 +133,9 @@
             "-nbIncRedDB=5",
             "-clearType=0",
             "-drup-file=FILEPROOF"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence file ExMapleLCMDistChronoBT/LICENSE"
     },
     "exmaplelcmdistchronobt_psids_dl": {
         "status": "ok",
@@ -153,7 +161,9 @@
             "-use-dl",
             "-no-use-ovau",
             "-drup-file=FILEPROOF"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence file ExMapleLCMDistChronoBT/LICENSE"
     },
     "kissat-sc2020-default": {
         "status": "ok",
@@ -223,7 +233,9 @@
         "argsproof": [
             "FILECNF",
             "-drup-file=FILEPROOF"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence file MLCMDChronoBT-DL-Scavel/sources/LICENSE"
     },
     "maple-lcm-dist-alluip-trail": {
         "status": "ok",
@@ -243,7 +255,9 @@
             "-i-uip",
             "-i-mini",
             "-drup-file=FILEPROOF"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence file Maple-LCM-Dist-alluip-trail/LICENSE"
     },
     "maplecomsps_lrb_vsids_2": {
         "status": "ok",
@@ -263,7 +277,9 @@
             "-act-init=1",
             "-pol-init=1",
             "-drup-file=FILEPROOF"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence file MapleCOMSPS_LRB_VSIDS_2/MapleCOMSPS_LRB_VSIDS_2/LICENSE"
     },
     "maplelcmdistchronobt-dl-scavel01": {
         "status": "ok",
@@ -279,7 +295,9 @@
         "argsproof": [
             "FILECNF",
             "-drup-file=FILEPROOF"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence file MapleLCMDistChronoBT-DL-Scavel01/sources/LICENSE"
     },
     "maplelcmdistchronobt-dl-scavel02": {
         "status": "ok",
@@ -295,7 +313,9 @@
         "argsproof": [
             "FILECNF",
             "-drup-file=FILEPROOF"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence file MapleLCMDistChronoBT-DL-Scavel02/sources/LICENSE"
     },
     "maplelcmdistchronobt-dl-f2trc": {
         "status": "ok",
@@ -311,7 +331,9 @@
         "argsproof": [
             "FILECNF",
             "-drup-file=FILEPROOF"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence file MapleLCMDistChronoBT-DL-f2trc/sources/LICENSE"
     },
     "maplelcmdistchronobt-dl-v3": {
         "status": "ok",
@@ -327,7 +349,9 @@
         "argsproof": [
             "FILECNF",
             "-drup-file=FILEPROOF"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence file MapleLCMDistChronoBT-DL-v3/sources/LICENSE"
     },
     "maplelcmdistchronobt-f2trc-s": {
         "status": "ok",
@@ -343,7 +367,9 @@
         "argsproof": [
             "FILECNF",
             "-drup-file=FILEPROOF"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence file MapleLCMDistChronoBT-f2trc-s/sources/LICENSE"
     },
     "maplelcmdistchronobt-f2trc": {
         "status": "ok",
@@ -359,7 +385,9 @@
         "argsproof": [
             "FILECNF",
             "-drup-file=FILEPROOF"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence file MapleLCMDistChronoBT-f2trc/sources/LICENSE"
     },
     "maple_cm-dist-sattime2s": {
         "status": "ok",
@@ -375,7 +403,9 @@
         "argsproof": [
             "FILECNF",
             "-drup-file=FILEPROOF"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence file Maple_CM+dist+sattime2s+-/sources/LICENSE"
     },
     "maple_cm-dist-simp2": {
         "status": "ok",
@@ -391,7 +421,9 @@
         "argsproof": [
             "FILECNF",
             "-drup-file=FILEPROOF"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence file Maple_CM+dist+simp2--/sources/LICENSE"
     },
     "maple_cm-dist": {
         "status": "ok",
@@ -407,7 +439,9 @@
         "argsproof": [
             "FILECNF",
             "-drup-file=FILEPROOF"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence file Maple_CM+dist/sources/LICENSE"
     },
     "maple_cmused-dist": {
         "status": "ok",
@@ -423,7 +457,9 @@
         "argsproof": [
             "FILECNF",
             "-drup-file=FILEPROOF"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence file Maple_CMused+dist/sources/LICENSE"
     },
     "maple_mix": {
         "status": "ok",
@@ -439,7 +475,9 @@
         "argsproof": [
             "FILECNF",
             "-drup-file=FILEPROOF"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence file Maple_mix/Maple_mix/LICENSE"
     },
     "maple_simp": {
         "status": "ok",
@@ -455,7 +493,9 @@
         "argsproof": [
             "FILECNF",
             "-drup-file=FILEPROOF"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence file Maple_simp/Maple_simp/LICENSE"
     },
     "parafrost": {
         "status": "ok",
@@ -473,7 +513,9 @@
             "FILECNF",
             "--proof-file=FILEPROOF",
             "-q"
-        ]
+        ],
+        "license": "GPL-3.0",
+        "license_source": "licence file ParaFROST/parafrost/LICENSE"
     },
     "parafrost_cbt": {
         "status": "ok",
@@ -493,7 +535,9 @@
             "--proof-file=FILEPROOF",
             "-q",
             "-cbt"
-        ]
+        ],
+        "license": "GPL-3.0",
+        "license_source": "licence file ParaFROST_CBT/parafrost/LICENSE"
     },
     "pausat": {
         "status": "ok",
@@ -509,7 +553,9 @@
         "argsproof": [
             "FILECNF",
             "FILEPROOF"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence file PauSat/LICENSE"
     },
     "relaxed_lcmdcbdl": {
         "status": "ok",
@@ -525,7 +571,9 @@
         "argsproof": [
             "FILECNF",
             "-drup-file=FILEPROOF"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence file Relaxed_LCMDCBDL/sources/LICENSE"
     },
     "relaxed_lcmdcbdl_newtech": {
         "status": "ok",
@@ -541,7 +589,9 @@
         "argsproof": [
             "FILECNF",
             "-drup-file=FILEPROOF"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence file Relaxed_LCMDCBDL_newTech/sources/LICENSE"
     },
     "slime": {
         "status": "fixme",
@@ -574,7 +624,9 @@
         "argsproof": [
             "FILECNF",
             "-drup-file=FILEPROOF"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence file Top16-Undominated-LC-MapleLCMDiscChronoBT-DL/sources/LICENSE"
     },
     "top24-undominated-lc-maplelcmdiscchronobt-dl": {
         "status": "ok",
@@ -590,7 +642,9 @@
         "argsproof": [
             "FILECNF",
             "-drup-file=FILEPROOF"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence file Top24-Undominated-LC-MapleLCMDiscChronoBT-DL/sources/LICENSE"
     },
     "top36-undominated-lc-maplelcmdiscchronobt-dl": {
         "status": "ok",
@@ -606,7 +660,9 @@
         "argsproof": [
             "FILECNF",
             "-drup-file=FILEPROOF"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence file Top36-Undominated-LC-MapleLCMDiscChronoBT-DL/sources/LICENSE"
     },
     "undominated-lc-maplelcmdiscchronobt-dl": {
         "status": "ok",
@@ -622,7 +678,9 @@
         "argsproof": [
             "FILECNF",
             "-drup-file=FILEPROOF"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence file Undominated-LC-MapleLCMDiscChronoBT-DL/sources/LICENSE"
     },
     "cadical-alluip-trail": {
         "status": "ok",
@@ -638,7 +696,9 @@
         "argsproof": [
             "FILECNF",
             "FILEPROOF"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence file cadical-alluip-trail/LICENSE"
     },
     "cadical-alluip": {
         "status": "ok",
@@ -656,9 +716,10 @@
             "FILEPROOF"
         ]
     },
-    "cadical-trail" : {
+    "cadical-trail": {
         "status": "fixme",
-        "status_detail": "FIXME: miss sources."
+        "status_detail": "FIXME: miss sources.",
+        "license_source": "archive not available"
     },
     "cryptominisat-ccnr-lsids": {
         "status": "ok",
@@ -680,7 +741,9 @@
             "--sls=ccnr",
             "--drat=FILEPROOF",
             "FILECNF"
-        ]
+        ],
+        "license": "BSD-2-Clause AND LGPL-3.0 AND MIT",
+        "license_source": "licence header of cryptominisat-ccnr-lsids/cms/src/msvc/stdint.h, cryptominisat-ccnr-lsids/breakid/src/bliss/uintseqhash.cc, cryptominisat-ccnr-lsids/breakid/src/GitSHA1.h"
     },
     "cryptominisat-ccnr": {
         "status": "ok",
@@ -700,7 +763,9 @@
             "--sls=ccnr",
             "--drat=FILEPROOF",
             "FILECNF"
-        ]
+        ],
+        "license": "BSD-2-Clause AND LGPL-3.0 AND MIT",
+        "license_source": "licence header of cryptominisat-ccnr/cms/src/msvc/stdint.h, cryptominisat-ccnr/breakid/src/bliss/utils.hh, cryptominisat-ccnr/breakid/src/Graph.cpp"
     },
     "cryptominisat-walksat": {
         "status": "ok",
@@ -720,7 +785,9 @@
             "--sls=ccnr",
             "--drat=FILEPROOF",
             "FILECNF"
-        ]
+        ],
+        "license": "BSD-2-Clause AND LGPL-3.0 AND MIT",
+        "license_source": "licence header of cryptominisat-walksat/cms/src/MersenneTwister.h, cryptominisat-walksat/breakid/src/bliss/orbit.cc, cryptominisat-walksat/breakid/src/Breaking.hpp"
     },
     "exp_l_mld_cbt_dl": {
         "status": "ok",
@@ -736,7 +803,9 @@
         "argsproof": [
             "FILECNF",
             "-drup-file=FILEPROOF"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence file exp_L_MLD_CBT_DL/sources/LICENSE"
     },
     "exp_v_lgb_mld_cbt_dl": {
         "status": "ok",
@@ -752,7 +821,9 @@
         "argsproof": [
             "FILECNF",
             "-drup-file=FILEPROOF"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence file exp_V_LGB_MLD_CBT_DL/sources/LICENSE"
     },
     "exp_v_l_mld_cbt_dl": {
         "status": "ok",
@@ -768,7 +839,9 @@
         "argsproof": [
             "FILECNF",
             "-drup-file=FILEPROOF"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence file exp_V_L_MLD_CBT_DL/sources/LICENSE"
     },
     "exp_v_mld_cbt_dl": {
         "status": "ok",
@@ -784,7 +857,9 @@
         "argsproof": [
             "FILECNF",
             "-drup-file=FILEPROOF"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence file exp_V_MLD_CBT_DL/sources/LICENSE"
     },
     "glucose-3.0-inprocess": {
         "status": "ok",
@@ -803,7 +878,9 @@
             "-model",
             "-certified",
             "-certified-output=FILEPROOF"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence file glucose-3.0-inprocess/LICENSE"
     },
     "upglucose-3.0_padc": {
         "status": "ok",
@@ -824,6 +901,8 @@
             "-nbIncRedDB=10",
             "-certified",
             "-certified-output=FILEPROOF"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence header of upGlucose-3.0_PADC/upGlucose-3.0_PADC/core/Solver.h"
     }
 }

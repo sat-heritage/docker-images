@@ -1,54 +1,77 @@
 {
     "bfs-glucose": {
-	      "tracks" : ["application", "crafted"],
+        "tracks": [
+            "application",
+            "crafted"
+        ],
         "status": "ok",
         "args": [
             "FILECNF"
         ],
-        "authors": "D\u00e1vid Bart\u00f3k and Zolt\u00e1n \u00c1d\u00e1m Mann",
+        "authors": "Dávid Bartók and Zoltán Ádám Mann",
         "call": "././BFSglucose",
         "comments": "Launchcommand was:  ././BFSglucose  <instance> \nTrack was Sequential, Application SAT+UNSAT track",
         "gz": false,
-        "name": "BFS-Glucose"
+        "name": "BFS-Glucose",
+        "license": "MIT",
+        "license_source": "licence file license.txt"
     },
     "bfs-glucose_mem_16_70": {
-	      "tracks" : ["application", "crafted"],
+        "tracks": [
+            "application",
+            "crafted"
+        ],
         "status": "ok",
         "args": [
             "FILECNF"
         ],
-        "authors": "D\u00e1vid Bart\u00f3k and Zolt\u00e1n \u00c1d\u00e1m Mann",
+        "authors": "Dávid Bartók and Zoltán Ádám Mann",
         "call": "././BFSglucose",
         "comments": "Launchcommand was:  ././BFSglucose  <instance> \nTrack was Sequential, Application SAT+UNSAT track",
         "gz": false,
-        "name": "BFS-Glucose_mem_16_70"
+        "name": "BFS-Glucose_mem_16_70",
+        "license": "MIT",
+        "license_source": "licence file license.txt"
     },
     "bfs-glucose_mem_32_70": {
-	      "tracks" : ["application", "crafted"],
+        "tracks": [
+            "application",
+            "crafted"
+        ],
         "status": "ok",
         "args": [
             "FILECNF"
         ],
-        "authors": "D\u00e1vid Bart\u00f3k and Zolt\u00e1n \u00c1d\u00e1m Mann",
+        "authors": "Dávid Bartók and Zoltán Ádám Mann",
         "call": "././BFSglucose",
         "comments": "Launchcommand was:  ././BFSglucose  <instance> \nTrack was Sequential, Application SAT+UNSAT track",
         "gz": false,
-        "name": "BFS-Glucose_mem_32_70"
+        "name": "BFS-Glucose_mem_32_70",
+        "license": "MIT",
+        "license_source": "licence file license.txt"
     },
     "bfs-glucose_mem_8_85": {
-	      "tracks" : ["application", "crafted"],
+        "tracks": [
+            "application",
+            "crafted"
+        ],
         "status": "ok",
         "args": [
             "FILECNF"
         ],
-        "authors": "D\u00e1vid Bart\u00f3k and Zolt\u00e1n \u00c1d\u00e1m Mann",
+        "authors": "Dávid Bartók and Zoltán Ádám Mann",
         "call": "././BFSglucose",
         "comments": "Launchcommand was:  ././BFSglucose  <instance> \nTrack was Sequential, Application SAT+UNSAT track",
         "gz": false,
-        "name": "BFS-Glucose_mem_8_85"
+        "name": "BFS-Glucose_mem_8_85",
+        "license": "MIT",
+        "license_source": "licence file license.txt"
     },
     "ccanr_glucose": {
-	      "tracks" : ["application", "crafted"],
+        "tracks": [
+            "application",
+            "crafted"
+        ],
         "status": "ok",
         "args": [
             "FILECNF",
@@ -59,10 +82,15 @@
         "call": "././CCAnr+glucose.sh",
         "comments": "Launchcommand was:  ././CCAnr+glucose.sh  <instance>   <seed>  1000\nTrack was Sequential, Application SAT+UNSAT track",
         "gz": true,
-        "name": "CCAnr+glucose"
+        "name": "CCAnr+glucose",
+        "license": "MIT",
+        "license_source": "licence header of CCAnr+glucose/code/glucose2.3/core/BoundedQueue.h"
     },
     "cryptominisat-4.1-st": {
-	      "tracks" : ["application", "crafted"],
+        "tracks": [
+            "application",
+            "crafted"
+        ],
         "status": "fixme",
         "status_detail": "FIXME problem when building",
         "args": [
@@ -76,16 +104,21 @@
         "call": "././cryptominisat",
         "comments": "Launchcommand was:  ././cryptominisat  <instance> \nTrack was Sequential, Application SAT+UNSAT track",
         "gz": true,
-        "name": "cryptominisat-4.1-st"
+        "name": "cryptominisat-4.1-st",
+        "license": "GPL-2.0",
+        "license_source": "licence file code/m4ri-20130416/COPYING"
     },
     "cryptominisat-v41-tuned-st": {
-	      "tracks" : ["application", "crafted"],
+        "tracks": [
+            "application",
+            "crafted"
+        ],
         "status": "fixme",
         "status_detail": "FIXME problem when building",
         "args": [
             "FILECNF"
         ],
-                "argsproof": [
+        "argsproof": [
             "FILECNF",
             "-drup=1"
         ],
@@ -93,10 +126,15 @@
         "call": "././cryptominisat",
         "comments": "Launchcommand was:  ././cryptominisat  <instance> \nTrack was Sequential, Application SAT+UNSAT track",
         "gz": true,
-        "name": "cryptominisat-v41-tuned-st"
+        "name": "cryptominisat-v41-tuned-st",
+        "license": "GPL-2.0",
+        "license_source": "licence file code/m4ri-20130416/COPYING"
     },
     "glucose": {
-	      "tracks" : ["application", "crafted"],
+        "tracks": [
+            "application",
+            "crafted"
+        ],
         "status": "ok",
         "args": [
             "FILECNF"
@@ -105,10 +143,15 @@
         "call": "././glucose",
         "comments": "Launchcommand was:  ././glucose  <instance> \nTrack was Sequential, Application SAT+UNSAT track",
         "gz": true,
-        "name": "glucose"
+        "name": "glucose",
+        "license": "MIT",
+        "license_source": "licence file licence.txt"
     },
     "glue_lgl_split": {
-	      "tracks" : ["application", "crafted"],
+        "tracks": [
+            "application",
+            "crafted"
+        ],
         "status": "ok",
         "args": [
             "FILECNF"
@@ -117,10 +160,15 @@
         "call": "././glue_lgl_split",
         "comments": "Launchcommand was:  ././glue_lgl_split  <instance> \nTrack was Sequential, Application SAT+UNSAT track",
         "gz": true,
-        "name": "glue_lgl_split"
+        "name": "glue_lgl_split",
+        "license": "GPL-2.0",
+        "license_source": "licence file glue_lgl_split/LICENSE.txt"
     },
     "glueminisat": {
-	      "tracks" : ["application", "crafted"],
+        "tracks": [
+            "application",
+            "crafted"
+        ],
         "status": "ok",
         "args": [
             "FILECNF"
@@ -129,17 +177,22 @@
         "call": "./glueminisat-simp",
         "comments": "Launchcommand was:  .//glueminisat-simp   <instance> \nTrack was Sequential, Application SAT+UNSAT track",
         "gz": true,
-        "name": "glueminisat"
+        "name": "glueminisat",
+        "license": "MIT",
+        "license_source": "licence file glueminisat-2.2.8/code/LICENSE"
     },
     "lingeling": {
-	      "tracks" : ["application", "crafted"],
+        "tracks": [
+            "application",
+            "crafted"
+        ],
         "status": "ok",
         "args": [
             "-v",
             "--witness",
             "FILECNF"
         ],
-        "argsproof" : [
+        "argsproof": [
             "-v",
             "--druplig",
             "FILECNF"
@@ -148,10 +201,15 @@
         "call": "./lingeling",
         "comments": "Launchcommand was:  ./lingeling -v <instance> \nTrack was Sequential, Application SAT+UNSAT track",
         "gz": true,
-        "name": "Lingeling"
+        "name": "Lingeling",
+        "license": "MIT",
+        "license_source": "licence file code/COPYING"
     },
     "lingeling_druplig": {
-	      "tracks" : ["application", "crafted"],
+        "tracks": [
+            "application",
+            "crafted"
+        ],
         "status": "ok",
         "args": [
             "-v",
@@ -162,10 +220,15 @@
         "call": "./lingeling",
         "comments": "Launchcommand was:  ./lingeling -v --druplig <instance> \nTrack was Sequential, Application SAT+UNSAT track",
         "gz": true,
-        "name": "Lingeling (druplig)"
+        "name": "Lingeling (druplig)",
+        "license": "MIT",
+        "license_source": "licence file code/druplig/LICENSE"
     },
     "lingeling_no_agile": {
-	      "tracks" : ["application", "crafted"],
+        "tracks": [
+            "application",
+            "crafted"
+        ],
         "status": "ok",
         "args": [
             "-v",
@@ -176,10 +239,15 @@
         "call": "./lingeling",
         "comments": "Launchcommand was:  ./lingeling -v --no-agile <instance> \nTrack was Sequential, Application SAT+UNSAT track",
         "gz": true,
-        "name": "Lingeling (no agile)"
+        "name": "Lingeling (no agile)",
+        "license": "MIT",
+        "license_source": "licence file code/COPYING"
     },
     "minisat_blbd": {
-	      "tracks" : ["application", "crafted"],
+        "tracks": [
+            "application",
+            "crafted"
+        ],
         "status": "ok",
         "args": [
             "FILECNF"
@@ -192,10 +260,15 @@
         "call": "././minisat_blbd",
         "comments": "Launchcommand was:  ././minisat_blbd  <instance> \nTrack was Sequential, Application SAT+UNSAT track",
         "gz": true,
-        "name": "minisat_blbd"
+        "name": "minisat_blbd",
+        "license": "MIT",
+        "license_source": "licence file minisat_blbd/LICENSE.txt"
     },
     "minisat_hack_1430ed": {
-	      "tracks" : ["application", "crafted"],
+        "tracks": [
+            "application",
+            "crafted"
+        ],
         "status": "ok",
         "args": [
             "FILECNF"
@@ -208,10 +281,15 @@
         "call": "././wrapper.sh",
         "comments": "Launchcommand was:  ././wrapper.sh  <instance> \nTrack was Sequential, Application SAT+UNSAT track",
         "gz": true,
-        "name": "MiniSat_HACK_1430ED"
+        "name": "MiniSat_HACK_1430ED",
+        "license": "MIT",
+        "license_source": "licence file license.txt"
     },
     "minisat_hack_999ed": {
-	      "tracks" : ["application", "crafted"],
+        "tracks": [
+            "application",
+            "crafted"
+        ],
         "status": "ok",
         "args": [
             "FILECNF"
@@ -224,10 +302,15 @@
         "call": "././wrapper.sh",
         "comments": "Launchcommand was:  ././wrapper.sh  <instance> \nTrack was Sequential, Application SAT+UNSAT track",
         "gz": true,
-        "name": "MiniSat_HACK_999ED"
+        "name": "MiniSat_HACK_999ED",
+        "license": "MIT",
+        "license_source": "licence file license.txt"
     },
     "nigma": {
-	      "tracks" : ["application", "crafted"],
+        "tracks": [
+            "application",
+            "crafted"
+        ],
         "status": "ok",
         "args": [
             "FILECNF",
@@ -252,10 +335,15 @@
         "call": ".//nigma",
         "comments": "Launchcommand was:  .//nigma  <instance>  --display-assignments-if-sat --partial-backtracking --elimination-timeout 100 --probing-timeout 100\nTrack was Sequential, Application SAT+UNSAT track",
         "gz": false,
-        "name": "Nigma"
+        "name": "Nigma",
+        "license": "MIT",
+        "license_source": "licence file licence.txt"
     },
     "ntusat": {
-	      "tracks" : ["application", "crafted"],
+        "tracks": [
+            "application",
+            "crafted"
+        ],
         "status": "ok",
         "args": [
             "FILECNF"
@@ -264,10 +352,15 @@
         "call": "././ntusat",
         "comments": "Launchcommand was:  ././ntusat  <instance> \nTrack was Sequential, Application SAT+UNSAT track",
         "gz": true,
-        "name": "ntusat"
+        "name": "ntusat",
+        "license": "MIT",
+        "license_source": "licence file ntusat/code/LICENSE-MIT"
     },
     "ntusatbreak": {
-	      "tracks" : ["application", "crafted"],
+        "tracks": [
+            "application",
+            "crafted"
+        ],
         "status": "ok",
         "args": [
             "FILECNF",
@@ -277,10 +370,15 @@
         "call": "././runBreakIDntusat.sh",
         "comments": "Launchcommand was:  ././runBreakIDntusat.sh  <instance>   <tempdir> \nTrack was Sequential, Application SAT+UNSAT track",
         "gz": true,
-        "name": "ntusatbreak"
+        "name": "ntusatbreak",
+        "license": "MIT",
+        "license_source": "licence file ntusatbreak/code/LICENSE-MIT"
     },
     "riss": {
-	      "tracks" : ["application", "crafted"],
+        "tracks": [
+            "application",
+            "crafted"
+        ],
         "status": "ok",
         "args": [
             "FILECNF",
@@ -295,10 +393,15 @@
         "call": "././Riss427DRAT.sh",
         "comments": "Launchcommand was:  ././Riss427DRAT.sh  <instance>   <tempdir> \nTrack was Sequential, Application SAT+UNSAT track",
         "gz": true,
-        "name": "Riss"
+        "name": "Riss",
+        "license": "MIT",
+        "license_source": "licence file code/license.txt"
     },
     "riss_1": {
-	      "tracks" : ["application", "crafted"],
+        "tracks": [
+            "application",
+            "crafted"
+        ],
         "status": "ok",
         "args": [
             "FILECNF",
@@ -313,10 +416,15 @@
         "call": "././blackbox.sh",
         "comments": "Launchcommand was:  ././blackbox.sh  <instance>   <tempdir> \nTrack was Sequential, Application SAT+UNSAT track",
         "gz": true,
-        "name": "Riss"
+        "name": "Riss",
+        "license": "GPL-2.0 AND MIT",
+        "license_source": "licence file code/predictor/license.txt, code/Riss427/license.txt"
     },
     "riss_2": {
-	      "tracks" : ["application", "crafted"],
+        "tracks": [
+            "application",
+            "crafted"
+        ],
         "status": "ok",
         "args": [
             "FILECNF",
@@ -326,10 +434,15 @@
         "call": "././Riss427DRAT.sh",
         "comments": "Launchcommand was:  ././Riss427DRAT.sh  <instance>   <tempdir> \nTrack was Sequential, Application SAT+UNSAT track",
         "gz": true,
-        "name": "Riss"
+        "name": "Riss",
+        "license": "MIT",
+        "license_source": "licence file code/license.txt"
     },
     "rokk": {
-	      "tracks" : ["application", "crafted"],
+        "tracks": [
+            "application",
+            "crafted"
+        ],
         "status": "ok",
         "args": [
             "FILECNF",
@@ -339,10 +452,15 @@
         "call": "././rokk.sh",
         "comments": "Launchcommand was:  ././rokk.sh  <instance>   <tempdir> \nTrack was Sequential, Application SAT+UNSAT track",
         "gz": true,
-        "name": "ROKK"
+        "name": "ROKK",
+        "license": "MIT",
+        "license_source": "licence file ROKKv1.01_11/code/sources/rokk/LICENSE"
     },
     "rokk_sat": {
-	      "tracks" : ["application", "crafted"],
+        "tracks": [
+            "application",
+            "crafted"
+        ],
         "status": "ok",
         "args": [
             "FILECNF"
@@ -351,10 +469,15 @@
         "call": "././rokk_sat.sh",
         "comments": "Launchcommand was:  ././rokk_sat.sh  <instance> \nTrack was Sequential, Application SAT+UNSAT track",
         "gz": true,
-        "name": "ROKK(sat)"
+        "name": "ROKK(sat)",
+        "license": "MIT",
+        "license_source": "licence file ROKKsat_v1.01_7/code/sources/rokk/LICENSE"
     },
     "rseq2014": {
-	      "tracks" : ["application", "crafted"],
+        "tracks": [
+            "application",
+            "crafted"
+        ],
         "status": "ok",
         "args": [
             "FILECNF",
@@ -366,10 +489,16 @@
         "call": ".///RSeq2014.sh",
         "comments": "Launchcommand was:  .///RSeq2014.sh  <instance>  -s <seed>  1200\nTrack was Sequential, Application SAT+UNSAT track",
         "gz": true,
-        "name": "RSeq2014"
+        "name": "RSeq2014",
+        "license": "MIT",
+        "license_source": "licence file RSeq2014/LICENSE"
     },
     "sattime2014r": {
-	      "tracks" : ["application", "crafted", "random"],
+        "tracks": [
+            "application",
+            "crafted",
+            "random"
+        ],
         "status": "ok",
         "args": [
             "FILECNF",
@@ -380,10 +509,14 @@
         "call": "./sattime2014r",
         "comments": "Launchcommand was:  ./sattime2014r  <instance>  -seed <seed> \nTrack was Sequential, Application SAT+UNSAT track",
         "gz": true,
-        "name": "sattime2014r"
+        "name": "sattime2014r",
+        "license_source": "unrecognized licence file sattime2014r/license.txt"
     },
     "satuzk": {
-	      "tracks" : ["application", "crafted"],
+        "tracks": [
+            "application",
+            "crafted"
+        ],
         "status": "fixme",
         "status_detail": "FIXME problem when building",
         "args": [
@@ -399,10 +532,15 @@
         "call": "././satUZK_wrapper",
         "comments": "Launchcommand was:  ././satUZK_wrapper  <tempdir>  satUZK-seq  <instance> \nTrack was Sequential, Application SAT+UNSAT track",
         "gz": true,
-        "name": "SatUZK"
+        "name": "SatUZK",
+        "license_source": "unrecognized licence file license.txt"
     },
     "sgseq": {
-	      "tracks" : ["application", "crafted", "random"],
+        "tracks": [
+            "application",
+            "crafted",
+            "random"
+        ],
         "status": "ok",
         "args": [
             "FILECNF",
@@ -413,10 +551,15 @@
         "call": ".//SGSeq.sh",
         "comments": "Launchcommand was:  .//SGSeq.sh  <instance>  -s <seed> \nTrack was Sequential, Application SAT+UNSAT track",
         "gz": true,
-        "name": "SGSeq"
+        "name": "SGSeq",
+        "license": "MIT",
+        "license_source": "licence file SGSeq/code/glucose2.3/licence.txt"
     },
     "sparrowtoriss": {
-	      "tracks" : ["application", "crafted"],
+        "tracks": [
+            "application",
+            "crafted"
+        ],
         "status": "ok",
         "args": [
             "FILECNF",
@@ -428,20 +571,21 @@
             "RANDOMSEED",
             "/tmp",
             "DRAT"
-
         ],
         "authors": "Adrian Balint, Norbert Manthey",
         "call": "././SparrowToRiss.sh",
         "comments": "Launchcommand was:  ././SparrowToRiss.sh  <instance>   <seed>   <tempdir> \nTrack was Sequential, Application SAT+UNSAT track",
         "gz": true,
-        "name": "SparrowToRiss"
+        "name": "SparrowToRiss",
+        "license": "MIT",
+        "license_source": "licence file code/Riss427/license.txt"
     },
     "swdia5by": {
-	      "tracks" : ["application", "crafted"],
-        "status": "ok",
-        "args": [
-            "FILECNF"
+        "tracks": [
+            "application",
+            "crafted"
         ],
+        "status": "ok",
         "args": [
             "FILECNF",
             "-drup"
@@ -450,10 +594,15 @@
         "call": "./SWDiA5BY_static",
         "comments": "Launchcommand was:  ./SWDiA5BY_static  <instance> \nTrack was Sequential, Application SAT+UNSAT track",
         "gz": true,
-        "name": "SWDiA5BY"
+        "name": "SWDiA5BY",
+        "license": "MIT",
+        "license_source": "licence file license.txt"
     },
     "swdia5by_1": {
-	      "tracks" : ["application", "crafted"],
+        "tracks": [
+            "application",
+            "crafted"
+        ],
         "status": "ok",
         "args": [
             "-lbd-cut=4",
@@ -469,10 +618,14 @@
         "call": "./SWDiA5BY_static",
         "comments": "Launchcommand was:  ./SWDiA5BY_static -lbd-cut=4 -core-learnt-hard-limit=1000000  <instance> \nTrack was Sequential, Application SAT+UNSAT track",
         "gz": true,
-        "name": "SWDiA5BY"
+        "name": "SWDiA5BY",
+        "license": "MIT",
+        "license_source": "licence file license.txt"
     },
     "cbpenelope": {
-        "tracks" : ["parallel"],
+        "tracks": [
+            "parallel"
+        ],
         "status": "ok",
         "args": [
             "-config=./configuration.ini",
@@ -482,10 +635,14 @@
         "call": "././cb_penelope",
         "comments": "Launchcommand was:  ././cb_penelope -config=./configuration.ini  <instance> \nTrack was Parallel, Application SAT+UNSAT track",
         "gz": false,
-        "name": "CBPeneLoPe"
+        "name": "CBPeneLoPe",
+        "license": "GPL-3.0",
+        "license_source": "licence file submit_cb_penelope/code/LICENSE"
     },
     "cryptominisat-4.1-mt": {
-        "tracks" : ["parallel"],
+        "tracks": [
+            "parallel"
+        ],
         "status": "fixme",
         "status_detail": "FIXME",
         "args": [
@@ -496,10 +653,14 @@
         "call": "././cryptominisat",
         "comments": "Launchcommand was:  ././cryptominisat --threads=8  <instance> \nTrack was Parallel, Application SAT+UNSAT track",
         "gz": true,
-        "name": "cryptominisat-4.1-mt"
+        "name": "cryptominisat-4.1-mt",
+        "license": "GPL-2.0",
+        "license_source": "licence file code/m4ri-20130416/COPYING"
     },
     "syrup": {
-        "tracks" : ["parallel"],
+        "tracks": [
+            "parallel"
+        ],
         "status": "ok",
         "args": [
             "FILECNF"
@@ -508,10 +669,14 @@
         "call": "./syrup",
         "comments": "Launchcommand was:  ./syrup  <instance> \nTrack was Parallel, Application SAT+UNSAT track",
         "gz": true,
-        "name": "glucose-syrup"
+        "name": "glucose-syrup",
+        "license": "MIT",
+        "license_source": "licence file licence.txt"
     },
     "paracirminisat": {
-        "tracks" : ["parallel"],
+        "tracks": [
+            "parallel"
+        ],
         "status": "ok",
         "args": [
             "-thread-num=MAXNBTHREAD",
@@ -521,10 +686,14 @@
         "call": "././paracirminisat",
         "comments": "Launchcommand was:  ././paracirminisat -thread-num=12  <instance> \nTrack was Parallel, Application SAT+UNSAT track",
         "gz": true,
-        "name": "ParaCIRMiniSAT"
+        "name": "ParaCIRMiniSAT",
+        "license": "MIT",
+        "license_source": "licence file submit_paracirminisat/code/LICENSE"
     },
     "penelope": {
-        "tracks" : ["parallel"],
+        "tracks": [
+            "parallel"
+        ],
         "status": "ok",
         "args": [
             "FILECNF"
@@ -533,10 +702,14 @@
         "call": ".//solver.sh",
         "comments": "Launchcommand was:  .//solver.sh  <instance> \nTrack was Parallel, Application SAT+UNSAT track",
         "gz": true,
-        "name": "PeneLoPe"
+        "name": "PeneLoPe",
+        "license": "MIT",
+        "license_source": "licence file license.txt"
     },
     "plingeling": {
-        "tracks" : ["parallel"],
+        "tracks": [
+            "parallel"
+        ],
         "status": "ok",
         "args": [
             "-v",
@@ -546,22 +719,30 @@
         "call": "./plingeling",
         "comments": "Launchcommand was:  ./plingeling -v <instance> \nTrack was Parallel, Application SAT+UNSAT track",
         "gz": true,
-        "name": "Plingeling"
+        "name": "Plingeling",
+        "license": "MIT",
+        "license_source": "licence file code/yalsat/LICENSE"
     },
     "pmcsat": {
-        "tracks" : ["parallel"],
+        "tracks": [
+            "parallel"
+        ],
         "status": "ok",
         "args": [
             "FILECNF"
         ],
-        "authors": "Ricardo Marques, Lu\u00eds Guerra e Silva, Paulo Flores and Lu\u00eds Miguel Silveira",
+        "authors": "Ricardo Marques, Luís Guerra e Silva, Paulo Flores and Luís Miguel Silveira",
         "call": ".//pmcsat_static",
         "comments": "Launchcommand was:  .//pmcsat_static  <instance> \nTrack was Parallel, Application SAT+UNSAT track",
         "gz": true,
-        "name": "pmcSAT"
+        "name": "pmcSAT",
+        "license": "MIT",
+        "license_source": "licence file license.txt"
     },
     "satuzkp": {
-        "tracks" : ["parallel"],
+        "tracks": [
+            "parallel"
+        ],
         "status": "fixme",
         "status_detail": "FIXME",
         "args": [
@@ -573,10 +754,13 @@
         "call": "././satUZK_wrapper",
         "comments": "Launchcommand was:  ././satUZK_wrapper  <tempdir>  satUZK-par  <instance> \nTrack was Parallel, Application SAT+UNSAT track",
         "gz": true,
-        "name": "SatUZKp"
+        "name": "SatUZKp",
+        "license_source": "unrecognized licence file license.txt"
     },
     "satuzkpl": {
-        "tracks" : ["parallel"],
+        "tracks": [
+            "parallel"
+        ],
         "status": "fixme",
         "status_detail": "FIXME",
         "args": [
@@ -588,10 +772,13 @@
         "call": "././satUZK_wrapper",
         "comments": "Launchcommand was:  ././satUZK_wrapper  <tempdir>  satUZK-par  <instance> \nTrack was Parallel, Application SAT+UNSAT track",
         "gz": true,
-        "name": "SatUZKpl"
+        "name": "SatUZKpl",
+        "license_source": "unrecognized licence file license.txt"
     },
     "treengeling": {
-        "tracks" : ["parallel"],
+        "tracks": [
+            "parallel"
+        ],
         "status": "ok",
         "args": [
             "FILECNF"
@@ -600,11 +787,15 @@
         "call": "./treengeling",
         "comments": "Launchcommand was:  ./treengeling  <instance> \nTrack was Parallel, Application SAT+UNSAT track",
         "gz": false,
-        "name": "Treengeling"
+        "name": "Treengeling",
+        "license": "MIT",
+        "license_source": "licence file code/yalsat/LICENSE"
     },
     "gluesplit_clasp": {
         "status": "ok",
-        "tracks" : ["crafted"],
+        "tracks": [
+            "crafted"
+        ],
         "args": [
             "FILECNF"
         ],
@@ -612,11 +803,16 @@
         "call": ".//glueSplit_clasp",
         "comments": "Launchcommand was:  .//glueSplit_clasp  <instance> \nTrack was Sequential, Hard-combinatorial SAT track",
         "gz": false,
-        "name": "glueSplit_clasp"
+        "name": "glueSplit_clasp",
+        "license": "GPL-2.0",
+        "license_source": "licence file glueSplit_clasp/LICENSE.txt"
     },
     "balancedz": {
         "status": "ok",
-        "tracks" : ["random", "crafted-sat"],
+        "tracks": [
+            "random",
+            "crafted-sat"
+        ],
         "args": [
             "FILECNF",
             "-seed",
@@ -626,11 +822,16 @@
         "call": "././BalancedZ",
         "comments": "Launchcommand was:  ././BalancedZ  <instance>  -seed <seed> \nTrack was Sequential, Hard-combinatorial SAT track",
         "gz": true,
-        "name": "BalancedZ"
+        "name": "BalancedZ",
+        "license": "GPL-2.0",
+        "license_source": "licence file license.txt"
     },
     "cca2014": {
         "status": "ok",
-        "tracks" : ["random", "crafted-sat"],
+        "tracks": [
+            "random",
+            "crafted-sat"
+        ],
         "args": [
             "FILECNF",
             "RANDOMSEED"
@@ -639,11 +840,14 @@
         "call": "././CCA2014",
         "comments": "Launchcommand was:  ././CCA2014  <instance>   <seed> \nTrack was Sequential, Hard-combinatorial SAT track",
         "gz": true,
-        "name": "CCA2014"
+        "name": "CCA2014",
+        "license_source": "unrecognized licence file license.txt"
     },
     "ccgscore": {
         "status": "ok",
-        "tracks" : ["random"],
+        "tracks": [
+            "random"
+        ],
         "args": [
             "FILECNF"
         ],
@@ -651,11 +855,14 @@
         "call": "././CCgscore",
         "comments": "Launchcommand was:  ././CCgscore  <instance> \nTrack was Sequential, Random SAT track",
         "gz": true,
-        "name": "CCgscore"
+        "name": "CCgscore",
+        "license_source": "unrecognized licence file  CCgscore submit to SC14/license.txt"
     },
     "csccsat2014": {
         "status": "ok",
-        "tracks" : ["random"],
+        "tracks": [
+            "random"
+        ],
         "args": [
             "FILECNF",
             "RANDOMSEED"
@@ -664,11 +871,14 @@
         "call": "././CSCCSat2014",
         "comments": "Launchcommand was:  ././CSCCSat2014  <instance>   <seed> \nTrack was Sequential, Random SAT track",
         "gz": true,
-        "name": "CSCCSat2014"
+        "name": "CSCCSat2014",
+        "license_source": "unrecognized licence file CSCCSat2014/license.txt"
     },
     "dimetheus": {
         "status": "ok",
-        "tracks" : ["random"],
+        "tracks": [
+            "random"
+        ],
         "args": [
             "-formula",
             "FILECNF",
@@ -681,39 +891,51 @@
         "call": "././dimetheus",
         "comments": "Launchcommand was:  ././dimetheus -formula <instance>  -seed <seed>  -classifyInputDomain 10\nTrack was Sequential, Random SAT track",
         "gz": false,
-        "name": "dimetheus"
+        "name": "dimetheus",
+        "license_source": "unrecognized licence file license.txt"
     },
     "ncca": {
         "status": "ok",
-        "tracks" : ["random"],
+        "tracks": [
+            "random"
+        ],
         "args": [
             "FILECNF",
             "-s",
             "RANDOMSEED"
         ],
-        "authors": "Djamal Habet, Donia Toumi, Andr\u00e9 Abram\u00e9",
+        "authors": "Djamal Habet, Donia Toumi, André Abramé",
         "call": "././Ncca+",
         "comments": "Launchcommand was:  ././Ncca+  <instance>  -s <seed> \nTrack was Sequential, Random SAT track",
         "gz": false,
-        "name": "Ncca+"
+        "name": "Ncca+",
+        "license_source": "unrecognized licence file Ncca+/LICENSE"
     },
     "probsat": {
         "status": "ok",
-        "tracks" : ["random", "crafted-sat"],
+        "tracks": [
+            "random",
+            "crafted-sat"
+        ],
         "args": [
             "-a",
             "FILECNF",
             "RANDOMSEED"
         ],
-        "authors": "Adrian Balint, Uwe Sch\u00f6ning",
+        "authors": "Adrian Balint, Uwe Schöning",
         "call": "././probSAT",
         "comments": "Launchcommand was:  ././probSAT -a <instance>   <seed> \nTrack was Sequential, Hard-combinatorial SAT track",
         "gz": true,
-        "name": "probSAT"
+        "name": "probSAT",
+        "license": "MIT",
+        "license_source": "licence file license.txt"
     },
     "yalsat": {
         "status": "ok",
-        "tracks" : ["random", "crafted-sat"],
+        "tracks": [
+            "random",
+            "crafted-sat"
+        ],
         "args": [
             "-v",
             "FILECNF",
@@ -723,12 +945,16 @@
         "call": "./yalsat",
         "comments": "Launchcommand was:  ./yalsat -v <instance>   <seed> \nTrack was Sequential, Application SAT track",
         "gz": true,
-        "name": "YalSAT"
+        "name": "YalSAT",
+        "license": "MIT",
+        "license_source": "licence file code/LICENSE"
     },
     "pprobsat": {
         "status": "fixme",
         "status_detail": "FIXME https://github.com/sat-heritage/docker-images/issues/29",
-        "tracks" : ["parallel-random"],
+        "tracks": [
+            "parallel-random"
+        ],
         "args": [
             ".//pprobSAT.py",
             "FILECNF",
@@ -736,15 +962,19 @@
             "12",
             "/tmp"
         ],
-        "authors": "Adrian Balint, Uwe Sch\u00f6ning",
+        "authors": "Adrian Balint, Uwe Schöning",
         "call": "python",
         "comments": "Launchcommand was: python .//pprobSAT.py  <instance>   <seed>  12  <tempdir> \nTrack was Parallel, Random SAT track",
         "gz": true,
-        "name": "pprobSAT"
+        "name": "pprobSAT",
+        "license": "MIT",
+        "license_source": "licence file license.txt"
     },
     "glucose_certified_unsat": {
         "status": "ok",
-        "tracks" : ["glucose-cert-unsat"],
+        "tracks": [
+            "glucose-cert-unsat"
+        ],
         "args": [
             "FILECNF"
         ],
@@ -755,6 +985,8 @@
         "call": "./glucose",
         "comments": "Launchcommand was:  ././glucose  <instance> \nTrack was Sequential, Application certified UNSAT track",
         "gz": true,
-        "name": "glucose (certified unsat)"
+        "name": "glucose (certified unsat)",
+        "license": "MIT",
+        "license_source": "licence file licence.txt"
     }
 }

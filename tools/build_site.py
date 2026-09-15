@@ -157,6 +157,9 @@ def collect(repo: Path) -> list[dict]:
                 "status_detail": entry.get("status_detail", ""),
                 "comment": entry.get("comment") or entry.get("comments", ""),
                 "tracks": entry.get("tracks", []),
+                "license": entry.get("license", ""),
+                "licenses": [x.strip() for x in re.split(r"\s+AND\s+", entry.get("license", "")) if x.strip()],
+                "license_source": entry.get("license_source", ""),
                 "awards": sorted(awards_by_image.get(image, []), key=lambda a: (a["rank"], a.get("category", "overall") != "overall", a["track"], a["category"])),
                 "call": entry.get("call", ""),
                 "args": entry.get("args", []),
@@ -181,6 +184,8 @@ def collect(repo: Path) -> list[dict]:
 
 
 CSS = """
+.tag.lic{border-style:dotted}
+.section.lic ul{margin:6px 0 0;padding-left:18px} .section.lic li{margin:6px 0}
 .tag.award{border:1px solid transparent;font-weight:600}
 .tag.award.r1{background:#fff3c4;color:#7a5a00;border-color:#e8c65a}
 .tag.award.r2{background:#eceff3;color:#4a5361;border-color:#c3cad4}
@@ -279,8 +284,8 @@ const fy = document.getElementById('year'), ff = document.getElementById('family
 function badge(v) { const m = {verified:['Verified','ok'],runs:['Runs, checks failed','warn'],built:['Compiles','warn'],'source-available':['Build fails','fail'],'source-unavailable':['Source unavailable','fail'],unknown:['Not run yet','none']}[v] || [v,'none']; return `<span class="badge ${m[1]}">${m[0]}</span>`; }
 function render() {
   const s = q.value.trim().toLowerCase();
-  const fc = document.getElementById('cap'), fa = document.getElementById('award'), fh = document.getElementById('hub');
-  const rows = data.filter(d => (!fh || !fh.value || (fh.value === 'yes') === !!d.published) && (!fa.value || (fa.value === 'winner' ? d.awards.some(a => a.rank === 1) : d.awards.length > 0)) && (!fy.value || d.set === fy.value) && (!ff.value || d.family === ff.value) && (!fv.value || d.verdict === fv.value) && (!fs.value || d.status === fs.value) && (!fc.value || d.capabilities.includes(fc.value)) && (!s || (d.name + ' ' + d.key + ' ' + d.authors + ' ' + d.set).toLowerCase().includes(s)));
+  const fc = document.getElementById('cap'), fa = document.getElementById('award'), fh = document.getElementById('hub'), fl = document.getElementById('license');
+  const rows = data.filter(d => (!fl.value || (fl.value === 'unknown' ? !d.licenses.length : d.licenses.includes(fl.value))) && (!fh || !fh.value || (fh.value === 'yes') === !!d.published) && (!fa.value || (fa.value === 'winner' ? d.awards.some(a => a.rank === 1) : d.awards.length > 0)) && (!fy.value || d.set === fy.value) && (!ff.value || d.family === ff.value) && (!fv.value || d.verdict === fv.value) && (!fs.value || d.status === fs.value) && (!fc.value || d.capabilities.includes(fc.value)) && (!s || (d.name + ' ' + d.key + ' ' + d.authors + ' ' + d.set).toLowerCase().includes(s)));
   document.getElementById('count').textContent = rows.length + ' / ' + data.length + ' images';
   const years = [...new Set(rows.map(d => d.set))].sort((a, b) => (isNaN(a) - isNaN(b)) || (b - a) || a.localeCompare(b));
   grid.innerHTML = years.map(y => `<section class="year"><div class="year-label"><span>${y}</span><small>${rows.filter(d => d.set === y).length}</small></div><div class="grid">` + rows.filter(d => d.set === y).map(card).join('') + `</div></section>`).join('');
@@ -289,17 +294,83 @@ function card(d) { return `<a class="card" href="${d.set}/${d.key}.html">
     <h3>${d.name}</h3>
     <div class="meta">${d.set} · ${d.authors || 'authors not recorded'}</div>
     <div class="tagrow"><span class="lbl">solver</span><span class="tag id">${d.family}</span>${d.version ? `<span class="tag id">v${d.version}</span>` : ''}${d.tracks.map(t => `<span class="tag id">${t}</span>`).join('')}${d.awards.slice(0, d.more ? 2 : 3).map(a => `<span class="tag award r${Math.min(a.rank, 3)}">${a.label}</span>`).join('')}${d.more ? `<span class="tag award more">${d.more}</span>` : ''}</div>
+    <div class="tagrow"><span class="lbl">licence</span>${d.licenses.length ? d.licenses.map(l => `<span class="tag id lic">${l}</span>`).join('') : '<span class="tag id lic">licence unknown</span>'}</div>
     <div class="tagrow"><span class="lbl">can do</span>${d.capabilities.map(c => `<span class="tag cap">${c}</span>`).join('')}</div>
     <div class="tagrow"><span class="lbl">status</span>${badge(d.verdict)}<span class="badge ${ {ok:'ok',unstable:'warn',fixme:'fail'}[d.status] || 'none'}">${ {ok:'builds',unstable:'unstable',fixme:'not buildable'}[d.status] || d.status}</span>${d.published === true ? HUB_YES : d.published === false ? HUB_NO : ''}</div>
   </a>`; }
-[q, fy, ff, fv, fs, document.getElementById('cap'), document.getElementById('award'), document.getElementById('hub')].filter(Boolean).forEach(e => e.addEventListener('input', render));
+[q, fy, ff, fv, fs, document.getElementById('cap'), document.getElementById('award'), document.getElementById('hub'), document.getElementById('license')].filter(Boolean).forEach(e => e.addEventListener('input', render));
 const params = new URLSearchParams(location.search);
-for (const id of ['q', 'year', 'family', 'verdict', 'status', 'cap', 'award', 'hub']) { const v = params.get(id); if (v) { const el = document.getElementById(id); if (el) el.value = v; } }
+for (const id of ['q', 'year', 'family', 'verdict', 'status', 'cap', 'award', 'hub', 'license']) { const v = params.get(id); if (v) { const el = document.getElementById(id); if (el) el.value = v; } }
 render();
 """
 
 
 RANK_LABEL = {1: "1st", 2: "2nd", 3: "3rd"}
+
+# kind: permissive < weak-copyleft < strong-copyleft < non-commercial (strictest wins for the summary)
+LICENSES = {
+    "MIT": ("MIT License", "permissive", "Use, modify and redistribute freely, in source or binary form, as long as the copyright notice and the licence text stay with the code. This is MiniSat's licence, inherited by most of its descendants.", "https://spdx.org/licenses/MIT.html"),
+    "BSD-2-Clause": ("BSD 2-Clause License", "permissive", "Use, modify and redistribute freely; keep the copyright notice and the disclaimer.", "https://spdx.org/licenses/BSD-2-Clause.html"),
+    "BSD-3-Clause": ("BSD 3-Clause License", "permissive", "Use, modify and redistribute freely; keep the copyright notice and the disclaimer, and do not use the authors' names to endorse a derived product.", "https://spdx.org/licenses/BSD-3-Clause.html"),
+    "Apache-2.0": ("Apache License 2.0", "permissive", "Use, modify and redistribute freely, with an explicit patent grant; keep the notices and state your changes.", "https://spdx.org/licenses/Apache-2.0.html"),
+    "Unlicense": ("The Unlicense", "public-domain", "Public domain dedication: no conditions at all.", "https://spdx.org/licenses/Unlicense.html"),
+    "CC-BY-4.0": ("Creative Commons Attribution 4.0", "permissive", "Share and adapt freely with attribution; a licence for data and documents more than for code.", "https://spdx.org/licenses/CC-BY-4.0.html"),
+    "LGPL-2.0": ("GNU Library General Public License 2.0", "weak-copyleft", "The solver's code stays LGPL when modified and redistributed, but a program that only links to it can keep its own licence.", "https://spdx.org/licenses/LGPL-2.0.html"),
+    "LGPL-2.1": ("GNU Lesser General Public License 2.1", "weak-copyleft", "The solver's code stays LGPL when modified and redistributed, but a program that only links to it can keep its own licence.", "https://spdx.org/licenses/LGPL-2.1.html"),
+    "LGPL-3.0": ("GNU Lesser General Public License 3.0", "weak-copyleft", "The solver's code stays LGPL when modified and redistributed, but a program that only links to it can keep its own licence.", "https://spdx.org/licenses/LGPL-3.0.html"),
+    "MPL-2.0": ("Mozilla Public License 2.0", "weak-copyleft", "Modified files must stay MPL and be published; the rest of a larger program can keep its own licence.", "https://spdx.org/licenses/MPL-2.0.html"),
+    "EPL-1.0": ("Eclipse Public License 1.0", "weak-copyleft", "Modifications must be published under the EPL; a larger program can combine it with other licences (not with the GPL). Sat4j's licence.", "https://spdx.org/licenses/EPL-1.0.html"),
+    "GPL-2.0": ("GNU General Public License 2.0", "strong-copyleft", "Any program that includes or links this code and is redistributed must be released under the GPL, sources included. Free to use and modify otherwise.", "https://spdx.org/licenses/GPL-2.0.html"),
+    "GPL-3.0": ("GNU General Public License 3.0", "strong-copyleft", "Any program that includes or links this code and is redistributed must be released under the GPL, sources included. Free to use and modify otherwise.", "https://spdx.org/licenses/GPL-3.0.html"),
+    "CC-BY-NC-4.0": ("Creative Commons Attribution-NonCommercial 4.0", "non-commercial", "Research and non-commercial use only; commercial use needs the authors' permission.", "https://spdx.org/licenses/CC-BY-NC-4.0.html"),
+    "Proprietary": ("Proprietary or research-only terms", "non-commercial", "Redistributed here as in the competition; any other use is subject to the authors' own terms.", ""),
+}
+KIND_LABEL = {
+    "public-domain": ("public domain", "ok", "No conditions at all."),
+    "permissive": ("permissive", "ok", "You can use it, modify it and ship it in your own software, commercial or not, as long as you keep the copyright notices."),
+    "weak-copyleft": ("weak copyleft", "warn", "You can use it in your own software, but changes to the solver itself must be published under the same licence."),
+    "strong-copyleft": ("copyleft (GPL)", "warn", "You can use and modify it freely, but a program you redistribute with this solver inside must be GPL too, with its sources."),
+    "non-commercial": ("non-commercial", "fail", "Research use only unless the authors agree otherwise."),
+}
+KIND_ORDER = ["public-domain", "permissive", "weak-copyleft", "strong-copyleft", "non-commercial"]
+
+
+def license_summary(ids: list[str]) -> tuple[str, str, str]:
+    """(label, badge class, sentence) for the strictest licence among ids; unknown ids are treated as unclassified."""
+    kinds = [LICENSES[i][1] for i in ids if i in LICENSES]
+    if not kinds:
+        return ("unclassified", "none", "This licence is not in our table yet; read its text before reusing the code.")
+    worst = max(kinds, key=KIND_ORDER.index)
+    label, cls, sentence = KIND_LABEL[worst]
+    if len(set(kinds)) > 1:
+        sentence = "Components under different licences: the strictest one rules the whole. " + sentence
+    return label, cls, sentence
+
+
+def license_tags(ids: list[str], title: str = "") -> str:
+    if not ids:
+        return f'<span class="tag id lic" title="{esc(title or "licence not identified yet")}">licence unknown</span>'
+    return "".join(f'<span class="tag id lic" title="{esc(title)}">{esc(i)}</span>' for i in ids)
+
+
+def license_section(s: dict) -> str:
+    ids = s["licenses"]
+    label, cls, sentence = license_summary(ids)
+    if not ids:
+        return ('<div class="section lic"><h2>Licence</h2><p><span class="badge none">not identified</span> No licence file or recognizable licence header was found in the archived sources'
+                + (f' ({esc(s["license_source"])})' if s["license_source"] else '') + '. SAT Heritage redistributes the sources as the competition did; before any other use, ask the authors. '
+                f'If you know the licence, <a href="{REPO_URL}">send a pull request</a> adding a <code>license</code> field to this entry.</p></div>')
+    def item(i: str) -> str:
+        if i not in LICENSES:
+            return f'<li><b>{esc(i)}</b> <span class="tag id lic">{esc(i)}</span><br><span class="muted-inline">Not in our table yet.</span></li>'
+        name, kind, text, url = LICENSES[i]
+        klabel, kcls, _ = KIND_LABEL[kind]
+        link = f' <a href="{url}">Full text</a>' if url else ""
+        return (f'<li><b>{esc(name)}</b> <span class="tag id lic">{esc(i)}</span> · <span class="badge {kcls}">{esc(klabel)}</span>'
+                f'<br><span class="muted-inline">{esc(text)}{link}</span></li>')
+    items = "".join(item(i) for i in ids)
+    return (f'<div class="section lic"><h2>Licence</h2><p><span class="badge {cls}">{esc(label)}</span> {esc(sentence)}</p><ul>{items}</ul>'
+            f'<p class="muted-inline">Read from {esc(s["license_source"]) if s["license_source"] else "the entry"}; this summary is informative, the licence text prevails. Corrections welcome by pull request.</p></div>')
 
 
 def award_label(a: dict) -> str:
@@ -353,6 +424,7 @@ ICON = {
     "status": '<path d="M12 2 4 5v6c0 5.5 3.8 10.7 8 12 4.2-1.3 8-6.5 8-12V5z"/>',
     "cap": '<path d="M13 2 3 14h9l-1 8 10-12h-9z"/>',
     "hub": '<path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5M12 22V12"/>',
+    "license": '<path d="M16 2H8a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2Z"/><path d="M9 7h6M9 11h6M9 15h4"/>',
     "award": '<path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/>',
 }
 
@@ -366,6 +438,7 @@ def ctl(kind: str, control: str, extra_class: str = "") -> str:
 def index_page(solvers: list[dict]) -> str:
     years = sorted({s["set"] for s in solvers}, key=lambda y: (not y.isdigit(), -int(y) if y.isdigit() else 0))
     families = sorted({s["family"] for s in solvers})
+    licenses = sorted({l for s in solvers for l in s["licenses"]})
     options = lambda values: "".join(f'<option value="{esc(v)}">{esc(v)}</option>' for v in values)
     body = f"""
 <div class="toolbar">
@@ -375,13 +448,14 @@ def index_page(solvers: list[dict]) -> str:
   {ctl("verdict", '<select id="verdict"><option value="">Any verification</option><option value="verified">Verified</option><option value="runs">Runs, checks failed</option><option value="built">Compiles</option><option value="source-available">Build fails</option><option value="source-unavailable">Source unavailable</option><option value="unknown">Not run yet</option></select>')}
   {ctl("status", '<select id="status"><option value="">Any status</option><option value="ok">builds</option><option value="unstable">unstable</option><option value="fixme">not buildable</option></select>')}
   {ctl("cap", '<select id="cap"><option value="">Any capability</option><option value="SAT">SAT (verified)</option><option value="UNSAT">UNSAT (verified)</option><option value="UNSAT+proof">UNSAT+proof (verified)</option><option value="parallel">parallel</option><option value="gzip input">gzip input</option></select>')}
+  {ctl("license", f'<select id="license"><option value="">Any licence</option>{options(licenses)}<option value="unknown">licence unknown</option></select>')}
   {ctl("award", '<select id="award"><option value="">Any award</option><option value="awarded">Awarded (any podium)</option><option value="winner">Winners (1st only)</option></select>')}
   {ctl("hub", '<select id="hub"><option value="">Docker Hub: any</option><option value="yes">Ready on Docker Hub</option><option value="no">Not on Docker Hub yet</option></select>') if HUB_GENERATED else ''}
   <span class="count" id="count"></span>
 </div>
 <div class="legend"><span>◌ dashed: what the solver is</span><span>▪ blue: what it can do, as verified by the test suite</span><span>● filled: whether it builds and passes the tests today</span></div>
 <div id="grid"></div>
-<script>window.SOLVERS = {json.dumps([dict({k: s[k] for k in ("image", "key", "set", "name", "authors", "status", "family", "verdict", "capabilities", "version", "tracks", "published")}, awards=[{"rank": a["rank"], "label": award_label(a)} for a in s["awards"]], more=award_summary(s["awards"])[1]) for s in solvers])};</script>
+<script>window.SOLVERS = {json.dumps([dict({k: s[k] for k in ("image", "key", "set", "name", "authors", "status", "family", "verdict", "capabilities", "version", "tracks", "published", "licenses")}, awards=[{"rank": a["rank"], "label": award_label(a)} for a in s["awards"]], more=award_summary(s["awards"])[1]) for s in solvers])};</script>
 <script>const HUB_YES = {json.dumps(HUB_BADGE_YES.replace('<a class="badge hub" href="{url}" title="Tags of this image on Docker Hub">', '<span class="badge hub">').replace('</a>', '</span>'))}, HUB_NO = {json.dumps(HUB_BADGE_NO)};</script>
 <script>{JS}</script>
 """
@@ -403,14 +477,17 @@ def solver_page(s: dict) -> str:
 <div class="crumbs"><a href="../catalogue.html">Catalogue</a> › {esc(s['set'])}</div>
 <div class="page"><h1>{esc(s['name'])}</h1><div class="sub">{esc(s['authors'] or 'authors not recorded')}{(' · version ' + esc(s['version'])) if s['version'] else ''}</div>
 <div class="tagrow" style="margin-top:10px"><span class="lbl">solver</span><span class="tag id">{esc(s['family'])}</span>{('<span class="tag id">v' + esc(s['version']) + '</span>') if s['version'] else ''}{''.join('<span class="tag id">' + esc(t) + '</span>' for t in s['tracks'])}{award_tags(s['awards'])}</div>
+<div class="tagrow" style="margin-top:6px"><span class="lbl">licence</span>{license_tags(s['licenses'], s['license_source'])}</div>
 <div class="tagrow" style="margin-top:6px"><span class="lbl">can do</span>{''.join('<span class="tag cap">' + esc(c) + '</span>' for c in s['capabilities']) or '<span class="tag cap">not verified yet</span>'}</div>
 <div class="tagrow" style="margin-top:6px"><span class="lbl">status</span><span class="badge {vcls}">{vlabel}</span><span class="badge {scls}">{slabel}</span>{hub_badge(s)}</div></div>
 {('<div class="section"><h2>Awards</h2><ul>' + ''.join('<li><span class="tag award r' + str(min(a['rank'], 3)) + '">' + esc(award_label(a)) + '</span>' + (' <span class="muted-inline">' + esc(a['note']) + '</span>' if a.get('note') else '') + ' <a class="muted-inline" href="' + esc(a['source']) + '">source</a></li>' for a in s['awards']) + '</ul></div>') if s['awards'] else ''}
 {('<div class="section"><h2>Status</h2><p>' + esc(s['status_detail']) + '</p></div>') if s['status_detail'] else ''}
 {('<div class="section"><h2>Notes</h2><p>' + esc(s['comment']) + '</p></div>') if s['comment'] else ''}
+{license_section(s)}
 <div class="section pull"><h2>{'Pull it from Docker and run it' if s['published'] is not False else 'Build it and run it'}</h2><pre class="cmd" data-copy>{'docker pull ' + DOCKER_NS + '/' + esc(s['image']) if s['published'] is not False else 'pip install satex && satex build ' + esc(s['image'])}
 {esc(run_cmd)}</pre><p class="muted-inline">{('No build needed: the image is published on <a href="https://hub.docker.com/r/' + DOCKER_NS + '/' + esc(s['key']) + '">Docker Hub</a>' + (' (checked ' + esc(HUB_GENERATED[:10]) + ')' if HUB_GENERATED else '') + '.') if s['published'] is not False else ('This image is not on <a href="https://hub.docker.com/u/' + DOCKER_NS + '">Docker Hub</a> yet' + (' (checked ' + esc(HUB_GENERATED[:10]) + ')' if HUB_GENERATED else '') + ': the images are pushed in batches, and some entries cannot be built. Until then, <code>satex build</code> makes it on your machine from the archived sources and the recipe below, and the run command is the same.')} Mount the directory that holds your instance on <code>/data</code>; the proof file is optional{'' if s['proof'] else ' and not produced by this solver'}. Its full provenance is kept: the archived sources, the pinned build environment and the recipe are all listed below, and <code>satex build {esc(s['image'])}</code> rebuilds the same image on your own machine if you would rather not trust ours (slower, same solver).</p>
 {('<p><a class="btn" href="' + esc(s['download_url']) + '">Download the sources</a> <span class="muted-inline">' + esc(s['download_url'].rsplit('/', 1)[-1]) + ', the competition submission as archived by SAT Heritage, to build it yourself with the recipe below.</span></p>') if s['download_url'] else ''}<dl>
+<dt>Licence</dt><dd>{esc(', '.join(s['licenses'])) if s['licenses'] else 'not identified: no licence file or header found in the archive; if you know it, send a pull request'}{(' <span class="muted-inline">(' + esc(s['license_source']) + ')</span>') if s['license_source'] else ''}</dd>
 <dt>Image</dt><dd><code>{DOCKER_NS}/{esc(s['image'])}</code></dd>
 <dt>Command</dt><dd><code>{esc(s['call'])} {esc(' '.join(map(str, s['args'])))}</code></dd>
 <dt>Compressed input</dt><dd>{'read natively' if s['gz'] else 'decompressed by the image'}</dd>
@@ -557,6 +634,7 @@ docker run --rm -v $PWD:/data satex/kissat-sc2024:2024 instance.cnf proof.out</p
 <div class="stat"><div class="n">{verified}</div><div class="l">of them fully verified (build, SAT, UNSAT, proof)</div></div>
 {('<div class="stat"><div class="n">' + str(sum(1 for s in solvers if s["published"])) + '</div><div class="l">images on Docker Hub, checked ' + esc(HUB_GENERATED[:10]) + '</div></div>') if HUB_GENERATED else ''}
 <div class="stat"><div class="n">{len(years)}</div><div class="l">competition years, {years[0]} to {years[-1]}</div></div>
+<div class="stat"><div class="n">{sum(1 for s in solvers if s["license"])}</div><div class="l">images with an identified licence (<a href="catalogue.html?license=unknown">{sum(1 for s in solvers if not s["license"])} unknown</a>)</div></div>
 <div class="stat"><div class="n">{len(families)}</div><div class="l">solver families</div></div>
 <div class="stat"><div class="n">{len(authors)}</div><div class="l">authors</div></div>
 </div>
@@ -622,6 +700,7 @@ def missing_page(solvers: list[dict]) -> str:
 <div class="page"><h1>Missing solvers</h1><div class="sub">What the archive lacks, and where you can help. SAT Heritage only keeps solvers it can rebuild from source: for the entries below the source is lost, was never published, or is a binary only. If you have a copy, or know where one survives, open an issue or a pull request on <a href="{REPO_URL}">GitHub</a>; <a href="{REPO_URL}/blob/master/SOURCES.md">SOURCES.md</a> lists where every year's archives are hosted.</div></div>
 <div class="fig"><h2>Images without a usable source ({len(no_source)})</h2><div class="sub">Entries of the catalogue whose source archive is missing, binary-only, or could not be fetched in the last test run. The list grows as the test suite reaches the older years.</div>
 <div class="lb"><table><thead><tr><th>Solver</th><th>Year</th><th>Authors</th><th>Problem</th></tr></thead><tbody>{rows1 or '<tr><td colspan="4">none known</td></tr>'}</tbody></table></div></div>
+<div class="fig" style="margin-top:14px"><h2>Solvers without an identified licence ({sum(1 for s in solvers if not s["license"])})</h2><div class="sub">Their archive carries neither a licence file nor a licence header that we recognize. SAT Heritage redistributes competition sources as the competitions did; if you are an author, tell us the licence of your solver (an issue or a pull request adding a <code>license</code> field to its entry is enough). <a href="catalogue.html?license=unknown">See them in the catalogue →</a></div></div>
 <div class="fig" style="margin-top:14px"><h2>Award-winning solvers absent from the archive ({len(podiums)})</h2><div class="sub">Podium places announced by the competition organizers whose solver has no image here: the entry was never archived, or the archive holds a different variant and the mapping is unresolved. Contributions welcome, from the sources themselves to a pointer to the right variant.</div>
 <div class="lb"><table><thead><tr><th>Competition name</th><th>Year</th><th>Podium</th><th>Notes</th></tr></thead><tbody>{rows2 or '<tr><td colspan="4">none</td></tr>'}</tbody></table></div></div>
 <script>{LB_JS}</script>

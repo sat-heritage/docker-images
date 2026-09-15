@@ -1,7 +1,9 @@
 {
     "beansandeggs": {
-	"tracks": ["main"],
-	"status": "ok",
+        "tracks": [
+            "main"
+        ],
+        "status": "ok",
         "name": "BeansAndEggs",
         "call": "./glucose",
         "args": [
@@ -13,10 +15,14 @@
             "-vbyte",
             "-certified",
             "-certified-output=FILEPROOF"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence header of Beans And Eggs/utils/System.h"
     },
     "chbr_glucose": {
-	      "tracks": ["main"],
+        "tracks": [
+            "main"
+        ],
         "status": "ok",
         "name": "CHBR_glucose",
         "call": "./CHBR_glucose",
@@ -30,10 +36,14 @@
             "-vbyte",
             "-certified",
             "-certified-output=FILEPROOF"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence header of CHBR_glucose/code/utils/System.h"
     },
     "chbr_glucose_tuned": {
-	      "tracks": ["main"],
+        "tracks": [
+            "main"
+        ],
         "status": "ok",
         "name": "CHBR_glucose_tuned",
         "call": "./CHBR_glucose_tuned",
@@ -47,10 +57,14 @@
             "-vbyte",
             "-certified",
             "-certified-output=FILEPROOF"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence header of CHBR_glucose_tuned/code/utils/System.h"
     },
     "cominisatpschandrasekhardrup": {
-	      "tracks": ["main"],
+        "tracks": [
+            "main"
+        ],
         "status": "ok",
         "name": "COMiniSatPSChandrasekharDRUP",
         "call": "./minisat_static",
@@ -61,10 +75,14 @@
         "argsproof": [
             "FILECNF",
             "-drup-file=FILEPROOF"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence file COMiniSatPS Chandrasekhar DRUP/cominisatps/LICENSE"
     },
     "ghackcomsps_drup": {
-	      "tracks": ["main"],
+        "tracks": [
+            "main"
+        ],
         "status": "ok",
         "name": "GHackCOMSPS_DRUP",
         "call": "./GHackCOMSPS",
@@ -78,10 +96,14 @@
             "-vbyte",
             "-certified",
             "-certified-output=FILEPROOF"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence header of GHackCOMSPS_DRUP/glucose-3.0D-patched/utils/System.h"
     },
     "glucose_nbsat": {
-	      "tracks": ["main"],
+        "tracks": [
+            "main"
+        ],
         "status": "ok",
         "name": "Glucose_nbSat",
         "call": "./GlucoseNBSAT",
@@ -95,10 +117,14 @@
             "-vbyte",
             "-certified",
             "-certified-output=FILEPROOF"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence file Glucose_nbSat/GlucoseNBSAT/LICENSE"
     },
     "lingeling": {
-	      "tracks": ["main"],
+        "tracks": [
+            "main"
+        ],
         "status": "ok",
         "call": "./lingeling",
         "name": "Lingelingbbcmain",
@@ -113,7 +139,9 @@
         ]
     },
     "maplecms": {
-	      "tracks": ["main"],
+        "tracks": [
+            "main"
+        ],
         "status": "fixme",
         "status_detail": "FIXME : misses xxd",
         "name": "MapleCMS",
@@ -125,10 +153,14 @@
         "argsproof": [
             "FILECNF",
             "FILEPROOF"
-        ]
+        ],
+        "license": "GPL-2.0 AND MIT",
+        "license_source": "licence file MapleCMS/m4ri-20140914/COPYING, MapleCMS/python/LICENSE"
     },
     "maplecomsps_chb_drup": {
-	      "tracks": ["main"],
+        "tracks": [
+            "main"
+        ],
         "status": "ok",
         "name": "MapleCOMSPS_CHB_DRUP",
         "call": "./MapleCOMSPS_CHB",
@@ -139,10 +171,14 @@
         "argsproof": [
             "FILECNF",
             "-drup-file=FILEPROOF"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence file MapleCOMSPS_CHB_DRUP/MapleCOMSPS_CHB/LICENSE"
     },
     "maple-comsps": {
-	      "tracks": ["main"],
+        "tracks": [
+            "main"
+        ],
         "status": "ok",
         "name": "MapleCOMSPS_DRUP",
         "call": "./MapleCOMSPS",
@@ -153,10 +189,14 @@
         "argsproof": [
             "FILECNF",
             "-drup-file=FILEPROOF"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence file MapleCOMSPS_DRUP/MapleCOMSPS/LICENSE"
     },
     "maplecomsps_lrb_drup": {
-	      "tracks": ["main"],
+        "tracks": [
+            "main"
+        ],
         "status": "ok",
         "name": "MapleCOMSPS_LRB_DRUP",
         "call": "./MapleCOMSPS_LRB",
@@ -167,10 +207,14 @@
         "argsproof": [
             "FILECNF",
             "-drup-file=FILEPROOF"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence file MapleCOMSPS_LRB_DRUP/MapleCOMSPS_LRB/LICENSE"
     },
     "mapleglucose": {
-	      "tracks": ["main"],
+        "tracks": [
+            "main"
+        ],
         "status": "ok",
         "name": "MapleGlucose",
         "call": "./glucose_static",
@@ -184,10 +228,14 @@
             "-vbyte",
             "-certified",
             "-certified-output=FILEPROOF"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence header of MapleGlucose/utils/System.h"
     },
     "riss6": {
-	"tracks": ["main"],
+        "tracks": [
+            "main"
+        ],
         "status": "ok",
         "name": "Riss6",
         "call": "./riss6",
@@ -199,10 +247,14 @@
             "FILECNF",
             "-proof=FILEPROOF",
             "-proofFormat"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence file Riss6/riss6/libpca/LICENSE.txt"
     },
     "scavel_sat": {
-	      "tracks": ["main"],
+        "tracks": [
+            "main"
+        ],
         "status": "ok",
         "name": "Scavel_SAT",
         "call": "./Scavel_SAT",
@@ -214,10 +266,14 @@
             "FILECNF",
             "-vbyte",
             "FILEPROOF"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence file Scavel_SAT/LICENSE"
     },
     "splatz06vmain": {
-	      "tracks": ["main"],
+        "tracks": [
+            "main"
+        ],
         "status": "fixme",
         "status_detail": "FIXME CNF parsing error (https://github.com/sat-heritage/docker-images/issues/27)",
         "name": "Splatz06vmain",
@@ -233,7 +289,10 @@
         ]
     },
     "yalsat03r": {
-	      "tracks": ["main", "random"],
+        "tracks": [
+            "main",
+            "random"
+        ],
         "status": "ok",
         "name": "YalSAT03r",
         "call": "./yalsat",
@@ -243,7 +302,9 @@
         ]
     },
     "abcdsat_drup": {
-	      "tracks": ["main"],
+        "tracks": [
+            "main"
+        ],
         "status": "ok",
         "name": "abcdSAT_drup",
         "call": "./abcdsat_drup",
@@ -255,10 +316,14 @@
             "FILECNF",
             "-certified",
             "-certified-output=FILEPROOF"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence file abcdSAT_drup/LICENSE.txt"
     },
     "cmsat5_autotune2": {
-	      "tracks": ["main"],
+        "tracks": [
+            "main"
+        ],
         "status": "fixme",
         "status_detail": "FIXME - https://github.com/sat-heritage/docker-images/issues/28",
         "name": "cmsat5_autotune2",
@@ -272,10 +337,14 @@
             "FILECNF",
             "--drat=FILEPROOF",
             "--reconf=100"
-        ]
+        ],
+        "license": "GPL-2.0 AND MIT",
+        "license_source": "licence file cmsat5_autotune2/m4ri-20140914/COPYING, cmsat5_autotune2/python/LICENSE"
     },
     "cmsat5_main2": {
-	      "tracks": ["main"],
+        "tracks": [
+            "main"
+        ],
         "status": "ok",
         "name": "cmsat5_main2",
         "call": "./cryptominisat4_simple",
@@ -286,11 +355,15 @@
         "argsproof": [
             "FILECNF",
             "--drat=FILEPROOF"
-        ]
+        ],
+        "license": "GPL-2.0 AND MIT",
+        "license_source": "licence file cmsat5_main2/m4ri-20140914/COPYING, cmsat5_main2/python/LICENSE"
     },
     "glucose": {
-	      "tracks": ["main"],
-        "status" : "ok",
+        "tracks": [
+            "main"
+        ],
+        "status": "ok",
         "name": "glucose",
         "call": "./glucose",
         "gz": true,
@@ -303,11 +376,15 @@
             "-vbyte",
             "-certified",
             "-certified-output=FILEPROOF"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence file glucose/sources/LICENCE"
     },
     "glucoseple": {
-	      "tracks": ["main"],
-        "status" : "ok",
+        "tracks": [
+            "main"
+        ],
+        "status": "ok",
         "name": "glucosePLE",
         "call": "./glucosePLE",
         "gz": true,
@@ -319,10 +396,14 @@
             "FILECNF",
             "-certified",
             "-certified-output=FILEPROOF"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence file glucosePLE/glucosePLE/LICENSE.txt"
     },
     "glucose_hack_kiel": {
-        "tracks": ["main"],
+        "tracks": [
+            "main"
+        ],
         "status": "ok",
         "call": "./glucose",
         "name": "glucose_hack_kiel_newScript",
@@ -338,10 +419,14 @@
             "-certified",
             "-certified-output=FILEPROOF",
             "-model"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence header of glucose_hack_kiel_newScript/glucose-3_TS0/utils/System.h"
     },
     "glue_alt": {
-	      "tracks": ["main"],
+        "tracks": [
+            "main"
+        ],
         "status": "ok",
         "name": "glue_alt",
         "call": "./glue_alt",
@@ -354,10 +439,14 @@
             "FILECNF",
             "-certified",
             "-certified-output=FILEPROOF"
-        ]
+        ],
+        "license": "GPL-2.0",
+        "license_source": "licence file glue_alt/LICENSE.txt"
     },
     "glueminisat-2.2.10-81-main": {
-	      "tracks": ["main"],
+        "tracks": [
+            "main"
+        ],
         "status": "ok",
         "name": "glueminisat-2.2.10-81-main",
         "call": "./glueminisat-simp-static",
@@ -373,10 +462,14 @@
             "-vbyte",
             "-certified",
             "-certified-output=FILEPROOF"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence file glueminisat-2.2.10-81-main/src/glueminisat-2.2.10-81/LICENSE"
     },
     "gulch": {
-	      "tracks": ["main"],
+        "tracks": [
+            "main"
+        ],
         "status": "ok",
         "name": "gulch",
         "call": "./gulch",
@@ -389,10 +482,14 @@
             "FILECNF",
             "-certified",
             "-certified-output=FILEPROOF"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence header of gulch/src/utils/System.h"
     },
     "tb_glucose": {
-	      "tracks": ["main"],
+        "tracks": [
+            "main"
+        ],
         "status": "ok",
         "name": "tb_glucose",
         "call": "./tb_glucose",
@@ -406,10 +503,14 @@
             "-vbyte",
             "-certified",
             "-certified-output=FILEPROOF"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence header of tb_glucose/code/utils/System.h"
     },
     "tc_glucose": {
-	      "tracks": ["main"],
+        "tracks": [
+            "main"
+        ],
         "status": "ok",
         "name": "tc_glucose",
         "call": "./tc_glucose",
@@ -423,10 +524,14 @@
             "-vbyte",
             "-certified",
             "-certified-output=FILEPROOF"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence header of tc_glucose/code/utils/System.h"
     },
-        "csccsat" : {
-	      "tracks": ["random"],
+    "csccsat": {
+        "tracks": [
+            "random"
+        ],
         "status": "ok",
         "name": "CSCCSat",
         "call": "./CSCCSat",
@@ -436,8 +541,10 @@
             "1"
         ]
     },
-    "dccalm" : {
-	      "tracks": ["random"],
+    "dccalm": {
+        "tracks": [
+            "random"
+        ],
         "status": "ok",
         "name": "DCCAlm",
         "call": "./DCCAlm",
@@ -447,8 +554,10 @@
             "1"
         ]
     },
-    "cmsat5_agile" : {
-	      "tracks": ["random"],
+    "cmsat5_agile": {
+        "tracks": [
+            "random"
+        ],
         "status": "fixme",
         "status_detail": "FIXME - https://github.com/sat-heritage/docker-images/issues/28",
         "name": "cmsat5_agile",
@@ -456,10 +565,14 @@
         "gz": false,
         "args": [
             "FILECNF"
-        ]
+        ],
+        "license": "GPL-2.0 AND MIT",
+        "license_source": "licence file cmsat5_agile/m4ri-20140914/COPYING, cmsat5_agile/python/LICENSE"
     },
-    "dimetheus" : {
-	      "tracks": ["random"],
+    "dimetheus": {
+        "tracks": [
+            "random"
+        ],
         "status": "fixme",
         "status_detail": "FIXME",
         "name": "dimetheus",
@@ -467,10 +580,13 @@
         "gz": true,
         "args": [
             "FILECNF"
-        ]
+        ],
+        "license_source": "unrecognized licence file dimetheus/dimetheus/doc/license.txt"
     },
-    "multi-sat" : {
-	      "tracks": ["random"],
+    "multi-sat": {
+        "tracks": [
+            "random"
+        ],
         "status": "ok",
         "name": "multi-sat",
         "call": "./multi-sat",
@@ -480,10 +596,14 @@
             "0",
             "16",
             "64"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence header of multi-sat/multi-sat/glucose/utils/System.h"
     },
-    "polypower1.0" : {
-	      "tracks": ["random"],
+    "polypower1.0": {
+        "tracks": [
+            "random"
+        ],
         "status": "ok",
         "name": "polypower1.0",
         "call": "./polypower",
@@ -492,8 +612,10 @@
             "FILECNF"
         ]
     },
-    "polypower2.0" : {
-	      "tracks": ["random"],
+    "polypower2.0": {
+        "tracks": [
+            "random"
+        ],
         "status": "ok",
         "name": "polypower2.0",
         "call": "./polypower",
@@ -502,18 +624,24 @@
             "FILECNF"
         ]
     },
-    "stocbcd" : {
-	      "tracks": ["random"],
+    "stocbcd": {
+        "tracks": [
+            "random"
+        ],
         "status": "ok",
         "name": "stocBCD",
         "call": "./stocbcd",
         "gz": false,
         "args": [
             "FILECNF"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence file stocBCD/license.txt"
     },
-    "paragluminisat" : {
-	      "tracks": ["parallel"],
+    "paragluminisat": {
+        "tracks": [
+            "parallel"
+        ],
         "status": "fixme",
         "status_detail": "FIXME",
         "name": "ParaGlueminisat_2016",
@@ -521,10 +649,14 @@
         "gz": true,
         "args": [
             "FILECNF"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence file ParaGlueminisat_2016/code/LICENSE"
     },
     "priss6": {
-	      "tracks": ["parallel"],
+        "tracks": [
+            "parallel"
+        ],
         "status": "fixme",
         "status_detail": "FIXME",
         "name": "Priss6",
@@ -532,10 +664,14 @@
         "gz": true,
         "args": [
             "FILECNF"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence file Priss6/riss6/license.txt"
     },
-    "ampharos" : {
-	      "tracks": ["parallel"],
+    "ampharos": {
+        "tracks": [
+            "parallel"
+        ],
         "status": "fixme",
         "status_detail": "FIXME",
         "name": "ampharos-sat-2016",
@@ -543,41 +679,58 @@
         "gz": true,
         "args": [
             "FILECNF"
-        ]
+        ],
+        "license": "GPL-3.0 AND MIT",
+        "license_source": "licence file ampharos-sat-2016/Scouts/march_cc/lingeling-limami2-aa61f7a-110831/COPYING, ampharos-sat-2016/Scouts/minisatScout1/LICENSE"
     },
-    "cbpenelope" : {
-	      "tracks": ["parallel"],
+    "cbpenelope": {
+        "tracks": [
+            "parallel"
+        ],
         "status": "ok",
         "name": "cbpenelope2016",
         "call": "./solver.sh",
         "gz": true,
         "args": [
             "FILECNF"
-        ]
+        ],
+        "license": "GPL-3.0",
+        "license_source": "licence file cbpenelope2016/code/LICENSE"
     },
-    "ccspenelope" : {
-	      "tracks": ["parallel"],
+    "ccspenelope": {
+        "tracks": [
+            "parallel"
+        ],
         "status": "ok",
         "name": "ccspenelope2016",
         "call": "./solver.sh",
         "gz": true,
         "args": [
             "FILECNF"
-        ]
+        ],
+        "license": "GPL-3.0",
+        "license_source": "licence file ccspenelope2016/code/LICENSE"
     },
-    "cmsat5_run_parallel" : {
-	      "tracks": ["parallel"],
+    "cmsat5_run_parallel": {
+        "tracks": [
+            "parallel"
+        ],
         "status": "fixme",
         "status_detail": "FIXME - https://github.com/sat-heritage/docker-images/issues/28",
         "name": "cmsat5_run_parallel",
         "call": "./cryptominisat4_simple",
         "gz": false,
         "args": [
-            "FILECNF", "--threads=MAXNBTHREAD"
-        ]
+            "FILECNF",
+            "--threads=MAXNBTHREAD"
+        ],
+        "license": "GPL-2.0 AND MIT",
+        "license_source": "licence file cmsat5_run_parallel/m4ri-20140914/COPYING, cmsat5_run_parallel/python/LICENSE"
     },
-    "dissolve-sat" : {
-	      "tracks": ["parallel"],
+    "dissolve-sat": {
+        "tracks": [
+            "parallel"
+        ],
         "status": "fixme",
         "status_detail": "FIXME",
         "name": "dissolve-SATcomp16",
@@ -585,10 +738,13 @@
         "gz": true,
         "args": [
             "FILECNF"
-        ]
+        ],
+        "license_source": "archive not available"
     },
-    "gluco_par" : {
-	      "tracks": ["parallel"],
+    "gluco_par": {
+        "tracks": [
+            "parallel"
+        ],
         "status": "fixme",
         "status_detail": "FIXME",
         "name": "gluco_par",
@@ -596,30 +752,42 @@
         "gz": true,
         "args": [
             "FILECNF"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence header of gluco_par/gluco_par/mtl/IntTypes.h"
     },
-    "penelope" : {
-	      "tracks": ["parallel"],
+    "penelope": {
+        "tracks": [
+            "parallel"
+        ],
         "status": "ok",
         "name": "penelope_for_2015_AICR_24_Pair_BUMP100",
         "call": "./solver.sh",
         "gz": true,
         "args": [
             "FILECNF"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence file penelope_for_2015_AICR_24_Pair_BUMP100/license.txt"
     },
-    "plingeling" : {
-	      "tracks": ["parallel"],
+    "plingeling": {
+        "tracks": [
+            "parallel"
+        ],
         "status": "ok",
         "name": "plingeling-bbc-sc2016",
         "call": "./plingeling",
         "gz": true,
         "args": [
             "FILECNF"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence file plingeling-bbc-sc2016/build/lingeling/COPYING"
     },
-    "syrup" : {
-	      "tracks": ["parallel"],
+    "syrup": {
+        "tracks": [
+            "parallel"
+        ],
         "status": "fixme",
         "status_detail": "error (Floating point excpetion)",
         "name": "syrup",
@@ -627,10 +795,14 @@
         "gz": true,
         "args": [
             "FILECNF"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence file syrup/syrup/LICENCE"
     },
-    "tbparaglueminisat" : {
-	      "tracks": ["parallel"],
+    "tbparaglueminisat": {
+        "tracks": [
+            "parallel"
+        ],
         "status": "fixme",
         "status_detail": "FIXME",
         "name": "tbParaGlueminisat_2016",
@@ -638,16 +810,22 @@
         "gz": true,
         "args": [
             "FILECNF"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence file tbParaGlueminisat_2016/code/LICENSE"
     },
-    "treengeling" : {
-	      "tracks": ["parallel"],
+    "treengeling": {
+        "tracks": [
+            "parallel"
+        ],
         "status": "ok",
         "name": "treengeling-bbc-sc2016",
         "call": "./treengeling",
         "gz": true,
         "args": [
             "FILECNF"
-        ]
+        ],
+        "license": "MIT",
+        "license_source": "licence file treengeling-bbc-sc2016/build/lingeling/COPYING"
     }
 }
