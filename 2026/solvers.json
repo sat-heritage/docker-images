@@ -1,0 +1,639 @@
+{
+    "satsuma-iter-ae-kissat-mab": {
+        "status": "ok",
+        "name": "satsuma-iter-ae-kissat-mab",
+        "authors": "Markus Anders, Cayden Codel",
+        "call": "bash",
+        "gz": false,
+        "args": [
+            "original-run.sh",
+            "FILECNF",
+            "PROOFDIR"
+        ],
+        "tracks": [
+            "main"
+        ],
+        "path": "satsuma-iter-ae-kissat-mab/src",
+        "comment": "Competition name: satsuma-iter+ae-kissat-mab, first of the main track SAT category. Satsuma symmetry breaking (satsuma fix --bsr) followed by the solver, driven by the submitted original-run.sh; the proof is in the SR format, which satex cannot check, so no argsproof. Satsuma's -march=native replaced by a generic x86-64 target so that the image runs on any machine."
+    },
+    "satsuma-iter-kissat": {
+        "status": "ok",
+        "name": "satsuma-iter-kissat",
+        "authors": "Markus Anders, Cayden Codel",
+        "call": "bash",
+        "gz": false,
+        "args": [
+            "original-run.sh",
+            "FILECNF",
+            "PROOFDIR"
+        ],
+        "tracks": [
+            "main"
+        ],
+        "path": "satsuma-iter-kissat/src",
+        "comment": "Competition name: satsuma-iter+kissat, winner of the main track. Satsuma symmetry breaking (satsuma fix --bsr) followed by the solver, driven by the submitted original-run.sh; the proof is in the SR format, which satex cannot check, so no argsproof. Satsuma's -march=native replaced by a generic x86-64 target so that the image runs on any machine."
+    },
+    "cadical3": {
+        "status": "ok",
+        "name": "cadical3",
+        "version": "3.0.0",
+        "authors": "Armin Biere and co-authors (provisional: 2026 proceedings not yet published)",
+        "call": "./cadical",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF"
+        ],
+        "tracks": [
+            "main"
+        ],
+        "comment": "Declares DPR proofs; satex only checks DRAT/RUP steps, so the proof check may fail on PR steps."
+    },
+    "isasat": {
+        "status": "ok",
+        "name": "isasat",
+        "authors": "Armin Biere and co-authors (provisional: 2026 proceedings not yet published)",
+        "call": "./isasat",
+        "gz": false,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF"
+        ],
+        "tracks": [
+            "main"
+        ],
+        "comment": "Built from the Isabelle-generated LLVM code with clang; -march=native replaced by a generic x86-64 target. The organizers checked its proofs with the GRAT toolchain, which consumes DRAT proofs."
+    },
+    "kissat": {
+        "status": "ok",
+        "name": "kissat",
+        "version": "sc2026",
+        "authors": "Armin Biere and co-authors (provisional: 2026 proceedings not yet published)",
+        "call": "./kissat",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF"
+        ],
+        "tracks": [
+            "main"
+        ],
+        "comment": "Declares DPR proofs; satex only checks DRAT/RUP steps, so the proof check may fail on PR steps."
+    },
+    "kissat-mab-eae1": {
+        "status": "ok",
+        "name": "kissat-mab-eae1",
+        "version": "4.0.2",
+        "authors": "Hang Ding and co-authors (provisional: 2026 proceedings not yet published)",
+        "call": "./kissat",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF"
+        ],
+        "tracks": [
+            "main",
+            "main-ai"
+        ],
+        "comment": "The organizers checked its proofs with the GRAT toolchain, which consumes DRAT proofs."
+    },
+    "kissat-mab-eae2": {
+        "status": "ok",
+        "name": "kissat-mab-eae2",
+        "version": "4.0.2",
+        "authors": "Hang Ding and co-authors (provisional: 2026 proceedings not yet published)",
+        "call": "./kissat",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF"
+        ],
+        "tracks": [
+            "main",
+            "main-ai"
+        ],
+        "comment": "The organizers checked its proofs with the GRAT toolchain, which consumes DRAT proofs."
+    },
+    "kissat-mab-eae3": {
+        "status": "ok",
+        "name": "kissat-mab-eae3",
+        "version": "4.0.2",
+        "authors": "Hang Ding and co-authors (provisional: 2026 proceedings not yet published)",
+        "call": "./kissat",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF"
+        ],
+        "tracks": [
+            "main",
+            "main-ai"
+        ],
+        "comment": "The organizers checked its proofs with the GRAT toolchain, which consumes DRAT proofs."
+    },
+    "kissat-evolve": {
+        "status": "ok",
+        "name": "kissat-evolve",
+        "version": "4.0.2",
+        "authors": "submitted by gopalan (provisional: 2026 proceedings not yet published)",
+        "call": "./kissat",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF"
+        ],
+        "tracks": [
+            "main",
+            "main-ai"
+        ]
+    },
+    "kissat-evolve-b2": {
+        "status": "ok",
+        "name": "kissat-evolve-b2",
+        "version": "4.0.2",
+        "authors": "submitted by gopalan (provisional: 2026 proceedings not yet published)",
+        "call": "./kissat",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF"
+        ],
+        "tracks": [
+            "main",
+            "main-ai"
+        ]
+    },
+    "kissat-evolve-r1": {
+        "status": "ok",
+        "name": "kissat-evolve-r1",
+        "version": "4.0.2",
+        "authors": "submitted by gopalan (provisional: 2026 proceedings not yet published)",
+        "call": "./kissat",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF"
+        ],
+        "tracks": [
+            "main",
+            "main-ai"
+        ]
+    },
+    "kissat-evolve-rb": {
+        "status": "ok",
+        "name": "kissat-evolve-rb",
+        "version": "4.0.2",
+        "authors": "submitted by gopalan (provisional: 2026 proceedings not yet published)",
+        "call": "./kissat",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF"
+        ],
+        "tracks": [
+            "main",
+            "main-ai"
+        ]
+    },
+    "lymphosat": {
+        "status": "ok",
+        "name": "lymphosat",
+        "authors": "Harrison Green",
+        "call": "bash",
+        "gz": false,
+        "args": [
+            "run.sh",
+            "FILECNF",
+            "PROOFDIR"
+        ],
+        "tracks": [
+            "main",
+            "main-ai"
+        ],
+        "path": "lymphosat/src",
+        "comment": "Winner of the AI generated / AI tuned subtrack (SAT category). Composite solver (126 family-specific solvers and a Kissat-based fallback) selected at run time by the submitted dispatcher; built with the authors' portable generic-build.sh for the dispatcher and the fallback. The family-specific solvers keep the authors' -march=icelake-server flags (some use AVX-512 intrinsics and do not compile otherwise), so on a CPU without AVX-512 the families they cover fail with an illegal instruction and the dispatcher falls back to the Kissat-based fallback, compiled here for generic x86-64 (CC overridden) so that the image answers on any machine. The proof is VeriPB, which satex cannot check, so no argsproof."
+    },
+    "lymphosat-verified": {
+        "status": "ok",
+        "name": "lymphosat-verified",
+        "authors": "Harrison Green",
+        "call": "bash",
+        "gz": false,
+        "args": [
+            "run.sh",
+            "FILECNF",
+            "PROOFDIR"
+        ],
+        "tracks": [
+            "main",
+            "main-ai"
+        ],
+        "path": "lymphosat-verified/src",
+        "comment": "Variant of lymphosat whose bundle only keeps verified nested solvers. Composite solver (126 family-specific solvers and a Kissat-based fallback) selected at run time by the submitted dispatcher; built with the authors' portable generic-build.sh for the dispatcher and the fallback. The family-specific solvers keep the authors' -march=icelake-server flags (some use AVX-512 intrinsics and do not compile otherwise), so on a CPU without AVX-512 the families they cover fail with an illegal instruction and the dispatcher falls back to the Kissat-based fallback, compiled here for generic x86-64 (CC overridden) so that the image answers on any machine. The proof is VeriPB, which satex cannot check, so no argsproof."
+    },
+    "kissat-ae-eg": {
+        "status": "ok",
+        "name": "kissat-ae-eg",
+        "version": "4.0.2",
+        "authors": "Jianmin Zhang and co-authors (provisional: 2026 proceedings not yet published)",
+        "call": "./kissat",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF"
+        ],
+        "tracks": [
+            "main"
+        ],
+        "comment": "The organizers checked its proofs with the GRAT toolchain, which consumes DRAT proofs."
+    },
+    "kissat-ae-hucb": {
+        "status": "ok",
+        "name": "kissat-ae-hucb",
+        "version": "4.0.2",
+        "authors": "Jianmin Zhang and co-authors (provisional: 2026 proceedings not yet published)",
+        "call": "./kissat",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF"
+        ],
+        "tracks": [
+            "main"
+        ],
+        "comment": "Competition name: AE-kissat-HUCB, third of the main track SAT category. The organizers checked its proofs with the GRAT toolchain, which consumes DRAT proofs."
+    },
+    "kissat-bva": {
+        "status": "ok",
+        "name": "kissat-bva",
+        "version": "4.0.2",
+        "authors": "submitted by hangjiang (provisional: 2026 proceedings not yet published)",
+        "call": "./kissat",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF"
+        ],
+        "tracks": [
+            "main"
+        ],
+        "comment": "Distributed with the sources but absent from the official results (the organizers report two disqualified sequential submissions). The organizers checked its proofs with the GRAT toolchain, which consumes DRAT proofs."
+    },
+    "kissat-lr-ds": {
+        "status": "ok",
+        "name": "kissat-lr-ds",
+        "version": "4.0.4",
+        "authors": "submitted by liang (provisional: 2026 proceedings not yet published)",
+        "call": "./kissat",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF"
+        ],
+        "tracks": [
+            "main"
+        ],
+        "comment": "The organizers checked its proofs with the GRAT toolchain, which consumes DRAT proofs."
+    },
+    "kissat-mab-da": {
+        "status": "ok",
+        "name": "kissat-mab-da",
+        "version": "4.0.2",
+        "authors": "submitted by liang (provisional: 2026 proceedings not yet published)",
+        "call": "./kissat",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF"
+        ],
+        "tracks": [
+            "main"
+        ],
+        "comment": "The organizers checked its proofs with the GRAT toolchain, which consumes DRAT proofs."
+    },
+    "satsuma-lex-ae-kissat-mab": {
+        "status": "ok",
+        "name": "satsuma-lex-ae-kissat-mab",
+        "version": "4.0.2",
+        "authors": "Andy Oertel and co-authors (provisional: 2026 proceedings not yet published)",
+        "call": "bash",
+        "gz": false,
+        "args": [
+            "run.sh",
+            "FILECNF"
+        ],
+        "tracks": [
+            "main"
+        ],
+        "path": "satsuma-lex-ae-kissat-mab/src",
+        "comment": "Satsuma symmetry breaking followed by a Kissat hack, driven by the submitted run.sh; the proof is VeriPB (pseudo-Boolean), which satex cannot check, so no argsproof. Satsuma's -march=native replaced by a generic x86-64 target so that the image runs on any machine."
+    },
+    "satsuma-lex-kissat": {
+        "status": "ok",
+        "name": "satsuma-lex-kissat",
+        "version": "4.0.4",
+        "authors": "Andy Oertel and co-authors (provisional: 2026 proceedings not yet published)",
+        "call": "bash",
+        "gz": false,
+        "args": [
+            "run.sh",
+            "FILECNF"
+        ],
+        "tracks": [
+            "main"
+        ],
+        "path": "satsuma-lex-kissat/src",
+        "comment": "Satsuma symmetry breaking followed by a Kissat hack, driven by the submitted run.sh; the proof is VeriPB (pseudo-Boolean), which satex cannot check, so no argsproof. Satsuma's -march=native replaced by a generic x86-64 target so that the image runs on any machine."
+    },
+    "cadical-xlc-freeze": {
+        "status": "ok",
+        "name": "cadical-xlc-freeze",
+        "version": "3.0.0",
+        "authors": "Joseph E. Reeves and co-authors (provisional: 2026 proceedings not yet published)",
+        "call": "./cadical",
+        "gz": true,
+        "args": [
+            "FILECNF",
+            "--ulc",
+            "--ulctype=3",
+            "--ulcfreeze=1"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF",
+            "--ulc",
+            "--ulctype=3",
+            "--ulcfreeze=1"
+        ],
+        "tracks": [
+            "main"
+        ],
+        "comment": "Declares DPR proofs; satex only checks DRAT/RUP steps, so the proof check may fail on PR steps."
+    },
+    "kissat-eda-1": {
+        "status": "ok",
+        "name": "kissat-eda-1",
+        "version": "4.0.2",
+        "authors": "Yalun Cai, Qiang Xu",
+        "call": "./kissat",
+        "gz": true,
+        "args": [
+            "--quiet",
+            "FILECNF"
+        ],
+        "argsproof": [
+            "--quiet",
+            "FILECNF",
+            "FILEPROOF"
+        ],
+        "tracks": [
+            "main"
+        ],
+        "comment": "The organizers checked its proofs with the GRAT toolchain, which consumes DRAT proofs."
+    },
+    "kissat-eda-2": {
+        "status": "ok",
+        "name": "kissat-eda-2",
+        "version": "4.0.2",
+        "authors": "Yalun Cai, Qiang Xu",
+        "call": "./kissat",
+        "gz": true,
+        "args": [
+            "--quiet",
+            "FILECNF"
+        ],
+        "argsproof": [
+            "--quiet",
+            "FILECNF",
+            "FILEPROOF"
+        ],
+        "tracks": [
+            "main"
+        ],
+        "comment": "Competition name: EDA-Kissat-v2, third of the main track. The organizers checked its proofs with the GRAT toolchain, which consumes DRAT proofs."
+    },
+    "kissat-eda-3": {
+        "status": "ok",
+        "name": "kissat-eda-3",
+        "version": "4.0.2",
+        "authors": "Yalun Cai, Qiang Xu",
+        "call": "./kissat",
+        "gz": true,
+        "args": [
+            "--quiet",
+            "FILECNF"
+        ],
+        "argsproof": [
+            "--quiet",
+            "FILECNF",
+            "FILEPROOF"
+        ],
+        "tracks": [
+            "main"
+        ],
+        "comment": "The organizers checked its proofs with the GRAT toolchain, which consumes DRAT proofs."
+    },
+    "kissat-eda-4": {
+        "status": "ok",
+        "name": "kissat-eda-4",
+        "version": "4.0.2",
+        "authors": "Yalun Cai, Qiang Xu",
+        "call": "./kissat",
+        "gz": true,
+        "args": [
+            "--quiet",
+            "FILECNF"
+        ],
+        "argsproof": [
+            "--quiet",
+            "FILECNF",
+            "FILEPROOF"
+        ],
+        "tracks": [
+            "main"
+        ],
+        "comment": "The organizers checked its proofs with the GRAT toolchain, which consumes DRAT proofs."
+    },
+    "kissat-mab-hypre": {
+        "status": "ok",
+        "name": "kissat-mab-hypre",
+        "version": "4.0.2",
+        "authors": "Jiongzhi Zheng and co-authors (provisional: 2026 proceedings not yet published)",
+        "call": "bash",
+        "gz": false,
+        "args": [
+            "run.sh",
+            "FILECNF",
+            "PROOFDIR"
+        ],
+        "tracks": [
+            "main"
+        ],
+        "path": "kissat-mab-hypre/src",
+        "comment": "Competition name: Kissat-MAB-HyPre, second of the main track. Satsuma symmetry breaking followed by a Kissat hack, driven by the submitted run.sh; the proof is VeriPB (pseudo-Boolean), which satex cannot check, so no argsproof. Satsuma's -march=native replaced by a generic x86-64 target so that the image runs on any machine."
+    },
+    "kissat-mab-hypre-evolve": {
+        "status": "ok",
+        "name": "kissat-mab-hypre-evolve",
+        "version": "4.0.2",
+        "authors": "Jiongzhi Zheng and co-authors (provisional: 2026 proceedings not yet published)",
+        "call": "bash",
+        "gz": false,
+        "args": [
+            "run.sh",
+            "FILECNF",
+            "PROOFDIR"
+        ],
+        "tracks": [
+            "main",
+            "main-ai"
+        ],
+        "path": "kissat-mab-hypre-evolve/src",
+        "comment": "Satsuma symmetry breaking followed by a Kissat hack, driven by the submitted run.sh; the proof is VeriPB (pseudo-Boolean), which satex cannot check, so no argsproof. Satsuma's -march=native replaced by a generic x86-64 target so that the image runs on any machine. Its src/bump.c calls exp, log1p and fmax without including math.h, which GCC 14 rejects; the include is added before the submitted build.sh runs."
+    },
+    "kissat-mab-hypre-satlution": {
+        "status": "ok",
+        "name": "kissat-mab-hypre-satlution",
+        "version": "4.0.2",
+        "authors": "Jiongzhi Zheng and co-authors (provisional: 2026 proceedings not yet published)",
+        "call": "bash",
+        "gz": false,
+        "args": [
+            "run.sh",
+            "FILECNF",
+            "PROOFDIR"
+        ],
+        "tracks": [
+            "main",
+            "main-ai"
+        ],
+        "path": "kissat-mab-hypre-satlution/src",
+        "comment": "Satsuma symmetry breaking followed by a Kissat hack, driven by the submitted run.sh; the proof is VeriPB (pseudo-Boolean), which satex cannot check, so no argsproof. Satsuma's -march=native replaced by a generic x86-64 target so that the image runs on any machine."
+    },
+    "kissat-mab-hypre-v2": {
+        "status": "ok",
+        "name": "kissat-mab-hypre-v2",
+        "version": "4.0.2",
+        "authors": "Jiongzhi Zheng and co-authors (provisional: 2026 proceedings not yet published)",
+        "call": "bash",
+        "gz": false,
+        "args": [
+            "run.sh",
+            "FILECNF",
+            "PROOFDIR"
+        ],
+        "tracks": [
+            "main"
+        ],
+        "path": "kissat-mab-hypre-v2/src",
+        "comment": "Satsuma symmetry breaking followed by a Kissat hack, driven by the submitted run.sh; the proof is VeriPB (pseudo-Boolean), which satex cannot check, so no argsproof. Satsuma's -march=native replaced by a generic x86-64 target so that the image runs on any machine."
+    },
+    "kissat-sup": {
+        "status": "ok",
+        "name": "kissat-sup",
+        "version": "4.0.4",
+        "authors": "Zhenwei Yang and co-authors (provisional: 2026 proceedings not yet published)",
+        "call": "bash",
+        "gz": false,
+        "args": [
+            "run.sh",
+            "FILECNF"
+        ],
+        "tracks": [
+            "experimental"
+        ],
+        "path": "kissat-sup/src",
+        "comment": "Pipeline kmpsym, BreakID and a Kissat hack (sup), driven by the submitted run.sh; declares no proof."
+    },
+    "mergesat": {
+        "status": "ok",
+        "name": "mergesat",
+        "authors": "Zhenwei Yang and co-authors (provisional: 2026 proceedings not yet published)",
+        "call": "./kissat",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF"
+        ],
+        "tracks": [
+            "main"
+        ],
+        "comment": "A Kissat-based submission despite its name; built by the submitted build/build.sh. The organizers checked its proofs with the GRAT toolchain, which consumes DRAT proofs."
+    },
+    "mergesat-l": {
+        "status": "ok",
+        "name": "mergesat-l",
+        "authors": "Zhenwei Yang and co-authors (provisional: 2026 proceedings not yet published)",
+        "call": "./kissat",
+        "gz": true,
+        "args": [
+            "FILECNF"
+        ],
+        "argsproof": [
+            "FILECNF",
+            "FILEPROOF"
+        ],
+        "tracks": [
+            "main",
+            "main-ai"
+        ],
+        "comment": "A Kissat-based submission despite its name; built by the submitted build/build.sh. The organizers checked its proofs with the GRAT toolchain, which consumes DRAT proofs."
+    },
+    "llmg": {
+        "status": "fixme",
+        "name": "llmg",
+        "authors": "submitted by faraja (provisional: 2026 proceedings not yet published)",
+        "tracks": [
+            "experimental"
+        ],
+        "comment": "Node.js solver that queries a large language model through the OpenAI API at run time; it cannot run offline and is not built."
+    }
+}

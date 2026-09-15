@@ -2,7 +2,7 @@ name: website
 
 on:
   push:
-    branches: [master, webpage]
+    branches: [master]
   workflow_dispatch:
 
 permissions:
