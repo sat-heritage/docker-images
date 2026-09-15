@@ -11,3 +11,4 @@ data/dockerhub.json
 
 # archives downloaded by tools/detect_licenses.py
 source-cache/
+data/stats.json

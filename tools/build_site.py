@@ -11,6 +11,7 @@ model cards of model hubs.
 from __future__ import annotations
 
 import argparse
+import urllib.parse
 import html
 import json
 import re
@@ -106,6 +107,13 @@ def collect(repo: Path) -> list[dict]:
     published = set(hub.get("images", []))
     global HUB_GENERATED
     HUB_GENERATED = hub.get("generated", "")
+    stats_file = repo / "data" / "stats.json"
+    stats = load_json(stats_file) if stats_file.is_file() else {}
+    pulls = stats.get("docker_hub", {}).get("repositories", {})
+    downloads = stats.get("github_releases", {}).get("assets", {})
+    global STATS_GENERATED, STATS_COMPLETE
+    STATS_GENERATED = stats.get("generated", "")
+    STATS_COMPLETE = bool(stats.get("docker_hub", {}).get("complete"))
     awards_file = repo / "data" / "awards.json"
     awards = load_json(awards_file).get("awards", []) if awards_file.is_file() else []
     awards_by_image = {}
@@ -138,7 +146,9 @@ def collect(repo: Path) -> list[dict]:
                 capabilities.append("UNSAT+proof")
             elif "argsproof" in entry and not checks:
                 capabilities.append("proof (declared)")
-            if not checks and "argsproof" not in entry:
+            if entry.get("incomplete"):
+                capabilities = [c for c in capabilities if not c.startswith("UNSAT")] + ["SAT only (incomplete)"]
+            elif not checks and "argsproof" not in entry:
                 capabilities.append("SAT/UNSAT (declared)")
             # "parallel" means the competition's parallel track, not a multi-threaded default
             if "parallel" in [t.lower() for t in entry.get("tracks", [])]:
@@ -175,6 +185,8 @@ def collect(repo: Path) -> list[dict]:
                 "rdepends": block.get("RDEPENDS", ""),
                 "download_url": (block.get("download_url", "") or "").replace("{SOLVER_NAME}", entry.get("name", key)),
                 "published": (f"{DOCKER_NS}/{image}" in published) if published else None,
+                "pulls": pulls.get(key, {}).get("pulls") if key in pulls else None,
+                "downloads": next((v["downloads"] for k2, v in downloads.items() if k2.split("/", 1)[1] == urllib.parse.unquote((block.get("download_url", "") or "").replace("{SOLVER_NAME}", entry.get("name", key)).rsplit("/", 1)[-1])), None) if downloads else None,
                 "verdict": result.get("verdict", "unknown"),
                 "tested": result.get("date", ""),
                 "build_stages": result.get("build", {}),
@@ -201,6 +213,7 @@ CSS = """
 .badge.hub{background:#2496ed;color:#fff;border-color:#1d7fcc;display:inline-flex;align-items:center;gap:5px;text-decoration:none} a.badge.hub:hover{background:#1d7fcc;text-decoration:none}
 .badge.hub.off{background:var(--bg2);color:var(--muted);border-color:var(--line)}
 .badge.hub svg.docker{width:14px;height:14px;fill:currentColor;flex:none}
+.pulls{color:var(--muted);font-size:12px;margin-left:auto;white-space:nowrap}
 .links{display:flex;gap:8px;flex-wrap:wrap;margin:4px 0 10px} .btn.small{padding:6px 12px;font-size:13px}
 .tabs{display:flex;gap:6px;margin:10px 0 14px} .tabs button{font:inherit;padding:8px 14px;border:1px solid var(--line);border-radius:999px;background:var(--card);color:var(--ink);cursor:pointer}
 .tabs button.active{background:var(--hf);border-color:var(--hfdark);color:#1a1a19;font-weight:600}
@@ -296,7 +309,7 @@ function card(d) { return `<a class="card" href="${d.set}/${d.key}.html">
     <div class="tagrow"><span class="lbl">solver</span><span class="tag id">${d.family}</span>${d.version ? `<span class="tag id">v${d.version}</span>` : ''}${d.tracks.map(t => `<span class="tag id">${t}</span>`).join('')}${d.awards.slice(0, d.more ? 2 : 3).map(a => `<span class="tag award r${Math.min(a.rank, 3)}">${a.label}</span>`).join('')}${d.more ? `<span class="tag award more">${d.more}</span>` : ''}</div>
     <div class="tagrow"><span class="lbl">licence</span>${d.licenses.length ? d.licenses.map(l => `<span class="tag id lic">${l}</span>`).join('') : '<span class="tag id lic">licence unknown</span>'}</div>
     <div class="tagrow"><span class="lbl">can do</span>${d.capabilities.map(c => `<span class="tag cap">${c}</span>`).join('')}</div>
-    <div class="tagrow"><span class="lbl">status</span>${badge(d.verdict)}<span class="badge ${ {ok:'ok',unstable:'warn',fixme:'fail'}[d.status] || 'none'}">${ {ok:'builds',unstable:'unstable',fixme:'not buildable'}[d.status] || d.status}</span>${d.published === true ? HUB_YES : d.published === false ? HUB_NO : ''}</div>
+    <div class="tagrow"><span class="lbl">status</span>${badge(d.verdict)}<span class="badge ${ {ok:'ok',unstable:'warn',fixme:'fail'}[d.status] || 'none'}">${ {ok:'builds',unstable:'unstable',fixme:'not buildable'}[d.status] || d.status}</span>${d.published === true ? HUB_YES : d.published === false ? HUB_NO : ''}${d.pulls != null ? `<span class="pulls" title="pulls of satex/${d.key}, all tags">⇩ ${d.pulls.toLocaleString('en')}</span>` : ''}</div>
   </a>`; }
 [q, fy, ff, fv, fs, document.getElementById('cap'), document.getElementById('award'), document.getElementById('hub'), document.getElementById('license')].filter(Boolean).forEach(e => e.addEventListener('input', render));
 const params = new URLSearchParams(location.search);
@@ -447,7 +460,7 @@ def index_page(solvers: list[dict]) -> str:
   {ctl("family", f'<select id="family"><option value="">All families</option>{options(families)}</select>')}
   {ctl("verdict", '<select id="verdict"><option value="">Any verification</option><option value="verified">Verified</option><option value="runs">Runs, checks failed</option><option value="built">Compiles</option><option value="source-available">Build fails</option><option value="source-unavailable">Source unavailable</option><option value="unknown">Not run yet</option></select>')}
   {ctl("status", '<select id="status"><option value="">Any status</option><option value="ok">builds</option><option value="unstable">unstable</option><option value="fixme">not buildable</option></select>')}
-  {ctl("cap", '<select id="cap"><option value="">Any capability</option><option value="SAT">SAT (verified)</option><option value="UNSAT">UNSAT (verified)</option><option value="UNSAT+proof">UNSAT+proof (verified)</option><option value="parallel">parallel</option><option value="gzip input">gzip input</option></select>')}
+  {ctl("cap", '<select id="cap"><option value="">Any capability</option><option value="SAT">SAT (verified)</option><option value="UNSAT">UNSAT (verified)</option><option value="UNSAT+proof">UNSAT+proof (verified)</option><option value="SAT only (incomplete)">SAT only (incomplete solver)</option><option value="parallel">parallel</option><option value="gzip input">gzip input</option></select>')}
   {ctl("license", f'<select id="license"><option value="">Any licence</option>{options(licenses)}<option value="unknown">licence unknown</option></select>')}
   {ctl("award", '<select id="award"><option value="">Any award</option><option value="awarded">Awarded (any podium)</option><option value="winner">Winners (1st only)</option></select>')}
   {ctl("hub", '<select id="hub"><option value="">Docker Hub: any</option><option value="yes">Ready on Docker Hub</option><option value="no">Not on Docker Hub yet</option></select>') if HUB_GENERATED else ''}
@@ -455,7 +468,7 @@ def index_page(solvers: list[dict]) -> str:
 </div>
 <div class="legend"><span>◌ dashed: what the solver is</span><span>▪ blue: what it can do, as verified by the test suite</span><span>● filled: whether it builds and passes the tests today</span></div>
 <div id="grid"></div>
-<script>window.SOLVERS = {json.dumps([dict({k: s[k] for k in ("image", "key", "set", "name", "authors", "status", "family", "verdict", "capabilities", "version", "tracks", "published", "licenses")}, awards=[{"rank": a["rank"], "label": award_label(a)} for a in s["awards"]], more=award_summary(s["awards"])[1]) for s in solvers])};</script>
+<script>window.SOLVERS = {json.dumps([dict({k: s[k] for k in ("image", "key", "set", "name", "authors", "status", "family", "verdict", "capabilities", "version", "tracks", "published", "licenses", "pulls")}, awards=[{"rank": a["rank"], "label": award_label(a)} for a in s["awards"]], more=award_summary(s["awards"])[1]) for s in solvers])};</script>
 <script>const HUB_YES = {json.dumps(HUB_BADGE_YES.replace('<a class="badge hub" href="{url}" title="Tags of this image on Docker Hub">', '<span class="badge hub">').replace('</a>', '</span>'))}, HUB_NO = {json.dumps(HUB_BADGE_NO)};</script>
 <script>{JS}</script>
 """
@@ -479,14 +492,14 @@ def solver_page(s: dict) -> str:
 <div class="tagrow" style="margin-top:10px"><span class="lbl">solver</span><span class="tag id">{esc(s['family'])}</span>{('<span class="tag id">v' + esc(s['version']) + '</span>') if s['version'] else ''}{''.join('<span class="tag id">' + esc(t) + '</span>' for t in s['tracks'])}{award_tags(s['awards'])}</div>
 <div class="tagrow" style="margin-top:6px"><span class="lbl">licence</span>{license_tags(s['licenses'], s['license_source'])}</div>
 <div class="tagrow" style="margin-top:6px"><span class="lbl">can do</span>{''.join('<span class="tag cap">' + esc(c) + '</span>' for c in s['capabilities']) or '<span class="tag cap">not verified yet</span>'}</div>
-<div class="tagrow" style="margin-top:6px"><span class="lbl">status</span><span class="badge {vcls}">{vlabel}</span><span class="badge {scls}">{slabel}</span>{hub_badge(s)}</div></div>
+<div class="tagrow" style="margin-top:6px"><span class="lbl">status</span><span class="badge {vcls}">{vlabel}</span><span class="badge {scls}">{slabel}</span>{hub_badge(s)}{(' <span class="muted-inline">' + fmt_count(s['pulls']) + ' pulls of satex/' + esc(s['key']) + ', all tags</span>') if s['pulls'] is not None else ''}</div></div>
 {('<div class="section"><h2>Awards</h2><ul>' + ''.join('<li><span class="tag award r' + str(min(a['rank'], 3)) + '">' + esc(award_label(a)) + '</span>' + (' <span class="muted-inline">' + esc(a['note']) + '</span>' if a.get('note') else '') + ' <a class="muted-inline" href="' + esc(a['source']) + '">source</a></li>' for a in s['awards']) + '</ul></div>') if s['awards'] else ''}
 {('<div class="section"><h2>Status</h2><p>' + esc(s['status_detail']) + '</p></div>') if s['status_detail'] else ''}
 {('<div class="section"><h2>Notes</h2><p>' + esc(s['comment']) + '</p></div>') if s['comment'] else ''}
 {license_section(s)}
 <div class="section pull"><h2>{'Pull it from Docker and run it' if s['published'] is not False else 'Build it and run it'}</h2><pre class="cmd" data-copy>{'docker pull ' + DOCKER_NS + '/' + esc(s['image']) if s['published'] is not False else 'pip install satex && satex build ' + esc(s['image'])}
 {esc(run_cmd)}</pre><p class="muted-inline">{('No build needed: the image is published on <a href="https://hub.docker.com/r/' + DOCKER_NS + '/' + esc(s['key']) + '">Docker Hub</a>' + (' (checked ' + esc(HUB_GENERATED[:10]) + ')' if HUB_GENERATED else '') + '.') if s['published'] is not False else ('This image is not on <a href="https://hub.docker.com/u/' + DOCKER_NS + '">Docker Hub</a> yet' + (' (checked ' + esc(HUB_GENERATED[:10]) + ')' if HUB_GENERATED else '') + ': the images are pushed in batches, and some entries cannot be built. Until then, <code>satex build</code> makes it on your machine from the archived sources and the recipe below, and the run command is the same.')} Mount the directory that holds your instance on <code>/data</code>; the proof file is optional{'' if s['proof'] else ' and not produced by this solver'}. Its full provenance is kept: the archived sources, the pinned build environment and the recipe are all listed below, and <code>satex build {esc(s['image'])}</code> rebuilds the same image on your own machine if you would rather not trust ours (slower, same solver).</p>
-{('<p><a class="btn" href="' + esc(s['download_url']) + '">Download the sources</a> <span class="muted-inline">' + esc(s['download_url'].rsplit('/', 1)[-1]) + ', the competition submission as archived by SAT Heritage, to build it yourself with the recipe below.</span></p>') if s['download_url'] else ''}<dl>
+{('<p><a class="btn" href="' + esc(s['download_url']) + '">Download the sources</a> <span class="muted-inline">' + esc(urllib.parse.unquote(s['download_url'].rsplit('/', 1)[-1])) + ', the competition submission as archived by SAT Heritage, to build it yourself with the recipe below.' + ((' Downloaded ' + fmt_count(s['downloads']) + ' times.') if s['downloads'] is not None else '') + '</span></p>') if s['download_url'] else ''}<dl>
 <dt>Licence</dt><dd>{esc(', '.join(s['licenses'])) if s['licenses'] else 'not identified: no licence file or header found in the archive; if you know it, send a pull request'}{(' <span class="muted-inline">(' + esc(s['license_source']) + ')</span>') if s['license_source'] else ''}</dd>
 <dt>Image</dt><dd><code>{DOCKER_NS}/{esc(s['image'])}</code></dd>
 <dt>Command</dt><dd><code>{esc(s['call'])} {esc(' '.join(map(str, s['args'])))}</code></dd>
@@ -632,6 +645,7 @@ docker run --rm -v $PWD:/data satex/kissat-sc2024:2024 instance.cnf proof.out</p
 <div class="stat"><div class="n">{tested}</div><div class="l">run through the test suite so far</div></div>
 <div class="stat"><div class="n">{compiles}</div><div class="l">of them compile from source today</div></div>
 <div class="stat"><div class="n">{verified}</div><div class="l">of them fully verified (build, SAT, UNSAT, proof)</div></div>
+{('<div class="stat"><div class="n">' + fmt_count(sum(s["pulls"] or 0 for s in {x["key"]: x for x in solvers}.values())) + '</div><div class="l">Docker Hub pulls' + ('' if STATS_COMPLETE else ' (first 100 repositories only)') + ', our own builds and tests included</div></div><div class="stat"><div class="n">' + fmt_count(sum(v["downloads"] for v in (load_json(Path("data/stats.json")).get("github_releases", {}).get("assets", {}) if Path("data/stats.json").is_file() else {}).values())) + '</div><div class="l">source archives downloaded from the releases</div></div>') if STATS_GENERATED else ''}
 {('<div class="stat"><div class="n">' + str(sum(1 for s in solvers if s["published"])) + '</div><div class="l">images on Docker Hub, checked ' + esc(HUB_GENERATED[:10]) + '</div></div>') if HUB_GENERATED else ''}
 <div class="stat"><div class="n">{len(years)}</div><div class="l">competition years, {years[0]} to {years[-1]}</div></div>
 <div class="stat"><div class="n">{sum(1 for s in solvers if s["license"])}</div><div class="l">images with an identified licence (<a href="catalogue.html?license=unknown">{sum(1 for s in solvers if not s["license"])} unknown</a>)</div></div>
@@ -653,6 +667,12 @@ docker run --rm -v $PWD:/data satex/kissat-sc2024:2024 instance.cnf proof.out</p
 
 MISSING_PODIUMS: list[dict] = []
 HUB_GENERATED = ""
+STATS_GENERATED = ""
+STATS_COMPLETE = False
+
+
+def fmt_count(n) -> str:
+    return f"{n:,}".replace(",", "\u202f")
 DOCKER_MARK = ('<svg class="docker" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 9h3v3H5zM9 9h3v3H9zM13 9h3v3h-3zM9 5h3v3H9zM13 5h3v3h-3zM17 9h3v3h-3z"/>'
                '<path d="M2 13h18.3c1.2 0 2.3-.4 3.2-1.2l.5-.5-1-.5c-.9-.4-2-.5-3-.3-.2-1-.8-1.8-1.7-2.3l-.4-.2-.3.4c-.6.9-.7 2-.3 3H2v.5C2 17 5 21 10.5 21c5.2 0 8.6-2.4 10.4-6.2-3.3.6-6.3-.3-7.9-1.8H2z"/></svg>')
 HUB_BADGE_YES = f'<a class="badge hub" href="{{url}}" title="Tags of this image on Docker Hub">{DOCKER_MARK}Ready on Docker Hub</a>'
@@ -712,7 +732,7 @@ LB_JS = """
 const tabs = document.querySelectorAll('.tabs button'), panes = document.querySelectorAll('.pane');
 function showTab(name) { tabs.forEach(b => b.classList.toggle('active', b.dataset.tab === name)); panes.forEach(p => p.hidden = p.id !== name); history.replaceState(null, '', '#' + name); }
 tabs.forEach(b => b.addEventListener('click', () => showTab(b.dataset.tab)));
-showTab(location.hash === '#authors' ? 'authors' : 'solvers');
+showTab(['#authors', '#pulled'].includes(location.hash) ? location.hash.slice(1) : 'solvers');
 document.querySelectorAll('.lb table').forEach(table => {
   const tbody = table.tBodies[0];
   table.querySelectorAll('th').forEach((th, i) => th.addEventListener('click', () => {
@@ -792,14 +812,30 @@ def leaderboard_page(solvers: list[dict]) -> str:
         f'<td data-v="{esc(years_text(d["years"]))}">{esc(years_text(d["years"]))}</td>'
         f'<td><a href="{d["best"][1]["set"]}/{d["best"][1]["key"]}.html">{esc(d["best"][1]["name"])}</a> <span class="who">{esc(d["best"][1]["set"])}</span></td></tr>'
         for i, (pts, g, sv, b, name, d) in enumerate(arows))
+    # most pulled repositories on Docker Hub (a repository gathers every year of a solver key)
+    by_key = {}
+    for s in solvers:
+        if s["pulls"] is not None:
+            by_key.setdefault(s["key"], {"pulls": s["pulls"], "images": []})["images"].append(s)
+    prow_list = sorted(by_key.items(), key=lambda kv: (-kv[1]["pulls"], kv[0]))[:200]
+    def years_links(images):
+        return " ".join('<a href="' + im["set"] + "/" + im["key"] + '.html">' + esc(im["set"]) + "</a>" for im in sorted(images, key=lambda x: x["set"]))
+    pulled_rows = "".join(
+        f'<tr class="top{i + 1 if i < 3 else 0}"><td class="rank" data-v="{i + 1}">{i + 1}</td>'
+        f'<td><a href="https://hub.docker.com/r/{DOCKER_NS}/{esc(key)}/tags">{DOCKER_NS}/{esc(key)}</a></td>'
+        f'<td>{years_links(d["images"])}</td>'
+        f'<td class="who">{esc(d["images"][0]["authors"] or "authors not recorded")}</td>'
+        f'<td class="num" data-v="{d["pulls"]}"><b>{fmt_count(d["pulls"])}</b></td></tr>'
+        for i, (key, d) in enumerate(prow_list))
     head_medals = '<th class="num"><span class="medal g"></span>Gold</th><th class="num"><span class="medal s"></span>Silver</th><th class="num"><span class="medal b"></span>Bronze</th><th class="num">Points</th>'
     body = f"""
 <div class="page"><h1>Leaderboards</h1><div class="sub">Solvers and authors ranked by competition medals: 3 points per gold, 2 per silver, 1 per bronze, every track and category counted, as recorded in <a href="{REPO_URL}/blob/webpage/data/awards.json">data/awards.json</a>. Only solvers with an image here are counted, so this is a view of the archive, not the official history; podiums and credits are still being clarified, corrections welcome by pull request. Click a column to sort.</div></div>
-<div class="tabs"><button data-tab="solvers">Solvers ({len(rows)})</button><button data-tab="authors">Authors ({len(arows)})</button></div>
+<div class="tabs"><button data-tab="solvers">Solvers ({len(rows)})</button><button data-tab="authors">Authors ({len(arows)})</button>{('<button data-tab="pulled">Most pulled (' + str(len(prow_list)) + ')</button>') if prow_list else ''}</div>
 <section id="solvers" class="pane fig"><div class="toolbar">{ctl("search", '<input type="search" placeholder="Filter solvers, authors, years">')}</div><div class="lb"><table>
 <thead><tr><th class="num">#</th><th>Solver</th><th>Year</th><th>Authors</th>{head_medals}<th class="num">Tracks</th><th>Status</th></tr></thead><tbody>{solver_rows}</tbody></table></div></section>
 <section id="authors" class="pane fig" hidden><div class="toolbar">{ctl("search", '<input type="search" placeholder="Filter authors">')}</div><div class="lb"><table>
 <thead><tr><th class="num">#</th><th>Author</th>{head_medals}<th class="num">Awarded solvers</th><th class="num">Images</th><th>Years</th><th>Best solver</th></tr></thead><tbody>{author_rows}</tbody></table></div></section>
+{('<section id="pulled" class="pane fig" hidden><div class="sub">Docker Hub pull counts per repository (all years of a solver together), as read on ' + esc(STATS_GENERATED[:10]) + '; they include the pulls made by our own builds and verification runs' + ('' if STATS_COMPLETE else ', and only the first 100 repositories could be read') + '.</div><div class="toolbar">' + ctl("search", '<input type="search" placeholder="Filter repositories">') + '</div><div class="lb"><table><thead><tr><th class="num">#</th><th>Repository</th><th>Years</th><th>Authors</th><th class="num">Pulls</th></tr></thead><tbody>' + pulled_rows + '</tbody></table></div></section>') if prow_list else ''}
 <script>{LB_JS}</script>
 """
     return page("Leaderboards", body, 0, "leaderboards")

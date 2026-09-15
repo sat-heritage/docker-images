@@ -32,6 +32,12 @@ jobs:
           python-version: "3.12"
       - name: Inventory of the catalogue images published on Docker Hub
         run: python tools/check_dockerhub.py --output data/dockerhub.json
+      - name: Usage counters (Docker Hub pulls, release downloads)
+        env:
+          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python tools/collect_stats.py --output data/stats.json
       - run: python tools/build_site.py --output site
       - uses: actions/upload-pages-artifact@v3
         with:
