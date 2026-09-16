@@ -302,11 +302,10 @@ def validate_drup_proof(cnf_path: str | Path, proof_path: str | Path) -> None:
     if not proof_data:
         raise ValidationError("proof file is empty")
 
-    # binary DRAT starts with an 'a' or 'd' marker byte followed by a varint, never by a space or digit
-    binary = len(proof_data) > 1 and proof_data[0] in (0x61, 0x64) and proof_data[1] not in b" \t\r\n0123456789-"
+    # binary DRAT literals are zero-terminated varints, so a NUL byte marks a binary proof
     steps = (
         _binary_proof_steps(proof_data)
-        if binary
+        if b"\x00" in proof_data
         else _text_proof_steps(proof_data)
     )
     clauses = list(original_clauses)
