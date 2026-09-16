@@ -249,7 +249,7 @@
         "tracks": [
             "main"
         ],
-        "status": "ok",
+        "status": "unstable",
         "name": "Riss7",
         "call": "./riss",
         "gz": true,
@@ -258,10 +258,13 @@
         ],
         "argsproof": [
             "FILECNF",
-            "FILEPROOF"
+            "-proofFormat=DRAT",
+            "-proof=FILEPROOF"
         ],
         "license_source": "licence file riss7/LICENSE",
-        "license": "LGPL-2.1"
+        "license": "LGPL-2.1",
+        "status_detail": "Builds and answers; the DRAT proof it writes for the UNSAT test instance fails verification by satex's checker at step 5 (neither RUP nor RAT), so the proof is not certified here, and the satisfiable run exceeded the timeout once under load.",
+        "test_timeout": 60
     },
     "abcdsat_r17": {
         "tracks": [
@@ -522,7 +525,8 @@
         "args": [
             "FILECNF"
         ],
-        "license_source": "archive not available"
+        "license_source": "archive not available",
+        "incomplete": true
     },
     "abcdsat_parallel": {
         "tracks": [
@@ -632,7 +636,8 @@
         "call": "./glucose-syrup",
         "gz": true,
         "args": [
-            "FILECNF"
+            "FILECNF",
+            "-model"
         ],
         "license_source": "licence file syrup/syrup/LICENCE",
         "license": "MIT"
