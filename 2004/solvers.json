@@ -2,6 +2,8 @@
   "adaptnovelty": {
     "status": "ok",
     "name": "adaptnovelty",
+    "authors": "Holger Hoos, Dave Tompkins",
+    "authors_source": "SAT 2004 competition site: submitter list of the official results slides (SAT04 Contest.pdf), award lines of the results page, online booklet for compsat and quantor",
     "call": "./adaptnovelty",
     "gz": false,
     "args": [
@@ -11,6 +13,8 @@
   "brchaff": {
     "status": "ok",
     "name": "brchaff",
+    "authors": "Renato Bruni",
+    "authors_source": "SAT 2004 competition site: submitter list of the official results slides (SAT04 Contest.pdf), award lines of the results page, online booklet for compsat and quantor",
     "call": "./brchaff",
     "gz": false,
     "args": [
@@ -29,6 +33,8 @@
   "circus": {
     "status": "ok",
     "name": "CirCUs",
+    "authors": "HoonSang Jin",
+    "authors_source": "SAT 2004 competition site: submitter list of the official results slides (SAT04 Contest.pdf), award lines of the results page, online booklet for compsat and quantor",
     "call": "./CirCUs",
     "gz": false,
     "args": [
@@ -38,6 +44,8 @@
   "circush0": {
     "status": "ok",
     "name": "CirCUsH0",
+    "authors": "HoonSang Jin",
+    "authors_source": "SAT 2004 competition site: submitter list of the official results slides (SAT04 Contest.pdf), award lines of the results page, online booklet for compsat and quantor",
     "call": "./CirCUsH0",
     "gz": false,
     "args": [
@@ -47,6 +55,8 @@
   "circush1": {
     "status": "ok",
     "name": "CirCUsH1",
+    "authors": "HoonSang Jin",
+    "authors_source": "SAT 2004 competition site: submitter list of the official results slides (SAT04 Contest.pdf), award lines of the results page, online booklet for compsat and quantor",
     "call": "./CirCUsH1",
     "gz": false,
     "args": [
@@ -56,6 +66,8 @@
   "cls": {
     "status": "ok",
     "name": "cls",
+    "authors": "Wheeler Ruml",
+    "authors_source": "SAT 2004 competition site: submitter list of the official results slides (SAT04 Contest.pdf), award lines of the results page, online booklet for compsat and quantor",
     "call": "./cls",
     "gz": false,
     "args": [
@@ -66,6 +78,8 @@
   "compsat": {
     "status": "ok",
     "name": "compsat",
+    "authors": "Armin Biere",
+    "authors_source": "SAT 2004 competition site: submitter list of the official results slides (SAT04 Contest.pdf), award lines of the results page, online booklet for compsat and quantor",
     "call": "./compsat",
     "gz": false,
     "args": [
@@ -75,6 +89,8 @@
   "cquest": {
     "status": "ok",
     "name": "CQuest",
+    "authors": "Inês Lynce",
+    "authors_source": "SAT 2004 competition site: submitter list of the official results slides (SAT04 Contest.pdf), award lines of the results page, online booklet for compsat and quantor",
     "call": "./CQuest",
     "gz": false,
     "args": [
@@ -84,6 +100,8 @@
   "eqube1": {
     "status": "ok",
     "name": "eqube1",
+    "authors": "Massimo Narizzano",
+    "authors_source": "SAT 2004 competition site: submitter list of the official results slides (SAT04 Contest.pdf), award lines of the results page, online booklet for compsat and quantor",
     "call": "./eqube1",
     "gz": false,
     "args": [
@@ -93,6 +111,8 @@
   "eqube2": {
     "status": "ok",
     "name": "eqube2",
+    "authors": "Massimo Narizzano",
+    "authors_source": "SAT 2004 competition site: submitter list of the official results slides (SAT04 Contest.pdf), award lines of the results page, online booklet for compsat and quantor",
     "call": "./eqube2",
     "gz": false,
     "args": [
@@ -120,6 +140,8 @@
   "frankensat-high": {
     "status": "ok",
     "name": "frankensat-high",
+    "authors": "Marijn Heule",
+    "authors_source": "SAT 2004 competition site: submitter list of the official results slides (SAT04 Contest.pdf), award lines of the results page, online booklet for compsat and quantor",
     "call": "./frankensat-high",
     "gz": false,
     "args": [
@@ -129,6 +151,8 @@
   "frankensat-low": {
     "status": "ok",
     "name": "frankensat-low",
+    "authors": "Marijn Heule",
+    "authors_source": "SAT 2004 competition site: submitter list of the official results slides (SAT04 Contest.pdf), award lines of the results page, online booklet for compsat and quantor",
     "call": "./frankensat-low",
     "gz": false,
     "args": [
@@ -138,6 +162,8 @@
   "funex": {
     "status": "ok",
     "name": "funex",
+    "authors": "Armin Biere",
+    "authors_source": "SAT 2004 competition site: submitter list of the official results slides (SAT04 Contest.pdf), award lines of the results page, online booklet for compsat and quantor",
     "call": "./funex",
     "gz": false,
     "args": [
@@ -147,6 +173,8 @@
   "gasat": {
     "status": "ok",
     "name": "GaSAT",
+    "authors": "Frédéric Lardeux",
+    "authors_source": "SAT 2004 competition site: submitter list of the official results slides (SAT04 Contest.pdf), award lines of the results page, online booklet for compsat and quantor",
     "call": "./GaSAT",
     "gz": false,
     "args": [
@@ -156,6 +184,8 @@
   "isat1": {
     "status": "ok",
     "name": "ISAT1",
+    "authors": "N. S. Narayanaswamy",
+    "authors_source": "SAT 2004 competition site: submitter list of the official results slides (SAT04 Contest.pdf), award lines of the results page, online booklet for compsat and quantor",
     "call": "./ISAT1",
     "gz": false,
     "args": [
@@ -166,6 +196,8 @@
   "isat2": {
     "status": "ok",
     "name": "ISAT2",
+    "authors": "N. S. Narayanaswamy",
+    "authors_source": "SAT 2004 competition site: submitter list of the official results slides (SAT04 Contest.pdf), award lines of the results page, online booklet for compsat and quantor",
     "call": "./ISAT2",
     "gz": false,
     "args": [
@@ -176,6 +208,8 @@
   "isat3": {
     "status": "ok",
     "name": "ISAT3",
+    "authors": "N. S. Narayanaswamy",
+    "authors_source": "SAT 2004 competition site: submitter list of the official results slides (SAT04 Contest.pdf), award lines of the results page, online booklet for compsat and quantor",
     "call": "./ISAT3",
     "gz": false,
     "args": [
@@ -186,6 +220,8 @@
   "jerusat1.3": {
     "status": "ok",
     "name": "Jerusat1.3",
+    "authors": "Alexander Nadel",
+    "authors_source": "SAT 2004 competition site: submitter list of the official results slides (SAT04 Contest.pdf), award lines of the results page, online booklet for compsat and quantor",
     "call": "./Jerusat1.3",
     "gz": false,
     "args": [
@@ -195,6 +231,8 @@
   "kcnfs": {
     "status": "ok",
     "name": "kcnfs",
+    "authors": "Gilles Dequen, Olivier Dubois",
+    "authors_source": "SAT 2004 competition site: submitter list of the official results slides (SAT04 Contest.pdf), award lines of the results page, online booklet for compsat and quantor",
     "call": "./kcnfs",
     "gz": false,
     "args": [
@@ -204,6 +242,8 @@
   "lsatv1.1": {
     "status": "ok",
     "name": "lsatv1.1",
+    "authors": "Richard Ostrowski",
+    "authors_source": "SAT 2004 competition site: submitter list of the official results slides (SAT04 Contest.pdf), award lines of the results page, online booklet for compsat and quantor",
     "call": "./lsatv1.1",
     "gz": false,
     "args": [
@@ -213,6 +253,8 @@
   "march-001": {
     "status": "ok",
     "name": "march-001",
+    "authors": "Marijn Heule",
+    "authors_source": "SAT 2004 competition site: submitter list of the official results slides (SAT04 Contest.pdf), award lines of the results page, online booklet for compsat and quantor",
     "call": "./march-001",
     "gz": false,
     "args": [
@@ -222,6 +264,8 @@
   "march-007": {
     "status": "ok",
     "name": "march-007",
+    "authors": "Marijn Heule",
+    "authors_source": "SAT 2004 competition site: submitter list of the official results slides (SAT04 Contest.pdf), award lines of the results page, online booklet for compsat and quantor",
     "call": "./march-007",
     "gz": false,
     "args": [
@@ -231,6 +275,8 @@
   "march-eq-010": {
     "status": "ok",
     "name": "march-eq-010",
+    "authors": "Marijn Heule, Hans van Maaren",
+    "authors_source": "SAT 2004 competition site: submitter list of the official results slides (SAT04 Contest.pdf), award lines of the results page, online booklet for compsat and quantor",
     "call": "./march-eq-010",
     "gz": false,
     "args": [
@@ -240,6 +286,8 @@
   "march-eq-100": {
     "status": "ok",
     "name": "march-eq-100",
+    "authors": "Marijn Heule, Hans van Maaren",
+    "authors_source": "SAT 2004 competition site: submitter list of the official results slides (SAT04 Contest.pdf), award lines of the results page, online booklet for compsat and quantor",
     "call": "./march-eq-100",
     "gz": false,
     "args": [
@@ -249,6 +297,8 @@
   "minilearning.jar": {
     "status": "ok",
     "name": "minilearning.jar",
+    "authors": "Daniel Le Berre",
+    "authors_source": "SAT 2004 competition site: submitter list of the official results slides (SAT04 Contest.pdf), award lines of the results page, online booklet for compsat and quantor",
     "call": "java",
     "gz": false,
     "args": [
@@ -262,6 +312,8 @@
   "modoc": {
     "status": "ok",
     "name": "modoc",
+    "authors": "Allen Van Gelder",
+    "authors_source": "SAT 2004 competition site: submitter list of the official results slides (SAT04 Contest.pdf), award lines of the results page, online booklet for compsat and quantor",
     "call": "./modoc",
     "gz": false,
     "args": [
@@ -271,6 +323,8 @@
   "nanosat": {
     "status": "ok",
     "name": "nanosat",
+    "authors": "Armin Biere",
+    "authors_source": "SAT 2004 competition site: submitter list of the official results slides (SAT04 Contest.pdf), award lines of the results page, online booklet for compsat and quantor",
     "call": "./nanosat",
     "gz": false,
     "args": [
@@ -280,6 +334,8 @@
   "novelty35": {
     "status": "ok",
     "name": "novelty35",
+    "authors": "Holger Hoos",
+    "authors_source": "SAT 2004 competition site: submitter list of the official results slides (SAT04 Contest.pdf), award lines of the results page, online booklet for compsat and quantor",
     "call": "./novelty35",
     "gz": false,
     "args": [
@@ -290,6 +346,8 @@
   "novelty50": {
     "status": "ok",
     "name": "novelty50",
+    "authors": "Holger Hoos",
+    "authors_source": "SAT 2004 competition site: submitter list of the official results slides (SAT04 Contest.pdf), award lines of the results page, online booklet for compsat and quantor",
     "call": "./novelty50",
     "gz": false,
     "args": [
@@ -300,6 +358,8 @@
   "oepira": {
     "status": "ok",
     "name": "OepirA",
+    "authors": "Johan Alfredsson",
+    "authors_source": "SAT 2004 competition site: submitter list of the official results slides (SAT04 Contest.pdf), award lines of the results page, online booklet for compsat and quantor",
     "call": "./OepirA",
     "gz": false,
     "args": [
@@ -309,6 +369,8 @@
   "oepirb": {
     "status": "ok",
     "name": "OepirB",
+    "authors": "Johan Alfredsson",
+    "authors_source": "SAT 2004 competition site: submitter list of the official results slides (SAT04 Contest.pdf), award lines of the results page, online booklet for compsat and quantor",
     "call": "./OepirB",
     "gz": false,
     "args": [
@@ -318,6 +380,8 @@
   "oepirc": {
     "status": "ok",
     "name": "OepirC",
+    "authors": "Johan Alfredsson",
+    "authors_source": "SAT 2004 competition site: submitter list of the official results slides (SAT04 Contest.pdf), award lines of the results page, online booklet for compsat and quantor",
     "call": "./OepirC",
     "gz": false,
     "args": [
@@ -327,6 +391,8 @@
   "ofsat": {
     "status": "ok",
     "name": "ofsat",
+    "authors": "Olivier Fourdrinoy",
+    "authors_source": "SAT 2004 competition site: submitter list of the official results slides (SAT04 Contest.pdf), award lines of the results page, online booklet for compsat and quantor",
     "call": "./ofsat",
     "gz": false,
     "args": [
@@ -336,6 +402,8 @@
   "qingting": {
     "status": "ok",
     "name": "QingTing",
+    "authors": "Xiao Yu Li",
+    "authors_source": "SAT 2004 competition site: submitter list of the official results slides (SAT04 Contest.pdf), award lines of the results page, online booklet for compsat and quantor",
     "call": "./QingTing",
     "gz": false,
     "args": [
@@ -345,6 +413,8 @@
   "quantor": {
     "status": "ok",
     "name": "quantor",
+    "authors": "Armin Biere",
+    "authors_source": "SAT 2004 competition site: submitter list of the official results slides (SAT04 Contest.pdf), award lines of the results page, online booklet for compsat and quantor",
     "call": "./quantor",
     "gz": false,
     "args": [
@@ -354,6 +424,8 @@
   "rsaps": {
     "status": "ok",
     "name": "rsaps",
+    "authors": "Dave Tompkins",
+    "authors_source": "SAT 2004 competition site: submitter list of the official results slides (SAT04 Contest.pdf), award lines of the results page, online booklet for compsat and quantor",
     "call": "./rsaps",
     "gz": false,
     "args": [
@@ -364,6 +436,8 @@
   "saprover": {
     "status": "ok",
     "name": "saprover",
+    "authors": "Arist Kojevnikov",
+    "authors_source": "SAT 2004 competition site: submitter list of the official results slides (SAT04 Contest.pdf), award lines of the results page, online booklet for compsat and quantor",
     "call": "./saprover",
     "gz": false,
     "args": [
@@ -373,6 +447,8 @@
   "saps": {
     "status": "ok",
     "name": "saps",
+    "authors": "Dave Tompkins",
+    "authors_source": "SAT 2004 competition site: submitter list of the official results slides (SAT04 Contest.pdf), award lines of the results page, online booklet for compsat and quantor",
     "call": "./saps",
     "gz": false,
     "args": [
@@ -383,6 +459,8 @@
   "sapsnr": {
     "status": "ok",
     "name": "sapsnr",
+    "authors": "Dave Tompkins",
+    "authors_source": "SAT 2004 competition site: submitter list of the official results slides (SAT04 Contest.pdf), award lines of the results page, online booklet for compsat and quantor",
     "call": "./sapsnr",
     "gz": false,
     "args": [
@@ -430,6 +508,8 @@
     "status": "ok",
     "comment": "segfault on medium-size instances (e.g., aim-200-1_6-yes1-1)",
     "name": "sato4.2",
+    "authors": "Hantao Zhang",
+    "authors_source": "SAT 2004 competition site: submitter list of the official results slides (SAT04 Contest.pdf), award lines of the results page, online booklet for compsat and quantor",
     "call": "./sato4.2",
     "gz": false,
     "args": [
@@ -440,6 +520,8 @@
     "status": "ok",
     "comment": "segfault on medium-size instances (e.g., aim-200-1_6-yes1-1)",
     "name": "sato4.3",
+    "authors": "Hantao Zhang",
+    "authors_source": "SAT 2004 competition site: submitter list of the official results slides (SAT04 Contest.pdf), award lines of the results page, online booklet for compsat and quantor",
     "call": "./sato4.3",
     "gz": false,
     "args": [
@@ -449,6 +531,8 @@
   "satzilla": {
     "status": "ok",
     "name": "satzilla",
+    "authors": "Eugene Nudelman",
+    "authors_source": "SAT 2004 competition site: submitter list of the official results slides (SAT04 Contest.pdf), award lines of the results page, online booklet for compsat and quantor",
     "call": "./satzilla",
     "gz": false,
     "args": [
@@ -458,6 +542,8 @@
   "satzilla-nr": {
     "status": "ok",
     "name": "satzilla-nr",
+    "authors": "Eugene Nudelman",
+    "authors_source": "SAT 2004 competition site: submitter list of the official results slides (SAT04 Contest.pdf), award lines of the results page, online booklet for compsat and quantor",
     "call": "./satzilla-nr",
     "gz": false,
     "args": [
@@ -467,6 +553,8 @@
   "satzilla-r": {
     "status": "ok",
     "name": "satzilla-r",
+    "authors": "Eugene Nudelman",
+    "authors_source": "SAT 2004 competition site: submitter list of the official results slides (SAT04 Contest.pdf), award lines of the results page, online booklet for compsat and quantor",
     "call": "./satzilla-r",
     "gz": false,
     "args": [
@@ -476,6 +564,8 @@
   "satzoo-1.02": {
     "status": "ok",
     "name": "Satzoo-1.02",
+    "authors": "Niklas Eén",
+    "authors_source": "SAT 2004 competition site: submitter list of the official results slides (SAT04 Contest.pdf), award lines of the results page, online booklet for compsat and quantor",
     "call": "./Satzoo-1.02",
     "gz": false,
     "args": [
@@ -494,6 +584,8 @@
   "tts-2-0": {
     "status": "ok",
     "name": "tts-2-0",
+    "authors": "Ivor Spence",
+    "authors_source": "SAT 2004 competition site: submitter list of the official results slides (SAT04 Contest.pdf), award lines of the results page, online booklet for compsat and quantor",
     "call": "./tts-2-0",
     "gz": false,
     "args": [
@@ -503,6 +595,8 @@
   "unitwalk": {
     "status": "ok",
     "name": "UnitWalk",
+    "authors": "Arist Kojevnikov",
+    "authors_source": "SAT 2004 competition site: submitter list of the official results slides (SAT04 Contest.pdf), award lines of the results page, online booklet for compsat and quantor",
     "call": "./UnitWalk",
     "gz": false,
     "args": [
@@ -513,6 +607,8 @@
   "walksatauto": {
     "status": "ok",
     "name": "walksatauto",
+    "authors": "Henry Kautz",
+    "authors_source": "SAT 2004 competition site: submitter list of the official results slides (SAT04 Contest.pdf), award lines of the results page, online booklet for compsat and quantor",
     "call": "./walksatauto",
     "gz": false,
     "args": [
@@ -523,6 +619,8 @@
   "walksatmp": {
     "status": "ok",
     "name": "walksatmp",
+    "authors": "Henry Kautz",
+    "authors_source": "SAT 2004 competition site: submitter list of the official results slides (SAT04 Contest.pdf), award lines of the results page, online booklet for compsat and quantor",
     "call": "./walksatmp",
     "gz": false,
     "args": [
@@ -532,6 +630,8 @@
   "walksatskc": {
     "status": "ok",
     "name": "walksatskc",
+    "authors": "Henry Kautz",
+    "authors_source": "SAT 2004 competition site: submitter list of the official results slides (SAT04 Contest.pdf), award lines of the results page, online booklet for compsat and quantor",
     "call": "./walksatskc",
     "gz": false,
     "args": [
@@ -541,6 +641,8 @@
   "werewolf": {
     "status": "ok",
     "name": "Werewolf",
+    "authors": "Jarrod Roy",
+    "authors_source": "SAT 2004 competition site: submitter list of the official results slides (SAT04 Contest.pdf), award lines of the results page, online booklet for compsat and quantor",
     "call": "./Werewolf",
     "gz": false,
     "args": [
@@ -550,6 +652,8 @@
   "wllsatv1": {
     "status": "ok",
     "name": "wllsatv1",
+    "authors": "Richard Ostrowski",
+    "authors_source": "SAT 2004 competition site: submitter list of the official results slides (SAT04 Contest.pdf), award lines of the results page, online booklet for compsat and quantor",
     "call": "./wllsatv1",
     "gz": false,
     "args": [
@@ -559,6 +663,8 @@
   "zchaff": {
     "status": "ok",
     "name": "zchaff",
+    "authors": "Zhaohui Fu, Yogesh Mahajan",
+    "authors_source": "SAT 2004 competition site: submitter list of the official results slides (SAT04 Contest.pdf), award lines of the results page, online booklet for compsat and quantor",
     "call": "./zchaff",
     "gz": false,
     "args": [
@@ -568,6 +674,8 @@
   "zchaff-rand": {
     "status": "ok",
     "name": "zchaff-rand",
+    "authors": "Zhaohui Fu, Yogesh Mahajan",
+    "authors_source": "SAT 2004 competition site: submitter list of the official results slides (SAT04 Contest.pdf), award lines of the results page, online booklet for compsat and quantor",
     "call": "./zchaff-rand",
     "gz": false,
     "args": [
