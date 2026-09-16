@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-16T21:43:53Z",
+  "generated": "2026-09-16T21:45:38Z",
   "images": {
     "2clseq:2002": {
       "build": {
@@ -1544,50 +1544,10 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-16T18:43:09Z",
-      "run": "20260916T184309Z",
-      "tests": {
-        "launch": {
-          "status": "ok"
-        },
-        "sat-gzip-model": {
-          "detail": "timeout",
-          "status": "skip"
-        },
-        "sat-gzip-result": {
-          "detail": "timeout",
-          "status": "skip"
-        },
-        "sat-gzip-termination": {
-          "detail": "TIMEOUT",
-          "status": "fail"
-        },
-        "sat-model": {
-          "detail": "timeout",
-          "status": "skip"
-        },
-        "sat-result": {
-          "detail": "timeout",
-          "status": "skip"
-        },
-        "sat-termination": {
-          "detail": "TIMEOUT",
-          "status": "fail"
-        },
-        "unsat-proof": {
-          "detail": "unsupported",
-          "status": "skip"
-        },
-        "unsat-result": {
-          "detail": "UNSAT",
-          "status": "ok"
-        },
-        "unsat-termination": {
-          "detail": "UNSAT",
-          "status": "ok"
-        }
-      },
-      "verdict": "runs"
+      "date": "2026-09-16T21:44:34Z",
+      "run": "20260916T214434Z",
+      "tests": {},
+      "verdict": "built"
     },
     "asat:2000": {
       "build": {
@@ -4444,39 +4404,18 @@
     },
     "cadical-scavel-01:2024": {
       "build": {
-        "build-environment": {
-          "status": "ok"
-        },
         "builder-base-image": {
-          "status": "ok"
-        },
-        "compile": {
           "status": "ok"
         },
         "docker-engine": {
           "status": "ok"
         },
-        "image-assemble": {
-          "status": "ok"
-        },
-        "runtime-base": {
-          "status": "ok"
-        },
-        "runtime-base-image": {
-          "status": "ok"
-        },
-        "runtime-dependencies": {
-          "status": "ok"
-        },
         "source-download": {
-          "status": "ok"
-        },
-        "source-extract": {
           "status": "ok"
         }
       },
-      "date": "2026-09-14T13:53:23Z",
-      "run": "20260914T135323Z",
+      "date": "2026-09-16T21:27:46Z",
+      "run": "20260916T212746Z",
       "verdict": "built"
     },
     "cadical-scavel-02:2024": {
@@ -4873,10 +4812,16 @@
         "docker-engine": {
           "status": "ok"
         },
+        "image-assemble": {
+          "status": "ok"
+        },
         "runtime-base": {
           "status": "ok"
         },
         "runtime-base-image": {
+          "status": "ok"
+        },
+        "runtime-dependencies": {
           "status": "ok"
         },
         "source-download": {
@@ -4888,7 +4833,53 @@
       },
       "date": "2026-09-16T21:27:46Z",
       "run": "20260916T212746Z",
-      "verdict": "built"
+      "tests": {
+        "launch": {
+          "status": "ok"
+        },
+        "sat-gzip-model": {
+          "status": "ok"
+        },
+        "sat-gzip-result": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-gzip-termination": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-model": {
+          "status": "ok"
+        },
+        "sat-result": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-termination": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "unsat-proof": {
+          "status": "ok"
+        },
+        "unsat-proof-run-result": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-proof-run-termination": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-result": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-termination": {
+          "detail": "UNSAT",
+          "status": "ok"
+        }
+      },
+      "verdict": "verified"
     },
     "cadical_scavel01:2021": {
       "build": {
@@ -51961,8 +51952,8 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-16T18:43:09Z",
-      "run": "20260916T184309Z",
+      "date": "2026-09-16T21:43:18Z",
+      "run": "20260916T214318Z",
       "tests": {
         "launch": {
           "status": "ok"
@@ -51990,19 +51981,15 @@
           "status": "ok"
         },
         "unsat-proof": {
-          "detail": "unsupported",
+          "detail": "incomplete solver",
           "status": "skip"
         },
         "unsat-result": {
-          "detail": "timeout",
+          "detail": "incomplete solver",
           "status": "skip"
-        },
-        "unsat-termination": {
-          "detail": "TIMEOUT",
-          "status": "fail"
         }
       },
-      "verdict": "runs"
+      "verdict": "verified"
     },
     "satz-213:2000": {
       "build": {

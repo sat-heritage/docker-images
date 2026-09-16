@@ -7,8 +7,11 @@
     "call": "./adaptnovelty",
     "gz": false,
     "args": [
-      "FILECNF"
-    ]
+      "FILECNF",
+      "RANDOMSEED"
+    ],
+    "incomplete": true,
+    "comment": "Requires exactly two arguments, the instance and a seed."
   },
   "brchaff": {
     "status": "ok",
@@ -22,13 +25,14 @@
     ]
   },
   "brchaff2": {
-    "status": "ok",
+    "status": "unstable",
     "name": "brchaff2",
     "call": "./brchaff2",
     "gz": false,
     "args": [
       "FILECNF"
-    ]
+    ],
+    "status_detail": "Competition binary that solves the satisfiable test instance but crashes with a segmentation fault on the UNSAT test instance php-5-4."
   },
   "circus": {
     "status": "ok",
@@ -39,10 +43,11 @@
     "gz": false,
     "args": [
       "FILECNF"
-    ]
+    ],
+    "test_timeout": 60
   },
   "circush0": {
-    "status": "ok",
+    "status": "unstable",
     "name": "CirCUsH0",
     "authors": "HoonSang Jin",
     "authors_source": "SAT 2004 competition site: submitter list of the official results slides (SAT04 Contest.pdf), award lines of the results page, online booklet for compsat and quantor",
@@ -50,7 +55,9 @@
     "gz": false,
     "args": [
       "FILECNF"
-    ]
+    ],
+    "test_timeout": 60,
+    "status_detail": "Answers UNSAT correctly but prints nothing on the satisfiable test instance aim-200 within 60 seconds."
   },
   "circush1": {
     "status": "ok",
@@ -61,7 +68,8 @@
     "gz": false,
     "args": [
       "FILECNF"
-    ]
+    ],
+    "test_timeout": 60
   },
   "cls": {
     "status": "ok",
@@ -179,7 +187,8 @@
     "gz": false,
     "args": [
       "FILECNF"
-    ]
+    ],
+    "incomplete": true
   },
   "isat1": {
     "status": "ok",
@@ -191,7 +200,8 @@
     "args": [
       "FILECNF",
       "RANDOMSEED"
-    ]
+    ],
+    "incomplete": true
   },
   "isat2": {
     "status": "ok",
@@ -203,7 +213,8 @@
     "args": [
       "FILECNF",
       "RANDOMSEED"
-    ]
+    ],
+    "incomplete": true
   },
   "isat3": {
     "status": "ok",
@@ -215,7 +226,8 @@
     "args": [
       "FILECNF",
       "RANDOMSEED"
-    ]
+    ],
+    "incomplete": true
   },
   "jerusat1.3": {
     "status": "ok",
@@ -341,7 +353,8 @@
     "args": [
       "FILECNF",
       "RANDOMSEED"
-    ]
+    ],
+    "incomplete": true
   },
   "novelty50": {
     "status": "ok",
@@ -353,7 +366,8 @@
     "args": [
       "FILECNF",
       "RANDOMSEED"
-    ]
+    ],
+    "incomplete": true
   },
   "oepira": {
     "status": "ok",
@@ -397,7 +411,8 @@
     "gz": false,
     "args": [
       "FILECNF"
-    ]
+    ],
+    "test_timeout": 60
   },
   "qingting": {
     "status": "ok",
@@ -408,7 +423,8 @@
     "gz": false,
     "args": [
       "FILECNF"
-    ]
+    ],
+    "incomplete": true
   },
   "quantor": {
     "status": "ok",
@@ -431,10 +447,11 @@
     "args": [
       "FILECNF",
       "RANDOMSEED"
-    ]
+    ],
+    "incomplete": true
   },
   "saprover": {
-    "status": "ok",
+    "status": "unstable",
     "name": "saprover",
     "authors": "Arist Kojevnikov",
     "authors_source": "SAT 2004 competition site: submitter list of the official results slides (SAT04 Contest.pdf), award lines of the results page, online booklet for compsat and quantor",
@@ -442,7 +459,9 @@
     "gz": false,
     "args": [
       "FILECNF"
-    ]
+    ],
+    "incomplete": true,
+    "status_detail": "UnitWalk-based local search (incomplete) that solves the satisfiable test instance but crashes intermittently with a segmentation fault (seen on the gzip run of the same instance)."
   },
   "saps": {
     "status": "ok",
@@ -454,7 +473,8 @@
     "args": [
       "FILECNF",
       "RANDOMSEED"
-    ]
+    ],
+    "incomplete": true
   },
   "sapsnr": {
     "status": "ok",
@@ -466,34 +486,38 @@
     "args": [
       "FILECNF",
       "RANDOMSEED"
-    ]
+    ],
+    "incomplete": true
   },
   "satelite_iota9": {
-    "status": "ok",
+    "status": "unstable",
     "name": "SatELite_iota9",
     "call": "./SatELite_iota9",
     "gz": false,
     "args": [
       "FILECNF"
-    ]
+    ],
+    "status_detail": "Answers correctly on SAT and UNSAT and reports that it extends the model after preprocessing, but the model it prints does not satisfy the input formula (the mu variant of the same year passes)."
   },
   "satelite_lambda": {
-    "status": "ok",
+    "status": "unstable",
     "name": "SatELite_lambda",
     "call": "./SatELite_lambda",
     "gz": false,
     "args": [
       "FILECNF"
-    ]
+    ],
+    "status_detail": "Answers correctly on SAT and UNSAT and reports that it extends the model after preprocessing, but the model it prints does not satisfy the input formula (the mu variant of the same year passes)."
   },
   "satelite_lambda_all": {
-    "status": "ok",
+    "status": "unstable",
     "name": "SatELite_lambda_all",
     "call": "./SatELite_lambda_all",
     "gz": false,
     "args": [
       "FILECNF"
-    ]
+    ],
+    "status_detail": "Answers correctly on SAT and UNSAT and reports that it extends the model after preprocessing, but the model it prints does not satisfy the input formula (the mu variant of the same year passes)."
   },
   "satelite_mu": {
     "status": "ok",
@@ -505,8 +529,7 @@
     ]
   },
   "sato4.2": {
-    "status": "ok",
-    "comment": "segfault on medium-size instances (e.g., aim-200-1_6-yes1-1)",
+    "status": "unstable",
     "name": "sato4.2",
     "authors": "Hantao Zhang",
     "authors_source": "SAT 2004 competition site: submitter list of the official results slides (SAT04 Contest.pdf), award lines of the results page, online booklet for compsat and quantor",
@@ -514,11 +537,11 @@
     "gz": false,
     "args": [
       "FILECNF"
-    ]
+    ],
+    "status_detail": "Competition binary that crashes with a segmentation fault on every test instance, satisfiable or not."
   },
   "sato4.3": {
-    "status": "ok",
-    "comment": "segfault on medium-size instances (e.g., aim-200-1_6-yes1-1)",
+    "status": "unstable",
     "name": "sato4.3",
     "authors": "Hantao Zhang",
     "authors_source": "SAT 2004 competition site: submitter list of the official results slides (SAT04 Contest.pdf), award lines of the results page, online booklet for compsat and quantor",
@@ -526,10 +549,11 @@
     "gz": false,
     "args": [
       "FILECNF"
-    ]
+    ],
+    "status_detail": "Competition binary that crashes with a segmentation fault on every test instance, satisfiable or not."
   },
   "satzilla": {
-    "status": "ok",
+    "status": "unstable",
     "name": "satzilla",
     "authors": "Eugene Nudelman",
     "authors_source": "SAT 2004 competition site: submitter list of the official results slides (SAT04 Contest.pdf), award lines of the results page, online booklet for compsat and quantor",
@@ -537,10 +561,13 @@
     "gz": false,
     "args": [
       "FILECNF"
-    ]
+    ],
+    "test_timeout": 60,
+    "comment": "Portfolio: feature computation and presolving take several seconds before the chosen solver runs, hence a longer test timeout.",
+    "status_detail": "Competition binary of the SATzilla portfolio: prints nothing and never answers, even with a 60 second limit; its feature computation or component solvers do not seem to run in this environment."
   },
   "satzilla-nr": {
-    "status": "ok",
+    "status": "unstable",
     "name": "satzilla-nr",
     "authors": "Eugene Nudelman",
     "authors_source": "SAT 2004 competition site: submitter list of the official results slides (SAT04 Contest.pdf), award lines of the results page, online booklet for compsat and quantor",
@@ -548,10 +575,13 @@
     "gz": false,
     "args": [
       "FILECNF"
-    ]
+    ],
+    "test_timeout": 60,
+    "comment": "Portfolio: feature computation and presolving take several seconds before the chosen solver runs, hence a longer test timeout.",
+    "status_detail": "Competition binary of the SATzilla portfolio: prints nothing and never answers, even with a 60 second limit; its feature computation or component solvers do not seem to run in this environment."
   },
   "satzilla-r": {
-    "status": "ok",
+    "status": "unstable",
     "name": "satzilla-r",
     "authors": "Eugene Nudelman",
     "authors_source": "SAT 2004 competition site: submitter list of the official results slides (SAT04 Contest.pdf), award lines of the results page, online booklet for compsat and quantor",
@@ -559,7 +589,10 @@
     "gz": false,
     "args": [
       "FILECNF"
-    ]
+    ],
+    "test_timeout": 60,
+    "comment": "Portfolio: feature computation and presolving take several seconds before the chosen solver runs, hence a longer test timeout.",
+    "status_detail": "Competition binary of the SATzilla portfolio: prints nothing and never answers, even with a 60 second limit; its feature computation or component solvers do not seem to run in this environment."
   },
   "satzoo-1.02": {
     "status": "ok",
@@ -573,13 +606,14 @@
     ]
   },
   "siege_v4": {
-    "status": "ok",
+    "status": "unstable",
     "name": "siege_v4",
     "call": "./siege_v4",
     "gz": false,
     "args": [
       "FILECNF"
-    ]
+    ],
+    "status_detail": "Competition binary that answers in its own format (a bare 'satisfiable' or 'unsatisfiable' line inside a statistics report), without the s status line nor a model expected by the competition output format."
   },
   "tts-2-0": {
     "status": "ok",
@@ -602,7 +636,8 @@
     "args": [
       "FILECNF",
       "RANDOMSEED"
-    ]
+    ],
+    "incomplete": true
   },
   "walksatauto": {
     "status": "ok",
@@ -614,10 +649,11 @@
     "args": [
       "FILECNF",
       "RANDOMSEED"
-    ]
+    ],
+    "incomplete": true
   },
   "walksatmp": {
-    "status": "ok",
+    "status": "unstable",
     "name": "walksatmp",
     "authors": "Henry Kautz",
     "authors_source": "SAT 2004 competition site: submitter list of the official results slides (SAT04 Contest.pdf), award lines of the results page, online booklet for compsat and quantor",
@@ -625,10 +661,12 @@
     "gz": false,
     "args": [
       "FILECNF"
-    ]
+    ],
+    "incomplete": true,
+    "status_detail": "Local search (incomplete) that finds a model of the satisfiable test instance and prints s SATISFIABLE with it, but exits with code 20 (the UNSAT code) instead of 10."
   },
   "walksatskc": {
-    "status": "ok",
+    "status": "unstable",
     "name": "walksatskc",
     "authors": "Henry Kautz",
     "authors_source": "SAT 2004 competition site: submitter list of the official results slides (SAT04 Contest.pdf), award lines of the results page, online booklet for compsat and quantor",
@@ -636,7 +674,9 @@
     "gz": false,
     "args": [
       "FILECNF"
-    ]
+    ],
+    "incomplete": true,
+    "status_detail": "Local search (incomplete) that finds a model of the satisfiable test instance and prints s SATISFIABLE with it, but exits with code 20 (the UNSAT code) instead of 10."
   },
   "werewolf": {
     "status": "ok",
@@ -650,7 +690,7 @@
     ]
   },
   "wllsatv1": {
-    "status": "ok",
+    "status": "unstable",
     "name": "wllsatv1",
     "authors": "Richard Ostrowski",
     "authors_source": "SAT 2004 competition site: submitter list of the official results slides (SAT04 Contest.pdf), award lines of the results page, online booklet for compsat and quantor",
@@ -658,7 +698,8 @@
     "gz": false,
     "args": [
       "FILECNF"
-    ]
+    ],
+    "status_detail": "Competition binary that prints s SATISFIABLE on satisfiable instances but exits with code 20 (the UNSAT code); UNSAT instances are answered correctly."
   },
   "zchaff": {
     "status": "ok",
