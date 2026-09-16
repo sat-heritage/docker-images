@@ -405,7 +405,8 @@
             "-drup-file=FILEPROOF"
         ],
         "license": "MIT",
-        "license_source": "licence file Maple_CM+dist+sattime2s+-/sources/LICENSE"
+        "license_source": "licence file Maple_CM+dist+sattime2s+-/sources/LICENSE",
+        "test_timeout": 120
     },
     "maple_cm-dist-simp2": {
         "status": "ok",
@@ -552,10 +553,11 @@
         ],
         "argsproof": [
             "FILECNF",
-            "FILEPROOF"
+            "PROOFDIR"
         ],
         "license": "MIT",
-        "license_source": "licence file PauSat/LICENSE"
+        "license_source": "licence file PauSat/LICENSE",
+        "comment": "Writes its DRUP proof to <directory>/proof.out (StarExec convention), hence the PROOFDIR placeholder."
     },
     "relaxed_lcmdcbdl": {
         "status": "ok",

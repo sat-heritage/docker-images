@@ -12,7 +12,6 @@
         ],
         "argsproof": [
             "FILECNF",
-            "-vbyte",
             "-certified",
             "-certified-output=FILEPROOF"
         ],
@@ -104,7 +103,7 @@
         "tracks": [
             "main"
         ],
-        "status": "ok",
+        "status": "unstable",
         "name": "Glucose_nbSat",
         "call": "./GlucoseNBSAT",
         "gz": true,
@@ -119,7 +118,8 @@
             "-certified-output=FILEPROOF"
         ],
         "license": "MIT",
-        "license_source": "licence file Glucose_nbSat/GlucoseNBSAT/LICENSE"
+        "license_source": "licence file Glucose_nbSat/GlucoseNBSAT/LICENSE",
+        "status_detail": "Builds and answers correctly; the proof it writes mixes binary DRAT steps and text lines (-1 6 7 8 0 after binary records), so it cannot be verified."
     },
     "lingeling": {
         "tracks": [
@@ -265,10 +265,11 @@
         "argsproof": [
             "FILECNF",
             "-vbyte",
-            "FILEPROOF"
+            "PROOFDIR"
         ],
         "license": "MIT",
-        "license_source": "licence file Scavel_SAT/LICENSE"
+        "license_source": "licence file Scavel_SAT/LICENSE",
+        "comment": "Writes its proof as <directory>/proof.out (StarExec convention), hence PROOFDIR."
     },
     "splatz06vmain": {
         "tracks": [
@@ -296,10 +297,11 @@
         "status": "ok",
         "name": "YalSAT03r",
         "call": "./yalsat",
-        "gz": true,
+        "gz": false,
         "args": [
             "FILECNF"
-        ]
+        ],
+        "incomplete": true
     },
     "abcdsat_drup": {
         "tracks": [
@@ -535,11 +537,12 @@
         "status": "ok",
         "name": "CSCCSat",
         "call": "./CSCCSat",
-        "gz": true,
+        "gz": false,
         "args": [
             "FILECNF",
             "1"
-        ]
+        ],
+        "incomplete": true
     },
     "dccalm": {
         "tracks": [
@@ -548,11 +551,12 @@
         "status": "ok",
         "name": "DCCAlm",
         "call": "./DCCAlm",
-        "gz": true,
+        "gz": false,
         "args": [
             "FILECNF",
             "1"
-        ]
+        ],
+        "incomplete": true
     },
     "cmsat5_agile": {
         "tracks": [
@@ -607,10 +611,11 @@
         "status": "ok",
         "name": "polypower1.0",
         "call": "./polypower",
-        "gz": true,
+        "gz": false,
         "args": [
             "FILECNF"
-        ]
+        ],
+        "incomplete": true
     },
     "polypower2.0": {
         "tracks": [
@@ -619,10 +624,11 @@
         "status": "ok",
         "name": "polypower2.0",
         "call": "./polypower",
-        "gz": true,
+        "gz": false,
         "args": [
             "FILECNF"
-        ]
+        ],
+        "incomplete": true
     },
     "stocbcd": {
         "tracks": [
@@ -636,7 +642,8 @@
             "FILECNF"
         ],
         "license": "MIT",
-        "license_source": "licence file stocBCD/license.txt"
+        "license_source": "licence file stocBCD/license.txt",
+        "incomplete": true
     },
     "paragluminisat": {
         "tracks": [

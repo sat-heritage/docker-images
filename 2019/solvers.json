@@ -3,11 +3,13 @@
     "status": "ok",
     "name": "CCAnrSim",
     "call": "./CCAnrSim",
-    "gz": true,
+    "gz": false,
     "args": [
       "-inst",
       "FILECNF"
-    ]
+    ],
+    "incomplete": true,
+    "test_timeout": 60
   },
   "cominisatps_pulsar_drup": {
     "status": "ok",
@@ -41,7 +43,7 @@
     ]
   },
   "candy": {
-    "status": "ok",
+    "status": "unstable",
     "name": "Candy",
     "call": "./candy",
     "gz": true,
@@ -54,7 +56,8 @@
       "-certified-output=FILEPROOF"
     ],
     "license": "BSD-3-Clause AND MIT",
-    "license_source": "licence file Candy/lib/googletest/googletest/LICENSE, Candy/lib/minisat/LICENSE"
+    "license_source": "licence file Candy/lib/googletest/googletest/LICENSE, Candy/lib/minisat/LICENSE",
+    "status_detail": "Builds and answers, but the model it prints for the aim-200 test instance violates a clause (with -model), in the plain and gzip runs alike; the UNSAT answer and its DRAT proof are fine."
   },
   "mldchronobt_gcbump": {
     "status": "ok",
@@ -68,7 +71,8 @@
     ],
     "argsproof": [
       "FILECNF",
-      "-drup-file=FILEPROOF"
+      "-drup-file=FILEPROOF",
+      "-verb=1"
     ],
     "license": "MIT",
     "license_source": "licence header of MLDChronoBT_GCBump/sources/utils/System.h"
@@ -241,7 +245,7 @@
     "license_source": "licence file MapleLCMDistChronoBT-DL-v2.2/sources/LICENSE"
   },
   "maple-lcmdistchronobtvariablereindexing": {
-    "status": "ok",
+    "status": "unstable",
     "name": "MapleLCMDistChronoBTVariableReindexing",
     "call": "./custom_run",
     "path": "MapleLCMDistChronoBTVariableReindexing/bin",
@@ -251,10 +255,12 @@
     ],
     "argsproof": [
       "FILECNF",
-      "FILEPROOF"
+      "PROOFDIR"
     ],
     "license": "GPL-2.0 AND MIT",
-    "license_source": "licence file MapleLCMDistChronoBTVariableReindexing/tmp/igraph-0.7.1/COPYING, MapleLCMDistChronoBTVariableReindexing/sources/LICENSE"
+    "license_source": "licence file MapleLCMDistChronoBTVariableReindexing/tmp/igraph-0.7.1/COPYING, MapleLCMDistChronoBTVariableReindexing/sources/LICENSE",
+    "comment": "custom_run takes an output directory and writes <directory>/proof.out (StarExec convention), hence PROOFDIR.",
+    "status_detail": "Builds and answers correctly; its DRAT proof is written after the variables were reindexed, so it does not check against the original instance (step 24 is neither RUP nor RAT for satex's checker)."
   },
   "maple-lcmdistcbtcorefirst": {
     "status": "ok",
@@ -342,7 +348,7 @@
     ],
     "argsproof": [
       "FILECNF",
-      "FILEPROOF"
+      "-drup-file=FILEPROOF"
     ],
     "license": "MIT",
     "license_source": "licence file MergeSAT/mergesat/licence.txt"
@@ -542,11 +548,12 @@
     "argsproof": [
       "FILECNF",
       "RANDOMSEED",
-      "FILEPROOF",
-      1
+      "PROOFDIR",
+      "1"
     ],
     "license": "MIT",
-    "license_source": "licence file SparrowToMergeSAT/mergesat/licence.txt"
+    "license_source": "licence file SparrowToMergeSAT/mergesat/licence.txt",
+    "comment": "The wrapper writes the proof as <directory>/proof.out, hence PROOFDIR."
   },
   "topk3.2_glucose3.0": {
     "status": "ok",

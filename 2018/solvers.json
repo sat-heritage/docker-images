@@ -18,7 +18,7 @@
         "license_source": "licence file COMiniSatPS_Pulsar_drup/cominisatps/LICENSE"
     },
     "cadical": {
-        "status": "ok",
+        "status": "fixme",
         "tracks": [
             "main"
         ],
@@ -31,7 +31,8 @@
         "argsproof": [
             "FILECNF",
             "FILEPROOF"
-        ]
+        ],
+        "status_detail": "Sources unavailable: the Zenodo asset CaDiCaL.zip is a 63-byte placeholder, not an archive."
     },
     "candy": {
         "status": "ok",
@@ -62,14 +63,15 @@
         ],
         "name": "CPSparrow",
         "call": "./CPSparrow.sh",
-        "gz": true,
+        "gz": false,
         "args": [
             "FILECNF",
             "RANDOMSEED",
             "/tmp"
         ],
         "license": "MIT",
-        "license_source": "licence file CPSparrow/license.txt"
+        "license_source": "licence file CPSparrow/license.txt",
+        "incomplete": true
     },
     "ghackcomsps_drup": {
         "status": "ok",
@@ -124,12 +126,7 @@
             "FILECNF",
             "-v"
         ],
-        "argsproof": [
-            "FILECNF",
-            "-v",
-            "-t",
-            "FILEPROOF"
-        ]
+        "comment": "This build accepts neither -t nor a second positional argument for a proof file (it reads both as inputs), so no proof mode is declared."
     },
     "maplecomsps_chb_vsids_drup": {
         "status": "ok",
@@ -150,7 +147,7 @@
         "license_source": "licence file MapleCOMSPS_CHB_VSIDS_drup/MapleCOMSPS_CHB_VSIDS/LICENSE"
     },
     "maplecomsps_lrb_vsids_2_drup": {
-        "status": "ok",
+        "status": "fixme",
         "tracks": [
             "main"
         ],
@@ -165,7 +162,8 @@
             "-drup-file=FILEPROOF"
         ],
         "license": "MIT",
-        "license_source": "licence file MapleCOMSPS_LRB_VSIDS_2_drup/MapleCOMSPS_LRB_VSIDS_2/LICENSE"
+        "license_source": "licence file MapleCOMSPS_LRB_VSIDS_2_drup/MapleCOMSPS_LRB_VSIDS_2/LICENSE",
+        "status_detail": "Does not compile with the g++ of Debian stretch: SimpSolver.cc calls drup() without a declaration in scope (error: drup was not declared in this scope), a source issue that older compilers let through."
     },
     "maplecomsps_lrb_vsids_drup": {
         "status": "ok",
@@ -388,7 +386,7 @@
         "license_source": "licence file Minisat-v2.2.0-106-ge2dd095/minisat/LICENSE"
     },
     "riss7.1": {
-        "status": "ok",
+        "status": "unstable",
         "tracks": [
             "main"
         ],
@@ -400,10 +398,12 @@
         ],
         "argsproof": [
             "FILECNF",
-            "FILEPROOF"
+            "-proofFormat=DRAT",
+            "-proof=FILEPROOF"
         ],
         "license": "LGPL-2.1",
-        "license_source": "licence file Riss7.1/riss7/LICENSE"
+        "license_source": "licence file Riss7.1/riss7/LICENSE",
+        "status_detail": "Builds and answers correctly; the DRAT proof it writes for the UNSAT test instance fails verification by satex's checker at step 5 (a step that is neither RUP nor RAT), so the proof is not certified here."
     },
     "sparrow2riss-2018": {
         "status": "fixme",
@@ -433,14 +433,15 @@
         ],
         "name": "YalSAT",
         "call": "./yalsat",
-        "gz": true,
+        "gz": false,
         "args": [
             "FILECNF",
             "-v"
-        ]
+        ],
+        "incomplete": true
     },
     "abcdsat_r18": {
-        "status": "ok",
+        "status": "unstable",
         "tracks": [
             "main"
         ],
@@ -456,7 +457,8 @@
             "-certified-output=FILEPROOF"
         ],
         "license": "MIT",
-        "license_source": "licence file abcdsat_r18/LICENSE.txt"
+        "license_source": "licence file abcdsat_r18/LICENSE.txt",
+        "status_detail": "Builds but crashes with a floating point exception (SIGFPE, exit 136) on the satisfiable test instances."
     },
     "cms55-main-all4fixed": {
         "status": "ok",
@@ -465,7 +467,7 @@
         ],
         "name": "cms55-main-all4fixed",
         "call": "./cryptominisat5_simple",
-        "gz": true,
+        "gz": false,
         "args": [
             "FILECNF"
         ],
@@ -745,7 +747,7 @@
         "license_source": "licence file smallsat/LICENSE.txt"
     },
     "varisat": {
-        "status": "ok",
+        "status": "fixme",
         "tracks": [
             "main"
         ],
@@ -760,10 +762,11 @@
             "FILECNF"
         ],
         "license": "Apache-2.0 AND MIT",
-        "license_source": "licence file varisat/dependencies/unicode-width-0.1.4/COPYRIGHT, varisat/dependencies/quick-error-1.2.1/LICENSE-MIT"
+        "license_source": "licence file varisat/dependencies/unicode-width-0.1.4/COPYRIGHT, varisat/dependencies/quick-error-1.2.1/LICENSE-MIT",
+        "status_detail": "The submission builds with a bundled Rust nightly toolchain (rust-nightly-x86_64-unknown-linux-gnu tarball) that does not extract or run in the Debian stretch builder (rustc: not found); needs a recipe with a matching Rust toolchain."
     },
     "abcd_para18": {
-        "status": "ok",
+        "status": "fixme",
         "tracks": [
             "parallel"
         ],
@@ -773,11 +776,12 @@
         "args": [
             "FILECNF"
         ],
-        "license_source": "archive not available"
+        "license_source": "archive not available",
+        "status_detail": "Sources unavailable: abcd_para18_1.zip is not among the files of the Zenodo record 5778760 that hosts the 2018 archives."
     },
     "cbpenelope2018": {
         "status": "fixme",
-        "status_detail": "FIXME $TEMPDIR",
+        "status_detail": "Sources unavailable: cbpenelope2018.zip is not among the files of the Zenodo record 5778760 that hosts the 2018 archives.",
         "tracks": [
             "parallel"
         ],
@@ -791,7 +795,7 @@
     },
     "ccspenelope2018": {
         "status": "fixme",
-        "status_detail": "FIXME : $TEMPDIR",
+        "status_detail": "Sources unavailable: ccspenelope2018.zip is not among the files of the Zenodo record 5778760 that hosts the 2018 archives.",
         "tracks": [
             "parallel"
         ],
@@ -804,7 +808,7 @@
         "license_source": "archive not available"
     },
     "cmsat55_run_parallel": {
-        "status": "unstable",
+        "status": "fixme",
         "tracks": [
             "parallel"
         ],
@@ -815,10 +819,11 @@
             "FILECNF",
             "--threads=MAXNBTHREAD"
         ],
-        "license_source": "archive not available"
+        "license_source": "archive not available",
+        "status_detail": "Sources unavailable: cmsat55_run_parallel.zip is not among the files of the Zenodo record 5778760 that hosts the 2018 archives."
     },
     "ddc-submit18": {
-        "status": "unstable",
+        "status": "fixme",
         "tracks": [
             "parallel"
         ],
@@ -828,10 +833,11 @@
         "args": [
             "FILECNF"
         ],
-        "license_source": "archive not available"
+        "license_source": "archive not available",
+        "status_detail": "Sources unavailable: ddc-submit18.zip is not among the files of the Zenodo record 5778760 that hosts the 2018 archives."
     },
     "hordesat": {
-        "status": "ok",
+        "status": "fixme",
         "tracks": [
             "parallel"
         ],
@@ -841,10 +847,11 @@
         "args": [
             "FILECNF"
         ],
-        "license_source": "archive not available"
+        "license_source": "archive not available",
+        "status_detail": "Sources unavailable: hordesat.zip is not among the files of the Zenodo record 5778760 that hosts the 2018 archives."
     },
     "painless-mcomsps": {
-        "status": "ok",
+        "status": "fixme",
         "tracks": [
             "parallel"
         ],
@@ -854,10 +861,11 @@
         "args": [
             "FILECNF"
         ],
-        "license_source": "archive not available"
+        "license_source": "archive not available",
+        "status_detail": "Sources unavailable: painless-mcomsps.zip is not among the files of the Zenodo record 5778760 that hosts the 2018 archives."
     },
     "manyglucose": {
-        "status": "ok",
+        "status": "fixme",
         "tracks": [
             "parallel"
         ],
@@ -870,10 +878,11 @@
             "FILECNF",
             "nthreads=MAXNBTHREADS"
         ],
-        "license_source": "archive not available"
+        "license_source": "archive not available",
+        "status_detail": "Sources unavailable: manyglucose-4.1-2-satcomp2018.zip is not among the files of the Zenodo record 5778760 that hosts the 2018 archives."
     },
     "penelope_mdcl": {
-        "status": "unstable",
+        "status": "fixme",
         "tracks": [
             "parallel"
         ],
@@ -883,10 +892,11 @@
         "args": [
             "FILECNF"
         ],
-        "license_source": "archive not available"
+        "license_source": "archive not available",
+        "status_detail": "Sources unavailable: penelope_MDCL.zip is not among the files of the Zenodo record 5778760 that hosts the 2018 archives."
     },
     "plingeling": {
-        "status": "ok",
+        "status": "fixme",
         "tracks": [
             "parallel"
         ],
@@ -896,11 +906,12 @@
         "args": [
             "FILECNF"
         ],
-        "license_source": "archive not available"
+        "license_source": "archive not available",
+        "status_detail": "Sources unavailable: plingeling-sc18-starexec.zip is not among the files of the Zenodo record 5778760 that hosts the 2018 archives."
     },
     "scalope": {
         "status": "fixme",
-        "status_detail": "FIXME TEMPDIR",
+        "status_detail": "Sources unavailable: scalope.zip is not among the files of the Zenodo record 5778760 that hosts the 2018 archives.",
         "tracks": [
             "parallel"
         ],
@@ -913,7 +924,7 @@
         "license_source": "archive not available"
     },
     "syrup": {
-        "status": "ok",
+        "status": "fixme",
         "tracks": [
             "parallel"
         ],
@@ -925,10 +936,11 @@
             "-model",
             "-maxmemory=50000"
         ],
-        "license_source": "archive not available"
+        "license_source": "archive not available",
+        "status_detail": "Sources unavailable: syrup.zip is not among the files of the Zenodo record 5778760 that hosts the 2018 archives."
     },
     "treengeling": {
-        "status": "ok",
+        "status": "fixme",
         "tracks": [
             "parallel"
         ],
@@ -938,7 +950,8 @@
         "args": [
             "FILECNF"
         ],
-        "license_source": "archive not available"
+        "license_source": "archive not available",
+        "status_detail": "Sources unavailable: treengeling-sc18-starexec.zip is not among the files of the Zenodo record 5778760 that hosts the 2018 archives."
     },
     "dimetheus": {
         "status": "fixme",
@@ -961,11 +974,12 @@
         ],
         "name": "lawa",
         "call": "./lawa",
-        "gz": true,
+        "gz": false,
         "args": [
             "FILECNF"
         ],
-        "license_source": "archive not available"
+        "license_source": "archive not available",
+        "incomplete": true
     },
     "probsat": {
         "status": "ok",
@@ -980,6 +994,7 @@
             "FILECNF"
         ],
         "license_source": "licence file probSAT/license.txt",
-        "license": "MIT"
+        "license": "MIT",
+        "incomplete": true
     }
 }

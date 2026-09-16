@@ -79,13 +79,18 @@ def parse_solver_output(output: str) -> tuple[str, list[int]]:
             continue
         if line.startswith("v ") or line == "v":
             for token in line[1:].split():
-                literal = int(token)
+                try:
+                    literal = int(token)
+                except ValueError:
+                    break   # some solvers append a comment to their model line
                 if literal:
                     model.append(literal)
 
-    if len(statuses) != 1:
+    # a wrapper script and its solver may both print the same status line
+    if len(set(statuses)) != 1:
         raise ValidationError(
             f"expected exactly one result status, found {len(statuses)}"
+            + (f" ({', '.join(sorted(set(statuses)))})" if statuses else "")
         )
     return statuses[0], model
 
@@ -149,14 +154,14 @@ def _text_proof_steps(data: bytes) -> Iterator[tuple[bool, tuple[int, ...]]]:
         raise ValidationError("proof is neither text DRUP nor binary DRAT") from exc
     for line_number, raw_line in enumerate(text.splitlines(), 1):
         line = raw_line.strip()
-        if not line or line.startswith("c"):
-            continue
+        if not line or line.startswith("c") or line.startswith("o "):
+            continue   # comments, and the "o proof DRAT" header written by riss
         deletion = line.startswith("d ")
         fields = line[1:].split() if deletion else line.split()
         try:
             literals = [int(token) for token in fields]
         except ValueError as exc:
-            raise ValidationError(f"invalid proof line {line_number}") from exc
+            raise ValidationError(f"invalid proof line {line_number}: {line[:60]!r}") from exc
         if not literals or literals[-1] != 0:
             raise ValidationError(f"unterminated proof clause at line {line_number}")
         yield deletion, tuple(literals[:-1])
@@ -297,6 +302,7 @@ def validate_drup_proof(cnf_path: str | Path, proof_path: str | Path) -> None:
     if not proof_data:
         raise ValidationError("proof file is empty")
 
+    # binary DRAT literals are zero-terminated varints, so a NUL byte marks a binary proof
     steps = (
         _binary_proof_steps(proof_data)
         if b"\x00" in proof_data

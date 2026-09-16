@@ -1017,7 +1017,7 @@ def test_images_in_workspace(args, tests_dir):
     source_tests_dir = Path("tests").resolve()
     # incomplete solvers (local search) are tested on an easy satisfiable
     # instance and skip the UNSAT checks, which they cannot pass
-    easy_file = "quinn.cnf"
+    easy_file = "random3sat-20.cnf"   # uniform 3-SAT: some local search solvers only accept exact k-SAT
     filenames = [args.file, f"{args.file}.gz", args.unsat_file, easy_file, f"{easy_file}.gz"]
     for filename in filenames:
         source = source_tests_dir / filename
