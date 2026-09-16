@@ -2,6 +2,8 @@
   "asat": {
     "status": "ok",
     "name": "Asat",
+    "authors": "Olivier Dubois, Pascal André, Yacine Boufkhad, Jacques Carlier",
+    "authors_source": "SAT-Ex site (lri.fr/~simon/satex): prover list with references in the SAT-Ex position paper, 2001",
     "call": "Asat",
     "gz": false,
     "args": [
@@ -11,24 +13,32 @@
   "csat": {
     "status": "ok",
     "name": "csat",
+    "authors": "Olivier Dubois, Pascal André, Yacine Boufkhad, Jacques Carlier",
+    "authors_source": "SAT-Ex site (lri.fr/~simon/satex): prover list with references in the SAT-Ex position paper, 2001",
     "call": "csat",
     "gz": false,
     "args": [
-      "FILECNF", 1
+      "FILECNF",
+      1
     ]
   },
   "dr": {
     "status": "ok",
     "name": "dr",
+    "authors": "Rina Dechter, Irina Rish",
+    "authors_source": "SAT-Ex site (lri.fr/~simon/satex): prover list with references in the SAT-Ex position paper, 2001",
     "call": "dr",
     "gz": false,
     "args": [
-      1, "FILECNF"
+      1,
+      "FILECNF"
     ]
   },
   "eqsatz": {
     "status": "ok",
     "name": "eqsatz",
+    "authors": "Chu Min Li",
+    "authors_source": "SAT-Ex site (lri.fr/~simon/satex): prover list with references in the SAT-Ex position paper, 2001",
     "call": "eqsatz",
     "gz": false,
     "args": [
@@ -38,6 +48,8 @@
   "heerhugo": {
     "status": "ok",
     "name": "heerhugo",
+    "authors": "Jan Friso Groote, Joost P. Warners",
+    "authors_source": "SAT-Ex site (lri.fr/~simon/satex): prover list with references in the SAT-Ex position paper, 2001",
     "call": "heerhugo",
     "gz": false,
     "args": [
@@ -47,6 +59,8 @@
   "modoc": {
     "status": "ok",
     "name": "modoc",
+    "authors": "Allen Van Gelder, Fumiaki Kamiya",
+    "authors_source": "SAT-Ex site (lri.fr/~simon/satex): prover list with references in the SAT-Ex position paper, 2001",
     "call": "modoc",
     "gz": false,
     "args": [
@@ -56,6 +70,8 @@
   "modoc-2.0": {
     "status": "ok",
     "name": "modoc-2.0",
+    "authors": "Allen Van Gelder, Fumiaki Kamiya",
+    "authors_source": "SAT-Ex site (lri.fr/~simon/satex): prover list with references in the SAT-Ex position paper, 2001",
     "call": "modoc-2.0",
     "gz": false,
     "args": [
@@ -65,6 +81,8 @@
   "nsat": {
     "status": "ok",
     "name": "nsat",
+    "authors": "João Marques-Silva, Karem A. Sakallah",
+    "authors_source": "SAT-Ex site (lri.fr/~simon/satex): prover list with references in the SAT-Ex position paper, 2001",
     "call": "nsat",
     "gz": false,
     "args": [
@@ -74,28 +92,37 @@
   "ntab": {
     "status": "ok",
     "name": "ntab",
+    "authors": "James M. Crawford, Larry D. Auton",
+    "authors_source": "SAT-Ex site (lri.fr/~simon/satex): prover list with references in the SAT-Ex position paper, 2001",
     "call": "ntab",
     "gz": false,
     "args": [
-      "-f", "FILECNF"
+      "-f",
+      "FILECNF"
     ]
   },
   "ntab_back": {
     "status": "ok",
     "name": "ntab_back",
+    "authors": "James M. Crawford, Larry D. Auton",
+    "authors_source": "SAT-Ex site (lri.fr/~simon/satex): prover list with references in the SAT-Ex position paper, 2001",
     "call": "ntab_back",
     "gz": false,
     "args": [
-      "-f", "FILECNF"
+      "-f",
+      "FILECNF"
     ]
   },
   "ntab_back2": {
     "status": "ok",
     "name": "ntab_back2",
+    "authors": "James M. Crawford, Larry D. Auton",
+    "authors_source": "SAT-Ex site (lri.fr/~simon/satex): prover list with references in the SAT-Ex position paper, 2001",
     "call": "ntab_back2",
     "gz": false,
     "args": [
-      "-f", "FILECNF"
+      "-f",
+      "FILECNF"
     ]
   },
   "oksolver": {
@@ -110,24 +137,32 @@
   "posit": {
     "status": "ok",
     "name": "posit",
+    "authors": "Jon William Freeman",
+    "authors_source": "SAT-Ex site (lri.fr/~simon/satex): prover list with references in the SAT-Ex position paper, 2001",
     "call": "posit",
     "gz": false,
     "args": [
-      "-f", "FILECNF"
+      "-f",
+      "FILECNF"
     ]
   },
   "relsat": {
     "status": "ok",
     "name": "relsat",
+    "authors": "Roberto J. Bayardo, Robert Schrag",
+    "authors_source": "SAT-Ex site (lri.fr/~simon/satex): prover list with references in the SAT-Ex position paper, 2001",
     "call": "relsat",
     "gz": false,
     "args": [
-      1, "FILECNF"
+      1,
+      "FILECNF"
     ]
   },
   "relsat-200": {
     "status": "ok",
     "name": "relsat-200",
+    "authors": "Roberto J. Bayardo, Robert Schrag",
+    "authors_source": "SAT-Ex site (lri.fr/~simon/satex): prover list with references in the SAT-Ex position paper, 2001",
     "call": "relsat-200",
     "gz": false,
     "args": [
@@ -137,6 +172,8 @@
   "sat-grasp": {
     "status": "ok",
     "name": "sat-grasp",
+    "authors": "João Marques-Silva, Karem A. Sakallah",
+    "authors_source": "SAT-Ex site (lri.fr/~simon/satex): prover list with references in the SAT-Ex position paper, 2001",
     "call": "sat-grasp",
     "gz": false,
     "args": [
@@ -146,6 +183,8 @@
   "sato": {
     "status": "ok",
     "name": "sato",
+    "authors": "Hantao Zhang",
+    "authors_source": "SAT-Ex site (lri.fr/~simon/satex): prover list with references in the SAT-Ex position paper, 2001",
     "call": "sato",
     "gz": false,
     "args": [
@@ -155,6 +194,8 @@
   "sato-3.2.1": {
     "status": "ok",
     "name": "sato-3.2.1",
+    "authors": "Hantao Zhang",
+    "authors_source": "SAT-Ex site (lri.fr/~simon/satex): prover list with references in the SAT-Ex position paper, 2001",
     "call": "sato-3.2.1",
     "gz": false,
     "args": [
@@ -164,6 +205,8 @@
   "satz": {
     "status": "ok",
     "name": "satz",
+    "authors": "Chu Min Li, Anbulagan",
+    "authors_source": "SAT-Ex site (lri.fr/~simon/satex): prover list with references in the SAT-Ex position paper, 2001",
     "call": "satz",
     "gz": false,
     "args": [
@@ -173,6 +216,8 @@
   "satz-213": {
     "status": "ok",
     "name": "satz-213",
+    "authors": "Chu Min Li, Anbulagan",
+    "authors_source": "SAT-Ex site (lri.fr/~simon/satex): prover list with references in the SAT-Ex position paper, 2001",
     "call": "satz-213",
     "gz": false,
     "args": [
@@ -182,6 +227,8 @@
   "satz-215": {
     "status": "ok",
     "name": "satz-215",
+    "authors": "Chu Min Li, Anbulagan",
+    "authors_source": "SAT-Ex site (lri.fr/~simon/satex): prover list with references in the SAT-Ex position paper, 2001",
     "call": "satz-215",
     "gz": false,
     "args": [
@@ -200,6 +247,8 @@
   "zres": {
     "status": "ok",
     "name": "zres",
+    "authors": "Philippe Chatalic, Laurent Simon",
+    "authors_source": "SAT-Ex site (lri.fr/~simon/satex): prover list with references in the SAT-Ex position paper, 2001",
     "call": "zres",
     "gz": false,
     "args": [
