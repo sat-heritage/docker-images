@@ -1,6 +1,20 @@
 {
-  "generated": "2026-09-16T16:20:51Z",
+  "generated": "2026-09-16T17:19:07Z",
   "images": {
+    "2clseq:2002": {
+      "build": {
+        "docker-engine": {
+          "status": "ok"
+        },
+        "source-download": {
+          "detail": "HTTP 504",
+          "status": "fail"
+        }
+      },
+      "date": "2026-09-16T17:01:03Z",
+      "run": "20260916T170103Z",
+      "verdict": "source-unavailable"
+    },
     "abcd_para18:2018": {
       "build": {
         "docker-engine": {
@@ -371,50 +385,44 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-16T12:17:24Z",
-      "run": "20260916T121724Z",
+      "date": "2026-09-16T16:37:00Z",
+      "run": "20260916T163700Z",
       "tests": {
         "launch": {
           "status": "ok"
         },
         "sat-gzip-model": {
-          "detail": "timeout",
-          "status": "skip"
+          "status": "ok"
         },
         "sat-gzip-result": {
-          "detail": "timeout",
-          "status": "skip"
+          "detail": "SAT",
+          "status": "ok"
         },
         "sat-gzip-termination": {
-          "detail": "TIMEOUT",
-          "status": "fail"
+          "detail": "SAT",
+          "status": "ok"
         },
         "sat-model": {
-          "detail": "timeout",
-          "status": "skip"
+          "status": "ok"
         },
         "sat-result": {
-          "detail": "timeout",
-          "status": "skip"
+          "detail": "SAT",
+          "status": "ok"
         },
         "sat-termination": {
-          "detail": "TIMEOUT",
-          "status": "fail"
+          "detail": "SAT",
+          "status": "ok"
         },
         "unsat-proof": {
-          "detail": "unsupported",
+          "detail": "incomplete solver",
           "status": "skip"
         },
         "unsat-result": {
-          "detail": "timeout",
+          "detail": "incomplete solver",
           "status": "skip"
-        },
-        "unsat-termination": {
-          "detail": "TIMEOUT",
-          "status": "fail"
         }
       },
-      "verdict": "runs"
+      "verdict": "verified"
     },
     "adaptg2wsat0:2007": {
       "build": {
@@ -449,50 +457,44 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-16T12:17:24Z",
-      "run": "20260916T121724Z",
+      "date": "2026-09-16T16:39:34Z",
+      "run": "20260916T163934Z",
       "tests": {
         "launch": {
           "status": "ok"
         },
         "sat-gzip-model": {
-          "detail": "timeout",
-          "status": "skip"
+          "status": "ok"
         },
         "sat-gzip-result": {
-          "detail": "timeout",
-          "status": "skip"
+          "detail": "SAT",
+          "status": "ok"
         },
         "sat-gzip-termination": {
-          "detail": "TIMEOUT",
-          "status": "fail"
+          "detail": "SAT",
+          "status": "ok"
         },
         "sat-model": {
-          "detail": "timeout",
-          "status": "skip"
+          "status": "ok"
         },
         "sat-result": {
-          "detail": "timeout",
-          "status": "skip"
+          "detail": "SAT",
+          "status": "ok"
         },
         "sat-termination": {
-          "detail": "TIMEOUT",
-          "status": "fail"
+          "detail": "SAT",
+          "status": "ok"
         },
         "unsat-proof": {
-          "detail": "unsupported",
+          "detail": "incomplete solver",
           "status": "skip"
         },
         "unsat-result": {
-          "detail": "timeout",
+          "detail": "incomplete solver",
           "status": "skip"
-        },
-        "unsat-termination": {
-          "detail": "TIMEOUT",
-          "status": "fail"
         }
       },
-      "verdict": "runs"
+      "verdict": "verified"
     },
     "adaptg2wsat2011:2011": {
       "build": {
@@ -599,50 +601,44 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-16T12:17:24Z",
-      "run": "20260916T121724Z",
+      "date": "2026-09-16T16:28:33Z",
+      "run": "20260916T162833Z",
       "tests": {
         "launch": {
           "status": "ok"
         },
         "sat-gzip-model": {
-          "detail": "timeout",
-          "status": "skip"
+          "status": "ok"
         },
         "sat-gzip-result": {
-          "detail": "timeout",
-          "status": "skip"
+          "detail": "SAT",
+          "status": "ok"
         },
         "sat-gzip-termination": {
-          "detail": "TIMEOUT",
-          "status": "fail"
+          "detail": "SAT",
+          "status": "ok"
         },
         "sat-model": {
-          "detail": "timeout",
-          "status": "skip"
+          "status": "ok"
         },
         "sat-result": {
-          "detail": "timeout",
-          "status": "skip"
+          "detail": "SAT",
+          "status": "ok"
         },
         "sat-termination": {
-          "detail": "TIMEOUT",
-          "status": "fail"
+          "detail": "SAT",
+          "status": "ok"
         },
         "unsat-proof": {
-          "detail": "unsupported",
+          "detail": "incomplete solver",
           "status": "skip"
         },
         "unsat-result": {
-          "detail": "timeout",
+          "detail": "incomplete solver",
           "status": "skip"
-        },
-        "unsat-termination": {
-          "detail": "TIMEOUT",
-          "status": "fail"
         }
       },
-      "verdict": "runs"
+      "verdict": "verified"
     },
     "adaptg2wsat:2009": {
       "build": {
@@ -749,50 +745,44 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-16T12:17:24Z",
-      "run": "20260916T121724Z",
+      "date": "2026-09-16T16:41:52Z",
+      "run": "20260916T164152Z",
       "tests": {
         "launch": {
           "status": "ok"
         },
         "sat-gzip-model": {
-          "detail": "timeout",
-          "status": "skip"
+          "status": "ok"
         },
         "sat-gzip-result": {
-          "detail": "timeout",
-          "status": "skip"
+          "detail": "SAT",
+          "status": "ok"
         },
         "sat-gzip-termination": {
-          "detail": "TIMEOUT",
-          "status": "fail"
+          "detail": "SAT",
+          "status": "ok"
         },
         "sat-model": {
-          "detail": "timeout",
-          "status": "skip"
+          "status": "ok"
         },
         "sat-result": {
-          "detail": "timeout",
-          "status": "skip"
+          "detail": "SAT",
+          "status": "ok"
         },
         "sat-termination": {
-          "detail": "TIMEOUT",
-          "status": "fail"
+          "detail": "SAT",
+          "status": "ok"
         },
         "unsat-proof": {
-          "detail": "unsupported",
+          "detail": "incomplete solver",
           "status": "skip"
         },
         "unsat-result": {
-          "detail": "timeout",
+          "detail": "incomplete solver",
           "status": "skip"
-        },
-        "unsat-termination": {
-          "detail": "TIMEOUT",
-          "status": "fail"
         }
       },
-      "verdict": "runs"
+      "verdict": "verified"
     },
     "adaptnovelty:2004": {
       "build": {
@@ -976,50 +966,44 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-16T12:17:24Z",
-      "run": "20260916T121724Z",
+      "date": "2026-09-16T16:44:25Z",
+      "run": "20260916T164425Z",
       "tests": {
         "launch": {
           "status": "ok"
         },
         "sat-gzip-model": {
-          "detail": "timeout",
-          "status": "skip"
+          "status": "ok"
         },
         "sat-gzip-result": {
-          "detail": "timeout",
-          "status": "skip"
+          "detail": "SAT",
+          "status": "ok"
         },
         "sat-gzip-termination": {
-          "detail": "TIMEOUT",
-          "status": "fail"
+          "detail": "SAT",
+          "status": "ok"
         },
         "sat-model": {
-          "detail": "timeout",
-          "status": "skip"
+          "status": "ok"
         },
         "sat-result": {
-          "detail": "timeout",
-          "status": "skip"
+          "detail": "SAT",
+          "status": "ok"
         },
         "sat-termination": {
-          "detail": "TIMEOUT",
-          "status": "fail"
+          "detail": "SAT",
+          "status": "ok"
         },
         "unsat-proof": {
-          "detail": "unsupported",
+          "detail": "incomplete solver",
           "status": "skip"
         },
         "unsat-result": {
-          "detail": "timeout",
+          "detail": "incomplete solver",
           "status": "skip"
-        },
-        "unsat-termination": {
-          "detail": "TIMEOUT",
-          "status": "fail"
         }
       },
-      "verdict": "runs"
+      "verdict": "verified"
     },
     "ae-kissat2025-bump:2025": {
       "build": {
@@ -1210,6 +1194,20 @@
       "run": "20260914T135323Z",
       "verdict": "built"
     },
+    "amvo:2003": {
+      "build": {
+        "docker-engine": {
+          "status": "ok"
+        },
+        "source-download": {
+          "detail": "HTTP 504",
+          "status": "fail"
+        }
+      },
+      "date": "2026-09-16T16:44:56Z",
+      "run": "20260916T164456Z",
+      "verdict": "source-unavailable"
+    },
     "asat:2000": {
       "build": {
         "build-environment": {
@@ -1243,9 +1241,50 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-12T15:07:56Z",
-      "run": "20260912T150756Z",
-      "verdict": "built"
+      "date": "2026-09-16T17:14:40Z",
+      "run": "20260916T171440Z",
+      "tests": {
+        "launch": {
+          "status": "ok"
+        },
+        "sat-gzip-model": {
+          "detail": "invalid result",
+          "status": "skip"
+        },
+        "sat-gzip-result": {
+          "detail": "expected exactly one result status, found 0",
+          "status": "fail"
+        },
+        "sat-gzip-termination": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-model": {
+          "detail": "invalid result",
+          "status": "skip"
+        },
+        "sat-result": {
+          "detail": "expected exactly one result status, found 0",
+          "status": "fail"
+        },
+        "sat-termination": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "unsat-proof": {
+          "detail": "unsupported",
+          "status": "skip"
+        },
+        "unsat-result": {
+          "detail": "expected exactly one result status, found 0",
+          "status": "fail"
+        },
+        "unsat-termination": {
+          "detail": "UNSAT",
+          "status": "ok"
+        }
+      },
+      "verdict": "runs"
     },
     "balancedz:2014": {
       "build": {
@@ -1479,6 +1518,48 @@
         }
       },
       "verdict": "verified"
+    },
+    "berkmin561:2003": {
+      "build": {
+        "docker-engine": {
+          "status": "ok"
+        },
+        "source-download": {
+          "detail": "HTTP 504",
+          "status": "fail"
+        }
+      },
+      "date": "2026-09-16T16:44:56Z",
+      "run": "20260916T164456Z",
+      "verdict": "source-unavailable"
+    },
+    "berkmin62:2003": {
+      "build": {
+        "docker-engine": {
+          "status": "ok"
+        },
+        "source-download": {
+          "detail": "HTTP 504",
+          "status": "fail"
+        }
+      },
+      "date": "2026-09-16T16:44:56Z",
+      "run": "20260916T164456Z",
+      "verdict": "source-unavailable"
+    },
+    "berkmin:2002": {
+      "build": {
+        "docker-engine": {
+          "status": "ok"
+        },
+        "source-download": {
+          "detail": "HTTP 504",
+          "status": "fail"
+        }
+      },
+      "date": "2026-09-16T17:01:03Z",
+      "run": "20260916T170103Z",
+      "verdict": "source-unavailable"
     },
     "bfs-glucose:2014": {
       "build": {
@@ -1853,6 +1934,34 @@
         }
       },
       "verdict": "verified"
+    },
+    "blindsat:2002": {
+      "build": {
+        "docker-engine": {
+          "status": "ok"
+        },
+        "source-download": {
+          "detail": "HTTP 504",
+          "status": "fail"
+        }
+      },
+      "date": "2026-09-16T17:01:03Z",
+      "run": "20260916T170103Z",
+      "verdict": "source-unavailable"
+    },
+    "bmsat:2003": {
+      "build": {
+        "docker-engine": {
+          "status": "ok"
+        },
+        "source-download": {
+          "detail": "HTTP 504",
+          "status": "fail"
+        }
+      },
+      "date": "2026-09-16T16:44:56Z",
+      "run": "20260916T164456Z",
+      "verdict": "source-unavailable"
     },
     "borg-sat-11.03.02-par-industrial:2011": {
       "build": {
@@ -7326,6 +7435,20 @@
       },
       "verdict": "verified"
     },
+    "compsat:2003": {
+      "build": {
+        "docker-engine": {
+          "status": "ok"
+        },
+        "source-download": {
+          "detail": "HTTP 504",
+          "status": "fail"
+        }
+      },
+      "date": "2026-09-16T16:44:56Z",
+      "run": "20260916T164456Z",
+      "verdict": "source-unavailable"
+    },
     "compsat:2004": {
       "build": {
         "builder-base-image": {
@@ -8401,38 +8524,17 @@
     },
     "csat:2000": {
       "build": {
-        "builder-base-image": {
-          "status": "ok"
-        },
-        "compile": {
-          "detail": "binary distribution",
-          "status": "skip"
-        },
         "docker-engine": {
           "status": "ok"
         },
-        "image-assemble": {
-          "status": "ok"
-        },
-        "runtime-base": {
-          "status": "ok"
-        },
-        "runtime-base-image": {
-          "status": "ok"
-        },
-        "runtime-dependencies": {
-          "status": "ok"
-        },
         "source-download": {
-          "status": "ok"
-        },
-        "source-extract": {
-          "status": "ok"
+          "detail": "HTTP 504",
+          "status": "fail"
         }
       },
-      "date": "2026-09-12T15:07:56Z",
-      "run": "20260912T150756Z",
-      "verdict": "built"
+      "date": "2026-09-16T17:14:40Z",
+      "run": "20260916T171440Z",
+      "verdict": "source-unavailable"
     },
     "csat:2009": {
       "build": {
@@ -9739,6 +9841,48 @@
       },
       "verdict": "verified"
     },
+    "dlmsat1:2002": {
+      "build": {
+        "docker-engine": {
+          "status": "ok"
+        },
+        "source-download": {
+          "detail": "HTTP 504",
+          "status": "fail"
+        }
+      },
+      "date": "2026-09-16T17:01:03Z",
+      "run": "20260916T170103Z",
+      "verdict": "source-unavailable"
+    },
+    "dlmsat2:2002": {
+      "build": {
+        "docker-engine": {
+          "status": "ok"
+        },
+        "source-download": {
+          "detail": "HTTP 504",
+          "status": "fail"
+        }
+      },
+      "date": "2026-09-16T17:01:03Z",
+      "run": "20260916T170103Z",
+      "verdict": "source-unavailable"
+    },
+    "dlmsat3:2002": {
+      "build": {
+        "docker-engine": {
+          "status": "ok"
+        },
+        "source-download": {
+          "detail": "HTTP 504",
+          "status": "fail"
+        }
+      },
+      "date": "2026-09-16T17:01:03Z",
+      "run": "20260916T170103Z",
+      "verdict": "source-unavailable"
+    },
     "doug_hains:2013": {
       "build": {
         "build-environment": {
@@ -9848,8 +9992,8 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-12T15:07:56Z",
-      "run": "20260912T150756Z",
+      "date": "2026-09-16T17:14:40Z",
+      "run": "20260916T171440Z",
       "verdict": "built"
     },
     "duriansat:2020": {
@@ -11951,6 +12095,20 @@
       },
       "verdict": "verified"
     },
+    "farseer:2003": {
+      "build": {
+        "docker-engine": {
+          "status": "ok"
+        },
+        "source-download": {
+          "detail": "HTTP 504",
+          "status": "fail"
+        }
+      },
+      "date": "2026-09-16T16:44:56Z",
+      "run": "20260916T164456Z",
+      "verdict": "source-unavailable"
+    },
     "fh:2007": {
       "build": {
         "build-environment": {
@@ -11984,50 +12142,58 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-16T12:17:24Z",
-      "run": "20260916T121724Z",
+      "date": "2026-09-16T17:07:51Z",
+      "run": "20260916T170751Z",
       "tests": {
         "launch": {
           "status": "ok"
         },
         "sat-gzip-model": {
-          "detail": "timeout",
-          "status": "skip"
+          "status": "ok"
         },
         "sat-gzip-result": {
-          "detail": "timeout",
-          "status": "skip"
+          "detail": "SAT",
+          "status": "ok"
         },
         "sat-gzip-termination": {
-          "detail": "TIMEOUT",
-          "status": "fail"
+          "detail": "SAT",
+          "status": "ok"
         },
         "sat-model": {
-          "detail": "timeout",
-          "status": "skip"
+          "status": "ok"
         },
         "sat-result": {
-          "detail": "timeout",
-          "status": "skip"
+          "detail": "SAT",
+          "status": "ok"
         },
         "sat-termination": {
-          "detail": "TIMEOUT",
-          "status": "fail"
+          "detail": "SAT",
+          "status": "ok"
         },
         "unsat-proof": {
-          "detail": "unsupported",
+          "detail": "incomplete solver",
           "status": "skip"
         },
         "unsat-result": {
-          "detail": "timeout",
+          "detail": "incomplete solver",
           "status": "skip"
+        }
+      },
+      "verdict": "verified"
+    },
+    "forklift:2003": {
+      "build": {
+        "docker-engine": {
+          "status": "ok"
         },
-        "unsat-termination": {
-          "detail": "TIMEOUT",
+        "source-download": {
+          "detail": "HTTP 504",
           "status": "fail"
         }
       },
-      "verdict": "runs"
+      "date": "2026-09-16T16:44:56Z",
+      "run": "20260916T164456Z",
+      "verdict": "source-unavailable"
     },
     "forklift:2004": {
       "build": {
@@ -12399,6 +12565,20 @@
       },
       "verdict": "verified"
     },
+    "funex:2003": {
+      "build": {
+        "docker-engine": {
+          "status": "ok"
+        },
+        "source-download": {
+          "detail": "HTTP 504",
+          "status": "fail"
+        }
+      },
+      "date": "2026-09-16T16:44:56Z",
+      "run": "20260916T164456Z",
+      "verdict": "source-unavailable"
+    },
     "funex:2004": {
       "build": {
         "builder-base-image": {
@@ -12494,6 +12674,20 @@
         }
       },
       "verdict": "runs"
+    },
+    "ga:2002": {
+      "build": {
+        "docker-engine": {
+          "status": "ok"
+        },
+        "source-download": {
+          "detail": "HTTP 504",
+          "status": "fail"
+        }
+      },
+      "date": "2026-09-16T17:01:03Z",
+      "run": "20260916T170103Z",
+      "verdict": "source-unavailable"
     },
     "gasat:2004": {
       "build": {
@@ -16742,50 +16936,44 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-16T12:17:24Z",
-      "run": "20260916T121724Z",
+      "date": "2026-09-16T17:05:43Z",
+      "run": "20260916T170543Z",
       "tests": {
         "launch": {
           "status": "ok"
         },
         "sat-gzip-model": {
-          "detail": "timeout",
-          "status": "skip"
+          "status": "ok"
         },
         "sat-gzip-result": {
-          "detail": "timeout",
-          "status": "skip"
+          "detail": "SAT",
+          "status": "ok"
         },
         "sat-gzip-termination": {
-          "detail": "TIMEOUT",
-          "status": "fail"
+          "detail": "SAT",
+          "status": "ok"
         },
         "sat-model": {
-          "detail": "timeout",
-          "status": "skip"
+          "status": "ok"
         },
         "sat-result": {
-          "detail": "timeout",
-          "status": "skip"
+          "detail": "SAT",
+          "status": "ok"
         },
         "sat-termination": {
-          "detail": "TIMEOUT",
-          "status": "fail"
+          "detail": "SAT",
+          "status": "ok"
         },
         "unsat-proof": {
-          "detail": "unsupported",
+          "detail": "incomplete solver",
           "status": "skip"
         },
         "unsat-result": {
-          "detail": "timeout",
+          "detail": "incomplete solver",
           "status": "skip"
-        },
-        "unsat-termination": {
-          "detail": "TIMEOUT",
-          "status": "fail"
         }
       },
-      "verdict": "runs"
+      "verdict": "verified"
     },
     "gnovelty-plus:2009": {
       "build": {
@@ -18126,50 +18314,44 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-16T12:17:24Z",
-      "run": "20260916T121724Z",
+      "date": "2026-09-16T16:55:18Z",
+      "run": "20260916T165518Z",
       "tests": {
         "launch": {
           "status": "ok"
         },
         "sat-gzip-model": {
-          "detail": "timeout",
-          "status": "skip"
+          "status": "ok"
         },
         "sat-gzip-result": {
-          "detail": "timeout",
-          "status": "skip"
+          "detail": "SAT",
+          "status": "ok"
         },
         "sat-gzip-termination": {
-          "detail": "TIMEOUT",
-          "status": "fail"
+          "detail": "SAT",
+          "status": "ok"
         },
         "sat-model": {
-          "detail": "timeout",
-          "status": "skip"
+          "status": "ok"
         },
         "sat-result": {
-          "detail": "timeout",
-          "status": "skip"
+          "detail": "SAT",
+          "status": "ok"
         },
         "sat-termination": {
-          "detail": "TIMEOUT",
-          "status": "fail"
+          "detail": "SAT",
+          "status": "ok"
         },
         "unsat-proof": {
-          "detail": "unsupported",
+          "detail": "incomplete solver",
           "status": "skip"
         },
         "unsat-result": {
-          "detail": "timeout",
+          "detail": "incomplete solver",
           "status": "skip"
-        },
-        "unsat-termination": {
-          "detail": "TIMEOUT",
-          "status": "fail"
         }
       },
-      "verdict": "runs"
+      "verdict": "verified"
     },
     "hybrid2:2009": {
       "build": {
@@ -19131,6 +19313,48 @@
       },
       "verdict": "runs"
     },
+    "jerusat1.1.b:2003": {
+      "build": {
+        "docker-engine": {
+          "status": "ok"
+        },
+        "source-download": {
+          "detail": "HTTP 504",
+          "status": "fail"
+        }
+      },
+      "date": "2026-09-16T16:44:56Z",
+      "run": "20260916T164456Z",
+      "verdict": "source-unavailable"
+    },
+    "jerusat1.1.c:2003": {
+      "build": {
+        "docker-engine": {
+          "status": "ok"
+        },
+        "source-download": {
+          "detail": "HTTP 504",
+          "status": "fail"
+        }
+      },
+      "date": "2026-09-16T16:44:56Z",
+      "run": "20260916T164456Z",
+      "verdict": "source-unavailable"
+    },
+    "jerusat1.1:2003": {
+      "build": {
+        "docker-engine": {
+          "status": "ok"
+        },
+        "source-download": {
+          "detail": "HTTP 504",
+          "status": "fail"
+        }
+      },
+      "date": "2026-09-16T16:44:56Z",
+      "run": "20260916T164456Z",
+      "verdict": "source-unavailable"
+    },
     "jerusat1.31-a:2005": {
       "build": {
         "builder-base-image": {
@@ -19291,6 +19515,20 @@
       },
       "date": "2026-09-16T15:12:40Z",
       "run": "20260916T151240Z",
+      "verdict": "source-unavailable"
+    },
+    "jquest2.jar:2003": {
+      "build": {
+        "docker-engine": {
+          "status": "ok"
+        },
+        "source-download": {
+          "detail": "HTTP 504",
+          "status": "fail"
+        }
+      },
+      "date": "2026-09-16T16:44:56Z",
+      "run": "20260916T164456Z",
       "verdict": "source-unavailable"
     },
     "kcnfs-2004:2005": {
@@ -19594,6 +19832,20 @@
         }
       },
       "verdict": "verified"
+    },
+    "kcnfs:2003": {
+      "build": {
+        "docker-engine": {
+          "status": "ok"
+        },
+        "source-download": {
+          "detail": "HTTP 504",
+          "status": "fail"
+        }
+      },
+      "date": "2026-09-16T16:44:56Z",
+      "run": "20260916T164456Z",
+      "verdict": "source-unavailable"
     },
     "kcnfs:2004": {
       "build": {
@@ -22990,6 +23242,34 @@
       },
       "verdict": "verified"
     },
+    "limmat:2002": {
+      "build": {
+        "docker-engine": {
+          "status": "ok"
+        },
+        "source-download": {
+          "detail": "HTTP 504",
+          "status": "fail"
+        }
+      },
+      "date": "2026-09-16T17:01:03Z",
+      "run": "20260916T170103Z",
+      "verdict": "source-unavailable"
+    },
+    "limmat:2003": {
+      "build": {
+        "docker-engine": {
+          "status": "ok"
+        },
+        "source-download": {
+          "detail": "HTTP 504",
+          "status": "fail"
+        }
+      },
+      "date": "2026-09-16T16:44:56Z",
+      "run": "20260916T164456Z",
+      "verdict": "source-unavailable"
+    },
     "lingeling-bbe:2017": {
       "build": {
         "build-environment": {
@@ -23695,6 +23975,34 @@
         }
       },
       "verdict": "verified"
+    },
+    "lsat:2002": {
+      "build": {
+        "docker-engine": {
+          "status": "ok"
+        },
+        "source-download": {
+          "detail": "HTTP 504",
+          "status": "fail"
+        }
+      },
+      "date": "2026-09-16T17:01:03Z",
+      "run": "20260916T170103Z",
+      "verdict": "source-unavailable"
+    },
+    "lsatv1.1:2003": {
+      "build": {
+        "docker-engine": {
+          "status": "ok"
+        },
+        "source-download": {
+          "detail": "HTTP 504",
+          "status": "fail"
+        }
+      },
+      "date": "2026-09-16T16:44:56Z",
+      "run": "20260916T164456Z",
+      "verdict": "source-unavailable"
     },
     "lsatv1.1:2004": {
       "build": {
@@ -29589,6 +29897,48 @@
       },
       "verdict": "verified"
     },
+    "march-sp:2003": {
+      "build": {
+        "docker-engine": {
+          "status": "ok"
+        },
+        "source-download": {
+          "detail": "HTTP 504",
+          "status": "fail"
+        }
+      },
+      "date": "2026-09-16T16:44:56Z",
+      "run": "20260916T164456Z",
+      "verdict": "source-unavailable"
+    },
+    "march-tt:2003": {
+      "build": {
+        "docker-engine": {
+          "status": "ok"
+        },
+        "source-download": {
+          "detail": "HTTP 504",
+          "status": "fail"
+        }
+      },
+      "date": "2026-09-16T16:44:56Z",
+      "run": "20260916T164456Z",
+      "verdict": "source-unavailable"
+    },
+    "march-xq:2003": {
+      "build": {
+        "docker-engine": {
+          "status": "ok"
+        },
+        "source-download": {
+          "detail": "HTTP 504",
+          "status": "fail"
+        }
+      },
+      "date": "2026-09-16T16:44:56Z",
+      "run": "20260916T164456Z",
+      "verdict": "source-unavailable"
+    },
     "march_br-unsat:2013": {
       "build": {
         "build-environment": {
@@ -30120,6 +30470,104 @@
         }
       },
       "verdict": "verified"
+    },
+    "marchi-hc:2002": {
+      "build": {
+        "docker-engine": {
+          "status": "ok"
+        },
+        "source-download": {
+          "detail": "HTTP 504",
+          "status": "fail"
+        }
+      },
+      "date": "2026-09-16T17:01:03Z",
+      "run": "20260916T170103Z",
+      "verdict": "source-unavailable"
+    },
+    "marchi:2002": {
+      "build": {
+        "docker-engine": {
+          "status": "ok"
+        },
+        "source-download": {
+          "detail": "HTTP 504",
+          "status": "fail"
+        }
+      },
+      "date": "2026-09-16T17:01:03Z",
+      "run": "20260916T170103Z",
+      "verdict": "source-unavailable"
+    },
+    "marchii-hc:2002": {
+      "build": {
+        "docker-engine": {
+          "status": "ok"
+        },
+        "source-download": {
+          "detail": "HTTP 504",
+          "status": "fail"
+        }
+      },
+      "date": "2026-09-16T17:01:03Z",
+      "run": "20260916T170103Z",
+      "verdict": "source-unavailable"
+    },
+    "marchii:2002": {
+      "build": {
+        "docker-engine": {
+          "status": "ok"
+        },
+        "source-download": {
+          "detail": "HTTP 504",
+          "status": "fail"
+        }
+      },
+      "date": "2026-09-16T17:01:03Z",
+      "run": "20260916T170103Z",
+      "verdict": "source-unavailable"
+    },
+    "marchiise-hc:2002": {
+      "build": {
+        "docker-engine": {
+          "status": "ok"
+        },
+        "source-download": {
+          "detail": "HTTP 504",
+          "status": "fail"
+        }
+      },
+      "date": "2026-09-16T17:01:03Z",
+      "run": "20260916T170103Z",
+      "verdict": "source-unavailable"
+    },
+    "marchiise:2002": {
+      "build": {
+        "docker-engine": {
+          "status": "ok"
+        },
+        "source-download": {
+          "detail": "HTTP 504",
+          "status": "fail"
+        }
+      },
+      "date": "2026-09-16T17:01:03Z",
+      "run": "20260916T170103Z",
+      "verdict": "source-unavailable"
+    },
+    "marchise:2002": {
+      "build": {
+        "docker-engine": {
+          "status": "ok"
+        },
+        "source-download": {
+          "detail": "HTTP 504",
+          "status": "fail"
+        }
+      },
+      "date": "2026-09-16T17:01:03Z",
+      "run": "20260916T170103Z",
+      "verdict": "source-unavailable"
     },
     "mergesat-4.0-rc1:2022": {
       "build": {
@@ -33181,6 +33629,20 @@
       "run": "20260912T150756Z",
       "verdict": "built"
     },
+    "modoc:2002": {
+      "build": {
+        "docker-engine": {
+          "status": "ok"
+        },
+        "source-download": {
+          "detail": "HTTP 504",
+          "status": "fail"
+        }
+      },
+      "date": "2026-09-16T17:01:03Z",
+      "run": "20260916T170103Z",
+      "verdict": "source-unavailable"
+    },
     "modoc:2004": {
       "build": {
         "docker-engine": {
@@ -34475,6 +34937,20 @@
       },
       "verdict": "verified"
     },
+    "oepir:2003": {
+      "build": {
+        "docker-engine": {
+          "status": "ok"
+        },
+        "source-download": {
+          "detail": "timeout",
+          "status": "fail"
+        }
+      },
+      "date": "2026-09-16T16:44:56Z",
+      "run": "20260916T164456Z",
+      "verdict": "source-unavailable"
+    },
     "oepira:2004": {
       "build": {
         "docker-engine": {
@@ -34592,6 +35068,34 @@
         }
       },
       "verdict": "runs"
+    },
+    "oksolver:2002": {
+      "build": {
+        "docker-engine": {
+          "status": "ok"
+        },
+        "source-download": {
+          "detail": "HTTP 504",
+          "status": "fail"
+        }
+      },
+      "date": "2026-09-16T17:01:03Z",
+      "run": "20260916T170103Z",
+      "verdict": "source-unavailable"
+    },
+    "opensatcomp.jar:2003": {
+      "build": {
+        "docker-engine": {
+          "status": "ok"
+        },
+        "source-download": {
+          "detail": "HTTP 504",
+          "status": "fail"
+        }
+      },
+      "date": "2026-09-16T16:44:56Z",
+      "run": "20260916T164456Z",
+      "verdict": "source-unavailable"
     },
     "optsat:2019": {
       "build": {
@@ -35550,6 +36054,20 @@
         }
       },
       "verdict": "verified"
+    },
+    "partsat:2002": {
+      "build": {
+        "docker-engine": {
+          "status": "ok"
+        },
+        "source-download": {
+          "detail": "timeout",
+          "status": "fail"
+        }
+      },
+      "date": "2026-09-16T17:01:03Z",
+      "run": "20260916T170103Z",
+      "verdict": "source-unavailable"
     },
     "pausat:2020": {
       "build": {
@@ -37785,8 +38303,8 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-16T12:17:24Z",
-      "run": "20260916T121724Z",
+      "date": "2026-09-16T16:59:50Z",
+      "run": "20260916T165950Z",
       "tests": {
         "launch": {
           "status": "ok"
@@ -37814,19 +38332,29 @@
           "status": "ok"
         },
         "unsat-proof": {
-          "detail": "unsupported",
+          "detail": "incomplete solver",
           "status": "skip"
         },
         "unsat-result": {
-          "detail": "timeout",
+          "detail": "incomplete solver",
           "status": "skip"
+        }
+      },
+      "verdict": "verified"
+    },
+    "rb2cl:2002": {
+      "build": {
+        "docker-engine": {
+          "status": "ok"
         },
-        "unsat-termination": {
-          "detail": "TIMEOUT",
+        "source-download": {
+          "detail": "HTTP 504",
           "status": "fail"
         }
       },
-      "verdict": "runs"
+      "date": "2026-09-16T17:01:03Z",
+      "run": "20260916T170103Z",
+      "verdict": "source-unavailable"
     },
     "rcl:2011": {
       "build": {
@@ -41302,8 +41830,78 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-16T12:17:24Z",
-      "run": "20260916T121724Z",
+      "date": "2026-09-16T17:01:57Z",
+      "run": "20260916T170157Z",
+      "tests": {
+        "launch": {
+          "status": "ok"
+        },
+        "sat-gzip-model": {
+          "status": "ok"
+        },
+        "sat-gzip-result": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-gzip-termination": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-model": {
+          "status": "ok"
+        },
+        "sat-result": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-termination": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "unsat-proof": {
+          "detail": "incomplete solver",
+          "status": "skip"
+        },
+        "unsat-result": {
+          "detail": "incomplete solver",
+          "status": "skip"
+        }
+      },
+      "verdict": "verified"
+    },
+    "sapsnr:2004": {
+      "build": {
+        "builder-base-image": {
+          "status": "ok"
+        },
+        "compile": {
+          "detail": "binary distribution",
+          "status": "skip"
+        },
+        "docker-engine": {
+          "status": "ok"
+        },
+        "image-assemble": {
+          "status": "ok"
+        },
+        "runtime-base": {
+          "status": "ok"
+        },
+        "runtime-base-image": {
+          "status": "ok"
+        },
+        "runtime-dependencies": {
+          "status": "ok"
+        },
+        "source-download": {
+          "status": "ok"
+        },
+        "source-extract": {
+          "status": "ok"
+        }
+      },
+      "date": "2026-09-16T15:12:40Z",
+      "run": "20260916T151240Z",
       "tests": {
         "launch": {
           "status": "ok"
@@ -41346,32 +41944,6 @@
         }
       },
       "verdict": "runs"
-    },
-    "sapsnr:2004": {
-      "build": {
-        "builder-base-image": {
-          "status": "ok"
-        },
-        "compile": {
-          "detail": "binary distribution",
-          "status": "skip"
-        },
-        "docker-engine": {
-          "status": "ok"
-        },
-        "runtime-base-image": {
-          "status": "ok"
-        },
-        "source-download": {
-          "status": "ok"
-        },
-        "source-extract": {
-          "status": "ok"
-        }
-      },
-      "date": "2026-09-16T15:12:40Z",
-      "run": "20260916T151240Z",
-      "verdict": "built"
     },
     "sapsrt:2007": {
       "build": {
@@ -41404,50 +41976,44 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-16T12:17:24Z",
-      "run": "20260916T121724Z",
+      "date": "2026-09-16T17:02:49Z",
+      "run": "20260916T170249Z",
       "tests": {
         "launch": {
           "status": "ok"
         },
         "sat-gzip-model": {
-          "detail": "timeout",
-          "status": "skip"
+          "status": "ok"
         },
         "sat-gzip-result": {
-          "detail": "timeout",
-          "status": "skip"
+          "detail": "SAT",
+          "status": "ok"
         },
         "sat-gzip-termination": {
-          "detail": "TIMEOUT",
-          "status": "fail"
+          "detail": "SAT",
+          "status": "ok"
         },
         "sat-model": {
-          "detail": "timeout",
-          "status": "skip"
+          "status": "ok"
         },
         "sat-result": {
-          "detail": "timeout",
-          "status": "skip"
+          "detail": "SAT",
+          "status": "ok"
         },
         "sat-termination": {
-          "detail": "TIMEOUT",
-          "status": "fail"
+          "detail": "SAT",
+          "status": "ok"
         },
         "unsat-proof": {
-          "detail": "unsupported",
+          "detail": "incomplete solver",
           "status": "skip"
         },
         "unsat-result": {
-          "detail": "timeout",
+          "detail": "incomplete solver",
           "status": "skip"
-        },
-        "unsat-termination": {
-          "detail": "TIMEOUT",
-          "status": "fail"
         }
       },
-      "verdict": "runs"
+      "verdict": "verified"
     },
     "sartagnan:2011": {
       "build": {
@@ -42743,6 +43309,68 @@
       },
       "verdict": "verified"
     },
+    "satelite_iota9:2004": {
+      "build": {
+        "docker-engine": {
+          "status": "ok"
+        },
+        "source-download": {
+          "detail": "timeout",
+          "status": "fail"
+        }
+      },
+      "date": "2026-09-16T15:12:40Z",
+      "run": "20260916T151240Z",
+      "verdict": "source-unavailable"
+    },
+    "satelite_lambda:2004": {
+      "build": {
+        "docker-engine": {
+          "status": "ok"
+        },
+        "source-download": {
+          "detail": "HTTP 504",
+          "status": "fail"
+        }
+      },
+      "date": "2026-09-16T15:12:40Z",
+      "run": "20260916T151240Z",
+      "verdict": "source-unavailable"
+    },
+    "satelite_lambda_all:2004": {
+      "build": {
+        "builder-base-image": {
+          "status": "ok"
+        },
+        "docker-engine": {
+          "status": "ok"
+        },
+        "source-download": {
+          "status": "ok"
+        },
+        "source-extract": {
+          "detail": "exit 1",
+          "status": "fail"
+        }
+      },
+      "date": "2026-09-16T15:12:40Z",
+      "run": "20260916T151240Z",
+      "verdict": "source-unavailable"
+    },
+    "satelite_mu:2004": {
+      "build": {
+        "docker-engine": {
+          "status": "ok"
+        },
+        "source-download": {
+          "detail": "HTTP 504",
+          "status": "fail"
+        }
+      },
+      "date": "2026-09-16T15:12:40Z",
+      "run": "20260916T151240Z",
+      "verdict": "source-unavailable"
+    },
     "sathys:2011": {
       "build": {
         "build-environment": {
@@ -42870,6 +43498,82 @@
       "date": "2026-09-15T08:51:03Z",
       "run": "20260915T085103Z",
       "verdict": "source-available"
+    },
+    "satnik:2003": {
+      "build": {
+        "docker-engine": {
+          "status": "ok"
+        },
+        "source-download": {
+          "detail": "HTTP 504",
+          "status": "fail"
+        }
+      },
+      "date": "2026-09-16T16:44:56Z",
+      "run": "20260916T164456Z",
+      "verdict": "source-unavailable"
+    },
+    "sato4.2:2004": {
+      "build": {
+        "builder-base-image": {
+          "status": "ok"
+        },
+        "docker-engine": {
+          "status": "ok"
+        },
+        "source-download": {
+          "status": "ok"
+        },
+        "source-extract": {
+          "detail": "exit 1",
+          "status": "fail"
+        }
+      },
+      "date": "2026-09-16T15:12:40Z",
+      "run": "20260916T151240Z",
+      "verdict": "source-unavailable"
+    },
+    "sato4.3:2004": {
+      "build": {
+        "docker-engine": {
+          "status": "ok"
+        },
+        "source-download": {
+          "detail": "HTTP 504",
+          "status": "fail"
+        }
+      },
+      "date": "2026-09-16T15:12:40Z",
+      "run": "20260916T151240Z",
+      "verdict": "source-unavailable"
+    },
+    "sato:2002": {
+      "build": {
+        "docker-engine": {
+          "status": "ok"
+        },
+        "source-download": {
+          "detail": "HTTP 504",
+          "status": "fail"
+        }
+      },
+      "date": "2026-09-16T17:01:03Z",
+      "run": "20260916T170103Z",
+      "verdict": "source-unavailable"
+    },
+    "sato:2003": {
+      "build": {
+        "docker-engine": {
+          "status": "ok"
+        },
+        "source-download": {
+          "detail": "HTTP 504",
+          "status": "fail"
+        }
+      },
+      "date": "2026-09-16T16:44:56Z",
+      "run": "20260916T164456Z",
+      "verdict": "source-unavailable"
     },
     "satsuma-iter-ae-kissat-mab:2026": {
       "build": {
@@ -43496,6 +44200,34 @@
       },
       "verdict": "verified"
     },
+    "saturn:2002": {
+      "build": {
+        "docker-engine": {
+          "status": "ok"
+        },
+        "source-download": {
+          "detail": "HTTP 504",
+          "status": "fail"
+        }
+      },
+      "date": "2026-09-16T17:01:03Z",
+      "run": "20260916T170103Z",
+      "verdict": "source-unavailable"
+    },
+    "saturn:2003": {
+      "build": {
+        "docker-engine": {
+          "status": "ok"
+        },
+        "source-download": {
+          "detail": "HTTP 504",
+          "status": "fail"
+        }
+      },
+      "date": "2026-09-16T16:44:56Z",
+      "run": "20260916T164456Z",
+      "verdict": "source-unavailable"
+    },
     "satzilla-crafted:2007": {
       "build": {
         "build-environment": {
@@ -43647,6 +44379,34 @@
         }
       },
       "verdict": "verified"
+    },
+    "satzilla-nr:2004": {
+      "build": {
+        "docker-engine": {
+          "status": "ok"
+        },
+        "source-download": {
+          "detail": "HTTP 504",
+          "status": "fail"
+        }
+      },
+      "date": "2026-09-16T15:12:40Z",
+      "run": "20260916T151240Z",
+      "verdict": "source-unavailable"
+    },
+    "satzilla-r:2004": {
+      "build": {
+        "docker-engine": {
+          "status": "ok"
+        },
+        "source-download": {
+          "detail": "timeout",
+          "status": "fail"
+        }
+      },
+      "date": "2026-09-16T15:12:40Z",
+      "run": "20260916T151240Z",
+      "verdict": "source-unavailable"
     },
     "satzilla-random:2007": {
       "build": {
@@ -43951,6 +44711,152 @@
         }
       },
       "verdict": "verified"
+    },
+    "satzilla2:2003": {
+      "build": {
+        "docker-engine": {
+          "status": "ok"
+        },
+        "source-download": {
+          "detail": "HTTP 504",
+          "status": "fail"
+        }
+      },
+      "date": "2026-09-16T16:44:56Z",
+      "run": "20260916T164456Z",
+      "verdict": "source-unavailable"
+    },
+    "satzilla:2003": {
+      "build": {
+        "docker-engine": {
+          "status": "ok"
+        },
+        "source-download": {
+          "detail": "HTTP 504",
+          "status": "fail"
+        }
+      },
+      "date": "2026-09-16T16:44:56Z",
+      "run": "20260916T164456Z",
+      "verdict": "source-unavailable"
+    },
+    "satzilla:2004": {
+      "build": {
+        "builder-base-image": {
+          "status": "ok"
+        },
+        "compile": {
+          "detail": "binary distribution",
+          "status": "skip"
+        },
+        "docker-engine": {
+          "status": "ok"
+        },
+        "image-assemble": {
+          "status": "ok"
+        },
+        "runtime-base": {
+          "status": "ok"
+        },
+        "runtime-base-image": {
+          "status": "ok"
+        },
+        "runtime-dependencies": {
+          "status": "ok"
+        },
+        "source-download": {
+          "status": "ok"
+        },
+        "source-extract": {
+          "status": "ok"
+        }
+      },
+      "date": "2026-09-16T15:12:40Z",
+      "run": "20260916T151240Z",
+      "tests": {
+        "launch": {
+          "status": "ok"
+        },
+        "sat-gzip-model": {
+          "detail": "timeout",
+          "status": "skip"
+        },
+        "sat-gzip-result": {
+          "detail": "timeout",
+          "status": "skip"
+        },
+        "sat-gzip-termination": {
+          "detail": "TIMEOUT",
+          "status": "fail"
+        },
+        "sat-model": {
+          "detail": "timeout",
+          "status": "skip"
+        },
+        "sat-result": {
+          "detail": "timeout",
+          "status": "skip"
+        },
+        "sat-termination": {
+          "detail": "TIMEOUT",
+          "status": "fail"
+        },
+        "unsat-proof": {
+          "detail": "unsupported",
+          "status": "skip"
+        },
+        "unsat-result": {
+          "detail": "timeout",
+          "status": "skip"
+        },
+        "unsat-termination": {
+          "detail": "TIMEOUT",
+          "status": "fail"
+        }
+      },
+      "verdict": "runs"
+    },
+    "satzoo-1.02:2004": {
+      "build": {
+        "docker-engine": {
+          "status": "ok"
+        },
+        "source-download": {
+          "detail": "HTTP 504",
+          "status": "fail"
+        }
+      },
+      "date": "2026-09-16T15:12:40Z",
+      "run": "20260916T151240Z",
+      "verdict": "source-unavailable"
+    },
+    "satzoo0:2003": {
+      "build": {
+        "docker-engine": {
+          "status": "ok"
+        },
+        "source-download": {
+          "detail": "HTTP 504",
+          "status": "fail"
+        }
+      },
+      "date": "2026-09-16T16:44:56Z",
+      "run": "20260916T164456Z",
+      "verdict": "source-unavailable"
+    },
+    "satzoo1:2003": {
+      "build": {
+        "docker-engine": {
+          "status": "ok"
+        },
+        "source-download": {
+          "detail": "HTTP 504",
+          "status": "fail"
+        }
+      },
+      "date": "2026-09-16T16:44:56Z",
+      "run": "20260916T164456Z",
+      "verdict": "source-unavailable"
     },
     "sbva-cadical:2023": {
       "build": {
@@ -44665,6 +45571,48 @@
         }
       },
       "verdict": "verified"
+    },
+    "siege:2003": {
+      "build": {
+        "docker-engine": {
+          "status": "ok"
+        },
+        "source-download": {
+          "detail": "HTTP 504",
+          "status": "fail"
+        }
+      },
+      "date": "2026-09-16T16:44:56Z",
+      "run": "20260916T164456Z",
+      "verdict": "source-unavailable"
+    },
+    "siege_v4:2004": {
+      "build": {
+        "docker-engine": {
+          "status": "ok"
+        },
+        "source-download": {
+          "detail": "HTTP 504",
+          "status": "fail"
+        }
+      },
+      "date": "2026-09-16T15:12:40Z",
+      "run": "20260916T151240Z",
+      "verdict": "source-unavailable"
+    },
+    "simo:2002": {
+      "build": {
+        "docker-engine": {
+          "status": "ok"
+        },
+        "source-download": {
+          "detail": "HTTP 504",
+          "status": "fail"
+        }
+      },
+      "date": "2026-09-16T17:01:03Z",
+      "run": "20260916T170103Z",
+      "verdict": "source-unavailable"
     },
     "sinnminisat:2013": {
       "build": {
@@ -46960,10 +47908,21 @@
           "status": "ok"
         },
         "compile": {
-          "detail": "exit 1",
-          "status": "fail"
+          "status": "ok"
         },
         "docker-engine": {
+          "status": "ok"
+        },
+        "image-assemble": {
+          "status": "ok"
+        },
+        "runtime-base": {
+          "status": "ok"
+        },
+        "runtime-base-image": {
+          "status": "ok"
+        },
+        "runtime-dependencies": {
           "status": "ok"
         },
         "source-download": {
@@ -46973,9 +47932,48 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-16T16:01:24Z",
-      "run": "20260916T160124Z",
-      "verdict": "source-available"
+      "date": "2026-09-16T17:10:06Z",
+      "run": "20260916T171006Z",
+      "tests": {
+        "launch": {
+          "status": "ok"
+        },
+        "sat-gzip-model": {
+          "status": "ok"
+        },
+        "sat-gzip-result": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-gzip-termination": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-model": {
+          "status": "ok"
+        },
+        "sat-result": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-termination": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "unsat-proof": {
+          "detail": "unsupported",
+          "status": "skip"
+        },
+        "unsat-result": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-termination": {
+          "detail": "UNSAT",
+          "status": "ok"
+        }
+      },
+      "verdict": "verified"
     },
     "tnm:2009": {
       "build": {
@@ -47872,6 +48870,20 @@
       "run": "20260915T202548Z",
       "verdict": "source-unavailable"
     },
+    "tts-2-0:2004": {
+      "build": {
+        "docker-engine": {
+          "status": "ok"
+        },
+        "source-download": {
+          "detail": "HTTP 504",
+          "status": "fail"
+        }
+      },
+      "date": "2026-09-16T15:12:40Z",
+      "run": "20260916T151240Z",
+      "verdict": "source-unavailable"
+    },
     "tts-3-0:2005": {
       "build": {
         "builder-base-image": {
@@ -47945,6 +48957,20 @@
         }
       },
       "verdict": "verified"
+    },
+    "tts:2003": {
+      "build": {
+        "docker-engine": {
+          "status": "ok"
+        },
+        "source-download": {
+          "detail": "HTTP 504",
+          "status": "fail"
+        }
+      },
+      "date": "2026-09-16T16:44:56Z",
+      "run": "20260916T164456Z",
+      "verdict": "source-unavailable"
     },
     "tts:2007": {
       "build": {
@@ -48660,8 +49686,8 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-16T16:12:37Z",
-      "run": "20260916T161237Z",
+      "date": "2026-09-16T17:12:35Z",
+      "run": "20260916T171235Z",
       "tests": {
         "launch": {
           "status": "ok"
@@ -48689,19 +49715,57 @@
           "status": "ok"
         },
         "unsat-proof": {
-          "detail": "unsupported",
+          "detail": "incomplete solver",
           "status": "skip"
         },
         "unsat-result": {
-          "detail": "timeout",
+          "detail": "incomplete solver",
           "status": "skip"
+        }
+      },
+      "verdict": "verified"
+    },
+    "unitwalk:2002": {
+      "build": {
+        "docker-engine": {
+          "status": "ok"
         },
-        "unsat-termination": {
-          "detail": "TIMEOUT",
+        "source-download": {
+          "detail": "HTTP 504",
           "status": "fail"
         }
       },
-      "verdict": "runs"
+      "date": "2026-09-16T17:01:03Z",
+      "run": "20260916T170103Z",
+      "verdict": "source-unavailable"
+    },
+    "unitwalk:2003": {
+      "build": {
+        "docker-engine": {
+          "status": "ok"
+        },
+        "source-download": {
+          "detail": "HTTP 504",
+          "status": "fail"
+        }
+      },
+      "date": "2026-09-16T16:44:56Z",
+      "run": "20260916T164456Z",
+      "verdict": "source-unavailable"
+    },
+    "unitwalk:2004": {
+      "build": {
+        "docker-engine": {
+          "status": "ok"
+        },
+        "source-download": {
+          "detail": "HTTP 504",
+          "status": "fail"
+        }
+      },
+      "date": "2026-09-16T15:12:40Z",
+      "run": "20260916T151240Z",
+      "verdict": "source-unavailable"
     },
     "upglucose-3.0_padc:2020": {
       "build": {
@@ -48785,6 +49849,34 @@
         }
       },
       "verdict": "verified"
+    },
+    "usat05:2002": {
+      "build": {
+        "docker-engine": {
+          "status": "ok"
+        },
+        "source-download": {
+          "detail": "HTTP 504",
+          "status": "fail"
+        }
+      },
+      "date": "2026-09-16T17:01:03Z",
+      "run": "20260916T170103Z",
+      "verdict": "source-unavailable"
+    },
+    "usat10:2002": {
+      "build": {
+        "docker-engine": {
+          "status": "ok"
+        },
+        "source-download": {
+          "detail": "HTTP 504",
+          "status": "fail"
+        }
+      },
+      "date": "2026-09-16T17:01:03Z",
+      "run": "20260916T170103Z",
+      "verdict": "source-unavailable"
     },
     "vallst:2005": {
       "build": {
@@ -49183,6 +50275,20 @@
       "run": "20260916T141503Z",
       "verdict": "source-unavailable"
     },
+    "walksatauto:2004": {
+      "build": {
+        "docker-engine": {
+          "status": "ok"
+        },
+        "source-download": {
+          "detail": "HTTP 504",
+          "status": "fail"
+        }
+      },
+      "date": "2026-09-16T15:12:40Z",
+      "run": "20260916T151240Z",
+      "verdict": "source-unavailable"
+    },
     "walksatlm2013:2013": {
       "build": {
         "build-environment": {
@@ -49251,6 +50357,62 @@
       },
       "verdict": "verified"
     },
+    "walksatmp:2004": {
+      "build": {
+        "docker-engine": {
+          "status": "ok"
+        },
+        "source-download": {
+          "detail": "HTTP 504",
+          "status": "fail"
+        }
+      },
+      "date": "2026-09-16T15:12:40Z",
+      "run": "20260916T151240Z",
+      "verdict": "source-unavailable"
+    },
+    "walksatskc:2004": {
+      "build": {
+        "docker-engine": {
+          "status": "ok"
+        },
+        "source-download": {
+          "detail": "HTTP 504",
+          "status": "fail"
+        }
+      },
+      "date": "2026-09-16T15:12:40Z",
+      "run": "20260916T151240Z",
+      "verdict": "source-unavailable"
+    },
+    "werewolf:2004": {
+      "build": {
+        "docker-engine": {
+          "status": "ok"
+        },
+        "source-download": {
+          "detail": "HTTP 504",
+          "status": "fail"
+        }
+      },
+      "date": "2026-09-16T15:12:40Z",
+      "run": "20260916T151240Z",
+      "verdict": "source-unavailable"
+    },
+    "wllsatv1:2004": {
+      "build": {
+        "docker-engine": {
+          "status": "ok"
+        },
+        "source-download": {
+          "detail": "HTTP 504",
+          "status": "fail"
+        }
+      },
+      "date": "2026-09-16T15:12:40Z",
+      "run": "20260916T151240Z",
+      "verdict": "source-unavailable"
+    },
     "wllsatv1:2005": {
       "build": {
         "docker-engine": {
@@ -49263,6 +50425,20 @@
       },
       "date": "2026-09-16T14:15:03Z",
       "run": "20260916T141503Z",
+      "verdict": "source-unavailable"
+    },
+    "xqingting:2003": {
+      "build": {
+        "docker-engine": {
+          "status": "ok"
+        },
+        "source-download": {
+          "detail": "HTTP 504",
+          "status": "fail"
+        }
+      },
+      "date": "2026-09-16T16:44:56Z",
+      "run": "20260916T164456Z",
       "verdict": "source-unavailable"
     },
     "yalsat03r:2016": {
@@ -49553,6 +50729,20 @@
       },
       "verdict": "verified"
     },
+    "zchaff-rand:2004": {
+      "build": {
+        "docker-engine": {
+          "status": "ok"
+        },
+        "source-download": {
+          "detail": "HTTP 504",
+          "status": "fail"
+        }
+      },
+      "date": "2026-09-16T15:12:40Z",
+      "run": "20260916T151240Z",
+      "verdict": "source-unavailable"
+    },
     "zchaff-rand:2005": {
       "build": {
         "docker-engine": {
@@ -49565,6 +50755,48 @@
       },
       "date": "2026-09-16T14:15:03Z",
       "run": "20260916T141503Z",
+      "verdict": "source-unavailable"
+    },
+    "zchaff:2002": {
+      "build": {
+        "docker-engine": {
+          "status": "ok"
+        },
+        "source-download": {
+          "detail": "HTTP 504",
+          "status": "fail"
+        }
+      },
+      "date": "2026-09-16T17:01:03Z",
+      "run": "20260916T170103Z",
+      "verdict": "source-unavailable"
+    },
+    "zchaff:2003": {
+      "build": {
+        "docker-engine": {
+          "status": "ok"
+        },
+        "source-download": {
+          "detail": "HTTP 504",
+          "status": "fail"
+        }
+      },
+      "date": "2026-09-16T16:44:56Z",
+      "run": "20260916T164456Z",
+      "verdict": "source-unavailable"
+    },
+    "zchaff:2004": {
+      "build": {
+        "docker-engine": {
+          "status": "ok"
+        },
+        "source-download": {
+          "detail": "HTTP 504",
+          "status": "fail"
+        }
+      },
+      "date": "2026-09-16T15:12:40Z",
+      "run": "20260916T151240Z",
       "verdict": "source-unavailable"
     },
     "zchaff:2005": {
