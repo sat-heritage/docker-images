@@ -57,13 +57,13 @@
         "license_source": "licence file Candy/lib/googletest/googletest/LICENSE, Candy/lib/minisat/LICENSE"
     },
     "cpsparrow": {
-        "status": "unstable",
+        "status": "ok",
         "tracks": [
             "random"
         ],
         "name": "CPSparrow",
         "call": "./CPSparrow.sh",
-        "gz": true,
+        "gz": false,
         "args": [
             "FILECNF",
             "RANDOMSEED",
@@ -71,8 +71,7 @@
         ],
         "license": "MIT",
         "license_source": "licence file CPSparrow/license.txt",
-        "incomplete": true,
-        "status_detail": "Local search solver (incomplete): the model printed for the decompressed copy of the satisfiable test instance violates its first clause, while the plain run is fine."
+        "incomplete": true
     },
     "ghackcomsps_drup": {
         "status": "ok",
@@ -434,7 +433,7 @@
         ],
         "name": "YalSAT",
         "call": "./yalsat",
-        "gz": true,
+        "gz": false,
         "args": [
             "FILECNF",
             "-v"
@@ -969,19 +968,18 @@
         "license_source": "archive not available"
     },
     "lawa": {
-        "status": "unstable",
+        "status": "ok",
         "tracks": [
             "random"
         ],
         "name": "lawa",
         "call": "./lawa",
-        "gz": true,
+        "gz": false,
         "args": [
             "FILECNF"
         ],
         "license_source": "archive not available",
-        "incomplete": true,
-        "status_detail": "Local search solver (incomplete): does not answer the plain satisfiable test instance within the timeout, and the model printed for its decompressed copy violates the first clause."
+        "incomplete": true
     },
     "probsat": {
         "status": "ok",
