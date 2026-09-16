@@ -111,11 +111,9 @@ def collect(repo: Path) -> list[dict]:
     stats = load_json(stats_file) if stats_file.is_file() else {}
     pulls = stats.get("docker_hub", {}).get("repositories", {})
     downloads = stats.get("github_releases", {}).get("assets", {})
-    global STATS_GENERATED, STATS_COMPLETE, ZENODO, GITHUB_DOWNLOADS
+    global STATS_GENERATED, STATS_COMPLETE
     STATS_GENERATED = stats.get("generated", "")
     STATS_COMPLETE = bool(stats.get("docker_hub", {}).get("complete"))
-    ZENODO = stats.get("zenodo", {}).get("records", {})
-    GITHUB_DOWNLOADS = sum(v.get("downloads", 0) for v in downloads.values())
     awards_file = repo / "data" / "awards.json"
     awards = load_json(awards_file).get("awards", []) if awards_file.is_file() else []
     awards_by_image = {}
@@ -189,7 +187,6 @@ def collect(repo: Path) -> list[dict]:
                 "published": (f"{DOCKER_NS}/{image}" in published) if published else None,
                 "pulls": pulls.get(key, {}).get("pulls") if key in pulls else None,
                 "downloads": next((v["downloads"] for k2, v in downloads.items() if k2.split("/", 1)[1] == urllib.parse.unquote((block.get("download_url", "") or "").replace("{SOLVER_NAME}", entry.get("name", key)).rsplit("/", 1)[-1])), None) if downloads else None,
-                "zenodo_record": (lambda m: m.group(1) if m else None)(re.search(r"zenodo\.org/records?/(\d+)", block.get("download_url", "") or "")),
                 "verdict": result.get("verdict", "unknown"),
                 "tested": result.get("date", ""),
                 "build_stages": result.get("build", {}),
@@ -425,7 +422,7 @@ def page(title: str, body: str, depth: int, active: str = "") -> str:
 <body><header><a class="logo" href="{root}index.html" style="color:inherit"><span class="dot"></span>SAT Heritage</a>
 <nav><a href="{root}index.html"{' class="active"' if active == 'overview' else ''}>Overview</a><a href="{root}catalogue.html"{' class="active"' if active == 'catalogue' else ''}>Catalogue</a><a href="{root}leaderboards.html"{' class="active"' if active == 'leaderboards' else ''}>Leaderboards</a><a href="{root}missing.html"{' class="active"' if active == 'missing' else ''}>Missing solvers</a><a href="{REPO_URL}">GitHub</a></nav>
 <p>Docker images of SAT solvers, from the first competitions to Knuth's programs, rebuilt from their sources and verified.</p></header>
-<div class="warning"><b>September 14, 2026 — large update in progress.</b> The images of the 2022 to 2026 competitions are being rebuilt from their sources and pushed to Docker Hub in batches over the coming days. If <code>docker pull</code> tells you that an image does not exist yet, build it yourself in the meantime with <code>satex build &lt;solver&gt;:&lt;year&gt;</code> (<code>pip install satex</code>), from the same sources and recipe.</div>
+<div class="warning"><b>A collective site, still being completed: please check, correct and contribute.</b> Everything on these pages is generated from the data of the <a href="{REPO_URL}">sat-heritage/docker-images</a> repository as it stands today: which solvers build, which answer correctly, who wrote them, under which licence, with which awards. Much of it was assembled recently, year by year, partly with the help of an AI assistant, and is still being verified. Treat every claim as provisional and check it against the original competition material before relying on it. We strongly encourage pull requests and verification reports: a corrected author line, a licence, a working recipe, a missing solver, or the outcome of running an image on your own machine are all welcome as <a href="{REPO_URL}/pulls">pull requests</a> or <a href="{REPO_URL}/issues">issues</a>. The goal is a site maintained by the SAT community as a whole. Images not on Docker Hub yet can be built locally with <code>satex build &lt;solver&gt;:&lt;year&gt;</code> (<code>pip install satex</code>).</div>
 <main>{body}</main>
 <script>document.querySelectorAll('pre.cmd[data-copy]').forEach(p => {{ const b = document.createElement('button'); b.textContent = 'Copy'; b.addEventListener('click', () => {{ navigator.clipboard.writeText(p.innerText.replace(/Copy$/, '').trim()); b.textContent = 'Copied'; setTimeout(() => b.textContent = 'Copy', 1500); }}); p.appendChild(b); }});</script>
 <footer><span class="credits">SAT Heritage is a project by {esc(AUTHORS)} · <a href="{PAPER_URL}">{esc(PAPER_TITLE)}</a> ({PAPER_VENUE}, <a href="{PAPER_ARXIV}">arXiv</a>)</span><br>Generated from the <a href="{REPO_URL}">sat-heritage/docker-images</a> repository. This site, its generator and the solver metadata it presents were assembled from scattered sources with the help of Claude Fable 5.1 since September 2026 (Anthropic): descriptions, author names, verification results and figures may be incomplete or wrong and should be checked against the repository and the original competition material before being relied upon. Corrections and contributions are welcome as issues or pull requests.</footer></body></html>
@@ -502,7 +499,7 @@ def solver_page(s: dict) -> str:
 {license_section(s)}
 <div class="section pull"><h2>{'Pull it from Docker and run it' if s['published'] is not False else 'Build it and run it'}</h2><pre class="cmd" data-copy>{'docker pull ' + DOCKER_NS + '/' + esc(s['image']) if s['published'] is not False else 'pip install satex && satex build ' + esc(s['image'])}
 {esc(run_cmd)}</pre><p class="muted-inline">{('No build needed: the image is published on <a href="https://hub.docker.com/r/' + DOCKER_NS + '/' + esc(s['key']) + '">Docker Hub</a>' + (' (checked ' + esc(HUB_GENERATED[:10]) + ')' if HUB_GENERATED else '') + '.') if s['published'] is not False else ('This image is not on <a href="https://hub.docker.com/u/' + DOCKER_NS + '">Docker Hub</a> yet' + (' (checked ' + esc(HUB_GENERATED[:10]) + ')' if HUB_GENERATED else '') + ': the images are pushed in batches, and some entries cannot be built. Until then, <code>satex build</code> makes it on your machine from the archived sources and the recipe below, and the run command is the same.')} Mount the directory that holds your instance on <code>/data</code>; the proof file is optional{'' if s['proof'] else ' and not produced by this solver'}. Its full provenance is kept: the archived sources, the pinned build environment and the recipe are all listed below, and <code>satex build {esc(s['image'])}</code> rebuilds the same image on your own machine if you would rather not trust ours (slower, same solver).</p>
-{('<p><a class="btn" href="' + esc(s['download_url']) + '">Download the sources</a> <span class="muted-inline">' + esc(urllib.parse.unquote(s['download_url'].rsplit('/', 1)[-1])) + ', the competition submission as archived by SAT Heritage, to build it yourself with the recipe below.' + ((' Downloaded ' + fmt_count(s['downloads']) + ' times.') if s['downloads'] is not None else ((' The Zenodo record holding the archives of this year was downloaded ' + fmt_count(ZENODO[s['zenodo_record']]['downloads']) + ' times (Zenodo counts per record, not per file).') if s['zenodo_record'] in ZENODO else '')) + '</span></p>') if s['download_url'] else ''}<dl>
+{('<p><a class="btn" href="' + esc(s['download_url']) + '">Download the sources</a> <span class="muted-inline">' + esc(urllib.parse.unquote(s['download_url'].rsplit('/', 1)[-1])) + ', the competition submission as archived by SAT Heritage, to build it yourself with the recipe below.' + ((' Downloaded ' + fmt_count(s['downloads']) + ' times.') if s['downloads'] is not None else '') + '</span></p>') if s['download_url'] else ''}<dl>
 <dt>Licence</dt><dd>{esc(', '.join(s['licenses'])) if s['licenses'] else 'not identified: no licence file or header found in the archive; if you know it, send a pull request'}{(' <span class="muted-inline">(' + esc(s['license_source']) + ')</span>') if s['license_source'] else ''}</dd>
 <dt>Image</dt><dd><code>{DOCKER_NS}/{esc(s['image'])}</code></dd>
 <dt>Command</dt><dd><code>{esc(s['call'])} {esc(' '.join(map(str, s['args'])))}</code></dd>
@@ -596,18 +593,8 @@ def usage_figures(solvers: list[dict]) -> str:
     note = " Our own builds and verification runs are counted."
     left = (f'<div class="fig"><h2>Most pulled solvers</h2><div class="sub">Docker Hub pulls per repository, all years of a solver together, read on {esc(STATS_GENERATED[:10])}.'
             f'{"" if STATS_COMPLETE else " Only the first 100 repositories could be read."}{note} <a href="leaderboards.html#pulled">Full list →</a></div>{svg_hbars(top_pulled, "Most pulled solvers")}</div>') if top_pulled else ""
-    right = (f'<div class="fig"><h2>Most downloaded sources</h2><div class="sub">Downloads of the source archives from the GitHub releases, read on {esc(STATS_GENERATED[:10])}. Zenodo only counts downloads per record, so the years hosted there appear in the next figure.{note}</div>{svg_hbars(top_dl, "Most downloaded sources")}</div>') if top_dl else ""
-    by_year = {}
-    for s in solvers:
-        y = by_year.setdefault(s["set"], {"assets": {}, "records": set()})
-        if s["downloads"] is not None and s["download_url"]:
-            y["assets"][urllib.parse.unquote(s["download_url"].rsplit("/", 1)[-1])] = s["downloads"]
-        if s["zenodo_record"] in ZENODO:
-            y["records"].add(s["zenodo_record"])
-    rows = [(f'{y} ({"Zenodo" if d["records"] else "GitHub"})', sum(d["assets"].values()) + sum(ZENODO[r]["downloads"] for r in d["records"]))
-            for y, d in sorted(by_year.items()) if d["assets"] or d["records"]]
-    per_year = (f'<div class="fig"><h2>Source downloads by competition year</h2><div class="sub">Downloads of the archives of each year: the release assets on GitHub, or the Zenodo record of the year (2000 to 2005 hold binaries only).{note}</div>{svg_hbars(rows, "Source downloads by competition year")}</div>') if rows else ""
-    return f'<div class="two" style="margin-top:14px">{left}{right}</div>' + (f'<div class="two" style="margin-top:14px">{per_year}</div>' if per_year else "")
+    right = (f'<div class="fig"><h2>Most downloaded sources</h2><div class="sub">Downloads of the source archives from the GitHub releases, read on {esc(STATS_GENERATED[:10])}.{note}</div>{svg_hbars(top_dl, "Most downloaded sources")}</div>') if top_dl else ""
+    return f'<div class="two" style="margin-top:14px">{left}{right}</div>'
 
 
 def podium_section(solvers: list[dict]) -> str:
@@ -682,7 +669,7 @@ docker run --rm -v $PWD:/data satex/kissat-sc2024:2024 instance.cnf proof.out</p
 <div class="stat"><div class="n">{tested}</div><div class="l">run through the test suite so far</div></div>
 <div class="stat"><div class="n">{compiles}</div><div class="l">of them compile from source today</div></div>
 <div class="stat"><div class="n">{verified}</div><div class="l">of them fully verified (build, SAT, UNSAT, proof)</div></div>
-{('<div class="stat"><div class="n">' + fmt_count(sum(s["pulls"] or 0 for s in {x["key"]: x for x in solvers}.values())) + '</div><div class="l">Docker Hub pulls' + ('' if STATS_COMPLETE else ' (first 100 repositories only)') + ', our own builds and tests included</div></div><div class="stat"><div class="n">' + fmt_count(GITHUB_DOWNLOADS + sum(v.get("downloads", 0) for v in ZENODO.values())) + '</div><div class="l">source archive downloads, GitHub releases and Zenodo records together</div></div>') if STATS_GENERATED else ''}
+{('<div class="stat"><div class="n">' + fmt_count(sum(s["pulls"] or 0 for s in {x["key"]: x for x in solvers}.values())) + '</div><div class="l">Docker Hub pulls' + ('' if STATS_COMPLETE else ' (first 100 repositories only)') + ', our own builds and tests included</div></div><div class="stat"><div class="n">' + fmt_count(sum(v["downloads"] for v in (load_json(Path("data/stats.json")).get("github_releases", {}).get("assets", {}) if Path("data/stats.json").is_file() else {}).values())) + '</div><div class="l">source archives downloaded from the releases</div></div>') if STATS_GENERATED else ''}
 {('<div class="stat"><div class="n">' + str(sum(1 for s in solvers if s["published"])) + '</div><div class="l">images on Docker Hub, checked ' + esc(HUB_GENERATED[:10]) + '</div></div>') if HUB_GENERATED else ''}
 <div class="stat"><div class="n">{len(years)}</div><div class="l">competition years, {years[0]} to {years[-1]}</div></div>
 <div class="stat"><div class="n">{sum(1 for s in solvers if s["license"])}</div><div class="l">images with an identified licence (<a href="catalogue.html?license=unknown">{sum(1 for s in solvers if not s["license"])} unknown</a>)</div></div>
@@ -707,8 +694,6 @@ MISSING_PODIUMS: list[dict] = []
 HUB_GENERATED = ""
 STATS_GENERATED = ""
 STATS_COMPLETE = False
-ZENODO = {}
-GITHUB_DOWNLOADS = 0
 
 
 def fmt_count(n) -> str:
