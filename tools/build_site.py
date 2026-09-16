@@ -782,8 +782,14 @@ def source_problem(s: dict) -> str:
 
 def missing_page(solvers: list[dict]) -> str:
     """Solvers whose sources are missing: images without a usable source, and podiums whose solver is absent from the archive."""
-    no_source = [(s, source_problem(s)) for s in solvers]
+    no_source = [(s, source_problem(s)) for s in solvers if not s["binary_only"]]
     no_source = [(s, why) for s, why in no_source if why]
+    binaries = sorted((s for s in solvers if s["binary_only"]), key=lambda s: (s["set"], s["name"].lower()))
+    vlab = verdict_label
+    rows_bin = "".join(
+        f'<tr><td><a href="{s["set"]}/{s["key"]}.html">{esc(s["name"])}</a></td><td>{esc(s["set"])}</td><td class="who">{esc(s["authors"] or "authors not recorded")}</td>'
+        f'<td><span class="badge {vlab(s)[1]}">{esc(vlab(s)[0])}</span></td></tr>'
+        for s in binaries)
     no_source.sort(key=lambda t: (t[0]["set"], t[0]["name"].lower()))
     rows1 = "".join(
         f'<tr><td><a href="{s["set"]}/{s["key"]}.html">{esc(s["name"])}</a></td><td>{esc(s["set"])}</td><td class="who">{esc(s["authors"] or "authors not recorded")}</td><td>{esc(why)}</td></tr>'
@@ -794,9 +800,11 @@ def missing_page(solvers: list[dict]) -> str:
         f'<td class="who">{esc(a.get("note", ""))}{" " if a.get("note") else ""}<a href="{esc(a.get("source", "#"))}">source</a></td></tr>'
         for a in podiums)
     body = f"""
-<div class="page"><h1>Missing solvers</h1><div class="sub">What the archive lacks, and where you can help. SAT Heritage only keeps solvers it can rebuild from source: for the entries below the source is lost, was never published, or is a binary only. If you have a copy, or know where one survives, open an issue or a pull request on <a href="{REPO_URL}">GitHub</a>; <a href="{REPO_URL}/blob/master/SOURCES.md">SOURCES.md</a> lists where every year's archives are hosted.</div></div>
+<div class="page"><h1>Missing solvers</h1><div class="sub">What the archive lacks, and where you can help. SAT Heritage only keeps solvers it can rebuild from source: for the entries below the source is lost, was never published, or only the competition binary survives. If you have a copy, or know where one survives, open an issue or a pull request on <a href="{REPO_URL}">GitHub</a>; <a href="{REPO_URL}/blob/master/SOURCES.md">SOURCES.md</a> lists where every year's archives are hosted.</div></div>
 <div class="fig"><h2>Images without a usable source ({len(no_source)})</h2><div class="sub">Entries of the catalogue whose source archive is missing, binary-only, or could not be fetched in the last test run. The list grows as the test suite reaches the older years.</div>
 <div class="lb"><table><thead><tr><th>Solver</th><th>Year</th><th>Authors</th><th>Problem</th></tr></thead><tbody>{rows1 or '<tr><td colspan="4">none known</td></tr>'}</tbody></table></div></div>
+<div class="fig" style="margin-top:14px"><h2>Solvers we only have as a binary ({len(binaries)})</h2><div class="sub">The competition kept and published the binary but not the sources (2002 to 2005 in particular). The image packages that binary as is, so it runs and can be verified, but nothing can be rebuilt, studied or fixed. If you are an author and still have the sources, or know where they survive, they are very welcome. <a href="catalogue.html?cap=binary+only">See them in the catalogue →</a></div>
+<div class="lb"><table><thead><tr><th>Solver</th><th>Year</th><th>Authors</th><th>Status</th></tr></thead><tbody>{rows_bin or '<tr><td colspan="4">none</td></tr>'}</tbody></table></div></div>
 <div class="fig" style="margin-top:14px"><h2>Solvers without an identified licence ({sum(1 for s in solvers if not s["license"])})</h2><div class="sub">Their archive carries neither a licence file nor a licence header that we recognize. SAT Heritage redistributes competition sources as the competitions did; if you are an author, tell us the licence of your solver (an issue or a pull request adding a <code>license</code> field to its entry is enough). <a href="catalogue.html?license=unknown">See them in the catalogue →</a></div></div>
 <div class="fig" style="margin-top:14px"><h2>Award-winning solvers absent from the archive ({len(podiums)})</h2><div class="sub">Podium places announced by the competition organizers whose solver has no image here: the entry was never archived, or the archive holds a different variant and the mapping is unresolved. Contributions welcome, from the sources themselves to a pointer to the right variant.</div>
 <div class="lb"><table><thead><tr><th>Competition name</th><th>Year</th><th>Podium</th><th>Notes</th></tr></thead><tbody>{rows2 or '<tr><td colspan="4">none</td></tr>'}</tbody></table></div></div>
