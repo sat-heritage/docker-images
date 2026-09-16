@@ -4,38 +4,38 @@
     "builder": "generic/v1",
     "builder_base": "debian:9.5-slim",
     "download_url": "https://zenodo.org/record/5778760/files/{SOLVER_NAME}.zip",
-    "cpsparrow" : {
+    "cpsparrow": {
         "builder": "generic/v1"
     },
-    "dimetheus" : {
+    "dimetheus": {
         "builder": "generic/v1"
     },
-    "lawa" : {
+    "lawa": {
         "builder": "generic/v1"
     },
-    "abcd_para18" : {
+    "abcd_para18": {
         "builder": "generic/v1",
         "download_url": "https://zenodo.org/record/5778760/files/{SOLVER_NAME}_1.zip"
     },
-    "cbpenelope2018" : {
+    "cbpenelope2018": {
         "builder": "generic/v1"
     },
-    "ccspenelope2018" : {
+    "ccspenelope2018": {
         "builder": "generic/v1"
     },
-    "cmsat55_run_parallel" : {
+    "cmsat55_run_parallel": {
         "builder": "generic/v1"
     },
-    "hordesat" : {
+    "hordesat": {
         "builder": "generic/v1",
-        "BUILD_DEPENDS" : "mpic++",
-        "RDEPENDS" : "libmpich-dev"
+        "BUILD_DEPENDS": "mpic++",
+        "RDEPENDS": "libmpich-dev"
     },
-    "ddc-submit18" : {
+    "ddc-submit18": {
         "builder": "generic/v1",
         "BUILD_DEPENDS": "git libboost-dev libmpich-dev python"
     },
-    "manyglucose" : {
+    "manyglucose": {
         "builder": "generic/v1"
     },
     "maple-lcm-scavel": {
@@ -44,26 +44,29 @@
     "maple_lcm_scavel_200": {
         "download_url": "https://zenodo.org/record/5778760/files/{SOLVER_NAME}_fix2.zip"
     },
-    "penelope_mdcl" : {
+    "penelope_mdcl": {
         "builder": "generic/v1"
     },
-    "plingeling" : {
+    "plingeling": {
         "builder": "generic/v1"
     },
-    "probsat" : {
+    "probsat": {
         "builder": "generic/v1",
         "builder_base": "debian:8.11-slim"
     },
-    "scalope" : {
+    "scalope": {
         "builder": "generic/v1"
     },
-    "syrup" : {
+    "syrup": {
         "builder": "generic/v1"
     },
-     "treengeling" : {
+    "treengeling": {
         "builder": "generic/v1"
     },
-    "painless-mcomsps" : {
+    "painless-mcomsps": {
         "builder": "generic/v1"
+    },
+    "varisat": {
+        "BUILD_DEPENDS": "xz-utils bzip2"
     }
 }
