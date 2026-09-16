@@ -2,6 +2,8 @@
   "adaptnovelty": {
     "status": "ok",
     "name": "adaptnovelty",
+    "authors": "Holger Hoos, Dave Tompkins",
+    "authors_source": "JSAT volume 2 (2006), D. Le Berre and L. Simon, preface to the special volume on the SAT 2005 competitions, section 3.1 Submitted Solvers",
     "call": "./adaptnovelty",
     "gz": false,
     "args": [
@@ -12,6 +14,8 @@
   "circusa": {
     "status": "ok",
     "name": "CirCUsA",
+    "authors": "HoonSang Jin, Fabio Somenzi",
+    "authors_source": "JSAT volume 2 (2006), D. Le Berre and L. Simon, preface to the special volume on the SAT 2005 competitions, section 3.1 Submitted Solvers",
     "call": "./CirCUsA",
     "gz": false,
     "args": [
@@ -21,6 +25,8 @@
   "circusb": {
     "status": "ok",
     "name": "CirCUsB",
+    "authors": "HoonSang Jin, Fabio Somenzi",
+    "authors_source": "JSAT volume 2 (2006), D. Le Berre and L. Simon, preface to the special volume on the SAT 2005 competitions, section 3.1 Submitted Solvers",
     "call": "./CirCUsB",
     "gz": false,
     "args": [
@@ -30,6 +36,8 @@
   "circusd": {
     "status": "ok",
     "name": "CirCUsD",
+    "authors": "HoonSang Jin, Fabio Somenzi",
+    "authors_source": "JSAT volume 2 (2006), D. Le Berre and L. Simon, preface to the special volume on the SAT 2005 competitions, section 3.1 Submitted Solvers",
     "call": "./CirCUsD",
     "gz": false,
     "args": [
@@ -39,6 +47,8 @@
   "compsat": {
     "status": "ok",
     "name": "compsat",
+    "authors": "Armin Biere",
+    "authors_source": "JSAT volume 2 (2006), D. Le Berre and L. Simon, preface to the special volume on the SAT 2005 competitions, section 3.1 Submitted Solvers",
     "call": "./compsat",
     "gz": false,
     "args": [
@@ -48,6 +58,8 @@
   "csat-bis": {
     "status": "ok",
     "name": "csat",
+    "authors": "Feng Lu, Kai Yang, Kwang-Ting Cheng",
+    "authors_source": "JSAT volume 2 (2006), D. Le Berre and L. Simon, preface to the special volume on the SAT 2005 competitions, section 3.1 Submitted Solvers",
     "call": "./csat",
     "gz": false,
     "args": [
@@ -57,6 +69,8 @@
   "dew-satz-1a": {
     "status": "ok",
     "name": "Dew-Satz-1a",
+    "authors": "Anbulagan",
+    "authors_source": "JSAT volume 2 (2006), D. Le Berre and L. Simon, preface to the special volume on the SAT 2005 competitions, section 3.1 Submitted Solvers",
     "call": "./Dew-Satz-1a",
     "gz": false,
     "args": [
@@ -66,6 +80,8 @@
   "dew-satz-1b": {
     "status": "ok",
     "name": "Dew-Satz-1b",
+    "authors": "Anbulagan",
+    "authors_source": "JSAT volume 2 (2006), D. Le Berre and L. Simon, preface to the special volume on the SAT 2005 competitions, section 3.1 Submitted Solvers",
     "call": "./Dew-Satz-1b",
     "gz": false,
     "args": [
@@ -75,6 +91,8 @@
   "dew-satz-1c": {
     "status": "ok",
     "name": "Dew-Satz-1c",
+    "authors": "Anbulagan",
+    "authors_source": "JSAT volume 2 (2006), D. Le Berre and L. Simon, preface to the special volume on the SAT 2005 competitions, section 3.1 Submitted Solvers",
     "call": "./Dew-Satz-1c",
     "gz": false,
     "args": [
@@ -84,6 +102,8 @@
   "dew-satz-1d": {
     "status": "ok",
     "name": "Dew-Satz-1d",
+    "authors": "Anbulagan",
+    "authors_source": "JSAT volume 2 (2006), D. Le Berre and L. Simon, preface to the special volume on the SAT 2005 competitions, section 3.1 Submitted Solvers",
     "call": "./Dew-Satz-1d",
     "gz": false,
     "args": [
@@ -93,6 +113,8 @@
   "dew-satz-1e": {
     "status": "ok",
     "name": "Dew-Satz-1e",
+    "authors": "Anbulagan",
+    "authors_source": "JSAT volume 2 (2006), D. Le Berre and L. Simon, preface to the special volume on the SAT 2005 competitions, section 3.1 Submitted Solvers",
     "call": "./Dew-Satz-1e",
     "gz": false,
     "args": [
@@ -102,6 +124,8 @@
   "eureka-a": {
     "status": "ok",
     "name": "eureka-A",
+    "authors": "Alexander Nadel, Ziyad Hanna",
+    "authors_source": "JSAT volume 2 (2006), D. Le Berre and L. Simon, preface to the special volume on the SAT 2005 competitions, section 3.1 Submitted Solvers",
     "call": "./eureka-A",
     "gz": false,
     "args": [
@@ -111,6 +135,8 @@
   "eureka-b": {
     "status": "ok",
     "name": "eureka-B",
+    "authors": "Alexander Nadel, Ziyad Hanna",
+    "authors_source": "JSAT volume 2 (2006), D. Le Berre and L. Simon, preface to the special volume on the SAT 2005 competitions, section 3.1 Submitted Solvers",
     "call": "./eureka-B",
     "gz": false,
     "args": [
@@ -120,6 +146,8 @@
   "eureka-c": {
     "status": "ok",
     "name": "eureka-C",
+    "authors": "Alexander Nadel, Ziyad Hanna",
+    "authors_source": "JSAT volume 2 (2006), D. Le Berre and L. Simon, preface to the special volume on the SAT 2005 competitions, section 3.1 Submitted Solvers",
     "call": "./eureka-C",
     "gz": false,
     "args": [
@@ -129,6 +157,8 @@
   "g2wsat": {
     "status": "ok",
     "name": "g2wsat",
+    "authors": "Chu Min Li, Wen Qi Huang",
+    "authors_source": "JSAT volume 2 (2006), D. Le Berre and L. Simon, preface to the special volume on the SAT 2005 competitions, section 3.1 Submitted Solvers",
     "call": "./g2wsat",
     "gz": false,
     "args": [
@@ -138,6 +168,8 @@
   "haifasat": {
     "status": "ok",
     "name": "HaifaSat",
+    "authors": "Roman Gershman",
+    "authors_source": "JSAT volume 2 (2006), D. Le Berre and L. Simon, preface to the special volume on the SAT 2005 competitions, section 3.1 Submitted Solvers",
     "call": "./HaifaSat",
     "gz": false,
     "args": [
@@ -147,6 +179,8 @@
   "haifasat2": {
     "status": "ok",
     "name": "HaifaSat2",
+    "authors": "Roman Gershman",
+    "authors_source": "JSAT volume 2 (2006), D. Le Berre and L. Simon, preface to the special volume on the SAT 2005 competitions, section 3.1 Submitted Solvers",
     "call": "./HaifaSat2",
     "gz": false,
     "args": [
@@ -156,6 +190,8 @@
   "hsat.1": {
     "status": "ok",
     "name": "hsat.1",
+    "authors": "Domagoj Babic",
+    "authors_source": "JSAT volume 2 (2006), D. Le Berre and L. Simon, preface to the special volume on the SAT 2005 competitions, section 3.1 Submitted Solvers",
     "call": "./hsat.1",
     "gz": false,
     "args": [
@@ -165,6 +201,8 @@
   "hsat.5": {
     "status": "ok",
     "name": "hsat.5",
+    "authors": "Domagoj Babic",
+    "authors_source": "JSAT volume 2 (2006), D. Le Berre and L. Simon, preface to the special volume on the SAT 2005 competitions, section 3.1 Submitted Solvers",
     "call": "./hsat.5",
     "gz": false,
     "args": [
@@ -174,6 +212,8 @@
   "hsatrr": {
     "status": "ok",
     "name": "hsatrr",
+    "authors": "Domagoj Babic",
+    "authors_source": "JSAT volume 2 (2006), D. Le Berre and L. Simon, preface to the special volume on the SAT 2005 competitions, section 3.1 Submitted Solvers",
     "call": "./hsatrr",
     "gz": false,
     "args": [
@@ -183,6 +223,8 @@
   "jerusat1.31-a": {
     "status": "ok",
     "name": "Jerusat1.31-A",
+    "authors": "Alexander Nadel",
+    "authors_source": "JSAT volume 2 (2006), D. Le Berre and L. Simon, preface to the special volume on the SAT 2005 competitions, section 3.1 Submitted Solvers",
     "call": "./Jerusat1.31-A",
     "gz": false,
     "args": [
@@ -192,6 +234,8 @@
   "jerusat1.31-b": {
     "status": "ok",
     "name": "Jerusat1.31-B",
+    "authors": "Alexander Nadel",
+    "authors_source": "JSAT volume 2 (2006), D. Le Berre and L. Simon, preface to the special volume on the SAT 2005 competitions, section 3.1 Submitted Solvers",
     "call": "./Jerusat1.31-B",
     "gz": false,
     "args": [
@@ -201,6 +245,8 @@
   "kcnfs": {
     "status": "ok",
     "name": "kcnfs",
+    "authors": "Gilles Dequen, Olivier Dubois",
+    "authors_source": "JSAT volume 2 (2006), D. Le Berre and L. Simon, preface to the special volume on the SAT 2005 competitions, section 3.1 Submitted Solvers",
     "call": "./kcnfs",
     "gz": false,
     "args": [
@@ -210,6 +256,8 @@
   "kcnfs-2004": {
     "status": "ok",
     "name": "kcnfs-2004",
+    "authors": "Gilles Dequen, Olivier Dubois",
+    "authors_source": "JSAT volume 2 (2006), D. Le Berre and L. Simon, preface to the special volume on the SAT 2005 competitions, section 3.1 Submitted Solvers",
     "call": "./kcnfs-2004",
     "gz": false,
     "args": [
@@ -219,6 +267,8 @@
   "lsatv1.1": {
     "status": "ok",
     "name": "lsatv1.1",
+    "authors": "Richard Ostrowski",
+    "authors_source": "JSAT volume 2 (2006), D. Le Berre and L. Simon, preface to the special volume on the SAT 2005 competitions, section 3.1 Submitted Solvers",
     "call": "./lsatv1.1",
     "gz": false,
     "args": [
@@ -229,6 +279,8 @@
     "status": "fixme",
     "status_detail": "FIXME segfault",
     "name": "march-dl",
+    "authors": "Marijn Heule, Mark Dufour, Joris van Zwieten, Hans van Maaren",
+    "authors_source": "JSAT volume 2 (2006), D. Le Berre and L. Simon, preface to the special volume on the SAT 2005 competitions, section 3.1 Submitted Solvers",
     "call": "./march-dl",
     "gz": false,
     "args": [
@@ -247,6 +299,8 @@
   "midisat-static": {
     "status": "ok",
     "name": "midisat-static",
+    "authors": "Raihan Kibria, Niklas Eén, Niklas Sörensson",
+    "authors_source": "JSAT volume 2 (2006), D. Le Berre and L. Simon, preface to the special volume on the SAT 2005 competitions, section 3.1 Submitted Solvers",
     "call": "./midisat-static",
     "gz": false,
     "args": [
@@ -256,6 +310,8 @@
   "minisat-static": {
     "status": "ok",
     "name": "minisat-static",
+    "authors": "Niklas Sörensson, Niklas Eén",
+    "authors_source": "JSAT volume 2 (2006), D. Le Berre and L. Simon, preface to the special volume on the SAT 2005 competitions, section 3.1 Submitted Solvers",
     "call": "./minisat-static",
     "gz": false,
     "args": [
@@ -265,6 +321,8 @@
   "ranov": {
     "status": "ok",
     "name": "ranov",
+    "authors": "Duc Nghia Pham, Anbulagan",
+    "authors_source": "JSAT volume 2 (2006), D. Le Berre and L. Simon, preface to the special volume on the SAT 2005 competitions, section 3.1 Submitted Solvers",
     "call": "./ranov",
     "gz": false,
     "args": [
@@ -274,6 +332,8 @@
   "rpaws10": {
     "status": "ok",
     "name": "rpaws10",
+    "authors": "Duc Nghia Pham, Anbulagan",
+    "authors_source": "JSAT volume 2 (2006), D. Le Berre and L. Simon, preface to the special volume on the SAT 2005 competitions, section 3.1 Submitted Solvers",
     "call": "./rpaws10",
     "gz": false,
     "args": [
@@ -283,6 +343,8 @@
   "rpaws40": {
     "status": "ok",
     "name": "rpaws40",
+    "authors": "Duc Nghia Pham, Anbulagan",
+    "authors_source": "JSAT volume 2 (2006), D. Le Berre and L. Simon, preface to the special volume on the SAT 2005 competitions, section 3.1 Submitted Solvers",
     "call": "./rpaws40",
     "gz": false,
     "args": [
@@ -292,6 +354,8 @@
   "rpaws5": {
     "status": "ok",
     "name": "rpaws5",
+    "authors": "Duc Nghia Pham, Anbulagan",
+    "authors_source": "JSAT volume 2 (2006), D. Le Berre and L. Simon, preface to the special volume on the SAT 2005 competitions, section 3.1 Submitted Solvers",
     "call": "./rpaws5",
     "gz": false,
     "args": [
@@ -301,6 +365,8 @@
   "rrsaps": {
     "status": "ok",
     "name": "rrsaps",
+    "authors": "Duc Nghia Pham, Anbulagan",
+    "authors_source": "JSAT volume 2 (2006), D. Le Berre and L. Simon, preface to the special volume on the SAT 2005 competitions, section 3.1 Submitted Solvers",
     "call": "./rrsaps",
     "gz": false,
     "args": [
@@ -310,6 +376,8 @@
   "saps": {
     "status": "ok",
     "name": "saps",
+    "authors": "Dave Tompkins, Holger Hoos, Frank Hutter",
+    "authors_source": "JSAT volume 2 (2006), D. Le Berre and L. Simon, preface to the special volume on the SAT 2005 competitions, section 3.1 Submitted Solvers",
     "call": "./saps",
     "gz": false,
     "args": [
@@ -320,6 +388,8 @@
   "sat4j.jar": {
     "status": "ok",
     "name": "sat4j.jar",
+    "authors": "Daniel Le Berre, Mederic Baron, Geoffrey Bourgeois",
+    "authors_source": "JSAT volume 2 (2006), D. Le Berre and L. Simon, preface to the special volume on the SAT 2005 competitions, section 3.1 Submitted Solvers",
     "call": "java",
     "gz": false,
     "args": [
@@ -333,6 +403,8 @@
   "sat4j-sat2005.jar": {
     "status": "ok",
     "name": "sat4j-sat2005.jar",
+    "authors": "Daniel Le Berre, Mederic Baron, Geoffrey Bourgeois",
+    "authors_source": "JSAT volume 2 (2006), D. Le Berre and L. Simon, preface to the special volume on the SAT 2005 competitions, section 3.1 Submitted Solvers",
     "call": "java",
     "gz": false,
     "args": [
@@ -349,6 +421,8 @@
     "status": "fixme",
     "status_detail": "FIXME ./solver35: not found",
     "name": "sateliteGTI",
+    "authors": "Niklas Eén, Niklas Sörensson",
+    "authors_source": "JSAT volume 2 (2006), D. Le Berre and L. Simon, preface to the special volume on the SAT 2005 competitions, section 3.1 Submitted Solvers",
     "call": "./SatELiteGTI",
     "gz": false,
     "args": [
@@ -358,6 +432,8 @@
   "tts-3-0": {
     "status": "ok",
     "name": "tts-3-0",
+    "authors": "Ivor Spence",
+    "authors_source": "JSAT volume 2 (2006), D. Le Berre and L. Simon, preface to the special volume on the SAT 2005 competitions, section 3.1 Submitted Solvers",
     "call": "./tts-3-0",
     "gz": false,
     "args": [
@@ -367,6 +443,8 @@
   "vallst": {
     "status": "ok",
     "name": "vallst",
+    "authors": "Daniel Vallstrom",
+    "authors_source": "JSAT volume 2 (2006), D. Le Berre and L. Simon, preface to the special volume on the SAT 2005 competitions, section 3.1 Submitted Solvers",
     "call": "./solver37.sh",
     "gz": false,
     "args": [
@@ -377,6 +455,8 @@
   "vw": {
     "status": "ok",
     "name": "vw",
+    "authors": "Steven Prestwich",
+    "authors_source": "JSAT volume 2 (2006), D. Le Berre and L. Simon, preface to the special volume on the SAT 2005 competitions, section 3.1 Submitted Solvers",
     "call": "./vw",
     "gz": false,
     "args": [
@@ -387,6 +467,8 @@
   "wllsatv1": {
     "status": "ok",
     "name": "wllsatv1",
+    "authors": "Richard Ostrowski",
+    "authors_source": "JSAT volume 2 (2006), D. Le Berre and L. Simon, preface to the special volume on the SAT 2005 competitions, section 3.1 Submitted Solvers",
     "call": "./wllsatv1",
     "gz": false,
     "args": [
@@ -396,6 +478,8 @@
   "zchaff": {
     "status": "ok",
     "name": "zchaff",
+    "authors": "Zhaohui Fu",
+    "authors_source": "JSAT volume 2 (2006), D. Le Berre and L. Simon, preface to the special volume on the SAT 2005 competitions, section 3.1 Submitted Solvers",
     "call": "./zchaff",
     "gz": false,
     "args": [
@@ -405,6 +489,8 @@
   "zchaff-rand": {
     "status": "ok",
     "name": "zchaff-rand",
+    "authors": "Yogesh Mahajan, Sharad Malik, Lintao Zhang, Zhaohui Fu",
+    "authors_source": "JSAT volume 2 (2006), D. Le Berre and L. Simon, preface to the special volume on the SAT 2005 competitions, section 3.1 Submitted Solvers",
     "call": "./zchaff-rand",
     "gz": false,
     "args": [
