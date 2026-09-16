@@ -9,7 +9,8 @@
         ],
         "call": "./adaptg2wsat2009",
         "gz": false,
-        "status": "ok"
+        "status": "ok",
+        "incomplete": true
     },
     "adaptg2wsat-plus-plus": {
         "name": "adaptg2wsat2009++",
@@ -21,7 +22,8 @@
         ],
         "call": "./adaptg2wsat2009++",
         "gz": false,
-        "status": "ok"
+        "status": "ok",
+        "incomplete": true
     },
     "circus": {
         "name": "CirCUs",
@@ -88,7 +90,8 @@
         ],
         "call": "./gnovelty+",
         "gz": false,
-        "status": "ok"
+        "status": "ok",
+        "incomplete": true
     },
     "gnovelty-plus2": {
         "name": "gnovelty+2",
@@ -100,7 +103,8 @@
         ],
         "call": "./gnovelty+2",
         "gz": false,
-        "status": "ok"
+        "status": "ok",
+        "incomplete": true
     },
     "gnovelty-plus2-h": {
         "name": "gnovelty+2-H",
@@ -112,7 +116,8 @@
         ],
         "call": "./gnovelty+2-H",
         "gz": false,
-        "status": "ok"
+        "status": "ok",
+        "incomplete": true
     },
     "gnovelty-plus-t": {
         "name": "gNovelty+-T",
@@ -120,12 +125,14 @@
         "authors": "Duc-Nghia Pham, Charles Gretton",
         "args": [
             "FILECNF",
-            "RANDOMSEED",
-            "MAXNBTHREAD"
+            "RANDOMSEED"
         ],
         "call": "./gnovelty+",
         "gz": false,
-        "status": "ok"
+        "status": "unstable",
+        "incomplete": true,
+        "comment": "Threaded variant of gNovelty+; this build refuses a third (thread count) argument, so it is run as gnovelty+ <instance> <seed>, single-threaded.",
+        "status_detail": "Threaded build of gNovelty+: refuses the thread count argument and, run as gnovelty+ <instance> <seed>, answers SATISFIABLE immediately with an assignment that does not satisfy the instance (checked by hand on the test instance)."
     },
     "gnovelty-plus2-t": {
         "name": "gNovelty+-v2-T",
@@ -133,12 +140,13 @@
         "authors": "Duc-Nghia Pham, Charles Gretton",
         "args": [
             "FILECNF",
-            "RANDOMSEED",
-            "MAXNBTHREAD"
+            "RANDOMSEED"
         ],
         "call": "./gnovelty+",
         "gz": false,
-        "status": "ok"
+        "status": "ok",
+        "incomplete": true,
+        "comment": "Threaded variant of gNovelty+; this build refuses a third (thread count) argument, so it is run as gnovelty+ <instance> <seed>, single-threaded."
     },
     "gnovelty-plus2-t-h": {
         "name": "gNovelty+-v2-T-H",
@@ -146,12 +154,13 @@
         "authors": "Duc-Nghia Pham, Charles Gretton",
         "args": [
             "FILECNF",
-            "RANDOMSEED",
-            "MAXNBTHREAD"
+            "RANDOMSEED"
         ],
         "call": "./gnovelty+",
         "gz": false,
-        "status": "ok"
+        "status": "ok",
+        "incomplete": true,
+        "comment": "Threaded variant of gNovelty+; this build refuses a third (thread count) argument, so it is run as gnovelty+ <instance> <seed>, single-threaded."
     },
     "hybrid2": {
         "name": "Hybrid2",
@@ -163,7 +172,8 @@
         ],
         "call": "./Hybrid2",
         "gz": false,
-        "status": "ok"
+        "status": "ok",
+        "incomplete": true
     },
     "hybridgm": {
         "name": "hybridGM",
@@ -177,7 +187,8 @@
         "gz": false,
         "status": "ok",
         "license": "GPL-2.0",
-        "license_source": "licence header of hybridGM/march.h"
+        "license_source": "licence header of hybridGM/march.h",
+        "incomplete": true
     },
     "hybridgm3": {
         "name": "hybridGM3",
@@ -191,7 +202,8 @@
         "gz": false,
         "status": "ok",
         "license": "GPL-2.0",
-        "license_source": "licence header of hybridGM3/march.h"
+        "license_source": "licence header of hybridGM3/march.h",
+        "incomplete": true
     },
     "hybridgm7": {
         "name": "hybridGM7",
@@ -205,7 +217,8 @@
         "gz": false,
         "status": "ok",
         "license": "GPL-2.0",
-        "license_source": "licence header of hybridGM7/march.h"
+        "license_source": "licence header of hybridGM7/march.h",
+        "incomplete": true
     },
     "hydrasat": {
         "name": "HydraSAT",
@@ -266,7 +279,8 @@
         ],
         "call": "./iPAWS",
         "gz": false,
-        "status": "ok"
+        "status": "ok",
+        "incomplete": true
     },
     "iut_bmb_sat": {
         "name": "IUT_BMB_SAT",
@@ -299,14 +313,14 @@
         "version": "c/2009-03-20",
         "authors": "Youssef Hamadi, Saïd Jabbour, Lakhdar Saïs",
         "args": [
-            "FILECNF",
-            "c"
+            "FILECNF"
         ],
-        "call": "minisat_static",
+        "call": "./run-lysat.sh",
         "gz": false,
         "status": "ok",
         "license": "MIT",
-        "license_source": "licence file minisat/LICENSE"
+        "license_source": "licence file minisat/LICENSE",
+        "comment": "LySAT (variant c) is a MiniSat 2.0 beta build that prints a bare SATISFIABLE and no model; a wrapper added at build time runs it with a result file and prints the s and v lines from it. The competition command was minisat_static <instance> c."
     },
     "manysat_1.1-aimd_0": {
         "name": "ManySAT-1.1",
@@ -398,11 +412,12 @@
         "args": [
             "FILECNF"
         ],
-        "call": "minisat",
+        "call": "./run-minisat_09z.sh",
         "gz": false,
         "status": "ok",
         "license": "MIT",
-        "license_source": "licence file minisat09z/LICENSE"
+        "license_source": "licence file minisat09z/LICENSE",
+        "comment": "MiniSat 2.0 beta build: prints a bare SATISFIABLE and no model; a wrapper added at build time runs it with a result file and prints the s and v lines from it."
     },
     "minisat_cumr": {
         "name": "minisat_cumr",
@@ -452,7 +467,8 @@
         ],
         "call": "./NCVWr",
         "gz": false,
-        "status": "ok"
+        "status": "ok",
+        "incomplete": true
     },
     "picosat": {
         "name": "picosat",
@@ -540,14 +556,15 @@
         "authors": "Kota Tsuyuzaki",
         "args": [
             "FILECNF",
-            "MAXNBTHREAD",
+            "2",
             "TIMEOUT"
         ],
-        "call": "./satake",
+        "call": "./run-satake.sh",
         "gz": false,
         "status": "ok",
         "license": "MIT",
-        "license_source": "licence file satake/COPYRIGHT"
+        "license_source": "licence file satake/COPYRIGHT",
+        "comment": "Parallel solver that refuses to run with fewer than two search threads: the thread count is fixed to 2 instead of MAXNBTHREAD. satake exits with code 2 after answering; a wrapper added at build time exits 0 instead."
     },
     "satzilla2009_c": {
         "name": "SATzilla2009_C",
@@ -616,9 +633,11 @@
         ],
         "call": "./slstc",
         "gz": false,
-        "status": "ok",
+        "status": "unstable",
         "license": "BSD-2-Clause AND MIT",
-        "license_source": "licence header of slstc-1.0/mt19937ar.cc, slstc-1.0/solvertypes.h"
+        "license_source": "licence header of slstc-1.0/mt19937ar.cc, slstc-1.0/solvertypes.h",
+        "incomplete": true,
+        "status_detail": "Local search (UBCSAT-based) that answers SATISFIABLE on the satisfiable test instance but prints a model with one literal beyond the number of variables of the instance (an auxiliary variable of the -tc algorithm), which the checker rejects."
     },
     "tnm": {
         "name": "TNM",
@@ -630,7 +649,8 @@
         ],
         "call": "./TNM",
         "gz": false,
-        "status": "ok"
+        "status": "ok",
+        "incomplete": true
     },
     "tts": {
         "name": "tts",

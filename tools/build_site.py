@@ -251,6 +251,8 @@ footer .credits { display:block; margin-bottom:6px; } .hero h1 { font-size:34px;
 .links a { display:inline-flex; align-items:center; gap:7px; color:inherit; font-weight:600; text-decoration:none; }
 .links a:hover { text-decoration:underline; }
 .mark { width:20px; height:20px; fill:currentColor; flex:none; }
+.stat.top ol { margin:6px 0 0; padding-left:18px; font-size:14px; line-height:1.45; }
+.stat.top .who { color:var(--muted); font-size:12px; }
 .notice { font-size:14px !important; color:var(--muted); border-left:3px solid var(--hf); padding-left:10px; }
 .muted-inline { color:var(--muted); font-size:13px; }
 .pitch { margin:22px 0 6px; background:var(--card); border:1px solid var(--line); border-left:4px solid var(--hf); border-radius:12px; padding:14px 18px; max-width:860px; }
@@ -600,18 +602,8 @@ def usage_figures(solvers: list[dict]) -> str:
     note = " Our own builds and verification runs are counted."
     left = (f'<div class="fig"><h2>Most pulled solvers</h2><div class="sub">Docker Hub pulls per repository, all years of a solver together, read on {esc(STATS_GENERATED[:10])}.'
             f'{"" if STATS_COMPLETE else " Only the first 100 repositories could be read."}{note} <a href="leaderboards.html#pulled">Full list →</a></div>{svg_hbars(top_pulled, "Most pulled solvers")}</div>') if top_pulled else ""
-    right = (f'<div class="fig"><h2>Most downloaded sources</h2><div class="sub">Downloads of the source archives from the GitHub releases, read on {esc(STATS_GENERATED[:10])}. Zenodo only counts downloads per record, so the years hosted there appear in the next figure.{note}</div>{svg_hbars(top_dl, "Most downloaded sources")}</div>') if top_dl else ""
-    by_year = {}
-    for s in solvers:
-        y = by_year.setdefault(s["set"], {"assets": {}, "records": set()})
-        if s["downloads"] is not None and s["download_url"]:
-            y["assets"][urllib.parse.unquote(s["download_url"].rsplit("/", 1)[-1])] = s["downloads"]
-        if s["zenodo_record"] in ZENODO:
-            y["records"].add(s["zenodo_record"])
-    rows = [(f'{y} ({"Zenodo" if d["records"] else "GitHub"})', sum(d["assets"].values()) + sum(ZENODO[r]["downloads"] for r in d["records"]))
-            for y, d in sorted(by_year.items()) if d["assets"] or d["records"]]
-    per_year = (f'<div class="fig"><h2>Source downloads by competition year</h2><div class="sub">Downloads of the archives of each year: the release assets on GitHub, or the Zenodo record of the year (2000 to 2005 hold binaries only).{note}</div>{svg_hbars(rows, "Source downloads by competition year")}</div>') if rows else ""
-    return f'<div class="two" style="margin-top:14px">{left}{right}</div>' + (f'<div class="two" style="margin-top:14px">{per_year}</div>' if per_year else "")
+    right = (f'<div class="fig"><h2>Most downloaded sources</h2><div class="sub">Downloads of the source archives from the GitHub releases, read on {esc(STATS_GENERATED[:10])}. Zenodo only counts downloads per record, so the years hosted there do not appear here.{note}</div>{svg_hbars(top_dl, "Most downloaded sources")}</div>') if top_dl else ""
+    return f'<div class="two" style="margin-top:14px">{left}{right}</div>'
 
 
 def podium_section(solvers: list[dict]) -> str:
@@ -640,6 +632,17 @@ def podium_section(solvers: list[dict]) -> str:
     return (f'<div class="fig" style="margin-top:14px"><h2>Award-winning solvers</h2><div class="sub">Winners of every track and category as announced by the competition organizers, {first} to {max(by_year)}, with the rest of each podium folded. Ties share a rank; only podiums whose solver has an image here are listed, see <a href="{REPO_URL}/blob/webpage/data/awards.json">data/awards.json</a> for the sources. This summary is an extraction from the database and involves choices and interpretations that may still change (some solver names are not clarified yet); any help is welcome, send a pull request.</div>'
             f'<div class="links"><a class="btn small" href="catalogue.html?award=winner">Winners in the catalogue →</a> <a class="btn small" href="catalogue.html?award=awarded">Every awarded solver →</a> <a class="btn small" href="leaderboards.html">Leaderboards →</a></div>'
             f'<div class="podium">{"".join(blocks)}</div></div>')
+
+
+def top_tiles(solvers: list[dict]) -> str:
+    """Two overview tiles: the three most medalled solvers and authors, linking to the leaderboards."""
+    rows, arows = medal_rankings(solvers)
+    if not rows:
+        return ""
+    sol = "".join(f'<li><a href="{s["set"]}/{s["key"]}.html">{esc(s["name"])}</a> <span class="who">{esc(s["set"])} · {pts} pts</span></li>' for pts, g, sv, b, s in rows[:3])
+    aut = "".join(f'<li><a href="catalogue.html?q={esc(name)}">{esc(name)}</a> <span class="who">{pts} pts</span></li>' for pts, g, sv, b, name, d in arows[:3])
+    return (f'<div class="stat top"><div class="l">Top 3 solvers by medals <a href="leaderboards.html#solvers">→</a></div><ol>{sol}</ol></div>'
+            f'<div class="stat top"><div class="l">Top 3 authors by medals <a href="leaderboards.html#authors">→</a></div><ol>{aut}</ol></div>')
 
 
 def overview_page(solvers: list[dict]) -> str:
@@ -692,6 +695,7 @@ docker run --rm -v $PWD:/data satex/kissat-sc2024:2024 instance.cnf proof.out</p
 <div class="stat"><div class="n">{sum(1 for s in solvers if s["license"])}</div><div class="l">images with an identified licence (<a href="catalogue.html?license=unknown">{sum(1 for s in solvers if not s["license"])} unknown</a>)</div></div>
 <div class="stat"><div class="n">{len(families)}</div><div class="l">solver families</div></div>
 <div class="stat"><div class="n">{len(authors)}</div><div class="l">authors</div></div>
+{top_tiles(solvers)}
 </div>
 <div class="fig"><h2>Solver images per competition year</h2><div class="sub">Each image sits on the highest rung it reached in its last run: source unavailable, source available but build fails, compiles, runs but a check fails, verified (build, SAT model, UNSAT and proof all pass). Gray: never run through the test suite yet.</div>
 {svg_stacked_years(per_year)}
@@ -812,11 +816,14 @@ def author_names(text: str) -> list[str]:
     return [a for a in names if a and "co-author" not in a.lower() and "et al" not in a.lower() and len(a) > 2]
 
 
-def leaderboard_page(solvers: list[dict]) -> str:
-    """Solvers and authors ranked by competition medals (3 points per gold, 2 per silver, 1 per bronze)."""
-    def medals(awards):
-        g = sum(1 for a in awards if a["rank"] == 1); sv = sum(1 for a in awards if a["rank"] == 2); b = sum(1 for a in awards if a["rank"] == 3)
-        return g, sv, b, 3 * g + 2 * sv + b
+def medals(awards):
+    """Gold, silver, bronze counts and points (3 per gold, 2 per silver, 1 per bronze)."""
+    g = sum(1 for a in awards if a["rank"] == 1); sv = sum(1 for a in awards if a["rank"] == 2); b = sum(1 for a in awards if a["rank"] == 3)
+    return g, sv, b, 3 * g + 2 * sv + b
+
+
+def medal_rankings(solvers: list[dict]):
+    """Solvers and authors ranked by competition medals: (pts, gold, silver, bronze, solver) and (pts, gold, silver, bronze, name, details)."""
     rows = []
     for s in solvers:
         if not s["awards"]:
@@ -824,15 +831,6 @@ def leaderboard_page(solvers: list[dict]) -> str:
         g, sv, b, pts = medals(s["awards"])
         rows.append((pts, g, sv, b, s))
     rows.sort(key=lambda r: (-r[0], -r[1], -r[2], -r[3], r[4]["set"], r[4]["name"].lower()))
-    vlab = lambda s: VERDICT_LABEL.get(s["verdict"], (s["verdict"], "none"))
-    solver_rows = "".join(
-        f'<tr class="top{i + 1 if i < 3 else 0}"><td class="rank" data-v="{i + 1}">{i + 1}</td>'
-        f'<td><a href="{s["set"]}/{s["key"]}.html">{esc(s["name"])}</a> <span class="tag id">{esc(s["family"])}</span></td>'
-        f'<td data-v="{esc(s["set"])}">{esc(s["set"])}</td><td class="who">{esc(s["authors"] or "authors not recorded")}</td>'
-        f'<td class="num" data-v="{g}">{g}</td><td class="num" data-v="{sv}">{sv}</td><td class="num" data-v="{b}">{b}</td><td class="num" data-v="{pts}"><b>{pts}</b></td>'
-        f'<td class="num" data-v="{len({a["track"] for a in s["awards"]})}">{len({a["track"] for a in s["awards"]})}</td>'
-        f'<td data-v="{esc(s["verdict"])}"><span class="badge {vlab(s)[1]}">{esc(vlab(s)[0])}</span></td></tr>'
-        for i, (pts, g, sv, b, s) in enumerate(rows))
     authors = {}
     for s in solvers:
         for a in author_names(s["authors"]):
@@ -852,6 +850,21 @@ def leaderboard_page(solvers: list[dict]) -> str:
         g, sv, b, pts = medals(d["awards"])
         arows.append((pts, g, sv, b, name, d))
     arows.sort(key=lambda r: (-r[0], -r[1], -r[2], -r[3], r[4].lower()))
+    return rows, arows
+
+
+def leaderboard_page(solvers: list[dict]) -> str:
+    """Solvers and authors ranked by competition medals (3 points per gold, 2 per silver, 1 per bronze)."""
+    rows, arows = medal_rankings(solvers)
+    vlab = lambda s: VERDICT_LABEL.get(s["verdict"], (s["verdict"], "none"))
+    solver_rows = "".join(
+        f'<tr class="top{i + 1 if i < 3 else 0}"><td class="rank" data-v="{i + 1}">{i + 1}</td>'
+        f'<td><a href="{s["set"]}/{s["key"]}.html">{esc(s["name"])}</a> <span class="tag id">{esc(s["family"])}</span></td>'
+        f'<td data-v="{esc(s["set"])}">{esc(s["set"])}</td><td class="who">{esc(s["authors"] or "authors not recorded")}</td>'
+        f'<td class="num" data-v="{g}">{g}</td><td class="num" data-v="{sv}">{sv}</td><td class="num" data-v="{b}">{b}</td><td class="num" data-v="{pts}"><b>{pts}</b></td>'
+        f'<td class="num" data-v="{len({a["track"] for a in s["awards"]})}">{len({a["track"] for a in s["awards"]})}</td>'
+        f'<td data-v="{esc(s["verdict"])}"><span class="badge {vlab(s)[1]}">{esc(vlab(s)[0])}</span></td></tr>'
+        for i, (pts, g, sv, b, s) in enumerate(rows))
     def years_text(ys):
         ys = sorted(y for y in ys if y.isdigit())
         return f"{ys[0]}–{ys[-1]}" if len(ys) > 1 else (ys[0] if ys else "")
