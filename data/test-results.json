@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-16T03:07:17Z",
+  "generated": "2026-09-16T03:13:47Z",
   "images": {
     "abcd_para18:2018": {
       "build": {
@@ -4970,23 +4970,20 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-16T01:05:24Z",
-      "run": "20260916T010524Z",
+      "date": "2026-09-16T03:10:09Z",
+      "run": "20260916T031009Z",
       "tests": {
         "launch": {
           "status": "ok"
         },
         "sat-gzip-model": {
-          "detail": "timeout",
-          "status": "skip"
+          "status": "ok"
         },
         "sat-gzip-result": {
-          "detail": "timeout",
-          "status": "skip"
+          "status": "ok"
         },
         "sat-gzip-termination": {
-          "detail": "TIMEOUT",
-          "status": "fail"
+          "status": "ok"
         },
         "sat-model": {
           "status": "ok"
@@ -5006,7 +5003,7 @@
           "status": "skip"
         }
       },
-      "verdict": "runs"
+      "verdict": "verified"
     },
     "ccspenelope:2016": {
       "build": {
@@ -21066,15 +21063,14 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-16T00:50:18Z",
-      "run": "20260916T005018Z",
+      "date": "2026-09-16T03:05:43Z",
+      "run": "20260916T030543Z",
       "tests": {
         "launch": {
           "status": "ok"
         },
         "sat-gzip-model": {
-          "detail": "model does not satisfy clause 1",
-          "status": "fail"
+          "status": "ok"
         },
         "sat-gzip-result": {
           "status": "ok"
@@ -21083,16 +21079,13 @@
           "status": "ok"
         },
         "sat-model": {
-          "detail": "timeout",
-          "status": "skip"
+          "status": "ok"
         },
         "sat-result": {
-          "detail": "timeout",
-          "status": "skip"
+          "status": "ok"
         },
         "sat-termination": {
-          "detail": "TIMEOUT",
-          "status": "fail"
+          "status": "ok"
         },
         "unsat-proof": {
           "detail": "incomplete solver",
@@ -21103,7 +21096,7 @@
           "status": "skip"
         }
       },
-      "verdict": "runs"
+      "verdict": "verified"
     },
     "lingeling-bbe:2017": {
       "build": {
@@ -35116,10 +35109,123 @@
         "docker-engine": {
           "status": "ok"
         },
+        "image-assemble": {
+          "status": "ok"
+        },
         "runtime-base": {
           "status": "ok"
         },
         "runtime-base-image": {
+          "status": "ok"
+        },
+        "runtime-dependencies": {
+          "status": "ok"
+        },
+        "source-download": {
+          "status": "ok"
+        },
+        "source-extract": {
+          "status": "ok"
+        }
+      },
+      "date": "2026-09-16T01:26:00Z",
+      "run": "20260916T012600Z",
+      "tests": {
+        "launch": {
+          "status": "ok"
+        },
+        "sat-gzip-model": {
+          "status": "ok"
+        },
+        "sat-gzip-result": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-gzip-termination": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-model": {
+          "status": "ok"
+        },
+        "sat-result": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-termination": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "unsat-proof": {
+          "detail": "[Errno 2] No such file or directory: '/tmp/satex-tests-2eifnqku/proof.tmp'",
+          "status": "fail"
+        },
+        "unsat-proof-run-result": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-proof-run-termination": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-result": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-termination": {
+          "detail": "UNSAT",
+          "status": "ok"
+        }
+      },
+      "verdict": "runs"
+    },
+    "riss_2:2014": {
+      "build": {
+        "build-environment": {
+          "detail": "exit 1",
+          "status": "fail"
+        },
+        "builder-base-image": {
+          "status": "ok"
+        },
+        "docker-engine": {
+          "status": "ok"
+        },
+        "source-download": {
+          "status": "ok"
+        },
+        "source-extract": {
+          "status": "ok"
+        }
+      },
+      "date": "2026-09-16T01:26:00Z",
+      "run": "20260916T012600Z",
+      "verdict": "source-available"
+    },
+    "rokk:2014": {
+      "build": {
+        "build-environment": {
+          "status": "ok"
+        },
+        "builder-base-image": {
+          "status": "ok"
+        },
+        "compile": {
+          "status": "ok"
+        },
+        "docker-engine": {
+          "status": "ok"
+        },
+        "image-assemble": {
+          "status": "ok"
+        },
+        "runtime-base": {
+          "status": "ok"
+        },
+        "runtime-base-image": {
+          "status": "ok"
+        },
+        "runtime-dependencies": {
           "status": "ok"
         },
         "source-download": {
