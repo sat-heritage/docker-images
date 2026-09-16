@@ -157,6 +157,9 @@ def collect(repo: Path) -> list[dict]:
                 capabilities.append("parallel")
             if entry.get("gz"):
                 capabilities.append("gzip input")
+            binary_only = block.get("builder", setup.get("builder", "")) == "generic/binary-v1"
+            if binary_only:
+                capabilities.append("binary only")
             solvers.append({
                 "capabilities": capabilities,
                 "image": image,
@@ -180,6 +183,7 @@ def collect(repo: Path) -> list[dict]:
                 "family": family_of(entry, setup),
                 "recipe": recipe_origin(block, setup),
                 "builder": block.get("builder", ""),
+                "binary_only": binary_only,
                 "builder_base": block.get("builder_base", block.get("base_from", "")),
                 "apt_snapshot": block.get("APT_SNAPSHOT", ""),
                 "build_command": block.get("BUILD_COMMAND", ""),
@@ -303,7 +307,7 @@ const data = window.SOLVERS;
 const grid = document.getElementById('grid');
 const q = document.getElementById('q');
 const fy = document.getElementById('year'), ff = document.getElementById('family'), fv = document.getElementById('verdict'), fs = document.getElementById('status');
-function badge(v) { const m = {verified:['Verified','ok'],runs:['Runs, checks failed','warn'],built:['Compiles','warn'],'source-available':['Build fails','fail'],'source-unavailable':['Source unavailable','fail'],unknown:['Not run yet','none']}[v] || [v,'none']; return `<span class="badge ${m[1]}">${m[0]}</span>`; }
+function badge(v, bin) { const m = (bin ? {verified:['Verified (packaged binary)','ok'],runs:['Packaged binary, checks failed','warn'],built:['Packaged binary, not verified','warn'],'source-available':['Packaging fails','fail'],'source-unavailable':['Binary unavailable','fail'],unknown:['Not run yet','none']} : {verified:['Verified','ok'],runs:['Runs, checks failed','warn'],built:['Compiles','warn'],'source-available':['Build fails','fail'],'source-unavailable':['Source unavailable','fail'],unknown:['Not run yet','none']})[v] || [v,'none']; return `<span class="badge ${m[1]}">${m[0]}</span>`; }
 function render() {
   const s = q.value.trim().toLowerCase();
   const fc = document.getElementById('cap'), fa = document.getElementById('award'), fh = document.getElementById('hub'), fl = document.getElementById('license');
@@ -318,7 +322,7 @@ function card(d) { return `<a class="card" href="${d.set}/${d.key}.html">
     <div class="tagrow"><span class="lbl">solver</span><span class="tag id">${d.family}</span>${d.version ? `<span class="tag id">v${d.version}</span>` : ''}${d.tracks.map(t => `<span class="tag id">${t}</span>`).join('')}${d.awards.slice(0, d.more ? 2 : 3).map(a => `<span class="tag award r${Math.min(a.rank, 3)}">${a.label}</span>`).join('')}${d.more ? `<span class="tag award more">${d.more}</span>` : ''}</div>
     <div class="tagrow"><span class="lbl">licence</span>${d.licenses.length ? d.licenses.map(l => `<span class="tag id lic">${l}</span>`).join('') : '<span class="tag id lic">licence unknown</span>'}</div>
     <div class="tagrow"><span class="lbl">can do</span>${d.capabilities.map(c => `<span class="tag cap">${c}</span>`).join('')}</div>
-    <div class="tagrow"><span class="lbl">status</span>${badge(d.verdict)}<span class="badge ${ {ok:'ok',unstable:'warn',fixme:'fail'}[d.status] || 'none'}">${ {ok:'builds',unstable:'unstable',fixme:'not buildable'}[d.status] || d.status}</span>${d.published === true ? HUB_YES : d.published === false ? HUB_NO : ''}${d.pulls != null ? `<span class="pulls" title="pulls of satex/${d.key}, all tags">⇩ ${d.pulls.toLocaleString('en')}</span>` : ''}</div>
+    <div class="tagrow"><span class="lbl">status</span>${badge(d.verdict, d.capabilities.includes('binary only'))}<span class="badge ${ {ok:'ok',unstable:'warn',fixme:'fail'}[d.status] || 'none'}">${ {ok:'builds',unstable:'unstable',fixme:'not buildable'}[d.status] || d.status}</span>${d.published === true ? HUB_YES : d.published === false ? HUB_NO : ''}${d.pulls != null ? `<span class="pulls" title="pulls of satex/${d.key}, all tags">⇩ ${d.pulls.toLocaleString('en')}</span>` : ''}</div>
   </a>`; }
 [q, fy, ff, fv, fs, document.getElementById('cap'), document.getElementById('award'), document.getElementById('hub'), document.getElementById('license')].filter(Boolean).forEach(e => e.addEventListener('input', render));
 const params = new URLSearchParams(location.search);
@@ -469,7 +473,7 @@ def index_page(solvers: list[dict]) -> str:
   {ctl("family", f'<select id="family"><option value="">All families</option>{options(families)}</select>')}
   {ctl("verdict", '<select id="verdict"><option value="">Any verification</option><option value="verified">Verified</option><option value="runs">Runs, checks failed</option><option value="built">Compiles</option><option value="source-available">Build fails</option><option value="source-unavailable">Source unavailable</option><option value="unknown">Not run yet</option></select>')}
   {ctl("status", '<select id="status"><option value="">Any status</option><option value="ok">builds</option><option value="unstable">unstable</option><option value="fixme">not buildable</option></select>')}
-  {ctl("cap", '<select id="cap"><option value="">Any capability</option><option value="SAT">SAT (verified)</option><option value="UNSAT">UNSAT (verified)</option><option value="UNSAT+proof">UNSAT+proof (verified)</option><option value="SAT only (incomplete)">SAT only (incomplete solver)</option><option value="parallel">parallel</option><option value="gzip input">gzip input</option></select>')}
+  {ctl("cap", '<select id="cap"><option value="">Any capability</option><option value="SAT">SAT (verified)</option><option value="UNSAT">UNSAT (verified)</option><option value="UNSAT+proof">UNSAT+proof (verified)</option><option value="SAT only (incomplete)">SAT only (incomplete solver)</option><option value="parallel">parallel</option><option value="gzip input">gzip input</option><option value="binary only">binary only (no sources)</option></select>')}
   {ctl("license", f'<select id="license"><option value="">Any licence</option>{options(licenses)}<option value="unknown">licence unknown</option></select>')}
   {ctl("award", '<select id="award"><option value="">Any award</option><option value="awarded">Awarded (any podium)</option><option value="winner">Winners (1st only)</option></select>')}
   {ctl("hub", '<select id="hub"><option value="">Docker Hub: any</option><option value="yes">Ready on Docker Hub</option><option value="no">Not on Docker Hub yet</option></select>') if HUB_GENERATED else ''}
@@ -484,8 +488,24 @@ def index_page(solvers: list[dict]) -> str:
     return page("Catalogue", body, 0, "catalogue")
 
 
+BINARY_VERDICT_LABEL = {
+    "verified": ("Verified (packaged binary)", "ok"),
+    "runs": ("Packaged binary, checks failed", "warn"),
+    "built": ("Packaged binary, not verified", "warn"),
+    "source-available": ("Binary available, packaging fails", "fail"),
+    "source-unavailable": ("Binary unavailable", "fail"),
+    "unknown": ("Not run yet", "none"),
+}
+
+
+def verdict_label(s: dict):
+    """Label and class of a verdict; binary-only images say so instead of "compiles"."""
+    table = BINARY_VERDICT_LABEL if s.get("binary_only") else VERDICT_LABEL
+    return table.get(s["verdict"], (s["verdict"], "none"))
+
+
 def solver_page(s: dict) -> str:
-    vlabel, vcls = VERDICT_LABEL.get(s["verdict"], (s["verdict"], "none"))
+    vlabel, vcls = verdict_label(s)
     slabel, scls = STATUS_LABEL.get(s["status"], (s["status"], "none"))
     comp = COMPETITION_URL.get(int(s["set"])) if s["set"].isdigit() else None
     checks = "".join(
@@ -508,7 +528,7 @@ def solver_page(s: dict) -> str:
 {license_section(s)}
 <div class="section pull"><h2>{'Pull it from Docker and run it' if s['published'] is not False else 'Build it and run it'}</h2><pre class="cmd" data-copy>{'docker pull ' + DOCKER_NS + '/' + esc(s['image']) if s['published'] is not False else 'pip install satex && satex build ' + esc(s['image'])}
 {esc(run_cmd)}</pre><p class="muted-inline">{('No build needed: the image is published on <a href="https://hub.docker.com/r/' + DOCKER_NS + '/' + esc(s['key']) + '">Docker Hub</a>' + (' (checked ' + esc(HUB_GENERATED[:10]) + ')' if HUB_GENERATED else '') + '.') if s['published'] is not False else ('This image is not on <a href="https://hub.docker.com/u/' + DOCKER_NS + '">Docker Hub</a> yet' + (' (checked ' + esc(HUB_GENERATED[:10]) + ')' if HUB_GENERATED else '') + ': the images are pushed in batches, and some entries cannot be built. Until then, <code>satex build</code> makes it on your machine from the archived sources and the recipe below, and the run command is the same.')} Mount the directory that holds your instance on <code>/data</code>; the proof file is optional{'' if s['proof'] else ' and not produced by this solver'}. Its full provenance is kept: the archived sources, the pinned build environment and the recipe are all listed below, and <code>satex build {esc(s['image'])}</code> rebuilds the same image on your own machine if you would rather not trust ours (slower, same solver).</p>
-{('<p><a class="btn" href="' + esc(s['download_url']) + '">Download the sources</a> <span class="muted-inline">' + esc(urllib.parse.unquote(s['download_url'].rsplit('/', 1)[-1])) + ', the competition submission as archived by SAT Heritage, to build it yourself with the recipe below.' + ((' Downloaded ' + fmt_count(s['downloads']) + ' times.') if s['downloads'] is not None else ((' The Zenodo record holding the archives of this year was downloaded ' + fmt_count(ZENODO[s['zenodo_record']]['downloads']) + ' times (Zenodo counts per record, not per file).') if s['zenodo_record'] in ZENODO else '')) + '</span></p>') if s['download_url'] else ''}<dl>
+{('<p><a class="btn" href="' + esc(s['download_url']) + '">' + ('Download the binary' if s['binary_only'] else 'Download the sources') + '</a> <span class="muted-inline">' + esc(urllib.parse.unquote(s['download_url'].rsplit('/', 1)[-1]).split('?')[0]) + (', the binary distributed by the competition, as archived by SAT Heritage: no sources are available for this solver, the image packages this file as is, nothing is compiled.' if s['binary_only'] else ', the competition submission as archived by SAT Heritage, to build it yourself with the recipe below.') + ((' Downloaded ' + fmt_count(s['downloads']) + ' times.') if s['downloads'] is not None else ((' The Zenodo record holding the archives of this year was downloaded ' + fmt_count(ZENODO[s['zenodo_record']]['downloads']) + ' times (Zenodo counts per record, not per file).') if s['zenodo_record'] in ZENODO else '')) + '</span></p>') if s['download_url'] else ''}<dl>
 <dt>Licence</dt><dd>{esc(', '.join(s['licenses'])) if s['licenses'] else 'not identified: no licence file or header found in the archive; if you know it, send a pull request'}{(' <span class="muted-inline">(' + esc(s['license_source']) + ')</span>') if s['license_source'] else ''}</dd>
 <dt>Image</dt><dd><code>{DOCKER_NS}/{esc(s['image'])}</code></dd>
 <dt>Command</dt><dd><code>{esc(s['call'])} {esc(' '.join(map(str, s['args'])))}</code></dd>
@@ -663,7 +683,8 @@ def overview_page(solvers: list[dict]) -> str:
     other_count = families.get("other", 0)
     longest = max(author_years.items(), key=lambda kv: (len(kv[1]), kv[0])) if author_years else ("", set())
     biggest_year = max(per_year, key=lambda r: sum(r[1].values())) if per_year else ("", Counter())
-    compiles = sum(1 for s in solvers if s["verdict"] in ("built", "runs", "verified"))
+    compiles = sum(1 for s in solvers if s["verdict"] in ("built", "runs", "verified") and not s["binary_only"])
+    binaries = sum(1 for s in solvers if s["binary_only"])
     tested = sum(1 for s in solvers if s["verdict"] != "unknown")
     oldest = min((s for s in solvers if s["set"].isdigit()), key=lambda s: int(s["set"]), default=None)
     facts = [
@@ -688,6 +709,7 @@ docker run --rm -v $PWD:/data satex/kissat-sc2024:2024 instance.cnf proof.out</p
 <div class="stat"><div class="n">{len(solvers)}</div><div class="l">solver images</div></div>
 <div class="stat"><div class="n">{tested}</div><div class="l">run through the test suite so far</div></div>
 <div class="stat"><div class="n">{compiles}</div><div class="l">of them compile from source today</div></div>
+<div class="stat"><div class="n">{binaries}</div><div class="l"><a href="catalogue.html?cap=binary+only">binary only</a>: the competition binary is packaged, no sources exist</div></div>
 <div class="stat"><div class="n">{verified}</div><div class="l">of them fully verified (build, SAT, UNSAT, proof)</div></div>
 {('<div class="stat"><div class="n">' + fmt_count(sum(s["pulls"] or 0 for s in {x["key"]: x for x in solvers}.values())) + '</div><div class="l">Docker Hub pulls' + ('' if STATS_COMPLETE else ' (first 100 repositories only)') + ', our own builds and tests included</div></div><div class="stat"><div class="n">' + fmt_count(GITHUB_DOWNLOADS + sum(v.get("downloads", 0) for v in ZENODO.values())) + '</div><div class="l">source archive downloads, GitHub releases and Zenodo records together</div></div>') if STATS_GENERATED else ''}
 {('<div class="stat"><div class="n">' + str(sum(1 for s in solvers if s["published"])) + '</div><div class="l">images on Docker Hub, checked ' + esc(HUB_GENERATED[:10]) + '</div></div>') if HUB_GENERATED else ''}
@@ -697,7 +719,7 @@ docker run --rm -v $PWD:/data satex/kissat-sc2024:2024 instance.cnf proof.out</p
 <div class="stat"><div class="n">{len(authors)}</div><div class="l">authors</div></div>
 {top_tiles(solvers)}
 </div>
-<div class="fig"><h2>Solver images per competition year</h2><div class="sub">Each image sits on the highest rung it reached in its last run: source unavailable, source available but build fails, compiles, runs but a check fails, verified (build, SAT model, UNSAT and proof all pass). Gray: never run through the test suite yet.</div>
+<div class="fig"><h2>Solver images per competition year</h2><div class="sub">Each image sits on the highest rung it reached in its last run: source unavailable, source available but build fails, compiles, runs but a check fails, verified (build, SAT model, UNSAT and proof all pass). Gray: never run through the test suite yet. For the binary-only years (2000 to 2005, part of 2007 and 2009) "compiles" only means that the competition binary was packaged.</div>
 {svg_stacked_years(per_year)}
 <div class="legend2"><span><i class="sw" style="background:var(--l-none)"></i>not run yet</span>{''.join(f'<span><i class="sw" style="background:var(--l{i})"></i>{LADDER_LABEL[k]}</span>' for i, k in enumerate(LADDER))}</div></div>
 <div class="two" style="margin-top:14px">
@@ -856,7 +878,7 @@ def medal_rankings(solvers: list[dict]):
 def leaderboard_page(solvers: list[dict]) -> str:
     """Solvers and authors ranked by competition medals (3 points per gold, 2 per silver, 1 per bronze)."""
     rows, arows = medal_rankings(solvers)
-    vlab = lambda s: VERDICT_LABEL.get(s["verdict"], (s["verdict"], "none"))
+    vlab = verdict_label
     solver_rows = "".join(
         f'<tr class="top{i + 1 if i < 3 else 0}"><td class="rank" data-v="{i + 1}">{i + 1}</td>'
         f'<td><a href="{s["set"]}/{s["key"]}.html">{esc(s["name"])}</a> <span class="tag id">{esc(s["family"])}</span></td>'
