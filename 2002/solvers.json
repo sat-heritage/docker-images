@@ -2,196 +2,240 @@
    "berkmin": {
       "status": "ok",
       "name": "berkmin",
+      "authors": "Eugene Goldberg, Yakov Novikov",
+      "authors_source": "SAT 2002 competition report, Solver Submission (satisfiability.org/competition/2002/onlinereport/node10.html)",
       "call": "./berkmin",
       "gz": false,
       "args": [
          "FILECNF"
       ],
-      "comment":"Warning, this version had an identifed (simple) bug. See http://www.satcompetition.org/2002/berkmin.html"
-   },  
-   "2clseq":{
+      "comment": "Warning, this version had an identifed (simple) bug. See http://www.satcompetition.org/2002/berkmin.html"
+   },
+   "2clseq": {
       "status": "ok",
       "name": "2clseq",
+      "authors": "Fahiem Bacchus",
+      "authors_source": "SAT 2002 competition report, Solver Submission (satisfiability.org/competition/2002/onlinereport/node10.html)",
       "call": "./2clseq",
       "gz": false,
       "args": [
          "FILECNF"
       ]
    },
-   "blindsat":{
+   "blindsat": {
       "status": "ok",
       "name": "blindsat",
+      "authors": "Anatoly Plotnikov, Stas Busygin",
+      "authors_source": "SAT 2002 competition report, Solver Submission (satisfiability.org/competition/2002/onlinereport/node10.html)",
       "call": "./blindsat",
       "gz": false,
       "args": [
          "FILECNF"
       ]
    },
-   "dlmsat1":{
+   "dlmsat1": {
       "status": "ok",
       "name": "dlmsat1",
+      "authors": "Benjamin Wah, Alan Zhe Wu",
+      "authors_source": "SAT 2002 competition report, Solver Submission (satisfiability.org/competition/2002/onlinereport/node10.html)",
       "call": "./dlmsat1",
       "gz": false,
       "args": [
          "FILECNF"
       ]
    },
-   "dlmsat2":{
+   "dlmsat2": {
       "status": "ok",
       "name": "dlmsat2",
+      "authors": "Benjamin Wah, Alan Zhe Wu",
+      "authors_source": "SAT 2002 competition report, Solver Submission (satisfiability.org/competition/2002/onlinereport/node10.html)",
       "call": "./dlmsat2",
       "gz": false,
       "args": [
          "FILECNF"
       ]
    },
-   "dlmsat3":{
+   "dlmsat3": {
       "status": "ok",
       "name": "dlmsat3",
+      "authors": "Benjamin Wah, Alan Zhe Wu",
+      "authors_source": "SAT 2002 competition report, Solver Submission (satisfiability.org/competition/2002/onlinereport/node10.html)",
       "call": "./dlmsat3",
       "gz": false,
       "args": [
          "FILECNF"
       ]
    },
-   "ga":{
+   "ga": {
       "status": "ok",
       "name": "ga",
+      "authors": "Anton Eremeev, Pavel Borisovsky",
+      "authors_source": "SAT 2002 competition report, Solver Submission (satisfiability.org/competition/2002/onlinereport/node10.html)",
       "call": "./ga",
       "gz": false,
       "args": [
          "FILECNF"
       ]
    },
-   "limmat":{
+   "limmat": {
       "status": "ok",
       "name": "limmat",
+      "authors": "Armin Biere",
+      "authors_source": "SAT 2002 competition report, Solver Submission (satisfiability.org/competition/2002/onlinereport/node10.html)",
       "call": "./limmat",
       "gz": false,
       "args": [
          "FILECNF"
       ]
    },
-   "lsat":{
+   "lsat": {
       "status": "ok",
       "name": "lsat",
+      "authors": "Richard Ostrowski, Bertrand Mazure, Lakhdar Sais",
+      "authors_source": "SAT 2002 competition report, Solver Submission (satisfiability.org/competition/2002/onlinereport/node10.html)",
       "call": "./lsat",
       "gz": false,
       "args": [
          "FILECNF"
       ]
    },
-   "marchi":{
+   "marchi": {
       "status": "ok",
       "name": "marchI",
+      "authors": "Marijn Heule, Hans van Maaren, Mark Dufour, Joris van Zwieten",
+      "authors_source": "SAT 2002 competition report, Solver Submission (satisfiability.org/competition/2002/onlinereport/node10.html)",
       "call": "./marchI",
       "gz": false,
       "args": [
          "FILECNF"
       ]
    },
-   "marchi-hc":{
+   "marchi-hc": {
       "status": "ok",
       "name": "marchI-hc",
+      "authors": "Marijn Heule, Hans van Maaren, Mark Dufour, Joris van Zwieten",
+      "authors_source": "SAT 2002 competition report, Solver Submission (satisfiability.org/competition/2002/onlinereport/node10.html)",
       "call": "./marchI-hc",
       "gz": false,
       "args": [
          "FILECNF"
       ]
    },
-   "marchii":{
+   "marchii": {
       "status": "ok",
       "name": "marchII",
+      "authors": "Marijn Heule, Hans van Maaren, Mark Dufour, Joris van Zwieten",
+      "authors_source": "SAT 2002 competition report, Solver Submission (satisfiability.org/competition/2002/onlinereport/node10.html)",
       "call": "./marchII",
       "gz": false,
       "args": [
          "FILECNF"
       ]
    },
-   "marchii-hc":{
+   "marchii-hc": {
       "status": "ok",
       "name": "marchII-hc",
+      "authors": "Marijn Heule, Hans van Maaren, Mark Dufour, Joris van Zwieten",
+      "authors_source": "SAT 2002 competition report, Solver Submission (satisfiability.org/competition/2002/onlinereport/node10.html)",
       "call": "./marchII-hc",
       "gz": false,
       "args": [
          "FILECNF"
       ]
    },
-   "marchiise":{
+   "marchiise": {
       "status": "ok",
       "name": "marchIIse",
+      "authors": "Marijn Heule, Hans van Maaren, Mark Dufour, Joris van Zwieten",
+      "authors_source": "SAT 2002 competition report, Solver Submission (satisfiability.org/competition/2002/onlinereport/node10.html)",
       "call": "./marchIIse",
       "gz": false,
       "args": [
          "FILECNF"
       ]
    },
-   "marchiise-hc":{
+   "marchiise-hc": {
       "status": "ok",
       "name": "marchIIse-hc",
+      "authors": "Marijn Heule, Hans van Maaren, Mark Dufour, Joris van Zwieten",
+      "authors_source": "SAT 2002 competition report, Solver Submission (satisfiability.org/competition/2002/onlinereport/node10.html)",
       "call": "./marchIIse-hc",
       "gz": false,
       "args": [
          "FILECNF"
       ]
    },
-   "marchise":{
+   "marchise": {
       "status": "ok",
       "name": "marchIse",
+      "authors": "Marijn Heule, Hans van Maaren, Mark Dufour, Joris van Zwieten",
+      "authors_source": "SAT 2002 competition report, Solver Submission (satisfiability.org/competition/2002/onlinereport/node10.html)",
       "call": "./marchIse",
       "gz": false,
       "args": [
          "FILECNF"
       ]
    },
-   "modoc":{
+   "modoc": {
       "status": "ok",
       "name": "modoc",
+      "authors": "Allen Van Gelder",
+      "authors_source": "SAT 2002 competition report, Solver Submission (satisfiability.org/competition/2002/onlinereport/node10.html)",
       "call": "./modoc",
       "gz": false,
       "args": [
          "FILECNF"
       ]
    },
-   "oksolver":{
+   "oksolver": {
       "status": "ok",
       "name": "oksolver",
+      "authors": "Oliver Kullmann",
+      "authors_source": "SAT 2002 competition report, Solver Submission (satisfiability.org/competition/2002/onlinereport/node10.html)",
       "call": "./oksolver",
       "gz": false,
       "args": [
          "FILECNF"
       ]
    },
-   "partsat":{
+   "partsat": {
       "status": "ok",
       "name": "partsat",
+      "authors": "John Kolen",
+      "authors_source": "SAT 2002 competition report, Solver Submission (satisfiability.org/competition/2002/onlinereport/node10.html)",
       "call": "./partsat",
       "gz": false,
       "args": [
          "FILECNF"
       ]
    },
-   "rb2cl":{
+   "rb2cl": {
       "status": "ok",
       "name": "rb2cl",
+      "authors": "Allen Van Gelder",
+      "authors_source": "SAT 2002 competition report, Solver Submission (satisfiability.org/competition/2002/onlinereport/node10.html)",
       "call": "./rb2cl",
       "gz": false,
       "args": [
          "FILECNF"
       ]
    },
-   "sato":{
+   "sato": {
       "status": "ok",
       "name": "sato",
+      "authors": "Hantao Zhang",
+      "authors_source": "SAT 2002 competition report, Solver Submission (satisfiability.org/competition/2002/onlinereport/node10.html)",
       "call": "./sato",
       "gz": false,
       "args": [
          "FILECNF"
       ]
    },
-   "saturn":{
+   "saturn": {
       "status": "ok",
       "name": "saturn",
+      "authors": "Steven Prestwich",
+      "authors_source": "SAT 2002 competition report, Solver Submission (satisfiability.org/competition/2002/onlinereport/node10.html)",
       "call": "./saturn",
       "gz": false,
       "args": [
@@ -199,18 +243,22 @@
          "RANDOMSEED"
       ]
    },
-   "simo":{
+   "simo": {
       "status": "ok",
       "name": "simo",
+      "authors": "Armando Tacchella, Enrico Giunchiglia, Marco Maratea",
+      "authors_source": "SAT 2002 competition report, Solver Submission (satisfiability.org/competition/2002/onlinereport/node10.html)",
       "call": "./simo",
       "gz": false,
       "args": [
          "FILECNF"
       ]
    },
-   "unitwalk":{
+   "unitwalk": {
       "status": "ok",
       "name": "unitwalk",
+      "authors": "Edward A. Hirsch, Arist Kojevnikov",
+      "authors_source": "SAT 2002 competition report, Solver Submission (satisfiability.org/competition/2002/onlinereport/node10.html)",
       "call": "./unitwalk",
       "gz": false,
       "args": [
@@ -218,9 +266,11 @@
          "RANDOMSEED"
       ]
    },
-   "usat05":{
+   "usat05": {
       "status": "ok",
       "name": "usat05",
+      "authors": "Bu Dongbo",
+      "authors_source": "SAT 2002 competition report, Solver Submission (satisfiability.org/competition/2002/onlinereport/node10.html)",
       "call": "./usat05",
       "gz": false,
       "args": [
@@ -228,9 +278,11 @@
          "RANDOMSEED"
       ]
    },
-   "usat10":{
+   "usat10": {
       "status": "ok",
       "name": "usat10",
+      "authors": "Bu Dongbo",
+      "authors_source": "SAT 2002 competition report, Solver Submission (satisfiability.org/competition/2002/onlinereport/node10.html)",
       "call": "./usat10",
       "gz": false,
       "args": [
@@ -238,9 +290,11 @@
          "RANDOMSEED"
       ]
    },
-   "zchaff":{
+   "zchaff": {
       "status": "ok",
       "name": "zchaff",
+      "authors": "Lintao Zhang, Sharad Malik",
+      "authors_source": "SAT 2002 competition report, Solver Submission (satisfiability.org/competition/2002/onlinereport/node10.html)",
       "call": "./zchaff",
       "gz": false,
       "args": [

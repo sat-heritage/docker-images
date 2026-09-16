@@ -181,6 +181,7 @@ and values are JSON objects with the following keys:
 | test_timeout | Minimum timeout in seconds used by `satex test` for this solver, for submissions whose preprocessing is slow even on tiny inputs (the command-line `--timeout` still applies when larger) |
 | incomplete | boolean | true for incomplete solvers (local search, portfolios without complete solver): `satex test` runs them on an easy satisfiable instance and skips the UNSAT checks, which they cannot pass |
 | license | string | SPDX identifier(s) of the licence the solver is distributed under, several joined with ` AND ` (for example `MIT`, `GPL-3.0`). Filled by `tools/detect_licenses.py` from the licence files and source headers of the archive; correct or complete it by hand when you know better |
+| authors_source | string | where the author list was read: the competition website or report, a booklet, the archive |
 | license_source | string | where the licence was read: a licence file or source header of the archive, a paper, the authors |
 
 

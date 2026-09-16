@@ -2,6 +2,8 @@
   "berkmin561": {
     "status": "ok",
     "name": "BerkMin561",
+    "authors": "Eugene Goldberg, Yakov Novikov",
+    "authors_source": "SAT 2003 competition report, The competitors (satisfiability.org/competition/2003/comp03report/node2.html)",
     "call": "./BerkMin561",
     "gz": false,
     "args": [
@@ -11,6 +13,8 @@
   "berkmin62": {
     "status": "ok",
     "name": "BerkMin62",
+    "authors": "Eugene Goldberg, Yakov Novikov",
+    "authors_source": "SAT 2003 competition report, The competitors (satisfiability.org/competition/2003/comp03report/node2.html)",
     "call": "./BerkMin62",
     "gz": false,
     "args": [
@@ -20,6 +24,8 @@
   "bmsat": {
     "status": "ok",
     "name": "bmSat",
+    "authors": "Xiaowei Xu",
+    "authors_source": "SAT 2003 competition report, The competitors (satisfiability.org/competition/2003/comp03report/node2.html)",
     "call": "./bmSat",
     "gz": false,
     "args": [
@@ -29,6 +35,8 @@
   "compsat": {
     "status": "ok",
     "name": "compsat",
+    "authors": "Armin Biere",
+    "authors_source": "SAT 2003 competition report, The competitors (satisfiability.org/competition/2003/comp03report/node2.html)",
     "call": "./compsat",
     "gz": false,
     "args": [
@@ -38,6 +46,8 @@
   "farseer": {
     "status": "ok",
     "name": "farseer",
+    "authors": "Martin Girard",
+    "authors_source": "SAT 2003 competition report, The competitors (satisfiability.org/competition/2003/comp03report/node2.html)",
     "call": "./farseer",
     "gz": false,
     "args": [
@@ -47,6 +57,8 @@
   "forklift": {
     "status": "ok",
     "name": "Forklift",
+    "authors": "Eugene Goldberg, Yakov Novikov",
+    "authors_source": "SAT 2003 competition report, The competitors (satisfiability.org/competition/2003/comp03report/node2.html)",
     "call": "./Forklift",
     "gz": false,
     "args": [
@@ -56,6 +68,8 @@
   "funex": {
     "status": "ok",
     "name": "funex",
+    "authors": "Armin Biere",
+    "authors_source": "SAT 2003 competition report, The competitors (satisfiability.org/competition/2003/comp03report/node2.html)",
     "call": "./funex",
     "gz": false,
     "args": [
@@ -65,6 +79,8 @@
   "jerusat1.1": {
     "status": "ok",
     "name": "Jerusat1.1",
+    "authors": "Alexander Nadel",
+    "authors_source": "SAT 2003 competition report, The competitors (satisfiability.org/competition/2003/comp03report/node2.html)",
     "call": "./Jerusat1.1",
     "gz": false,
     "args": [
@@ -74,6 +90,8 @@
   "jerusat1.1.b": {
     "status": "ok",
     "name": "Jerusat1.1.b",
+    "authors": "Alexander Nadel",
+    "authors_source": "SAT 2003 competition report, The competitors (satisfiability.org/competition/2003/comp03report/node2.html)",
     "call": "./Jerusat1.1.b",
     "gz": false,
     "args": [
@@ -83,6 +101,8 @@
   "jerusat1.1.c": {
     "status": "ok",
     "name": "Jerusat1.1.c",
+    "authors": "Alexander Nadel",
+    "authors_source": "SAT 2003 competition report, The competitors (satisfiability.org/competition/2003/comp03report/node2.html)",
     "call": "./Jerusat1.1.c",
     "gz": false,
     "args": [
@@ -92,6 +112,8 @@
   "jquest2.jar": {
     "status": "ok",
     "name": "jquest2.jar",
+    "authors": "Inês Lynce, João Marques-Silva",
+    "authors_source": "SAT 2003 competition report, The competitors (satisfiability.org/competition/2003/comp03report/node2.html)",
     "call": "java",
     "gz": false,
     "args": [
@@ -105,6 +127,8 @@
   "kcnfs": {
     "status": "ok",
     "name": "kcnfs",
+    "authors": "Gilles Dequen, Olivier Dubois",
+    "authors_source": "SAT 2003 competition report, The competitors (satisfiability.org/competition/2003/comp03report/node2.html)",
     "call": "./kcnfs",
     "gz": false,
     "args": [
@@ -114,6 +138,8 @@
   "limmat": {
     "status": "ok",
     "name": "limmat",
+    "authors": "Armin Biere",
+    "authors_source": "SAT 2003 competition report, The competitors (satisfiability.org/competition/2003/comp03report/node2.html)",
     "call": "./limmat",
     "gz": false,
     "args": [
@@ -123,6 +149,8 @@
   "lsatv1.1": {
     "status": "ok",
     "name": "lsatv1.1",
+    "authors": "Richard Ostrowski, Bertrand Mazure, Lakhdar Sais",
+    "authors_source": "SAT 2003 competition report, The competitors (satisfiability.org/competition/2003/comp03report/node2.html)",
     "call": "./lsatv1.1",
     "gz": false,
     "args": [
@@ -132,6 +160,8 @@
   "march-sp": {
     "status": "ok",
     "name": "march-sp",
+    "authors": "Mark Dufour, Marijn Heule, Joris van Zwieten, Hans van Maaren",
+    "authors_source": "SAT 2003 competition report, The competitors (satisfiability.org/competition/2003/comp03report/node2.html)",
     "call": "./march-sp",
     "gz": false,
     "args": [
@@ -141,6 +171,8 @@
   "march-tt": {
     "status": "ok",
     "name": "march-tt",
+    "authors": "Mark Dufour, Marijn Heule, Joris van Zwieten, Hans van Maaren",
+    "authors_source": "SAT 2003 competition report, The competitors (satisfiability.org/competition/2003/comp03report/node2.html)",
     "call": "./march-tt",
     "gz": false,
     "args": [
@@ -150,6 +182,8 @@
   "march-xq": {
     "status": "ok",
     "name": "march-xq",
+    "authors": "Mark Dufour, Marijn Heule, Joris van Zwieten, Hans van Maaren",
+    "authors_source": "SAT 2003 competition report, The competitors (satisfiability.org/competition/2003/comp03report/node2.html)",
     "call": "./march-xq",
     "gz": false,
     "args": [
@@ -159,6 +193,8 @@
   "oepir": {
     "status": "ok",
     "name": "Oepir",
+    "authors": "Johan Alfredsson",
+    "authors_source": "SAT 2003 competition report, The competitors (satisfiability.org/competition/2003/comp03report/node2.html)",
     "call": "./Oepir",
     "gz": false,
     "args": [
@@ -168,6 +204,8 @@
   "opensatcomp.jar": {
     "status": "ok",
     "name": "opensatcomp.jar",
+    "authors": "Gilles Audemard, Daniel Le Berre, Olivier Roussel",
+    "authors_source": "SAT 2003 competition report, The competitors (satisfiability.org/competition/2003/comp03report/node2.html)",
     "call": "java",
     "gz": false,
     "args": [
@@ -182,6 +220,8 @@
     "status": "fixme",
     "status_detail": "FIXME problem when running",
     "name": "QingTing",
+    "authors": "Xiao Yu Li, Matthias F. Stallmann, Franc Brglez",
+    "authors_source": "SAT 2003 competition report, The competitors (satisfiability.org/competition/2003/comp03report/node2.html)",
     "call": "./QingTing",
     "gz": false,
     "args": [
@@ -191,6 +231,8 @@
   "satnik": {
     "status": "ok",
     "name": "satnik",
+    "authors": "Niklas Sörensson",
+    "authors_source": "SAT 2003 competition report, The competitors (satisfiability.org/competition/2003/comp03report/node2.html)",
     "call": "./satnik",
     "gz": false,
     "args": [
@@ -200,6 +242,8 @@
   "sato": {
     "status": "ok",
     "name": "sato",
+    "authors": "Hantao Zhang",
+    "authors_source": "SAT 2003 competition report, The competitors (satisfiability.org/competition/2003/comp03report/node2.html)",
     "call": "./sato",
     "gz": false,
     "args": [
@@ -209,6 +253,8 @@
   "saturn": {
     "status": "ok",
     "name": "saturn",
+    "authors": "Steven Prestwich",
+    "authors_source": "SAT 2003 competition report, The competitors (satisfiability.org/competition/2003/comp03report/node2.html)",
     "call": "./saturn",
     "gz": false,
     "args": [
@@ -219,6 +265,8 @@
   "satzilla": {
     "status": "ok",
     "name": "satzilla",
+    "authors": "Kevin Leyton-Brown, Eugene Nudelman, Galen Andrew, Carla Gomes, Jim McFadden, Bart Selman, Yoav Shoham",
+    "authors_source": "SAT 2003 competition report, The competitors (satisfiability.org/competition/2003/comp03report/node2.html)",
     "call": "./satzilla",
     "gz": false,
     "args": [
@@ -228,6 +276,8 @@
   "satzilla2": {
     "status": "ok",
     "name": "satzilla2",
+    "authors": "Kevin Leyton-Brown, Eugene Nudelman, Galen Andrew, Carla Gomes, Jim McFadden, Bart Selman, Yoav Shoham",
+    "authors_source": "SAT 2003 competition report, The competitors (satisfiability.org/competition/2003/comp03report/node2.html)",
     "call": "./satzilla2",
     "gz": false,
     "args": [
@@ -237,6 +287,8 @@
   "satzoo0": {
     "status": "ok",
     "name": "Satzoo0",
+    "authors": "Niklas Eén",
+    "authors_source": "SAT 2003 competition report, The competitors (satisfiability.org/competition/2003/comp03report/node2.html)",
     "call": "./Satzoo0",
     "gz": false,
     "args": [
@@ -246,6 +298,8 @@
   "satzoo1": {
     "status": "ok",
     "name": "Satzoo1",
+    "authors": "Niklas Eén",
+    "authors_source": "SAT 2003 competition report, The competitors (satisfiability.org/competition/2003/comp03report/node2.html)",
     "call": "./Satzoo1",
     "gz": false,
     "args": [
@@ -255,6 +309,8 @@
   "siege": {
     "status": "ok",
     "name": "siege",
+    "authors": "Lawrence Ryan",
+    "authors_source": "SAT 2003 competition report, The competitors (satisfiability.org/competition/2003/comp03report/node2.html)",
     "call": "./siege",
     "gz": false,
     "args": [
@@ -264,6 +320,8 @@
   "amvo": {
     "status": "ok",
     "name": "submit18",
+    "authors": "Sean Vogt, Andrew Machen",
+    "authors_source": "SAT 2003 competition report, The competitors (satisfiability.org/competition/2003/comp03report/node2.html)",
     "call": "./submit18",
     "gz": false,
     "args": [
@@ -274,6 +332,8 @@
   "tts": {
     "status": "ok",
     "name": "tts",
+    "authors": "Ivor Spence",
+    "authors_source": "SAT 2003 competition report, The competitors (satisfiability.org/competition/2003/comp03report/node2.html)",
     "call": "./tts",
     "gz": false,
     "args": [
@@ -283,6 +343,8 @@
   "unitwalk": {
     "status": "ok",
     "name": "UnitWalk",
+    "authors": "Edward Hirsch, Arist Kojevnikov",
+    "authors_source": "SAT 2003 competition report, The competitors (satisfiability.org/competition/2003/comp03report/node2.html)",
     "call": "./UnitWalk",
     "gz": false,
     "args": [
@@ -293,6 +355,8 @@
   "xqingting": {
     "status": "ok",
     "name": "xQingTing",
+    "authors": "Xiao Yu Li, Matthias F. Stallmann, Franc Brglez",
+    "authors_source": "SAT 2003 competition report, The competitors (satisfiability.org/competition/2003/comp03report/node2.html)",
     "call": "./xQingTing",
     "gz": false,
     "args": [
@@ -303,6 +367,8 @@
   "zchaff": {
     "status": "ok",
     "name": "zchaff",
+    "authors": "Yinlei Yu, Lintao Zhang",
+    "authors_source": "SAT 2003 competition report, The competitors (satisfiability.org/competition/2003/comp03report/node2.html)",
     "call": "./zchaff",
     "gz": false,
     "args": [
