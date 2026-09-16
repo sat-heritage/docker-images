@@ -12,6 +12,7 @@
       "name": { "type": "string", "minLength": 1 },
       "version": { "type": ["string", "number"] },
       "authors": { "type": "string" },
+      "authors_source": { "type": "string", "minLength": 1, "description": "where the author list was read: the competition website or report, a booklet, the archive" },
       "call": { "type": "string", "minLength": 1 },
       "path": { "type": "string" },
       "comment": { "type": "string" },
