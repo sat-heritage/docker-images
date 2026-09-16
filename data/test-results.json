@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-16T21:54:00Z",
+  "generated": "2026-09-16T22:14:57Z",
   "images": {
     "2clseq:2002": {
       "build": {
@@ -33,23 +33,22 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-16T19:32:23Z",
-      "run": "20260916T193223Z",
+      "date": "2026-09-16T22:06:27Z",
+      "run": "20260916T220627Z",
       "tests": {
         "launch": {
           "status": "ok"
         },
         "sat-gzip-model": {
-          "detail": "timeout",
-          "status": "skip"
+          "status": "ok"
         },
         "sat-gzip-result": {
-          "detail": "timeout",
-          "status": "skip"
+          "detail": "SAT",
+          "status": "ok"
         },
         "sat-gzip-termination": {
-          "detail": "TIMEOUT",
-          "status": "fail"
+          "detail": "SAT",
+          "status": "ok"
         },
         "sat-model": {
           "status": "ok"
@@ -67,15 +66,15 @@
           "status": "skip"
         },
         "unsat-result": {
-          "detail": "timeout",
-          "status": "skip"
+          "detail": "UNSAT",
+          "status": "ok"
         },
         "unsat-termination": {
-          "detail": "TIMEOUT",
-          "status": "fail"
+          "detail": "UNSAT",
+          "status": "ok"
         }
       },
-      "verdict": "runs"
+      "verdict": "verified"
     },
     "abcd_para18:2018": {
       "build": {
@@ -2525,8 +2524,8 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-16T19:32:23Z",
-      "run": "20260916T193223Z",
+      "date": "2026-09-16T22:07:47Z",
+      "run": "20260916T220747Z",
       "tests": {
         "launch": {
           "status": "ok"
@@ -3361,10 +3360,16 @@
         "docker-engine": {
           "status": "ok"
         },
+        "image-assemble": {
+          "status": "ok"
+        },
         "runtime-base": {
           "status": "ok"
         },
         "runtime-base-image": {
+          "status": "ok"
+        },
+        "runtime-dependencies": {
           "status": "ok"
         },
         "source-download": {
@@ -3376,7 +3381,53 @@
       },
       "date": "2026-09-16T21:27:46Z",
       "run": "20260916T212746Z",
-      "verdict": "built"
+      "tests": {
+        "launch": {
+          "status": "ok"
+        },
+        "sat-gzip-model": {
+          "status": "ok"
+        },
+        "sat-gzip-result": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-gzip-termination": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-model": {
+          "status": "ok"
+        },
+        "sat-result": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-termination": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "unsat-proof": {
+          "status": "ok"
+        },
+        "unsat-proof-run-result": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-proof-run-termination": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-result": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-termination": {
+          "detail": "UNSAT",
+          "status": "ok"
+        }
+      },
+      "verdict": "verified"
     },
     "cadical-hack-gb:2021": {
       "build": {
@@ -11120,8 +11171,8 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-16T19:32:23Z",
-      "run": "20260916T193223Z",
+      "date": "2026-09-16T21:53:31Z",
+      "run": "20260916T215331Z",
       "tests": {
         "launch": {
           "status": "ok"
@@ -11149,19 +11200,15 @@
           "status": "ok"
         },
         "unsat-proof": {
-          "detail": "unsupported",
+          "detail": "incomplete solver",
           "status": "skip"
         },
         "unsat-result": {
-          "detail": "timeout",
+          "detail": "incomplete solver",
           "status": "skip"
-        },
-        "unsat-termination": {
-          "detail": "TIMEOUT",
-          "status": "fail"
         }
       },
-      "verdict": "runs"
+      "verdict": "verified"
     },
     "dlmsat3:2002": {
       "build": {
@@ -11195,50 +11242,44 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-16T19:32:23Z",
-      "run": "20260916T193223Z",
+      "date": "2026-09-16T21:55:10Z",
+      "run": "20260916T215510Z",
       "tests": {
         "launch": {
           "status": "ok"
         },
         "sat-gzip-model": {
-          "detail": "timeout",
-          "status": "skip"
+          "status": "ok"
         },
         "sat-gzip-result": {
-          "detail": "timeout",
-          "status": "skip"
+          "detail": "SAT",
+          "status": "ok"
         },
         "sat-gzip-termination": {
-          "detail": "TIMEOUT",
-          "status": "fail"
+          "detail": "SAT",
+          "status": "ok"
         },
         "sat-model": {
-          "detail": "timeout",
-          "status": "skip"
+          "status": "ok"
         },
         "sat-result": {
-          "detail": "timeout",
-          "status": "skip"
+          "detail": "SAT",
+          "status": "ok"
         },
         "sat-termination": {
-          "detail": "TIMEOUT",
-          "status": "fail"
+          "detail": "SAT",
+          "status": "ok"
         },
         "unsat-proof": {
-          "detail": "unsupported",
+          "detail": "incomplete solver",
           "status": "skip"
         },
         "unsat-result": {
-          "detail": "timeout",
+          "detail": "incomplete solver",
           "status": "skip"
-        },
-        "unsat-termination": {
-          "detail": "TIMEOUT",
-          "status": "fail"
         }
       },
-      "verdict": "runs"
+      "verdict": "verified"
     },
     "doug_hains:2013": {
       "build": {
@@ -14426,50 +14467,44 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-16T19:32:23Z",
-      "run": "20260916T193223Z",
+      "date": "2026-09-16T21:57:02Z",
+      "run": "20260916T215702Z",
       "tests": {
         "launch": {
           "status": "ok"
         },
         "sat-gzip-model": {
-          "detail": "timeout",
-          "status": "skip"
+          "status": "ok"
         },
         "sat-gzip-result": {
-          "detail": "timeout",
-          "status": "skip"
+          "detail": "SAT",
+          "status": "ok"
         },
         "sat-gzip-termination": {
-          "detail": "TIMEOUT",
-          "status": "fail"
+          "detail": "SAT",
+          "status": "ok"
         },
         "sat-model": {
-          "detail": "timeout",
-          "status": "skip"
+          "status": "ok"
         },
         "sat-result": {
-          "detail": "timeout",
-          "status": "skip"
+          "detail": "SAT",
+          "status": "ok"
         },
         "sat-termination": {
-          "detail": "TIMEOUT",
-          "status": "fail"
+          "detail": "SAT",
+          "status": "ok"
         },
         "unsat-proof": {
-          "detail": "unsupported",
+          "detail": "incomplete solver",
           "status": "skip"
         },
         "unsat-result": {
-          "detail": "timeout",
+          "detail": "incomplete solver",
           "status": "skip"
-        },
-        "unsat-termination": {
-          "detail": "TIMEOUT",
-          "status": "fail"
         }
       },
-      "verdict": "runs"
+      "verdict": "verified"
     },
     "gasat:2004": {
       "build": {
@@ -19088,9 +19123,47 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-14T13:53:23Z",
-      "run": "20260914T135323Z",
-      "verdict": "built"
+      "date": "2026-09-16T21:27:46Z",
+      "run": "20260916T212746Z",
+      "tests": {
+        "launch": {
+          "status": "ok"
+        },
+        "sat-gzip-model": {
+          "status": "ok"
+        },
+        "sat-gzip-result": {
+          "status": "ok"
+        },
+        "sat-gzip-termination": {
+          "status": "ok"
+        },
+        "sat-model": {
+          "status": "ok"
+        },
+        "sat-result": {
+          "status": "ok"
+        },
+        "sat-termination": {
+          "status": "ok"
+        },
+        "unsat-proof": {
+          "status": "ok"
+        },
+        "unsat-proof-run-result": {
+          "status": "ok"
+        },
+        "unsat-proof-run-termination": {
+          "status": "ok"
+        },
+        "unsat-result": {
+          "status": "ok"
+        },
+        "unsat-termination": {
+          "status": "ok"
+        }
+      },
+      "verdict": "verified"
     },
     "hcad-pbva:2024": {
       "build": {
@@ -19125,9 +19198,47 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-14T13:53:23Z",
-      "run": "20260914T135323Z",
-      "verdict": "built"
+      "date": "2026-09-16T21:27:46Z",
+      "run": "20260916T212746Z",
+      "tests": {
+        "launch": {
+          "status": "ok"
+        },
+        "sat-gzip-model": {
+          "status": "ok"
+        },
+        "sat-gzip-result": {
+          "status": "ok"
+        },
+        "sat-gzip-termination": {
+          "status": "ok"
+        },
+        "sat-model": {
+          "status": "ok"
+        },
+        "sat-result": {
+          "status": "ok"
+        },
+        "sat-termination": {
+          "status": "ok"
+        },
+        "unsat-proof": {
+          "status": "ok"
+        },
+        "unsat-proof-run-result": {
+          "status": "ok"
+        },
+        "unsat-proof-run-termination": {
+          "status": "ok"
+        },
+        "unsat-result": {
+          "status": "ok"
+        },
+        "unsat-termination": {
+          "status": "ok"
+        }
+      },
+      "verdict": "verified"
     },
     "hcad-psbva:2025": {
       "build": {
@@ -19546,9 +19657,47 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-14T13:53:23Z",
-      "run": "20260914T135323Z",
-      "verdict": "built"
+      "date": "2026-09-16T21:27:46Z",
+      "run": "20260916T212746Z",
+      "tests": {
+        "launch": {
+          "status": "ok"
+        },
+        "sat-gzip-model": {
+          "status": "ok"
+        },
+        "sat-gzip-result": {
+          "status": "ok"
+        },
+        "sat-gzip-termination": {
+          "status": "ok"
+        },
+        "sat-model": {
+          "status": "ok"
+        },
+        "sat-result": {
+          "status": "ok"
+        },
+        "sat-termination": {
+          "status": "ok"
+        },
+        "unsat-proof": {
+          "status": "ok"
+        },
+        "unsat-proof-run-result": {
+          "status": "ok"
+        },
+        "unsat-proof-run-termination": {
+          "status": "ok"
+        },
+        "unsat-result": {
+          "status": "ok"
+        },
+        "unsat-termination": {
+          "status": "ok"
+        }
+      },
+      "verdict": "verified"
     },
     "hkis-pbva:2024": {
       "build": {
@@ -19583,9 +19732,47 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-14T13:53:23Z",
-      "run": "20260914T135323Z",
-      "verdict": "built"
+      "date": "2026-09-16T21:27:46Z",
+      "run": "20260916T212746Z",
+      "tests": {
+        "launch": {
+          "status": "ok"
+        },
+        "sat-gzip-model": {
+          "status": "ok"
+        },
+        "sat-gzip-result": {
+          "status": "ok"
+        },
+        "sat-gzip-termination": {
+          "status": "ok"
+        },
+        "sat-model": {
+          "status": "ok"
+        },
+        "sat-result": {
+          "status": "ok"
+        },
+        "sat-termination": {
+          "status": "ok"
+        },
+        "unsat-proof": {
+          "status": "ok"
+        },
+        "unsat-proof-run-result": {
+          "status": "ok"
+        },
+        "unsat-proof-run-termination": {
+          "status": "ok"
+        },
+        "unsat-result": {
+          "status": "ok"
+        },
+        "unsat-termination": {
+          "status": "ok"
+        }
+      },
+      "verdict": "verified"
     },
     "hkis-psids:2022": {
       "build": {
@@ -21119,8 +21306,8 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-14T13:53:23Z",
-      "run": "20260914T135323Z",
+      "date": "2026-09-16T21:27:46Z",
+      "run": "20260916T212746Z",
       "verdict": "built"
     },
     "isasat:2026": {
@@ -52014,8 +52201,8 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-16T19:32:23Z",
-      "run": "20260916T193223Z",
+      "date": "2026-09-16T21:59:08Z",
+      "run": "20260916T215908Z",
       "tests": {
         "launch": {
           "status": "ok"
@@ -52043,19 +52230,15 @@
           "status": "ok"
         },
         "unsat-proof": {
-          "detail": "unsupported",
+          "detail": "incomplete solver",
           "status": "skip"
         },
         "unsat-result": {
-          "detail": "timeout",
+          "detail": "incomplete solver",
           "status": "skip"
-        },
-        "unsat-termination": {
-          "detail": "TIMEOUT",
-          "status": "fail"
         }
       },
-      "verdict": "runs"
+      "verdict": "verified"
     },
     "saturn:2003": {
       "build": {
@@ -58812,8 +58995,8 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-16T19:32:23Z",
-      "run": "20260916T193223Z",
+      "date": "2026-09-16T22:01:11Z",
+      "run": "20260916T220111Z",
       "tests": {
         "launch": {
           "status": "ok"
@@ -58841,19 +59024,15 @@
           "status": "ok"
         },
         "unsat-proof": {
-          "detail": "unsupported",
+          "detail": "incomplete solver",
           "status": "skip"
         },
         "unsat-result": {
-          "detail": "timeout",
+          "detail": "incomplete solver",
           "status": "skip"
-        },
-        "unsat-termination": {
-          "detail": "TIMEOUT",
-          "status": "fail"
         }
       },
-      "verdict": "runs"
+      "verdict": "verified"
     },
     "unitwalk:2003": {
       "build": {
@@ -59112,50 +59291,44 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-16T19:32:23Z",
-      "run": "20260916T193223Z",
+      "date": "2026-09-16T22:03:19Z",
+      "run": "20260916T220319Z",
       "tests": {
         "launch": {
           "status": "ok"
         },
         "sat-gzip-model": {
-          "detail": "timeout",
-          "status": "skip"
+          "status": "ok"
         },
         "sat-gzip-result": {
-          "detail": "timeout",
-          "status": "skip"
+          "detail": "SAT",
+          "status": "ok"
         },
         "sat-gzip-termination": {
-          "detail": "TIMEOUT",
-          "status": "fail"
+          "detail": "SAT",
+          "status": "ok"
         },
         "sat-model": {
-          "detail": "timeout",
-          "status": "skip"
+          "status": "ok"
         },
         "sat-result": {
-          "detail": "timeout",
-          "status": "skip"
+          "detail": "SAT",
+          "status": "ok"
         },
         "sat-termination": {
-          "detail": "TIMEOUT",
-          "status": "fail"
+          "detail": "SAT",
+          "status": "ok"
         },
         "unsat-proof": {
-          "detail": "unsupported",
+          "detail": "incomplete solver",
           "status": "skip"
         },
         "unsat-result": {
-          "detail": "timeout",
+          "detail": "incomplete solver",
           "status": "skip"
-        },
-        "unsat-termination": {
-          "detail": "TIMEOUT",
-          "status": "fail"
         }
       },
-      "verdict": "runs"
+      "verdict": "verified"
     },
     "usat10:2002": {
       "build": {
@@ -59189,50 +59362,44 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-16T19:32:23Z",
-      "run": "20260916T193223Z",
+      "date": "2026-09-16T22:05:14Z",
+      "run": "20260916T220514Z",
       "tests": {
         "launch": {
           "status": "ok"
         },
         "sat-gzip-model": {
-          "detail": "timeout",
-          "status": "skip"
+          "status": "ok"
         },
         "sat-gzip-result": {
-          "detail": "timeout",
-          "status": "skip"
+          "detail": "SAT",
+          "status": "ok"
         },
         "sat-gzip-termination": {
-          "detail": "TIMEOUT",
-          "status": "fail"
+          "detail": "SAT",
+          "status": "ok"
         },
         "sat-model": {
-          "detail": "timeout",
-          "status": "skip"
+          "status": "ok"
         },
         "sat-result": {
-          "detail": "timeout",
-          "status": "skip"
+          "detail": "SAT",
+          "status": "ok"
         },
         "sat-termination": {
-          "detail": "TIMEOUT",
-          "status": "fail"
+          "detail": "SAT",
+          "status": "ok"
         },
         "unsat-proof": {
-          "detail": "unsupported",
+          "detail": "incomplete solver",
           "status": "skip"
         },
         "unsat-result": {
-          "detail": "timeout",
+          "detail": "incomplete solver",
           "status": "skip"
-        },
-        "unsat-termination": {
-          "detail": "TIMEOUT",
-          "status": "fail"
         }
       },
-      "verdict": "runs"
+      "verdict": "verified"
     },
     "vallst:2005": {
       "build": {
