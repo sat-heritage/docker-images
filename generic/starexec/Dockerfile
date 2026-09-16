@@ -20,7 +20,7 @@ RUN set -eu; \
     done; \
     mkdir -p /etc/apt/apt.conf.d; \
     printf '%s\n' 'Acquire::Check-Valid-Until "false";' > /etc/apt/apt.conf.d/99archive; \
-    if ! grep -Eq '^VERSION_ID="?([9]|[1-9][0-9])"?$' /etc/os-release 2>/dev/null; then \
+    if ! grep -Eq '^VERSION_ID="?(1[0-9])"?$' /etc/os-release 2>/dev/null; then \
         printf '%s\n' 'Acquire::AllowInsecureRepositories "true";' \
             'APT::Get::AllowUnauthenticated "true";' > /etc/apt/apt.conf.d/99archive-legacy; \
     fi

@@ -50,7 +50,7 @@ RUN set -eu; \
     done; \
     mkdir -p /etc/apt/apt.conf.d; \
     printf '%s\n' 'Acquire::Check-Valid-Until "false";' > /etc/apt/apt.conf.d/99archive; \
-    if ! grep -Eq '^VERSION_ID="?([9]|[1-9][0-9])"?$' /etc/os-release 2>/dev/null; then \
+    if ! grep -Eq '^VERSION_ID="?(1[0-9])"?$' /etc/os-release 2>/dev/null; then \
         printf '%s\n' 'Acquire::AllowInsecureRepositories "true";' \
             'APT::Get::AllowUnauthenticated "true";' > /etc/apt/apt.conf.d/99archive-legacy; \
     fi
@@ -121,7 +121,7 @@ RUN set -eu; \
             fi; \
         done; \
         printf '%s\n' 'Acquire::Check-Valid-Until "false";' > /etc/apt/apt.conf.d/99archive; \
-        if ! grep -Eq '^VERSION_ID="?([9]|[1-9][0-9])"?$' /etc/os-release 2>/dev/null; then \
+        if ! grep -Eq '^VERSION_ID="?(1[0-9])"?$' /etc/os-release 2>/dev/null; then \
             printf '%s\n' 'Acquire::AllowInsecureRepositories "true";' \
                 'APT::Get::AllowUnauthenticated "true";' > /etc/apt/apt.conf.d/99archive-legacy; \
         fi; \
@@ -145,6 +145,9 @@ ARG SOLVER
 COPY setup.json build*.sh fixtures/$SOLVER.*build.sh /
 
 RUN set -ex && if test -f /$SOLVER.pre_build.sh; then bash /$SOLVER.pre_build.sh; fi
+
+# archives (ZIP files in particular) do not always keep the executable bits of the build scripts
+RUN find /src -type f \( -name configure -o -name 'starexec_build*' -o -name '*.sh' \) -exec chmod +x {} \; 2>/dev/null || true
 
 RUN set -ex && cd "./`find -maxdepth 1 -mindepth 1 -type d|sort|grep -v __MACOSX|tail -n1`" && \
     if test -f /$SOLVER.build.sh; then bash /$SOLVER.build.sh; \
