@@ -128,6 +128,8 @@
   "oksolver": {
     "status": "ok",
     "name": "oksolver",
+    "authors": "Oliver Kullmann",
+    "authors_source": "SAT 2002 competition report entry for OKsolver (same program as the 2002 image)",
     "call": "oksolver",
     "gz": false,
     "args": [
@@ -238,6 +240,8 @@
   "zchaff": {
     "status": "ok",
     "name": "zchaff",
+    "authors": "Lintao Zhang, Sharad Malik",
+    "authors_source": "Wikipedia, Chaff algorithm (zChaff originally written by Lintao Zhang; Chaff by Moskewicz, Madigan, Zhao, Zhang and Malik); SAT 2002 competition report entry for zchaff",
     "call": "zchaff",
     "gz": false,
     "args": [

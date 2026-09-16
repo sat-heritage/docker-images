@@ -5,6 +5,8 @@
         ],
         "status": "ok",
         "name": "COMiniSatPS_Pulsar_drup",
+        "authors": "Chanseok Oh",
+        "authors_source": "Proceedings of SAT Competition 2017: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/224324), table of contents and solver index",
         "call": "./minisat_static",
         "gz": true,
         "args": [
@@ -23,6 +25,8 @@
         ],
         "status": "ok",
         "name": "Candy",
+        "authors": "Markus Iser, Felix Kutzner",
+        "authors_source": "Proceedings of SAT Competition 2017: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/224324), table of contents and solver index",
         "call": "./candy",
         "gz": true,
         "args": [
@@ -46,6 +50,8 @@
         "status": "fixme",
         "status_detail": "FIXME problem when building",
         "name": "CandyRSILi",
+        "authors": "Markus Iser, Felix Kutzner",
+        "authors_source": "Proceedings of SAT Competition 2017: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/224324), table of contents and solver index",
         "call": "./candy",
         "gz": true,
         "args": [
@@ -65,6 +71,8 @@
         "status": "fixme",
         "status_detail": "FIXME problem when building",
         "name": "CandyRSILv",
+        "authors": "Markus Iser, Felix Kutzner",
+        "authors_source": "Proceedings of SAT Competition 2017: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/224324), table of contents and solver index",
         "call": "./candy",
         "gz": true,
         "args": [
@@ -83,6 +91,8 @@
         ],
         "status": "ok",
         "name": "CandySL21",
+        "authors": "Markus Iser, Felix Kutzner",
+        "authors_source": "Proceedings of SAT Competition 2017: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/224324), table of contents and solver index",
         "call": "./candy",
         "gz": true,
         "args": [
@@ -105,6 +115,8 @@
         ],
         "status": "ok",
         "name": "GHackCOMSPS_drup",
+        "authors": "Chanseok Oh",
+        "authors_source": "Proceedings of SAT Competition 2017: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/224324), table of contents and solver index",
         "call": "./GHackCOMSPS",
         "gz": true,
         "args": [
@@ -125,6 +137,8 @@
         ],
         "status": "ok",
         "name": "MapleCOMSPS_CHB_VSIDS_drup",
+        "authors": "Jia Hui Liang, Chanseok Oh, Vijay Ganesh, Krzysztof Czarnecki, Pascal Poupart",
+        "authors_source": "Proceedings of SAT Competition 2017: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/224324), table of contents and solver index",
         "call": "./MapleCOMSPS_CHB_VSIDS",
         "gz": true,
         "args": [
@@ -143,6 +157,8 @@
         ],
         "status": "ok",
         "name": "MapleCOMSPS_LRB_VSIDS_2_drup",
+        "authors": "Jia Hui Liang, Chanseok Oh, Vijay Ganesh, Krzysztof Czarnecki, Pascal Poupart",
+        "authors_source": "Proceedings of SAT Competition 2017: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/224324), table of contents and solver index",
         "call": "./MapleCOMSPS_LRB_VSIDS_2",
         "gz": true,
         "args": [
@@ -161,6 +177,8 @@
         ],
         "status": "ok",
         "name": "MapleCOMSPS_LRB_VSIDS_drup",
+        "authors": "Jia Hui Liang, Chanseok Oh, Vijay Ganesh, Krzysztof Czarnecki, Pascal Poupart",
+        "authors_source": "Proceedings of SAT Competition 2017: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/224324), table of contents and solver index",
         "call": "./MapleCOMSPS_LRB_VSIDS",
         "gz": true,
         "args": [
@@ -179,6 +197,8 @@
         ],
         "status": "ok",
         "name": "MapleLRB_LCM",
+        "authors": "Fan Xiao, Mao Luo, Chu-Min Li, Felip Manyà, Zhipeng Lü",
+        "authors_source": "Proceedings of SAT Competition 2017: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/224324), table of contents and solver index",
         "call": "./glucose_static",
         "gz": true,
         "args": [
@@ -197,6 +217,8 @@
         ],
         "status": "ok",
         "name": "MapleLRB_LCMoccRestart",
+        "authors": "Fan Xiao, Mao Luo, Chu-Min Li, Felip Manyà, Zhipeng Lü",
+        "authors_source": "Proceedings of SAT Competition 2017: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/224324), table of contents and solver index",
         "call": "./glucose_static",
         "gz": true,
         "args": [
@@ -215,6 +237,8 @@
         ],
         "status": "ok",
         "name": "Maple_LCM",
+        "authors": "Fan Xiao, Mao Luo, Chu-Min Li, Felip Manyà, Zhipeng Lü",
+        "authors_source": "Proceedings of SAT Competition 2017: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/224324), table of contents and solver index",
         "call": "./glucose_static",
         "gz": true,
         "args": [
@@ -233,6 +257,8 @@
         ],
         "status": "ok",
         "name": "Maple_LCM_Dist",
+        "authors": "Fan Xiao, Mao Luo, Chu-Min Li, Felip Manyà, Zhipeng Lü",
+        "authors_source": "Proceedings of SAT Competition 2017: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/224324), table of contents and solver index",
         "call": "./glucose_static",
         "gz": true,
         "args": [
@@ -251,6 +277,8 @@
         ],
         "status": "unstable",
         "name": "Riss7",
+        "authors": "Norbert Manthey",
+        "authors_source": "Proceedings of SAT Competition 2017: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/224324), table of contents and solver index",
         "call": "./riss",
         "gz": true,
         "args": [
@@ -272,6 +300,8 @@
         ],
         "status": "ok",
         "name": "abcdsat_r17",
+        "authors": "Jingchao Chen",
+        "authors_source": "Proceedings of SAT Competition 2017: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/224324), table of contents and solver index",
         "call": "./abcdsat_r17",
         "gz": true,
         "args": [
@@ -292,6 +322,8 @@
         "status": "fixme",
         "status_detail": "FIXME problem when runnning",
         "name": "bs_glucose",
+        "authors": "Seongsoo Moon, Mary Inaba",
+        "authors_source": "Proceedings of SAT Competition 2017: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/224324), table of contents and solver index",
         "call": "./bs_glucose1",
         "gz": true,
         "args": [
@@ -312,6 +344,8 @@
         ],
         "status": "ok",
         "name": "cadical-sc17-proof",
+        "authors": "Armin Biere",
+        "authors_source": "Proceedings of SAT Competition 2017: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/224324), table of contents and solver index",
         "call": "./cadical",
         "gz": true,
         "args": [
@@ -329,6 +363,8 @@
         ],
         "status": "ok",
         "name": "cadical-sc17-agile-proof",
+        "authors": "Armin Biere",
+        "authors_source": "Proceedings of SAT Competition 2017: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/224324), table of contents and solver index",
         "call": "./cadical",
         "gz": true,
         "args": [
@@ -346,6 +382,8 @@
         ],
         "status": "ok",
         "name": "glu_vc",
+        "authors": "Jingchao Chen",
+        "authors_source": "Proceedings of SAT Competition 2017: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/224324), table of contents and solver index",
         "call": "./glu_vc",
         "gz": true,
         "args": [
@@ -366,6 +404,8 @@
         ],
         "status": "ok",
         "name": "glucose-3.0+width",
+        "authors": "Fan Xiao, Mao Luo, Chu-Min Li, Felip Manyà, Zhipeng Lü",
+        "authors_source": "Proceedings of SAT Competition 2017: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/224324), table of contents and solver index",
         "call": "./glucose_static",
         "gz": true,
         "args": [
@@ -386,6 +426,8 @@
         ],
         "status": "ok",
         "name": "glucose-4.1",
+        "authors": "Gilles Audemard, Laurent Simon",
+        "authors_source": "Proceedings of SAT Competition 2017: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/224324), table of contents and solver index",
         "call": "./glucose",
         "gz": true,
         "args": [
@@ -407,6 +449,8 @@
         ],
         "status": "ok",
         "name": "lingeling-bbe",
+        "authors": "Armin Biere",
+        "authors_source": "Proceedings of SAT Competition 2017: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/224324), table of contents and solver index",
         "call": "./lingeling",
         "gz": true,
         "args": [
@@ -428,6 +472,8 @@
         "status": "fixme",
         "status_detail": "FIXME: only binary",
         "name": "satUZK-seq",
+        "authors": "Alexander van der Grinten",
+        "authors_source": "Proceedings of SAT Competition 2017: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/224324), table of contents and solver index",
         "call": "./satuzk-seq",
         "gz": true,
         "args": [
@@ -445,6 +491,8 @@
         ],
         "status": "ok",
         "name": "tch_glucose1",
+        "authors": "Seongsoo Moon, Mary Inaba",
+        "authors_source": "Proceedings of SAT Competition 2017: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/224324), table of contents and solver index",
         "call": "./tch_glucose1",
         "gz": true,
         "args": [
@@ -465,6 +513,8 @@
         ],
         "status": "ok",
         "name": "tch_glucose2",
+        "authors": "Seongsoo Moon, Mary Inaba",
+        "authors_source": "Proceedings of SAT Competition 2017: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/224324), table of contents and solver index",
         "call": "./tch_glucose2",
         "gz": true,
         "args": [
@@ -486,6 +536,8 @@
         ],
         "status": "ok",
         "name": "tch_glucose3",
+        "authors": "Seongsoo Moon, Mary Inaba",
+        "authors_source": "Proceedings of SAT Competition 2017: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/224324), table of contents and solver index",
         "call": "./tch_glucose3",
         "gz": true,
         "args": [
@@ -507,6 +559,8 @@
         "status": "fixme",
         "status_detail": "FIXME build",
         "name": "Score2SAT",
+        "authors": "Shaowei Cai, Chuan Luo",
+        "authors_source": "Proceedings of SAT Competition 2017: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/224324), table of contents and solver index",
         "call": "./score2sat",
         "gz": true,
         "args": [
@@ -520,6 +574,8 @@
         ],
         "status": "ok",
         "name": "yalsat-03s",
+        "authors": "Armin Biere",
+        "authors_source": "Proceedings of SAT Competition 2017: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/224324), table of contents and solver index",
         "call": "./yalsat",
         "gz": true,
         "args": [
@@ -535,6 +591,8 @@
         "status": "fixme",
         "status_detail": "FIXME - segmentation fault https://github.com/sat-heritage/docker-images/issues/32",
         "name": "abcdsat_parallel",
+        "authors": "Jingchao Chen",
+        "authors_source": "Proceedings of SAT Competition 2017: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/224324), table of contents and solver index",
         "call": "./abcdsat_p",
         "gz": true,
         "args": [
@@ -549,6 +607,8 @@
         ],
         "status": "ok",
         "name": "cbpenelope2017",
+        "authors": "Tomohiro Sonobe",
+        "authors_source": "Proceedings of SAT Competition 2017: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/224324), table of contents and solver index",
         "call": "./solver.sh",
         "gz": true,
         "args": [
@@ -563,6 +623,8 @@
         ],
         "status": "ok",
         "name": "ccspenelope2017",
+        "authors": "Tomohiro Sonobe",
+        "authors_source": "Proceedings of SAT Competition 2017: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/224324), table of contents and solver index",
         "call": "./solver.sh",
         "gz": true,
         "args": [
@@ -578,6 +640,8 @@
         "status": "fixme",
         "status_detail": "FIXME build",
         "name": "ddc-submit",
+        "authors": "Alexander van der Grinten",
+        "authors_source": "Proceedings of SAT Competition 2017: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/224324), table of contents and solver index",
         "call": "./yalsat",
         "gz": true,
         "args": [
@@ -591,6 +655,8 @@
         ],
         "status": "ok",
         "name": "painless",
+        "authors": "Ludovic Le Frioux, Souheib Baarir, Julien Sopena, Fabrice Kordon",
+        "authors_source": "Proceedings of SAT Competition 2017: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/224324), table of contents and solver index",
         "call": "./painless-maplecomsps",
         "gz": true,
         "args": [
@@ -605,6 +671,8 @@
         ],
         "status": "ok",
         "name": "plingeling-bbe-sc2017",
+        "authors": "Armin Biere",
+        "authors_source": "Proceedings of SAT Competition 2017: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/224324), table of contents and solver index",
         "call": "./plingeling",
         "gz": true,
         "args": [
@@ -619,6 +687,8 @@
         "status": "fixme",
         "status_detail": "FIXME",
         "name": "scalope",
+        "authors": "Rodrigue Konan Tchinda, Clémentin Tayou Djamegni",
+        "authors_source": "Proceedings of SAT Competition 2017: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/224324), table of contents and solver index",
         "call": "./scalope",
         "gz": true,
         "args": [
@@ -633,6 +703,8 @@
         ],
         "status": "ok",
         "name": "syrup",
+        "authors": "Gilles Audemard, Laurent Simon",
+        "authors_source": "Proceedings of SAT Competition 2017: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/224324), table of contents and solver index",
         "call": "./glucose-syrup",
         "gz": true,
         "args": [
@@ -648,6 +720,8 @@
         ],
         "status": "ok",
         "name": "treengeling-bbe-sc2017",
+        "authors": "Armin Biere",
+        "authors_source": "Proceedings of SAT Competition 2017: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/224324), table of contents and solver index",
         "call": "./treengeling",
         "gz": true,
         "args": [

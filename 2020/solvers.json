@@ -2,6 +2,8 @@
     "cadical-sc2020": {
         "status": "ok",
         "name": "CaDiCaL-sc2020",
+        "authors": "Armin Biere, Katalin Fazekas, Mathias Fleury, Max Heisinger",
+        "authors_source": "Proceedings of SAT Competition 2020: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/318450), table of contents and solver index",
         "call": "./cadical",
         "tracks": [
             "main"
@@ -18,6 +20,8 @@
     "duriansat": {
         "status": "ok",
         "name": "DurianSat",
+        "authors": "Arijit Shaw, Kuldeep S. Meel",
+        "authors_source": "Proceedings of SAT Competition 2020: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/318450), table of contents and solver index",
         "call": "./duriansat",
         "tracks": [
             "main"
@@ -36,6 +40,8 @@
     "exmaplelcmdistchronobt_padc_dl": {
         "status": "ok",
         "name": "ExMapleLCMDistChronoBT",
+        "authors": "Rodrigue Konan Tchinda, Clémentin Tayou Djamegni",
+        "authors_source": "Proceedings of SAT Competition 2020: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/318450), table of contents and solver index",
         "call": "./glucose_static",
         "tracks": [
             "main"
@@ -68,6 +74,8 @@
     "exmaplelcmdistchronobt_padc_dl_ovau_exp": {
         "status": "ok",
         "name": "ExMapleLCMDistChronoBT",
+        "authors": "Rodrigue Konan Tchinda, Clémentin Tayou Djamegni",
+        "authors_source": "Proceedings of SAT Competition 2020: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/318450), table of contents and solver index",
         "call": "./glucose_static",
         "tracks": [
             "main"
@@ -104,6 +112,8 @@
     "exmaplelcmdistchronobt_padc_dl_ovau_lin": {
         "status": "ok",
         "name": "ExMapleLCMDistChronoBT",
+        "authors": "Rodrigue Konan Tchinda, Clémentin Tayou Djamegni",
+        "authors_source": "Proceedings of SAT Competition 2020: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/318450), table of contents and solver index",
         "call": "./glucose_static",
         "tracks": [
             "main"
@@ -140,6 +150,8 @@
     "exmaplelcmdistchronobt_psids_dl": {
         "status": "ok",
         "name": "ExMapleLCMDistChronoBT",
+        "authors": "Rodrigue Konan Tchinda, Clémentin Tayou Djamegni",
+        "authors_source": "Proceedings of SAT Competition 2020: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/318450), table of contents and solver index",
         "call": "./glucose_static",
         "tracks": [
             "main"
@@ -168,6 +180,8 @@
     "kissat-sc2020-default": {
         "status": "ok",
         "name": "Kissat-sc2020-default",
+        "authors": "Armin Biere, Katalin Fazekas, Mathias Fleury, Max Heisinger",
+        "authors_source": "Proceedings of SAT Competition 2020: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/318450), table of contents and solver index",
         "call": "./kissat",
         "tracks": [
             "main"
@@ -186,6 +200,8 @@
     "kissat-sc2020-sat": {
         "status": "ok",
         "name": "Kissat-sc2020-sat",
+        "authors": "Armin Biere, Katalin Fazekas, Mathias Fleury, Max Heisinger",
+        "authors_source": "Proceedings of SAT Competition 2020: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/318450), table of contents and solver index",
         "call": "./kissat",
         "tracks": [
             "main"
@@ -204,6 +220,8 @@
     "kissat-sc2020-unsat": {
         "status": "ok",
         "name": "Kissat-sc2020-unsat",
+        "authors": "Armin Biere, Katalin Fazekas, Mathias Fleury, Max Heisinger",
+        "authors_source": "Proceedings of SAT Competition 2020: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/318450), table of contents and solver index",
         "call": "./kissat",
         "tracks": [
             "main"
@@ -222,6 +240,8 @@
     "mlcmdchronobt-dl-scavel": {
         "status": "ok",
         "name": "MLCMDChronoBT-DL-Scavel",
+        "authors": "Zhihui Li, Guanfeng Wu, Yang Xu, Qingshan Chen",
+        "authors_source": "Proceedings of SAT Competition 2020: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/318450), table of contents and solver index",
         "call": "./MLCMDCBT-DL-v2.2_Scavel",
         "tracks": [
             "main"
@@ -240,6 +260,8 @@
     "maple-lcm-dist-alluip-trail": {
         "status": "ok",
         "name": "Maple-LCM-Dist-alluip-trail",
+        "authors": "Randy Hickey, Nick Feng, Fahiem Bacchus",
+        "authors_source": "Proceedings of SAT Competition 2020: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/318450), table of contents and solver index",
         "call": "./glucose_static",
         "tracks": [
             "main"
@@ -262,6 +284,8 @@
     "maplecomsps_lrb_vsids_2": {
         "status": "ok",
         "name": "MapleCOMSPS_LRB_VSIDS_2",
+        "authors": "Jia Hui Liang, Chanseok Oh, Saeed Nejati, Pascal Poupart, Vijay Ganesh",
+        "authors_source": "Proceedings of SAT Competition 2020: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/318450), table of contents and solver index",
         "call": "./MapleCOMSPS_LRB_VSIDS_2",
         "tracks": [
             "main"
@@ -284,6 +308,8 @@
     "maplelcmdistchronobt-dl-scavel01": {
         "status": "ok",
         "name": "MapleLCMDistChronoBT-DL-Scavel01",
+        "authors": "Zhihui Li, Guanfeng Wu, Yang Xu, Qingshan Chen",
+        "authors_source": "Proceedings of SAT Competition 2020: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/318450), table of contents and solver index",
         "call": "./MapleLCMDistChrBt-DL-v2.2",
         "tracks": [
             "main"
@@ -302,6 +328,8 @@
     "maplelcmdistchronobt-dl-scavel02": {
         "status": "ok",
         "name": "MapleLCMDistChronoBT-DL-Scavel02",
+        "authors": "Zhihui Li, Guanfeng Wu, Yang Xu, Qingshan Chen",
+        "authors_source": "Proceedings of SAT Competition 2020: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/318450), table of contents and solver index",
         "call": "./MapleLCMDistChrBt-DL-v2.2",
         "tracks": [
             "main"
@@ -320,6 +348,8 @@
     "maplelcmdistchronobt-dl-f2trc": {
         "status": "ok",
         "name": "MapleLCMDistChronoBT-DL-f2trc",
+        "authors": "Stepan Kochemazov",
+        "authors_source": "Proceedings of SAT Competition 2020: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/318450), table of contents and solver index",
         "call": "./MLCDBT-DL-f2trc",
         "tracks": [
             "main"
@@ -338,6 +368,8 @@
     "maplelcmdistchronobt-dl-v3": {
         "status": "ok",
         "name": "MapleLCMDistChronoBT-DL-v3",
+        "authors": "Stepan Kochemazov, Oleg Zaikin, Victor Kondratiev, Alexander Semenov",
+        "authors_source": "Proceedings of SAT Competition 2020: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/318450), table of contents and solver index",
         "call": "./MapleLCMDistChrBt-DL-v3",
         "tracks": [
             "main"
@@ -356,6 +388,8 @@
     "maplelcmdistchronobt-f2trc-s": {
         "status": "ok",
         "name": "MapleLCMDistChronoBT-f2trc-s",
+        "authors": "Stepan Kochemazov",
+        "authors_source": "Proceedings of SAT Competition 2020: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/318450), table of contents and solver index",
         "call": "./MLDCBT-f2trc-s",
         "tracks": [
             "main"
@@ -374,6 +408,8 @@
     "maplelcmdistchronobt-f2trc": {
         "status": "ok",
         "name": "MapleLCMDistChronoBT-f2trc",
+        "authors": "Stepan Kochemazov",
+        "authors_source": "Proceedings of SAT Competition 2020: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/318450), table of contents and solver index",
         "call": "./MLCDBT-f2trc",
         "tracks": [
             "main"
@@ -392,6 +428,8 @@
     "maple_cm-dist-sattime2s": {
         "status": "ok",
         "name": "Maple_CM+dist+sattime2s+-",
+        "authors": "Chu-Min Li, Mao Luo, Fan Xiao, Li Yu, Felip Manyà, Zhipeng Lü",
+        "authors_source": "Proceedings of SAT Competition 2020: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/318450), table of contents and solver index",
         "call": "./glucose_static",
         "tracks": [
             "main"
@@ -411,6 +449,8 @@
     "maple_cm-dist-simp2": {
         "status": "ok",
         "name": "Maple_CM+dist+simp2--",
+        "authors": "Chu-Min Li, Mao Luo, Fan Xiao, Li Yu, Felip Manyà, Zhipeng Lü",
+        "authors_source": "Proceedings of SAT Competition 2020: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/318450), table of contents and solver index",
         "call": "./glucose_static",
         "tracks": [
             "main"
@@ -429,6 +469,8 @@
     "maple_cm-dist": {
         "status": "ok",
         "name": "Maple_CM+dist",
+        "authors": "Chu-Min Li, Mao Luo, Fan Xiao, Li Yu, Felip Manyà, Zhipeng Lü",
+        "authors_source": "Proceedings of SAT Competition 2020: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/318450), table of contents and solver index",
         "call": "./glucose_static",
         "tracks": [
             "main"
@@ -447,6 +489,8 @@
     "maple_cmused-dist": {
         "status": "ok",
         "name": "Maple_CMused+dist",
+        "authors": "Chu-Min Li, Mao Luo, Fan Xiao, Li Yu, Felip Manyà, Zhipeng Lü",
+        "authors_source": "Proceedings of SAT Competition 2020: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/318450), table of contents and solver index",
         "call": "./glucose_static",
         "tracks": [
             "main"
@@ -465,6 +509,8 @@
     "maple_mix": {
         "status": "ok",
         "name": "Maple_mix",
+        "authors": "Jingchao Chen",
+        "authors_source": "Proceedings of SAT Competition 2020: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/318450), table of contents and solver index",
         "call": "./Maple_mix",
         "tracks": [
             "main"
@@ -483,6 +529,8 @@
     "maple_simp": {
         "status": "ok",
         "name": "Maple_simp",
+        "authors": "Jingchao Chen",
+        "authors_source": "Proceedings of SAT Competition 2020: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/318450), table of contents and solver index",
         "call": "./Maple_simp",
         "tracks": [
             "main"
@@ -501,6 +549,8 @@
     "parafrost": {
         "status": "ok",
         "name": "ParaFROST",
+        "authors": "Muhammad Osama, Anton Wijs",
+        "authors_source": "Proceedings of SAT Competition 2020: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/318450), table of contents and solver index",
         "call": "./parafrost",
         "tracks": [
             "main"
@@ -521,6 +571,8 @@
     "parafrost_cbt": {
         "status": "ok",
         "name": "ParaFROST_CBT",
+        "authors": "Muhammad Osama, Anton Wijs",
+        "authors_source": "Proceedings of SAT Competition 2020: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/318450), table of contents and solver index",
         "call": "./parafrost",
         "tracks": [
             "main"
@@ -543,6 +595,8 @@
     "pausat": {
         "status": "ok",
         "name": "PauSat",
+        "authors": "Benjamin Kaiser, Marc Hartung",
+        "authors_source": "Proceedings of SAT Competition 2020: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/318450), table of contents and solver index",
         "call": "./PauSat",
         "tracks": [
             "main"
@@ -562,6 +616,8 @@
     "relaxed_lcmdcbdl": {
         "status": "ok",
         "name": "Relaxed_LCMDCBDL",
+        "authors": "Xindi Zhang, Shaowei Cai",
+        "authors_source": "Proceedings of SAT Competition 2020: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/318450), table of contents and solver index",
         "call": "./Relaxed_LCMDCBDL",
         "tracks": [
             "main"
@@ -580,6 +636,8 @@
     "relaxed_lcmdcbdl_newtech": {
         "status": "ok",
         "name": "Relaxed_LCMDCBDL_newTech",
+        "authors": "Xindi Zhang, Shaowei Cai",
+        "authors_source": "Proceedings of SAT Competition 2020: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/318450), table of contents and solver index",
         "call": "./Relaxed_LCMDCBDL_newTech",
         "tracks": [
             "main"
@@ -599,6 +657,8 @@
         "status": "fixme",
         "status_detail": "fixme: zip is malformed",
         "name": "SLIME",
+        "authors": "Oscar Riveros",
+        "authors_source": "Proceedings of SAT Competition 2020: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/318450), table of contents and solver index",
         "call": "./slime",
         "tracks": [
             "main"
@@ -615,6 +675,8 @@
     "top16-undominated-lc-maplelcmdiscchronobt-dl": {
         "status": "ok",
         "name": "Top16-Undominated-LC-MapleLCMDiscChronoBT-DL",
+        "authors": "Jerry Lonlac, Engelbert Mephu Nguifo",
+        "authors_source": "Proceedings of SAT Competition 2020: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/318450), table of contents and solver index",
         "call": "./MapleLCMDistChrBt-DL-v3-Top16LC",
         "tracks": [
             "main"
@@ -633,6 +695,8 @@
     "top24-undominated-lc-maplelcmdiscchronobt-dl": {
         "status": "ok",
         "name": "Top24-Undominated-LC-MapleLCMDiscChronoBT-DL",
+        "authors": "Jerry Lonlac, Engelbert Mephu Nguifo",
+        "authors_source": "Proceedings of SAT Competition 2020: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/318450), table of contents and solver index",
         "call": "./MapleLCMDistChrBt-DL-v3-Top24LC",
         "tracks": [
             "main"
@@ -651,6 +715,8 @@
     "top36-undominated-lc-maplelcmdiscchronobt-dl": {
         "status": "ok",
         "name": "Top36-Undominated-LC-MapleLCMDiscChronoBT-DL",
+        "authors": "Jerry Lonlac, Engelbert Mephu Nguifo",
+        "authors_source": "Proceedings of SAT Competition 2020: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/318450), table of contents and solver index",
         "call": "./MapleLCMDistChrBt-DL-v3-Top36LC",
         "tracks": [
             "main"
@@ -669,6 +735,8 @@
     "undominated-lc-maplelcmdiscchronobt-dl": {
         "status": "ok",
         "name": "Undominated-LC-MapleLCMDiscChronoBT-DL",
+        "authors": "Jerry Lonlac, Engelbert Mephu Nguifo",
+        "authors_source": "Proceedings of SAT Competition 2020: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/318450), table of contents and solver index",
         "call": "./MapleLCMDistChrBt-DL-v3-Topk-Undominated",
         "tracks": [
             "main"
@@ -687,6 +755,8 @@
     "cadical-alluip-trail": {
         "status": "ok",
         "name": "cadical-alluip-trail",
+        "authors": "Randy Hickey, Nick Feng, Fahiem Bacchus",
+        "authors_source": "Proceedings of SAT Competition 2020: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/318450), table of contents and solver index",
         "call": "./cadical",
         "tracks": [
             "main"
@@ -705,6 +775,8 @@
     "cadical-alluip": {
         "status": "ok",
         "name": "cadical-alluip",
+        "authors": "Randy Hickey, Nick Feng, Fahiem Bacchus",
+        "authors_source": "Proceedings of SAT Competition 2020: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/318450), table of contents and solver index",
         "call": "./cadical",
         "tracks": [
             "main"
@@ -721,11 +793,15 @@
     "cadical-trail": {
         "status": "fixme",
         "status_detail": "FIXME: miss sources.",
-        "license_source": "archive not available"
+        "license_source": "archive not available",
+        "authors": "Randy Hickey, Nick Feng, Fahiem Bacchus",
+        "authors_source": "Proceedings of SAT Competition 2020: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/318450), table of contents and solver index"
     },
     "cryptominisat-ccnr-lsids": {
         "status": "ok",
         "name": "cryptominisat-ccnr-lsids",
+        "authors": "Mate Soos, Shaowei Cai, Jo Devriendt, Stephan Gocht, Arijit Shaw, Kuldeep S. Meel",
+        "authors_source": "Proceedings of SAT Competition 2020: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/318450), table of contents and solver index",
         "call": "./cryptominisat5_simple",
         "tracks": [
             "main"
@@ -750,6 +826,8 @@
     "cryptominisat-ccnr": {
         "status": "ok",
         "name": "cryptominisat-ccnr",
+        "authors": "Mate Soos, Shaowei Cai, Jo Devriendt, Stephan Gocht, Arijit Shaw, Kuldeep S. Meel",
+        "authors_source": "Proceedings of SAT Competition 2020: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/318450), table of contents and solver index",
         "call": "./cryptominisat5_simple",
         "tracks": [
             "main"
@@ -772,6 +850,8 @@
     "cryptominisat-walksat": {
         "status": "ok",
         "name": "cryptominisat-walksat",
+        "authors": "Mate Soos, Bart Selman, Henry Kautz",
+        "authors_source": "Proceedings of SAT Competition 2020: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/318450), table of contents and solver index",
         "call": "./cryptominisat5_simple",
         "tracks": [
             "main"
@@ -794,6 +874,8 @@
     "exp_l_mld_cbt_dl": {
         "status": "ok",
         "name": "exp_L_MLD_CBT_DL",
+        "authors": "Md Solimul Chowdhury, Martin Müller, Jia-Huai You",
+        "authors_source": "Proceedings of SAT Competition 2020: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/318450), table of contents and solver index",
         "call": "./glucose",
         "tracks": [
             "main"
@@ -812,6 +894,8 @@
     "exp_v_lgb_mld_cbt_dl": {
         "status": "ok",
         "name": "exp_V_LGB_MLD_CBT_DL",
+        "authors": "Md Solimul Chowdhury, Martin Müller, Jia-Huai You",
+        "authors_source": "Proceedings of SAT Competition 2020: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/318450), table of contents and solver index",
         "call": "./glucose",
         "tracks": [
             "main"
@@ -830,6 +914,8 @@
     "exp_v_l_mld_cbt_dl": {
         "status": "ok",
         "name": "exp_V_L_MLD_CBT_DL",
+        "authors": "Md Solimul Chowdhury, Martin Müller, Jia-Huai You",
+        "authors_source": "Proceedings of SAT Competition 2020: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/318450), table of contents and solver index",
         "call": "./glucose",
         "tracks": [
             "main"
@@ -848,6 +934,8 @@
     "exp_v_mld_cbt_dl": {
         "status": "ok",
         "name": "exp_V_MLD_CBT_DL",
+        "authors": "Md Solimul Chowdhury, Martin Müller, Jia-Huai You",
+        "authors_source": "Proceedings of SAT Competition 2020: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/318450), table of contents and solver index",
         "call": "./glucose",
         "tracks": [
             "main"
@@ -866,6 +954,8 @@
     "glucose-3.0-inprocess": {
         "status": "ok",
         "name": "glucose-3.0-inprocess",
+        "authors": "Norbert Manthey",
+        "authors_source": "Proceedings of SAT Competition 2020: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/318450), table of contents and solver index",
         "call": "./glucose_static",
         "tracks": [
             "main"
@@ -887,6 +977,8 @@
     "upglucose-3.0_padc": {
         "status": "ok",
         "name": "upGlucose-3.0_PADC",
+        "authors": "Rodrigue Konan Tchinda, Clémentin Tayou Djamegni",
+        "authors_source": "Proceedings of SAT Competition 2020: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/318450), table of contents and solver index",
         "call": "./glucose_static",
         "tracks": [
             "main"
