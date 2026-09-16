@@ -411,6 +411,8 @@
             "main"
         ],
         "name": "Minisat-v2.2.0-106-ge2dd095",
+        "authors": "Niklas Eén, Niklas Sörensson",
+        "authors_source": "MiniSat authors (minisat.se, github.com/niklasso/minisat); reference solver of the competition",
         "call": "./minisat",
         "gz": true,
         "args": [
@@ -663,6 +665,8 @@
             "main"
         ],
         "name": "glucose-3.0D-patched",
+        "authors": "Gilles Audemard, Laurent Simon",
+        "authors_source": "Glucose 3.0 (patched build); confirmed by Laurent Simon",
         "call": "./glucose_static",
         "gz": true,
         "args": [

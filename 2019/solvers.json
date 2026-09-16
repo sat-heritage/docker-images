@@ -402,6 +402,8 @@
   "minisat-v2.2.0-106-ge2dd095": {
     "status": "ok",
     "name": "Minisat-v2.2.0-106-ge2dd095",
+    "authors": "Niklas Eén, Niklas Sörensson",
+    "authors_source": "MiniSat authors (minisat.se, github.com/niklasso/minisat); reference solver of the competition",
     "call": "./minisat",
     "gz": true,
     "args": [
