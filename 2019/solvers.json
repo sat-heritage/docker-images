@@ -2,6 +2,8 @@
   "ccanrsim": {
     "status": "ok",
     "name": "CCAnrSim",
+    "authors": "Md Shibbir Hossen, Md Masbaul Alam Polash",
+    "authors_source": "Proceedings of SAT Race 2019: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/306988), table of contents and solver index",
     "call": "./CCAnrSim",
     "gz": false,
     "args": [
@@ -14,6 +16,8 @@
   "cominisatps_pulsar_drup": {
     "status": "ok",
     "name": "COMiniSatPS_Pulsar_drup",
+    "authors": "Chanseok Oh",
+    "authors_source": "Proceedings of SAT Race 2019: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/306988), table of contents and solver index",
     "call": "./minisat_static",
     "gz": true,
     "args": [
@@ -30,6 +34,8 @@
   "cadical": {
     "status": "ok",
     "name": "CaDiCaL",
+    "authors": "Armin Biere",
+    "authors_source": "Proceedings of SAT Race 2019: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/306988), table of contents and solver index",
     "call": "./cadical",
     "gz": true,
     "args": [
@@ -45,6 +51,8 @@
   "candy": {
     "status": "unstable",
     "name": "Candy",
+    "authors": "Md Shibbir Hossen, Md Masbaul Alam Polash",
+    "authors_source": "Proceedings of SAT Race 2019: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/306988), table of contents and solver index",
     "call": "./candy",
     "gz": true,
     "args": [
@@ -62,6 +70,8 @@
   "mldchronobt_gcbump": {
     "status": "ok",
     "name": "MLDChronoBT_GCBump",
+    "authors": "Md Solimul Chowdhury, Martin Müller, Jia-Huai You",
+    "authors_source": "Proceedings of SAT Race 2019: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/306988), table of contents and solver index",
     "call": "./glucose_static",
     "gz": true,
     "args": [
@@ -80,6 +90,8 @@
   "maple-comsps_chb_vsids_drup": {
     "status": "ok",
     "name": "MapleCOMSPS_CHB_VSIDS_drup",
+    "authors": "Jia Hui Liang, Chanseok Oh, Krzysztof Czarnecki, Pascal Poupart, Vijay Ganesh",
+    "authors_source": "Proceedings of SAT Race 2019: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/306988), table of contents and solver index",
     "call": "./MapleCOMSPS_CHB_VSIDS",
     "gz": true,
     "args": [
@@ -96,6 +108,8 @@
   "maple-comsps_lrb_vsids_2_drup": {
     "status": "ok",
     "name": "MapleCOMSPS_LRB_VSIDS_2_drup",
+    "authors": "Jia Hui Liang, Chanseok Oh, Krzysztof Czarnecki, Pascal Poupart, Vijay Ganesh",
+    "authors_source": "Proceedings of SAT Race 2019: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/306988), table of contents and solver index",
     "call": "./MapleCOMSPS_LRB_VSIDS_2",
     "gz": true,
     "args": [
@@ -111,6 +125,8 @@
   "maple-comsps_lrb_vsids_drup": {
     "status": "ok",
     "name": "MapleCOMSPS_LRB_VSIDS_drup",
+    "authors": "Jia Hui Liang, Chanseok Oh, Krzysztof Czarnecki, Pascal Poupart, Vijay Ganesh",
+    "authors_source": "Proceedings of SAT Race 2019: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/306988), table of contents and solver index",
     "call": "./MapleCOMSPS_LRB_VSIDS",
     "gz": true,
     "args": [
@@ -126,6 +142,8 @@
   "maple-lcmchronobt_del": {
     "status": "ok",
     "name": "MapleLCMChronoBT_DEL",
+    "authors": "Zhihui Li, Guanfeng Wu, Yang Xu, Qingshan Chen",
+    "authors_source": "Proceedings of SAT Race 2019: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/306988), table of contents and solver index",
     "call": "./glucose_static",
     "gz": true,
     "args": [
@@ -142,6 +160,8 @@
   "maple-lcmchronobt_scavel_ewma": {
     "status": "ok",
     "name": "MapleLCMChronoBT_Scavel_EWMA",
+    "authors": "Zhihui Li, Guanfeng Wu, Yang Xu, Qingshan Chen",
+    "authors_source": "Proceedings of SAT Race 2019: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/306988), table of contents and solver index",
     "call": "./MLCMCBT_S_EWMA",
     "gz": true,
     "args": [
@@ -157,6 +177,8 @@
   "maple-lcmchronobt_ldcr": {
     "status": "ok",
     "name": "MapleLCMChronoBT_ldcr",
+    "authors": "Yang Xu, Guanfeng Wu, Wenjing Chang, Xiulan Chen",
+    "authors_source": "Proceedings of SAT Race 2019: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/306988), table of contents and solver index",
     "call": "./glucose_static",
     "gz": true,
     "args": [
@@ -172,6 +194,8 @@
   "maple-lcmdistchronobt_scavel_ewma_08all": {
     "status": "ok",
     "name": "MapleLCMDISTChronoBT_Scavel_EWMA_08ALL",
+    "authors": "Zhihui Li, Guanfeng Wu, Yang Xu, Qingshan Chen",
+    "authors_source": "Proceedings of SAT Race 2019: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/306988), table of contents and solver index",
     "call": "./MLCMCBT_S_EWMV_08ALL",
     "gz": true,
     "args": [
@@ -187,6 +211,8 @@
   "maple-lcmdiscchronobt-dl-v3": {
     "status": "ok",
     "name": "MapleLCMDiscChronoBT-DL-v3",
+    "authors": "Stepan Kochemazov, Oleg Zaikin, Victor Kondratiev, Alexander Semenov",
+    "authors_source": "Proceedings of SAT Race 2019: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/306988), table of contents and solver index",
     "call": "./MapleLCMDistChrBt-DL-v3",
     "gz": true,
     "args": [
@@ -202,6 +228,8 @@
   "maple-lcmdistchronobt-dl-v1": {
     "status": "ok",
     "name": "MapleLCMDistChronoBT-DL-v1",
+    "authors": "Stepan Kochemazov, Oleg Zaikin, Victor Kondratiev, Alexander Semenov",
+    "authors_source": "Proceedings of SAT Race 2019: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/306988), table of contents and solver index",
     "call": "./MapleLCMDistChrBt-DL-v1",
     "gz": true,
     "args": [
@@ -217,6 +245,8 @@
   "maple-lcmdistchronobt-dl-v2.1": {
     "status": "ok",
     "name": "MapleLCMDistChronoBT-DL-v2.1",
+    "authors": "Stepan Kochemazov, Oleg Zaikin, Victor Kondratiev, Alexander Semenov",
+    "authors_source": "Proceedings of SAT Race 2019: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/306988), table of contents and solver index",
     "call": "./MapleLCMDistChrBt-DL-v2.1",
     "gz": true,
     "args": [
@@ -232,6 +262,8 @@
   "maple-lcmdistchronobt-dl-v2.2": {
     "status": "ok",
     "name": "MapleLCMDistChronoBT-DL-v2.2",
+    "authors": "Stepan Kochemazov, Oleg Zaikin, Victor Kondratiev, Alexander Semenov",
+    "authors_source": "Proceedings of SAT Race 2019: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/306988), table of contents and solver index",
     "call": "./MapleLCMDistChrBt-DL-v2.2",
     "gz": true,
     "args": [
@@ -247,6 +279,8 @@
   "maple-lcmdistchronobtvariablereindexing": {
     "status": "unstable",
     "name": "MapleLCMDistChronoBTVariableReindexing",
+    "authors": "Chris Cameron, Xing Jin, Kevin Leyton-Brown",
+    "authors_source": "Proceedings of SAT Race 2019: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/306988), table of contents and solver index",
     "call": "./custom_run",
     "path": "MapleLCMDistChronoBTVariableReindexing/bin",
     "gz": false,
@@ -265,6 +299,8 @@
   "maple-lcmdistcbtcorefirst": {
     "status": "ok",
     "name": "MapleLCMdistCBTcoreFirst",
+    "authors": "Jingchao Chen",
+    "authors_source": "Proceedings of SAT Race 2019: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/306988), table of contents and solver index",
     "call": "./MapleCBTCoreFirst",
     "gz": true,
     "args": [
@@ -281,6 +317,8 @@
   "maple_lcm_onlinedel_19a": {
     "status": "ok",
     "name": "Maple_LCM_OnlineDel_19a",
+    "authors": "Sima Jamali, David Mitchell",
+    "authors_source": "Proceedings of SAT Race 2019: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/306988), table of contents and solver index",
     "call": "./glucose_static",
     "gz": true,
     "args": [
@@ -296,6 +334,8 @@
   "maple_cm_onlinedel_19b": {
     "status": "ok",
     "name": "Maple_CM_OnlineDel_19b",
+    "authors": "Sima Jamali, David Mitchell",
+    "authors_source": "Proceedings of SAT Race 2019: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/306988), table of contents and solver index",
     "call": "./glucose_static",
     "gz": true,
     "args": [
@@ -311,6 +351,8 @@
   "maple_lcm_btl": {
     "status": "ok",
     "name": "Maple_LCM_BTL",
+    "authors": "Yang Xu, Guanfeng Wu, Wenjing Chang, Xiulan Chen",
+    "authors_source": "Proceedings of SAT Race 2019: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/306988), table of contents and solver index",
     "call": "./MapleLCMDist_LBD_BTL",
     "gz": true,
     "args": [
@@ -326,6 +368,8 @@
   "maple_lcm_scavel_155": {
     "status": "ok",
     "name": "Maple_LCM_Scavel_155",
+    "authors": "Zhihui Li, Guanfeng Wu, Yang Xu, Qingshan Chen",
+    "authors_source": "Proceedings of SAT Race 2019: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/306988), table of contents and solver index",
     "call": "./Maple_LCM_Scavel",
     "gz": true,
     "args": [
@@ -341,6 +385,8 @@
   "mergesat": {
     "status": "ok",
     "name": "MergeSAT",
+    "authors": "Norbert Manthey",
+    "authors_source": "Proceedings of SAT Race 2019: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/306988), table of contents and solver index",
     "call": "./mergesat",
     "gz": true,
     "args": [
@@ -371,6 +417,8 @@
   "padc_maplelcmdistchronobt-default": {
     "status": "ok",
     "name": "PADC_MapleLCMDistChronoBT",
+    "authors": "Rodrigue Konan Tchinda, Clémentin Tayou Djamegni",
+    "authors_source": "Proceedings of SAT Race 2019: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/306988), table of contents and solver index",
     "call": "./glucose_static",
     "gz": true,
     "args": [
@@ -390,6 +438,8 @@
   "padc_maplelcmdistchronobt-nbincreddb_5_ct_0": {
     "status": "ok",
     "name": "PADC_MapleLCMDistChronoBT",
+    "authors": "Rodrigue Konan Tchinda, Clémentin Tayou Djamegni",
+    "authors_source": "Proceedings of SAT Race 2019: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/306988), table of contents and solver index",
     "call": "./glucose_static",
     "gz": true,
     "args": [
@@ -409,6 +459,8 @@
   "padc_maple_lcm_dist": {
     "status": "ok",
     "name": "PADC_Maple_LCM_Dist",
+    "authors": "Rodrigue Konan Tchinda, Clémentin Tayou Djamegni",
+    "authors_source": "Proceedings of SAT Race 2019: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/306988), table of contents and solver index",
     "call": "./glucose_static",
     "gz": true,
     "args": [
@@ -428,6 +480,8 @@
   "psids_maplelcmdistchronobt": {
     "status": "ok",
     "name": "PSIDS_MapleLCMDistChronoBT",
+    "authors": "Rodrigue Konan Tchinda, Clémentin Tayou Djamegni",
+    "authors_source": "Proceedings of SAT Race 2019: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/306988), table of contents and solver index",
     "call": "./glucose_static",
     "gz": true,
     "args": [
@@ -443,6 +497,8 @@
   "relaxed_lcmdistchronobt": {
     "status": "ok",
     "name": "Relaxed_LCMDistChronoBT",
+    "authors": "Shaowei Cai, Xindi Zhang",
+    "authors_source": "Proceedings of SAT Race 2019: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/306988), table of contents and solver index",
     "call": "./Relaxed_LCMDistChronoBT",
     "gz": true,
     "args": [
@@ -458,6 +514,8 @@
   "relaxed_lcmdistchronobt_scavel": {
     "status": "ok",
     "name": "Relaxed_LCMDistChronoBT_Scavel",
+    "authors": "Shaowei Cai, Xindi Zhang",
+    "authors_source": "Proceedings of SAT Race 2019: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/306988), table of contents and solver index",
     "call": "./Relaxed_LCMDistChronoBT_Scavel",
     "gz": true,
     "args": [
@@ -473,6 +531,8 @@
   "relaxed_lcmdistchronobt_p9": {
     "status": "ok",
     "name": "Relaxed_LCMDistChronoBT_p9",
+    "authors": "Shaowei Cai, Xindi Zhang",
+    "authors_source": "Proceedings of SAT Race 2019: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/306988), table of contents and solver index",
     "call": "./Relaxed_LCMDistChronoBT",
     "gz": true,
     "args": [
@@ -490,6 +550,8 @@
   "relaxed_lcm_dist": {
     "status": "ok",
     "name": "Relaxed_LCM_Dist",
+    "authors": "Shaowei Cai, Xindi Zhang",
+    "authors_source": "Proceedings of SAT Race 2019: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/306988), table of contents and solver index",
     "call": "./Relaxed_LCM_Dist",
     "gz": true,
     "args": [
@@ -505,6 +567,8 @@
   "riss7.1": {
     "status": "ok",
     "name": "Riss7.1",
+    "authors": "Norbert Manthey",
+    "authors_source": "Proceedings of SAT Race 2019: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/306988), table of contents and solver index",
     "call": "./riss",
     "gz": true,
     "args": [
@@ -522,6 +586,8 @@
   "slime": {
     "status": "ok",
     "name": "SLIME",
+    "authors": "Oscar Riveros",
+    "authors_source": "Proceedings of SAT Race 2019: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/306988), table of contents and solver index",
     "call": "./slime_static",
     "gz": true,
     "args": [
@@ -537,6 +603,8 @@
   "sparrowtomergesat": {
     "status": "ok",
     "name": "SparrowToMergeSAT",
+    "authors": "Adrian Balint, Norbert Manthey",
+    "authors_source": "Proceedings of SAT Race 2019: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/306988), table of contents and solver index",
     "call": "./Sparrow2MergeSAT.sh",
     "gz": true,
     "args": [
@@ -558,6 +626,8 @@
   "topk3.2_glucose3.0": {
     "status": "ok",
     "name": "Topk3.2_Glucose3.0",
+    "authors": "Jerry Lonlac, Engelbert Mephu Nguifo",
+    "authors_source": "Proceedings of SAT Race 2019: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/306988), table of contents and solver index",
     "call": "./topkLC-glucose",
     "gz": true,
     "args": [
@@ -575,6 +645,8 @@
   "topk3_glucose3.0": {
     "status": "ok",
     "name": "Topk3_Glucose3.0",
+    "authors": "Jerry Lonlac, Engelbert Mephu Nguifo",
+    "authors_source": "Proceedings of SAT Race 2019: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/306988), table of contents and solver index",
     "call": "./topkLC-glucose",
     "gz": true,
     "args": [
@@ -592,6 +664,8 @@
   "topk6.2_glucose3.0": {
     "status": "ok",
     "name": "Topk6.2_Glucose3.0",
+    "authors": "Jerry Lonlac, Engelbert Mephu Nguifo",
+    "authors_source": "Proceedings of SAT Race 2019: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/306988), table of contents and solver index",
     "call": "./topkLC-glucose",
     "gz": true,
     "args": [
@@ -609,6 +683,8 @@
   "topk6_glucose3.0": {
     "status": "ok",
     "name": "Topk6_Glucose3.0",
+    "authors": "Jerry Lonlac, Engelbert Mephu Nguifo",
+    "authors_source": "Proceedings of SAT Race 2019: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/306988), table of contents and solver index",
     "call": "./topkLC-glucose",
     "gz": true,
     "args": [
@@ -626,6 +702,8 @@
   "zib_glucose": {
     "status": "ok",
     "name": "ZIB_Glucose",
+    "authors": "Marc Hartung",
+    "authors_source": "Proceedings of SAT Race 2019: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/306988), table of contents and solver index",
     "call": "./glucose_static",
     "gz": true,
     "args": [
@@ -646,6 +724,8 @@
     "status": "fixme",
     "status_detail": "FIXME no native gz, include cryptominisat5",
     "name": "cmsatv56-walksat-chronobt",
+    "authors": "Mate Soos, Bart Selman, Henry Kautz",
+    "authors_source": "Proceedings of SAT Race 2019: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/306988), table of contents and solver index",
     "call": "./cryptominisat5_simple",
     "gz": false,
     "args": [
@@ -665,6 +745,8 @@
   "cmsatv56-walksat": {
     "status": "ok",
     "name": "cmsatv56-walksat",
+    "authors": "Mate Soos, Bart Selman, Henry Kautz",
+    "authors_source": "Proceedings of SAT Race 2019: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/306988), table of contents and solver index",
     "call": "./cryptominisat5_simple",
     "gz": false,
     "args": [
@@ -684,6 +766,8 @@
   "cmsatv56-yalsat-chronobt": {
     "status": "ok",
     "name": "cmsatv56-yalsat-chronobt",
+    "authors": "Mate Soos, Armin Biere",
+    "authors_source": "Proceedings of SAT Race 2019: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/306988), table of contents and solver index",
     "call": "./cryptominisat5_simple",
     "gz": false,
     "args": [
@@ -703,6 +787,8 @@
   "cmsatv56-yalsat": {
     "status": "ok",
     "name": "cmsatv56-yalsat",
+    "authors": "Mate Soos, Armin Biere",
+    "authors_source": "Proceedings of SAT Race 2019: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/306988), table of contents and solver index",
     "call": "./cryptominisat5_simple",
     "gz": false,
     "args": [
@@ -722,6 +808,8 @@
   "expmaple_cm": {
     "status": "ok",
     "name": "expMaple_CM",
+    "authors": "Md Solimul Chowdhury, Martin Müller, Jia-Huai You",
+    "authors_source": "Proceedings of SAT Race 2019: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/306988), table of contents and solver index",
     "call": "./glucose_static",
     "gz": true,
     "args": [
@@ -738,6 +826,8 @@
   "expmaple_cm_gcbump": {
     "status": "ok",
     "name": "expMaple_CM_GCBump",
+    "authors": "Md Solimul Chowdhury, Martin Müller, Jia-Huai You",
+    "authors_source": "Proceedings of SAT Race 2019: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/306988), table of contents and solver index",
     "call": "./glucose_static",
     "gz": true,
     "args": [
@@ -754,6 +844,8 @@
   "expmaple_cm_gcbumponlylrb": {
     "status": "ok",
     "name": "expMaple_CM_GCBumpOnlyLRB",
+    "authors": "Md Solimul Chowdhury, Martin Müller, Jia-Huai You",
+    "authors_source": "Proceedings of SAT Race 2019: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/306988), table of contents and solver index",
     "call": "./glucose_static",
     "gz": true,
     "args": [
@@ -770,6 +862,8 @@
   "glucose-4.2.1": {
     "status": "ok",
     "name": "glucose-4.2.1",
+    "authors": "Gilles Audemard, Laurent Simon",
+    "authors_source": "Proceedings of SAT Race 2019: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/306988), table of contents and solver index",
     "call": "./glucose",
     "gz": true,
     "args": [
@@ -788,6 +882,8 @@
   "glucose3.0": {
     "status": "ok",
     "name": "glucose3.0",
+    "authors": "Gilles Audemard, Laurent Simon",
+    "authors_source": "Proceedings of SAT Race 2019: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/306988), table of contents and solver index",
     "call": "./glucose_static",
     "gz": true,
     "args": [
@@ -805,6 +901,8 @@
   "glucose_421_del": {
     "status": "ok",
     "name": "glucose_421_del",
+    "authors": "Yang Xu, Guanfeng Wu, Wenjing Chang, Xiulan Chen",
+    "authors_source": "Proceedings of SAT Race 2019: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/306988), table of contents and solver index",
     "call": "./glucose_del",
     "gz": true,
     "args": [
@@ -823,6 +921,8 @@
   "glucose_btl": {
     "status": "ok",
     "name": "glucose_BTL",
+    "authors": "Yang Xu, Guanfeng Wu, Wenjing Chang, Xiulan Chen",
+    "authors_source": "Proceedings of SAT Race 2019: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/306988), table of contents and solver index",
     "call": "./glucose_lbdbtl",
     "gz": true,
     "args": [
@@ -841,6 +941,8 @@
   "optsat": {
     "status": "ok",
     "name": "optsat",
+    "authors": "Jingchao Chen",
+    "authors_source": "Proceedings of SAT Race 2019: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/306988), table of contents and solver index",
     "call": "./optsat",
     "gz": true,
     "args": [
@@ -858,6 +960,8 @@
     "status": "fixme",
     "status_detail": "FIXME: Floating point exception",
     "name": "smallsat",
+    "authors": "Jingchao Chen",
+    "authors_source": "Proceedings of SAT Race 2019: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/306988), table of contents and solver index",
     "call": "./smallsat",
     "gz": true,
     "args": [
