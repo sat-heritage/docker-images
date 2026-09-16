@@ -8,7 +8,8 @@
         ],
         "call": "./adaptg2wsat",
         "gz": false,
-        "status": "ok"
+        "status": "ok",
+        "incomplete": true
     },
     "adaptg2wsat-plus": {
         "name": "adaptg2wsat+",
@@ -19,7 +20,8 @@
         ],
         "call": "./adaptg2wsat+",
         "gz": false,
-        "status": "ok"
+        "status": "ok",
+        "incomplete": true
     },
     "adaptg2wsat0": {
         "name": "adaptg2wsat0",
@@ -30,7 +32,8 @@
         ],
         "call": "./adaptg2wsat0",
         "gz": false,
-        "status": "ok"
+        "status": "ok",
+        "incomplete": true
     },
     "adaptg2wsatp": {
         "name": "adaptg2wsatp",
@@ -41,7 +44,8 @@
         ],
         "call": "./adaptg2wsatp",
         "gz": false,
-        "status": "ok"
+        "status": "ok",
+        "incomplete": true
     },
     "adaptnovelty": {
         "name": "adaptnovelty",
@@ -55,7 +59,8 @@
         "gz": false,
         "status": "ok",
         "license": "BSD-2-Clause",
-        "license_source": "licence header of adaptnov_saps/ubcsat/mt19937ar.c"
+        "license_source": "licence header of adaptnov_saps/ubcsat/mt19937ar.c",
+        "incomplete": true
     },
     "barcelogic": {
         "name": "Barcelogic",
@@ -127,7 +132,8 @@
         ],
         "call": "./FH",
         "gz": false,
-        "status": "ok"
+        "status": "ok",
+        "incomplete": true
     },
     "gnovelty-plus": {
         "name": "gnovelty+",
@@ -138,7 +144,8 @@
         ],
         "call": "./gnovelty+",
         "gz": false,
-        "status": "ok"
+        "status": "ok",
+        "incomplete": true
     },
     "hybrid1": {
         "name": "Hybrid1",
@@ -149,7 +156,8 @@
         ],
         "call": "./Hybrid1",
         "gz": false,
-        "status": "ok"
+        "status": "ok",
+        "incomplete": true
     },
     "kcnfs-2004": {
         "name": "KCNFS",
@@ -331,7 +339,8 @@
         "gz": false,
         "status": "ok",
         "license": "MIT",
-        "license_source": "licence file ranov/legal.txt"
+        "license_source": "licence file ranov/legal.txt",
+        "incomplete": true
     },
     "rsat": {
         "name": "Rsat",
@@ -355,7 +364,8 @@
         ],
         "call": "./saps",
         "gz": false,
-        "status": "ok"
+        "status": "ok",
+        "incomplete": true
     },
     "sapsrt": {
         "name": "sapsrt",
@@ -367,7 +377,8 @@
         ],
         "call": "./sapsrt",
         "gz": false,
-        "status": "ok"
+        "status": "ok",
+        "incomplete": true
     },
     "sat4j": {
         "name": "SAT4J",
@@ -413,7 +424,9 @@
         "gz": false,
         "status": "ok",
         "license": "BSD-2-Clause",
-        "license_source": "licence header of SATzilla2007_RC/ubcsat/mt19937ar.c"
+        "license_source": "licence header of SATzilla2007_RC/ubcsat/mt19937ar.c",
+        "test_timeout": 60,
+        "comment": "Portfolio: about ten seconds of feature computation and presolving before the selected solver runs, hence a longer test timeout."
     },
     "satzilla-full": {
         "name": "SATzilla",
@@ -427,7 +440,9 @@
         "gz": false,
         "status": "ok",
         "license": "BSD-2-Clause",
-        "license_source": "licence header of SATzilla2007_RC/ubcsat/mt19937ar.c"
+        "license_source": "licence header of SATzilla2007_RC/ubcsat/mt19937ar.c",
+        "test_timeout": 60,
+        "comment": "Portfolio: about ten seconds of feature computation and presolving before the selected solver runs, hence a longer test timeout."
     },
     "satzilla-random": {
         "name": "SATzilla",
@@ -441,7 +456,9 @@
         "gz": false,
         "status": "ok",
         "license": "BSD-2-Clause",
-        "license_source": "licence header of SATzilla2007_RC/ubcsat/mt19937ar.c"
+        "license_source": "licence header of SATzilla2007_RC/ubcsat/mt19937ar.c",
+        "test_timeout": 60,
+        "comment": "Portfolio: about ten seconds of feature computation and presolving before the selected solver runs, hence a longer test timeout."
     },
     "spear": {
         "name": "Spear",
@@ -507,7 +524,8 @@
         ],
         "call": "./tinisatelite.sh",
         "gz": false,
-        "status": "ok"
+        "status": "ok",
+        "comment": "The launcher is written by the install fixture (the archive has none; the competition one is kept in fixtures/tinisatelite.TiniSatELite): this build of tinisat ignores its result file, so the model it prints is turned into a result file and extended by SatELite +ext, which prints the model of the original instance."
     },
     "tts": {
         "name": "TTS",
@@ -529,6 +547,8 @@
         ],
         "call": "./UnitMarch_32_bits",
         "gz": false,
-        "status": "ok"
+        "status": "ok",
+        "incomplete": true,
+        "comment": "UnitWalk-based local search (incomplete): tested on the satisfiable random instance only."
     }
 }
