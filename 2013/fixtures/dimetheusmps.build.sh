@@ -1,18 +1,13 @@
-!/bin/bash
-
-echo "Starting build operations for DimetheusMPS..."
-echo "Loading the globus GCC module. This operation might fail if no globus toolkit is provided. We assume that GCC 4.4. or higher is available."
-module load compiler/gnu
-echo "Changing directory to ./code/src"
+#!/bin/bash
+set -ex
+# The archive ships a binary built with -march=native on the author's machine (illegal
+# instruction elsewhere) and its Makefile uses -march=native too: rebuild for a generic x86-64.
 cd ./code/src
-echo "Starting compile operations with make"
+sed -i 's/-march=native/-march=x86-64 -mtune=generic/' Makefile
+rm -f ../bin/dimetheus
+make clean || true
 make
-echo "Changing directory to package root"
 cd ../../
-echo "Creating the binary directory"
 mkdir -p binary
 rm -rf ./binary/*
-echo "Moving the binary to the binary directory"
 mv ./code/bin/dimetheus ./binary/DimetheusMPS
-echo " "
-echo " "

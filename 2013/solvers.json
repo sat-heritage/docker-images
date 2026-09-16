@@ -84,7 +84,7 @@
             "hard-combinatorial",
             "parallel"
         ],
-        "status": "ok",
+        "status": "unstable",
         "args": [
             "FILECNF",
             "-rnd-seed=RANDOMSEED"
@@ -95,7 +95,8 @@
         "gz": true,
         "name": "GlucoRed",
         "license_source": "licence file license.txt",
-        "license": "MIT"
+        "license": "MIT",
+        "status_detail": "Builds and solves the aim-200 SAT test, but crashes with a floating point exception (SIGFPE) on very small instances such as the UNSAT test php-5-4 and random3sat-20."
     },
     "glucose": {
         "tracks": [
@@ -269,7 +270,9 @@
         "gz": true,
         "name": "MIPSat",
         "license_source": "licence file mipsat_app_both/license.txt",
-        "license": "MIT"
+        "license": "MIT",
+        "test_timeout": 90,
+        "comment": "The python launcher polls its child every 5 seconds, so even trivial instances take several seconds."
     },
     "nigma": {
         "tracks": [
@@ -364,7 +367,8 @@
         "gz": false,
         "name": "RSeq",
         "license_source": "licence file RSeqNew/LICENSE",
-        "license": "MIT"
+        "license": "MIT",
+        "incomplete": true
     },
     "sat4j": {
         "tracks": [
@@ -402,7 +406,7 @@
         "authors": "Jiang hua, chumin li, Djamal Habet",
         "call": "././sattimeRelbackShr",
         "comments": "Launchcommand was:  ././sattimeRelbackShr  <instance>  -s <seed> \nTrack was Core solvers, Sequential, Application SAT+UNSAT",
-        "gz": true,
+        "gz": false,
         "name": "sattimeRelbackShr",
         "license_source": "licence file sattimeRelbackShrFinal/LICENSE",
         "license": "MIT"
@@ -439,7 +443,7 @@
         "authors": "Jo Devriendt, Bart Bogaerts",
         "call": "./runShatterGlucose.sh",
         "comments": "Launchcommand was:  ././runShatterGlucose.sh  <instance>   <tempdir> \nTrack was Core solvers, Sequential, Application SAT+UNSAT",
-        "gz": true,
+        "gz": false,
         "name": "ShatterGlucose",
         "license_source": "licence header of ShatterGlucose/code/glucose-2.2/core/BoundedQueue.h",
         "license": "MIT"
@@ -577,7 +581,8 @@
         "gz": false,
         "name": "dk-SAT11",
         "license": "MIT",
-        "license_source": "licence file license.txt"
+        "license_source": "licence file license.txt",
+        "comment": "dk-run.sh is patched at build time to exit 0: the solver itself exits 16 on unsatisfiable instances."
     },
     "dk-sat11_1": {
         "tracks": [
@@ -627,7 +632,8 @@
         "comments": "Launchcommand was:  ././gNovelty+GCa  <instance>   <seed> \nTrack was Core solvers, Sequential, Hard-combinatorial SAT",
         "gz": false,
         "name": "gNovelty+GCa",
-        "license_source": "archive not available"
+        "license_source": "archive not available",
+        "incomplete": true
     },
     "gnovelty-gcwa": {
         "tracks": [
@@ -644,7 +650,8 @@
         "comments": "Launchcommand was:  ././gNovelty+GCwa  <instance>   <seed> \nTrack was Core solvers, Sequential, Hard-combinatorial SAT",
         "gz": false,
         "name": "gNovelty+GCwa",
-        "license_source": "archive not available"
+        "license_source": "archive not available",
+        "incomplete": true
     },
     "march_br": {
         "tracks": [
@@ -676,10 +683,12 @@
         "authors": "Sergio Núñez, Daniel Borrajo and Carlos Linares López",
         "call": "././solve",
         "comments": "Launchcommand was:  ././solve  <instance>  -tmp <tempdir> \nTrack was Core solvers, Sequential, Hard-combinatorial SAT",
-        "gz": true,
+        "gz": false,
         "name": "MIPSat",
         "license_source": "licence header of mipsat_hard_sat/code/launcher/systools.py",
-        "license": "GPL-3.0"
+        "license": "GPL-3.0",
+        "comment": "Runs the sattime local search for up to 3832 s before its second-stage solver (Sol, mono), so it behaves as a local search solver within any test budget; the launcher only prints the output of a stage once it is over.",
+        "incomplete": true
     },
     "mipsat-hard_both_2": {
         "tracks": [
@@ -694,10 +703,12 @@
         "authors": "Sergio Núñez, Daniel Borrajo and Carlos Linares López",
         "call": "././solve",
         "comments": "Launchcommand was:  ././solve  <instance>  -tmp <tempdir> \nTrack was Core solvers, Sequential, Hard-combinatorial SAT+UNSAT",
-        "gz": true,
+        "gz": false,
         "name": "MIPSat",
         "license_source": "licence file mipsat_hard_both_2/license.txt",
-        "license": "GPL-2.0"
+        "license": "GPL-2.0",
+        "comment": "Runs the sattime local search for up to 3832 s before its second-stage solver (Sol, mono), so it behaves as a local search solver within any test budget; the launcher only prints the output of a stage once it is over.",
+        "incomplete": true
     },
     "sattime2013": {
         "tracks": [
@@ -813,7 +824,8 @@
         "comments": "Launchcommand was:  ././CCAnr  <instance>   <seed> \nTrack was Core solvers, Sequential, Hard-combinatorial SAT",
         "gz": false,
         "name": "CCAnr",
-        "license_source": "unrecognized licence file CCAnr/license.txt"
+        "license_source": "unrecognized licence file CCAnr/license.txt",
+        "incomplete": true
     },
     "doug_hains": {
         "tracks": [
@@ -827,7 +839,8 @@
         "call": "././hyperplane_minisat.sh",
         "comments": "Launchcommand was:  ././hyperplane_minisat.sh  <instance> \nTrack was Core solvers, Sequential, Application SAT",
         "gz": true,
-        "name": "Doug Hains"
+        "name": "Doug Hains",
+        "comment": "SatELite is wrapped at build time to demote its spurious status lines to comments (it printed s UNSATISFIABLE on satisfiable instances it merely preprocesses)."
     },
     "sparrow-cp3": {
         "tracks": [
@@ -875,12 +888,16 @@
             "FILECNF"
         ],
         "authors": "Gilles Audemard and Laurent Simon",
-        "call": "././glucose",
+        "call": "./run-glucose-drup.sh",
         "comments": "Launchcommand was:  ././glucose  <instance> \nTrack was Core solvers, Sequential, Hard-combinatorial certified UNSAT",
         "gz": true,
         "name": "glucose",
         "license_source": "licence file licence.txt",
-        "license": "MIT"
+        "license": "MIT",
+        "argsproof": [
+            "FILECNF"
+        ],
+        "comment": "Certified UNSAT build of glucose 2.3 without -model: a wrapper added at build time turns the bare assignment line it prints after SAT into a v line; its DRUP proof goes to standard output and the test wrapper copies it to the proof file."
     },
     "glueminisat-cert-unsat": {
         "tracks": [
@@ -957,7 +974,7 @@
             "hard-combinatorial-cert-unsat",
             "application-cert-unsat"
         ],
-        "status": "ok",
+        "status": "unstable",
         "args": [
             "/tmp",
             "FILECNF"
@@ -968,13 +985,14 @@
         "gz": true,
         "name": "SAT4J Certified",
         "license_source": "licence file SATCOMP2013SUBMISSION/license.txt",
-        "license": "MIT"
+        "license": "MIT",
+        "status_detail": "Certified UNSAT launcher (unsatproof.sh): answers correctly but prints no model on satisfiable instances, and deletes its proof file after the run so the proof cannot be checked."
     },
     "minisat_bit_u": {
         "tracks": [
             "application-cert-unsat"
         ],
-        "status": "ok",
+        "status": "unstable",
         "args": [
             "FILECNF"
         ],
@@ -984,7 +1002,11 @@
         "gz": true,
         "name": "minisat_bit_u",
         "license_source": "licence file minisat_bit_u/LICENSE.txt",
-        "license": "MIT"
+        "license": "MIT",
+        "argsproof": [
+            "FILECNF"
+        ],
+        "status_detail": "Builds and answers correctly (SAT and UNSAT), but prints no model: the build has no -model flag and leaves the result file given as second argument empty."
     },
     "nigma-drup": {
         "tracks": [
@@ -1061,7 +1083,8 @@
         "comments": "Launchcommand was:  .//CCA2013  <instance>   <seed> \nTrack was Core solvers, Sequential, Random SAT",
         "gz": false,
         "name": "CCA2013",
-        "license_source": "archive not available"
+        "license_source": "archive not available",
+        "incomplete": true
     },
     "cscoresat2013": {
         "tracks": [
@@ -1075,9 +1098,10 @@
         "authors": "Shaowei Cai, Chuan Luo, Kaile Su",
         "call": "././CScoreSAT2013",
         "comments": "Launchcommand was:  ././CScoreSAT2013  <instance>   <seed> \nTrack was Core solvers, Sequential, Random SAT",
-        "gz": true,
+        "gz": false,
         "name": "CScoreSAT2013",
-        "license_source": "archive not available"
+        "license_source": "archive not available",
+        "incomplete": true
     },
     "cshcrandmc": {
         "tracks": [
@@ -1119,7 +1143,9 @@
         "gz": false,
         "name": "DimetheusMPS",
         "license_source": "licence file dimetheusmps/license.txt",
-        "license": "GPL-3.0"
+        "license": "GPL-3.0",
+        "incomplete": true,
+        "comment": "Message passing plus local search (incomplete); rebuilt for a generic x86-64 (the archive's binary and Makefile use -march=native)."
     },
     "frwcb2013": {
         "tracks": [
@@ -1135,7 +1161,8 @@
         "comments": "Launchcommand was:  ././FrwCB2013  <instance>   <seed> \nTrack was Core solvers, Sequential, Random SAT",
         "gz": false,
         "name": "FrwCB2013",
-        "license_source": "unrecognized licence file FrwCB2013/license.txt"
+        "license_source": "unrecognized licence file FrwCB2013/license.txt",
+        "incomplete": true
     },
     "march_vflip": {
         "tracks": [
@@ -1151,7 +1178,9 @@
         "gz": false,
         "name": "march_vflip",
         "license": "MIT",
-        "license_source": "licence file march_vflip/LICENSE.txt"
+        "license_source": "licence file march_vflip/LICENSE.txt",
+        "test_timeout": 60,
+        "comment": "Runs three local search passes before the march look-ahead; needs more than the default test timeout on the aim-200 instance."
     },
     "ncca-plus": {
         "tracks": [
@@ -1166,9 +1195,10 @@
         "authors": "Djamal Habet and Donia Toumi and André Abramé",
         "call": "././Ncca+",
         "comments": "Launchcommand was:  ././Ncca+  <instance>  -s <seed> \nTrack was Core solvers, Sequential, Random SAT",
-        "gz": true,
+        "gz": false,
         "name": "Ncca+",
-        "license_source": "unrecognized licence file Ncca+/LICENSE"
+        "license_source": "unrecognized licence file Ncca+/LICENSE",
+        "incomplete": true
     },
     "probsat": {
         "tracks": [
@@ -1203,7 +1233,8 @@
         "gz": false,
         "name": "vflipnum",
         "license": "MIT",
-        "license_source": "licence file vflipnum/LICENSE.txt"
+        "license_source": "licence file vflipnum/LICENSE.txt",
+        "incomplete": true
     },
     "walksatlm2013": {
         "tracks": [
@@ -1219,7 +1250,8 @@
         "comments": "Launchcommand was:  ././WalkSATlm2013  <instance>   <seed> \nTrack was Core solvers, Sequential, Random SAT",
         "gz": false,
         "name": "WalkSATlm2013",
-        "license_source": "unrecognized licence file WalkSATlm2013/license.txt"
+        "license_source": "unrecognized licence file WalkSATlm2013/license.txt",
+        "incomplete": true
     },
     "march_br-unsat": {
         "tracks": [
