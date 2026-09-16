@@ -85,6 +85,7 @@ mycall() {
     if [[ " ${args[*]} " == *" PROOFDIR "* ]]; then
         PROOFDIR="$(mktemp -d /tmp/proofdir.XXXXXX)"
     fi
+    raw=("${args[@]}")
     for (( i=0; i<${#args[@]}; ++i )); do
         a="${args[$i]/FILECNF/$FILECNF}"
         a="${a/RANDOMSEED/$RANDOMSEED}"
@@ -103,6 +104,15 @@ mycall() {
             mv -f "${PROOFDIR}/proof.out" "${FILEPROOF}"
         fi
         rm -rf "${PROOFDIR}"
+        return $ret
+    fi
+    if [ -n "${FILEPROOF}" ] && [[ " ${raw[*]} " != *"FILEPROOF"* ]] && [[ " ${raw[*]} " != *"PROOFDIR"* ]]; then
+        # the solver writes its proof on standard output (certified UNSAT convention of
+        # the 2014 competition): keep a copy in the requested proof file
+        set +e
+        call_solver "${args[@]}" | tee "${FILEPROOF}"
+        ret=${PIPESTATUS[0]}
+        set -e
         return $ret
     fi
     call_solver "${args[@]}"
