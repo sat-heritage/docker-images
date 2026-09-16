@@ -72,7 +72,7 @@
             "application",
             "crafted"
         ],
-        "status": "ok",
+        "status": "unstable",
         "args": [
             "FILECNF",
             "RANDOMSEED",
@@ -81,10 +81,12 @@
         "authors": "Shaowei Cai, Chuan Luo, Kaile Su",
         "call": "././CCAnr+glucose.sh",
         "comments": "Launchcommand was:  ././CCAnr+glucose.sh  <instance>   <seed>  1000\nTrack was Sequential, Application SAT+UNSAT track",
-        "gz": true,
+        "gz": false,
         "name": "CCAnr+glucose",
         "license": "MIT",
-        "license_source": "licence header of CCAnr+glucose/code/glucose2.3/core/BoundedQueue.h"
+        "license_source": "licence header of CCAnr+glucose/code/glucose2.3/core/BoundedQueue.h",
+        "test_timeout": 120,
+        "status_detail": "Builds and answers the satisfiable instances; on the small UNSAT instance the CCAnr phase does not hand over to glucose within 120 s."
     },
     "cryptominisat-4.1-st": {
         "tracks": [
@@ -169,7 +171,7 @@
             "application",
             "crafted"
         ],
-        "status": "ok",
+        "status": "unstable",
         "args": [
             "FILECNF"
         ],
@@ -179,14 +181,15 @@
         "gz": true,
         "name": "glueminisat",
         "license": "MIT",
-        "license_source": "licence file glueminisat-2.2.8/code/LICENSE"
+        "license_source": "licence file glueminisat-2.2.8/code/LICENSE",
+        "status_detail": "Builds and answers correctly, but prints no model on satisfiable instances and this build has no -model flag."
     },
     "lingeling": {
         "tracks": [
             "application",
             "crafted"
         ],
-        "status": "ok",
+        "status": "unstable",
         "args": [
             "-v",
             "--witness",
@@ -203,7 +206,9 @@
         "gz": true,
         "name": "Lingeling",
         "license": "MIT",
-        "license_source": "licence file code/COPYING"
+        "license_source": "licence file code/COPYING",
+        "comment": "Writes its proof on standard output (2014 certified UNSAT track convention); the wrapper copies it to the proof file.",
+        "status_detail": "Builds and answers correctly; the proof written by --druplig on standard output is not a DRUP proof our checker can verify (it does not derive the empty clause)."
     },
     "lingeling_druplig": {
         "tracks": [
@@ -262,7 +267,8 @@
         "gz": true,
         "name": "minisat_blbd",
         "license": "MIT",
-        "license_source": "licence file minisat_blbd/LICENSE.txt"
+        "license_source": "licence file minisat_blbd/LICENSE.txt",
+        "comment": "Writes its proof on standard output (2014 certified UNSAT track convention); the wrapper copies it to the proof file."
     },
     "minisat_hack_1430ed": {
         "tracks": [
@@ -283,7 +289,8 @@
         "gz": true,
         "name": "MiniSat_HACK_1430ED",
         "license": "MIT",
-        "license_source": "licence file license.txt"
+        "license_source": "licence file license.txt",
+        "comment": "Writes its proof on standard output (2014 certified UNSAT track convention); the wrapper copies it to the proof file."
     },
     "minisat_hack_999ed": {
         "tracks": [
@@ -304,14 +311,15 @@
         "gz": true,
         "name": "MiniSat_HACK_999ED",
         "license": "MIT",
-        "license_source": "licence file license.txt"
+        "license_source": "licence file license.txt",
+        "comment": "Writes its proof on standard output (2014 certified UNSAT track convention); the wrapper copies it to the proof file."
     },
     "nigma": {
         "tracks": [
             "application",
             "crafted"
         ],
-        "status": "ok",
+        "status": "unstable",
         "args": [
             "FILECNF",
             "--display-assignments-if-sat",
@@ -337,7 +345,9 @@
         "gz": false,
         "name": "Nigma",
         "license": "MIT",
-        "license_source": "licence file licence.txt"
+        "license_source": "licence file licence.txt",
+        "comment": "Writes its proof on standard output (2014 certified UNSAT track convention); the wrapper copies it to the proof file.",
+        "status_detail": "Builds and answers correctly; the DRUP proof it prints with --output-drup-if-unsat does not derive the empty clause for satex's checker."
     },
     "ntusat": {
         "tracks": [
@@ -369,7 +379,7 @@
         "authors": "Hsiao-Lun, Wang and J-H Roland, Jiang",
         "call": "././runBreakIDntusat.sh",
         "comments": "Launchcommand was:  ././runBreakIDntusat.sh  <instance>   <tempdir> \nTrack was Sequential, Application SAT+UNSAT track",
-        "gz": true,
+        "gz": false,
         "name": "ntusatbreak",
         "license": "MIT",
         "license_source": "licence file ntusatbreak/code/LICENSE-MIT"
@@ -395,7 +405,8 @@
         "gz": true,
         "name": "Riss",
         "license": "MIT",
-        "license_source": "licence file code/license.txt"
+        "license_source": "licence file code/license.txt",
+        "comment": "Writes its proof on standard output (2014 certified UNSAT track convention); the wrapper copies it to the proof file."
     },
     "riss_1": {
         "tracks": [
@@ -418,7 +429,8 @@
         "gz": true,
         "name": "Riss",
         "license": "GPL-2.0 AND MIT",
-        "license_source": "licence file code/predictor/license.txt, code/Riss427/license.txt"
+        "license_source": "licence file code/predictor/license.txt, code/Riss427/license.txt",
+        "comment": "Writes its proof on standard output (2014 certified UNSAT track convention); the wrapper copies it to the proof file."
     },
     "riss_2": {
         "tracks": [
@@ -488,10 +500,11 @@
         "authors": "Chu Min Li and Djamal Habet",
         "call": ".///RSeq2014.sh",
         "comments": "Launchcommand was:  .///RSeq2014.sh  <instance>  -s <seed>  1200\nTrack was Sequential, Application SAT+UNSAT track",
-        "gz": true,
+        "gz": false,
         "name": "RSeq2014",
         "license": "MIT",
-        "license_source": "licence file RSeq2014/LICENSE"
+        "license_source": "licence file RSeq2014/LICENSE",
+        "incomplete": true
     },
     "sattime2014r": {
         "tracks": [
@@ -508,9 +521,10 @@
         "authors": "Chu-Min LI & Chong Huang & Yu Li",
         "call": "./sattime2014r",
         "comments": "Launchcommand was:  ./sattime2014r  <instance>  -seed <seed> \nTrack was Sequential, Application SAT+UNSAT track",
-        "gz": true,
+        "gz": false,
         "name": "sattime2014r",
-        "license_source": "unrecognized licence file sattime2014r/license.txt"
+        "license_source": "unrecognized licence file sattime2014r/license.txt",
+        "incomplete": true
     },
     "satuzk": {
         "tracks": [
@@ -550,10 +564,11 @@
         "authors": "Chu Min Li,Hua Jiang,Ru Chu Xu",
         "call": ".//SGSeq.sh",
         "comments": "Launchcommand was:  .//SGSeq.sh  <instance>  -s <seed> \nTrack was Sequential, Application SAT+UNSAT track",
-        "gz": true,
+        "gz": false,
         "name": "SGSeq",
         "license": "MIT",
-        "license_source": "licence file SGSeq/code/glucose2.3/licence.txt"
+        "license_source": "licence file SGSeq/code/glucose2.3/licence.txt",
+        "incomplete": true
     },
     "sparrowtoriss": {
         "tracks": [
@@ -578,7 +593,8 @@
         "gz": true,
         "name": "SparrowToRiss",
         "license": "MIT",
-        "license_source": "licence file code/Riss427/license.txt"
+        "license_source": "licence file code/Riss427/license.txt",
+        "test_timeout": 120
     },
     "swdia5by": {
         "tracks": [
@@ -612,7 +628,8 @@
         "argsproof": [
             "-lbd-cut=4",
             "-core-learnt-hard-limit=1000000",
-            "FILECNF"
+            "FILECNF",
+            "-drup"
         ],
         "authors": "Chanseok Oh",
         "call": "./SWDiA5BY_static",
@@ -626,7 +643,7 @@
         "tracks": [
             "parallel"
         ],
-        "status": "ok",
+        "status": "unstable",
         "args": [
             "-config=./configuration.ini",
             "FILECNF"
@@ -637,7 +654,8 @@
         "gz": false,
         "name": "CBPeneLoPe",
         "license": "GPL-3.0",
-        "license_source": "licence file submit_cb_penelope/code/LICENSE"
+        "license_source": "licence file submit_cb_penelope/code/LICENSE",
+        "status_detail": "Builds and runs, but claims SATISFIABLE with a model on the unsatisfiable test instance (php-5-4); wrong answer, not to be trusted."
     },
     "cryptominisat-4.1-mt": {
         "tracks": [
@@ -661,9 +679,10 @@
         "tracks": [
             "parallel"
         ],
-        "status": "ok",
+        "status": "unstable",
         "args": [
-            "FILECNF"
+            "FILECNF",
+            "-model"
         ],
         "authors": "Gilles Audemard and Laurent Simon",
         "call": "./syrup",
@@ -671,7 +690,9 @@
         "gz": true,
         "name": "glucose-syrup",
         "license": "MIT",
-        "license_source": "licence file licence.txt"
+        "license_source": "licence file licence.txt",
+        "test_timeout": 120,
+        "status_detail": "Parallel solver (4 engines): answers the decompressed and UNSAT test instances, but the plain satisfiable run did not finish within 120 s on a loaded machine; results vary with the load."
     },
     "paracirminisat": {
         "tracks": [
@@ -808,7 +829,7 @@
         "license_source": "licence file glueSplit_clasp/LICENSE.txt"
     },
     "balancedz": {
-        "status": "ok",
+        "status": "unstable",
         "tracks": [
             "random",
             "crafted-sat"
@@ -821,10 +842,12 @@
         "authors": "Chong HUANG, Chumin LI, Ruchu XU",
         "call": "././BalancedZ",
         "comments": "Launchcommand was:  ././BalancedZ  <instance>  -seed <seed> \nTrack was Sequential, Hard-combinatorial SAT track",
-        "gz": true,
+        "gz": false,
         "name": "BalancedZ",
         "license": "GPL-2.0",
-        "license_source": "licence file license.txt"
+        "license_source": "licence file license.txt",
+        "incomplete": true,
+        "status_detail": "Local search solver (incomplete): finds a model of the satisfiable test instance but exits with code 1 instead of 10, which the test suite rejects."
     },
     "cca2014": {
         "status": "ok",
@@ -839,9 +862,10 @@
         "authors": "Chengqian Li, Jianhong Li, Yuxiang Wu",
         "call": "././CCA2014",
         "comments": "Launchcommand was:  ././CCA2014  <instance>   <seed> \nTrack was Sequential, Hard-combinatorial SAT track",
-        "gz": true,
+        "gz": false,
         "name": "CCA2014",
-        "license_source": "unrecognized licence file license.txt"
+        "license_source": "unrecognized licence file license.txt",
+        "incomplete": true
     },
     "ccgscore": {
         "status": "ok",
@@ -854,9 +878,10 @@
         "authors": "Shaowei Cai, Chuan Luo, Kaile Su",
         "call": "././CCgscore",
         "comments": "Launchcommand was:  ././CCgscore  <instance> \nTrack was Sequential, Random SAT track",
-        "gz": true,
+        "gz": false,
         "name": "CCgscore",
-        "license_source": "unrecognized licence file  CCgscore submit to SC14/license.txt"
+        "license_source": "unrecognized licence file  CCgscore submit to SC14/license.txt",
+        "incomplete": true
     },
     "csccsat2014": {
         "status": "ok",
@@ -870,9 +895,10 @@
         "authors": "Chuan Luo, Shaowei Cai, Wei Wu, Kaile Su",
         "call": "././CSCCSat2014",
         "comments": "Launchcommand was:  ././CSCCSat2014  <instance>   <seed> \nTrack was Sequential, Random SAT track",
-        "gz": true,
+        "gz": false,
         "name": "CSCCSat2014",
-        "license_source": "unrecognized licence file CSCCSat2014/license.txt"
+        "license_source": "unrecognized licence file CSCCSat2014/license.txt",
+        "incomplete": true
     },
     "dimetheus": {
         "status": "ok",
@@ -892,7 +918,8 @@
         "comments": "Launchcommand was:  ././dimetheus -formula <instance>  -seed <seed>  -classifyInputDomain 10\nTrack was Sequential, Random SAT track",
         "gz": false,
         "name": "dimetheus",
-        "license_source": "unrecognized licence file license.txt"
+        "license_source": "unrecognized licence file license.txt",
+        "incomplete": true
     },
     "ncca": {
         "status": "ok",
@@ -909,7 +936,8 @@
         "comments": "Launchcommand was:  ././Ncca+  <instance>  -s <seed> \nTrack was Sequential, Random SAT track",
         "gz": false,
         "name": "Ncca+",
-        "license_source": "unrecognized licence file Ncca+/LICENSE"
+        "license_source": "unrecognized licence file Ncca+/LICENSE",
+        "incomplete": true
     },
     "probsat": {
         "status": "ok",
@@ -925,10 +953,11 @@
         "authors": "Adrian Balint, Uwe Schöning",
         "call": "././probSAT",
         "comments": "Launchcommand was:  ././probSAT -a <instance>   <seed> \nTrack was Sequential, Hard-combinatorial SAT track",
-        "gz": true,
+        "gz": false,
         "name": "probSAT",
         "license": "MIT",
-        "license_source": "licence file license.txt"
+        "license_source": "licence file license.txt",
+        "incomplete": true
     },
     "yalsat": {
         "status": "ok",
@@ -944,10 +973,11 @@
         "authors": "Armin Biere",
         "call": "./yalsat",
         "comments": "Launchcommand was:  ./yalsat -v <instance>   <seed> \nTrack was Sequential, Application SAT track",
-        "gz": true,
+        "gz": false,
         "name": "YalSAT",
         "license": "MIT",
-        "license_source": "licence file code/LICENSE"
+        "license_source": "licence file code/LICENSE",
+        "incomplete": true
     },
     "pprobsat": {
         "status": "fixme",
@@ -971,7 +1001,7 @@
         "license_source": "licence file license.txt"
     },
     "glucose_certified_unsat": {
-        "status": "ok",
+        "status": "unstable",
         "tracks": [
             "glucose-cert-unsat"
         ],
@@ -987,6 +1017,8 @@
         "gz": true,
         "name": "glucose (certified unsat)",
         "license": "MIT",
-        "license_source": "licence file licence.txt"
+        "license_source": "licence file licence.txt",
+        "comment": "Writes its proof on standard output (2014 certified UNSAT track convention); the wrapper copies it to the proof file.",
+        "status_detail": "Certified UNSAT build of glucose 2.3: answers correctly and prints its DRUP proof on standard output, but prints no model on satisfiable instances (the build has no -model flag)."
     }
 }

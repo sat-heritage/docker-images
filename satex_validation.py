@@ -154,8 +154,8 @@ def _text_proof_steps(data: bytes) -> Iterator[tuple[bool, tuple[int, ...]]]:
         raise ValidationError("proof is neither text DRUP nor binary DRAT") from exc
     for line_number, raw_line in enumerate(text.splitlines(), 1):
         line = raw_line.strip()
-        if not line or line.startswith("c") or line.startswith("o "):
-            continue   # comments, and the "o proof DRAT" header written by riss
+        if not line or line[0] in "csvo" and (len(line) == 1 or line[1] == " "):
+            continue   # comments, the "o proof DRAT" header of riss, and the s/v lines of a proof captured from stdout
         deletion = line.startswith("d ")
         fields = line[1:].split() if deletion else line.split()
         try:
