@@ -260,10 +260,11 @@
     "args": [
       "FILECNF",
       1000
-    ]
+    ],
+    "incomplete": true
   },
   "satzilla": {
-    "status": "ok",
+    "status": "unstable",
     "name": "satzilla",
     "authors": "Kevin Leyton-Brown, Eugene Nudelman, Galen Andrew, Carla Gomes, Jim McFadden, Bart Selman, Yoav Shoham",
     "authors_source": "SAT 2003 competition report, The competitors (satisfiability.org/competition/2003/comp03report/node2.html)",
@@ -271,7 +272,8 @@
     "gz": false,
     "args": [
       "FILECNF"
-    ]
+    ],
+    "status_detail": "Competition binary of the SATzilla portfolio: prints nothing and never answers within the test limit; its feature computation or component solvers do not seem to run in this environment."
   },
   "satzilla2": {
     "status": "ok",
@@ -327,10 +329,11 @@
     "args": [
       "FILECNF",
       1000
-    ]
+    ],
+    "incomplete": true
   },
   "tts": {
-    "status": "ok",
+    "status": "unstable",
     "name": "tts",
     "authors": "Ivor Spence",
     "authors_source": "SAT 2003 competition report, The competitors (satisfiability.org/competition/2003/comp03report/node2.html)",
@@ -338,7 +341,9 @@
     "gz": false,
     "args": [
       "FILECNF"
-    ]
+    ],
+    "test_timeout": 60,
+    "status_detail": "Ternary tree solver: answers UNSAT correctly but gives no answer within 60 seconds on the satisfiable test instance aim-200."
   },
   "unitwalk": {
     "status": "ok",
@@ -350,7 +355,8 @@
     "args": [
       "FILECNF",
       1000
-    ]
+    ],
+    "incomplete": true
   },
   "xqingting": {
     "status": "ok",

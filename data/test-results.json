@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-16T21:45:38Z",
+  "generated": "2026-09-16T21:54:00Z",
   "images": {
     "2clseq:2002": {
       "build": {
@@ -1546,8 +1546,42 @@
       },
       "date": "2026-09-16T21:44:34Z",
       "run": "20260916T214434Z",
-      "tests": {},
-      "verdict": "built"
+      "tests": {
+        "launch": {
+          "status": "ok"
+        },
+        "sat-gzip-model": {
+          "status": "ok"
+        },
+        "sat-gzip-result": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-gzip-termination": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-model": {
+          "status": "ok"
+        },
+        "sat-result": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-termination": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "unsat-proof": {
+          "detail": "incomplete solver",
+          "status": "skip"
+        },
+        "unsat-result": {
+          "detail": "incomplete solver",
+          "status": "skip"
+        }
+      },
+      "verdict": "verified"
     },
     "asat:2000": {
       "build": {
@@ -3327,16 +3361,10 @@
         "docker-engine": {
           "status": "ok"
         },
-        "image-assemble": {
-          "status": "ok"
-        },
         "runtime-base": {
           "status": "ok"
         },
         "runtime-base-image": {
-          "status": "ok"
-        },
-        "runtime-dependencies": {
           "status": "ok"
         },
         "source-download": {
@@ -3346,8 +3374,8 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-14T13:53:23Z",
-      "run": "20260914T135323Z",
+      "date": "2026-09-16T21:27:46Z",
+      "run": "20260916T212746Z",
       "verdict": "built"
     },
     "cadical-hack-gb:2021": {
@@ -4404,19 +4432,86 @@
     },
     "cadical-scavel-01:2024": {
       "build": {
+        "build-environment": {
+          "status": "ok"
+        },
         "builder-base-image": {
+          "status": "ok"
+        },
+        "compile": {
           "status": "ok"
         },
         "docker-engine": {
           "status": "ok"
         },
+        "image-assemble": {
+          "status": "ok"
+        },
+        "runtime-base": {
+          "status": "ok"
+        },
+        "runtime-base-image": {
+          "status": "ok"
+        },
+        "runtime-dependencies": {
+          "status": "ok"
+        },
         "source-download": {
+          "status": "ok"
+        },
+        "source-extract": {
           "status": "ok"
         }
       },
       "date": "2026-09-16T21:27:46Z",
       "run": "20260916T212746Z",
-      "verdict": "built"
+      "tests": {
+        "launch": {
+          "status": "ok"
+        },
+        "sat-gzip-model": {
+          "status": "ok"
+        },
+        "sat-gzip-result": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-gzip-termination": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-model": {
+          "status": "ok"
+        },
+        "sat-result": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-termination": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "unsat-proof": {
+          "status": "ok"
+        },
+        "unsat-proof-run-result": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-proof-run-termination": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-result": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-termination": {
+          "detail": "UNSAT",
+          "status": "ok"
+        }
+      },
+      "verdict": "verified"
     },
     "cadical-scavel-02:2024": {
       "build": {
@@ -4451,9 +4546,55 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-14T13:53:23Z",
-      "run": "20260914T135323Z",
-      "verdict": "built"
+      "date": "2026-09-16T21:27:46Z",
+      "run": "20260916T212746Z",
+      "tests": {
+        "launch": {
+          "status": "ok"
+        },
+        "sat-gzip-model": {
+          "status": "ok"
+        },
+        "sat-gzip-result": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-gzip-termination": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-model": {
+          "status": "ok"
+        },
+        "sat-result": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-termination": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "unsat-proof": {
+          "status": "ok"
+        },
+        "unsat-proof-run-result": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-proof-run-termination": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-result": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-termination": {
+          "detail": "UNSAT",
+          "status": "ok"
+        }
+      },
+      "verdict": "verified"
     },
     "cadical-vivinst:2023": {
       "build": {
@@ -10908,8 +11049,8 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-16T19:32:23Z",
-      "run": "20260916T193223Z",
+      "date": "2026-09-16T21:52:13Z",
+      "run": "20260916T215213Z",
       "tests": {
         "launch": {
           "status": "ok"
@@ -10937,19 +11078,15 @@
           "status": "ok"
         },
         "unsat-proof": {
-          "detail": "unsupported",
+          "detail": "incomplete solver",
           "status": "skip"
         },
         "unsat-result": {
-          "detail": "timeout",
+          "detail": "incomplete solver",
           "status": "skip"
-        },
-        "unsat-termination": {
-          "detail": "TIMEOUT",
-          "status": "fail"
         }
       },
-      "verdict": "runs"
+      "verdict": "verified"
     },
     "dlmsat2:2002": {
       "build": {
@@ -57661,8 +57798,8 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-16T18:43:09Z",
-      "run": "20260916T184309Z",
+      "date": "2026-09-16T21:47:09Z",
+      "run": "20260916T214709Z",
       "tests": {
         "launch": {
           "status": "ok"
@@ -58750,8 +58887,8 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-16T18:43:09Z",
-      "run": "20260916T184309Z",
+      "date": "2026-09-16T21:45:48Z",
+      "run": "20260916T214548Z",
       "tests": {
         "launch": {
           "status": "ok"
@@ -58779,19 +58916,15 @@
           "status": "ok"
         },
         "unsat-proof": {
-          "detail": "unsupported",
+          "detail": "incomplete solver",
           "status": "skip"
         },
         "unsat-result": {
-          "detail": "timeout",
+          "detail": "incomplete solver",
           "status": "skip"
-        },
-        "unsat-termination": {
-          "detail": "TIMEOUT",
-          "status": "fail"
         }
       },
-      "verdict": "runs"
+      "verdict": "verified"
     },
     "unitwalk:2004": {
       "build": {
@@ -60865,23 +60998,22 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-16T18:43:09Z",
-      "run": "20260916T184309Z",
+      "date": "2026-09-16T21:50:34Z",
+      "run": "20260916T215034Z",
       "tests": {
         "launch": {
           "status": "ok"
         },
         "sat-gzip-model": {
-          "detail": "timeout",
-          "status": "skip"
+          "status": "ok"
         },
         "sat-gzip-result": {
-          "detail": "timeout",
-          "status": "skip"
+          "detail": "SAT",
+          "status": "ok"
         },
         "sat-gzip-termination": {
-          "detail": "TIMEOUT",
-          "status": "fail"
+          "detail": "SAT",
+          "status": "ok"
         },
         "sat-model": {
           "status": "ok"
@@ -60907,7 +61039,7 @@
           "status": "ok"
         }
       },
-      "verdict": "runs"
+      "verdict": "verified"
     },
     "zchaff:2004": {
       "build": {
