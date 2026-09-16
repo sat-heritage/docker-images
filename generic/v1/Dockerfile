@@ -142,7 +142,9 @@ WORKDIR /src
 
 ARG SOLVER
 
-COPY setup.json build*.sh fixtures/$SOLVER.*build.sh /
+# fixture[s]: a glob on the directory too, so that BuildKit does not fail (lstat) when
+# the solver has no fixture and the directory is left out of the build context
+COPY setup.json build*.sh fixture[s]/$SOLVER.*build.sh /
 
 RUN set -ex && if test -f /$SOLVER.pre_build.sh; then bash /$SOLVER.pre_build.sh; fi
 
@@ -163,7 +165,7 @@ RUN set -ex && cd "./`find -maxdepth 1 -mindepth 1 -type d|sort|grep -v __MACOSX
 
 RUN set -ex && if test -f /$SOLVER.post_build.sh; then bash /$SOLVER.post_build.sh; fi
 
-COPY setup.json install*.sh fixtures/$SOLVER.*install.sh /
+COPY setup.json install*.sh fixture[s]/$SOLVER.*install.sh /
 
 RUN set -ex && mkdir /dist && cd "./`find -maxdepth 1 -mindepth 1 -type d|sort|grep -v __MACOSX|tail -n1`" && \
     if test -f /$SOLVER.install.sh; then bash /$SOLVER.install.sh; \

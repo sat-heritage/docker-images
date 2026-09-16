@@ -37,7 +37,7 @@ RUN curl -o $SOLVER_NAME.zip -L $download_url \
     && unzip $SOLVER_NAME.zip -d /src \
     && rm $SOLVER_NAME.zip
 
-COPY setup.json fixtures/$SOLVER_NAME* /src/
+COPY setup.json fixture[s]/$SOLVER_NAME* /src/
 
 FROM source AS builder
 
