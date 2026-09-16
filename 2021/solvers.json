@@ -2,6 +2,8 @@
   "cadical-hack-gb": {
     "status": "ok",
     "name": "cadical-hack-gb",
+    "authors": "Md Solimul Chowdhury, Martin Müller, Jia-Huai You",
+    "authors_source": "Proceedings of SAT Competition 2021: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/333647), table of contents and solver index",
     "call": "./cadical",
     "tracks": [
       "main"
@@ -38,6 +40,8 @@
   "cadical-pripro": {
     "status": "ok",
     "name": "cadical-PriPro",
+    "authors": "Benjamin Kaiser, Robert Clausecker",
+    "authors_source": "Proceedings of SAT Competition 2021: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/333647), table of contents and solver index",
     "call": "./cadical",
     "tracks": [
       "main"
@@ -56,6 +60,8 @@
   "cadical-pripro_no_bin": {
     "status": "ok",
     "name": "cadical-PriPro_no_bin",
+    "authors": "Benjamin Kaiser, Robert Clausecker",
+    "authors_source": "Proceedings of SAT Competition 2021: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/333647), table of contents and solver index",
     "call": "./cadical",
     "tracks": [
       "main"
@@ -74,6 +80,8 @@
   "cadical-rp": {
     "status": "ok",
     "name": "cadical-rp",
+    "authors": "Xindi Zhang, Shaowei Cai, Zhihan Chen",
+    "authors_source": "Proceedings of SAT Competition 2021: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/333647), table of contents and solver index",
     "call": "./cadical",
     "tracks": [
       "main"
@@ -92,6 +100,8 @@
   "cadical-sc2021": {
     "status": "ok",
     "name": "cadical-sc2021",
+    "authors": "Armin Biere, Mathias Fleury, Maximilian Heisinger",
+    "authors_source": "Proceedings of SAT Competition 2021: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/333647), table of contents and solver index",
     "call": "./cadical",
     "tracks": [
       "main"
@@ -110,6 +120,8 @@
   "cadical_scavel01": {
     "status": "ok",
     "name": "Cadical_SCAVEL01",
+    "authors": "Zhihui Li, Guanfeng Wu, Yang Xu, Huimin Fu",
+    "authors_source": "Proceedings of SAT Competition 2021: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/333647), table of contents and solver index",
     "call": "./cadical",
     "tracks": [
       "main"
@@ -128,6 +140,8 @@
   "cadical_scavel02": {
     "status": "ok",
     "name": "Cadical_SCAVEL02",
+    "authors": "Zhihui Li, Guanfeng Wu, Yang Xu, Huimin Fu",
+    "authors_source": "Proceedings of SAT Competition 2021: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/333647), table of contents and solver index",
     "call": "./cadical",
     "tracks": [
       "main"
@@ -147,6 +161,8 @@
   "cleanmaple": {
     "status": "ok",
     "name": "CleanMaple",
+    "authors": "Benjamin Kaiser, Robert Clausecker",
+    "authors_source": "Proceedings of SAT Competition 2021: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/333647), table of contents and solver index",
     "call": "./cleanmaple",
     "tracks": [
       "main"
@@ -165,6 +181,8 @@
   "cleanmaple_pripro": {
     "status": "ok",
     "name": "CleanMaple_PriPro",
+    "authors": "Benjamin Kaiser, Robert Clausecker",
+    "authors_source": "Proceedings of SAT Competition 2021: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/333647), table of contents and solver index",
     "call": "./cleanmaple",
     "tracks": [
       "main"
@@ -183,6 +201,8 @@
   "cms_expv_gbl": {
     "status": "fixme",
     "name": "cms_expV_gbL",
+    "authors": "Md Solimul Chowdhury, Martin Müller, Jia-Huai You",
+    "authors_source": "Proceedings of SAT Competition 2021: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/333647), table of contents and solver index",
     "call": "./cleanmaple",
     "tracks": [
       "main"
@@ -202,6 +222,8 @@
   "hcad": {
     "status": "ok",
     "name": "hCaD",
+    "authors": "Rodrigue Konan Tchinda, Clémentin Tayou Djamegni",
+    "authors_source": "Proceedings of SAT Competition 2021: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/333647), table of contents and solver index",
     "call": "./cadical",
     "tracks": [
       "main"
@@ -220,6 +242,8 @@
   "hkis": {
     "status": "ok",
     "name": "hKiS",
+    "authors": "Rodrigue Konan Tchinda, Clémentin Tayou Djamegni",
+    "authors_source": "Proceedings of SAT Competition 2021: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/333647), table of contents and solver index",
     "call": "./kissat",
     "tracks": [
       "main"
@@ -238,6 +262,8 @@
   "kissat-mab": {
     "status": "ok",
     "name": "kissat-MAB",
+    "authors": "Mohamed Sami Cherif, Djamal Habet, Cyril Terrioux",
+    "authors_source": "Proceedings of SAT Competition 2021: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/333647), table of contents and solver index",
     "call": "./kissat",
     "tracks": [
       "main"
@@ -256,6 +282,8 @@
   "kissat-sat_crvr_gb": {
     "status": "ok",
     "name": "kissat-sat_crvr_gb",
+    "authors": "Md Solimul Chowdhury, Martin Müller, Jia-Huai You",
+    "authors_source": "Proceedings of SAT Competition 2021: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/333647), table of contents and solver index",
     "call": "./kissat",
     "tracks": [
       "main"
@@ -274,6 +302,8 @@
   "kissat-sc2021": {
     "status": "ok",
     "name": "kissat-sc2021",
+    "authors": "Armin Biere, Mathias Fleury, Maximilian Heisinger",
+    "authors_source": "Proceedings of SAT Competition 2021: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/333647), table of contents and solver index",
     "call": "./kissat",
     "tracks": [
       "main"
@@ -292,6 +322,8 @@
   "kissat_bonus": {
     "status": "ok",
     "name": "kissat_bonus",
+    "authors": "Xindi Zhang, Shaowei Cai, Zhihan Chen",
+    "authors_source": "Proceedings of SAT Competition 2021: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/333647), table of contents and solver index",
     "call": "./kissat",
     "tracks": [
       "main"
@@ -310,6 +342,8 @@
   "kissat_cf": {
     "status": "ok",
     "name": "kissat_cf",
+    "authors": "Xindi Zhang, Shaowei Cai, Zhihan Chen",
+    "authors_source": "Proceedings of SAT Competition 2021: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/333647), table of contents and solver index",
     "call": "./kissat",
     "tracks": [
       "main"
@@ -328,6 +362,8 @@
   "kissat_gb": {
     "status": "ok",
     "name": "kissat_gb",
+    "authors": "Md Solimul Chowdhury, Martin Müller, Jia-Huai You",
+    "authors_source": "Proceedings of SAT Competition 2021: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/333647), table of contents and solver index",
     "call": "./kissat",
     "tracks": [
       "main"
@@ -346,6 +382,8 @@
   "lstech_maple": {
     "status": "ok",
     "name": "lstech_maple",
+    "authors": "Xindi Zhang, Shaowei Cai, Zhihan Chen",
+    "authors_source": "Proceedings of SAT Competition 2021: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/333647), table of contents and solver index",
     "call": "./glucose",
     "tracks": [
       "main"
@@ -364,6 +402,8 @@
   "maplessv": {
     "status": "fixme",
     "name": "mapleSSV",
+    "authors": "Saeed Nejati, Md Solimul Chowdhury, Vijay Ganesh",
+    "authors_source": "Proceedings of SAT Competition 2021: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/333647), table of contents and solver index",
     "call": "./glucose",
     "tracks": [
       "main"
@@ -383,6 +423,8 @@
   "maple_mbdr_bjl7_local": {
     "status": "ok",
     "name": "Maple_MBDR_BJL7_Local",
+    "authors": "Sima Jamali, David Mitchell",
+    "authors_source": "Proceedings of SAT Competition 2021: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/333647), table of contents and solver index",
     "call": "./glucose",
     "tracks": [
       "main"
@@ -401,6 +443,8 @@
   "maple_mbdr_cent_perm_10k": {
     "status": "ok",
     "name": "Maple_MBDR_Cent_PERM_10K",
+    "authors": "Sima Jamali, David Mitchell",
+    "authors_source": "Proceedings of SAT Competition 2021: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/333647), table of contents and solver index",
     "call": "./glucose",
     "tracks": [
       "main"
@@ -419,6 +463,8 @@
   "maple_mbdr_cent_perm_75k": {
     "status": "ok",
     "name": "Maple_MBDR_Cent_PERM_75K",
+    "authors": "Sima Jamali, David Mitchell",
+    "authors_source": "Proceedings of SAT Competition 2021: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/333647), table of contents and solver index",
     "call": "./glucose",
     "tracks": [
       "main"
@@ -437,6 +483,8 @@
   "maple_simp21": {
     "status": "ok",
     "name": "maple_simp21",
+    "authors": "Jingchao Chen",
+    "authors_source": "Proceedings of SAT Competition 2021: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/333647), table of contents and solver index",
     "call": "./glucose",
     "tracks": [
       "main"
@@ -455,6 +503,8 @@
   "optsat_m21": {
     "status": "ok",
     "name": "optsat_m21",
+    "authors": "Jingchao Chen",
+    "authors_source": "Proceedings of SAT Competition 2021: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/333647), table of contents and solver index",
     "call": "./glucose",
     "tracks": [
       "main"
@@ -474,6 +524,8 @@
   "optsat_r21": {
     "status": "ok",
     "name": "optsat_R21",
+    "authors": "Jingchao Chen",
+    "authors_source": "Proceedings of SAT Competition 2021: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/333647), table of contents and solver index",
     "call": "./glucose",
     "tracks": [
       "main"
@@ -493,6 +545,8 @@
   "parafrost-nomdm-sc2021": {
     "status": "ok",
     "name": "parafrost-nomdm-sc2021",
+    "authors": "Muhammad Osama, Anton Wijs",
+    "authors_source": "Proceedings of SAT Competition 2021: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/333647), table of contents and solver index",
     "call": "./release/parafrost",
     "tracks": [
       "main"
@@ -517,6 +571,8 @@
   "parafrost-sc2021": {
     "status": "ok",
     "name": "parafrost-sc2021",
+    "authors": "Muhammad Osama, Anton Wijs",
+    "authors_source": "Proceedings of SAT Competition 2021: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/333647), table of contents and solver index",
     "call": "./release/parafrost",
     "tracks": [
       "main"
@@ -541,6 +597,8 @@
   "relaxed_lcftp": {
     "status": "ok",
     "name": "Relaxed_LCFTP",
+    "authors": "Shunyang Bi, Zhang Qu, Meihua Liu, Pengfei Li, Yang Zhang, Hailong You",
+    "authors_source": "Proceedings of SAT Competition 2021: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/333647), table of contents and solver index",
     "call": "./glucose",
     "tracks": [
       "main"
@@ -559,6 +617,8 @@
   "relaxed_lcftp_v2": {
     "status": "ok",
     "name": "Relaxed_LCFTP_V2",
+    "authors": "Shunyang Bi, Zhang Qu, Meihua Liu, Pengfei Li, Yang Zhang, Hailong You",
+    "authors_source": "Proceedings of SAT Competition 2021: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/333647), table of contents and solver index",
     "call": "./glucose",
     "tracks": [
       "main"
@@ -577,6 +637,8 @@
   "relaxed_lcftp_v3": {
     "status": "ok",
     "name": "Relaxed_LCFTP_V3",
+    "authors": "Shunyang Bi, Zhang Qu, Meihua Liu, Pengfei Li, Yang Zhang, Hailong You",
+    "authors_source": "Proceedings of SAT Competition 2021: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/333647), table of contents and solver index",
     "call": "./glucose",
     "tracks": [
       "main"
@@ -595,6 +657,8 @@
   "relaxed_lcmdcmdl_blb": {
     "status": "ok",
     "name": "Relaxed_LCMDCBDL_BLB",
+    "authors": "Shunyang Bi, Zhang Qu, Meihua Liu, Pengfei Li, Yang Zhang, Hailong You",
+    "authors_source": "Proceedings of SAT Competition 2021: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/333647), table of contents and solver index",
     "call": "./glucose",
     "tracks": [
       "main"
@@ -613,6 +677,8 @@
   "relaxed_lcmdcmdl_scavel01": {
     "status": "ok",
     "name": "Relaxed_LCMDCBDL_SCAVEL01",
+    "authors": "Zhihui Li, Guanfeng Wu, Yang Xu, Huimin Fu",
+    "authors_source": "Proceedings of SAT Competition 2021: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/333647), table of contents and solver index",
     "call": "./glucose",
     "tracks": [
       "main"
@@ -631,6 +697,8 @@
   "relaxed_lcmdcmdl_scavel02": {
     "status": "ok",
     "name": "Relaxed_LCMDCBDL_SCAVEL02",
+    "authors": "Zhihui Li, Guanfeng Wu, Yang Xu, Huimin Fu",
+    "authors_source": "Proceedings of SAT Competition 2021: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/333647), table of contents and solver index",
     "call": "./glucose",
     "tracks": [
       "main"
@@ -650,6 +718,8 @@
   "slime": {
     "status": "ok",
     "name": "SLIME",
+    "authors": "Oscar Riveros",
+    "authors_source": "Proceedings of SAT Competition 2021: Solver and Benchmark Descriptions (helda.helsinki.fi, hdl 10138/333647), table of contents and solver index",
     "call": "./slime",
     "tracks": [
       "main"
