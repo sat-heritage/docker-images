@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-16T06:13:21Z",
+  "generated": "2026-09-16T07:05:40Z",
   "images": {
     "abcd_para18:2018": {
       "build": {
@@ -5823,6 +5823,82 @@
       },
       "verdict": "verified"
     },
+    "clasp_vflip:2013": {
+      "build": {
+        "build-environment": {
+          "status": "ok"
+        },
+        "builder-base-image": {
+          "status": "ok"
+        },
+        "compile": {
+          "status": "ok"
+        },
+        "docker-engine": {
+          "status": "ok"
+        },
+        "image-assemble": {
+          "status": "ok"
+        },
+        "runtime-base": {
+          "status": "ok"
+        },
+        "runtime-base-image": {
+          "status": "ok"
+        },
+        "runtime-dependencies": {
+          "status": "ok"
+        },
+        "source-download": {
+          "status": "ok"
+        },
+        "source-extract": {
+          "status": "ok"
+        }
+      },
+      "date": "2026-09-16T04:51:50Z",
+      "run": "20260916T045150Z",
+      "tests": {
+        "launch": {
+          "status": "ok"
+        },
+        "sat-gzip-model": {
+          "status": "ok"
+        },
+        "sat-gzip-result": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-gzip-termination": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-model": {
+          "status": "ok"
+        },
+        "sat-result": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-termination": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "unsat-proof": {
+          "detail": "unsupported",
+          "status": "skip"
+        },
+        "unsat-result": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-termination": {
+          "detail": "UNSAT",
+          "status": "ok"
+        }
+      },
+      "verdict": "verified"
+    },
     "claspmt:2011": {
       "build": {
         "build-environment": {
@@ -8173,6 +8249,78 @@
         }
       },
       "verdict": "verified"
+    },
+    "dk-sat11:2013": {
+      "build": {
+        "build-environment": {
+          "status": "ok"
+        },
+        "builder-base-image": {
+          "status": "ok"
+        },
+        "compile": {
+          "status": "ok"
+        },
+        "docker-engine": {
+          "status": "ok"
+        },
+        "image-assemble": {
+          "status": "ok"
+        },
+        "runtime-base": {
+          "status": "ok"
+        },
+        "runtime-base-image": {
+          "status": "ok"
+        },
+        "runtime-dependencies": {
+          "status": "ok"
+        },
+        "source-download": {
+          "status": "ok"
+        },
+        "source-extract": {
+          "status": "ok"
+        }
+      },
+      "date": "2026-09-16T04:51:50Z",
+      "run": "20260916T045150Z",
+      "tests": {
+        "launch": {
+          "status": "ok"
+        },
+        "sat-gzip-model": {
+          "status": "ok"
+        },
+        "sat-gzip-result": {
+          "status": "ok"
+        },
+        "sat-gzip-termination": {
+          "status": "ok"
+        },
+        "sat-model": {
+          "status": "ok"
+        },
+        "sat-result": {
+          "status": "ok"
+        },
+        "sat-termination": {
+          "status": "ok"
+        },
+        "unsat-proof": {
+          "detail": "unsupported",
+          "status": "skip"
+        },
+        "unsat-result": {
+          "detail": "expected return code 20 (or wrapper code 0), got 16",
+          "status": "fail"
+        },
+        "unsat-termination": {
+          "detail": "16",
+          "status": "ok"
+        }
+      },
+      "verdict": "runs"
     },
     "dr:2000": {
       "build": {
@@ -12672,6 +12820,82 @@
       },
       "verdict": "verified"
     },
+    "gluebit_clasp:2013": {
+      "build": {
+        "build-environment": {
+          "status": "ok"
+        },
+        "builder-base-image": {
+          "status": "ok"
+        },
+        "compile": {
+          "status": "ok"
+        },
+        "docker-engine": {
+          "status": "ok"
+        },
+        "image-assemble": {
+          "status": "ok"
+        },
+        "runtime-base": {
+          "status": "ok"
+        },
+        "runtime-base-image": {
+          "status": "ok"
+        },
+        "runtime-dependencies": {
+          "status": "ok"
+        },
+        "source-download": {
+          "status": "ok"
+        },
+        "source-extract": {
+          "status": "ok"
+        }
+      },
+      "date": "2026-09-16T04:51:50Z",
+      "run": "20260916T045150Z",
+      "tests": {
+        "launch": {
+          "status": "ok"
+        },
+        "sat-gzip-model": {
+          "status": "ok"
+        },
+        "sat-gzip-result": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-gzip-termination": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-model": {
+          "status": "ok"
+        },
+        "sat-result": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-termination": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "unsat-proof": {
+          "detail": "unsupported",
+          "status": "skip"
+        },
+        "unsat-result": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-termination": {
+          "detail": "UNSAT",
+          "status": "ok"
+        }
+      },
+      "verdict": "verified"
+    },
     "gluebit_lgl:2013": {
       "build": {
         "build-environment": {
@@ -13365,6 +13589,100 @@
         }
       },
       "verdict": "verified"
+    },
+    "gnovelty-gca:2013": {
+      "build": {
+        "build-environment": {
+          "status": "ok"
+        },
+        "builder-base-image": {
+          "status": "ok"
+        },
+        "compile": {
+          "status": "ok"
+        },
+        "docker-engine": {
+          "status": "ok"
+        },
+        "image-assemble": {
+          "status": "ok"
+        },
+        "runtime-base": {
+          "status": "ok"
+        },
+        "runtime-base-image": {
+          "status": "ok"
+        },
+        "runtime-dependencies": {
+          "status": "ok"
+        },
+        "source-download": {
+          "status": "ok"
+        },
+        "source-extract": {
+          "status": "ok"
+        }
+      },
+      "date": "2026-09-16T04:51:50Z",
+      "run": "20260916T045150Z",
+      "tests": {
+        "launch": {
+          "status": "ok"
+        },
+        "sat-gzip-model": {
+          "detail": "timeout",
+          "status": "skip"
+        },
+        "sat-gzip-result": {
+          "detail": "timeout",
+          "status": "skip"
+        },
+        "sat-gzip-termination": {
+          "detail": "TIMEOUT",
+          "status": "fail"
+        },
+        "sat-model": {
+          "detail": "timeout",
+          "status": "skip"
+        },
+        "sat-result": {
+          "detail": "timeout",
+          "status": "skip"
+        },
+        "sat-termination": {
+          "detail": "TIMEOUT",
+          "status": "fail"
+        },
+        "unsat-proof": {
+          "detail": "unsupported",
+          "status": "skip"
+        },
+        "unsat-result": {
+          "detail": "timeout",
+          "status": "skip"
+        },
+        "unsat-termination": {
+          "detail": "TIMEOUT",
+          "status": "fail"
+        }
+      },
+      "verdict": "runs"
+    },
+    "gnovelty-gcwa:2013": {
+      "build": {
+        "builder-base-image": {
+          "status": "ok"
+        },
+        "docker-engine": {
+          "status": "ok"
+        },
+        "source-download": {
+          "status": "ok"
+        }
+      },
+      "date": "2026-09-16T04:51:50Z",
+      "run": "20260916T045150Z",
+      "verdict": "built"
     },
     "gulch:2016": {
       "build": {
@@ -36838,7 +37156,22 @@
         "builder-base-image": {
           "status": "ok"
         },
+        "compile": {
+          "status": "ok"
+        },
         "docker-engine": {
+          "status": "ok"
+        },
+        "image-assemble": {
+          "status": "ok"
+        },
+        "runtime-base": {
+          "status": "ok"
+        },
+        "runtime-base-image": {
+          "status": "ok"
+        },
+        "runtime-dependencies": {
           "status": "ok"
         },
         "source-download": {
@@ -36850,7 +37183,46 @@
       },
       "date": "2026-09-16T04:51:50Z",
       "run": "20260916T045150Z",
-      "verdict": "built"
+      "tests": {
+        "launch": {
+          "status": "ok"
+        },
+        "sat-gzip-model": {
+          "status": "ok"
+        },
+        "sat-gzip-result": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-gzip-termination": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-model": {
+          "status": "ok"
+        },
+        "sat-result": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-termination": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "unsat-proof": {
+          "detail": "unsupported",
+          "status": "skip"
+        },
+        "unsat-result": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-termination": {
+          "detail": "UNSAT",
+          "status": "ok"
+        }
+      },
+      "verdict": "verified"
     },
     "riss6:2016": {
       "build": {
@@ -37643,6 +38015,84 @@
       },
       "verdict": "verified"
     },
+    "rseq:2013": {
+      "build": {
+        "build-environment": {
+          "status": "ok"
+        },
+        "builder-base-image": {
+          "status": "ok"
+        },
+        "compile": {
+          "status": "ok"
+        },
+        "docker-engine": {
+          "status": "ok"
+        },
+        "image-assemble": {
+          "status": "ok"
+        },
+        "runtime-base": {
+          "status": "ok"
+        },
+        "runtime-base-image": {
+          "status": "ok"
+        },
+        "runtime-dependencies": {
+          "status": "ok"
+        },
+        "source-download": {
+          "status": "ok"
+        },
+        "source-extract": {
+          "status": "ok"
+        }
+      },
+      "date": "2026-09-16T04:51:50Z",
+      "run": "20260916T045150Z",
+      "tests": {
+        "launch": {
+          "status": "ok"
+        },
+        "sat-gzip-model": {
+          "detail": "timeout",
+          "status": "skip"
+        },
+        "sat-gzip-result": {
+          "detail": "timeout",
+          "status": "skip"
+        },
+        "sat-gzip-termination": {
+          "detail": "TIMEOUT",
+          "status": "fail"
+        },
+        "sat-model": {
+          "detail": "timeout",
+          "status": "skip"
+        },
+        "sat-result": {
+          "detail": "timeout",
+          "status": "skip"
+        },
+        "sat-termination": {
+          "detail": "TIMEOUT",
+          "status": "fail"
+        },
+        "unsat-proof": {
+          "detail": "unsupported",
+          "status": "skip"
+        },
+        "unsat-result": {
+          "detail": "timeout",
+          "status": "skip"
+        },
+        "unsat-termination": {
+          "detail": "TIMEOUT",
+          "status": "fail"
+        }
+      },
+      "verdict": "runs"
+    },
     "sapperlot2010:2011": {
       "build": {
         "build-environment": {
@@ -38430,6 +38880,82 @@
       },
       "verdict": "verified"
     },
+    "sat4j:2013": {
+      "build": {
+        "build-environment": {
+          "status": "ok"
+        },
+        "builder-base-image": {
+          "status": "ok"
+        },
+        "compile": {
+          "status": "ok"
+        },
+        "docker-engine": {
+          "status": "ok"
+        },
+        "image-assemble": {
+          "status": "ok"
+        },
+        "runtime-base": {
+          "status": "ok"
+        },
+        "runtime-base-image": {
+          "status": "ok"
+        },
+        "runtime-dependencies": {
+          "status": "ok"
+        },
+        "source-download": {
+          "status": "ok"
+        },
+        "source-extract": {
+          "status": "ok"
+        }
+      },
+      "date": "2026-09-16T04:51:50Z",
+      "run": "20260916T045150Z",
+      "tests": {
+        "launch": {
+          "status": "ok"
+        },
+        "sat-gzip-model": {
+          "status": "ok"
+        },
+        "sat-gzip-result": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-gzip-termination": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-model": {
+          "status": "ok"
+        },
+        "sat-result": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-termination": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "unsat-proof": {
+          "detail": "unsupported",
+          "status": "skip"
+        },
+        "unsat-result": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-termination": {
+          "detail": "UNSAT",
+          "status": "ok"
+        }
+      },
+      "verdict": "verified"
+    },
     "sat4j_core:2011": {
       "build": {
         "build-environment": {
@@ -39206,50 +39732,44 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-16T01:26:00Z",
-      "run": "20260916T012600Z",
+      "date": "2026-09-16T06:21:09Z",
+      "run": "20260916T062109Z",
       "tests": {
         "launch": {
           "status": "ok"
         },
         "sat-gzip-model": {
-          "detail": "timeout",
-          "status": "skip"
+          "status": "ok"
         },
         "sat-gzip-result": {
-          "detail": "timeout",
-          "status": "skip"
+          "detail": "SAT",
+          "status": "ok"
         },
         "sat-gzip-termination": {
-          "detail": "TIMEOUT",
-          "status": "fail"
+          "detail": "SAT",
+          "status": "ok"
         },
         "sat-model": {
-          "detail": "timeout",
-          "status": "skip"
+          "status": "ok"
         },
         "sat-result": {
-          "detail": "timeout",
-          "status": "skip"
+          "detail": "SAT",
+          "status": "ok"
         },
         "sat-termination": {
-          "detail": "TIMEOUT",
-          "status": "fail"
+          "detail": "SAT",
+          "status": "ok"
         },
         "unsat-proof": {
-          "detail": "unsupported",
+          "detail": "incomplete solver",
           "status": "skip"
         },
         "unsat-result": {
-          "detail": "timeout",
+          "detail": "incomplete solver",
           "status": "skip"
-        },
-        "unsat-termination": {
-          "detail": "TIMEOUT",
-          "status": "fail"
         }
       },
-      "verdict": "runs"
+      "verdict": "verified"
     },
     "sattime:2011": {
       "build": {
@@ -39322,6 +39842,83 @@
         }
       },
       "verdict": "verified"
+    },
+    "sattimerelbackshr:2013": {
+      "build": {
+        "build-environment": {
+          "status": "ok"
+        },
+        "builder-base-image": {
+          "status": "ok"
+        },
+        "compile": {
+          "status": "ok"
+        },
+        "docker-engine": {
+          "status": "ok"
+        },
+        "image-assemble": {
+          "status": "ok"
+        },
+        "runtime-base": {
+          "status": "ok"
+        },
+        "runtime-base-image": {
+          "status": "ok"
+        },
+        "runtime-dependencies": {
+          "status": "ok"
+        },
+        "source-download": {
+          "status": "ok"
+        },
+        "source-extract": {
+          "status": "ok"
+        }
+      },
+      "date": "2026-09-16T04:51:50Z",
+      "run": "20260916T045150Z",
+      "tests": {
+        "launch": {
+          "status": "ok"
+        },
+        "sat-gzip-model": {
+          "detail": "timeout",
+          "status": "skip"
+        },
+        "sat-gzip-result": {
+          "detail": "timeout",
+          "status": "skip"
+        },
+        "sat-gzip-termination": {
+          "detail": "TIMEOUT",
+          "status": "fail"
+        },
+        "sat-model": {
+          "status": "ok"
+        },
+        "sat-result": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-termination": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "unsat-proof": {
+          "detail": "unsupported",
+          "status": "skip"
+        },
+        "unsat-result": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-termination": {
+          "detail": "UNSAT",
+          "status": "ok"
+        }
+      },
+      "verdict": "runs"
     },
     "sbva-cadical:2023": {
       "build": {
@@ -40219,47 +40816,109 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-16T01:26:00Z",
-      "run": "20260916T012600Z",
+      "date": "2026-09-16T06:25:22Z",
+      "run": "20260916T062522Z",
       "tests": {
         "launch": {
           "status": "ok"
         },
         "sat-gzip-model": {
-          "detail": "timeout",
+          "status": "ok"
+        },
+        "sat-gzip-result": {
+          "status": "ok"
+        },
+        "sat-gzip-termination": {
+          "status": "ok"
+        },
+        "sat-model": {
+          "status": "ok"
+        },
+        "sat-result": {
+          "status": "ok"
+        },
+        "sat-termination": {
+          "status": "ok"
+        },
+        "unsat-proof": {
+          "detail": "incomplete solver",
+          "status": "skip"
+        },
+        "unsat-result": {
+          "detail": "incomplete solver",
+          "status": "skip"
+        }
+      },
+      "verdict": "verified"
+    },
+    "shatterglucose:2013": {
+      "build": {
+        "build-environment": {
+          "status": "ok"
+        },
+        "builder-base-image": {
+          "status": "ok"
+        },
+        "compile": {
+          "status": "ok"
+        },
+        "docker-engine": {
+          "status": "ok"
+        },
+        "image-assemble": {
+          "status": "ok"
+        },
+        "runtime-base": {
+          "status": "ok"
+        },
+        "runtime-base-image": {
+          "status": "ok"
+        },
+        "runtime-dependencies": {
+          "status": "ok"
+        },
+        "source-download": {
+          "status": "ok"
+        },
+        "source-extract": {
+          "status": "ok"
+        }
+      },
+      "date": "2026-09-16T04:51:50Z",
+      "run": "20260916T045150Z",
+      "tests": {
+        "launch": {
+          "status": "ok"
+        },
+        "sat-gzip-model": {
+          "detail": "invalid result",
           "status": "skip"
         },
         "sat-gzip-result": {
-          "detail": "timeout",
-          "status": "skip"
+          "detail": "expected status SATISFIABLE, solver reported UNKNOWN",
+          "status": "fail"
         },
         "sat-gzip-termination": {
-          "detail": "TIMEOUT",
-          "status": "fail"
+          "status": "ok"
         },
         "sat-model": {
-          "detail": "timeout",
-          "status": "skip"
+          "status": "ok"
         },
         "sat-result": {
-          "detail": "timeout",
-          "status": "skip"
+          "status": "ok"
         },
         "sat-termination": {
-          "detail": "TIMEOUT",
-          "status": "fail"
+          "status": "ok"
         },
         "unsat-proof": {
           "detail": "unsupported",
           "status": "skip"
         },
         "unsat-result": {
-          "detail": "timeout",
-          "status": "skip"
+          "status": "ok"
         },
         "unsat-termination": {
-          "detail": "TIMEOUT",
-          "status": "fail"
+          "status": "ok"
         }
       },
       "verdict": "runs"
@@ -40953,6 +41612,158 @@
       },
       "verdict": "source-available"
     },
+    "solver43a:2013": {
+      "build": {
+        "build-environment": {
+          "status": "ok"
+        },
+        "builder-base-image": {
+          "status": "ok"
+        },
+        "compile": {
+          "status": "ok"
+        },
+        "docker-engine": {
+          "status": "ok"
+        },
+        "image-assemble": {
+          "status": "ok"
+        },
+        "runtime-base": {
+          "status": "ok"
+        },
+        "runtime-base-image": {
+          "status": "ok"
+        },
+        "runtime-dependencies": {
+          "status": "ok"
+        },
+        "source-download": {
+          "status": "ok"
+        },
+        "source-extract": {
+          "status": "ok"
+        }
+      },
+      "date": "2026-09-16T04:51:50Z",
+      "run": "20260916T045150Z",
+      "tests": {
+        "launch": {
+          "status": "ok"
+        },
+        "sat-gzip-model": {
+          "status": "ok"
+        },
+        "sat-gzip-result": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-gzip-termination": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-model": {
+          "status": "ok"
+        },
+        "sat-result": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-termination": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "unsat-proof": {
+          "detail": "unsupported",
+          "status": "skip"
+        },
+        "unsat-result": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-termination": {
+          "detail": "UNSAT",
+          "status": "ok"
+        }
+      },
+      "verdict": "verified"
+    },
+    "solver43b:2013": {
+      "build": {
+        "build-environment": {
+          "status": "ok"
+        },
+        "builder-base-image": {
+          "status": "ok"
+        },
+        "compile": {
+          "status": "ok"
+        },
+        "docker-engine": {
+          "status": "ok"
+        },
+        "image-assemble": {
+          "status": "ok"
+        },
+        "runtime-base": {
+          "status": "ok"
+        },
+        "runtime-base-image": {
+          "status": "ok"
+        },
+        "runtime-dependencies": {
+          "status": "ok"
+        },
+        "source-download": {
+          "status": "ok"
+        },
+        "source-extract": {
+          "status": "ok"
+        }
+      },
+      "date": "2026-09-16T04:51:50Z",
+      "run": "20260916T045150Z",
+      "tests": {
+        "launch": {
+          "status": "ok"
+        },
+        "sat-gzip-model": {
+          "status": "ok"
+        },
+        "sat-gzip-result": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-gzip-termination": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-model": {
+          "status": "ok"
+        },
+        "sat-result": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-termination": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "unsat-proof": {
+          "detail": "unsupported",
+          "status": "skip"
+        },
+        "unsat-result": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-termination": {
+          "detail": "UNSAT",
+          "status": "ok"
+        }
+      },
+      "verdict": "verified"
+    },
     "sparrow2011:2011": {
       "build": {
         "build-environment": {
@@ -41141,8 +41952,8 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-16T01:26:00Z",
-      "run": "20260916T012600Z",
+      "date": "2026-09-16T06:43:07Z",
+      "run": "20260916T064307Z",
       "tests": {
         "launch": {
           "status": "ok"
@@ -41170,8 +41981,7 @@
           "status": "ok"
         },
         "unsat-proof": {
-          "detail": "[Errno 2] No such file or directory: '/tmp/satex-tests-25jmzn7t/proof.tmp'",
-          "status": "fail"
+          "status": "ok"
         },
         "unsat-proof-run-result": {
           "detail": "UNSAT",
@@ -41182,15 +41992,15 @@
           "status": "ok"
         },
         "unsat-result": {
-          "detail": "timeout",
-          "status": "skip"
+          "detail": "UNSAT",
+          "status": "ok"
         },
         "unsat-termination": {
-          "detail": "TIMEOUT",
-          "status": "fail"
+          "detail": "UNSAT",
+          "status": "ok"
         }
       },
-      "verdict": "runs"
+      "verdict": "verified"
     },
     "stocbcd:2016": {
       "build": {
@@ -41443,8 +42253,8 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-16T01:26:00Z",
-      "run": "20260916T012600Z",
+      "date": "2026-09-16T06:49:06Z",
+      "run": "20260916T064906Z",
       "tests": {
         "launch": {
           "status": "ok"
@@ -41472,8 +42282,7 @@
           "status": "ok"
         },
         "unsat-proof": {
-          "detail": "[Errno 2] No such file or directory: '/tmp/satex-tests-mkwu6wzq/proof.tmp'",
-          "status": "fail"
+          "status": "ok"
         },
         "unsat-proof-run-result": {
           "detail": "UNSAT",
@@ -41492,7 +42301,7 @@
           "status": "ok"
         }
       },
-      "verdict": "runs"
+      "verdict": "verified"
     },
     "synit_sat:2011": {
       "build": {
@@ -41597,23 +42406,22 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-16T01:26:00Z",
-      "run": "20260916T012600Z",
+      "date": "2026-09-16T06:35:06Z",
+      "run": "20260916T063506Z",
       "tests": {
         "launch": {
           "status": "ok"
         },
         "sat-gzip-model": {
-          "detail": "timeout",
-          "status": "skip"
+          "status": "ok"
         },
         "sat-gzip-result": {
-          "detail": "timeout",
-          "status": "skip"
+          "detail": "SAT",
+          "status": "ok"
         },
         "sat-gzip-termination": {
-          "detail": "TIMEOUT",
-          "status": "fail"
+          "detail": "SAT",
+          "status": "ok"
         },
         "sat-model": {
           "detail": "timeout",
@@ -41632,12 +42440,12 @@
           "status": "skip"
         },
         "unsat-result": {
-          "detail": "timeout",
-          "status": "skip"
+          "detail": "UNSAT",
+          "status": "ok"
         },
         "unsat-termination": {
-          "detail": "TIMEOUT",
-          "status": "fail"
+          "detail": "UNSAT",
+          "status": "ok"
         }
       },
       "verdict": "runs"
@@ -44014,50 +44822,44 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-16T01:26:00Z",
-      "run": "20260916T012600Z",
+      "date": "2026-09-16T06:29:49Z",
+      "run": "20260916T062949Z",
       "tests": {
         "launch": {
           "status": "ok"
         },
         "sat-gzip-model": {
-          "detail": "timeout",
-          "status": "skip"
+          "status": "ok"
         },
         "sat-gzip-result": {
-          "detail": "timeout",
-          "status": "skip"
+          "detail": "SAT",
+          "status": "ok"
         },
         "sat-gzip-termination": {
-          "detail": "TIMEOUT",
-          "status": "fail"
+          "detail": "SAT",
+          "status": "ok"
         },
         "sat-model": {
-          "detail": "timeout",
-          "status": "skip"
+          "status": "ok"
         },
         "sat-result": {
-          "detail": "timeout",
-          "status": "skip"
+          "detail": "SAT",
+          "status": "ok"
         },
         "sat-termination": {
-          "detail": "TIMEOUT",
-          "status": "fail"
+          "detail": "SAT",
+          "status": "ok"
         },
         "unsat-proof": {
-          "detail": "unsupported",
+          "detail": "incomplete solver",
           "status": "skip"
         },
         "unsat-result": {
-          "detail": "timeout",
+          "detail": "incomplete solver",
           "status": "skip"
-        },
-        "unsat-termination": {
-          "detail": "TIMEOUT",
-          "status": "fail"
         }
       },
-      "verdict": "runs"
+      "verdict": "verified"
     },
     "yalsat:2017": {
       "build": {
@@ -44202,6 +45004,29 @@
         }
       },
       "verdict": "verified"
+    },
+    "zenn:2013": {
+      "build": {
+        "build-environment": {
+          "detail": "exit 1",
+          "status": "fail"
+        },
+        "builder-base-image": {
+          "status": "ok"
+        },
+        "docker-engine": {
+          "status": "ok"
+        },
+        "source-download": {
+          "status": "ok"
+        },
+        "source-extract": {
+          "status": "ok"
+        }
+      },
+      "date": "2026-09-16T04:51:50Z",
+      "run": "20260916T045150Z",
+      "verdict": "source-available"
     },
     "zib_glucose:2019": {
       "build": {

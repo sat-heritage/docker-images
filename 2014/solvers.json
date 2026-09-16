@@ -512,7 +512,7 @@
             "crafted",
             "random"
         ],
-        "status": "unstable",
+        "status": "ok",
         "args": [
             "FILECNF",
             "-seed",
@@ -521,10 +521,10 @@
         "authors": "Chu-Min LI & Chong Huang & Yu Li",
         "call": "./sattime2014r",
         "comments": "Launchcommand was:  ./sattime2014r  <instance>  -seed <seed> \nTrack was Sequential, Application SAT+UNSAT track",
-        "gz": true,
+        "gz": false,
         "name": "sattime2014r",
         "license_source": "unrecognized licence file sattime2014r/license.txt",
-        "status_detail": "Builds and runs but a check fails: sat-gzip-termination: TIMEOUT; sat-termination: TIMEOUT; unsat-termination: TIMEOUT"
+        "incomplete": true
     },
     "satuzk": {
         "tracks": [
@@ -555,7 +555,7 @@
             "crafted",
             "random"
         ],
-        "status": "unstable",
+        "status": "ok",
         "args": [
             "FILECNF",
             "-s",
@@ -564,18 +564,18 @@
         "authors": "Chu Min Li,Hua Jiang,Ru Chu Xu",
         "call": ".//SGSeq.sh",
         "comments": "Launchcommand was:  .//SGSeq.sh  <instance>  -s <seed> \nTrack was Sequential, Application SAT+UNSAT track",
-        "gz": true,
+        "gz": false,
         "name": "SGSeq",
         "license": "MIT",
         "license_source": "licence file SGSeq/code/glucose2.3/licence.txt",
-        "status_detail": "Builds and runs but a check fails: sat-gzip-termination: TIMEOUT; sat-termination: TIMEOUT; unsat-termination: TIMEOUT"
+        "incomplete": true
     },
     "sparrowtoriss": {
         "tracks": [
             "application",
             "crafted"
         ],
-        "status": "unstable",
+        "status": "ok",
         "args": [
             "FILECNF",
             "RANDOMSEED",
@@ -594,7 +594,7 @@
         "name": "SparrowToRiss",
         "license": "MIT",
         "license_source": "licence file code/Riss427/license.txt",
-        "status_detail": "Builds and runs but a check fails: unsat-proof: [Errno 2] No such file or directory: '/tmp/satex-tests-25jmzn7t/proof.tmp'; unsat-termination: TIMEOUT"
+        "test_timeout": 120
     },
     "swdia5by": {
         "tracks": [
@@ -619,7 +619,7 @@
             "application",
             "crafted"
         ],
-        "status": "unstable",
+        "status": "ok",
         "args": [
             "-lbd-cut=4",
             "-core-learnt-hard-limit=1000000",
@@ -628,7 +628,8 @@
         "argsproof": [
             "-lbd-cut=4",
             "-core-learnt-hard-limit=1000000",
-            "FILECNF"
+            "FILECNF",
+            "-drup"
         ],
         "authors": "Chanseok Oh",
         "call": "./SWDiA5BY_static",
@@ -636,8 +637,7 @@
         "gz": true,
         "name": "SWDiA5BY",
         "license": "MIT",
-        "license_source": "licence file license.txt",
-        "status_detail": "Builds and runs but a check fails: unsat-proof: [Errno 2] No such file or directory: '/tmp/satex-tests-mkwu6wzq/proof.tmp'"
+        "license_source": "licence file license.txt"
     },
     "cbpenelope": {
         "tracks": [
@@ -681,7 +681,8 @@
         ],
         "status": "unstable",
         "args": [
-            "FILECNF"
+            "FILECNF",
+            "-model"
         ],
         "authors": "Gilles Audemard and Laurent Simon",
         "call": "./syrup",
@@ -690,7 +691,8 @@
         "name": "glucose-syrup",
         "license": "MIT",
         "license_source": "licence file licence.txt",
-        "status_detail": "Builds and runs but a check fails: sat-gzip-termination: TIMEOUT; sat-termination: TIMEOUT; unsat-termination: TIMEOUT"
+        "test_timeout": 120,
+        "status_detail": "Parallel solver (4 engines): answers the decompressed and UNSAT test instances, but the plain satisfiable run did not finish within 120 s on a loaded machine; results vary with the load."
     },
     "paracirminisat": {
         "tracks": [
@@ -958,7 +960,7 @@
         "incomplete": true
     },
     "yalsat": {
-        "status": "unstable",
+        "status": "ok",
         "tracks": [
             "random",
             "crafted-sat"
@@ -971,11 +973,11 @@
         "authors": "Armin Biere",
         "call": "./yalsat",
         "comments": "Launchcommand was:  ./yalsat -v <instance>   <seed> \nTrack was Sequential, Application SAT track",
-        "gz": true,
+        "gz": false,
         "name": "YalSAT",
         "license": "MIT",
         "license_source": "licence file code/LICENSE",
-        "status_detail": "Builds and runs but a check fails: sat-gzip-termination: TIMEOUT; sat-termination: TIMEOUT; unsat-termination: TIMEOUT"
+        "incomplete": true
     },
     "pprobsat": {
         "status": "fixme",
