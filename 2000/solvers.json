@@ -1,6 +1,6 @@
 {
   "asat": {
-    "status": "ok",
+    "status": "unstable",
     "name": "Asat",
     "authors": "Olivier Dubois, Pascal André, Yacine Boufkhad, Jacques Carlier",
     "authors_source": "SAT-Ex site (lri.fr/~simon/satex): prover list with references in the SAT-Ex position paper, 2001",
@@ -8,7 +8,8 @@
     "gz": false,
     "args": [
       "FILECNF"
-    ]
+    ],
+    "status_detail": "SAT-Ex era solver, older than the competition output format: prints SATISFIABLE or UNSATISFIABLE on a one-line summary, no s line and no model."
   },
   "csat": {
     "status": "ok",
@@ -23,7 +24,7 @@
     ]
   },
   "dr": {
-    "status": "ok",
+    "status": "unstable",
     "name": "dr",
     "authors": "Rina Dechter, Irina Rish",
     "authors_source": "SAT-Ex site (lri.fr/~simon/satex): prover list with references in the SAT-Ex position paper, 2001",
@@ -32,10 +33,11 @@
     "args": [
       1,
       "FILECNF"
-    ]
+    ],
+    "status_detail": "SAT-Ex era solver, older than the competition output format: Davis-Putnam resolution solver; prints 'The formula is UNSATISFIABLE' in its own format, no s line, and gives no answer within the test limit on the satisfiable instance."
   },
   "eqsatz": {
-    "status": "ok",
+    "status": "unstable",
     "name": "eqsatz",
     "authors": "Chu Min Li",
     "authors_source": "SAT-Ex site (lri.fr/~simon/satex): prover list with references in the SAT-Ex position paper, 2001",
@@ -43,10 +45,11 @@
     "gz": false,
     "args": [
       "FILECNF"
-    ]
+    ],
+    "status_detail": "SAT-Ex era solver, older than the competition output format: prints '****the instance is satisfiable *****' or 'unsatisfiable', no s line and no model."
   },
   "heerhugo": {
-    "status": "ok",
+    "status": "unstable",
     "name": "heerhugo",
     "authors": "Jan Friso Groote, Joost P. Warners",
     "authors_source": "SAT-Ex site (lri.fr/~simon/satex): prover list with references in the SAT-Ex position paper, 2001",
@@ -54,7 +57,8 @@
     "gz": false,
     "args": [
       "FILECNF"
-    ]
+    ],
+    "status_detail": "SAT-Ex era solver, older than the competition output format: prints 'Inconsistent' on unsatisfiable formulas and a list of variable values otherwise, no s line."
   },
   "modoc": {
     "status": "ok",
@@ -68,7 +72,7 @@
     ]
   },
   "modoc-2.0": {
-    "status": "ok",
+    "status": "unstable",
     "name": "modoc-2.0",
     "authors": "Allen Van Gelder, Fumiaki Kamiya",
     "authors_source": "SAT-Ex site (lri.fr/~simon/satex): prover list with references in the SAT-Ex position paper, 2001",
@@ -76,10 +80,11 @@
     "gz": false,
     "args": [
       "FILECNF"
-    ]
+    ],
+    "status_detail": "SAT-Ex era solver, older than the competition output format: prints lemma statistics only, the answer is not printed in a recognizable form."
   },
   "nsat": {
-    "status": "ok",
+    "status": "unstable",
     "name": "nsat",
     "authors": "João Marques-Silva, Karem A. Sakallah",
     "authors_source": "SAT-Ex site (lri.fr/~simon/satex): prover list with references in the SAT-Ex position paper, 2001",
@@ -87,10 +92,11 @@
     "gz": false,
     "args": [
       "FILECNF"
-    ]
+    ],
+    "status_detail": "SAT-Ex era solver, older than the competition output format: GRASP-style statistics report ending with 'Terminating NSAT', no s line and no model."
   },
   "ntab": {
-    "status": "ok",
+    "status": "unstable",
     "name": "ntab",
     "authors": "James M. Crawford, Larry D. Auton",
     "authors_source": "SAT-Ex site (lri.fr/~simon/satex): prover list with references in the SAT-Ex position paper, 2001",
@@ -99,10 +105,11 @@
     "args": [
       "-f",
       "FILECNF"
-    ]
+    ],
+    "status_detail": "SAT-Ex era solver, older than the competition output format: prints SAT or UNSAT on its own line and exits 20 on unsatisfiable formulas; on the satisfiable test instance aim-200 it answered UNSAT, so its answer or its parsing of that instance is wrong."
   },
   "ntab_back": {
-    "status": "ok",
+    "status": "unstable",
     "name": "ntab_back",
     "authors": "James M. Crawford, Larry D. Auton",
     "authors_source": "SAT-Ex site (lri.fr/~simon/satex): prover list with references in the SAT-Ex position paper, 2001",
@@ -111,10 +118,11 @@
     "args": [
       "-f",
       "FILECNF"
-    ]
+    ],
+    "status_detail": "SAT-Ex era solver, older than the competition output format: prints SAT or UNSAT on its own line and exits 20 on unsatisfiable formulas; on the satisfiable test instance aim-200 it answered UNSAT, so its answer or its parsing of that instance is wrong."
   },
   "ntab_back2": {
-    "status": "ok",
+    "status": "unstable",
     "name": "ntab_back2",
     "authors": "James M. Crawford, Larry D. Auton",
     "authors_source": "SAT-Ex site (lri.fr/~simon/satex): prover list with references in the SAT-Ex position paper, 2001",
@@ -123,7 +131,8 @@
     "args": [
       "-f",
       "FILECNF"
-    ]
+    ],
+    "status_detail": "SAT-Ex era solver, older than the competition output format: prints SAT or UNSAT on its own line and exits 20 on unsatisfiable formulas; on the satisfiable test instance aim-200 it answered UNSAT, so its answer or its parsing of that instance is wrong."
   },
   "oksolver": {
     "status": "ok",
@@ -137,7 +146,7 @@
     ]
   },
   "posit": {
-    "status": "ok",
+    "status": "unstable",
     "name": "posit",
     "authors": "Jon William Freeman",
     "authors_source": "SAT-Ex site (lri.fr/~simon/satex): prover list with references in the SAT-Ex position paper, 2001",
@@ -146,10 +155,11 @@
     "args": [
       "-f",
       "FILECNF"
-    ]
+    ],
+    "status_detail": "SAT-Ex era solver, older than the competition output format: prints the eliminated variables and search statistics, no s line; rejects the php-5-4 test instance ('Unknown line type in preamble')."
   },
   "relsat": {
-    "status": "ok",
+    "status": "unstable",
     "name": "relsat",
     "authors": "Roberto J. Bayardo, Robert Schrag",
     "authors_source": "SAT-Ex site (lri.fr/~simon/satex): prover list with references in the SAT-Ex position paper, 2001",
@@ -158,10 +168,11 @@
     "args": [
       1,
       "FILECNF"
-    ]
+    ],
+    "status_detail": "SAT-Ex era solver, older than the competition output format: prints a statistics report (assignments, branch selections, contradictions), no s line and no model."
   },
   "relsat-200": {
-    "status": "ok",
+    "status": "unstable",
     "name": "relsat-200",
     "authors": "Roberto J. Bayardo, Robert Schrag",
     "authors_source": "SAT-Ex site (lri.fr/~simon/satex): prover list with references in the SAT-Ex position paper, 2001",
@@ -169,10 +180,11 @@
     "gz": false,
     "args": [
       "FILECNF"
-    ]
+    ],
+    "status_detail": "SAT-Ex era solver, older than the competition output format: prints a statistics report (assignments, branch selections, contradictions), no s line and no model."
   },
   "sat-grasp": {
-    "status": "ok",
+    "status": "unstable",
     "name": "sat-grasp",
     "authors": "João Marques-Silva, Karem A. Sakallah",
     "authors_source": "SAT-Ex site (lri.fr/~simon/satex): prover list with references in the SAT-Ex position paper, 2001",
@@ -180,7 +192,8 @@
     "gz": false,
     "args": [
       "FILECNF"
-    ]
+    ],
+    "status_detail": "SAT-Ex era solver, older than the competition output format: GRASP statistics report ending with 'Terminating GRASP', no s line and no model."
   },
   "sato": {
     "status": "ok",
@@ -194,7 +207,7 @@
     ]
   },
   "sato-3.2.1": {
-    "status": "ok",
+    "status": "unstable",
     "name": "sato-3.2.1",
     "authors": "Hantao Zhang",
     "authors_source": "SAT-Ex site (lri.fr/~simon/satex): prover list with references in the SAT-Ex position paper, 2001",
@@ -202,10 +215,11 @@
     "gz": false,
     "args": [
       "FILECNF"
-    ]
+    ],
+    "status_detail": "SAT-Ex era solver, older than the competition output format: prints a statistics report and a job summary, no s line and no model."
   },
   "satz": {
-    "status": "ok",
+    "status": "unstable",
     "name": "satz",
     "authors": "Chu Min Li, Anbulagan",
     "authors_source": "SAT-Ex site (lri.fr/~simon/satex): prover list with references in the SAT-Ex position paper, 2001",
@@ -213,10 +227,11 @@
     "gz": false,
     "args": [
       "FILECNF"
-    ]
+    ],
+    "status_detail": "SAT-Ex era solver, older than the competition output format: prints 'verification of solution is OK' and a statistics summary line, no s line and no model."
   },
   "satz-213": {
-    "status": "ok",
+    "status": "unstable",
     "name": "satz-213",
     "authors": "Chu Min Li, Anbulagan",
     "authors_source": "SAT-Ex site (lri.fr/~simon/satex): prover list with references in the SAT-Ex position paper, 2001",
@@ -224,10 +239,11 @@
     "gz": false,
     "args": [
       "FILECNF"
-    ]
+    ],
+    "status_detail": "SAT-Ex era solver, older than the competition output format: prints 'verification of solution is OK' and a statistics summary line, no s line and no model."
   },
   "satz-215": {
-    "status": "ok",
+    "status": "unstable",
     "name": "satz-215",
     "authors": "Chu Min Li, Anbulagan",
     "authors_source": "SAT-Ex site (lri.fr/~simon/satex): prover list with references in the SAT-Ex position paper, 2001",
@@ -235,7 +251,8 @@
     "gz": false,
     "args": [
       "FILECNF"
-    ]
+    ],
+    "status_detail": "SAT-Ex era solver, older than the competition output format: prints 'verification of solution is OK' and a statistics summary line, no s line and no model."
   },
   "zchaff": {
     "status": "ok",
@@ -249,7 +266,7 @@
     ]
   },
   "zres": {
-    "status": "ok",
+    "status": "unstable",
     "name": "zres",
     "authors": "Philippe Chatalic, Laurent Simon",
     "authors_source": "SAT-Ex site (lri.fr/~simon/satex): prover list with references in the SAT-Ex position paper, 2001",
@@ -257,6 +274,7 @@
     "gz": false,
     "args": [
       "FILECNF"
-    ]
+    ],
+    "status_detail": "SAT-Ex era solver, older than the competition output format: ZDD-based Davis-Putnam; prints 'The formula is UNSATISFIABLE.' in its own format, no s line, and gives no answer within the test limit on the satisfiable instance."
   }
 }

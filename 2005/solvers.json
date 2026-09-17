@@ -9,7 +9,8 @@
     "args": [
       "FILECNF",
       "RANDOMSEED"
-    ]
+    ],
+    "incomplete": true
   },
   "circusa": {
     "status": "ok",
@@ -75,7 +76,8 @@
     "gz": false,
     "args": [
       "FILECNF"
-    ]
+    ],
+    "test_timeout": 60
   },
   "dew-satz-1b": {
     "status": "ok",
@@ -86,10 +88,11 @@
     "gz": false,
     "args": [
       "FILECNF"
-    ]
+    ],
+    "test_timeout": 60
   },
   "dew-satz-1c": {
-    "status": "ok",
+    "status": "unstable",
     "name": "Dew-Satz-1c",
     "authors": "Anbulagan",
     "authors_source": "JSAT volume 2 (2006), D. Le Berre and L. Simon, preface to the special volume on the SAT 2005 competitions, section 3.1 Submitted Solvers",
@@ -97,7 +100,9 @@
     "gz": false,
     "args": [
       "FILECNF"
-    ]
+    ],
+    "test_timeout": 60,
+    "status_detail": "Answers UNSAT correctly but gives no answer within 60 seconds on the satisfiable test instance aim-200 (the 1a, 1b, 1d and 1e variants pass)."
   },
   "dew-satz-1d": {
     "status": "ok",
@@ -108,7 +113,8 @@
     "gz": false,
     "args": [
       "FILECNF"
-    ]
+    ],
+    "test_timeout": 60
   },
   "dew-satz-1e": {
     "status": "ok",
@@ -119,7 +125,8 @@
     "gz": false,
     "args": [
       "FILECNF"
-    ]
+    ],
+    "test_timeout": 60
   },
   "eureka-a": {
     "status": "ok",
@@ -163,7 +170,8 @@
     "gz": false,
     "args": [
       "FILECNF"
-    ]
+    ],
+    "incomplete": true
   },
   "haifasat": {
     "status": "ok",
@@ -327,7 +335,8 @@
     "gz": false,
     "args": [
       "FILECNF"
-    ]
+    ],
+    "incomplete": true
   },
   "rpaws10": {
     "status": "ok",
@@ -338,7 +347,8 @@
     "gz": false,
     "args": [
       "FILECNF"
-    ]
+    ],
+    "incomplete": true
   },
   "rpaws40": {
     "status": "ok",
@@ -349,7 +359,8 @@
     "gz": false,
     "args": [
       "FILECNF"
-    ]
+    ],
+    "incomplete": true
   },
   "rpaws5": {
     "status": "ok",
@@ -360,7 +371,8 @@
     "gz": false,
     "args": [
       "FILECNF"
-    ]
+    ],
+    "incomplete": true
   },
   "rrsaps": {
     "status": "ok",
@@ -371,7 +383,8 @@
     "gz": false,
     "args": [
       "FILECNF"
-    ]
+    ],
+    "incomplete": true
   },
   "saps": {
     "status": "ok",
@@ -383,7 +396,8 @@
     "args": [
       "FILECNF",
       "RANDOMSEED"
-    ]
+    ],
+    "incomplete": true
   },
   "sat4j.jar": {
     "status": "ok",
@@ -450,10 +464,11 @@
     "args": [
       "FILECNF",
       "RANDOMSEED"
-    ]
+    ],
+    "comment": "The launcher solver37.sh hard-codes the competition directory (/solvers); a post_build fixture points it at its own directory."
   },
   "vw": {
-    "status": "ok",
+    "status": "unstable",
     "name": "vw",
     "authors": "Steven Prestwich",
     "authors_source": "JSAT volume 2 (2006), D. Le Berre and L. Simon, preface to the special volume on the SAT 2005 competitions, section 3.1 Submitted Solvers",
@@ -462,10 +477,12 @@
     "args": [
       "FILECNF",
       "RANDOMSEED"
-    ]
+    ],
+    "incomplete": true,
+    "status_detail": "Local search (incomplete) that answers SATISFIABLE but prints its assignment as one string of 0 and 1 digits on the v line instead of signed literals, which the checker rejects."
   },
   "wllsatv1": {
-    "status": "ok",
+    "status": "unstable",
     "name": "wllsatv1",
     "authors": "Richard Ostrowski",
     "authors_source": "JSAT volume 2 (2006), D. Le Berre and L. Simon, preface to the special volume on the SAT 2005 competitions, section 3.1 Submitted Solvers",
@@ -473,7 +490,8 @@
     "gz": false,
     "args": [
       "FILECNF"
-    ]
+    ],
+    "status_detail": "Competition binary that prints s SATISFIABLE on satisfiable instances but exits with code 20 (the UNSAT code); UNSAT instances are answered correctly."
   },
   "zchaff": {
     "status": "ok",
