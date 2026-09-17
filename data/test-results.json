@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-16T22:32:43Z",
+  "generated": "2026-09-17T00:43:44Z",
   "images": {
     "2clseq:2002": {
       "build": {
@@ -1424,9 +1424,55 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-14T11:34:11Z",
-      "run": "20260914T113411Z",
-      "verdict": "built"
+      "date": "2026-09-16T22:34:24Z",
+      "run": "20260916T223424Z",
+      "tests": {
+        "launch": {
+          "status": "ok"
+        },
+        "sat-gzip-model": {
+          "status": "ok"
+        },
+        "sat-gzip-result": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-gzip-termination": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-model": {
+          "status": "ok"
+        },
+        "sat-result": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-termination": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "unsat-proof": {
+          "status": "ok"
+        },
+        "unsat-proof-run-result": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-proof-run-termination": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-result": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-termination": {
+          "detail": "UNSAT",
+          "status": "ok"
+        }
+      },
+      "verdict": "verified"
     },
     "amsat:2024": {
       "build": {
@@ -2906,10 +2952,21 @@
           "status": "ok"
         },
         "compile": {
-          "detail": "exit 2",
-          "status": "fail"
+          "status": "ok"
         },
         "docker-engine": {
+          "status": "ok"
+        },
+        "image-assemble": {
+          "status": "ok"
+        },
+        "runtime-base": {
+          "status": "ok"
+        },
+        "runtime-base-image": {
+          "status": "ok"
+        },
+        "runtime-dependencies": {
           "status": "ok"
         },
         "source-download": {
@@ -2919,9 +2976,48 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-14T07:52:50Z",
-      "run": "20260914T075250Z",
-      "verdict": "source-available"
+      "date": "2026-09-16T22:34:24Z",
+      "run": "20260916T223424Z",
+      "tests": {
+        "launch": {
+          "status": "ok"
+        },
+        "sat-gzip-model": {
+          "status": "ok"
+        },
+        "sat-gzip-result": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-gzip-termination": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-model": {
+          "status": "ok"
+        },
+        "sat-result": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-termination": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "unsat-proof": {
+          "detail": "unsupported",
+          "status": "skip"
+        },
+        "unsat-result": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-termination": {
+          "detail": "UNSAT",
+          "status": "ok"
+        }
+      },
+      "verdict": "verified"
     },
     "breakid-kissat:2024": {
       "build": {
@@ -3342,9 +3438,55 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-14T11:34:11Z",
-      "run": "20260914T113411Z",
-      "verdict": "built"
+      "date": "2026-09-16T22:34:24Z",
+      "run": "20260916T223424Z",
+      "tests": {
+        "launch": {
+          "status": "ok"
+        },
+        "sat-gzip-model": {
+          "status": "ok"
+        },
+        "sat-gzip-result": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-gzip-termination": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-model": {
+          "status": "ok"
+        },
+        "sat-result": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-termination": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "unsat-proof": {
+          "status": "ok"
+        },
+        "unsat-proof-run-result": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-proof-run-termination": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-result": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-termination": {
+          "detail": "UNSAT",
+          "status": "ok"
+        }
+      },
+      "verdict": "verified"
     },
     "cadical-esa:2024": {
       "build": {
@@ -3868,9 +4010,55 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-14T11:34:11Z",
-      "run": "20260914T113411Z",
-      "verdict": "built"
+      "date": "2026-09-16T22:34:24Z",
+      "run": "20260916T223424Z",
+      "tests": {
+        "launch": {
+          "status": "ok"
+        },
+        "sat-gzip-model": {
+          "status": "ok"
+        },
+        "sat-gzip-result": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-gzip-termination": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-model": {
+          "status": "ok"
+        },
+        "sat-result": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-termination": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "unsat-proof": {
+          "status": "ok"
+        },
+        "unsat-proof-run-result": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-proof-run-termination": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-result": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-termination": {
+          "detail": "UNSAT",
+          "status": "ok"
+        }
+      },
+      "verdict": "verified"
     },
     "cadical-rel-scavel:2022": {
       "build": {
@@ -3942,9 +4130,55 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-14T11:34:11Z",
-      "run": "20260914T113411Z",
-      "verdict": "built"
+      "date": "2026-09-16T22:34:24Z",
+      "run": "20260916T223424Z",
+      "tests": {
+        "launch": {
+          "status": "ok"
+        },
+        "sat-gzip-model": {
+          "status": "ok"
+        },
+        "sat-gzip-result": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-gzip-termination": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-model": {
+          "status": "ok"
+        },
+        "sat-result": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-termination": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "unsat-proof": {
+          "status": "ok"
+        },
+        "unsat-proof-run-result": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-proof-run-termination": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-result": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-termination": {
+          "detail": "UNSAT",
+          "status": "ok"
+        }
+      },
+      "verdict": "verified"
     },
     "cadical-reorder:2022": {
       "build": {
@@ -4680,9 +4914,55 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-14T11:34:11Z",
-      "run": "20260914T113411Z",
-      "verdict": "built"
+      "date": "2026-09-16T22:34:24Z",
+      "run": "20260916T223424Z",
+      "tests": {
+        "launch": {
+          "status": "ok"
+        },
+        "sat-gzip-model": {
+          "status": "ok"
+        },
+        "sat-gzip-result": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-gzip-termination": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-model": {
+          "status": "ok"
+        },
+        "sat-result": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-termination": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "unsat-proof": {
+          "status": "ok"
+        },
+        "unsat-proof-run-result": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-proof-run-termination": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-result": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-termination": {
+          "detail": "UNSAT",
+          "status": "ok"
+        }
+      },
+      "verdict": "verified"
     },
     "cadical-watchsat-lto:2022": {
       "build": {
@@ -19820,10 +20100,21 @@
           "status": "ok"
         },
         "compile": {
-          "detail": "exit 2",
-          "status": "fail"
+          "status": "ok"
         },
         "docker-engine": {
+          "status": "ok"
+        },
+        "image-assemble": {
+          "status": "ok"
+        },
+        "runtime-base": {
+          "status": "ok"
+        },
+        "runtime-base-image": {
+          "status": "ok"
+        },
+        "runtime-dependencies": {
           "status": "ok"
         },
         "source-download": {
@@ -19833,9 +20124,55 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-14T07:52:50Z",
-      "run": "20260914T075250Z",
-      "verdict": "source-available"
+      "date": "2026-09-16T22:34:24Z",
+      "run": "20260916T223424Z",
+      "tests": {
+        "launch": {
+          "status": "ok"
+        },
+        "sat-gzip-model": {
+          "status": "ok"
+        },
+        "sat-gzip-result": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-gzip-termination": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-model": {
+          "status": "ok"
+        },
+        "sat-result": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-termination": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "unsat-proof": {
+          "status": "ok"
+        },
+        "unsat-proof-run-result": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-proof-run-termination": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-result": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-termination": {
+          "detail": "UNSAT",
+          "status": "ok"
+        }
+      },
+      "verdict": "verified"
     },
     "hkis-sat-psids:2023": {
       "build": {
@@ -19846,10 +20183,21 @@
           "status": "ok"
         },
         "compile": {
-          "detail": "exit 2",
-          "status": "fail"
+          "status": "ok"
         },
         "docker-engine": {
+          "status": "ok"
+        },
+        "image-assemble": {
+          "status": "ok"
+        },
+        "runtime-base": {
+          "status": "ok"
+        },
+        "runtime-base-image": {
+          "status": "ok"
+        },
+        "runtime-dependencies": {
           "status": "ok"
         },
         "source-download": {
@@ -19859,9 +20207,55 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-14T07:52:50Z",
-      "run": "20260914T075250Z",
-      "verdict": "source-available"
+      "date": "2026-09-16T22:34:24Z",
+      "run": "20260916T223424Z",
+      "tests": {
+        "launch": {
+          "status": "ok"
+        },
+        "sat-gzip-model": {
+          "status": "ok"
+        },
+        "sat-gzip-result": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-gzip-termination": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-model": {
+          "status": "ok"
+        },
+        "sat-result": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-termination": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "unsat-proof": {
+          "status": "ok"
+        },
+        "unsat-proof-run-result": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-proof-run-termination": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-result": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-termination": {
+          "detail": "UNSAT",
+          "status": "ok"
+        }
+      },
+      "verdict": "verified"
     },
     "hkis-sat:2022": {
       "build": {
@@ -20021,10 +20415,21 @@
           "status": "ok"
         },
         "compile": {
-          "detail": "exit 2",
-          "status": "fail"
+          "status": "ok"
         },
         "docker-engine": {
+          "status": "ok"
+        },
+        "image-assemble": {
+          "status": "ok"
+        },
+        "runtime-base": {
+          "status": "ok"
+        },
+        "runtime-base-image": {
+          "status": "ok"
+        },
+        "runtime-dependencies": {
           "status": "ok"
         },
         "source-download": {
@@ -20034,9 +20439,55 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-14T07:52:50Z",
-      "run": "20260914T075250Z",
-      "verdict": "source-available"
+      "date": "2026-09-16T22:34:24Z",
+      "run": "20260916T223424Z",
+      "tests": {
+        "launch": {
+          "status": "ok"
+        },
+        "sat-gzip-model": {
+          "status": "ok"
+        },
+        "sat-gzip-result": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-gzip-termination": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-model": {
+          "status": "ok"
+        },
+        "sat-result": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-termination": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "unsat-proof": {
+          "status": "ok"
+        },
+        "unsat-proof-run-result": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-proof-run-termination": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-result": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-termination": {
+          "detail": "UNSAT",
+          "status": "ok"
+        }
+      },
+      "verdict": "verified"
     },
     "hkis2-psids:2025": {
       "build": {
@@ -20237,9 +20688,55 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-14T11:34:11Z",
-      "run": "20260914T113411Z",
-      "verdict": "built"
+      "date": "2026-09-16T22:34:24Z",
+      "run": "20260916T223424Z",
+      "tests": {
+        "launch": {
+          "status": "ok"
+        },
+        "sat-gzip-model": {
+          "status": "ok"
+        },
+        "sat-gzip-result": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-gzip-termination": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-model": {
+          "status": "ok"
+        },
+        "sat-result": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-termination": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "unsat-proof": {
+          "status": "ok"
+        },
+        "unsat-proof-run-result": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-proof-run-termination": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-result": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-termination": {
+          "detail": "UNSAT",
+          "status": "ok"
+        }
+      },
+      "verdict": "verified"
     },
     "hordesat:2018": {
       "build": {
@@ -21269,9 +21766,55 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-14T11:34:11Z",
-      "run": "20260914T113411Z",
-      "verdict": "built"
+      "date": "2026-09-16T22:34:24Z",
+      "run": "20260916T223424Z",
+      "tests": {
+        "launch": {
+          "status": "ok"
+        },
+        "sat-gzip-model": {
+          "status": "ok"
+        },
+        "sat-gzip-result": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-gzip-termination": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-model": {
+          "status": "ok"
+        },
+        "sat-result": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-termination": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "unsat-proof": {
+          "status": "ok"
+        },
+        "unsat-proof-run-result": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-proof-run-termination": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-result": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-termination": {
+          "detail": "UNSAT",
+          "status": "ok"
+        }
+      },
+      "verdict": "verified"
     },
     "isasat:2024": {
       "build": {
@@ -22734,9 +23277,55 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-14T11:34:11Z",
-      "run": "20260914T113411Z",
-      "verdict": "built"
+      "date": "2026-09-16T22:34:24Z",
+      "run": "20260916T223424Z",
+      "tests": {
+        "launch": {
+          "status": "ok"
+        },
+        "sat-gzip-model": {
+          "status": "ok"
+        },
+        "sat-gzip-result": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-gzip-termination": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-model": {
+          "status": "ok"
+        },
+        "sat-result": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-termination": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "unsat-proof": {
+          "status": "ok"
+        },
+        "unsat-proof-run-result": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-proof-run-termination": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-result": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-termination": {
+          "detail": "UNSAT",
+          "status": "ok"
+        }
+      },
+      "verdict": "verified"
     },
     "kissat-adaptive-restart:2022": {
       "build": {
@@ -24050,9 +24639,55 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-14T11:34:11Z",
-      "run": "20260914T113411Z",
-      "verdict": "built"
+      "date": "2026-09-16T22:34:24Z",
+      "run": "20260916T223424Z",
+      "tests": {
+        "launch": {
+          "status": "ok"
+        },
+        "sat-gzip-model": {
+          "status": "ok"
+        },
+        "sat-gzip-result": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-gzip-termination": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-model": {
+          "status": "ok"
+        },
+        "sat-result": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-termination": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "unsat-proof": {
+          "status": "ok"
+        },
+        "unsat-proof-run-result": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-proof-run-termination": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-result": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-termination": {
+          "detail": "UNSAT",
+          "status": "ok"
+        }
+      },
+      "verdict": "verified"
     },
     "kissat-hywalk-exp:2023": {
       "build": {
@@ -24087,9 +24722,55 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-14T11:34:11Z",
-      "run": "20260914T113411Z",
-      "verdict": "built"
+      "date": "2026-09-16T22:34:24Z",
+      "run": "20260916T223424Z",
+      "tests": {
+        "launch": {
+          "status": "ok"
+        },
+        "sat-gzip-model": {
+          "status": "ok"
+        },
+        "sat-gzip-result": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-gzip-termination": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-model": {
+          "status": "ok"
+        },
+        "sat-result": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-termination": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "unsat-proof": {
+          "status": "ok"
+        },
+        "unsat-proof-run-result": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-proof-run-termination": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-result": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-termination": {
+          "detail": "UNSAT",
+          "status": "ok"
+        }
+      },
+      "verdict": "verified"
     },
     "kissat-hywalk-gb:2023": {
       "build": {
@@ -24124,9 +24805,55 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-14T11:34:11Z",
-      "run": "20260914T113411Z",
-      "verdict": "built"
+      "date": "2026-09-16T22:34:24Z",
+      "run": "20260916T223424Z",
+      "tests": {
+        "launch": {
+          "status": "ok"
+        },
+        "sat-gzip-model": {
+          "status": "ok"
+        },
+        "sat-gzip-result": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-gzip-termination": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-model": {
+          "status": "ok"
+        },
+        "sat-result": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-termination": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "unsat-proof": {
+          "status": "ok"
+        },
+        "unsat-proof-run-result": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-proof-run-termination": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-result": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-termination": {
+          "detail": "UNSAT",
+          "status": "ok"
+        }
+      },
+      "verdict": "verified"
     },
     "kissat-inc-esa:2023": {
       "build": {
@@ -24161,9 +24888,55 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-14T11:34:11Z",
-      "run": "20260914T113411Z",
-      "verdict": "built"
+      "date": "2026-09-16T22:34:24Z",
+      "run": "20260916T223424Z",
+      "tests": {
+        "launch": {
+          "status": "ok"
+        },
+        "sat-gzip-model": {
+          "status": "ok"
+        },
+        "sat-gzip-result": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-gzip-termination": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-model": {
+          "status": "ok"
+        },
+        "sat-result": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-termination": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "unsat-proof": {
+          "status": "ok"
+        },
+        "unsat-proof-run-result": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-proof-run-termination": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-result": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-termination": {
+          "detail": "UNSAT",
+          "status": "ok"
+        }
+      },
+      "verdict": "verified"
     },
     "kissat-inc:2022": {
       "build": {
@@ -24235,9 +25008,55 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-14T11:34:11Z",
-      "run": "20260914T113411Z",
-      "verdict": "built"
+      "date": "2026-09-16T22:34:24Z",
+      "run": "20260916T223424Z",
+      "tests": {
+        "launch": {
+          "status": "ok"
+        },
+        "sat-gzip-model": {
+          "status": "ok"
+        },
+        "sat-gzip-result": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-gzip-termination": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-model": {
+          "status": "ok"
+        },
+        "sat-result": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-termination": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "unsat-proof": {
+          "status": "ok"
+        },
+        "unsat-proof-run-result": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-proof-run-termination": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-result": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-termination": {
+          "detail": "UNSAT",
+          "status": "ok"
+        }
+      },
+      "verdict": "verified"
     },
     "kissat-lr-ds:2026": {
       "build": {
@@ -24355,9 +25174,55 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-14T11:34:11Z",
-      "run": "20260914T113411Z",
-      "verdict": "built"
+      "date": "2026-09-16T22:34:24Z",
+      "run": "20260916T223424Z",
+      "tests": {
+        "launch": {
+          "status": "ok"
+        },
+        "sat-gzip-model": {
+          "status": "ok"
+        },
+        "sat-gzip-result": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-gzip-termination": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-model": {
+          "status": "ok"
+        },
+        "sat-result": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-termination": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "unsat-proof": {
+          "status": "ok"
+        },
+        "unsat-proof-run-result": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-proof-run-termination": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-result": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-termination": {
+          "detail": "UNSAT",
+          "status": "ok"
+        }
+      },
+      "verdict": "verified"
     },
     "kissat-mab-binary:2024": {
       "build": {
@@ -24475,9 +25340,55 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-14T11:34:11Z",
-      "run": "20260914T113411Z",
-      "verdict": "built"
+      "date": "2026-09-16T22:34:24Z",
+      "run": "20260916T223424Z",
+      "tests": {
+        "launch": {
+          "status": "ok"
+        },
+        "sat-gzip-model": {
+          "status": "ok"
+        },
+        "sat-gzip-result": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-gzip-termination": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-model": {
+          "status": "ok"
+        },
+        "sat-result": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-termination": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "unsat-proof": {
+          "status": "ok"
+        },
+        "unsat-proof-run-result": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-proof-run-termination": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-result": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-termination": {
+          "detail": "UNSAT",
+          "status": "ok"
+        }
+      },
+      "verdict": "verified"
     },
     "kissat-mab-conflict:2023": {
       "build": {
@@ -24512,9 +25423,55 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-14T11:34:11Z",
-      "run": "20260914T113411Z",
-      "verdict": "built"
+      "date": "2026-09-16T22:34:24Z",
+      "run": "20260916T223424Z",
+      "tests": {
+        "launch": {
+          "status": "ok"
+        },
+        "sat-gzip-model": {
+          "status": "ok"
+        },
+        "sat-gzip-result": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-gzip-termination": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-model": {
+          "status": "ok"
+        },
+        "sat-result": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-termination": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "unsat-proof": {
+          "status": "ok"
+        },
+        "unsat-proof-run-result": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-proof-run-termination": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-result": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-termination": {
+          "detail": "UNSAT",
+          "status": "ok"
+        }
+      },
+      "verdict": "verified"
     },
     "kissat-mab-corephase:2025": {
       "build": {
@@ -24798,9 +25755,55 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-14T11:34:11Z",
-      "run": "20260914T113411Z",
-      "verdict": "built"
+      "date": "2026-09-16T22:34:24Z",
+      "run": "20260916T223424Z",
+      "tests": {
+        "launch": {
+          "status": "ok"
+        },
+        "sat-gzip-model": {
+          "status": "ok"
+        },
+        "sat-gzip-result": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-gzip-termination": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-model": {
+          "status": "ok"
+        },
+        "sat-result": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-termination": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "unsat-proof": {
+          "status": "ok"
+        },
+        "unsat-proof-run-result": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-proof-run-termination": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-result": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-termination": {
+          "detail": "UNSAT",
+          "status": "ok"
+        }
+      },
+      "verdict": "verified"
     },
     "kissat-mab-eae1:2026": {
       "build": {
@@ -25121,9 +26124,55 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-14T11:34:11Z",
-      "run": "20260914T113411Z",
-      "verdict": "built"
+      "date": "2026-09-16T22:34:24Z",
+      "run": "20260916T223424Z",
+      "tests": {
+        "launch": {
+          "status": "ok"
+        },
+        "sat-gzip-model": {
+          "status": "ok"
+        },
+        "sat-gzip-result": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-gzip-termination": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-model": {
+          "status": "ok"
+        },
+        "sat-result": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-termination": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "unsat-proof": {
+          "status": "ok"
+        },
+        "unsat-proof-run-result": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-proof-run-termination": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-result": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-termination": {
+          "detail": "UNSAT",
+          "status": "ok"
+        }
+      },
+      "verdict": "verified"
     },
     "kissat-mab-esa:2024": {
       "build": {
@@ -25597,10 +26646,21 @@
           "status": "ok"
         },
         "compile": {
-          "detail": "exit 2",
-          "status": "fail"
+          "status": "ok"
         },
         "docker-engine": {
+          "status": "ok"
+        },
+        "image-assemble": {
+          "status": "ok"
+        },
+        "runtime-base": {
+          "status": "ok"
+        },
+        "runtime-base-image": {
+          "status": "ok"
+        },
+        "runtime-dependencies": {
           "status": "ok"
         },
         "source-download": {
@@ -25610,9 +26670,50 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-14T07:52:50Z",
-      "run": "20260914T075250Z",
-      "verdict": "source-available"
+      "date": "2026-09-16T22:31:38Z",
+      "run": "20260916T223138Z",
+      "tests": {
+        "launch": {
+          "status": "ok"
+        },
+        "sat-gzip-model": {
+          "detail": "invalid result",
+          "status": "skip"
+        },
+        "sat-gzip-result": {
+          "detail": "expected return code 10 (or wrapper code 0), got 20",
+          "status": "fail"
+        },
+        "sat-gzip-termination": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "sat-model": {
+          "detail": "invalid result",
+          "status": "skip"
+        },
+        "sat-result": {
+          "detail": "expected return code 10 (or wrapper code 0), got 20",
+          "status": "fail"
+        },
+        "sat-termination": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-proof": {
+          "detail": "unsupported",
+          "status": "skip"
+        },
+        "unsat-result": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-termination": {
+          "detail": "UNSAT",
+          "status": "ok"
+        }
+      },
+      "verdict": "runs"
     },
     "kissat-mab-prop-nosym:2023": {
       "build": {
@@ -25623,10 +26724,21 @@
           "status": "ok"
         },
         "compile": {
-          "detail": "exit 2",
-          "status": "fail"
+          "status": "ok"
         },
         "docker-engine": {
+          "status": "ok"
+        },
+        "image-assemble": {
+          "status": "ok"
+        },
+        "runtime-base": {
+          "status": "ok"
+        },
+        "runtime-base-image": {
+          "status": "ok"
+        },
+        "runtime-dependencies": {
           "status": "ok"
         },
         "source-download": {
@@ -25636,9 +26748,48 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-14T07:52:50Z",
-      "run": "20260914T075250Z",
-      "verdict": "source-available"
+      "date": "2026-09-16T22:34:24Z",
+      "run": "20260916T223424Z",
+      "tests": {
+        "launch": {
+          "status": "ok"
+        },
+        "sat-gzip-model": {
+          "status": "ok"
+        },
+        "sat-gzip-result": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-gzip-termination": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-model": {
+          "status": "ok"
+        },
+        "sat-result": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-termination": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "unsat-proof": {
+          "detail": "unsupported",
+          "status": "skip"
+        },
+        "unsat-result": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-termination": {
+          "detail": "UNSAT",
+          "status": "ok"
+        }
+      },
+      "verdict": "verified"
     },
     "kissat-mab-prop-pr-nosym:2023": {
       "build": {
@@ -25649,10 +26800,21 @@
           "status": "ok"
         },
         "compile": {
-          "detail": "exit 2",
-          "status": "fail"
+          "status": "ok"
         },
         "docker-engine": {
+          "status": "ok"
+        },
+        "image-assemble": {
+          "status": "ok"
+        },
+        "runtime-base": {
+          "status": "ok"
+        },
+        "runtime-base-image": {
+          "status": "ok"
+        },
+        "runtime-dependencies": {
           "status": "ok"
         },
         "source-download": {
@@ -25662,9 +26824,48 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-14T07:52:50Z",
-      "run": "20260914T075250Z",
-      "verdict": "source-available"
+      "date": "2026-09-16T22:34:24Z",
+      "run": "20260916T223424Z",
+      "tests": {
+        "launch": {
+          "status": "ok"
+        },
+        "sat-gzip-model": {
+          "status": "ok"
+        },
+        "sat-gzip-result": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-gzip-termination": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-model": {
+          "status": "ok"
+        },
+        "sat-result": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-termination": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "unsat-proof": {
+          "detail": "unsupported",
+          "status": "skip"
+        },
+        "unsat-result": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-termination": {
+          "detail": "UNSAT",
+          "status": "ok"
+        }
+      },
+      "verdict": "verified"
     },
     "kissat-mab-prop:2023": {
       "build": {
@@ -25675,10 +26876,21 @@
           "status": "ok"
         },
         "compile": {
-          "detail": "exit 2",
-          "status": "fail"
+          "status": "ok"
         },
         "docker-engine": {
+          "status": "ok"
+        },
+        "image-assemble": {
+          "status": "ok"
+        },
+        "runtime-base": {
+          "status": "ok"
+        },
+        "runtime-base-image": {
+          "status": "ok"
+        },
+        "runtime-dependencies": {
           "status": "ok"
         },
         "source-download": {
@@ -25688,9 +26900,48 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-14T07:52:50Z",
-      "run": "20260914T075250Z",
-      "verdict": "source-available"
+      "date": "2026-09-16T22:34:24Z",
+      "run": "20260916T223424Z",
+      "tests": {
+        "launch": {
+          "status": "ok"
+        },
+        "sat-gzip-model": {
+          "status": "ok"
+        },
+        "sat-gzip-result": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-gzip-termination": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-model": {
+          "status": "ok"
+        },
+        "sat-result": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-termination": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "unsat-proof": {
+          "detail": "unsupported",
+          "status": "skip"
+        },
+        "unsat-result": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-termination": {
+          "detail": "UNSAT",
+          "status": "ok"
+        }
+      },
+      "verdict": "verified"
     },
     "kissat-mab-rephases:2023": {
       "build": {
@@ -25725,9 +26976,55 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-14T11:34:11Z",
-      "run": "20260914T113411Z",
-      "verdict": "built"
+      "date": "2026-09-16T22:34:24Z",
+      "run": "20260916T223424Z",
+      "tests": {
+        "launch": {
+          "status": "ok"
+        },
+        "sat-gzip-model": {
+          "status": "ok"
+        },
+        "sat-gzip-result": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-gzip-termination": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-model": {
+          "status": "ok"
+        },
+        "sat-result": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-termination": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "unsat-proof": {
+          "status": "ok"
+        },
+        "unsat-proof-run-result": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-proof-run-termination": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-result": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-termination": {
+          "detail": "UNSAT",
+          "status": "ok"
+        }
+      },
+      "verdict": "verified"
     },
     "kissat-mab-rephasing:2022": {
       "build": {
@@ -33004,10 +34301,21 @@
           "status": "ok"
         },
         "compile": {
-          "detail": "exit 2",
-          "status": "fail"
+          "status": "ok"
         },
         "docker-engine": {
+          "status": "ok"
+        },
+        "image-assemble": {
+          "status": "ok"
+        },
+        "runtime-base": {
+          "status": "ok"
+        },
+        "runtime-base-image": {
+          "status": "ok"
+        },
+        "runtime-dependencies": {
           "status": "ok"
         },
         "source-download": {
@@ -33017,9 +34325,55 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-14T09:22:15Z",
-      "run": "20260914T092215Z",
-      "verdict": "source-available"
+      "date": "2026-09-16T22:34:24Z",
+      "run": "20260916T223424Z",
+      "tests": {
+        "launch": {
+          "status": "ok"
+        },
+        "sat-gzip-model": {
+          "status": "ok"
+        },
+        "sat-gzip-result": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-gzip-termination": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-model": {
+          "status": "ok"
+        },
+        "sat-result": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-termination": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "unsat-proof": {
+          "status": "ok"
+        },
+        "unsat-proof-run-result": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-proof-run-termination": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-result": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-termination": {
+          "detail": "UNSAT",
+          "status": "ok"
+        }
+      },
+      "verdict": "verified"
     },
     "maplecadical-lbd-990-500:2023": {
       "build": {
@@ -33030,10 +34384,21 @@
           "status": "ok"
         },
         "compile": {
-          "detail": "exit 2",
-          "status": "fail"
+          "status": "ok"
         },
         "docker-engine": {
+          "status": "ok"
+        },
+        "image-assemble": {
+          "status": "ok"
+        },
+        "runtime-base": {
+          "status": "ok"
+        },
+        "runtime-base-image": {
+          "status": "ok"
+        },
+        "runtime-dependencies": {
           "status": "ok"
         },
         "source-download": {
@@ -33043,9 +34408,55 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-14T09:24:36Z",
-      "run": "20260914T092436Z",
-      "verdict": "source-available"
+      "date": "2026-09-16T22:34:24Z",
+      "run": "20260916T223424Z",
+      "tests": {
+        "launch": {
+          "status": "ok"
+        },
+        "sat-gzip-model": {
+          "status": "ok"
+        },
+        "sat-gzip-result": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-gzip-termination": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-model": {
+          "status": "ok"
+        },
+        "sat-result": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-termination": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "unsat-proof": {
+          "status": "ok"
+        },
+        "unsat-proof-run-result": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-proof-run-termination": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-result": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-termination": {
+          "detail": "UNSAT",
+          "status": "ok"
+        }
+      },
+      "verdict": "verified"
     },
     "maplecadical-ppd-500-500:2023": {
       "build": {
@@ -33056,10 +34467,21 @@
           "status": "ok"
         },
         "compile": {
-          "detail": "exit 2",
-          "status": "fail"
+          "status": "ok"
         },
         "docker-engine": {
+          "status": "ok"
+        },
+        "image-assemble": {
+          "status": "ok"
+        },
+        "runtime-base": {
+          "status": "ok"
+        },
+        "runtime-base-image": {
+          "status": "ok"
+        },
+        "runtime-dependencies": {
           "status": "ok"
         },
         "source-download": {
@@ -33069,9 +34491,55 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-14T09:26:42Z",
-      "run": "20260914T092642Z",
-      "verdict": "source-available"
+      "date": "2026-09-16T22:34:24Z",
+      "run": "20260916T223424Z",
+      "tests": {
+        "launch": {
+          "status": "ok"
+        },
+        "sat-gzip-model": {
+          "status": "ok"
+        },
+        "sat-gzip-result": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-gzip-termination": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-model": {
+          "status": "ok"
+        },
+        "sat-result": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-termination": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "unsat-proof": {
+          "status": "ok"
+        },
+        "unsat-proof-run-result": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-proof-run-termination": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-result": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-termination": {
+          "detail": "UNSAT",
+          "status": "ok"
+        }
+      },
+      "verdict": "verified"
     },
     "maplecadical-ppd-950-950:2023": {
       "build": {
@@ -33082,10 +34550,21 @@
           "status": "ok"
         },
         "compile": {
-          "detail": "exit 2",
-          "status": "fail"
+          "status": "ok"
         },
         "docker-engine": {
+          "status": "ok"
+        },
+        "image-assemble": {
+          "status": "ok"
+        },
+        "runtime-base": {
+          "status": "ok"
+        },
+        "runtime-base-image": {
+          "status": "ok"
+        },
+        "runtime-dependencies": {
           "status": "ok"
         },
         "source-download": {
@@ -33095,9 +34574,55 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-14T09:28:46Z",
-      "run": "20260914T092846Z",
-      "verdict": "source-available"
+      "date": "2026-09-16T22:34:24Z",
+      "run": "20260916T223424Z",
+      "tests": {
+        "launch": {
+          "status": "ok"
+        },
+        "sat-gzip-model": {
+          "status": "ok"
+        },
+        "sat-gzip-result": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-gzip-termination": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-model": {
+          "status": "ok"
+        },
+        "sat-result": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-termination": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "unsat-proof": {
+          "status": "ok"
+        },
+        "unsat-proof-run-result": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-proof-run-termination": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-result": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-termination": {
+          "detail": "UNSAT",
+          "status": "ok"
+        }
+      },
+      "verdict": "verified"
     },
     "maplecomsps_chb_drup:2016": {
       "build": {
@@ -36388,9 +37913,55 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-14T11:34:11Z",
-      "run": "20260914T113411Z",
-      "verdict": "built"
+      "date": "2026-09-16T22:34:24Z",
+      "run": "20260916T223424Z",
+      "tests": {
+        "launch": {
+          "status": "ok"
+        },
+        "sat-gzip-model": {
+          "status": "ok"
+        },
+        "sat-gzip-result": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-gzip-termination": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-model": {
+          "status": "ok"
+        },
+        "sat-result": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-termination": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "unsat-proof": {
+          "status": "ok"
+        },
+        "unsat-proof-run-result": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-proof-run-termination": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-result": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-termination": {
+          "detail": "UNSAT",
+          "status": "ok"
+        }
+      },
+      "verdict": "verified"
     },
     "mergesat-bve-semgates:2023": {
       "build": {
@@ -36425,9 +37996,55 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-14T11:34:11Z",
-      "run": "20260914T113411Z",
-      "verdict": "built"
+      "date": "2026-09-16T22:34:24Z",
+      "run": "20260916T223424Z",
+      "tests": {
+        "launch": {
+          "status": "ok"
+        },
+        "sat-gzip-model": {
+          "status": "ok"
+        },
+        "sat-gzip-result": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-gzip-termination": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-model": {
+          "status": "ok"
+        },
+        "sat-result": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-termination": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "unsat-proof": {
+          "status": "ok"
+        },
+        "unsat-proof-run-result": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-proof-run-termination": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-result": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-termination": {
+          "detail": "UNSAT",
+          "status": "ok"
+        }
+      },
+      "verdict": "verified"
     },
     "mergesat-l:2026": {
       "build": {
@@ -36545,9 +38162,55 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-14T11:34:11Z",
-      "run": "20260914T113411Z",
-      "verdict": "built"
+      "date": "2026-09-16T22:34:24Z",
+      "run": "20260916T223424Z",
+      "tests": {
+        "launch": {
+          "status": "ok"
+        },
+        "sat-gzip-model": {
+          "status": "ok"
+        },
+        "sat-gzip-result": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-gzip-termination": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-model": {
+          "status": "ok"
+        },
+        "sat-result": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-termination": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "unsat-proof": {
+          "status": "ok"
+        },
+        "unsat-proof-run-result": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-proof-run-termination": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-result": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-termination": {
+          "detail": "UNSAT",
+          "status": "ok"
+        }
+      },
+      "verdict": "verified"
     },
     "mergesat:2019": {
       "build": {
@@ -36665,9 +38328,55 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-14T11:34:11Z",
-      "run": "20260914T113411Z",
-      "verdict": "built"
+      "date": "2026-09-16T22:34:24Z",
+      "run": "20260916T223424Z",
+      "tests": {
+        "launch": {
+          "status": "ok"
+        },
+        "sat-gzip-model": {
+          "status": "ok"
+        },
+        "sat-gzip-result": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-gzip-termination": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-model": {
+          "status": "ok"
+        },
+        "sat-result": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-termination": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "unsat-proof": {
+          "status": "ok"
+        },
+        "unsat-proof-run-result": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-proof-run-termination": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-result": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-termination": {
+          "detail": "UNSAT",
+          "status": "ok"
+        }
+      },
+      "verdict": "verified"
     },
     "mergesat:2026": {
       "build": {
@@ -38308,9 +40017,48 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-14T11:34:11Z",
-      "run": "20260914T113411Z",
-      "verdict": "built"
+      "date": "2026-09-16T22:34:24Z",
+      "run": "20260916T223424Z",
+      "tests": {
+        "launch": {
+          "status": "ok"
+        },
+        "sat-gzip-model": {
+          "status": "ok"
+        },
+        "sat-gzip-result": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-gzip-termination": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-model": {
+          "status": "ok"
+        },
+        "sat-result": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-termination": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "unsat-proof": {
+          "detail": "unsupported",
+          "status": "skip"
+        },
+        "unsat-result": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-termination": {
+          "detail": "UNSAT",
+          "status": "ok"
+        }
+      },
+      "verdict": "verified"
     },
     "minisat:2009": {
       "build": {
@@ -44623,10 +46371,21 @@
           "status": "ok"
         },
         "compile": {
-          "detail": "exit 2",
-          "status": "fail"
+          "status": "ok"
         },
         "docker-engine": {
+          "status": "ok"
+        },
+        "image-assemble": {
+          "status": "ok"
+        },
+        "runtime-base": {
+          "status": "ok"
+        },
+        "runtime-base-image": {
+          "status": "ok"
+        },
+        "runtime-dependencies": {
           "status": "ok"
         },
         "source-download": {
@@ -44636,9 +46395,42 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-14T07:52:50Z",
-      "run": "20260914T075250Z",
-      "verdict": "source-available"
+      "date": "2026-09-16T22:34:24Z",
+      "run": "20260916T223424Z",
+      "tests": {
+        "launch": {
+          "status": "ok"
+        },
+        "sat-gzip-model": {
+          "status": "ok"
+        },
+        "sat-gzip-result": {
+          "status": "ok"
+        },
+        "sat-gzip-termination": {
+          "status": "ok"
+        },
+        "sat-model": {
+          "status": "ok"
+        },
+        "sat-result": {
+          "status": "ok"
+        },
+        "sat-termination": {
+          "status": "ok"
+        },
+        "unsat-proof": {
+          "detail": "unsupported",
+          "status": "skip"
+        },
+        "unsat-result": {
+          "status": "ok"
+        },
+        "unsat-termination": {
+          "status": "ok"
+        }
+      },
+      "verdict": "verified"
     },
     "prelearn-kissat:2023": {
       "build": {
@@ -44649,10 +46441,21 @@
           "status": "ok"
         },
         "compile": {
-          "detail": "exit 2",
-          "status": "fail"
+          "status": "ok"
         },
         "docker-engine": {
+          "status": "ok"
+        },
+        "image-assemble": {
+          "status": "ok"
+        },
+        "runtime-base": {
+          "status": "ok"
+        },
+        "runtime-base-image": {
+          "status": "ok"
+        },
+        "runtime-dependencies": {
           "status": "ok"
         },
         "source-download": {
@@ -44662,9 +46465,42 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-14T07:52:50Z",
-      "run": "20260914T075250Z",
-      "verdict": "source-available"
+      "date": "2026-09-16T22:34:24Z",
+      "run": "20260916T223424Z",
+      "tests": {
+        "launch": {
+          "status": "ok"
+        },
+        "sat-gzip-model": {
+          "status": "ok"
+        },
+        "sat-gzip-result": {
+          "status": "ok"
+        },
+        "sat-gzip-termination": {
+          "status": "ok"
+        },
+        "sat-model": {
+          "status": "ok"
+        },
+        "sat-result": {
+          "status": "ok"
+        },
+        "sat-termination": {
+          "status": "ok"
+        },
+        "unsat-proof": {
+          "detail": "unsupported",
+          "status": "skip"
+        },
+        "unsat-result": {
+          "status": "ok"
+        },
+        "unsat-termination": {
+          "status": "ok"
+        }
+      },
+      "verdict": "verified"
     },
     "priss-1.0:2011": {
       "build": {
@@ -45589,10 +47425,21 @@
           "status": "ok"
         },
         "compile": {
-          "detail": "exit 2",
-          "status": "fail"
+          "status": "ok"
         },
         "docker-engine": {
+          "status": "ok"
+        },
+        "image-assemble": {
+          "status": "ok"
+        },
+        "runtime-base": {
+          "status": "ok"
+        },
+        "runtime-base-image": {
+          "status": "ok"
+        },
+        "runtime-dependencies": {
           "status": "ok"
         },
         "source-download": {
@@ -45602,9 +47449,51 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-14T07:52:50Z",
-      "run": "20260914T075250Z",
-      "verdict": "source-available"
+      "date": "2026-09-16T22:34:24Z",
+      "run": "20260916T223424Z",
+      "tests": {
+        "launch": {
+          "status": "ok"
+        },
+        "sat-gzip-model": {
+          "status": "ok"
+        },
+        "sat-gzip-result": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-gzip-termination": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-model": {
+          "status": "ok"
+        },
+        "sat-result": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-termination": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "unsat-proof": {
+          "status": "ok"
+        },
+        "unsat-proof-run-result": {
+          "status": "ok"
+        },
+        "unsat-proof-run-termination": {
+          "status": "ok"
+        },
+        "unsat-result": {
+          "status": "ok"
+        },
+        "unsat-termination": {
+          "status": "ok"
+        }
+      },
+      "verdict": "verified"
     },
     "reencode-kissat:2023": {
       "build": {
@@ -45615,10 +47504,21 @@
           "status": "ok"
         },
         "compile": {
-          "detail": "exit 2",
-          "status": "fail"
+          "status": "ok"
         },
         "docker-engine": {
+          "status": "ok"
+        },
+        "image-assemble": {
+          "status": "ok"
+        },
+        "runtime-base": {
+          "status": "ok"
+        },
+        "runtime-base-image": {
+          "status": "ok"
+        },
+        "runtime-dependencies": {
           "status": "ok"
         },
         "source-download": {
@@ -45628,9 +47528,51 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-14T07:52:50Z",
-      "run": "20260914T075250Z",
-      "verdict": "source-available"
+      "date": "2026-09-16T22:34:24Z",
+      "run": "20260916T223424Z",
+      "tests": {
+        "launch": {
+          "status": "ok"
+        },
+        "sat-gzip-model": {
+          "status": "ok"
+        },
+        "sat-gzip-result": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-gzip-termination": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-model": {
+          "status": "ok"
+        },
+        "sat-result": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-termination": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "unsat-proof": {
+          "status": "ok"
+        },
+        "unsat-proof-run-result": {
+          "status": "ok"
+        },
+        "unsat-proof-run-termination": {
+          "status": "ok"
+        },
+        "unsat-result": {
+          "status": "ok"
+        },
+        "unsat-termination": {
+          "status": "ok"
+        }
+      },
+      "verdict": "verified"
     },
     "relaxed_lcftp:2021": {
       "build": {
@@ -53867,10 +55809,21 @@
           "status": "ok"
         },
         "compile": {
-          "detail": "exit 2",
-          "status": "fail"
+          "status": "ok"
         },
         "docker-engine": {
+          "status": "ok"
+        },
+        "image-assemble": {
+          "status": "ok"
+        },
+        "runtime-base": {
+          "status": "ok"
+        },
+        "runtime-base-image": {
+          "status": "ok"
+        },
+        "runtime-dependencies": {
           "status": "ok"
         },
         "source-download": {
@@ -53880,9 +55833,47 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-14T07:52:50Z",
-      "run": "20260914T075250Z",
-      "verdict": "source-available"
+      "date": "2026-09-16T22:34:24Z",
+      "run": "20260916T223424Z",
+      "tests": {
+        "launch": {
+          "status": "ok"
+        },
+        "sat-gzip-model": {
+          "status": "ok"
+        },
+        "sat-gzip-result": {
+          "status": "ok"
+        },
+        "sat-gzip-termination": {
+          "status": "ok"
+        },
+        "sat-model": {
+          "status": "ok"
+        },
+        "sat-result": {
+          "status": "ok"
+        },
+        "sat-termination": {
+          "status": "ok"
+        },
+        "unsat-proof": {
+          "status": "ok"
+        },
+        "unsat-proof-run-result": {
+          "status": "ok"
+        },
+        "unsat-proof-run-termination": {
+          "status": "ok"
+        },
+        "unsat-result": {
+          "status": "ok"
+        },
+        "unsat-termination": {
+          "status": "ok"
+        }
+      },
+      "verdict": "verified"
     },
     "sbva-kissat:2023": {
       "build": {
@@ -53893,10 +55884,21 @@
           "status": "ok"
         },
         "compile": {
-          "detail": "exit 2",
-          "status": "fail"
+          "status": "ok"
         },
         "docker-engine": {
+          "status": "ok"
+        },
+        "image-assemble": {
+          "status": "ok"
+        },
+        "runtime-base": {
+          "status": "ok"
+        },
+        "runtime-base-image": {
+          "status": "ok"
+        },
+        "runtime-dependencies": {
           "status": "ok"
         },
         "source-download": {
@@ -53906,9 +55908,47 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-14T07:52:50Z",
-      "run": "20260914T075250Z",
-      "verdict": "source-available"
+      "date": "2026-09-16T22:34:24Z",
+      "run": "20260916T223424Z",
+      "tests": {
+        "launch": {
+          "status": "ok"
+        },
+        "sat-gzip-model": {
+          "status": "ok"
+        },
+        "sat-gzip-result": {
+          "status": "ok"
+        },
+        "sat-gzip-termination": {
+          "status": "ok"
+        },
+        "sat-model": {
+          "status": "ok"
+        },
+        "sat-result": {
+          "status": "ok"
+        },
+        "sat-termination": {
+          "status": "ok"
+        },
+        "unsat-proof": {
+          "status": "ok"
+        },
+        "unsat-proof-run-result": {
+          "status": "ok"
+        },
+        "unsat-proof-run-termination": {
+          "status": "ok"
+        },
+        "unsat-result": {
+          "status": "ok"
+        },
+        "unsat-termination": {
+          "status": "ok"
+        }
+      },
+      "verdict": "verified"
     },
     "sbva-scavel-01:2024": {
       "build": {
@@ -54213,9 +56253,47 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-14T11:34:11Z",
-      "run": "20260914T113411Z",
-      "verdict": "built"
+      "date": "2026-09-16T22:34:24Z",
+      "run": "20260916T223424Z",
+      "tests": {
+        "launch": {
+          "status": "ok"
+        },
+        "sat-gzip-model": {
+          "status": "ok"
+        },
+        "sat-gzip-result": {
+          "status": "ok"
+        },
+        "sat-gzip-termination": {
+          "status": "ok"
+        },
+        "sat-model": {
+          "status": "ok"
+        },
+        "sat-result": {
+          "status": "ok"
+        },
+        "sat-termination": {
+          "status": "ok"
+        },
+        "unsat-proof": {
+          "status": "ok"
+        },
+        "unsat-proof-run-result": {
+          "status": "ok"
+        },
+        "unsat-proof-run-termination": {
+          "status": "ok"
+        },
+        "unsat-result": {
+          "status": "ok"
+        },
+        "unsat-termination": {
+          "status": "ok"
+        }
+      },
+      "verdict": "verified"
     },
     "seqfrost-noextend:2022": {
       "build": {
@@ -54287,9 +56365,47 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-14T11:34:11Z",
-      "run": "20260914T113411Z",
-      "verdict": "built"
+      "date": "2026-09-16T22:34:24Z",
+      "run": "20260916T223424Z",
+      "tests": {
+        "launch": {
+          "status": "ok"
+        },
+        "sat-gzip-model": {
+          "status": "ok"
+        },
+        "sat-gzip-result": {
+          "status": "ok"
+        },
+        "sat-gzip-termination": {
+          "status": "ok"
+        },
+        "sat-model": {
+          "status": "ok"
+        },
+        "sat-result": {
+          "status": "ok"
+        },
+        "sat-termination": {
+          "status": "ok"
+        },
+        "unsat-proof": {
+          "status": "ok"
+        },
+        "unsat-proof-run-result": {
+          "status": "ok"
+        },
+        "unsat-proof-run-termination": {
+          "status": "ok"
+        },
+        "unsat-result": {
+          "status": "ok"
+        },
+        "unsat-termination": {
+          "status": "ok"
+        }
+      },
+      "verdict": "verified"
     },
     "seqfrost:2022": {
       "build": {
@@ -54361,9 +56477,47 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-14T11:34:11Z",
-      "run": "20260914T113411Z",
-      "verdict": "built"
+      "date": "2026-09-16T22:34:24Z",
+      "run": "20260916T223424Z",
+      "tests": {
+        "launch": {
+          "status": "ok"
+        },
+        "sat-gzip-model": {
+          "status": "ok"
+        },
+        "sat-gzip-result": {
+          "status": "ok"
+        },
+        "sat-gzip-termination": {
+          "status": "ok"
+        },
+        "sat-model": {
+          "status": "ok"
+        },
+        "sat-result": {
+          "status": "ok"
+        },
+        "sat-termination": {
+          "status": "ok"
+        },
+        "unsat-proof": {
+          "status": "ok"
+        },
+        "unsat-proof-run-result": {
+          "status": "ok"
+        },
+        "unsat-proof-run-termination": {
+          "status": "ok"
+        },
+        "unsat-result": {
+          "status": "ok"
+        },
+        "unsat-termination": {
+          "status": "ok"
+        }
+      },
+      "verdict": "verified"
     },
     "sgseq:2014": {
       "build": {
@@ -56662,9 +58816,55 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-14T11:34:11Z",
-      "run": "20260914T113411Z",
-      "verdict": "built"
+      "date": "2026-09-16T22:34:24Z",
+      "run": "20260916T223424Z",
+      "tests": {
+        "launch": {
+          "status": "ok"
+        },
+        "sat-gzip-model": {
+          "status": "ok"
+        },
+        "sat-gzip-result": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-gzip-termination": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-model": {
+          "status": "ok"
+        },
+        "sat-result": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-termination": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "unsat-proof": {
+          "status": "ok"
+        },
+        "unsat-proof-run-result": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-proof-run-termination": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-result": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-termination": {
+          "detail": "UNSAT",
+          "status": "ok"
+        }
+      },
+      "verdict": "verified"
     },
     "tb_glucose:2016": {
       "build": {
