@@ -1068,12 +1068,22 @@
         "license_source": "licence file tabularasat-1.0.0/build/tabularasat/LICENSE"
     },
     "sat4j-default": {
-        "status": "fixme",
+        "status": "ok",
         "name": "Sat4j default",
         "authors": "Daniel Le Berre",
         "tracks": [
             "main"
         ],
-        "comment": "Binary-only submission (org.sat4j.core.jar, 2013); no source to build."
+        "comment": "Binary-only submission: the package holds org.sat4j.core.jar 2.3.6.v20130605 and the StarExec run script; the image ships that jar as submitted.",
+        "call": "java",
+        "args": [
+            "-Xms2g",
+            "-Xmx2g",
+            "-jar",
+            "bin/org.sat4j.core.jar",
+            "FILECNF"
+        ],
+        "gz": false,
+        "binary_only": true
     }
 }
