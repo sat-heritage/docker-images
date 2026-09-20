@@ -170,15 +170,15 @@
     },
     "ppfolio-par": {
         "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/ppfolio-src.tar",
-        "BUILD_DEPENDS": "libboost-program-options-dev",
+        "BUILD_DEPENDS": "libboost-program-options-dev gcc-multilib libc6-dev-i386",
         "base_from": "debian/eol:squeeze-slim",
-        "RDEPENDS": "libboost-program-options1.42.0"
+        "RDEPENDS": "libboost-program-options1.42.0 libc6-i386"
     },
     "ppfolio-seq": {
         "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/ppfolio-src.tar",
-        "BUILD_DEPENDS": "libboost-program-options-dev",
+        "BUILD_DEPENDS": "libboost-program-options-dev gcc-multilib libc6-dev-i386",
         "base_from": "debian/eol:squeeze-slim",
-        "RDEPENDS": "libboost-program-options1.42.0"
+        "RDEPENDS": "libboost-program-options1.42.0 libc6-i386"
     },
     "priss-1.0": {
         "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/riss.tar.gz"

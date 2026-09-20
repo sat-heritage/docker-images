@@ -811,8 +811,8 @@
         ],
         "call": "ppfolio",
         "gz": false,
-        "status": "fixme",
-        "status_detail": "ppfolio is a naive portfolio launching other solvers that are not part of its archive (pico-portfolio); the image only holds the launcher, which answers nothing. Needs the component solvers and their expected layout."
+        "status": "ok",
+        "comment": "Naive portfolio: the launcher runs clasp, cryptominisat, lingeling/plingeling, march_hi and TNM, built from the source archive published by the author and installed in bin/ next to it."
     },
     "ppfolio-seq": {
         "name": "ppfolio",
@@ -829,8 +829,8 @@
         ],
         "call": "ppfolio",
         "gz": false,
-        "status": "fixme",
-        "status_detail": "ppfolio is a naive portfolio launching other solvers that are not part of its archive (pico-portfolio); the image only holds the launcher, which answers nothing. Needs the component solvers and their expected layout."
+        "status": "ok",
+        "comment": "Naive portfolio: the launcher runs clasp, cryptominisat, lingeling/plingeling, march_hi and TNM, built from the source archive published by the author and installed in bin/ next to it."
     },
     "priss-1.0": {
         "name": "priss",

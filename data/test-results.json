@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-17T03:01:19Z",
+  "generated": "2026-09-20T16:38:34Z",
   "images": {
     "2clseq:2002": {
       "build": {
@@ -48424,30 +48424,26 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-15T12:39:31Z",
-      "run": "20260915T123931Z",
+      "date": "2026-09-20T16:28:29Z",
+      "run": "20260920T162829Z",
       "tests": {
         "launch": {
           "status": "ok"
         },
         "sat-gzip-model": {
-          "detail": "invalid result",
-          "status": "skip"
+          "status": "ok"
         },
         "sat-gzip-result": {
-          "detail": "expected exactly one result status, found 0",
-          "status": "fail"
+          "status": "ok"
         },
         "sat-gzip-termination": {
           "status": "ok"
         },
         "sat-model": {
-          "detail": "invalid result",
-          "status": "skip"
+          "status": "ok"
         },
         "sat-result": {
-          "detail": "expected exactly one result status, found 0",
-          "status": "fail"
+          "status": "ok"
         },
         "sat-termination": {
           "status": "ok"
@@ -48457,14 +48453,13 @@
           "status": "skip"
         },
         "unsat-result": {
-          "detail": "expected exactly one result status, found 0",
-          "status": "fail"
+          "status": "ok"
         },
         "unsat-termination": {
           "status": "ok"
         }
       },
-      "verdict": "runs"
+      "verdict": "verified"
     },
     "ppfolio-seq:2011": {
       "build": {
@@ -48499,30 +48494,26 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-15T12:44:10Z",
-      "run": "20260915T124410Z",
+      "date": "2026-09-20T16:28:29Z",
+      "run": "20260920T162829Z",
       "tests": {
         "launch": {
           "status": "ok"
         },
         "sat-gzip-model": {
-          "detail": "invalid result",
-          "status": "skip"
+          "status": "ok"
         },
         "sat-gzip-result": {
-          "detail": "expected exactly one result status, found 0",
-          "status": "fail"
+          "status": "ok"
         },
         "sat-gzip-termination": {
           "status": "ok"
         },
         "sat-model": {
-          "detail": "invalid result",
-          "status": "skip"
+          "status": "ok"
         },
         "sat-result": {
-          "detail": "expected exactly one result status, found 0",
-          "status": "fail"
+          "status": "ok"
         },
         "sat-termination": {
           "status": "ok"
@@ -48532,14 +48523,13 @@
           "status": "skip"
         },
         "unsat-result": {
-          "detail": "expected exactly one result status, found 0",
-          "status": "fail"
+          "status": "ok"
         },
         "unsat-termination": {
           "status": "ok"
         }
       },
-      "verdict": "runs"
+      "verdict": "verified"
     },
     "precosat:2009": {
       "build": {
