@@ -330,5 +330,17 @@
     "structure-0.1_hbr2": {
         "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2011-src/brtzsnr-structure-sc11-0-g3832ec0.zip",
         "EXTRA_ASSETS": "constellation.zip sc11.tar.gz trove-2.1.0.tar.gz sat11-34-mosoi.compile-structure"
+    },
+    "ppfolio-seq-bin": {
+        "download_url": "https://www.cril.univ-artois.fr/~roussel/ppfolio/ppfolio-bin-SAT11.tar.gz",
+        "base_from": "ubuntu:12.04",
+        "builder_base": "ubuntu:12.04",
+        "RDEPENDS": "libboost-program-options1.46.1 libc6-i386"
+    },
+    "ppfolio-par-bin": {
+        "download_url": "https://www.cril.univ-artois.fr/~roussel/ppfolio/ppfolio-bin-SAT11.tar.gz",
+        "base_from": "ubuntu:12.04",
+        "builder_base": "ubuntu:12.04",
+        "RDEPENDS": "libboost-program-options1.46.1 libc6-i386"
     }
 }

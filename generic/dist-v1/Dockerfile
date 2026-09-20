@@ -18,6 +18,8 @@ RUN set -eu; \
                     -e 's|https\?://deb.debian.org/debian|http://archive.debian.org/debian|g' \
                     -e 's|https\?://ftp.debian.org/debian|http://archive.debian.org/debian|g' \
                     -e 's|https\?://httpredir.debian.org/debian|http://archive.debian.org/debian|g' \
+                    -e 's|https\?://[a-z0-9.]*archive.ubuntu.com/ubuntu|http://old-releases.ubuntu.com/ubuntu|g' \
+                    -e 's|https\?://security.ubuntu.com/ubuntu|http://old-releases.ubuntu.com/ubuntu|g' \
                     -e '/-updates[[:space:]]/d' \
                     "$list" > "$list.archive"; \
                 mv "$list.archive" "$list"; \
