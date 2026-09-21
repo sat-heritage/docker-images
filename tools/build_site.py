@@ -157,7 +157,9 @@ def collect(repo: Path) -> list[dict]:
                 capabilities.append("parallel")
             if entry.get("gz"):
                 capabilities.append("gzip input")
-            binary_only = block.get("builder", setup.get("builder", "")) == "generic/binary-v1"
+            # a submission can also be binary only while using another builder: the
+            # 2023 Sat4j package, for instance, ships a jar and no source at all
+            binary_only = block.get("builder", setup.get("builder", "")) == "generic/binary-v1" or bool(entry.get("binary_only"))
             if binary_only:
                 capabilities.append("binary only")
             solvers.append({

@@ -811,8 +811,8 @@
         ],
         "call": "ppfolio",
         "gz": false,
-        "status": "fixme",
-        "status_detail": "ppfolio is a naive portfolio launching other solvers that are not part of its archive (pico-portfolio); the image only holds the launcher, which answers nothing. Needs the component solvers and their expected layout."
+        "status": "ok",
+        "comment": "Naive portfolio: the launcher runs clasp, cryptominisat, lingeling/plingeling, march_hi and TNM, built from the source archive published by the author and installed in bin/ next to it."
     },
     "ppfolio-seq": {
         "name": "ppfolio",
@@ -829,8 +829,8 @@
         ],
         "call": "ppfolio",
         "gz": false,
-        "status": "fixme",
-        "status_detail": "ppfolio is a naive portfolio launching other solvers that are not part of its archive (pico-portfolio); the image only holds the launcher, which answers nothing. Needs the component solvers and their expected layout."
+        "status": "ok",
+        "comment": "Naive portfolio: the launcher runs clasp, cryptominisat, lingeling/plingeling, march_hi and TNM, built from the source archive published by the author and installed in bin/ next to it."
     },
     "priss-1.0": {
         "name": "priss",
@@ -1645,5 +1645,42 @@
         "call": "umsat",
         "gz": false,
         "status": "ok"
+    },
+    "ppfolio-seq-bin": {
+        "name": "ppfolio",
+        "version": "seq-bin",
+        "authors": "Olivier ROUSSEL",
+        "tracks": [
+            "application",
+            "crafted",
+            "random"
+        ],
+        "args": [
+            "--nbcore=1",
+            "FILECNF"
+        ],
+        "call": "ppfolio",
+        "gz": false,
+        "status": "ok",
+        "comment": "Reference variant: the binaries that ran at the SAT 2011 competition, published by the author next to the sources (ppfolio-bin-SAT11.tar.gz). The launcher runs clasp, cryptominisat, lingeling/plingeling, march_hi and TNM from bin/; nothing is compiled.",
+        "binary_only": true
+    },
+    "ppfolio-par-bin": {
+        "name": "ppfolio",
+        "version": "par-bin",
+        "authors": "Olivier ROUSSEL",
+        "tracks": [
+            "application",
+            "crafted",
+            "random"
+        ],
+        "args": [
+            "FILECNF"
+        ],
+        "call": "ppfolio",
+        "gz": false,
+        "status": "ok",
+        "comment": "Reference variant: the binaries that ran at the SAT 2011 competition, published by the author next to the sources (ppfolio-bin-SAT11.tar.gz). The launcher runs clasp, cryptominisat, lingeling/plingeling, march_hi and TNM from bin/; nothing is compiled.",
+        "binary_only": true
     }
 }

@@ -19,6 +19,7 @@
       "comments": { "type": "string" },
       "gz": { "type": "boolean" },
       "test_timeout": { "type": "integer", "minimum": 1 },
+      "binary_only": { "type": "boolean", "description": "true when the submission itself contains no source, only a compiled artifact that the image ships as is" },
       "incomplete": { "type": "boolean", "description": "true for incomplete solvers (local search): the test suite uses an easy satisfiable instance and skips the UNSAT checks" },
       "license": { "type": "string", "minLength": 1, "description": "SPDX identifier(s) of the solver licence, several joined with AND" },
       "license_source": { "type": "string", "minLength": 1, "description": "where the licence was read: a licence file or source header in the archive, a paper, the authors" },

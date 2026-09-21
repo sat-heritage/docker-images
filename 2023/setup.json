@@ -293,5 +293,12 @@
         "BUILD_COMMAND": "rm -rf build/tabularasat && cd build && bash ./build.sh",
         "BINARY_PATH": "build/tabularasat/bin/tabularasat",
         "BINARY_NAME": "tabularasat"
+    },
+    "sat4j-default": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2023-competition/Sat4j.default.tar.xz",
+        "BUILD_KIND": "command",
+        "BUILD_COMMAND": "true",
+        "DIST_PATHS": "bin",
+        "RDEPENDS": "default-jre-headless"
     }
 }

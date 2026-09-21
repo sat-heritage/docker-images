@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-17T03:01:19Z",
+  "generated": "2026-09-20T17:45:23Z",
   "images": {
     "2clseq:2002": {
       "build": {
@@ -48391,6 +48391,76 @@
       },
       "verdict": "runs"
     },
+    "ppfolio-par-bin:2011": {
+      "build": {
+        "build-environment": {
+          "status": "ok"
+        },
+        "builder-base-image": {
+          "status": "ok"
+        },
+        "compile": {
+          "status": "ok"
+        },
+        "docker-engine": {
+          "status": "ok"
+        },
+        "image-assemble": {
+          "status": "ok"
+        },
+        "runtime-base": {
+          "status": "ok"
+        },
+        "runtime-base-image": {
+          "status": "ok"
+        },
+        "runtime-dependencies": {
+          "status": "ok"
+        },
+        "source-download": {
+          "status": "ok"
+        },
+        "source-extract": {
+          "status": "ok"
+        }
+      },
+      "date": "2026-09-20T17:36:39Z",
+      "run": "20260920T173639Z",
+      "tests": {
+        "launch": {
+          "status": "ok"
+        },
+        "sat-gzip-model": {
+          "status": "ok"
+        },
+        "sat-gzip-result": {
+          "status": "ok"
+        },
+        "sat-gzip-termination": {
+          "status": "ok"
+        },
+        "sat-model": {
+          "status": "ok"
+        },
+        "sat-result": {
+          "status": "ok"
+        },
+        "sat-termination": {
+          "status": "ok"
+        },
+        "unsat-proof": {
+          "detail": "unsupported",
+          "status": "skip"
+        },
+        "unsat-result": {
+          "status": "ok"
+        },
+        "unsat-termination": {
+          "status": "ok"
+        }
+      },
+      "verdict": "verified"
+    },
     "ppfolio-par:2011": {
       "build": {
         "build-environment": {
@@ -48424,30 +48494,26 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-15T12:39:31Z",
-      "run": "20260915T123931Z",
+      "date": "2026-09-20T16:28:29Z",
+      "run": "20260920T162829Z",
       "tests": {
         "launch": {
           "status": "ok"
         },
         "sat-gzip-model": {
-          "detail": "invalid result",
-          "status": "skip"
+          "status": "ok"
         },
         "sat-gzip-result": {
-          "detail": "expected exactly one result status, found 0",
-          "status": "fail"
+          "status": "ok"
         },
         "sat-gzip-termination": {
           "status": "ok"
         },
         "sat-model": {
-          "detail": "invalid result",
-          "status": "skip"
+          "status": "ok"
         },
         "sat-result": {
-          "detail": "expected exactly one result status, found 0",
-          "status": "fail"
+          "status": "ok"
         },
         "sat-termination": {
           "status": "ok"
@@ -48457,14 +48523,83 @@
           "status": "skip"
         },
         "unsat-result": {
-          "detail": "expected exactly one result status, found 0",
-          "status": "fail"
+          "status": "ok"
         },
         "unsat-termination": {
           "status": "ok"
         }
       },
-      "verdict": "runs"
+      "verdict": "verified"
+    },
+    "ppfolio-seq-bin:2011": {
+      "build": {
+        "build-environment": {
+          "status": "ok"
+        },
+        "builder-base-image": {
+          "status": "ok"
+        },
+        "compile": {
+          "status": "ok"
+        },
+        "docker-engine": {
+          "status": "ok"
+        },
+        "image-assemble": {
+          "status": "ok"
+        },
+        "runtime-base": {
+          "status": "ok"
+        },
+        "runtime-base-image": {
+          "status": "ok"
+        },
+        "runtime-dependencies": {
+          "status": "ok"
+        },
+        "source-download": {
+          "status": "ok"
+        },
+        "source-extract": {
+          "status": "ok"
+        }
+      },
+      "date": "2026-09-20T17:36:39Z",
+      "run": "20260920T173639Z",
+      "tests": {
+        "launch": {
+          "status": "ok"
+        },
+        "sat-gzip-model": {
+          "status": "ok"
+        },
+        "sat-gzip-result": {
+          "status": "ok"
+        },
+        "sat-gzip-termination": {
+          "status": "ok"
+        },
+        "sat-model": {
+          "status": "ok"
+        },
+        "sat-result": {
+          "status": "ok"
+        },
+        "sat-termination": {
+          "status": "ok"
+        },
+        "unsat-proof": {
+          "detail": "unsupported",
+          "status": "skip"
+        },
+        "unsat-result": {
+          "status": "ok"
+        },
+        "unsat-termination": {
+          "status": "ok"
+        }
+      },
+      "verdict": "verified"
     },
     "ppfolio-seq:2011": {
       "build": {
@@ -48499,30 +48634,26 @@
           "status": "ok"
         }
       },
-      "date": "2026-09-15T12:44:10Z",
-      "run": "20260915T124410Z",
+      "date": "2026-09-20T16:28:29Z",
+      "run": "20260920T162829Z",
       "tests": {
         "launch": {
           "status": "ok"
         },
         "sat-gzip-model": {
-          "detail": "invalid result",
-          "status": "skip"
+          "status": "ok"
         },
         "sat-gzip-result": {
-          "detail": "expected exactly one result status, found 0",
-          "status": "fail"
+          "status": "ok"
         },
         "sat-gzip-termination": {
           "status": "ok"
         },
         "sat-model": {
-          "detail": "invalid result",
-          "status": "skip"
+          "status": "ok"
         },
         "sat-result": {
-          "detail": "expected exactly one result status, found 0",
-          "status": "fail"
+          "status": "ok"
         },
         "sat-termination": {
           "status": "ok"
@@ -48532,14 +48663,13 @@
           "status": "skip"
         },
         "unsat-result": {
-          "detail": "expected exactly one result status, found 0",
-          "status": "fail"
+          "status": "ok"
         },
         "unsat-termination": {
           "status": "ok"
         }
       },
-      "verdict": "runs"
+      "verdict": "verified"
     },
     "precosat:2009": {
       "build": {
@@ -54218,6 +54348,82 @@
       },
       "date": "2026-09-16T09:25:58Z",
       "run": "20260916T092558Z",
+      "tests": {
+        "launch": {
+          "status": "ok"
+        },
+        "sat-gzip-model": {
+          "status": "ok"
+        },
+        "sat-gzip-result": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-gzip-termination": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-model": {
+          "status": "ok"
+        },
+        "sat-result": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "sat-termination": {
+          "detail": "SAT",
+          "status": "ok"
+        },
+        "unsat-proof": {
+          "detail": "unsupported",
+          "status": "skip"
+        },
+        "unsat-result": {
+          "detail": "UNSAT",
+          "status": "ok"
+        },
+        "unsat-termination": {
+          "detail": "UNSAT",
+          "status": "ok"
+        }
+      },
+      "verdict": "verified"
+    },
+    "sat4j-default:2023": {
+      "build": {
+        "build-environment": {
+          "status": "ok"
+        },
+        "builder-base-image": {
+          "status": "ok"
+        },
+        "compile": {
+          "status": "ok"
+        },
+        "docker-engine": {
+          "status": "ok"
+        },
+        "image-assemble": {
+          "status": "ok"
+        },
+        "runtime-base": {
+          "status": "ok"
+        },
+        "runtime-base-image": {
+          "status": "ok"
+        },
+        "runtime-dependencies": {
+          "status": "ok"
+        },
+        "source-download": {
+          "status": "ok"
+        },
+        "source-extract": {
+          "status": "ok"
+        }
+      },
+      "date": "2026-09-20T16:45:50Z",
+      "run": "20260920T164550Z",
       "tests": {
         "launch": {
           "status": "ok"
