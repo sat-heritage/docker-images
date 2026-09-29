@@ -1,0 +1,10 @@
+{
+    "base_version": "pre-jessie",
+    "base_from": "debian/eol:squeeze-slim",
+    "builder": "generic/v1",
+    "builder_base": "debian/eol:squeeze",
+    "cryptominisat": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2010-src/cryptominisat-2.5.0-satRace.tar.xz",
+        "BUILD_DEPENDS": "libboost-dev"
+    }
+}
