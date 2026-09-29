@@ -9,7 +9,9 @@ Sources of the SAT solvers
 | 2005 | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3699637.svg)](https://doi.org/10.5281/zenodo.3699637) (binaries) |
 | 2007 | https://github.com/sat-heritage/docker-images/releases/tag/2007-src | To be moved to Zenodo
 | 2009 | https://github.com/sat-heritage/docker-images/releases/tag/2009-src | To be moved to Zenodo
+| 2010 | https://github.com/sat-heritage/docker-images/releases/tag/2010-src | SAT-Race 2010 winner only (the race did not publish the submissions): source archived by the SAT Museum POS 2023 artifact (Biere, Fleury, Froleyks, Heule) |
 | 2011 | https://github.com/sat-heritage/docker-images/releases/tag/2011-src | https://www.cril.univ-artois.fr/SAT11/ (organizers export, republished by one of them)
+| 2012 | https://github.com/sat-heritage/docker-images/releases/tag/2012-src | SAT Challenge 2012 best single-engine solver only (the challenge did not publish the submissions): glucose 2.1 release of the authors, also in the SAT Museum POS 2023 artifact |
 | 2013 | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5776223.svg)](https://doi.org/10.5281/zenodo.5776223) | Recovered from http://satcompetition.org/sc13solver.sql.xz |
 | 2014 | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5776517.svg)](https://doi.org/10.5281/zenodo.5776517) | Recovered from http://satcompetition.org/sc14solver.sql.xz |
 | 2016 | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5761200.svg)](https://doi.org/10.5281/zenodo.5761200) |

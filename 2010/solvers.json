@@ -1,0 +1,20 @@
+{
+    "cryptominisat": {
+        "name": "CryptoMiniSat",
+        "version": "2.5.0-satRace",
+        "authors": "Mate Soos",
+        "authors_source": "AUTHORS file of the archive; SAT-Race 2010 results page",
+        "tracks": [
+            "main"
+        ],
+        "args": [
+            "FILECNF"
+        ],
+        "call": "./cryptominisat",
+        "gz": true,
+        "status": "ok",
+        "license": "MIT",
+        "license_source": "licence file cryptominisat-2.5.0-satRace/LICENSE-MIT",
+        "comment": "Winner of the SAT-Race 2010 main track. The SAT-Race did not publish the submissions: the source is the SAT-Race 2010 version of CryptoMiniSat (git revision and build configuration identified with its author) archived by the SAT Museum POS 2023 artifact (Biere, Fleury, Froleyks, Heule), built unpatched with the CMake Release configuration of the archive. Built on Debian squeeze, whose g++ 4.4 is the compiler named in the CMakeLists.txt of the archive. Only the winner of this race is archived."
+    }
+}

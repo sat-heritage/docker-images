@@ -983,6 +983,36 @@
    "note": "no bronze awarded"
   },
   {
+   "year": 2010,
+   "solver": "cryptominisat",
+   "competition_name": "CryptoMiniSat",
+   "track": "main track",
+   "category": "overall",
+   "rank": 1,
+   "source": "https://web.archive.org/web/2024id_/https://baldur.iti.kit.edu/sat-race-2010/results.html",
+   "note": "main track (CNF sequential) of the SAT-Race 2010"
+  },
+  {
+   "year": 2010,
+   "solver": null,
+   "competition_name": "lingeling",
+   "track": "main track",
+   "category": "overall",
+   "rank": 2,
+   "source": "https://web.archive.org/web/2024id_/https://baldur.iti.kit.edu/sat-race-2010/results.html",
+   "note": "the SAT-Race did not publish the submissions; only the winner is in the repository"
+  },
+  {
+   "year": 2010,
+   "solver": null,
+   "competition_name": "SAT-Power",
+   "track": "main track",
+   "category": "overall",
+   "rank": 3,
+   "source": "https://web.archive.org/web/2024id_/https://baldur.iti.kit.edu/sat-race-2010/results.html",
+   "note": "the SAT-Race did not publish the submissions; only the winner is in the repository"
+  },
+  {
    "year": 2011,
    "solver": "minisat-hack-contrasat",
    "competition_name": "contrasat (minisat hack)",
@@ -1509,6 +1539,16 @@
    "rank": 3,
    "source": "https://web.archive.org/web/2012id_/http://www.cril.univ-artois.fr/SAT11/phase2.pdf",
    "note": "wall-clock time ranking (parallel and sequential solvers together)"
+  },
+  {
+   "year": 2012,
+   "solver": "glucose",
+   "competition_name": "glucose",
+   "track": "application track",
+   "category": "best single-engine solver",
+   "rank": 1,
+   "source": "https://web.archive.org/web/2024id_/https://baldur.iti.kit.edu/SAT-Challenge-2012/results.html",
+   "note": "SAT Challenge 2012 award; glucose ranked 5th overall in the application track, behind portfolio and multi-engine approaches"
   },
   {
    "year": 2013,

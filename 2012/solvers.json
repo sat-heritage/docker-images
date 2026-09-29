@@ -1,0 +1,20 @@
+{
+    "glucose": {
+        "name": "glucose",
+        "version": "2.1",
+        "authors": "Gilles Audemard and Laurent Simon",
+        "authors_source": "SAT Challenge 2012 proceedings (GLUCOSE 2.1 in the SAT Challenge 2012)",
+        "tracks": [
+            "application"
+        ],
+        "args": [
+            "FILECNF"
+        ],
+        "call": "glucose.sh",
+        "gz": false,
+        "status": "ok",
+        "license": "MIT",
+        "license_source": "licence file glucose_2.1/LICENSE",
+        "comment": "Best single-engine solver of the SAT Challenge 2012 application track. The challenge did not publish the submissions: the source is the glucose 2.1 release of the authors, also archived by the SAT Museum POS 2023 artifact (Biere, Fleury, Froleyks, Heule). Only this solver of the challenge is archived."
+    }
+}

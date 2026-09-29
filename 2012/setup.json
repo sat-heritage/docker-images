@@ -1,0 +1,10 @@
+{
+    "base_version": "pre-jessie",
+    "base_from": "debian/eol:squeeze-slim",
+    "builder": "generic/v1",
+    "builder_base": "debian/eol:squeeze",
+    "glucose": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2012-src/glucose2.1.tgz",
+        "BUILD_DEPENDS": "gcc-multilib g++-multilib libc6-dev-i386"
+    }
+}
