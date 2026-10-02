@@ -1,13 +1,13 @@
 {
-    "base_version":"pre-jessie",
+    "base_version": "pre-jessie",
     "base_from": "debian/eol:lenny-slim",
-    "builder":"generic/v1",
-    "builder_base":"debian/eol:lenny-slim",
+    "builder": "generic/v1",
+    "builder_base": "debian/eol:lenny-slim",
     "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2009-src/{SOLVER_NAME}.zip",
     "BUILD_DEPENDS": "gcc-multilib g++-multilib libc6-i386 libc6-dev-i386 lib32z1-dev",
     "gnovelty-plus2": {
         "base_from": "debian:stretch-slim",
-        "builder_base":"debian:8.6",
+        "builder_base": "debian:8.6",
         "BUILD_DEPENDS": "libboost-dev"
     },
     "gnovelty-plus-t": {
@@ -15,17 +15,17 @@
     },
     "gnovelty-plus2-h": {
         "base_from": "debian:stretch-slim",
-        "builder_base":"debian:8.6",
+        "builder_base": "debian:8.6",
         "BUILD_DEPENDS": "libboost-dev"
     },
-    "gnovelty-plus2-t" : {
+    "gnovelty-plus2-t": {
         "base_from": "debian:stretch-slim",
-        "builder_base":"debian:8.6",
+        "builder_base": "debian:8.6",
         "BUILD_DEPENDS": "libboost-dev"
     },
-    "gnovelty-plus2-t-h" : {
+    "gnovelty-plus2-t-h": {
         "base_from": "debian:stretch-slim",
-        "builder_base":"debian:8.6",
+        "builder_base": "debian:8.6",
         "BUILD_DEPENDS": "libboost-dev"
     },
     "kw": {
@@ -43,7 +43,7 @@
         "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2009-bin/{SOLVER}"
     },
     "minisat_cumr": {
-        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2009-src/{SOLVER_NAME}p.zip"
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2009-src/minisat_cumr_p.zip"
     },
     "satzilla2009_c": {
         "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2009-src/SATzilla2009F.zip"
@@ -60,9 +60,16 @@
     "sat4j-core": {
         "RDEPENDS": "openjdk-6-jre"
     },
-    "circus" : {
+    "circus": {
         "base_from": "debian:stretch-slim",
-        "builder_base":"debian:8.6",
-        "BUILD_DEPENDS" : "libfl-dev flex bison libc6-dev libc6-dev-i386 zlib1g zlib1g-dev"
+        "builder_base": "debian:8.6",
+        "BUILD_DEPENDS": "libfl-dev flex bison libc6-dev libc6-dev-i386 zlib1g zlib1g-dev gcc-multilib lib32z1-dev",
+        "RDEPENDS": "libc6-i386"
+    },
+    "sapperlot-hrp": {
+        "BUILD_DEPENDS": "g++-4.2-multilib gcc-4.2-multilib"
+    },
+    "rsat": {
+        "BUILD_DEPENDS": "g++-4.2 gcc-4.2"
     }
 }
