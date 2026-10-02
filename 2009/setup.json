@@ -71,5 +71,32 @@
     },
     "rsat": {
         "BUILD_DEPENDS": "g++-4.2 gcc-4.2"
+    },
+    "aptusat": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2009-src/{SOLVER_NAME}.zip"
+    },
+    "binminisat": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2009-src/{SOLVER_NAME}.zip"
+    },
+    "minisat2hack": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2009-src/{SOLVER_NAME}.zip"
+    },
+    "iut_bmb_sim": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2009-src/{SOLVER_NAME}.zip"
+    },
+    "kw_pre": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2009-src/{SOLVER_NAME}.zip"
+    },
+    "revival-satviv": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2009-src/{SOLVER_NAME}.zip",
+        "RDEPENDS": "libc6-i386"
+    },
+    "revival-vivsat": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2009-src/{SOLVER_NAME}.zip",
+        "RDEPENDS": "libc6-i386"
+    },
+    "revival-viv": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2009-src/{SOLVER_NAME}.zip",
+        "RDEPENDS": "libc6-i386"
     }
 }
