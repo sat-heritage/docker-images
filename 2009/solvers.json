@@ -711,5 +711,131 @@
         "status": "ok",
         "license": "MIT",
         "license_source": "licence file VARSAT-random/LICENSE"
+    },
+    "aptusat": {
+        "name": "APTUSAT",
+        "version": "2009-03-22",
+        "authors": "Grigory Yaroslavtsev",
+        "authors_source": "SAT 2009 competition archive of the organisers: solver and contact table of its README, and the submission itself",
+        "args": [
+            "FILECNF"
+        ],
+        "call": "./run-aptusat.sh",
+        "gz": false,
+        "status": "ok",
+        "comment": "MiniSat hack: built with the \"rs\" target the organisers used, and run through a launcher that prints the s and v lines from its result file."
+    },
+    "binminisat": {
+        "name": "BinMiniSat",
+        "version": "2009-03-21",
+        "authors": "Miyuki Koshimura",
+        "authors_source": "SAT 2009 competition archive of the organisers: solver and contact table of its README, and the submission itself",
+        "args": [
+            "FILECNF"
+        ],
+        "call": "./run-binminisat.sh",
+        "gz": false,
+        "status": "ok",
+        "comment": "MiniSat hack with binary clause reasoning: built with the \"rs\" target the organisers used."
+    },
+    "minisat2hack": {
+        "name": "MiniSat2hack",
+        "version": "2009-03-22",
+        "authors": "Allen Van Gelder",
+        "authors_source": "SAT 2009 competition archive of the organisers: solver and contact table of its README, and the submission itself",
+        "args": [
+            "FILECNF"
+        ],
+        "call": "./run-minisat2hack.sh",
+        "gz": false,
+        "status": "ok",
+        "comment": "Built as its README says (\"cd core; gmake rs\"); run that way it prints a bare SATISFIABLE and no model, so a launcher reads its result file and prints the competition s and v lines."
+    },
+    "iut_bmb_sim": {
+        "name": "IUT_BMB_SIM",
+        "version": "2009-03-29",
+        "authors": "Abdorrahim Bahrami, Seyed Rasoul Mousavi, Kiarash Bazargan",
+        "authors_source": "SAT 2009 competition archive of the organisers: solver and contact table of its README, and the submission itself",
+        "args": [
+            "FILECNF",
+            "/tmp"
+        ],
+        "call": "./run-iut_bmb_sim.sh",
+        "gz": false,
+        "status": "ok",
+        "comment": "Simplifier variant of IUT_BMB_SAT, built from its sources the same way; a launcher rewrites its \"s SAT\" lines into the competition format."
+    },
+    "kw_pre": {
+        "name": "kw_pre",
+        "version": "2009-03-21",
+        "authors": "Johan Alfredsson",
+        "authors_source": "SAT 2009 competition archive of the organisers: solver and contact table of its README, and the submission itself",
+        "args": [
+            "FILECNF"
+        ],
+        "call": "./run-kw_pre.sh",
+        "gz": false,
+        "status": "ok",
+        "binary_only": true,
+        "comment": "Binary-only submission: the kw preprocessor followed by MiniSat, as the submitted script does. The archive adds the MiniSat binary the organisers used, which the submission expected to find on the machine."
+    },
+    "revival-satviv": {
+        "name": "ReVivAl-SatViv",
+        "version": "0.23",
+        "authors": "Cédric Piette",
+        "authors_source": "SAT 2009 competition archive of the organisers: solver and contact table of its README, and the submission itself",
+        "args": [
+            "FILECNF",
+            "/tmp"
+        ],
+        "call": "./run.sh",
+        "gz": false,
+        "status": "ok",
+        "binary_only": true,
+        "comment": "Binary-only submission, directory SatViv of the ReVivAl 0.23 entries: the submitted run.sh chains ReVivAl, then SatELite, then MiniSat."
+    },
+    "revival-vivsat": {
+        "name": "ReVivAl-VivSat",
+        "version": "0.23",
+        "authors": "Cédric Piette",
+        "authors_source": "SAT 2009 competition archive of the organisers: solver and contact table of its README, and the submission itself",
+        "args": [
+            "FILECNF",
+            "/tmp"
+        ],
+        "call": "./run.sh",
+        "gz": false,
+        "status": "ok",
+        "binary_only": true,
+        "comment": "Binary-only submission, directory VivSat of the ReVivAl 0.23 entries: the submitted run.sh chains SatELite, then ReVivAl, then MiniSat."
+    },
+    "revival-viv": {
+        "name": "ReVivAl-Viv",
+        "version": "0.23",
+        "authors": "Cédric Piette",
+        "authors_source": "SAT 2009 competition archive of the organisers: solver and contact table of its README, and the submission itself",
+        "args": [
+            "FILECNF",
+            "/tmp"
+        ],
+        "call": "./run.sh",
+        "gz": false,
+        "status": "ok",
+        "binary_only": true,
+        "comment": "Binary-only submission, directory Viv of the ReVivAl 0.23 entries: the submitted run.sh chains ReVivAl, then MiniSat."
+    },
+    "varsat-small": {
+        "name": "VARSAT-small",
+        "version": "2009-03-22",
+        "authors": "Eric Hsu",
+        "authors_source": "SAT 2009 competition archive of the organisers: solver and contact table of its README, and the submission itself",
+        "args": [
+            "-seed=RANDOMSEED",
+            "FILECNF"
+        ],
+        "call": "./varsat-small_static",
+        "gz": false,
+        "status": "ok",
+        "comment": "Fourth VARSAT entry of 2009, built from the sources published with the three others; only its build recipe was missing from the repository."
     }
 }
