@@ -836,6 +836,6 @@
         "call": "./varsat-small_static",
         "gz": false,
         "status": "ok",
-        "comment": "Fourth VARSAT entry of 2009; its sources were already published with the three others."
+        "comment": "Fourth VARSAT entry of 2009, built from the sources published with the three others; only its build recipe was missing from the repository."
     }
 }
