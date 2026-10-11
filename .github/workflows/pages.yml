@@ -22,12 +22,15 @@ concurrency:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    # Pinned: the ubuntu-latest label moves to Ubuntu 26 between 19 October and
+    # 19 November 2026, whose Docker 29.4.2 blocks the socketcall syscall that the
+    # i386 glibc of our oldest images uses, leaving those builds without network.
+    runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           ref: master
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
       - name: Inventory of the catalogue images published on Docker Hub
@@ -39,15 +42,18 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
         run: python tools/collect_stats.py --output data/stats.json
       - run: python tools/build_site.py --output site
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v5
         with:
           path: site
   deploy:
     needs: build
-    runs-on: ubuntu-latest
+    # Pinned: the ubuntu-latest label moves to Ubuntu 26 between 19 October and
+    # 19 November 2026, whose Docker 29.4.2 blocks the socketcall syscall that the
+    # i386 glibc of our oldest images uses, leaving those builds without network.
+    runs-on: ubuntu-24.04
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5

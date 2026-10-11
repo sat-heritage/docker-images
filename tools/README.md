@@ -75,6 +75,34 @@ options for multiple official track archives, repeated `--solver` options to
 select several entries, and `--rename SOURCE=ASSET` when a filesystem-friendly
 release asset name is needed.
 
+### `check_source_urls.py`
+
+Resolves the download URL of every entry of every set and asks each distinct
+URL for its first byte, exactly as `satex.py` probes sources before a build.
+It reports the unreachable ones and exits with a non-zero status when at least
+one fails, which makes it a cheap guard before a commit or a workflow of its
+own.
+
+```sh
+tools/check_source_urls.py
+tools/check_source_urls.py 2009 2010
+tools/check_source_urls.py --verbose
+```
+
+This catches the case where an entry builds on a developer machine but not in
+the workflows: a local download cache (`SATEX_SOURCE_MIRROR`) serves archives
+that were never published, so the recipe looks fine until GitHub Actions asks
+the real URL for it. It needs network access and no third-party package; it
+never downloads a whole archive.
+
+Archive hosts throttle such sweeps, Zenodo in particular, so requests to one
+host are spaced out and retried, and a URL still throttled at the end is
+reported as undetermined rather than missing. Entries already marked `fixme`
+are listed as known and do not fail the run, since a missing archive is often
+why they are marked so. Templates go through the same formatting and brace
+expansion as in `satex.py`, so a recipe naming several archives at once, as the
+Knuth programs do, has each of them checked.
+
 ## Future audit scripts
 
 Further repository-wide checks belong here as independent, documented tools.
