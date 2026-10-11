@@ -8,15 +8,18 @@ on:
 
 jobs:
     ping-deps:
-        runs-on: ubuntu-latest
+        # Pinned: the ubuntu-latest label moves to Ubuntu 26 between 19 October and
+        # 19 November 2026, whose Docker 29.4.2 blocks the socketcall syscall that the
+        # i386 glibc of our oldest images uses, leaving those builds without network.
+        runs-on: ubuntu-24.04
         steps:
-            - uses: actions/setup-python@v5
+            - uses: actions/setup-python@v6
 
               with:
 
                   python-version: "3.12"
             - run: pip install requests
-            - uses: actions/checkout@v4
+            - uses: actions/checkout@v5
               with:
                   ref: master
             - run: python satex.py image-deps --pull

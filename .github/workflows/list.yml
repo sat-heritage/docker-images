@@ -7,10 +7,16 @@ on:
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    # Pinned: the ubuntu-latest label moves to Ubuntu 26 between 19 October and
+
+    # 19 November 2026, whose Docker 29.4.2 blocks the socketcall syscall that the
+
+    # i386 glibc of our oldest images uses, leaving those builds without network.
+
+    runs-on: ubuntu-24.04
 
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v5
     - run: |
         tar cvzf list.tgz index.json */setup.json */solvers.json
         COUNT=$(jq  '.[]|select(.status=="ok")|.name'  */solvers.json | wc -l)
