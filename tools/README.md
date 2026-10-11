@@ -95,6 +95,14 @@ that were never published, so the recipe looks fine until GitHub Actions asks
 the real URL for it. It needs network access and no third-party package; it
 never downloads a whole archive.
 
+Archive hosts throttle such sweeps, Zenodo in particular, so requests to one
+host are spaced out and retried, and a URL still throttled at the end is
+reported as undetermined rather than missing. Entries already marked `fixme`
+are listed as known and do not fail the run, since a missing archive is often
+why they are marked so. Templates go through the same formatting and brace
+expansion as in `satex.py`, so a recipe naming several archives at once, as the
+Knuth programs do, has each of them checked.
+
 ## Future audit scripts
 
 Further repository-wide checks belong here as independent, documented tools.

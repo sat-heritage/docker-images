@@ -21,6 +21,9 @@ Archive hosts rate-limit such sweeps, Zenodo in particular, and a throttled
 answer is not a missing archive.  Requests to one host are therefore spaced out
 and retried, and a URL still throttled at the end is reported as undetermined
 rather than missing.
+
+Entries already marked "fixme" are expected to be unreachable, since that is
+often why they are marked so; they are listed as known and do not fail the run.
 """
 
 from __future__ import annotations
@@ -34,6 +37,9 @@ import urllib.parse
 import urllib.request
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+from satex import brace_expand  # noqa: E402  the expansion satex applies to source URLs
+
 ROOT = Path(__file__).resolve().parent.parent
 TIMEOUT = 30
 USER_AGENT = "satex-source-check"
@@ -45,8 +51,12 @@ def load(path: Path):
         return json.load(stream)
 
 
-def source_urls(entry_dir: Path) -> dict[str, str]:
-    """Return the download URL of every solver of one set, keyed by solver."""
+def source_urls(entry_dir: Path) -> dict[str, list[str]]:
+    """Return the download URLs of every solver of one set, keyed by solver.
+
+    A recipe can name several archives at once through the brace expansion
+    satex.py applies, as the Knuth programs do, so each solver maps to a list.
+    """
     setup = load(entry_dir / "setup.json")
     solvers = load(entry_dir / "solvers.json")
     default = setup.get("download_url")
@@ -58,12 +68,20 @@ def source_urls(entry_dir: Path) -> dict[str, str]:
         template = override.get("download_url", default)
         if not template:
             continue
-        urls[key] = (
-            template.replace("{SOLVER_NAME}", entry.get("name", key))
-            .replace("{SOLVER}", key)
-            .replace("{VERSION}", str(entry.get("version", "")))
-        )
+        # satex.py formats the template then expands braces, so "{{a,b}}" names
+        # two archives while "{SOLVER_NAME}" is the substitution
+        filled = template.format(SOLVER=key, SOLVER_NAME=entry.get("name", key))
+        urls[key] = brace_expand(filled)
     return urls
+
+
+def statuses(entry_dir: Path) -> dict[str, str]:
+    """Return the status of every solver of one set, keyed by solver."""
+    return {
+        key: entry.get("status", "unknown")
+        for key, entry in load(entry_dir / "solvers.json").items()
+        if isinstance(entry, dict)
+    }
 
 
 def probe(url: str, delay: float, attempts: int) -> tuple[str, str]:
@@ -118,6 +136,7 @@ def main() -> int:
     last_request: dict[str, float] = {}
     missing = []
     undetermined = []
+    known = []
     total = 0
 
     for name in wanted:
@@ -125,29 +144,35 @@ def main() -> int:
         if not (entry_dir / "solvers.json").is_file():
             print(f"{name}: no solvers.json, skipped", file=sys.stderr)
             continue
-        for key, url in sorted(source_urls(entry_dir).items()):
+        status = statuses(entry_dir)
+        for key, urls in sorted(source_urls(entry_dir).items()):
             total += 1
-            if url not in seen:
-                host = urllib.parse.urlparse(url).netloc
-                since = time.monotonic() - last_request.get(host, 0.0)
-                if since < args.delay:
-                    time.sleep(args.delay - since)
-                seen[url] = probe(url, args.delay, args.attempts)
-                last_request[host] = time.monotonic()
-            state, detail = seen[url]
-            if state == "ok":
-                if args.verbose:
-                    print(f"ok      {name}/{key}: {detail}")
-            elif state == "missing":
-                missing.append((name, key, detail, url))
-                print(f"missing {name}/{key}: {detail} {url}")
-            else:
-                undetermined.append((name, key, detail, url))
-                print(f"unknown {name}/{key}: {detail} {url}")
+            for url in urls:
+                if url not in seen:
+                    host = urllib.parse.urlparse(url).netloc
+                    since = time.monotonic() - last_request.get(host, 0.0)
+                    if since < args.delay:
+                        time.sleep(args.delay - since)
+                    seen[url] = probe(url, args.delay, args.attempts)
+                    last_request[host] = time.monotonic()
+                state, detail = seen[url]
+                if state == "ok":
+                    if args.verbose:
+                        print(f"ok      {name}/{key}: {detail}")
+                elif state == "missing":
+                    if status.get(key) == "fixme":
+                        known.append((name, key, detail, url))
+                        print(f"known   {name}/{key}: {detail} (entry is fixme)")
+                    else:
+                        missing.append((name, key, detail, url))
+                        print(f"missing {name}/{key}: {detail} {url}")
+                else:
+                    undetermined.append((name, key, detail, url))
+                    print(f"unknown {name}/{key}: {detail} {url}")
 
     print(
-        f"{total} entries, {len(seen)} distinct URLs, "
-        f"{len(missing)} missing, {len(undetermined)} undetermined",
+        f"{total} entries, {len(seen)} distinct URLs, {len(missing)} missing, "
+        f"{len(undetermined)} undetermined, {len(known)} missing but already fixme",
         file=sys.stderr,
     )
     return 1 if missing else 0
