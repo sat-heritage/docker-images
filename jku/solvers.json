@@ -1,0 +1,91 @@
+{
+    "compsat": {
+        "status": "ok",
+        "name": "Compsat",
+        "version": "1.4",
+        "authors": "Armin Biere",
+        "authors_source": "copyright notice and README of the archive",
+        "call": "./compsat",
+        "gz": false,
+        "args": [
+            "FILECNF"
+        ],
+        "license_source": "no licence file in the archive; the README is signed Armin Biere, ETH Zurich",
+        "comment": "Early Biere solver, released outside any competition."
+    },
+    "limmat": {
+        "status": "ok",
+        "name": "Limmat",
+        "version": "1.3",
+        "authors": "Armin Biere",
+        "authors_source": "copyright notice and README of the archive",
+        "call": "./run-limmat.sh",
+        "gz": false,
+        "args": [
+            "FILECNF"
+        ],
+        "license": "BSD-3-Clause",
+        "license_source": "Permission notice of the archive, a three-clause BSD licence, signed Armin Biere, Computer Systems Institute, ETH Zurich",
+        "comment": "The solver of the SAT 2002 competition, in its own release series.  This release predates the competition output format, so a launcher turns its answer and its bare assignment lines into the s and v lines; the 2002 image prints them itself."
+    },
+    "nanosat": {
+        "status": "ok",
+        "name": "NanoSAT",
+        "version": "1.3",
+        "authors": "Armin Biere",
+        "authors_source": "copyright notice and README of the archive",
+        "call": "./nanosat",
+        "gz": false,
+        "args": [
+            "FILECNF"
+        ],
+        "license": "MIT",
+        "license_source": "Permission notice of the archive, in the form of the MIT licence, signed Armin Biere, Johannes Kepler University",
+        "comment": "A deliberately small solver, released outside any competition."
+    },
+    "booleforce": {
+        "status": "ok",
+        "name": "BooleForce",
+        "version": "1.3",
+        "authors": "Armin Biere",
+        "authors_source": "copyright notice and README of the archive",
+        "call": "./booleforce",
+        "gz": false,
+        "args": [
+            "FILECNF"
+        ],
+        "license": "MIT",
+        "license_source": "Permission notice of the archive, in the form of the MIT licence, signed Armin Biere, Johannes Kepler University",
+        "comment": "Ships the tracecheck proof checker next to the solver."
+    },
+    "picosat": {
+        "status": "ok",
+        "name": "PicoSAT",
+        "version": "965",
+        "authors": "Armin Biere",
+        "authors_source": "copyright notice and README of the archive",
+        "call": "./picosat",
+        "gz": false,
+        "args": [
+            "FILECNF"
+        ],
+        "license": "MIT",
+        "license_source": "Permission notice of the archive, in the form of the MIT licence, signed Armin Biere, Johannes Kepler University",
+        "comment": "Last release of the PicoSAT series; the 2007 competition ran an earlier one."
+    },
+    "precosat": {
+        "status": "ok",
+        "name": "PrecoSAT",
+        "version": "576",
+        "authors": "Armin Biere",
+        "authors_source": "copyright notice and README of the archive",
+        "call": "./precosat",
+        "gz": false,
+        "args": [
+            "FILECNF"
+        ],
+        "license": "MIT",
+        "license_source": "Permission notice of the archive, in the form of the MIT licence, signed Armin Biere, Johannes Kepler University",
+        "comment": "Release series of the solver that won the 2009 competition."
+    }
+}
