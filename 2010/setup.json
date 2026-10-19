@@ -1,4 +1,6 @@
 {
+    "kind": "race",
+    "event": "SAT-Race 2010",
     "base_version": "pre-jessie",
     "base_from": "debian/eol:squeeze-slim",
     "builder": "generic/v1",

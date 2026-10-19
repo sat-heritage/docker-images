@@ -1,19 +1,21 @@
 {
+    "kind": "competition",
+    "event": "SAT Competition 2016",
     "base_version": "v1",
     "base_from": "debian:stretch-slim",
     "builder": "generic/v1",
     "builder_base": "debian:8.6",
     "download_url": "https://zenodo.org/record/5761200/files/{SOLVER_NAME}.zip",
-    "cmsat5_agile" : {
+    "cmsat5_agile": {
         "BUILD_DEPENDS": "vim-common"
     },
-    "cmsat5_main2" : {
+    "cmsat5_main2": {
         "BUILD_DEPENDS": "vim-common"
     },
-    "cmsat5_autotune2" : {
+    "cmsat5_autotune2": {
         "BUILD_DEPENDS": "vim-common"
     },
-    "cmsat5_run_parallel" : {
+    "cmsat5_run_parallel": {
         "BUILD_DEPENDS": "vim-common"
     }
 }

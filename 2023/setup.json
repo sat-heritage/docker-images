@@ -1,4 +1,6 @@
 {
+    "kind": "competition",
+    "event": "SAT Competition 2023",
     "base_version": "v1",
     "base_from": "debian:bookworm-20230703-slim@sha256:9bd077d2f77c754f4f7f5ee9e6ded9ff1dff92c6dce877754da21b917c122c77",
     "builder": "generic/starexec-v2",
