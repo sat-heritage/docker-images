@@ -12,7 +12,7 @@
     "status_detail": "SAT-Ex era solver, older than the competition output format: prints SATISFIABLE or UNSATISFIABLE on a one-line summary, no s line and no model."
   },
   "csat": {
-    "status": "ok",
+    "status": "unstable",
     "name": "csat",
     "authors": "Olivier Dubois, Pascal André, Yacine Boufkhad, Jacques Carlier",
     "authors_source": "SAT-Ex site (lri.fr/~simon/satex): prover list with references in the SAT-Ex position paper, 2001",
@@ -21,7 +21,8 @@
     "args": [
       "FILECNF",
       1
-    ]
+    ],
+    "status_detail": "SAT-Ex era solver, older than the competition output format: prints '***UNSATISFIABLE***' or '***SATISFIABLE***' with a statistics table, no s line and no model, and exits 18 on both answers."
   },
   "dr": {
     "status": "unstable",
@@ -61,7 +62,7 @@
     "status_detail": "SAT-Ex era solver, older than the competition output format: prints 'Inconsistent' on unsatisfiable formulas and a list of variable values otherwise, no s line."
   },
   "modoc": {
-    "status": "ok",
+    "status": "unstable",
     "name": "modoc",
     "authors": "Allen Van Gelder, Fumiaki Kamiya",
     "authors_source": "SAT-Ex site (lri.fr/~simon/satex): prover list with references in the SAT-Ex position paper, 2001",
@@ -69,7 +70,8 @@
     "gz": false,
     "args": [
       "FILECNF"
-    ]
+    ],
+    "status_detail": "SAT-Ex era solver, older than the competition output format: prints a one-line statistics record of its own, with the answer in its 'ex' column, no s line and no model."
   },
   "modoc-2.0": {
     "status": "unstable",
@@ -135,7 +137,7 @@
     "status_detail": "SAT-Ex era solver, older than the competition output format: prints SAT or UNSAT on its own line and exits 20 on unsatisfiable formulas; on the satisfiable test instance aim-200 it answered UNSAT, so its answer or its parsing of that instance is wrong."
   },
   "oksolver": {
-    "status": "ok",
+    "status": "unstable",
     "name": "oksolver",
     "authors": "Oliver Kullmann",
     "authors_source": "SAT 2002 competition report entry for OKsolver (same program as the 2002 image)",
@@ -143,7 +145,8 @@
     "gz": false,
     "args": [
       "FILECNF"
-    ]
+    ],
+    "status_detail": "SAT-Ex era solver, older than the competition output format: prints a single line of numeric statistics, no s line and no model; the answer is only in its exit code. The 2002 image runs a later version of the same program, which follows the competition format."
   },
   "posit": {
     "status": "unstable",
@@ -196,7 +199,7 @@
     "status_detail": "SAT-Ex era solver, older than the competition output format: GRASP statistics report ending with 'Terminating GRASP', no s line and no model."
   },
   "sato": {
-    "status": "ok",
+    "status": "unstable",
     "name": "sato",
     "authors": "Hantao Zhang",
     "authors_source": "SAT-Ex site (lri.fr/~simon/satex): prover list with references in the SAT-Ex position paper, 2001",
@@ -204,7 +207,8 @@
     "gz": false,
     "args": [
       "FILECNF"
-    ]
+    ],
+    "status_detail": "SAT-Ex era solver, older than the competition output format: prints a session report of its own, no s line and no model."
   },
   "sato-3.2.1": {
     "status": "unstable",
@@ -255,7 +259,7 @@
     "status_detail": "SAT-Ex era solver, older than the competition output format: prints 'verification of solution is OK' and a statistics summary line, no s line and no model."
   },
   "zchaff": {
-    "status": "ok",
+    "status": "unstable",
     "name": "zchaff",
     "authors": "Lintao Zhang, Sharad Malik",
     "authors_source": "Wikipedia, Chaff algorithm (zChaff originally written by Lintao Zhang; Chaff by Moskewicz, Madigan, Zhao, Zhang and Malik); SAT 2002 competition report entry for zchaff",
@@ -263,7 +267,8 @@
     "gz": false,
     "args": [
       "FILECNF"
-    ]
+    ],
+    "status_detail": "SAT-Ex era solver, older than the competition output format: prints 'Instance satisfiable' or 'Instance unsatisfiable' and a 'RESULT: <file> SAT' line, no s line and no model."
   },
   "zres": {
     "status": "unstable",
