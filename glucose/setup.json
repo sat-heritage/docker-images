@@ -1,0 +1,26 @@
+{
+    "kind": "release-series",
+    "event": "Releases of Glucose",
+    "image_name": "{ENTRY}:{SOLVER}",
+    "base_version": "v1",
+    "base_from": "debian:stretch-slim",
+    "builder": "generic/v1",
+    "builder_base": "debian:stretch-slim",
+    "1.0": {
+        "download_url": "https://www.labri.fr/perso/lsimon/downloads/softwares/glucose_1.0.zip",
+        "BUILD_DEPENDS": "g++-multilib gcc-multilib lib32z1-dev",
+        "builder_base": "debian/eol:squeeze"
+    },
+    "2.1": {
+        "download_url": "https://www.labri.fr/perso/lsimon/downloads/softwares/glucose2.1.tgz"
+    },
+    "3.0": {
+        "download_url": "https://www.labri.fr/perso/lsimon/downloads/softwares/glucose-3.0.tgz"
+    },
+    "syrup-4.1": {
+        "download_url": "https://www.labri.fr/perso/lsimon/downloads/softwares/glucose-syrup-4.1.tgz"
+    },
+    "4.2.1": {
+        "download_url": "https://www.labri.fr/perso/lsimon/downloads/softwares/glucose-4.2.1.zip"
+    }
+}

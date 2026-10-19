@@ -1,0 +1,93 @@
+{
+    "1.12b": {
+        "status": "unstable",
+        "name": "MiniSat",
+        "version": "1.12b",
+        "authors": "Niklas Een, Niklas Sorensson",
+        "authors_source": "copyright notice of the archive",
+        "call": "./run-minisat.sh",
+        "gz": false,
+        "args": [
+            "FILECNF"
+        ],
+        "license": "MIT",
+        "license_source": "LICENSE file of the archive, an MIT licence signed Niklas Een and Niklas Sorensson",
+        "comment": "The release of the SAT 2005 competition era, the version the paper \"An Extensible SAT-solver\" describes.",
+        "status_detail": "The release prints no model and takes no result file, only the words SATISFIABLE or UNSATISFIABLE; its launcher gives the s line, so the UNSAT check passes and the SAT model check cannot."
+    },
+    "1.14": {
+        "status": "ok",
+        "name": "MiniSat",
+        "version": "1.14",
+        "authors": "Niklas Een, Niklas Sorensson",
+        "authors_source": "copyright notice of the archive",
+        "call": "./run-minisat.sh",
+        "gz": false,
+        "args": [
+            "FILECNF"
+        ],
+        "license": "MIT",
+        "license_source": "LICENSE file of the archive, an MIT licence signed Niklas Een and Niklas Sorensson",
+        "comment": "Last release of the 1.x series, the one most hacks of the competitions start from."
+    },
+    "1.14c": {
+        "status": "ok",
+        "name": "MiniSat",
+        "version": "1.14.1 (C)",
+        "authors": "Niklas Een, Niklas Sorensson",
+        "authors_source": "copyright notice of the archive",
+        "call": "./run-minisat.sh",
+        "gz": false,
+        "args": [
+            "FILECNF"
+        ],
+        "license": "MIT",
+        "license_source": "LICENSE file of the archive, an MIT licence signed Niklas Een and Niklas Sorensson",
+        "comment": "A translation of 1.14 into plain C, published next to it. It takes no result file and numbers its model from zero, so its launcher translates that into the competition format."
+    },
+    "1.14p": {
+        "status": "ok",
+        "name": "MiniSat",
+        "version": "1.14 (proof logging)",
+        "authors": "Niklas Een, Niklas Sorensson",
+        "authors_source": "copyright notice of the archive",
+        "call": "./run-minisat.sh",
+        "gz": false,
+        "args": [
+            "FILECNF"
+        ],
+        "license": "MIT",
+        "license_source": "LICENSE file of the archive, an MIT licence signed Niklas Een and Niklas Sorensson",
+        "comment": "The proof-logging variant of 1.14, an ancestor of today's DRAT proofs."
+    },
+    "2.0": {
+        "status": "ok",
+        "name": "MiniSat",
+        "version": "2.0 (070721)",
+        "authors": "Niklas Een, Niklas Sorensson",
+        "authors_source": "copyright notice of the archive",
+        "call": "./run-minisat.sh",
+        "gz": false,
+        "args": [
+            "FILECNF"
+        ],
+        "license": "MIT",
+        "license_source": "LICENSE file of the archive, an MIT licence signed Niklas Een and Niklas Sorensson",
+        "comment": "First release of the 2.x series, which introduced the core and simp split. Its simplifying variant no longer compiles, so the image ships the core solver the same release provides."
+    },
+    "2.2.0": {
+        "status": "ok",
+        "name": "MiniSat",
+        "version": "2.2.0",
+        "authors": "Niklas Een, Niklas Sorensson",
+        "authors_source": "copyright notice of the archive",
+        "call": "./run-minisat.sh",
+        "gz": false,
+        "args": [
+            "FILECNF"
+        ],
+        "license": "MIT",
+        "license_source": "LICENSE file of the archive, an MIT licence signed Niklas Een and Niklas Sorensson",
+        "comment": "Last release of MiniSat, and the base of the whole Maple and Glucose lineage."
+    }
+}

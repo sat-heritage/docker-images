@@ -1,92 +1,111 @@
 {
-  "sat0": {
-    "status": "ok",
-    "name": "sat0",
-    "authors": "Donald Knuth",
-    "call": "sat0",
-    "gz": false,
-    "args": [
-      "--satex", "FILECNF"
-    ]
-  },
-  "sat0w": {
-    "status": "ok",
-    "name": "sat0w",
-    "authors": "Donald Knuth",
-    "call": "sat0w",
-    "gz": false,
-    "args": [
-      "--satex", "FILECNF"
-    ]
-  },
-  "sat8": {
-    "status": "ok",
-    "name": "sat8",
-    "authors": "Donald Knuth",
-    "call": "sat8",
-    "gz": false,
-    "args": [
-      "--satex", "FILECNF"
-    ]
-  },
-  "sat9": {
-    "status": "ok",
-    "name": "sat9",
-    "authors": "Donald Knuth",
-    "call": "sat9",
-    "gz": false,
-    "args": [
-      "--satex", "FILECNF"
-    ]
-  },
-  "sat10": {
-    "status": "ok",
-    "name": "sat10",
-    "authors": "Donald Knuth",
-    "call": "sat10",
-    "gz": false,
-    "args": [
-      "--satex", "FILECNF"
-    ]
-  },
-  "sat11": {
-    "status": "ok",
-    "name": "sat11",
-    "authors": "Donald Knuth",
-    "call": "sat11",
-    "gz": false,
-    "args": [
-      "--satex", "FILECNF"
-    ]
-  },
-  "sat11k": {
-    "status": "ok",
-    "name": "sat11k",
-    "authors": "Donald Knuth",
-    "call": "sat11k",
-    "gz": false,
-    "args": [
-      "--satex", "FILECNF"
-    ]
-  },
-  "sat12": {
-    "status": "ok",
-    "name": "sat12",
-    "authors": "Donald Knuth",
-    "call": "sat12",
-    "gz": false,
-    "args": [
-      "--satex", "FILECNF"
-    ]
-  },
-  "sat13": {
-    "status": "ok",
-    "name": "sat13",
-    "authors": "Donald Knuth",
-    "call": "sat13",
-    "gz": false,
-    "args": [
-      "--satex", "FILECNF"
-    ]
-  }
+    "sat0": {
+        "status": "ok",
+        "name": "sat0",
+        "authors": "Donald Knuth",
+        "call": "sat0",
+        "gz": false,
+        "args": [
+            "--satex",
+            "FILECNF"
+        ]
+    },
+    "sat0w": {
+        "status": "ok",
+        "name": "sat0w",
+        "authors": "Donald Knuth",
+        "call": "sat0w",
+        "gz": false,
+        "args": [
+            "--satex",
+            "FILECNF"
+        ]
+    },
+    "sat8": {
+        "status": "ok",
+        "name": "sat8",
+        "authors": "Donald Knuth",
+        "call": "sat8",
+        "gz": false,
+        "args": [
+            "--satex",
+            "FILECNF"
+        ],
+        "incomplete": true,
+        "test_timeout": 60,
+        "comment": "WALKSAT, the local search of Selman, Kautz and Cohen, as Knuth implements it: it can find a model but never prove unsatisfiability."
+    },
+    "sat9": {
+        "status": "unstable",
+        "name": "sat9",
+        "authors": "Donald Knuth",
+        "call": "sat9",
+        "gz": false,
+        "args": [
+            "--satex",
+            "FILECNF"
+        ],
+        "incomplete": true,
+        "test_timeout": 60,
+        "comment": "Survey propagation, the message passing method of the physicists: it answers only when its messages converge, and never proves unsatisfiability.",
+        "status_detail": "Survey propagation reports that its messages did not converge on the instances of the suite, so it prints no answer; the method is incomplete by construction and never proves unsatisfiability."
+    },
+    "sat10": {
+        "status": "ok",
+        "name": "sat10",
+        "authors": "Donald Knuth",
+        "call": "sat10",
+        "gz": false,
+        "args": [
+            "--satex",
+            "FILECNF"
+        ]
+    },
+    "sat11": {
+        "status": "unstable",
+        "name": "sat11",
+        "authors": "Donald Knuth",
+        "call": "sat11",
+        "gz": false,
+        "args": [
+            "--satex",
+            "FILECNF"
+        ],
+        "status_detail": "Lookahead solver that accepts unary, binary and ternary clauses only, as it says itself; it answers correctly on the 3-SAT instance of the suite and refuses its pigeonhole instance, whose clauses are longer."
+    },
+    "sat11k": {
+        "status": "fixme",
+        "name": "sat11k",
+        "authors": "Donald Knuth",
+        "call": "sat11k",
+        "gz": false,
+        "args": [
+            "--satex",
+            "FILECNF"
+        ],
+        "status_detail": "The change file sat11k.ch no longer matches the sat11.w that Stanford serves today: ctangle reports one hunk that fails to match, so the program would be built from a partially applied change."
+    },
+    "sat12": {
+        "status": "unstable",
+        "name": "sat12",
+        "authors": "Donald Knuth",
+        "call": "sat12",
+        "gz": false,
+        "args": [
+            "--satex",
+            "FILECNF"
+        ],
+        "status_detail": "Not a solver but a preprocessor, as its own introduction says: it simplifies the clauses and writes the reduced formula, so it prints no answer."
+    },
+    "sat13": {
+        "status": "ok",
+        "name": "sat13",
+        "authors": "Donald Knuth",
+        "call": "sat13",
+        "gz": false,
+        "args": [
+            "--satex",
+            "FILECNF"
+        ]
+    }
 }
