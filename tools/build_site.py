@@ -167,6 +167,8 @@ def collect(repo: Path) -> list[dict]:
                 "image": image,
                 "key": key,
                 "set": str(entry_set),
+                "kind": setup.get("kind", "competition"),
+                "event": setup.get("event", str(entry_set)),
                 "name": entry.get("name", key),
                 "version": entry.get("version", ""),
                 "authors": entry.get("authors", ""),
@@ -308,15 +310,21 @@ JS = """
 const data = window.SOLVERS;
 const grid = document.getElementById('grid');
 const q = document.getElementById('q');
-const fy = document.getElementById('year'), ff = document.getElementById('family'), fv = document.getElementById('verdict'), fs = document.getElementById('status');
+const fk = document.getElementById('kind'), fy = document.getElementById('year'), ff = document.getElementById('family'), fv = document.getElementById('verdict'), fs = document.getElementById('status');
 function badge(v, bin) { const m = (bin ? {verified:['Verified (packaged binary)','ok'],runs:['Packaged binary, checks failed','warn'],built:['Packaged binary, not verified','warn'],'source-available':['Packaging fails','fail'],'source-unavailable':['Binary unavailable','fail'],unknown:['Not run yet','none']} : {verified:['Verified','ok'],runs:['Runs, checks failed','warn'],built:['Compiles','warn'],'source-available':['Build fails','fail'],'source-unavailable':['Source unavailable','fail'],unknown:['Not run yet','none']})[v] || [v,'none']; return `<span class="badge ${m[1]}">${m[0]}</span>`; }
 function render() {
   const s = q.value.trim().toLowerCase();
   const fc = document.getElementById('cap'), fa = document.getElementById('award'), fh = document.getElementById('hub'), fl = document.getElementById('license');
-  const rows = data.filter(d => (!fl.value || (fl.value === 'unknown' ? !d.licenses.length : d.licenses.includes(fl.value))) && (!fh || !fh.value || (fh.value === 'yes') === !!d.published) && (!fa.value || (fa.value === 'winner' ? d.awards.some(a => a.rank === 1) : d.awards.length > 0)) && (!fy.value || d.set === fy.value) && (!ff.value || d.family === ff.value) && (!fv.value || d.verdict === fv.value) && (!fs.value || d.status === fs.value) && (!fc.value || d.capabilities.includes(fc.value)) && (!s || (d.name + ' ' + d.key + ' ' + d.authors + ' ' + d.set).toLowerCase().includes(s)));
+  const rows = data.filter(d => (!fl.value || (fl.value === 'unknown' ? !d.licenses.length : d.licenses.includes(fl.value))) && (!fh || !fh.value || (fh.value === 'yes') === !!d.published) && (!fa.value || (fa.value === 'winner' ? d.awards.some(a => a.rank === 1) : d.awards.length > 0)) && (!fk || !fk.value || d.kind === fk.value) && (!fy.value || d.set === fy.value) && (!ff.value || d.family === ff.value) && (!fv.value || d.verdict === fv.value) && (!fs.value || d.status === fs.value) && (!fc.value || d.capabilities.includes(fc.value)) && (!s || (d.name + ' ' + d.key + ' ' + d.authors + ' ' + d.set).toLowerCase().includes(s)));
   document.getElementById('count').textContent = rows.length + ' / ' + data.length + ' images';
-  const years = [...new Set(rows.map(d => d.set))].sort((a, b) => (isNaN(a) - isNaN(b)) || (b - a) || a.localeCompare(b));
-  grid.innerHTML = years.map(y => `<section class="year"><div class="year-label"><span>${y}</span><small>${rows.filter(d => d.set === y).length}</small></div><div class="grid">` + rows.filter(d => d.set === y).map(card).join('') + `</div></section>`).join('');
+  const KINDS = ['competition', 'race', 'challenge', 'platform', 'release-series'];
+  const rank = d => { const i = KINDS.indexOf(d); return i < 0 ? KINDS.length : i; };
+  const label = {};
+  for (const d of rows) label[d.set] = d.event || d.set;
+  const kindOf = {};
+  for (const d of rows) kindOf[d.set] = d.kind;
+  const years = [...new Set(rows.map(d => d.set))].sort((a, b) => (rank(kindOf[a]) - rank(kindOf[b])) || (isNaN(a) - isNaN(b)) || (b - a) || a.localeCompare(b));
+  grid.innerHTML = years.map(y => `<section class="year"><div class="year-label"><span>${y}</span><small>${label[y]} · ${rows.filter(d => d.set === y).length}</small></div><div class="grid">` + rows.filter(d => d.set === y).map(card).join('') + `</div></section>`).join('');
 }
 function card(d) { return `<a class="card" href="${d.set}/${d.key}.html">
     <h3>${d.name}</h3>
@@ -328,7 +336,7 @@ function card(d) { return `<a class="card" href="${d.set}/${d.key}.html">
   </a>`; }
 [q, fy, ff, fv, fs, document.getElementById('cap'), document.getElementById('award'), document.getElementById('hub'), document.getElementById('license')].filter(Boolean).forEach(e => e.addEventListener('input', render));
 const params = new URLSearchParams(location.search);
-for (const id of ['q', 'year', 'family', 'verdict', 'status', 'cap', 'award', 'hub', 'license']) { const v = params.get(id); if (v) { const el = document.getElementById(id); if (el) el.value = v; } }
+for (const id of ['q', 'year', 'kind', 'family', 'verdict', 'status', 'cap', 'award', 'hub', 'license']) { const v = params.get(id); if (v) { const el = document.getElementById(id); if (el) el.value = v; } }
 render();
 """
 
@@ -446,6 +454,7 @@ def page(title: str, body: str, depth: int, active: str = "") -> str:
 
 ICON = {
     "search": '<circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/>',
+    "kind": '<path d="M4 22V4a1 1 0 0 1 1-1h11l-2 4 2 4H5"/><path d="M4 22h16"/><path d="M16 11v11"/>',
     "year": '<rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/>',
     "family": '<path d="M6 3v12"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/>',
     "verdict": '<path d="M22 11.1V12a10 10 0 1 1-5.9-9.1"/><path d="m9 11 3 3L22 4"/>',
@@ -472,6 +481,7 @@ def index_page(solvers: list[dict]) -> str:
 <div class="toolbar">
   {ctl("search", '<input id="q" type="search" placeholder="Search a solver, an author, a year">')}
   {ctl("year", f'<select id="year"><option value="">All years</option>{options(years)}</select>')}
+  {ctl("kind", '<select id="kind"><option value="">Any event</option><option value="competition">SAT Competitions</option><option value="race">SAT-Races</option><option value="challenge">SAT Challenge</option><option value="platform">Pre-competition platform</option><option value="release-series">Releases outside events</option></select>')}
   {ctl("family", f'<select id="family"><option value="">All families</option>{options(families)}</select>')}
   {ctl("verdict", '<select id="verdict"><option value="">Any verification</option><option value="verified">Verified</option><option value="runs">Runs, checks failed</option><option value="built">Compiles</option><option value="source-available">Build fails</option><option value="source-unavailable">Source unavailable</option><option value="unknown">Not run yet</option></select>')}
   {ctl("status", '<select id="status"><option value="">Any status</option><option value="ok">builds</option><option value="unstable">unstable</option><option value="fixme">not buildable</option></select>')}
@@ -483,7 +493,7 @@ def index_page(solvers: list[dict]) -> str:
 </div>
 <div class="legend"><span>◌ dashed: what the solver is</span><span>▪ blue: what it can do, as verified by the test suite</span><span>● filled: whether it builds and passes the tests today</span></div>
 <div id="grid"></div>
-<script>window.SOLVERS = {json.dumps([dict({k: s[k] for k in ("image", "key", "set", "name", "authors", "status", "family", "verdict", "capabilities", "version", "tracks", "published", "licenses", "pulls")}, awards=[{"rank": a["rank"], "label": award_label(a)} for a in s["awards"]], more=award_summary(s["awards"])[1]) for s in solvers])};</script>
+<script>window.SOLVERS = {json.dumps([dict({k: s[k] for k in ("image", "key", "set", "kind", "event", "name", "authors", "status", "family", "verdict", "capabilities", "version", "tracks", "published", "licenses", "pulls")}, awards=[{"rank": a["rank"], "label": award_label(a)} for a in s["awards"]], more=award_summary(s["awards"])[1]) for s in solvers])};</script>
 <script>const HUB_YES = {json.dumps(HUB_BADGE_YES.replace('<a class="badge hub" href="{url}" title="Tags of this image on Docker Hub">', '<span class="badge hub">').replace('</a>', '</span>'))}, HUB_NO = {json.dumps(HUB_BADGE_NO)};</script>
 <script>{JS}</script>
 """
@@ -518,7 +528,7 @@ def solver_page(s: dict) -> str:
         for k, v in s["build_stages"].items())
     run_cmd = f"docker run --rm -v $PWD:/data {DOCKER_NS}/{s['image']} instance.cnf" + (" proof.out" if s["proof"] else "")
     body = f"""
-<div class="crumbs"><a href="../catalogue.html">Catalogue</a> › {esc(s['set'])}</div>
+<div class="crumbs"><a href="../catalogue.html">Catalogue</a> › {esc(s['event'])}</div>
 <div class="page"><h1>{esc(s['name'])}</h1><div class="sub">{esc(s['authors'] or 'authors not recorded')}{(' · version ' + esc(s['version'])) if s['version'] else ''}</div>
 <div class="tagrow" style="margin-top:10px"><span class="lbl">solver</span><span class="tag id">{esc(s['family'])}</span>{('<span class="tag id">v' + esc(s['version']) + '</span>') if s['version'] else ''}{''.join('<span class="tag id">' + esc(t) + '</span>' for t in s['tracks'])}{award_tags(s['awards'])}</div>
 <div class="tagrow" style="margin-top:6px"><span class="lbl">licence</span>{license_tags(s['licenses'], s['license_source'])}</div>
@@ -535,7 +545,7 @@ def solver_page(s: dict) -> str:
 <dt>Image</dt><dd><code>{DOCKER_NS}/{esc(s['image'])}</code></dd>
 <dt>Command</dt><dd><code>{esc(s['call'])} {esc(' '.join(map(str, s['args'])))}</code></dd>
 <dt>Compressed input</dt><dd>{'read natively' if s['gz'] else 'decompressed by the image'}</dd>
-{('<dt>Competition</dt><dd><a href="' + comp + '">SAT Competition ' + esc(s['set']) + '</a></dd>') if comp else ''}
+<dt>Event</dt><dd>{('<a href="' + comp + '">' + esc(s['event']) + '</a>') if comp else esc(s['event'])}</dd>
 </dl></div>
 <div class="section"><h2>How it is built</h2><dl>
 <dt>Recipe</dt><dd>{esc(s['recipe'])}</dd>

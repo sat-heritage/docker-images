@@ -1,0 +1,27 @@
+{
+    "kind": "release-series",
+    "event": "Releases of the Johannes Kepler University group",
+    "image_name": "{ENTRY}:{SOLVER}",
+    "base_version": "v1",
+    "base_from": "debian:stretch-slim",
+    "builder": "generic/v1",
+    "builder_base": "debian:stretch-slim",
+    "compsat": {
+        "download_url": "https://fmv.jku.at/compsat/compsat-1.4.tar.gz"
+    },
+    "limmat": {
+        "download_url": "https://fmv.jku.at/limmat/limmat-1.3.tar.gz"
+    },
+    "nanosat": {
+        "download_url": "https://fmv.jku.at/nanosat/nanosat-1.3.tar.gz"
+    },
+    "booleforce": {
+        "download_url": "https://fmv.jku.at/booleforce/booleforce-1.3.tar.gz"
+    },
+    "picosat": {
+        "download_url": "https://fmv.jku.at/picosat/picosat-965.tar.gz"
+    },
+    "precosat": {
+        "download_url": "https://fmv.jku.at/precosat/precosat-576-7e5e66f-120112.tar.gz"
+    }
+}

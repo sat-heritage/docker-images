@@ -1,4 +1,6 @@
 {
+    "kind": "competition",
+    "event": "SAT Competition 2018",
     "base_version": "v1",
     "base_from": "debian:stretch-slim",
     "builder": "generic/v1",

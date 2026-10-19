@@ -3,8 +3,13 @@
   "$id": "https://sat-heritage.github.io/docker-images/schemas/setup.schema.json",
   "title": "SAT Heritage build setup",
   "type": "object",
-  "required": ["base_version", "base_from", "builder"],
+  "required": ["kind", "event", "base_version", "base_from", "builder"],
   "properties": {
+    "kind": {
+      "enum": ["competition", "race", "challenge", "platform", "release-series"],
+      "description": "what the set collects: an annual SAT Competition, a SAT-Race, the SAT Challenge, a pre-competition evaluation platform, or releases published outside any event"
+    },
+    "event": { "type": "string", "minLength": 1, "description": "name of the event or of the collection, as the website shows it" },
     "base_version": { "type": "string", "minLength": 1 },
     "base_from": { "type": "string", "minLength": 1 },
     "builder": { "type": "string", "minLength": 1 },

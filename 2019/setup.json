@@ -1,4 +1,6 @@
 {
+    "kind": "race",
+    "event": "SAT-Race 2019",
     "base_version": "v1",
     "base_from": "debian:stretch-slim",
     "builder": "generic/starexec",

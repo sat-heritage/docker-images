@@ -1,13 +1,15 @@
 {
+    "kind": "competition",
+    "event": "SAT Competition 2003",
     "base_version": "v1",
     "base_from": "debian:stretch-slim",
     "builder": "generic/binary-v1",
     "builder_base": "debian:8.6",
     "download_url": "https://zenodo.org/record/3698711/files/{SOLVER_NAME}?download=1",
-    "jquest2.jar" : {
+    "jquest2.jar": {
         "RDEPENDS": "default-jre"
     },
-    "opensatcomp.jar" : {
+    "opensatcomp.jar": {
         "RDEPENDS": "default-jre"
     }
 }

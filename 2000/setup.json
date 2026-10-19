@@ -1,4 +1,6 @@
 {
+    "kind": "platform",
+    "event": "SAT-Ex evaluation platform",
     "base_version": "potato",
     "base_from": "debian/eol:potato",
     "builder_base": "debian/eol:potato",
@@ -8,7 +10,7 @@
         "builder": "generic/2000",
         "download_url": "https://github.com/sat-heritage/docker-images/releases/download/packages/2000-{SOLVER_NAME}.src.tgz"
     },
-    "dr" : {
+    "dr": {
         "builder": "generic/2000",
         "download_url": "https://github.com/sat-heritage/docker-images/releases/download/packages/2000-bdrdp.src.tgz"
     },

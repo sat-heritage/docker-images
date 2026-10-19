@@ -1,8 +1,10 @@
 {
-    "base_version":"v1",
+    "kind": "competition",
+    "event": "SAT Competition 2014",
+    "base_version": "v1",
     "base_from": "debian:stretch-slim",
-    "builder":"generic/v1",
-    "builder_base":"debian:8.6",
+    "builder": "generic/v1",
+    "builder_base": "debian:8.6",
     "bfs-glucose": {
         "download_url": "https://zenodo.org/record/5776517/files/40-BFS-Glucose.zip"
     },
@@ -112,7 +114,7 @@
     },
     "syrup": {
         "download_url": "https://zenodo.org/record/5776517/files/137-glucose-syrup.zip",
-        "BUILD_DEPENDS" : "lib32ncurses5-dev",
+        "BUILD_DEPENDS": "lib32ncurses5-dev",
         "RDEPENDS": "lib32ncurses5-dev"
     },
     "paracirminisat": {
@@ -164,7 +166,7 @@
         "download_url": "https://zenodo.org/record/5776517/files/83-YalSAT.zip"
     },
     "pprobsat": {
-        "RDEPENDS" : "python",
+        "RDEPENDS": "python",
         "download_url": "https://zenodo.org/record/5776517/files/120-pprobSAT.zip"
     },
     "glucose_certified_unsat": {
