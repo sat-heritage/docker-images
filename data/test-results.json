@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-02T15:43:31Z",
+  "generated": "2026-10-19T03:11:05Z",
   "images": {
     "2clseq:2002": {
       "build": {
@@ -10538,39 +10538,40 @@
           "status": "ok"
         },
         "source-download": {
-          "detail": "local mirror",
           "status": "ok"
         },
         "source-extract": {
           "status": "ok"
         }
       },
-      "date": "2026-09-16T20:32:42Z",
-      "run": "20260916T203242Z",
+      "date": "2026-10-19T03:08:18Z",
+      "run": "20261019T030818Z",
       "tests": {
         "launch": {
           "status": "ok"
         },
         "sat-gzip-model": {
-          "status": "ok"
+          "detail": "invalid result",
+          "status": "skip"
         },
         "sat-gzip-result": {
-          "detail": "SAT",
-          "status": "ok"
+          "detail": "expected return code 10 (or wrapper code 0), got 18",
+          "status": "fail"
         },
         "sat-gzip-termination": {
-          "detail": "SAT",
+          "detail": "18",
           "status": "ok"
         },
         "sat-model": {
-          "status": "ok"
+          "detail": "invalid result",
+          "status": "skip"
         },
         "sat-result": {
-          "detail": "SAT",
-          "status": "ok"
+          "detail": "expected return code 10 (or wrapper code 0), got 18",
+          "status": "fail"
         },
         "sat-termination": {
-          "detail": "SAT",
+          "detail": "18",
           "status": "ok"
         },
         "unsat-proof": {
@@ -10578,15 +10579,15 @@
           "status": "skip"
         },
         "unsat-result": {
-          "detail": "UNSAT",
-          "status": "ok"
+          "detail": "expected return code 20 (or wrapper code 0), got 18",
+          "status": "fail"
         },
         "unsat-termination": {
-          "detail": "UNSAT",
+          "detail": "18",
           "status": "ok"
         }
       },
-      "verdict": "verified"
+      "verdict": "runs"
     },
     "csat:2009": {
       "build": {
@@ -44101,39 +44102,38 @@
           "status": "ok"
         },
         "source-download": {
-          "detail": "local mirror",
           "status": "ok"
         },
         "source-extract": {
           "status": "ok"
         }
       },
-      "date": "2026-09-16T20:32:42Z",
-      "run": "20260916T203242Z",
+      "date": "2026-10-19T03:08:32Z",
+      "run": "20261019T030832Z",
       "tests": {
         "launch": {
           "status": "ok"
         },
         "sat-gzip-model": {
-          "status": "ok"
+          "detail": "invalid result",
+          "status": "skip"
         },
         "sat-gzip-result": {
-          "detail": "SAT",
-          "status": "ok"
+          "detail": "expected exactly one result status, found 0",
+          "status": "fail"
         },
         "sat-gzip-termination": {
-          "detail": "SAT",
           "status": "ok"
         },
         "sat-model": {
-          "status": "ok"
+          "detail": "invalid result",
+          "status": "skip"
         },
         "sat-result": {
-          "detail": "SAT",
-          "status": "ok"
+          "detail": "expected exactly one result status, found 0",
+          "status": "fail"
         },
         "sat-termination": {
-          "detail": "SAT",
           "status": "ok"
         },
         "unsat-proof": {
@@ -44141,15 +44141,14 @@
           "status": "skip"
         },
         "unsat-result": {
-          "detail": "UNSAT",
-          "status": "ok"
+          "detail": "expected exactly one result status, found 0",
+          "status": "fail"
         },
         "unsat-termination": {
-          "detail": "UNSAT",
           "status": "ok"
         }
       },
-      "verdict": "verified"
+      "verdict": "runs"
     },
     "modoc:2002": {
       "build": {
@@ -46464,36 +46463,37 @@
           "status": "ok"
         },
         "source-download": {
-          "detail": "local mirror",
           "status": "ok"
         },
         "source-extract": {
           "status": "ok"
         }
       },
-      "date": "2026-09-16T20:32:42Z",
-      "run": "20260916T203242Z",
+      "date": "2026-10-19T03:08:56Z",
+      "run": "20261019T030856Z",
       "tests": {
         "launch": {
           "status": "ok"
         },
         "sat-gzip-model": {
-          "status": "ok"
+          "detail": "invalid result",
+          "status": "skip"
         },
         "sat-gzip-result": {
-          "detail": "SAT",
-          "status": "ok"
+          "detail": "expected exactly one result status, found 0",
+          "status": "fail"
         },
         "sat-gzip-termination": {
           "detail": "SAT",
           "status": "ok"
         },
         "sat-model": {
-          "status": "ok"
+          "detail": "invalid result",
+          "status": "skip"
         },
         "sat-result": {
-          "detail": "SAT",
-          "status": "ok"
+          "detail": "expected exactly one result status, found 0",
+          "status": "fail"
         },
         "sat-termination": {
           "detail": "SAT",
@@ -46504,15 +46504,15 @@
           "status": "skip"
         },
         "unsat-result": {
-          "detail": "UNSAT",
-          "status": "ok"
+          "detail": "expected exactly one result status, found 0",
+          "status": "fail"
         },
         "unsat-termination": {
           "detail": "UNSAT",
           "status": "ok"
         }
       },
-      "verdict": "verified"
+      "verdict": "runs"
     },
     "oksolver:2002": {
       "build": {
@@ -56876,36 +56876,37 @@
           "status": "ok"
         },
         "source-download": {
-          "detail": "local mirror",
           "status": "ok"
         },
         "source-extract": {
           "status": "ok"
         }
       },
-      "date": "2026-09-16T20:32:42Z",
-      "run": "20260916T203242Z",
+      "date": "2026-10-19T03:09:14Z",
+      "run": "20261019T030914Z",
       "tests": {
         "launch": {
           "status": "ok"
         },
         "sat-gzip-model": {
-          "status": "ok"
+          "detail": "invalid result",
+          "status": "skip"
         },
         "sat-gzip-result": {
-          "detail": "SAT",
-          "status": "ok"
+          "detail": "expected exactly one result status, found 0",
+          "status": "fail"
         },
         "sat-gzip-termination": {
           "detail": "SAT",
           "status": "ok"
         },
         "sat-model": {
-          "status": "ok"
+          "detail": "invalid result",
+          "status": "skip"
         },
         "sat-result": {
-          "detail": "SAT",
-          "status": "ok"
+          "detail": "expected exactly one result status, found 0",
+          "status": "fail"
         },
         "sat-termination": {
           "detail": "SAT",
@@ -56916,15 +56917,15 @@
           "status": "skip"
         },
         "unsat-result": {
-          "detail": "UNSAT",
-          "status": "ok"
+          "detail": "expected exactly one result status, found 0",
+          "status": "fail"
         },
         "unsat-termination": {
           "detail": "UNSAT",
           "status": "ok"
         }
       },
-      "verdict": "verified"
+      "verdict": "runs"
     },
     "sato:2002": {
       "build": {
@@ -67443,36 +67444,37 @@
           "status": "ok"
         },
         "source-download": {
-          "detail": "local mirror",
           "status": "ok"
         },
         "source-extract": {
           "status": "ok"
         }
       },
-      "date": "2026-09-16T20:32:42Z",
-      "run": "20260916T203242Z",
+      "date": "2026-10-19T03:09:32Z",
+      "run": "20261019T030932Z",
       "tests": {
         "launch": {
           "status": "ok"
         },
         "sat-gzip-model": {
-          "status": "ok"
+          "detail": "invalid result",
+          "status": "skip"
         },
         "sat-gzip-result": {
-          "detail": "SAT",
-          "status": "ok"
+          "detail": "expected exactly one result status, found 0",
+          "status": "fail"
         },
         "sat-gzip-termination": {
           "detail": "SAT",
           "status": "ok"
         },
         "sat-model": {
-          "status": "ok"
+          "detail": "invalid result",
+          "status": "skip"
         },
         "sat-result": {
-          "detail": "SAT",
-          "status": "ok"
+          "detail": "expected exactly one result status, found 0",
+          "status": "fail"
         },
         "sat-termination": {
           "detail": "SAT",
@@ -67483,15 +67485,15 @@
           "status": "skip"
         },
         "unsat-result": {
-          "detail": "UNSAT",
-          "status": "ok"
+          "detail": "expected exactly one result status, found 0",
+          "status": "fail"
         },
         "unsat-termination": {
           "detail": "UNSAT",
           "status": "ok"
         }
       },
-      "verdict": "verified"
+      "verdict": "runs"
     },
     "zchaff:2002": {
       "build": {
