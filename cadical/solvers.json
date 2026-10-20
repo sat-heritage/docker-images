@@ -1,0 +1,92 @@
+{
+    "1.0.3": {
+        "status": "ok",
+        "name": "CaDiCaL",
+        "version": "1.0.3",
+        "authors": "Armin Biere",
+        "authors_source": "copyright notice and README of the archive",
+        "call": "./cadical",
+        "gz": false,
+        "args": [
+            "FILECNF"
+        ],
+        "license": "MIT",
+        "license_source": "LICENSE file of the archive, an MIT licence signed Armin Biere",
+        "comment": "First stable release of CaDiCaL, the solver that replaced Lingeling as Biere's main line."
+    },
+    "1.5.3": {
+        "status": "ok",
+        "name": "CaDiCaL",
+        "version": "1.5.3",
+        "authors": "Armin Biere",
+        "authors_source": "copyright notice and README of the archive",
+        "call": "./cadical",
+        "gz": false,
+        "args": [
+            "FILECNF"
+        ],
+        "license": "MIT",
+        "license_source": "LICENSE file of the archive, an MIT licence signed Armin Biere",
+        "comment": "The 1.5 series, contemporary with the competition entries of 2022."
+    },
+    "1.9.5": {
+        "status": "ok",
+        "name": "CaDiCaL",
+        "version": "1.9.5",
+        "authors": "Armin Biere",
+        "authors_source": "copyright notice and README of the archive",
+        "call": "./cadical",
+        "gz": false,
+        "args": [
+            "FILECNF"
+        ],
+        "license": "MIT",
+        "license_source": "LICENSE file of the archive, an MIT licence signed Armin Biere",
+        "comment": "Last release of the 1.x series."
+    },
+    "2.0.0": {
+        "status": "ok",
+        "name": "CaDiCaL",
+        "version": "2.0.0",
+        "authors": "Armin Biere",
+        "authors_source": "copyright notice and README of the archive",
+        "call": "./cadical",
+        "gz": false,
+        "args": [
+            "FILECNF"
+        ],
+        "license": "MIT",
+        "license_source": "LICENSE file of the archive, an MIT licence signed Armin Biere",
+        "comment": "The rewrite that introduced the new internal interface and proof tracer."
+    },
+    "2.2.1": {
+        "status": "ok",
+        "name": "CaDiCaL",
+        "version": "2.2.1",
+        "authors": "Armin Biere",
+        "authors_source": "copyright notice and README of the archive",
+        "call": "./cadical",
+        "gz": false,
+        "args": [
+            "FILECNF"
+        ],
+        "license": "MIT",
+        "license_source": "LICENSE file of the archive, an MIT licence signed Armin Biere",
+        "comment": "The 2.2 series, contemporary with the competition entries of 2025. From 2.2 on the sources need C++17, whose <variant> header Debian stretch does not carry, so this one builds and runs on Debian bookworm."
+    },
+    "3.0.1": {
+        "status": "ok",
+        "name": "CaDiCaL",
+        "version": "3.0.1",
+        "authors": "Armin Biere",
+        "authors_source": "copyright notice and README of the archive",
+        "call": "./cadical",
+        "gz": false,
+        "args": [
+            "FILECNF"
+        ],
+        "license": "MIT",
+        "license_source": "LICENSE file of the archive, an MIT licence signed Armin Biere",
+        "comment": "Latest release of the series, published in July 2026. From 2.2 on the sources need C++17, whose <variant> header Debian stretch does not carry, so this one builds and runs on Debian bookworm."
+    }
+}

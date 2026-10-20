@@ -87,5 +87,54 @@
         "license": "MIT",
         "license_source": "Permission notice of the archive, in the form of the MIT licence, signed Armin Biere, Johannes Kepler University",
         "comment": "Release series of the solver that won the 2009 competition."
+    },
+    "gimsatul": {
+        "status": "ok",
+        "name": "Gimsatul",
+        "version": "1.1.2",
+        "authors": "Armin Biere",
+        "authors_source": "copyright notice and README of the archive",
+        "tracks": [
+            "parallel"
+        ],
+        "call": "./gimsatul",
+        "gz": false,
+        "args": [
+            "FILECNF"
+        ],
+        "license": "MIT",
+        "license_source": "LICENSE file of the archive, an MIT licence signed Armin Biere",
+        "comment": "Portfolio parallel solver whose threads physically share their large clauses, described in arXiv 2207.13577 by Armin Biere, Mathias Fleury and Maximilian Heisinger."
+    },
+    "satch": {
+        "status": "ok",
+        "name": "SATCH",
+        "version": "0.5.5",
+        "authors": "Armin Biere",
+        "authors_source": "copyright notice and README of the archive",
+        "call": "./satch",
+        "gz": false,
+        "args": [
+            "FILECNF"
+        ],
+        "license": "MIT",
+        "license_source": "LICENSE file of the archive, an MIT licence signed Armin Biere",
+        "comment": "A solver written to be read: Biere wrote it for teaching, with the techniques of a modern CDCL solver introduced one at a time."
+    },
+    "yalsat": {
+        "status": "ok",
+        "name": "YalSAT",
+        "version": "a0fd39f",
+        "authors": "Armin Biere",
+        "authors_source": "copyright notice and README of the archive",
+        "call": "./yalsat",
+        "gz": false,
+        "args": [
+            "FILECNF"
+        ],
+        "incomplete": true,
+        "license": "MIT",
+        "license_source": "LICENSE file of the archive, an MIT licence signed Armin Biere",
+        "comment": "Local search solver of the ProbSAT family, pinned to the commit of its master branch since the repository publishes no release."
     }
 }

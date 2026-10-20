@@ -1,0 +1,28 @@
+{
+    "kind": "release-series",
+    "event": "Releases of MiniSat",
+    "image_name": "{ENTRY}:{SOLVER}",
+    "base_version": "v1",
+    "base_from": "debian:stretch-slim",
+    "builder": "generic/v1",
+    "builder_base": "debian:stretch-slim",
+    "1.12b": {
+        "download_url": "http://minisat.se/downloads/MiniSat_v1.12b_src.zip"
+    },
+    "1.14": {
+        "download_url": "http://minisat.se/downloads/MiniSat_v1.14.2006-Aug-29.src.zip"
+    },
+    "1.14c": {
+        "download_url": "http://minisat.se/downloads/MiniSat-C_v1.14.1.src.zip"
+    },
+    "1.14p": {
+        "download_url": "http://minisat.se/downloads/MiniSat-p_v1.14.2006-Sep-07.src.zip"
+    },
+    "2.0": {
+        "download_url": "http://minisat.se/downloads/minisat2-070721.zip",
+        "builder_base": "debian/eol:squeeze"
+    },
+    "2.2.0": {
+        "download_url": "http://minisat.se/downloads/minisat-2.2.0.tar.gz"
+    }
+}

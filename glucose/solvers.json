@@ -1,0 +1,83 @@
+{
+    "1.0": {
+        "status": "ok",
+        "name": "Glucose",
+        "version": "1.0",
+        "authors": "Gilles Audemard, Laurent Simon",
+        "authors_source": "copyright notice of the archive",
+        "call": "./glucose_static",
+        "gz": false,
+        "args": [
+            "FILECNF"
+        ],
+        "license": "MIT",
+        "license_source": "source headers of the archive: Glucose states its permissions are exactly those of MiniSat, an MIT licence, signed Gilles Audemard and Laurent Simon",
+        "comment": "First release, which won the application track of 2009; its own script runs SatELite then the solver. The SatELite of the archive no longer compiles, so the image holds the solver alone, without the preprocessing the 2009 entry ran. Its sources predate the name lookup rules of modern C++, so it is built with the compiler of its time, on Debian squeeze."
+    },
+    "2.1": {
+        "status": "ok",
+        "name": "Glucose",
+        "version": "2.1",
+        "authors": "Gilles Audemard, Laurent Simon",
+        "authors_source": "copyright notice of the archive",
+        "call": "./glucose_static",
+        "gz": false,
+        "args": [
+            "FILECNF"
+        ],
+        "license": "MIT",
+        "license_source": "source headers of the archive: Glucose states its permissions are exactly those of MiniSat, an MIT licence, signed Gilles Audemard and Laurent Simon",
+        "comment": "The 2.1 release, which introduced the aggressive clause deletion the series is known for."
+    },
+    "3.0": {
+        "status": "ok",
+        "name": "Glucose",
+        "version": "3.0",
+        "authors": "Gilles Audemard, Laurent Simon",
+        "authors_source": "copyright notice of the archive",
+        "call": "./glucose_static",
+        "gz": false,
+        "args": [
+            "-model",
+            "FILECNF"
+        ],
+        "license": "MIT",
+        "license_source": "source headers of the archive: Glucose states its permissions are exactly those of MiniSat, an MIT licence, signed Gilles Audemard and Laurent Simon",
+        "comment": "The 3.0 release, the base of many competition entries that followed."
+    },
+    "syrup-4.1": {
+        "status": "ok",
+        "name": "Glucose",
+        "version": "syrup 4.1",
+        "authors": "Gilles Audemard, Laurent Simon",
+        "authors_source": "copyright notice of the archive",
+        "tracks": [
+            "parallel"
+        ],
+        "call": "./glucose-syrup_static",
+        "gz": false,
+        "args": [
+            "-model",
+            "FILECNF"
+        ],
+        "license": "MIT",
+        "license_source": "source headers of the archive: Glucose states its permissions are exactly those of MiniSat, an MIT licence, signed Gilles Audemard and Laurent Simon",
+        "comment": "The parallel release of the series, built from its parallel directory."
+    },
+    "4.2.1": {
+        "status": "ok",
+        "name": "Glucose",
+        "version": "4.2.1",
+        "authors": "Gilles Audemard, Laurent Simon",
+        "authors_source": "copyright notice of the archive",
+        "call": "./glucose_static",
+        "gz": false,
+        "args": [
+            "-model",
+            "FILECNF"
+        ],
+        "license": "MIT",
+        "license_source": "source headers of the archive: Glucose states its permissions are exactly those of MiniSat, an MIT licence, signed Gilles Audemard and Laurent Simon",
+        "comment": "Last release of the series, published with its sources in a sources subdirectory."
+    }
+}

@@ -1,0 +1,92 @@
+{
+    "1.0.3": {
+        "status": "ok",
+        "name": "Kissat",
+        "version": "1.0.3",
+        "authors": "Armin Biere",
+        "authors_source": "copyright notice and README of the archive",
+        "call": "./kissat",
+        "gz": false,
+        "args": [
+            "FILECNF"
+        ],
+        "license": "MIT",
+        "license_source": "LICENSE file of the archive, an MIT licence signed Armin Biere",
+        "comment": "First public release of Kissat, the C rewrite that won the 2020 competition."
+    },
+    "1.1.1": {
+        "status": "ok",
+        "name": "Kissat",
+        "version": "1.1.1",
+        "authors": "Armin Biere",
+        "authors_source": "copyright notice and README of the archive",
+        "call": "./kissat",
+        "gz": false,
+        "args": [
+            "FILECNF"
+        ],
+        "license": "MIT",
+        "license_source": "LICENSE file of the archive, an MIT licence signed Armin Biere",
+        "comment": "Last release of the 1.x series."
+    },
+    "3.0.0": {
+        "status": "ok",
+        "name": "Kissat",
+        "version": "3.0.0",
+        "authors": "Armin Biere",
+        "authors_source": "copyright notice and README of the archive",
+        "call": "./kissat",
+        "gz": false,
+        "args": [
+            "FILECNF"
+        ],
+        "license": "MIT",
+        "license_source": "LICENSE file of the archive, an MIT licence signed Armin Biere",
+        "comment": "The 3.0 release, which brought the sweeping and congruence closure work."
+    },
+    "3.1.1": {
+        "status": "ok",
+        "name": "Kissat",
+        "version": "3.1.1",
+        "authors": "Armin Biere",
+        "authors_source": "copyright notice and README of the archive",
+        "call": "./kissat",
+        "gz": false,
+        "args": [
+            "FILECNF"
+        ],
+        "license": "MIT",
+        "license_source": "LICENSE file of the archive, an MIT licence signed Armin Biere",
+        "comment": "Last release of the 3.x series."
+    },
+    "4.0.0": {
+        "status": "ok",
+        "name": "Kissat",
+        "version": "4.0.0",
+        "authors": "Armin Biere",
+        "authors_source": "copyright notice and README of the archive",
+        "call": "./kissat",
+        "gz": false,
+        "args": [
+            "FILECNF"
+        ],
+        "license": "MIT",
+        "license_source": "LICENSE file of the archive, an MIT licence signed Armin Biere",
+        "comment": "The 4.0 release, with its new proof tracing interface."
+    },
+    "4.0.4": {
+        "status": "ok",
+        "name": "Kissat",
+        "version": "4.0.4",
+        "authors": "Armin Biere",
+        "authors_source": "copyright notice and README of the archive",
+        "call": "./kissat",
+        "gz": false,
+        "args": [
+            "FILECNF"
+        ],
+        "license": "MIT",
+        "license_source": "LICENSE file of the archive, an MIT licence signed Armin Biere",
+        "comment": "Latest release of the series, published in October 2025."
+    }
+}

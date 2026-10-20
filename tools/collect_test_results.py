@@ -70,9 +70,13 @@ def scan_runs(root: Path) -> dict[str, dict[str, dict]]:
     runs: dict[str, dict[str, dict]] = {}
     for run_dir in sorted(p for p in root.iterdir() if p.is_dir() and RUN_ID.match(p.name)):
         for build_file in run_dir.glob("*-build.jsonl"):
-            image = image_name(build_file.name, "-build.jsonl")
+            events = read_events(build_file)
+            # the events carry the image name; the file name alone cannot be split
+            # back when the tag holds a dash, as in glucose:syrup-4.1
+            image = next((e["image"] for e in events if e.get("image")), None) \
+                or image_name(build_file.name, "-build.jsonl")
             record = {"run": run_dir.name, "date": run_date(run_dir.name),
-                      BUILD_STAGES: fold(read_events(build_file), "stage")}
+                      BUILD_STAGES: fold(events, "stage")}
             test_file = run_dir / f"{build_file.name[: -len('-build.jsonl')]}-test.jsonl"
             if test_file.is_file():
                 record[TEST_CHECKS] = fold(read_events(test_file), "check")
@@ -92,7 +96,11 @@ def select_latest(runs: dict[str, dict[str, dict]]) -> dict[str, dict]:
 
 
 def image_name(file_name: str, suffix: str) -> str:
-    """``kissat-3.1.0-2023-build.jsonl`` -> ``kissat-3.1.0:2023``."""
+    """``kissat-3.1.0-2023-build.jsonl`` -> ``kissat-3.1.0:2023``.
+
+    A fallback only: the file name cannot be split back when the tag itself
+    holds a dash, so the image recorded in the events is preferred.
+    """
     stem = file_name[: -len(suffix)]
     solver, _, year = stem.rpartition("-")
     return f"{solver}:{year}"
