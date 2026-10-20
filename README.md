@@ -160,7 +160,11 @@ See https://zenodo.org/communities/satex.
 
 ## Adding solvers
 
-Solvers are grouped by sets, typically year of competitions. Each set has its own directory and is referenced in `index.json`.
+Solvers are grouped by sets, typically the year of a competition. Each set has its own directory and is
+referenced in `index.json`; `kind` and `event` in its `setup.json` say what it collects. Besides the
+competitions, the races and the SAT Challenge, a set can gather solvers published outside any event: the
+programs of Donald Knuth (`knuth`), the releases of Armin Biere (`biere`) and the release series of single
+solvers (`minisat`, `glucose`, `cadical`, `kissat`), whose images are named `<set>:<version>`.
 The minimal structure of a `<set>` directory is the following:
 * `<set>/solvers.json`: configuration file for running solvers.
 * `<set>/setup.json`: configuration file for building images
@@ -238,6 +242,8 @@ being a JSON object with a subset of the following keys.
 
 | key | description |
 | --- | --- |
+| kind | What the set collects: `competition`, `race`, `challenge`, `platform` for the evaluation platforms that predate the competitions, or `release-series` for solvers published outside any event. Required |
+| event | Name of the event or of the collection, as the website shows it, for instance `SAT Competition 2011` or `Releases of CaDiCaL`. Required |
 | base_version | Version of the base image for running the solver (`base/{base_version}`) |
 | base_from | Image to inherit from for running the solver |
 | builder | Path to the Docker recipe for compiling the solver. If it is not starting with `generic/`, the path is relative to the set directory. The path should contain at least a `Dockerfile`. The builder recipe should install the solver binaries into `/dist`. |

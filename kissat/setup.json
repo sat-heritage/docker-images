@@ -1,0 +1,27 @@
+{
+    "kind": "release-series",
+    "event": "Releases of Kissat",
+    "image_name": "{ENTRY}:{SOLVER}",
+    "base_version": "v1",
+    "base_from": "debian:stretch-slim",
+    "builder": "generic/v1",
+    "builder_base": "debian:stretch-slim",
+    "1.0.3": {
+        "download_url": "https://github.com/arminbiere/kissat/archive/refs/tags/rel-1.0.3.tar.gz"
+    },
+    "1.1.1": {
+        "download_url": "https://github.com/arminbiere/kissat/archive/refs/tags/rel-1.1.1.tar.gz"
+    },
+    "3.0.0": {
+        "download_url": "https://github.com/arminbiere/kissat/archive/refs/tags/rel-3.0.0.tar.gz"
+    },
+    "3.1.1": {
+        "download_url": "https://github.com/arminbiere/kissat/archive/refs/tags/rel-3.1.1.tar.gz"
+    },
+    "4.0.0": {
+        "download_url": "https://github.com/arminbiere/kissat/archive/refs/tags/rel-4.0.0.tar.gz"
+    },
+    "4.0.4": {
+        "download_url": "https://github.com/arminbiere/kissat/archive/refs/tags/rel-4.0.4.tar.gz"
+    }
+}

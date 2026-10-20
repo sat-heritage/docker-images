@@ -25,5 +25,7 @@
     "knuth",
     "biere",
     "minisat",
-    "glucose"
+    "glucose",
+    "cadical",
+    "kissat"
 ]
