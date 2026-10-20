@@ -34,8 +34,25 @@ def validate(path: Path, schema_path: Path) -> list[str]:
     return messages
 
 
+def unlisted_sets() -> list[str]:
+    """Directories that hold a registry but are missing from index.json.
+
+    A set absent from the index is invisible to satex and to the website, while
+    its files stay valid on their own, so nothing else catches the omission.
+    """
+    listed = {str(entry) for entry in load(ROOT / "index.json")}
+    found = sorted(
+        path.parent.name
+        for path in ROOT.glob("*/solvers.json")
+        if path.parent.name not in listed
+    )
+    return found
+
+
 def main() -> int:
-    messages = validate(ROOT / "index.json", SCHEMAS / "index.schema.json")
+    messages = [f"index.json: {name} holds a solvers.json but is not listed"
+                for name in unlisted_sets()]
+    messages += validate(ROOT / "index.json", SCHEMAS / "index.schema.json")
     for entry in load(ROOT / "index.json"):
         entry_dir = ROOT / str(entry)
         messages.extend(

@@ -1,6 +1,6 @@
 {
     "kind": "release-series",
-    "event": "Releases of the Johannes Kepler University group",
+    "event": "Releases of Armin Biere",
     "image_name": "{ENTRY}:{SOLVER}",
     "base_version": "v1",
     "base_from": "debian:stretch-slim",
@@ -23,5 +23,14 @@
     },
     "precosat": {
         "download_url": "https://fmv.jku.at/precosat/precosat-576-7e5e66f-120112.tar.gz"
+    },
+    "gimsatul": {
+        "download_url": "https://github.com/arminbiere/gimsatul/archive/refs/tags/rel-1.1.2.tar.gz"
+    },
+    "satch": {
+        "download_url": "https://github.com/arminbiere/satch/archive/refs/tags/rel-0.5.5.tar.gz"
+    },
+    "yalsat": {
+        "download_url": "https://github.com/arminbiere/yalsat/archive/a0fd39f072f2d4693dd5a1977de3c3d3f69c8850.tar.gz"
     }
 }
