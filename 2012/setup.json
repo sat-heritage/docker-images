@@ -8,5 +8,33 @@
     "glucose": {
         "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2012-src/glucose2.1.tgz",
         "BUILD_DEPENDS": "gcc-multilib g++-multilib libc6-dev-i386"
+    },
+    "lingeling": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2012-src/lingeling-ala-b02aa1a-121013.tar.gz"
+    },
+    "plingeling": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2012-src/lingeling-ala-b02aa1a-121013.tar.gz"
+    },
+    "cryptominisat": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2012-src/cryptominisat-2.9.9.tar.gz",
+        "BUILD_DEPENDS": "cmake zlib1g-dev",
+        "RDEPENDS": "libgomp1"
+    },
+    "clasp": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2012-src/clasp-2.1.3-source.tar.gz"
+    },
+    "sat4j": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2012-src/sat4j-core-v20120709.zip",
+        "RDEPENDS": "default-jre-headless"
+    },
+    "march_nh": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2012-src/march_nh.zip"
+    },
+    "penelope": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2012-src/penelope-sc2012-bin.zip",
+        "RDEPENDS": "bc procps"
+    },
+    "ccasat": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2012-src/CCASat-Opensource.zip"
     }
 }

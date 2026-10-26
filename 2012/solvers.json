@@ -16,5 +16,157 @@
         "license": "MIT",
         "license_source": "licence file glucose_2.1/LICENSE",
         "comment": "Best single-engine solver of the SAT Challenge 2012 application track. The challenge did not publish the submissions: the source is the glucose 2.1 release of the authors, also archived by the SAT Museum POS 2023 artifact (Biere, Fleury, Froleyks, Heule). Only this solver of the challenge is archived."
+    },
+    "lingeling": {
+        "status": "ok",
+        "name": "Lingeling",
+        "version": "ala (121013)",
+        "authors": "Armin Biere",
+        "authors_source": "Proceedings of SAT Challenge 2012: Solver and Benchmark Descriptions, University of Helsinki report B-2012-2",
+        "tracks": [
+            "application",
+            "hard-combinatorial"
+        ],
+        "call": "./lingeling",
+        "gz": false,
+        "args": [
+            "FILECNF"
+        ],
+        "license": "MIT",
+        "license_source": "LICENSE file of the archive, an MIT licence signed Armin Biere",
+        "comment": "The ala release, the one submitted to the challenge. The archive carries the sequential solver and its parallel driver only; Treengeling appears in the later releases."
+    },
+    "plingeling": {
+        "status": "ok",
+        "name": "Plingeling",
+        "version": "ala (121013)",
+        "authors": "Armin Biere",
+        "authors_source": "Proceedings of SAT Challenge 2012: Solver and Benchmark Descriptions, University of Helsinki report B-2012-2",
+        "tracks": [
+            "parallel"
+        ],
+        "call": "./plingeling",
+        "gz": false,
+        "args": [
+            "FILECNF"
+        ],
+        "license": "MIT",
+        "license_source": "LICENSE file of the archive, an MIT licence signed Armin Biere",
+        "comment": "The parallel driver of the same archive, which runs several Lingeling threads."
+    },
+    "cryptominisat": {
+        "status": "ok",
+        "name": "CryptoMiniSat",
+        "version": "2.9.9",
+        "authors": "Mate Soos",
+        "authors_source": "Proceedings of SAT Challenge 2012: Solver and Benchmark Descriptions, University of Helsinki report B-2012-2",
+        "tracks": [
+            "parallel"
+        ],
+        "call": "./cryptominisat",
+        "gz": false,
+        "args": [
+            "FILECNF"
+        ],
+        "license": "MIT",
+        "license_source": "LICENSE file of the archive",
+        "comment": "Release 2.9.9 of the series the challenge ran. Its CMake build asks for MySQL unconditionally, only to log statistics into a database, and the squeeze client library is no longer installable, so the recipe drops those three lines; the solver itself is untouched. It is built with OpenMP, so the runtime image carries libgomp."
+    },
+    "clasp": {
+        "status": "ok",
+        "name": "clasp",
+        "version": "2.1.3",
+        "authors": "Benjamin Kaufmann, Torsten Schaub, Marius Schneider",
+        "authors_source": "Proceedings of SAT Challenge 2012: Solver and Benchmark Descriptions, University of Helsinki report B-2012-2",
+        "tracks": [
+            "hard-combinatorial",
+            "parallel"
+        ],
+        "call": "./run-clasp.sh",
+        "gz": false,
+        "args": [
+            "FILECNF"
+        ],
+        "license": "MIT",
+        "license_source": "COPYING file of the archive",
+        "comment": "The 2.1 series the challenge ran, from the source release published on SourceForge. It prints the competition lines but exits 30, a code of its answer-set heritage, so a launcher returns 10 or 20 instead."
+    },
+    "sat4j": {
+        "status": "ok",
+        "name": "Sat4j",
+        "version": "2.3.2 (20120709)",
+        "authors": "Daniel Le Berre, Anne Parrain",
+        "authors_source": "Proceedings of SAT Challenge 2012: Solver and Benchmark Descriptions, University of Helsinki report B-2012-2",
+        "tracks": [
+            "application",
+            "hard-combinatorial"
+        ],
+        "call": "java",
+        "gz": false,
+        "args": [
+            "-jar",
+            "org.sat4j.core.jar",
+            "FILECNF"
+        ],
+        "license": "EPL-1.0 AND LGPL-2.1-or-later",
+        "license_source": "licence statement of the sat4j distribution",
+        "comment": "The release of 9 July 2012, contemporary with the 2.3.2 snapshot the challenge ran."
+    },
+    "march_nh": {
+        "status": "ok",
+        "name": "march_nh",
+        "version": "SC2012",
+        "authors": "Marijn Heule",
+        "authors_source": "Proceedings of SAT Challenge 2012: Solver and Benchmark Descriptions, University of Helsinki report B-2012-2",
+        "tracks": [
+            "application",
+            "hard-combinatorial"
+        ],
+        "call": "./march_nh",
+        "gz": false,
+        "args": [
+            "FILECNF"
+        ],
+        "license": "GPL-3.0",
+        "license_source": "COPYING file of the archive",
+        "comment": "The submission archive published on the author's page, dated the day of the deadline."
+    },
+    "penelope": {
+        "status": "ok",
+        "name": "PeneLoPe",
+        "version": "SC2012",
+        "authors": "Gilles Audemard, Benoît Hoessen, Saïd Jabbour, Jean-Marie Lagniez, Cédric Piette",
+        "authors_source": "Proceedings of SAT Challenge 2012: Solver and Benchmark Descriptions, University of Helsinki report B-2012-2",
+        "tracks": [
+            "parallel"
+        ],
+        "call": "./solver.sh",
+        "gz": false,
+        "args": [
+            "FILECNF"
+        ],
+        "binary_only": true,
+        "license_source": "no licence file in the binary archive; the published sources carry an MIT-style notice",
+        "comment": "Binary-only: the author's page publishes the submitted binaries, while the sources on GitHub are a later development line. The archive holds the solver, a SatELite and the script that chains them. Its script needs bc and ps, which the runtime image now carries."
+    },
+    "ccasat": {
+        "status": "ok",
+        "name": "CCASat",
+        "version": "2012 (open source edition)",
+        "authors": "Shaowei Cai, Chuan Luo, Kaile Su",
+        "authors_source": "Proceedings of SAT Challenge 2012: Solver and Benchmark Descriptions, University of Helsinki report B-2012-2",
+        "tracks": [
+            "hard-combinatorial",
+            "random"
+        ],
+        "call": "./CCASat",
+        "gz": false,
+        "args": [
+            "FILECNF",
+            "RANDOMSEED"
+        ],
+        "incomplete": true,
+        "license_source": "readme of the archive: use permitted for education and research",
+        "comment": "Winner of the random track. Its own readme calls this a tidy version that performs almost the same as the submitted one, so it is not byte for byte the entry."
     }
 }
