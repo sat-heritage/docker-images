@@ -8,5 +8,31 @@
     "cryptominisat": {
         "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2010-src/cryptominisat-2.5.0-satRace.tar.xz",
         "BUILD_DEPENDS": "libboost-dev"
+    },
+    "lingeling": {
+        "download_url": "https://fmv.jku.at/lingeling/lingeling-276-6264d55-100731.tar.gz"
+    },
+    "plingeling": {
+        "download_url": "https://fmv.jku.at/lingeling/lingeling-276-6264d55-100731.tar.gz"
+    },
+    "precosat": {
+        "download_url": "https://fmv.jku.at/precosat/precosat-570-239dbbe-100801.tar.gz",
+        "BUILD_DEPENDS": "gcc-multilib g++-multilib libc6-dev-i386"
+    },
+    "picosat": {
+        "download_url": "https://fmv.jku.at/picosat/picosat-936.tar.gz"
+    },
+    "minisat": {
+        "download_url": "http://minisat.se/downloads/minisat-2.2.0.tar.gz"
+    },
+    "sapperlot": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2010-src/SApperloT2010.tgz",
+        "BUILD_DEPENDS": "g++-multilib gcc-multilib"
+    },
+    "manysat-1.1": {
+        "download_url": "https://github.com/sat-heritage/docker-images/releases/download/2009-src/ManySAT-1.1.zip"
+    },
+    "manysat-1.5": {
+        "download_url": "https://www.cril.univ-artois.fr/~jabbour/manysat1.5.tgz"
     }
 }
