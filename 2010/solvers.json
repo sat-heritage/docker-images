@@ -16,5 +16,153 @@
         "license": "MIT",
         "license_source": "licence file cryptominisat-2.5.0-satRace/LICENSE-MIT",
         "comment": "Winner of the SAT-Race 2010 main track. The SAT-Race did not publish the submissions: the source is the SAT-Race 2010 version of CryptoMiniSat (git revision and build configuration identified with its author) archived by the SAT Museum POS 2023 artifact (Biere, Fleury, Froleyks, Heule), built unpatched with the CMake Release configuration of the archive. Built on Debian squeeze, whose g++ 4.4 is the compiler named in the CMakeLists.txt of the archive. Only the winner of this race is archived."
+    },
+    "lingeling": {
+        "status": "ok",
+        "name": "Lingeling",
+        "version": "276",
+        "authors": "Armin Biere",
+        "authors_source": "SAT-Race 2010 solver description, satisfiability.org",
+        "tracks": [
+            "main"
+        ],
+        "call": "./lingeling",
+        "gz": false,
+        "args": [
+            "FILECNF"
+        ],
+        "license": "GPL-3.0",
+        "license_source": "COPYING file of the archive",
+        "comment": "Lingeling was new at this race, where it came second in the main track. The race published no submission: the description names version 271, which was never released, and this is the public release of the same line, dated 31 July 2010, three weeks after the race."
+    },
+    "plingeling": {
+        "status": "ok",
+        "name": "Plingeling",
+        "version": "276",
+        "authors": "Armin Biere",
+        "authors_source": "SAT-Race 2010 solver description, satisfiability.org",
+        "tracks": [
+            "parallel"
+        ],
+        "call": "./plingeling",
+        "gz": false,
+        "args": [
+            "-t",
+            "MAXNBTHREAD",
+            "FILECNF"
+        ],
+        "license": "GPL-3.0",
+        "license_source": "COPYING file of the archive",
+        "comment": "Winner of the parallel track, in its first appearance: the multi-threaded front end of Lingeling, built from the same archive, which exchanges unit clauses between the worker threads."
+    },
+    "precosat": {
+        "status": "ok",
+        "name": "PrecoSAT",
+        "version": "570",
+        "authors": "Armin Biere",
+        "authors_source": "SAT-Race 2010 solver description, satisfiability.org",
+        "tracks": [
+            "main"
+        ],
+        "call": "./precosat",
+        "gz": false,
+        "args": [
+            "FILECNF"
+        ],
+        "license": "MIT",
+        "license_source": "LICENSE file of the archive, an MIT licence signed Armin Biere",
+        "comment": "The version the author's page names as the one submitted to this race, successor of the PrecoSAT 236 that won the application track of 2009. Its configure script enforces a 32-bit static binary, so the builder carries the multilib compiler."
+    },
+    "picosat": {
+        "status": "ok",
+        "name": "PicoSAT",
+        "version": "936",
+        "authors": "Armin Biere",
+        "authors_source": "SAT-Race 2010 solver description, satisfiability.org",
+        "tracks": [
+            "main"
+        ],
+        "call": "./picosat",
+        "gz": false,
+        "args": [
+            "FILECNF"
+        ],
+        "license": "MIT",
+        "license_source": "LICENSE file of the archive, an MIT licence signed Armin Biere",
+        "comment": "The description names version 935, which the author's page does not carry; 936 is the next published release, from the days that followed the race."
+    },
+    "minisat": {
+        "status": "ok",
+        "name": "MiniSat",
+        "version": "2.2.0",
+        "authors": "Niklas Een, Niklas Sorensson",
+        "authors_source": "LICENSE file of the archive; the description is signed Niklas Sorensson",
+        "tracks": [
+            "main"
+        ],
+        "call": "./run-minisat.sh",
+        "gz": false,
+        "args": [
+            "FILECNF"
+        ],
+        "license": "MIT",
+        "license_source": "LICENSE file of the archive, an MIT licence signed Niklas Een and Niklas Sorensson",
+        "comment": "MiniSat 2.2, the release of the year, which the description presents as the entry; it also says the submitted build carried two data structure changes for the race that no release contains, so the image is the release rather than the binary that ran."
+    },
+    "sapperlot": {
+        "status": "ok",
+        "name": "SApperloT",
+        "version": "2010",
+        "authors": "Stephan Kottler, Christian Zielke",
+        "authors_source": "SAT-Race 2010 solver description, satisfiability.org",
+        "tracks": [
+            "main"
+        ],
+        "call": "./SApperloT2010",
+        "gz": false,
+        "args": [
+            "-seed=RANDOMSEED",
+            "FILECNF"
+        ],
+        "license_source": "no licence file in the archive, which the authors' institute publishes for download",
+        "comment": "The 2010 line of SApperloT, which adds a preprocessing unit to the hybrid solver of 2009 and makes decision making with reference points a part of it. Published by the Algorithm Engineering group of Tubingen, whose download links expire, so the archive is mirrored here. Built 32-bit and static, as the description says the submission was."
+    },
+    "manysat-1.1": {
+        "status": "ok",
+        "name": "ManySAT",
+        "version": "1.1",
+        "authors": "Youssef Hamadi, Said Jabbour, Lakhdar Sais",
+        "authors_source": "SAT-Race 2010 solver description, satisfiability.org",
+        "tracks": [
+            "main",
+            "parallel"
+        ],
+        "call": "manysat.sh",
+        "gz": false,
+        "args": [
+            "FILECNF"
+        ],
+        "license": "MIT",
+        "license_source": "LICENSE file of the archive, the MiniSat licence it derives from",
+        "comment": "Third of the parallel track, and also run in sequential mode in the main track. The race published no submission: this is the 1.1 archive of the competition of 2009, the release the race ran, already mirrored here for that year."
+    },
+    "manysat-1.5": {
+        "status": "ok",
+        "name": "ManySAT",
+        "version": "1.5",
+        "authors": "Youssef Hamadi, Said Jabbour, Lakhdar Sais",
+        "authors_source": "SAT-Race 2010 solver description, satisfiability.org",
+        "tracks": [
+            "main",
+            "parallel"
+        ],
+        "call": "manysat.sh",
+        "gz": false,
+        "args": [
+            "FILECNF"
+        ],
+        "license": "MIT",
+        "license_source": "LICENSE file of the archive, the MiniSat licence it derives from",
+        "comment": "Second of the parallel track, where two master threads periodically send two slave threads into a chosen part of the search space; run in sequential mode in the main track as well. From the release published by its authors at CRIL."
     }
 }
